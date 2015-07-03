@@ -5,12 +5,15 @@
      There has to be one entity for each item to be referenced. 
      An alternate method (rfc include) is described in the references. -->
 
+<!ENTITY RFC0791 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.0791.xml">
 <!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC3411 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3411.xml">
 <!ENTITY RFC3416 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3416.xml">
 <!ENTITY RFC3418 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3418.xml">
 <!ENTITY RFC3444 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3444.xml">
 <!ENTITY RFC3580 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3580.xml">
+<!ENTITY RFC3580 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3580.xml">
+<!ENTITY RFC3587 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3587.xml">
 <!ENTITY RFC3954 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3954.xml">
 <!ENTITY RFC4949 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4949.xml">
 <!ENTITY RFC4287 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4287.xml">
@@ -204,7 +207,7 @@
 
             <section title="Changes in Revision 01">
  
-                <t>Renamed "credential­­­" to "identity", following industry usage. A credential includes
+                <t>Renamed "credential" to "identity", following industry usage. A credential includes
                 proof, such as a key or password. A username or a distinguished name is called an
                 "identity".</t>
 
@@ -224,9 +227,16 @@
 
                 <t>Made identity-to-account a many-to-one relationship.</t>
 
+                </section>
 
-                </section>           
-        </section>
+            <section title="Changes in Revision 02">
+                <t>Added <xref target="section-identifying-attributes"/>, Identifying Attributes.</t>
+                <t>Split the figure into <xref target="figure-model-of-endpoint"/> and <xref target="figure-information-elements"/>.</t>
+                <t>Added <xref target="figure-information-elements-take-2"/>, proposing a triple-store model.</t>
+                <t>Some editorial cleanup</t>
+                </section>
+
+            </section>
 
         <section title="Problem Statement">
             
@@ -300,7 +310,7 @@
                 </t>
 
                 <t>So SACM components must be able to put disparate observations together and form a picture of an endpoint -- somewhat like a detective. The SACM information model must facilitate this.</t>
-            </section>
+               </section>
 
             <section title="Dealing with Uncertainty">
 
@@ -314,16 +324,16 @@
 
                 <t>SACM components must be able to consider the reputation of the observer or inferrer. That reputation should account for the method  of observing or inferring, the implementer of the SACM component that made the observation or inference, and the compliance status of the endpoint on which the observation or inference was made.  For example, if some observers are found to be vulnerable to a Day 1 exploit, observations from those observers deserve less weight. The details of reputation technology may be out of scope for SACM. However, again, SACM should provide components with provenance information.</t>
 
+                </section>
             </section>
-        </section>
 
         <section title="Conventions used in this document">
             <section title="Requirements Language">
                 <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
                     "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
                     interpreted as described in <xref target="RFC2119">RFC 2119</xref>.</t>
+                </section>
             </section>
-        </section>
 
         <section title="Elements of the SACM Information Model">
             
@@ -343,7 +353,7 @@
                    of a software component, endpoint identity, user identity, address,
                    location, and authorization constraining the endpoint</t>
 
-            </list></t>
+                </list></t>
 
             <t>The SACM Information Model does not (in this draft) specify
                how long information is retained. Historical information is
@@ -351,14 +361,14 @@
                may be represented
                differently in an implementation, but that difference would be in data models,
                not in the information model. 
-            </t>
-
+               </t>
                           
-            <t><xref target="figure-elements-and-multiplicity"/> the 
-                            the information model.</t>
+            <t><xref target="figure-model-of-endpoint"/> 
+               introduces the endpoint attributes
+               and their relationships.</t>
 
-                         <figure title="Elements and Multiplicity"
-                            anchor="figure-elements-and-multiplicity">
+            <figure title="Model of an Endpoint"
+                            anchor="figure-model-of-endpoint">
                             <artwork><![CDATA[
 +---------+*______in>_______*+-----+
 |Hardware |                  |!   !|
@@ -378,39 +388,71 @@
                              |!   !|____   |Interface| <bound  +-------+
                              |!   !|0..1|  +---------+   to
                              +-----+    |   *|   |0..1   
-                             1| |*      |    |___|
-          ____________________| |_______|     in>
-         |                         in> 
-  .......|..............................................................
-         |            |0..1            
-         |            |               
-         |            |*              
-         |         +-----+            +---------+___________________
-         |         | AVP |____________|Endpoint |*     <based-on    |
-        ^|         +-----+1..*       1|Attribute|________           |
-hosted-by|           *|               |Assertion|*       |          |
-         |            |               +---------+        |          |
-         |            |produced-using   |*    |*         |         *|
-         |           1|V                |     |__________|     +-------+
-         |        +--------+            |       <based-on      |Summary|
-         |        | Method |            |                      +-------+
-         |        +--------+            |produced-by               *|       
-         |____________________          |V                          |
-                              |*       1|                           |
-     +--------+1____________*+-----------+                          |
-     |        |    guides>   | SACM      |__________________________|
+                                |*      |    |___|
+                                |_______|     in>
+                                   in> 
+    ]]></artwork>
+                </figure>
+
+            <t><xref target="figure-information-elements"/>
+               is the core of the information model. It represents
+               the information elements and their relationships.</t>
+
+            <figure title="Information Elements"
+                            anchor="figure-information-elements">
+                            <artwork><![CDATA[                                  
+                   +-----+            +---------+
+                   | AVP |____________|Endpoint |
+                   +-----+1..*       1|Attribute|            
+                                      |Assertion|                    
+                                      +---------+                    
+                                        |*                          
+                                        |                      +-------+
+                                        |                      |Summary|
+                                        |                      +-------+
+                                        |produced-by               *|       
+                                        |V                          |
+                                       1|                           |
+     +--------+              +-----------+                          |
+     |        |              | SACM      |__________________________|
      |Guidance|              | Component |1      <produced-by
      +--------+*____________1+-----------+
                 <produced-by
-
-         -------------------------------------------------------------
-         ..... Above this line is the monitorable world
-         -------------------------------------------------------------
     ]]></artwork>
-                        </figure>
+                       </figure>
+
+            <t><xref target="figure-information-elements-take-2"/>
+               is a potential alternative to <xref target="figure-information-elements"/>.
+               It is inspired by triple stores.
+               See http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/.</t>
+
+                         <figure title="Information Elements, Take 2"
+                            anchor="figure-information-elements-take-2">
+                            <artwork><![CDATA[                                  
+           +-----+____________+------+              +---------+
+           | AVP |1 <subject *|triple|______________|predicate|
+           |     |____________|      |* predicate> 1+---------+
+           +-----+1 <object  *+------+
+                                  |*                          
+                                  |                      +-------+
+                                  |                      |Summary|
+                                  |                      +-------+
+                                  |produced-by               *|       
+                                  |V                          |
+                                 1|                           |
+     +--------+              +-----------+                    |
+     |        |              | SACM      |____________________|
+     |Guidance|              | Component |1      <produced-by
+     +--------+*____________1+-----------+
+                <produced-by
+    ]]></artwork> 
+                </figure>
+
             <t>Note: UML 2 is specified by <xref target="UML"/>.</t>
+
             <t>TODO: update text to match new figure:</t>
-            <t>Need to be clear in the description that - of some of
+            <t>Need to be clear in the description that ???</t>
+            <t>For some of
             the relationships, will need some language and guidance to
             the interfaces and relationships we expect to have happen,
             MUSTs and SHOULDs, as well as explaining the extensibility
@@ -418,17 +460,245 @@ hosted-by|           *|               |Assertion|*       |          |
             that can happen. Others that we haven't thought of yet, might
             be added by another RFC or in another way</t>
 
-            <t>CEK: >>> I suddenly wonder whether all of the relationships in the upper right corner of the diagram are needed. At present, AVPs mostly mention instances of the classes in the upper half. The only relationship an endpoint attribute assertion expresses is that a set of AVPs are all true of some endpoint. We don’t have a way to say that an address is bound to a particular interface. Such structures *can* be modeled, using YANG, for example. But do we require that? If we do, why? I do think we need to be able to relate a software instance to the software component, and a hardware instance to the hardware component.</t> 
-    
-            <t>The following subsections discuss <xref target="figure-elements-and-multiplicity"/>.</t>
+            <section anchor="section-identifying-attributes" title="Identifying Attributes">
+
+                <t>Identifying attributes let a consumer identify an endpoint,
+                   for two purposes:<list style="symbols">
+                    <t>To tell whether two endpoint 
+                        attribute assertions concern the same endpoint
+                        (TODO: Why this is not simple)</t>
+                    <t>To respond to compliance measurements, for example
+                        by reporting, remediating, and quarantining
+                        (SACM does not specify these responses,
+                        but SACM exists to enable them.)</t>
+                    </list></t>
+
+                <t>Out of scope of this section: *characterizing* an endpoint
+                so as to apply appropriate collection guidance to it.
+                We don't call this "identification".</t>
+
+                <section title="How Known">
+                    <t>Each attribute-value pair or triple
+                       MUST be marked with how the provider knows.
+                       There MUST be at least one marking.
+                       The possible markings follow.
+                       <list style="symbol">
+                           <t>"Self" means that the endpoint furnished the information:
+                              it is self-reported. "Self" does not (necessarily) mean that the
+                              provider runs on the the monitored endpoint.</t>
+                           <t>"Authority" means that the provider got the information,
+                              directly or indirectly, from an authority that assigned it. 
+                              For example, the producer got an IP-MAC association 
+                              from a DHCP server
+                              (or was itself the DHCP server).</t>
+                           <t>"Observation" means that the provider got the information
+                              from observations of network traffic.
+                              For example, the producer saw the endpoint provide the
+                              certificate in a successful TLS exchange. (TODO: Cite RFC)</t>
+                           <t>"Verification" means that the provider has verified
+                              the information by interacting with the endpoint.
+                              For example, the provider does IP communication with the endpoint
+                              and it knows the IP address with which it communicates.
+                              Or, the provider makes an SSH connection to the endpoint
+                              and knows the endpoint's public key by virtue of authenticating it.</t>
+                           </list>
+                       </t>
+                    </section>
+
+<!-- TODO: This commented-out text is rejected by http://xml2rfc.ietf.org/cgi-bin/xml2rfc.cgi
+
+                <section title="Common Identifying Attributes"/>
+
+                    <t><list style="symbols">
+                        <t>IP address</t>
+                        <t>MAC address</t>
+                        <t>Hardware serial number</t>
+                        <t>Certificate</t>
+                        <t>Public key</t>
+                        <t>Tool-specific identifier</t>
+                        </list></t>
+
+                    </section>
+-->
+
+                <section title="IP Address">
+
+                    <section title="Range of Values">     
+                        <t>MUST be an IPv4 or IPv6 address,
+                            and optionally a scope string.
+                            MUST NOT be a broadcast, unicast, or loopback address.</t>
+                        <t>An IPv4 address MUST conform to <xref target="RFC0791"/>,
+                            section 3.2.</t>
+                        <t>An IPv6 address MUST conform to <xref target="RFC3587"/>.
+                           SHOULD NOT be a link-local address.</t>
+                        <t>Scope string: an administratively assigned string
+                           denoting the IP routing domain.
+                           Implementations MUST support this. 
+                           Administrators may use it to avoid ambiguity,
+                           for example if network address translation (NAT) is in use.</t>
+                        <t>ISSUE (Jim Schaad): Scope strings are interesting.
+                           However does this imply a potential need to create a new DHCP item so that 
+                           it can be sent out to a device for reporting back?
+                           Is there such a string already?</t>
+                        <t>(Cliff): Scope strings are like administrative-domain in IF-MAP.
+                           It would solve many problems if DHCP servers could provide this
+                           string to endpoints and to observers.
+                           I am not sure whether there is a standard DHCP option that
+                           fills the bill or not.
+                           I am not sure how easily application software can get
+                           the DHCP options from the underlying OS.
+                           But this is worth exploring.</t>
+                        </section>
+
+                    <section title="Meaning">
+                        <t>At the time of observation
+                           the endpoint had the right to use,
+                           or was communicating using, each specified IP address.</t>
+                        </section>
+
+                    <section title="Multiplicity">
+                        <t>An endpoint attribute assertion MAY contain 
+                           one or more IP addresses.</t>
+                        <t>In practice, an IP address can be used by only one 
+                           endpoint in an IP routing domain at a time.</t>
+                        </section>
+
+                    <section title="Data Model Requirements">
+                        <t>All SACM data models MUST support this entire subsection.</t>
+                        </section>
+
+                    </section>
+
+                <section title="MAC Address">
+
+                    <t>TODO</t>
+                    </section>
+
+                <section title="Hardware Serial Number">
+
+                    <section title="Range of Values">
+                        <t>MUST be a vendor ID string and a serial number string string.
+                           The vendor ID string MAY be empty, a URI, or a vendor number.</t>
+                        </section>
+ 
+                    <section title="Meaning">
+                        <t>At the time of observation the endpoint had a hardware component by
+                           the indicated manufacturer and having the specified serial number.</t>
+                        </section>
+
+                    <section title="Multiplicity">
+                        <t>An endpoint may have any number of hardware components,
+                           each with a different serial number.
+                           Accordingly, an endpoint attribute 
+                           assertion MAY contain one or more serial numbers.</t>
+
+                        <t>A vendor SHOULD ensure that each serial number goes to 
+                           only one hardware instance.</t>
+
+                        </section>
+
+                    <section title="Data Model Requirements">
+                        <t>All SACM data models MUST support this entire subsection.</t>
+                        </section>
+
+                    </section>
+
+                <section title="Certificate">
+                    <section title="Range of values">
+                        <t>MUST be X.509 certificate, per https://tools.ietf.org/html/rfc5280.</t>
+                        </section>
+
+                    <section title="Meaning">
+                        <t>At the time of observation the endpoint had the right to use,
+                           or was using, the specified certificate.</t>
+                        </section>
+
+                    <section title="Multiplicity">
+                        <t>An endpoint may use, or have the right to use, one or more
+                           certificates.</t>
+
+                        <t>Some certificates may be used on more than one endpoint.
+                           Other certificates are (by intent) bound to a single endpoint.
+                           ISSUE: Is there a standard way to distinguish the two?</t>
+                        </section>
+
+                    <section title="Data model requirements">
+                        <t>All SACM data models MUST support this entire subsection.</t>
+                        </section>
+
+                    </section>
+
+                <section title="Public Key">
+
+                    <t>TODO</t>
+                    </section>
+
+                <section title="Tool-Specific Identifier">
+
+                    <t>TODO</t>
+
+                    <t>TODO: "Tool-specific identifier" suggests that two tools could
+                       never agree on a tool-specific identifier.
+                       But a community may agree on an identifier notation,
+                       and might even create a formal standard. 
+                       All that's important is that each of these attributes has a type 
+                       and meaning *not* specified by the SACM internet drafts. 
+                       "Vendor-specific identifier?" "Custom identifier?"
+                       </t>
+
+                    </section>
+
+                <section title="Properties of Attributes">
+
+                    <t>TODO: Apply these properties to each identifying attribute.</t>
+
+                    <t><list style="symbols">
+                       <t>Stability: scale is volatile to persistent to immutable</t>
+
+                       <t>Multiplicity:<list style="symbols">
+                           <t>Does the value generally refer to only one 
+                              endpoint, or to multiple?</t>
+                           <t>Does an endpoint generally have multiple values 
+                              of the attribute, or only one?</t>
+                           </list></t>
+
+                       <t>Accuracy: How often is the value true vs false?
+                          What can make a false value happen? (Lying endpoint? etc)</t>
+
+                       <t>Commonness: Do many endpoints have the attribute?</t>
+                       </list></t>
+
+                    </section>
+
+                <section title="Identification of Endpoints where SACM Components Reside">
+                    <t>Every information element needs identifying attributes 
+                       of its producer's endpoint.
+                      (TODO: Provide normative language. SHOULD? MUST?)
+                       </t>
+                    <t>Specifically, in an endpoint attribute assertion,
+                       we need identifying attributes of the asserter's endpoint.
+                       If the asserter is external, the assertion will contain 
+                       identifying attributes of two endpoints. 
+                       (TODO: Discuss what this information is for.)
+                       </t>
+                    </section>
+
+                <section title="Security Considerations">
+                    <t>Effects of misidentification</t>
+                    <t>Things that can cause misidentification</t>
+                    <t>How minimize misidentification</t>
+                    </section>
+
+                </section>
+  
 
             <section title="Software Component">
 
                 <t>An endpoint contains and runs software components.</t>
                 
                 <t>Relationship:<list style="symbols">
-                    <t>If an endpoint has an instance of a software component, we say that the software component is “in” the endpoint. This is a shorthand.</t>
-                    </t>
+                    <t>If an endpoint has an instance of a software component, we say that the software component is "in" the endpoint. This is a shorthand.</t>
+                    </list></t>
 
                 <t>Some software components are assets.
                    "Asset" is defined in RFC4949 <xref target="RFC4949"/> as "a system
@@ -466,19 +736,23 @@ hosted-by|           *|               |Assertion|*       |          |
                      different components. Software versioning is not built into the 
                      information model.</t>
 
-                  <t>Each separately installable piece of software SHOULD be modeled as a 
-component. Sometimes it may be better to divide more finely: what an installer installs MAY be modeled as several components.</t> 
+                  <t>Each separately installable piece of software SHOULD be modeled as a
+                     component. Sometimes it may be better to divide more finely:
+                     what an installer installs MAY be modeled as several components.</t> 
 
                   <t>A data model MAY identify a software component by parts of an ISO SWID tag.</t>
 
                 </section>
     
             <section title="Software Instance">
-                <t>Each copy of a piece of software is called a software instance. The configuration of a software instance is regarded as part of the software instance. Configuration can strongly affect security posture.</t>
+                <t>Each copy of a piece of software is called a software instance.
+                   The configuration of a software instance is regarded
+                   as part of the software instance.
+                   Configuration can strongly affect security posture.</t>
 
                 <t>A data model MUST support the following relationships:<list style="symbols">
-                       <t>A software instance is an “instance of” a software component.</t>
-                       <t>A software instance is “in” an endpoint.</t>
+                       <t>A software instance is an "instance of" a software component.</t>
+                       <t>A software instance is "in" an endpoint.</t>
                        </list></t>
 
                 <t>A data model MAY use ISO SWID tags to describe software instances.</t>
@@ -503,8 +777,9 @@ component. Sometimes it may be better to divide more finely: what an installer i
                     component.</t>
 
                  <t>A data model MUST support the following relationships:<list style="symbols">
-                     <t>A hardware instance is an “instance of” a hardware component.</t>
-                     <t>A hardware instance is “in” an endpoint.</t>
+                     <t>A hardware instance is an "instance of" a hardware component.</t>
+                     <t>A hardware instance is "in" an endpoint.</t>
+                     </list></t>
 
                  <t>Hardware instances may need to be modeled because (a) an endpoint may have multiple instances of a hardware component, (b) a hardware instance may be compromised, whereas other instances may remain intact.</t>
 
@@ -514,25 +789,29 @@ component. Sometimes it may be better to divide more finely: what an installer i
 
             <section title="Network Interface">
 
-                 <t>CEK: >>> I am not sure how to use network interfaces for endpoint identification. As for compliance, is this too advanced for SACM at this time?</t> 
+                <t>CEK: >>> I am not sure how to use network interfaces for endpoint identification. As for compliance, is this too advanced for SACM at this time?</t> 
 
-                 <t>An endpoint generally has at least one network interface.</t>
+                <t>An endpoint generally has at least one network interface.</t>
 
-                 <t>Interfaces nest. A virtual interface can nest in a physical interface.</t>
+                <t>Interfaces nest. A virtual interface can nest in a physical interface.</t>
 
-                 <t>A data model MUST support the following relationships:<list style="symbols">
-                     <t>A network interface is “in” an endpoint.</t>
-                     <t>A network interface is “in” another network interface; this
-                        is for a nested interface. CEK: >>> And this allows representing 
-      compliance policies that are worthwhile. But is this too advanced
-      for the initial set of SACM RFCs?</t> 
-                     <t>A network interface “acts for” an identity. This occurs, for example, when the network interface is online because of successful 802.1X. An internal
-collector may be aware of the identity. An external collector (such as a RADIUS server) will be aware of the identity.</t>
-                     </list></t>
+                <t>A data model MUST support the following relationships:<list style="symbols">
+                    <t>A network interface is "in" an endpoint.</t>
+                    <t>A network interface is "in" another network interface; this
+                       is for a nested interface. CEK: And this allows representing 
+                       compliance policies that are worthwhile. But is this too advanced
+                       for the initial set of SACM RFCs?</t> 
+                    <t>A network interface "acts for" an identity.
+                       This occurs, for example, when the network interface is online
+                       because of successful 802.1X.
+                       An internal collector may be aware of the identity.
+                       An external collector (such as a RADIUS server) will be aware of the identity.</t>
+                    </list></t>
                 </section>
 
-
             <section title="Address">
+
+                <t>IS THIS SECTION DEFUNCT?</t>
 
                 <t>An address SHALL BE any of:<list style="symbols">
                     <t>A layer 2 address; a data model MUST support MAC addresses, 
@@ -546,19 +825,21 @@ collector may be aware of the identity. An external collector (such as a RADIUS 
 
                 <t>Addresses from other layers may be added in the future.</t>
 
-                <t>These addresses are not necessarily globally unique.  Therefore, a data model SHOULD allow an address to be qualified with a scope.<list style="symbols">  
+                <t>These addresses are not necessarily globally unique.
+                   Therefore, a data model SHOULD allow an address to be qualified with a scope.<list style="symbols">  
 
                     <t>A data model SHOULD allow qualifying a MAC address with its 
                         layer-2 broadcast domain. This MAY take the form of a VLAN ID 
                         and an administratively assigned string denoting the LAN.</t> 
                     <t>A data model SHOULD allow qualifying an IP address with an 
                        administratively assigned string denoting the IP routing domain.</t>
+                    </list></t>
 
                 <t>A data model MUST support the following relationships:<list style="symbols">
-                    <t>An address is “bound to” a network interface.</t>
-                    <t>An address is considered “bound to” an endpoint just if the 
-                       address is “bound to” an interface that is “in” the endpoint.<t> 
-                    <t>An address may be “in” one or more locations.<t>
+                    <t>An address is "bound to" a network interface.</t>
+                    <t>An address is considered "bound to" an endpoint just if the 
+                       address is "bound to" an interface that is "in" the endpoint.</t> 
+                    <t>An address may be "in" one or more locations.</t>
                     </list></t>
                 </section>
 
@@ -570,9 +851,20 @@ collector may be aware of the identity. An external collector (such as a RADIUS 
 
                 <t>A data model MUST support the following relationships:<list style="symbols">
 
-                    <t>An endpoint may “act for” an identity. This SHALL mean that the endpoint claims or proves that it has this identity. For example, if the endpoint is part of an Active Directory domain and Alice logs into the endpoint with her AD username (alice) and password, the endpoint "acts for” alice. An endpoint MAY "act for” more than one identity, such as a machine identity and a user identity.</t>
+                    <t>An endpoint may "act for" an identity.
+                       This SHALL mean that the endpoint claims or proves that it has this
+                       identity. For example, if the endpoint is part of an
+                       Active Directory domain and Alice logs into the endpoint with her
+                       AD username (alice) and password, the endpoint "acts for" alice.
+                       An endpoint MAY "act for" more than one identity,
+                       such as a machine identity and a user identity.</t>
 
-                    <t>A identity may “belong to” an account. For example, an enterprise may have a database that maps identities to accounts. CEK: >>> Is this relevant? I don’t see how we’d use the notion of an account in identifying an endpoint or in specifying compliance measurements to be taken.</t>
+                    <t>A identity may "belong to" an account.
+                       For example, an enterprise may have a database
+                       that maps identities to accounts.
+                       CEK: Is this relevant? I don't see how we'd use the notion
+                       of an account in identifying an endpoint or in specifying
+                       compliance measurements to be taken.</t>
                     </list></t> 
                 </section>
 
@@ -582,12 +874,12 @@ collector may be aware of the identity. An external collector (such as a RADIUS 
                    Location can be a clue to an endpoint's identity.</t>
 
                 <t>A data model MUST support the following relationships:<list style="symbols">
-                    <t>One or more endpoints may be “in” a location</t>
-                    <t>A location may be “in” one or more locations</t>
-                    <t>A network address may be “in” a location</t>
-                    <t>An account may be “in” a location; this would happen 
+                    <t>One or more endpoints may be "in" a location</t>
+                    <t>A location may be "in" one or more locations</t>
+                    <t>A network address may be "in" a location</t>
+                    <t>An account may be "in" a location; this would happen 
                        if the account represents a user, and a physical access 
-                       control system reports on the user’s location 
+                       control system reports on the user's location</t>
                     </list></t>
 
                 <t>Examples of location:<list style="symbols">
@@ -608,7 +900,7 @@ collector may be aware of the identity. An external collector (such as a RADIUS 
                     </list></t>
 
 
-                <t>CEK: >>> The last three examples seem too advanced for the first set of SACM RFCs. 
+                <t>CEK: The last three examples seem too advanced for the first set of SACM RFCs. 
                     I do not know a notation that would be interoperable and 
                     useful for endpoint identification. Should we drop them?</t>
 
@@ -627,102 +919,102 @@ collector may be aware of the identity. An external collector (such as a RADIUS 
 
             <section title="Endpoint">
 
-                <t>An endpoint is the hollow center of the model. An endpoint is an abstract ideal. Any endpoint attribute assertion that mentions an endpoint mentions it by specifying identifying attributes. Even if there is one preferred endpoint identity, that is modeled as an identity. We do not anticipate any AVP whose attribute type is “endpoint”.</t>
+                <t>An endpoint is the hollow center of the model. An endpoint is an abstract ideal. Any endpoint attribute assertion that mentions an endpoint mentions it by specifying identifying attributes. Even if there is one preferred endpoint identity, that is modeled as an identity. We do not anticipate any AVP whose attribute type is "endpoint".</t>
 
                 </section>
 
             <section title="Endpoint Attribute Assertion">
-                  <section title="Form and Precise Meaning">
-                  <t>An endpoint attribute assertion has:
-                  <list style="symbols">
-                      <t>One or more attribute-value pairs (AVPs)</t>
-                      <t>A time interval over which the assertion holds</t>
-                      <t>Endpoint uniquely identified? True or false</t>
-                      <t>Provenance, including:
-                      <list style="symbols">
-                          <t>The SACM component that made the assertion</t>
-                          <t>The endpoint attribute assertions (if any)
-                             on which this assertion is based</t>
-                          <t>Information about the method used to derive the assertion</t> 
-                      </list>
-                      </t>
-                  </list>
-                  </t>
-                  <t>It means that over the specified time interval, there was an endpoint for which all of the listed attribute-value pairs were true.</t>
-                  <t>If the "Endpoint uniquely identified" is true, the set of attributes-value
-                      pairs together make this assertion apply to only one endpoint.</t>
-                  <t>The attributes can include posture attributes and
-                               identification attributes. The model does not make a 
-                               rigid distinction between the two uses of attributes.</t>
-                  <t>Some of the attributes may be multi-valued.
-                  </t>
-                  <t>One of the AVPs may be a unique endpoint identifier. 
-                     Not every endpoint will have one. If there is one, the SACM component that produces
-                     the Endpoint Attribute Assertion will not necessarily know what it is.</t>
-                  </section>
+                <section title="Form and Precise Meaning">
+                    <t>An endpoint attribute assertion has:
+                        <list style="symbols">
+                            <t>One or more attribute-value pairs (AVPs)</t>
+                            <t>A time interval over which the assertion holds</t>
+                            <t>Endpoint uniquely identified? True or false</t>
+                            <t>Provenance, including:
+                                <list style="symbols">
+                                    <t>The SACM component that made the assertion</t>
+                                    <t>The endpoint attribute assertions (if any)
+                                       on which this assertion is based</t>
+                                    <t>Information about the method used to derive the assertion</t> 
+                                    </list>
+                                </t>
+                            </list>
+                        </t>
+                    <t>It means that over the specified time interval, there was an endpoint for which all of the listed attribute-value pairs were true.</t>
+                    <t>If the "Endpoint uniquely identified" is true, the set of attributes-value
+                       pairs together make this assertion apply to only one endpoint.</t>
+                    <t>The attributes can include posture attributes and
+                                identification attributes. The model does not make a 
+                                rigid distinction between the two uses of attributes.</t>
+                    <t>Some of the attributes may be multi-valued.
+                        </t>
+                    <t>One of the AVPs may be a unique endpoint identifier. 
+                       Not every endpoint will have one. If there is one, the SACM component that produces
+                       the Endpoint Attribute Assertion will not necessarily know what it is.</t>
+                    </section>
 
-                  <section title="Asserter">
-                  <t>An Endpoint Attribute Assertion may come from an 
-                      attribute collector or an evaluator. It may come from a SACM component that derives 
-                      it from out-of-band sources, such as
-                      a physical inventory system. A SACM component may derive it
-                      from other Endpoint Attribute Assertions.</t>
-                  </section>
+                <section title="Asserter">
+                    <t>An Endpoint Attribute Assertion may come from an 
+                       attribute collector or an evaluator. It may come from a SACM component that derives 
+                       it from out-of-band sources, such as
+                       a physical inventory system. A SACM component may derive it
+                       from other Endpoint Attribute Assertions.</t>
+                    </section>
 
-                  <section title="Example">
-                  <t> For example, an attribute assertion might have these attribute-value pairs:<list>
-                      <t>mac-address = 01:23:45:67:89:ab</t>
-                      <t>os = OS X</t>
-                      <t>os-version = 10.6.8</t>
-                      </list></t>
-                  <t>This asserts that an endpoint with MAC address 01:23:45:67:89:ab ran OS X 10.6.8 throughout the specified time interval. A profiler might have provided this assertion.</t>
-                  </section>
-
-                  <section title="A Use Case">
-                  <t>For example, Endpoint Attribute Assertions should help SACM components to track an endpoint as it roams or stays stationary. They must track endpoints because they must track endpoints' postures over time. Tracking of an endpoint can employ many clues, such as:<list>
-                       <t>The endpoint's MAC address</t>
-                       <t>The authenticated identity (even if it identifies a user)</t>
-                       <t>The location of the endpoint and the user</t>
+                <section title="Example">
+                    <t> For example, an attribute assertion might have these attribute-value pairs:<list>
+                       <t>mac-address = 01:23:45:67:89:ab</t>
+                       <t>os = OS X</t>
+                       <t>os-version = 10.6.8</t>
                        </list></t>
-                  </section>
+                    <t>This asserts that an endpoint with MAC address 01:23:45:67:89:ab ran OS X 10.6.8 throughout the specified time interval. A profiler might have provided this assertion.</t>
+                    </section>
 
-                  <section title="Event">
+                <section title="A Use Case">
+                    <t>For example, Endpoint Attribute Assertions should help SACM components to track an endpoint as it roams or stays stationary. They must track endpoints because they must track endpoints' postures over time. Tracking of an endpoint can employ many clues, such as:<list>
+                        <t>The endpoint's MAC address</t>
+                        <t>The authenticated identity (even if it identifies a user)</t>
+                        <t>The location of the endpoint and the user</t>
+                        </list></t>
+                   </section>
+
+                <section title="Event">
                       
-                      <t>An event is represented as a Posture Attribute Assertion
-                         whose time interval has length zero.</t>
+                    <t>An event is represented as a Posture Attribute Assertion
+                       whose time interval has length zero.</t>
     
-                      <t>Some potential kinds of events are:<list style="symbols">
-                         <t>A structured syslog message <xref target="RFC5424"/></t>
-                         <t>IF-MAP event metadata <xref
-                            target="TNC-IF-MAP-NETSEC-METADATA"/></t>
-                         <t>A NetFlow message <xref target="RFC3954"/></t>
-                         </list></t>
-                  </section>
+                    <t>Some potential kinds of events are:<list style="symbols">
+                        <t>A structured syslog message <xref target="RFC5424"/></t>
+                        <t>IF-MAP event metadata <xref
+                           target="TNC-IF-MAP-NETSEC-METADATA"/></t>
+                        <t>A NetFlow message <xref target="RFC3954"/></t>
+                        </list></t>
+                    </section>
 
-                  <section title="Difference between Attribute and Event">
+                <section title="Difference between Attribute and Event">
     
-                      <t>Author: Henk Birkholz</t>
+                    <t>Author: Henk Birkholz</t>
                       
-                      <t>"Attribute" and "event" are often used fairly interchangeably. A
-                          clear distinction makes the words more useful.</t>
-                      <t>An *attribute* tends not to change until something causes a change. In
-                         contrast, an *event* occurs at a moment in time.</t>
-                      <t>For a nontechnical example, let us consider "openness" as an attribute of a door, with two values, "open" and "closed". A
-                         closed door tends to stay closed until something opens it (a breeze,
-                         a person, or a dog).</t>
-                      <t>The door's opening or closing is an event.</t>
-                      <t>Similarly, "Host firewall enabled" may be modeled as a  true/false attribute of an endpoint. 
-                         Enabling or disabling the host firewall may be modeled as
-                         an event. An endpoint's crashing also may be modeled as an
-                         event.</t>
+                    <t>"Attribute" and "event" are often used fairly interchangeably. A
+                       clear distinction makes the words more useful.</t>
+                    <t>An *attribute* tends not to change until something causes a change. In
+                       contrast, an *event* occurs at a moment in time.</t>
+                    <t>For a nontechnical example, let us consider "openness" as an attribute of a door, with two values, "open" and "closed". A
+                       closed door tends to stay closed until something opens it (a breeze,
+                       a person, or a dog).</t>
+                    <t>The door's opening or closing is an event.</t>
+                    <t>Similarly, "Host firewall enabled" may be modeled as a  true/false attribute of an endpoint. 
+                       Enabling or disabling the host firewall may be modeled as
+                       an event. An endpoint's crashing also may be modeled as an
+                       event.</t>
 
-                      <t>Although events are not attributes, 
-                         we use one kind of information element, 
-                         the "Endpoint Attribute Assertion",
-                         to describe both attributes and events.</t>
+                    <t>Although events are not attributes, 
+                       we use one kind of information element, 
+                       the "Endpoint Attribute Assertion",
+                       to describe both attributes and events.</t>
 
-                  </section>
-            </section> <!-- Endpoint Attribute Assertion -->
+                    </section>
+                </section> <!-- Endpoint Attribute Assertion -->
 
             <section title="Attribute-Value Pair">
                 <t>The set of attribute types must be extensible, by other IETF standards, by other standards groups, and by vendors. How to express attribute types is not defined here, but is left to data models.</t>
@@ -730,7 +1022,7 @@ collector may be aware of the identity. An external collector (such as a RADIUS 
                 <t>The value may be structured. For example, it may something like XML.</t>
 
                 <t>The information model requires a standard attribute type (or possibly more than one) for each box in 
-the upper half of <xref target="figure-elements-and-multiplicity"/>:
+ <xref target="figure-model-of-endpoint"/>:
                 <list style="symbols">
                     <t>Hardware Component: the value identifies the hardware type. For example, it may consist of the make and model number.</t>
                     <t>Hardware Instance: the value, together with the Hardware Component value, uniquely identifies the hardware instance. For example, it may be a manufacturer-assigned
@@ -749,193 +1041,192 @@ the upper half of <xref target="figure-elements-and-multiplicity"/>:
                        will need know that it's the same user?]</t>
                     <t>Address: The value is an IP, MAC, or other network address,
                        possibly qualified with its scope.</t>
-                </list></t>
+                    </list></t>
 
                 <section title="Unique Endpoint Identifier">
-                       <t>An organization should try to uniquely identify and label an endpoint, whether the endpoint is enrolled or is discovered in the operational environment. The identifier should be assigned by or used in the enrollment process. </t>
-                       <t>Here "unique" means one-to-one. In practice, uniqueness is not always attainable. Even if an endpoint has a unique identifier, an attribute collector may not always know it.</t> 
+                    <t>An organization should try to uniquely identify and label an endpoint, whether the endpoint is enrolled or is discovered in the operational environment. The identifier should be assigned by or used in the enrollment process. </t>
+                    <t>Here "unique" means one-to-one. In practice, uniqueness is not always attainable. Even if an endpoint has a unique identifier, an attribute collector may not always know it.</t> 
 
-                       <t>If the attribute type of an AVP is "endpoint", the value
-                          is a unique identifier of the endpoint.</t>
-                </section>
+                    <t>If the attribute type of an AVP is "endpoint", the value
+                       is a unique identifier of the endpoint.</t>
+                    </section>
     
                 <section title="Posture Attribute">
     
-                       <t>Some AVPs will be posture attributes.</t>
+                    <t>Some AVPs will be posture attributes.</t>
 
-                       <t>See the definition in the SACM Terminology for Security Assessment
-                          <xref target="I-D.ietf-sacm-terminology"/>.</t>
+                    <t>See the definition in the SACM Terminology for Security Assessment
+                       <xref target="I-D.ietf-sacm-terminology"/>.</t>
     
-                       <t>Some potential kinds of posture attributes are:<list style="symbols">
-                           <t>A NEA posture attribute (PA) <xref target="RFC5209"/></t>
-                           <t>A YANG model <xref target="RFC6020"/></t>
-                           <t>An IF-MAP device-characteristics metadata item <xref
-                              target="TNC-IF-MAP-NETSEC-METADATA"/></t>
-                           </list></t>
+                    <t>Some potential kinds of posture attributes are:<list style="symbols">
+                        <t>A NEA posture attribute (PA) <xref target="RFC5209"/></t>
+                        <t>A YANG model <xref target="RFC6020"/></t>
+                        <t>An IF-MAP device-characteristics metadata item <xref
+                           target="TNC-IF-MAP-NETSEC-METADATA"/></t>
+                        </list></t>
+                    </section>
                 </section>
 
-                <section title="Evaluation Result">
+            <section title="Evaluation Result">
     
-                      <t>Evaluation Results (see <xref
-                         target="I-D.ietf-sacm-terminology"/>) are modeled as Endpoint Attribute Assertions.</t>
+                <t>Evaluation Results (see <xref
+                   target="I-D.ietf-sacm-terminology"/>) are modeled as Endpoint Attribute Assertions.</t>
 
-                      <t>An Evaluation
-                         Result derives from one or more other Endpoint Attribute Assertions.</t>
+                <t>An Evaluation
+                   Result derives from one or more other Endpoint Attribute Assertions.</t>
 
-                      <t>An example is: a NEA access recommendation <xref target="RFC5793"/></t>
+                <t>An example is: a NEA access recommendation <xref target="RFC5793"/></t>
     
-                      <t>An evaluator may be able to evaluate better if history is
-                         available. This is a use case for retaining Endpoint Attribute Assertions for a time.</t>
+                <t>An evaluator may be able to evaluate better if history is
+                   available. This is a use case for retaining Endpoint Attribute Assertions for a time.</t>
 
-                      <t>An Evaluation Result may be retained longer than the Endpoint Attribute Assertions from which it derives. (<xref
-                         target="figure-elements-and-multiplicity"/> does not show this.)               In the
-                         limiting case, Endpoint Attribute Assertions are not retained. When  
-                         as an Endpoint Attribute Assertion arrives, an evaluator produces
-                         an Evaluation Result. These mechanics are out of the scope of the Information Model.</t>
+                <t>An Evaluation Result may be retained longer than the Endpoint Attribute Assertions from which it derives. (<xref
+                   target="figure-model-of-endpoint"/> does not show this.)               In the
+                   limiting case, Endpoint Attribute Assertions are not retained. When  
+                   as an Endpoint Attribute Assertion arrives, an evaluator produces
+                   an Evaluation Result. These mechanics are out of the scope of the Information Model.</t>
                 </section>
-
-            </section>
 
             <section title="Report">
 
-                  <t>An Endpoint Attribute Assertion concerns a single endpoint.
-                     Assertions about a set of endpoints are also needed -- for example, for trend analysis and for reports read by humans. These assertions are termed "reports". SACM components will consume Endpoint Attribute Assertions
+                <t>An Endpoint Attribute Assertion concerns a single endpoint.
+                   Assertions about a set of endpoints are also needed -- for example, for trend analysis and for reports read by humans. These assertions are termed "reports". SACM components will consume Endpoint Attribute Assertions
 and generate reports.</t>
 
-                  <t>A report contains its provenance, with the same form and meaning
-                     as the provenance of an Endpoint Attribute Assertion.</t>
+                <t>A report contains its provenance, with the same form and meaning
+                   as the provenance of an Endpoint Attribute Assertion.</t>
     
-                  <t>A Report summarizes:<list style="symbols">
-                      <t>Endpoint Attribute Assertions, which may include Evaluation Results</t>
-                      <t>Other Reports</t>
-                      </list></t>
+                <t>A Report summarizes:<list style="symbols">
+                    <t>Endpoint Attribute Assertions, which may include Evaluation Results</t>
+                    <t>Other Reports</t>
+                    </list></t>
 
-                   <t>A Report may routine or ad hoc.</t>
-                   <t>Some reports may be machine readable. Machine readable reports may be
-                      consumable by SACM components and by automatic response systems (not specified by SACM).</t>
-              </section>
+                 <t>A Report may routine or ad hoc.</t>
+                 <t>Some reports may be machine readable. Machine readable reports may be
+                    consumable by SACM components and by automatic response systems (not specified by SACM).</t>
+                 </section>
 
-              <section title="SACM Component">
-                  <t>Although SACM components are mainly covered by the SACM architecture, we have some remarks. TODO: Move them?</t>
+            <section title="SACM Component">
+                <t>Although SACM components are mainly covered by the SACM architecture, we have some remarks. TODO: Move them?</t>
 
-                  <section title="External Attribute Collector">
+                <section title="External Attribute Collector">
     
-                       <t>An external collector is a collector 
-                          that observes endpoints from
-                          outside. [kkw-many of these [collectors] are 
-                          actually configured and operated to manage assets for reasons other
-                          than posture assessments. it is critical to bring them into this, so
-                          i like it...but does it matter if the [collector] isn't intended to support
-                          posture assessment, but happens to have information that can be
-                          used by posture assessment collection consumers? do we lump them
-                          together with collectors that are intended to support posture
-                          assessment but run external to the endpoint?]
-                          [jmf: ditto. The exampled below are of things that would perform external collection].                      
-                          </t>
+                    <t>An external collector is a collector 
+                       that observes endpoints from
+                       outside. [kkw-many of these [collectors] are 
+                       actually configured and operated to manage assets for reasons other
+                       than posture assessments. it is critical to bring them into this, so
+                       i like it...but does it matter if the [collector] isn't intended to support
+                       posture assessment, but happens to have information that can be
+                       used by posture assessment collection consumers? do we lump them
+                       together with collectors that are intended to support posture
+                       assessment but run external to the endpoint?]
+                       [jmf: ditto. The exampled below are of things that would perform external collection].                      
+                       </t>
 
-                        <t>[cek-to kkw's comment, I think the purpose here is to capture their
-                            contribution to continuous monitoring. I don't see the need to separate
-                            things whose primary job is monitoring from things whose primary job is
-                            something else. Is there a need?]</t>
-                            <t>[cek-to jmf's comment, that is what they are examples of; is a text
-                            change needed?]</t>
+                   <t>[cek-to kkw's comment, I think the purpose here is to capture their
+                       contribution to continuous monitoring. I don't see the need to separate
+                       things whose primary job is monitoring from things whose primary job is
+                       something else. Is there a need?]</t>
+                   <t>[cek-to jmf's comment, that is what they are examples of; is a text
+                       change needed?]</t>
     
-                        <t>Examples:<list style="symbols">
+                   <t>Examples:<list style="symbols">
     
-                            <t>A RADIUS server whereby an endpoint has logged onto the
-                               network</t>
-                            <t>A network profiling system, which discovers and classifies
-                               network nodes</t>
-                            <t>A Network Intrusion Detection System (NIDS) sensor</t>
-                            <t>A vulnerability scanner</t>
-                            <t>A hypervisor that peeks into the endpoint, the endpoint being a
-                               virtual machine</t>
-                            <t>A management system that configures and installs software on the
-                               endpoint</t>
-                            </list></t>
-                  </section>
+                       <t>A RADIUS server whereby an endpoint has logged onto the
+                          network</t>
+                       <t>A network profiling system, which discovers and classifies
+                          network nodes</t>
+                       <t>A Network Intrusion Detection System (NIDS) sensor</t>
+                       <t>A vulnerability scanner</t>
+                       <t>A hypervisor that peeks into the endpoint, the endpoint being a
+                          virtual machine</t>
+                       <t>A management system that configures and installs software on the
+                          endpoint</t>
+                       </list></t>
+                    </section>
 
-                  <section title="Evaluator">
-                      <t>An evaluator can consume
-                         endpoint attribute assertions, previous evaluations of posture attributes,
-                         or previous reports of evaluation results. [kkw-i don't think this
-                         conflicts with the definition in the terminology doc re: that
-                         evaluation tasks evaluate posture attributes.]</t>
-                      <t>[cek-I like the change. I think it *does* require a change in the terminology doc, though.]</t>
+                <section title="Evaluator">
+                    <t>An evaluator can consume
+                       endpoint attribute assertions, previous evaluations of posture attributes,
+                       or previous reports of evaluation results. [kkw-i don't think this
+                       conflicts with the definition in the terminology doc re: that
+                       evaluation tasks evaluate posture attributes.]</t>
+                    <t>[cek-I like the change. I think it *does* require a change in the terminology doc, though.]</t>
 
-                      <t>Example: a NEA posture validator <xref target="RFC5209"/></t>
-                      <t>[jmf- a NEA posture validator is not an example of this definition. A NEA posture assessment is, maybe?]</t>
-                      <t>[cek-Why isn't a NEA posture validator an example?]</t>
-                  </section>
+                    <t>Example: a NEA posture validator <xref target="RFC5209"/></t>
+                    <t>[jmf- a NEA posture validator is not an example of this definition. A NEA posture assessment is, maybe?]</t>
+                    <t>[cek-Why isn't a NEA posture validator an example?]</t>
+                    </section>
 
-                  <section title="Report Generator">
-                      <t>A report generator makes reports based on:<list style="symbols">
-                          <t>Endpoint Attribute Assertions, including Evaluation Results</t>
-                          <t>Other Reports (a weekly report may be created from daily
-                             reports)</t>
-                          </list></t>
-                      <t>It may summarize data continually, as the data arrives. It also may    
-                         summarize data in response to an ad hoc query.</t>
-                  </section>
-              </section>
+                <section title="Report Generator">
+                    <t>A report generator makes reports based on:<list style="symbols">
+                        <t>Endpoint Attribute Assertions, including Evaluation Results</t>
+                        <t>Other Reports (a weekly report may be created from daily
+                            reports)</t>
+                        </list></t>
+                    <t>It may summarize data continually, as the data arrives. It also may    
+                       summarize data in response to an ad hoc query.</t>
+                    </section>
+                </section>
 
-              <section title="Organization?">
-  <t>[kkw-from a reporting standpoint there needs to be
-  some concept like organization or system. without this, there is no
-  way to produce result reports that can be acted upon to provide the
-  insight or accountability that almost all continuous monitoring
-  instances are trying to achieve. from a scoring or grading 
-  standpoint, an endpoint needs to be associated with exactly one
-  organization or system. it can have a many to many relationship
-  with other types of results reporting "bins". is this important
-  to include here? we had organization as a core asset type for this
-  reason, so i think it is a key information element. but i also
-  know that i do not want to define all the different reporting
-  types, so i am unsure.]</t>
+            <section title="Organization?">
+                <t>[kkw-from a reporting standpoint there needs to be
+                   some concept like organization or system. without this, there is no
+                   way to produce result reports that can be acted upon to provide the
+                   insight or accountability that almost all continuous monitoring
+                   instances are trying to achieve. from a scoring or grading 
+                   standpoint, an endpoint needs to be associated with exactly one
+                   organization or system. it can have a many to many relationship
+                   with other types of results reporting "bins". is this important
+                   to include here? we had organization as a core asset type for this
+                   reason, so i think it is a key information element. but i also
+                   know that i do not want to define all the different reporting
+                   types, so i am unsure.]</t>
 
-  <t>[cek-I had not thought of this at all. Would it make sense to treat the organization and the bins 
-   as part of the guidance for creating reports? Maybe not. We should discuss.]</t>
-              </section>
+                <t>[cek-I had not thought of this at all. Would it make sense to treat the organization and the bins 
+                   as part of the guidance for creating reports? Maybe not. We should discuss.]</t>
+                </section>
 
-              <section title="Guidance">
-                  <t>[jmf- the guidance sections need more detail. . .]</t>
-                  <t>[cek - What is missing? We would welcome a critique or text.]</t>
-                  <t>Guidance is generally configurable by human administrators.</t>
+            <section title="Guidance">
+                <t>[jmf- the guidance sections need more detail. . .]</t>
+                <t>[cek - What is missing? We would welcome a critique or text.]</t>
+                <t>Guidance is generally configurable by human administrators.</t>
     
-                  <section title="Internal Collection Guidance">
-                      <t>An internal collector may need guidance to govern what it
-                         collects and when.</t>
-                  </section>
-                  <section title="External Collection Guidance">
-                      <t>An external collector may need guidance to govern what it
-                         collects and when.</t>
-                  </section>
-                  <section title="Evaluation Guidance">
-                      <t>An evaluator typically needs Evaluation Guidance to govern
-                         what it considers to be a good or bad security posture.</t>
-                  </section>
-                  <section title="Retention Guidance">
-                      <t>A SACM deployment may retain posture attributes, events, or
-                         evaluation results for some time. Retention supports ad hoc
-                         reporting and other use cases.</t>
-                      <t>If information is retained, retention guidance controls what is
-                         retained and for how long.</t>
-                      <t>If two or more pieces of retention guidance apply to a piece of information,
-                         the guidance calling for the longest retention should take
-                         precedence.</t>
-                  </section>
-                  <section title="Reporting Guidance">
-                      <t>A Report Generator typically needs Reporting Guidance to govern the
-                         reports it generates.</t>
-                  </section>
-              </section>
+                <section title="Internal Collection Guidance">
+                    <t>An internal collector may need guidance to govern what it
+                       collects and when.</t>
+                    </section>
+                <section title="External Collection Guidance">
+                     <t>An external collector may need guidance to govern what it
+                        collects and when.</t>
+                    </section>
+                <section title="Evaluation Guidance">
+                    <t>An evaluator typically needs Evaluation Guidance to govern
+                       what it considers to be a good or bad security posture.</t>
+                    </section>
+                <section title="Retention Guidance">
+                    <t>A SACM deployment may retain posture attributes, events, or
+                       evaluation results for some time. Retention supports ad hoc
+                       reporting and other use cases.</t>
+                    <t>If information is retained, retention guidance controls what is
+                       retained and for how long.</t>
+                    <t>If two or more pieces of retention guidance apply to a piece of information,
+                       the guidance calling for the longest retention should take
+                       precedence.</t>
+                    </section>
+                <section title="Reporting Guidance">
+                    <t>A Report Generator typically needs Reporting Guidance to govern the
+                       reports it generates.</t>
+                    </section>
+                </section>
 
-              <section title="Provenance of Information">
-                            <t>Each Endpoint Attribute Assertion and Report needs to be
-                                labeled with its provenance.</t>
-              </section>
+            <section title="Provenance of Information">
+                <t>Each Endpoint Attribute Assertion and Report needs to be
+                   labeled with its provenance.</t>
+                </section>
   
-              <section title="Endpoint">
+            <section title="Endpoint">
     
                             <t>See the definition in the SACM Terminology for Security Assessment <xref
                                     target="I-D.ietf-sacm-terminology"/>.</t>
@@ -955,7 +1246,7 @@ part of a redundancy group is replaced, the redundancy group can remain
 the same.
                                </t>
 
-                  <section title="Endpoint Identity">
+                <section title="Endpoint Identity">
     
                                 <t>An endpoint identity provides both identification and
                                     authentication of the endpoint. For example, an identity may be an
@@ -965,9 +1256,9 @@ the same.
                                 </t>
     
                                 <t>Not all kinds of identities are guaranteed to be unique.</t>
-                  </section>
-    
-                  <section title="Software Component">
+                    </section>
+
+                <section title="Software Component">
     
                                 <t>An endpoint contains and runs software components.</t>
     
@@ -1004,36 +1295,30 @@ the same.
     
                                         <t>A business application that shipped with a virus</t>
                                     </list></t>
-    
-    
-                      <section title="Unique Software Identifier">
+        
+                    <section title="Unique Software Identifier">
                                      <t>Organizations need to be able to uniquely identify and label software installed or run on an endpoint. Specifically, they need to know the name, publisher, unique ID, and version; and any related patches. In some cases the software's identity might be known a priori by the organization; in other cases, a software identity might be first detected by an organization when the software is first inventoried in an operational environment. Due to this, it is important that an organization have a stable and consistent means to identify software found during collection.</t>
 
                                 <t>A piece of software may have a unique identifier, such as a SWID tag
                                     (ISO/IEC 19770).</t>
-                      </section>
-                  </section>
+                        </section>
+                    </section>
 
-              </section> <!-- endpoint -->
+                </section> <!-- endpoint -->
 
-              <section title="User">
+            <section title="User">
     
-                  <section title="User Identity">
+                <section title="User Identity">
     
                       <t>An endpoint is often - but not always - associated with one or more
                          users.</t>
     
                       <t>A user's identity provides both identification and authentication
                          of the user. @@@ Eh?</t>
-                  </section>
-              </section>
+                     </section>
+                </section>
 
-
-
-
-        </section>              
-
-
+            </section>
 
         <section title="SACM Usage Scenario Example">
             
@@ -1048,7 +1333,7 @@ the same.
                 required to support the Detection of Posture Deviations scenario.</t>
 
                     <t>The Detection of Posture Deviations scenario involves multiple elements
-                        interacting to accomplish the goals of the scenario. <xref target="figure-elements-and-multiplicity"/> illustrates those elements along with their major communication paths.</t>
+                        interacting to accomplish the goals of the scenario. <xref target="figure-model-of-endpoint"/> illustrates those elements along with their major communication paths.</t>
 
             <section title="Graph Model for Detection of Posture Deviation">
                 <t>The following subsections contain examples of identifiers and metadata which
@@ -1254,7 +1539,7 @@ the same.
 
         <references title="Normative References">
             <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
-            &RFC2119; </references>
+            &RFC0791; &RFC2119; &RFC3587;</references>
 
         <references title="Informative References">
             <!-- Here we use entities that we defined at the beginning. --> &RFC3411; &RFC3416;
