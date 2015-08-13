@@ -2,9 +2,9 @@
 
 This is the working area for the IETF SACM Information Model draft.
 
-* [Editor's copy](https://sacmwg.github.io/draft-ietf-scam-information-model/)
-* [Working Group Draft] (https://tools.ietf.org/html/draft-ietf-scam-information-model)
-* [Compare Working Group and Editor's Drafts] (https://tools.ietf.org/rfcdiff?url1=https://www.ietf.org/id/draft-ietf-scam-information-model&url2=https://sacmwg.github.io/draft-ietf-scam-information-model/draft-ietf-scam-information-model.txt)
+* [Editor's copy](http://sacmwg.github.io/draft-ietf-sacm-information-model/)
+* [Working Group Draft] (https://tools.ietf.org/html/draft-ietf-sacm-information-model)
+* [Compare Working Group and Editor's Drafts] (https://tools.ietf.org/rfcdiff?url1=https://www.ietf.org/id/draft-ietf-sacm-information-model&url2=https://sacmwg.github.io/draft-ietf-sacm-information-model/draft-ietf-sacm-information-model.txt)
 
 ## Document Status
 
