@@ -27,7 +27,7 @@
 <!ENTITY RFC6241 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6241.xml">
 <!ENTITY RFC6876 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6876.xml">
 <!ENTITY RFC7171 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7171.xml">
-<!ENTITY I-D.ietf-sacm-use-cases SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ietf-sacm-use-cases.xml">
+<!ENTITY RFC7632 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7632.xml">
 <!ENTITY I-D.ietf-sacm-terminology SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-sacm-terminology-05.xml">
 <!ENTITY I-D.ietf-sacm-requirements SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-sacm-requirements-01.xml">
 <!ENTITY I-D.ietf-sacm-architecture SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-sacm-architecture-00.xml">
@@ -130,8 +130,24 @@
                 <email>llorenzin@pulsesecure.net</email>
             </address>
         </author>
-
-        <date year="2015"/>
+        <author fullname="Daniel Haynes" initials="D.H." surname="Haynes">
+          <organization>The MITRE Corporation</organization>
+          <address>
+            <postal>
+              <street>202 Burlington Road</street>
+              <!-- Reorder these if your country does things differently -->
+              <city>Bedford</city>
+              <region>MA</region>
+              <code>01730</code>
+              <country>USA</country>
+            </postal>
+            <phone/>
+            <email>dhaynes@mitre.org</email>
+            <!-- uri and facsimile elements may also be added -->
+          </address>
+        </author>
+      
+        <date year="2016"/>
 
         <area>General</area>
 
@@ -178,7 +194,7 @@
 
             <t>These activities are aimed at the level of the technology that performs operations to
                 support collection, evaluation, and reporting.</t>
-            <t>Review of the SACM Use Case <xref target="I-D.ietf-sacm-use-cases"/> usage scenarios
+          <t>Review of the SACM Use Case <xref target="RFC7632"/> usage scenarios
                 show a common set of business process areas that are critical to understanding
                 endpoint posture such that appropriate policies, security capabilities, and
                 decisions can be developed and implemented.</t>
@@ -190,7 +206,7 @@
                     <t>Vulnerability Management</t>
                 </list></t>
             <t>These management process areas are a way to connect the SACM use cases and building
-                blocks <xref target="I-D.ietf-sacm-use-cases"/> to the organizational needs such
+              blocks <xref target="RFC7632"/> to the organizational needs such
                 that the definition of information requirements has a clearly understood
                 context. (/wandw). For more information, <xref target="mapping-to-sacm-use-cases"/> 
                 maps the SACM information model to the SACM use cases.</t>
@@ -350,29 +366,29 @@
             <figure title="Model of an Endpoint"
                 anchor="figure-model-of-an-endpoint">
                 <artwork>
-                    <![CDATA[
-                +---------+*______in>_______*+-----+
-                |Hardware |                  |!   !|
-                |Component|   +---------+    |!   !|
-                +---------+   |Software |in> |!   !|
-                    1|        |Component|____|!   !|
-                     |        +---------+*  *|!   !|
-                     |            1|         |!   !|
-                     |            *|         |     |       +----------+    
-                     |        +---------+    |End- |*_____*| Identity |
-                    *|        |Software |in> |point| acts  +----------+
-                +---------+   |Instance |____|     | for>        
-                |Hardware |   +---------+*  1|!   !|          
-                |Instance |__________________|!   !|           
-                +---------+*      in>       1|!   !|
-                                             |!   !|
-                                             |!   !|____   
-                                             |!   !|0..1|  
-                                             +-----+    |     
-                                                |*      |  
-                                                |_______|  
-                                                   in> 
-                    ]]>
+            <![CDATA[
+        +---------+*______in>_______*+-----+
+        |Hardware |                  |!   !|
+        |Component|   +---------+    |!   !|
+        +---------+   |Software |in> |!   !|
+            1|        |Component|____|!   !|
+             |        +---------+*  *|!   !|
+             |            1|         |!   !|
+             |            *|         |     |       +----------+    
+             |        +---------+    |End- |*_____*| Identity |
+            *|        |Software |in> |point| acts  +----------+
+        +---------+   |Instance |____|     | for>        
+        |Hardware |   +---------+*  1|!   !|          
+        |Instance |__________________|!   !|           
+        +---------+*      in>       1|!   !|
+                                     |!   !|
+                                     |!   !|____   
+                                     |!   !|0..1|  
+                                     +-----+    |     
+                                        |*      |  
+                                        |_______|  
+                                           in> 
+            ]]>
                 </artwork>
                 
             </figure>
@@ -551,29 +567,28 @@
             <figure title="Model of an Endpoint"
                             anchor="figure-model-of-endpoint">
                             <artwork>                              
-                                
                                 <![CDATA[
-+---------+*______in>_______*+-----+
-|Hardware |                  |!   !|
-|Component|   +---------+    |!   !|       +--------+*________________
-+---------+   |Software |in> |!   !|*_____*|Location|___________   <in|
-    1|        |Component|____|!   !|  in>  +--------+*  <in    *|     |
-     |        +---------+*  *|!   !|                        +-------+ |
-     |            1|         |!   !|                        |Account| |
-     |            *|         |     |       +----------+     +-------+ |
-     |        +---------+    |End- |*_____*| Identity |_________|0..1 |
-    *|        |Software |in> |point| acts  +----------+* belongs      |
-+---------+   |Instance |____|     | for>    0..1|^        to>        |
-|Hardware |   +---------+*  1|!   !|             |acts                |
-|Instance |__________________|!   !|            *|for                 |*
-+---------+*      in>       1|!   !|_______+---------+         +-------+
-                             |!   !|1 <in *|Network  |1_______*|Address|
-                             |!   !|____   |Interface| <bound  +-------+
-                             |!   !|0..1|  +---------+   to
-                             +-----+    |   *|   |0..1   
-                                |*      |    |___|
-                                |_______|     in>
-                                   in> 
++---------+*____in>______*+-----+
+|Hardware |               |!   !|
+|Component| +---------+   |!   !|      +--------+*______________
++---------+ |Software |in>|!   !|*____*|Location|_________   <in|
+    1|      |Component|___|!   !|  in> +--------+*  <in  *|     |
+     |      +---------+* *|!   !|                    +-------+  |
+     |          1|        |!   !|                    |Account|  |
+     |          *|        |     |      +----------+  +-------+  |
+     |     +--------+     |End- |*____*| Identity |______|0..1  |
+    *|     |Software|in>  |point| acts +----------+* belongs    |
++--------+ |Instance|_____|     | for>   0..1|^        to>      |
+|Hardware| +--------+*   1|!   !|            |acts              |
+|Instance|________________|!   !|           *|for               |*
++--------+*    in>       1|!   !|______+---------+          +-------+
+                          |!   !|1 <in *|Network  |1_______*|Address|
+                          |!   !|____  |Interface| <bound   +-------+
+                          |!   !|0..1| +---------+   to
+                          +-----+    |   *|   |0..1   
+                             |*      |    |___|
+                             |_______|     in>
+                                 in> 
     ]]>
                             </artwork>
                 </figure>
@@ -589,24 +604,26 @@
 
             <figure title="Information Elements"
                             anchor="figure-information-elements">
-                            <artwork><![CDATA[                                  
-                   +-----+            +---------+
-                   | AVP |____________|Endpoint |
-                   +-----+1..*       1|Attribute|            
-                                      |Assertion|                    
-                                      +---------+                    
-                                        |*                     +-------+
-                                        |                      |Summary|
-                                        |                      +-------+
-                                        |produced-by               *|       
-                                        |V                          |
-                                       1|                           |
-     +--------+              +-----------+                          |
-     |        |              | SACM      |__________________________|
-     |Guidance|              | Component |1      <produced-by
-     +--------+*____________1+-----------+
-                <produced-by
-    ]]></artwork>
+                            <artwork>
+                    <![CDATA[                                  
+         +-----+            +---------+
+         | AVP |____________|Endpoint |
+         +-----+1..*       1|Attribute|            
+                            |Assertion|                    
+                            +---------+                    
+                              |*                     +-------+
+                              |                      |Summary|
+                              |                      +-------+
+                              |produced-by               *|       
+                              |V                          |
+                             1|                           |
+ +--------+              +-----------+                    |
+ |        |              | SACM      |____________________|
+ |Guidance|              | Component |1      <produced-by
+ +--------+*____________1+-----------+
+            <produced-by
+]]>
+                            </artwork>
                        </figure>
 
             <t><xref target="figure-information-elements-take-2"/>
@@ -979,7 +996,7 @@
                        This occurs, for example, when the network interface is online
                        because of successful 802.1X.
                        An internal collector may be aware of the identity.
-                       An external collector (such as a RADIUS server) will be aware of the identity.</t>
+                       An external collector (such as a RADIUS server <xref target="RFC3580"/>) will be aware of the identity.</t>
                     </list></t>
                 </section>
 
@@ -1314,7 +1331,7 @@ and generate reports.</t>
     
                    <t>Examples:<list style="symbols">
     
-                       <t>A RADIUS server whereby an endpoint has logged onto the
+                     <t>A RADIUS server <xref target="RFC3580"/> whereby an endpoint has logged onto the
                           network</t>
                        <t>A network profiling system, which discovers and classifies
                           network nodes</t>
@@ -1507,7 +1524,7 @@ the same.
 
             <t>This section illustrates the proposed SACM Information Model as applied to
                 SACM Usage Scenario 2.2.3, Detection of Posture Deviations <xref
-                    target="I-D.ietf-sacm-use-cases"/>. The following subsections describe the
+                  target="RFC7632"/>. The following subsections describe the
                 elements (components and elements), graph model, and operations (sample workflow)
                 required to support the Detection of Posture Deviations scenario.</t>
 
@@ -1732,9 +1749,8 @@ the same.
         <references title="Informative References">
             <!-- Here we use entities that we defined at the beginning. --> &RFC3411; &RFC3416;
             &RFC3418; &RFC3444; &RFC3580; &RFC3954; &RFC4287; &RFC4949; &RFC5201; &RFC5209;
-            &RFC5424; &RFC5792; &RFC5793; &RFC6020; &RFC6241; &RFC6876; &RFC7171;
+            &RFC5424; &RFC5792; &RFC5793; &RFC6020; &RFC6241; &RFC6876; &RFC7171; &RFC7632;
             
-            &I-D.ietf-sacm-use-cases;
             &I-D.ietf-sacm-requirements; &I-D.ietf-sacm-terminology;
             &I-D.ietf-sacm-architecture;
             &I-D.salowey-sacm-xmpp-grid;
@@ -2080,6 +2096,9 @@ the same.
                 <t>Added the <xref target="information-model-framework"/> section.  Provided notes for the type of information we need to add in this section.</t>
                 <t>Added the <xref target="information-model-assets"/> section. Moved sections on Endpoint, Hardware Component, Software Component, Hardware Instance, and Software Instance there. Provided notes for the type of information we need to add in this section.</t>
                 <t>Removed the Provenance of Information Section.  SACM is not going to solve provenance rather give organizations enough information to figure it out.</t>
+                <t>Updated references to the Endpoint Security Posture Assessment: Enterprise Use Cases document to reflect that it was published as an RFC.</t>
+                <t>Fixed the formatting of a few figures.</t>
+                <t>Included references to <xref target="RFC3580"/> where RADIUS is mentioned.</t>
             </section>
             
         </section>
@@ -2089,7 +2108,7 @@ the same.
             <t>TODO: revise</t>
             
             <t>(wandw)This information model directly corresponds to all four use cases defined in the
-                SACM Use Cases draft <xref target="I-D.ietf-sacm-use-cases"/>. It uses these use
+              SACM Use Cases draft <xref target="RFC7632"/>. It uses these use
                 cases in coordination to achieve a small set of well-defined tasks.</t>
             
             <t>Sections [removed] thru [removed] address each of the process areas. For each
@@ -2571,7 +2590,7 @@ Write |     +------------+       | Query
                     activities. Then it identifies management process areas that use endpoint posture
                     assessment to achieve organizational security objectives. These process areas were
                     then broken down into operations that mirrored the typical workflow from the SACM
-                    Use Cases draft <xref target="I-D.ietf-sacm-use-cases"/>. These operations identify
+                    Use Cases draft <xref target="RFC7632"/>. These operations identify
                     architectural components and their information needs. In this section, information
                     elements derived from those information needs are mapped back to the four main
                     activities listed above.</t>
