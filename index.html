@@ -612,12 +612,12 @@ ul.toc a:first-child {
 <link href="#rfc.authors" rel="Chapter"/>
 
 
-  <meta name="generator" content="xml2rfc version 2.5.0 - http://tools.ietf.org/tools/xml2rfc" />
+  <meta name="generator" content="xml2rfc version 2.5.1 - http://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
-  <meta name="dct.creator" content="Waltermire, D., Ed., Watson, K., Kahn, C., and L. Lorenzin" />
+  <meta name="dct.creator" content="Waltermire, D., Ed., Watson, K., Kahn, C., Lorenzin, L., and D. Haynes" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-information-model-03" />
-  <meta name="dct.issued" scheme="ISO8601" content="2015-9-23" />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-1-5" />
   <meta name="dct.abstract" content="This document proposes an information model for SACM." />
   <meta name="description" content="This document proposes an information model for SACM." />
 
@@ -641,7 +641,7 @@ ul.toc a:first-child {
   <td class="right">K. Watson</td>
 </tr>
 <tr>
-  <td class="left">Expires: March 26, 2016</td>
+  <td class="left">Expires: July 8, 2016</td>
   <td class="right">DHS</td>
 </tr>
 <tr>
@@ -658,7 +658,15 @@ ul.toc a:first-child {
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">September 23, 2015</td>
+  <td class="right">D. Haynes</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">The MITRE Corporation</td>
+</tr>
+<tr>
+  <td class="left"></td>
+  <td class="right">January 5, 2016</td>
 </tr>
 
     	
@@ -678,11 +686,11 @@ ul.toc a:first-child {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on March 26, 2016.</p>
+<p>This Internet-Draft will expire on July 8, 2016.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
-<p>Copyright (c) 2015 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>Copyright (c) 2016 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
 <p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
 
   
@@ -862,7 +870,7 @@ ul.toc a:first-child {
   <li>Policy evaluation expression and results reporting</li>
 </ol>
 <p id="rfc.section.1.p.3">These activities are aimed at the level of the technology that performs operations to support collection, evaluation, and reporting.</p>
-<p id="rfc.section.1.p.4">Review of the SACM Use Case <a href="#I-D.ietf-sacm-use-cases">[I-D.ietf-sacm-use-cases]</a> usage scenarios show a common set of business process areas that are critical to understanding endpoint posture such that appropriate policies, security capabilities, and decisions can be developed and implemented.</p>
+<p id="rfc.section.1.p.4">Review of the SACM Use Case <a href="#RFC7632">[RFC7632]</a> usage scenarios show a common set of business process areas that are critical to understanding endpoint posture such that appropriate policies, security capabilities, and decisions can be developed and implemented.</p>
 <p id="rfc.section.1.p.5">For this information model we have chosen to focus on the following business process areas:</p>
 
 <ul>
@@ -871,7 +879,7 @@ ul.toc a:first-child {
   <li>Configuration Management</li>
   <li>Vulnerability Management</li>
 </ul>
-<p id="rfc.section.1.p.6">These management process areas are a way to connect the SACM use cases and building blocks <a href="#I-D.ietf-sacm-use-cases">[I-D.ietf-sacm-use-cases]</a> to the organizational needs such that the definition of information requirements has a clearly understood context. (/wandw). For more information, <a href="#mapping-to-sacm-use-cases">Appendix B</a> maps the SACM information model to the SACM use cases.</p>
+<p id="rfc.section.1.p.6">These management process areas are a way to connect the SACM use cases and building blocks <a href="#RFC7632">[RFC7632]</a> to the organizational needs such that the definition of information requirements has a clearly understood context. (/wandw). For more information, <a href="#mapping-to-sacm-use-cases">Appendix B</a> maps the SACM information model to the SACM use cases.</p>
 <p id="rfc.section.1.p.7">The SACM information model offers a loose coupling between providers and consumers of security information. A provider can relay what it observes or infers, without knowing which consumers will use the information, or how they will use it. A consumer need not know exactly which provider generated a piece of information, or by what method.</p>
 <p id="rfc.section.1.p.8">At the same time, a consumer *can* know these things, if necessary.</p>
 <p id="rfc.section.1.p.9">As things evolve, a provider can relay supplemental information. Some consumers will understand and benefit from the supplemental information; other consumers will not understand and will disregard it.</p>
@@ -922,29 +930,29 @@ ul.toc a:first-child {
 <div id="rfc.figure.1"/>
 <div id="figure-model-of-an-endpoint"/>
 <pre>
-                    
-                +---------+*______in&gt;_______*+-----+
-                |Hardware |                  |!   !|
-                |Component|   +---------+    |!   !|
-                +---------+   |Software |in&gt; |!   !|
-                    1|        |Component|____|!   !|
-                     |        +---------+*  *|!   !|
-                     |            1|         |!   !|
-                     |            *|         |     |       +----------+    
-                     |        +---------+    |End- |*_____*| Identity |
-                    *|        |Software |in&gt; |point| acts  +----------+
-                +---------+   |Instance |____|     | for&gt;        
-                |Hardware |   +---------+*  1|!   !|          
-                |Instance |__________________|!   !|           
-                +---------+*      in&gt;       1|!   !|
-                                             |!   !|
-                                             |!   !|____   
-                                             |!   !|0..1|  
-                                             +-----+    |     
-                                                |*      |  
-                                                |_______|  
-                                                   in&gt; 
-                    
+            
+        +---------+*______in&gt;_______*+-----+
+        |Hardware |                  |!   !|
+        |Component|   +---------+    |!   !|
+        +---------+   |Software |in&gt; |!   !|
+            1|        |Component|____|!   !|
+             |        +---------+*  *|!   !|
+             |            1|         |!   !|
+             |            *|         |     |       +----------+    
+             |        +---------+    |End- |*_____*| Identity |
+            *|        |Software |in&gt; |point| acts  +----------+
+        +---------+   |Instance |____|     | for&gt;        
+        |Hardware |   +---------+*  1|!   !|          
+        |Instance |__________________|!   !|           
+        +---------+*      in&gt;       1|!   !|
+                                     |!   !|
+                                     |!   !|____   
+                                     |!   !|0..1|  
+                                     +-----+    |     
+                                        |*      |  
+                                        |_______|  
+                                           in&gt; 
+            
                 </pre>
 <p class="figure">Figure 1: Model of an Endpoint</p>
 <h1 id="rfc.section.4.1"><a href="#rfc.section.4.1">4.1.</a> Asset</h1>
@@ -1033,28 +1041,27 @@ ul.toc a:first-child {
 <div id="figure-model-of-endpoint"/>
 <pre>                              
                                 
-                                
-+---------+*______in&gt;_______*+-----+
-|Hardware |                  |!   !|
-|Component|   +---------+    |!   !|       +--------+*________________
-+---------+   |Software |in&gt; |!   !|*_____*|Location|___________   &lt;in|
-    1|        |Component|____|!   !|  in&gt;  +--------+*  &lt;in    *|     |
-     |        +---------+*  *|!   !|                        +-------+ |
-     |            1|         |!   !|                        |Account| |
-     |            *|         |     |       +----------+     +-------+ |
-     |        +---------+    |End- |*_____*| Identity |_________|0..1 |
-    *|        |Software |in&gt; |point| acts  +----------+* belongs      |
-+---------+   |Instance |____|     | for&gt;    0..1|^        to&gt;        |
-|Hardware |   +---------+*  1|!   !|             |acts                |
-|Instance |__________________|!   !|            *|for                 |*
-+---------+*      in&gt;       1|!   !|_______+---------+         +-------+
-                             |!   !|1 &lt;in *|Network  |1_______*|Address|
-                             |!   !|____   |Interface| &lt;bound  +-------+
-                             |!   !|0..1|  +---------+   to
-                             +-----+    |   *|   |0..1   
-                                |*      |    |___|
-                                |_______|     in&gt;
-                                   in&gt; 
++---------+*____in&gt;______*+-----+
+|Hardware |               |!   !|
+|Component| +---------+   |!   !|      +--------+*______________
++---------+ |Software |in&gt;|!   !|*____*|Location|_________   &lt;in|
+    1|      |Component|___|!   !|  in&gt; +--------+*  &lt;in  *|     |
+     |      +---------+* *|!   !|                    +-------+  |
+     |          1|        |!   !|                    |Account|  |
+     |          *|        |     |      +----------+  +-------+  |
+     |     +--------+     |End- |*____*| Identity |______|0..1  |
+    *|     |Software|in&gt;  |point| acts +----------+* belongs    |
++--------+ |Instance|_____|     | for&gt;   0..1|^        to&gt;      |
+|Hardware| +--------+*   1|!   !|            |acts              |
+|Instance|________________|!   !|           *|for               |*
++--------+*    in&gt;       1|!   !|______+---------+          +-------+
+                          |!   !|1 &lt;in *|Network  |1_______*|Address|
+                          |!   !|____  |Interface| &lt;bound   +-------+
+                          |!   !|0..1| +---------+   to
+                          +-----+    |   *|   |0..1   
+                             |*      |    |___|
+                             |_______|     in&gt;
+                                 in&gt; 
     
                             </pre>
 <p class="figure">Figure 2: Model of an Endpoint</p>
@@ -1062,24 +1069,26 @@ ul.toc a:first-child {
 <p><a href="#figure-information-elements">Figure 3</a> is the core of the information model. It represents the information elements and their relationships.</p>
 <div id="rfc.figure.3"/>
 <div id="figure-information-elements"/>
-<pre>                                  
-                   +-----+            +---------+
-                   | AVP |____________|Endpoint |
-                   +-----+1..*       1|Attribute|            
-                                      |Assertion|                    
-                                      +---------+                    
-                                        |*                     +-------+
-                                        |                      |Summary|
-                                        |                      +-------+
-                                        |produced-by               *|       
-                                        |V                          |
-                                       1|                           |
-     +--------+              +-----------+                          |
-     |        |              | SACM      |__________________________|
-     |Guidance|              | Component |1      &lt;produced-by
-     +--------+*____________1+-----------+
-                &lt;produced-by
-    </pre>
+<pre>
+                                                      
+         +-----+            +---------+
+         | AVP |____________|Endpoint |
+         +-----+1..*       1|Attribute|            
+                            |Assertion|                    
+                            +---------+                    
+                              |*                     +-------+
+                              |                      |Summary|
+                              |                      +-------+
+                              |produced-by               *|       
+                              |V                          |
+                             1|                           |
+ +--------+              +-----------+                    |
+ |        |              | SACM      |____________________|
+ |Guidance|              | Component |1      &lt;produced-by
+ +--------+*____________1+-----------+
+            &lt;produced-by
+
+                            </pre>
 <p class="figure">Figure 3: Information Elements</p>
 <p><a href="#figure-information-elements-take-2">Figure 4</a> is a potential alternative structure for assertions.  It is inspired by triple stores.  See http://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/.</p>
 <div id="rfc.figure.4"/>
@@ -1211,7 +1220,7 @@ ul.toc a:first-child {
 <ul>
   <li>A network interface is "in" an endpoint.</li>
   <li>A network interface is "in" another network interface; this is for a nested interface. CEK: And this allows representing compliance policies that are worthwhile. But is this too advanced for the initial set of SACM RFCs?</li>
-  <li>A network interface "acts for" an identity.  This occurs, for example, when the network interface is online because of successful 802.1X.  An internal collector may be aware of the identity.  An external collector (such as a RADIUS server) will be aware of the identity.</li>
+  <li>A network interface "acts for" an identity.  This occurs, for example, when the network interface is online because of successful 802.1X.  An internal collector may be aware of the identity.  An external collector (such as a RADIUS server <a href="#RFC3580">[RFC3580]</a>) will be aware of the identity.</li>
 </ul>
 <h1 id="rfc.section.5.3"><a href="#rfc.section.5.3">5.3.</a> Address</h1>
 <p id="rfc.section.5.3.p.1">TODO: DELETE THIS SECTION. ISSUE (CEK): Do we still want to model layer 4 addresses?</p>
@@ -1384,7 +1393,7 @@ ul.toc a:first-child {
 <p id="rfc.section.5.10.1.p.4">Examples:</p>
 
 <ul>
-  <li>A RADIUS server whereby an endpoint has logged onto the network</li>
+  <li>A RADIUS server <a href="#RFC3580">[RFC3580]</a> whereby an endpoint has logged onto the network</li>
   <li>A network profiling system, which discovers and classifies network nodes</li>
   <li>A Network Intrusion Detection System (NIDS) sensor</li>
   <li>A vulnerability scanner</li>
@@ -1464,7 +1473,7 @@ ul.toc a:first-child {
 <h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> SACM Usage Scenario Example</h1>
 <p id="rfc.section.6.p.1">TODO: this section needs to refer out to wherever the operations / generalized workflow content ends up</p>
 <p id="rfc.section.6.p.2">TODO: revise to eliminate graph references</p>
-<p id="rfc.section.6.p.3">This section illustrates the proposed SACM Information Model as applied to SACM Usage Scenario 2.2.3, Detection of Posture Deviations <a href="#I-D.ietf-sacm-use-cases">[I-D.ietf-sacm-use-cases]</a>. The following subsections describe the elements (components and elements), graph model, and operations (sample workflow) required to support the Detection of Posture Deviations scenario.</p>
+<p id="rfc.section.6.p.3">This section illustrates the proposed SACM Information Model as applied to SACM Usage Scenario 2.2.3, Detection of Posture Deviations <a href="#RFC7632">[RFC7632]</a>. The following subsections describe the elements (components and elements), graph model, and operations (sample workflow) required to support the Detection of Posture Deviations scenario.</p>
 <p id="rfc.section.6.p.4">The Detection of Posture Deviations scenario involves multiple elements interacting to accomplish the goals of the scenario. <a href="#figure-model-of-endpoint">Figure 2</a> illustrates those elements along with their major communication paths.</p>
 <h1 id="rfc.section.6.1"><a href="#rfc.section.6.1">6.1.</a> Graph Model for Detection of Posture Deviation</h1>
 <p id="rfc.section.6.1.p.1">The following subsections contain examples of identifiers and metadata which would enable detection of posture deviation. These lists are by no means exhaustive - many other types of metadata would be enumerated in a data model that fully addressed this usage scenario.</p>
@@ -1628,12 +1637,6 @@ ul.toc a:first-child {
         <b id="I-D.ietf-sacm-terminology">[I-D.ietf-sacm-terminology]</b>
       </td>
       <td class="top"><a>Waltermire, D.</a>, <a>Montville, A.</a>, <a>Harrington, D.</a> and <a>N. Cam-Winget</a>, "<a href="http://tools.ietf.org/html/draft-ietf-sacm-terminology-05">Terminology for Security Assessment</a>", Internet-Draft draft-ietf-sacm-terminology-05, August 2014.</td>
-    </tr>
-    <tr>
-      <td class="reference">
-        <b id="I-D.ietf-sacm-use-cases">[I-D.ietf-sacm-use-cases]</b>
-      </td>
-      <td class="top"><a>Waltermire, D.</a> and <a>D. Harrington</a>, "<a href="http://tools.ietf.org/html/draft-ietf-sacm-use-cases-10">Endpoint Security Posture Assessment - Enterprise Use Cases</a>", Internet-Draft draft-ietf-sacm-use-cases-10, July 2015.</td>
     </tr>
     <tr>
       <td class="reference">
@@ -1807,6 +1810,12 @@ ul.toc a:first-child {
     </tr>
     <tr>
       <td class="reference">
+        <b id="RFC7632">[RFC7632]</b>
+      </td>
+      <td class="top"><a>Waltermire, D.</a> and <a>D. Harrington</a>, "<a href="http://tools.ietf.org/html/rfc7632">Endpoint Security Posture Assessment: Enterprise Use Cases</a>", RFC 7632, DOI 10.17487/RFC7632, September 2015.</td>
+    </tr>
+    <tr>
+      <td class="reference">
         <b id="SP800-117">[SP800-117]</b>
       </td>
       <td class="top"><a>Quinn, S.</a>, <a>Scarfone, K.</a> and <a>D. Waltermire</a>, "<a href="http://csrc.nist.gov/publications/drafts/800-117-R1/Draft-SP800-117-r1.pdf">Guide to Adopting and Using the Security Content Automation Protocol (SCAP) Version 1.2</a>", SP 800-117, January 2012.</td>
@@ -1906,9 +1915,12 @@ ul.toc a:first-child {
 <p id="rfc.section.A.3.p.2">Added the <a href="#information-model-framework">Section 3</a> section.  Provided notes for the type of information we need to add in this section.</p>
 <p id="rfc.section.A.3.p.3">Added the <a href="#information-model-assets">Section 4</a> section. Moved sections on Endpoint, Hardware Component, Software Component, Hardware Instance, and Software Instance there. Provided notes for the type of information we need to add in this section.</p>
 <p id="rfc.section.A.3.p.4">Removed the Provenance of Information Section.  SACM is not going to solve provenance rather give organizations enough information to figure it out.</p>
+<p id="rfc.section.A.3.p.5">Updated references to the Endpoint Security Posture Assessment: Enterprise Use Cases document to reflect that it was published as an RFC.</p>
+<p id="rfc.section.A.3.p.6">Fixed the formatting of a few figures.</p>
+<p id="rfc.section.A.3.p.7">Included references to <a href="#RFC3580">[RFC3580]</a> where RADIUS is mentioned.</p>
 <h1 id="rfc.appendix.B"><a href="#rfc.appendix.B">Appendix B.</a> <a href="#mapping-to-sacm-use-cases" id="mapping-to-sacm-use-cases">Mapping to SACM Use Cases</a></h1>
 <p id="rfc.section.B.p.1">TODO: revise</p>
-<p id="rfc.section.B.p.2">(wandw)This information model directly corresponds to all four use cases defined in the SACM Use Cases draft <a href="#I-D.ietf-sacm-use-cases">[I-D.ietf-sacm-use-cases]</a>. It uses these use cases in coordination to achieve a small set of well-defined tasks.</p>
+<p id="rfc.section.B.p.2">(wandw)This information model directly corresponds to all four use cases defined in the SACM Use Cases draft <a href="#RFC7632">[RFC7632]</a>. It uses these use cases in coordination to achieve a small set of well-defined tasks.</p>
 <p id="rfc.section.B.p.3">Sections [removed] thru [removed] address each of the process areas. For each process area, a "Process Area Description" sub-section represent an end state that is consistent with all the General Requirements and many of the Use Case Requirements identified in the requirements draft <a href="#I-D.ietf-sacm-requirements">[I-D.ietf-sacm-requirements]</a>.</p>
 <p id="rfc.section.B.p.4">The management process areas and supporting operations defined in this memo directly support REQ004 Endpoint Discovery; REQ005-006 Attribute and Information Based Queries, and REQ0007 Asynchronous Publication.</p>
 <p id="rfc.section.B.p.5">In addition, the operations that defined for each business process in this memo directly correlate with the typical workflow identified in the SACM Use Case document.(/wandw)</p>
@@ -2111,7 +2123,7 @@ Write |     +------------+       | Query
 <p id="rfc.section.G.2.p.1">The previous sections highlighted information needs for a set of management process areas that use posture assessment to achieve organizational security goals. A single information need may be made up of multiple information elements. Some information elements may be required for two different process areas, resulting in two different requirements. In an effort to support the main idea of collect once and reuse the data to support multiple processes, we try to define a singular set of information elements that will support all the associated information needs.</p>
 <h1 id="rfc.appendix.G.3"><a href="#rfc.appendix.G.3">G.3.</a> <a href="#im-elements" id="im-elements">Information Model Elements</a></h1>
 <p id="rfc.section.G.3.p.1">TODO: Kim to pull up relevant content into section 4 / Elements</p>
-<p id="rfc.section.G.3.p.2">Traditionally, one would use the SACM architecture to define interfaces that required information exchanges. Identified information elements would then be based on those exchanges. Because the SACM architecture document is still in the personal draft stage, this information model uses a different approach to the identification of information elements. First it lists the four main endpoint posture assessment activities. Then it identifies management process areas that use endpoint posture assessment to achieve organizational security objectives. These process areas were then broken down into operations that mirrored the typical workflow from the SACM Use Cases draft <a href="#I-D.ietf-sacm-use-cases">[I-D.ietf-sacm-use-cases]</a>. These operations identify architectural components and their information needs. In this section, information elements derived from those information needs are mapped back to the four main activities listed above.</p>
+<p id="rfc.section.G.3.p.2">Traditionally, one would use the SACM architecture to define interfaces that required information exchanges. Identified information elements would then be based on those exchanges. Because the SACM architecture document is still in the personal draft stage, this information model uses a different approach to the identification of information elements. First it lists the four main endpoint posture assessment activities. Then it identifies management process areas that use endpoint posture assessment to achieve organizational security objectives. These process areas were then broken down into operations that mirrored the typical workflow from the SACM Use Cases draft <a href="#RFC7632">[RFC7632]</a>. These operations identify architectural components and their information needs. In this section, information elements derived from those information needs are mapped back to the four main activities listed above.</p>
 <p id="rfc.section.G.3.p.3">The original liaison statement <a href="#IM-LIAISON-STATEMENT-NIST">[IM-LIAISON-STATEMENT-NIST]</a> requested contributions for the SACM information model in the four areas described below.  Based on the capabilities defined previously in this document, the requested areas alone do not provide a sufficient enough categorization of the necessary information model elements. The following sub-sections directly address the requested areas as follows:</p>
 
 <ol>
@@ -2688,6 +2700,28 @@ Write |     +------------+       | Query
 	  <span class="country-name vcardline">USA</span>
 	</span>
 	<span class="vcardline">EMail: <a href="mailto:llorenzin@pulsesecure.net">llorenzin@pulsesecure.net</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Daniel Haynes</span> 
+	  <span class="n hidden">
+		<span class="family-name">Haynes</span>
+	  </span>
+	</span>
+	<span class="org vcardline">The MITRE Corporation</span>
+	<span class="adr">
+	  <span class="vcardline">202 Burlington Road</span>
+
+	  <span class="vcardline">
+		<span class="locality">Bedford</span>,  
+		<span class="region">MA</span> 
+		<span class="code">01730</span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:dhaynes@mitre.org">dhaynes@mitre.org</a></span>
 
   </address>
 </div>

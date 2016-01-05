@@ -5,11 +5,13 @@
 SACM                                                  D. Waltermire, Ed.
 Internet-Draft                                                      NIST
 Intended status: Informational                                 K. Watson
-Expires: March 26, 2016                                              DHS
+Expires: July 8, 2016                                                DHS
                                                                  C. Kahn
                                                              L. Lorenzin
                                                        Pulse Secure, LLC
-                                                      September 23, 2015
+                                                               D. Haynes
+                                                   The MITRE Corporation
+                                                         January 5, 2016
 
 
                          SACM Information Model
@@ -34,11 +36,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 26, 2016.
+   This Internet-Draft will expire on July 8, 2016.
 
 Copyright Notice
 
-   Copyright (c) 2015 IETF Trust and the persons identified as the
+   Copyright (c) 2016 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -48,15 +50,16 @@ Copyright Notice
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
+
+
+
+Waltermire, et al.        Expires July 8, 2016                  [Page 1]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
-
-
-
-Waltermire, et al.       Expires March 26, 2016                 [Page 1]
-
-Internet-Draft           SACM Information Model           September 2015
-
 
 Table of Contents
 
@@ -103,17 +106,17 @@ Table of Contents
          5.1.5.5.  Accuracy  . . . . . . . . . . . . . . . . . . . .  21
          5.1.5.6.  Data Model Requirements . . . . . . . . . . . . .  21
        5.1.6.  Certificate . . . . . . . . . . . . . . . . . . . . .  21
+
+
+
+Waltermire, et al.        Expires July 8, 2016                  [Page 2]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
          5.1.6.1.  Range of values . . . . . . . . . . . . . . . . .  21
          5.1.6.2.  Meaning . . . . . . . . . . . . . . . . . . . . .  21
          5.1.6.3.  Multiplicity  . . . . . . . . . . . . . . . . . .  21
-
-
-
-Waltermire, et al.       Expires March 26, 2016                 [Page 2]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
          5.1.6.4.  Stability . . . . . . . . . . . . . . . . . . . .  21
          5.1.6.5.  Accuracy  . . . . . . . . . . . . . . . . . . . .  22
          5.1.6.6.  Data model requirements . . . . . . . . . . . . .  22
@@ -159,17 +162,17 @@ Internet-Draft           SACM Information Model           September 2015
    6.  SACM Usage Scenario Example . . . . . . . . . . . . . . . . .  36
      6.1.  Graph Model for Detection of Posture Deviation  . . . . .  36
        6.1.1.  Components  . . . . . . . . . . . . . . . . . . . . .  36
+
+
+
+Waltermire, et al.        Expires July 8, 2016                  [Page 3]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
        6.1.2.  Identifiers . . . . . . . . . . . . . . . . . . . . .  37
        6.1.3.  Metadata  . . . . . . . . . . . . . . . . . . . . . .  37
        6.1.4.  Relationships between Identifiers and Metadata  . . .  38
-
-
-
-Waltermire, et al.       Expires March 26, 2016                 [Page 3]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
      6.2.  Workflow  . . . . . . . . . . . . . . . . . . . . . . . .  38
    7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  39
      7.1.  Contributors  . . . . . . . . . . . . . . . . . . . . . .  39
@@ -189,14 +192,14 @@ Internet-Draft           SACM Information Model           September 2015
      C.1.  What is Trusted Network Connect?  . . . . . . . . . . . .  49
      C.2.  What is TNC IF-MAP? . . . . . . . . . . . . . . . . . . .  49
      C.3.  What is the TNC Information Model?  . . . . . . . . . . .  50
-   Appendix D.  Text for Possible Inclusion in the Terminology Draft  50
-     D.1.  Terms and Definitions . . . . . . . . . . . . . . . . . .  50
+   Appendix D.  Text for Possible Inclusion in the Terminology Draft  51
+     D.1.  Terms and Definitions . . . . . . . . . . . . . . . . . .  51
        D.1.1.  Pre-defined and Modified Terms  . . . . . . . . . . .  51
        D.1.2.  New Terms . . . . . . . . . . . . . . . . . . . . . .  51
    Appendix E.  Text for Possible Inclusion in the Architecture or
                 Use Cases  . . . . . . . . . . . . . . . . . . . . .  52
      E.1.  Introduction  . . . . . . . . . . . . . . . . . . . . . .  52
-     E.2.  Core Principles . . . . . . . . . . . . . . . . . . . . .  52
+     E.2.  Core Principles . . . . . . . . . . . . . . . . . . . . .  53
      E.3.  Architecture Assumptions  . . . . . . . . . . . . . . . .  53
    Appendix F.  Text for Possible Inclusion in the Requirements
                 Draft  . . . . . . . . . . . . . . . . . . . . . . .  57
@@ -215,17 +218,17 @@ Internet-Draft           SACM Information Model           September 2015
          G.3.2.1.  Platform Configuration Item Identifier  . . . . .  67
          G.3.2.2.  Configuration Item Identifier . . . . . . . . . .  73
          G.3.2.3.  Vulnerability Identifier  . . . . . . . . . . . .  75
+
+
+
+Waltermire, et al.        Expires July 8, 2016                  [Page 4]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
        G.3.3.  Endpoint characterization . . . . . . . . . . . . . .  75
        G.3.4.  Posture Attribute Expression  . . . . . . . . . . . .  79
          G.3.4.2.  Platform Configuration Attributes . . . . . . . .  79
-
-
-
-Waltermire, et al.       Expires March 26, 2016                 [Page 4]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
        G.3.5.  Actual Value Representation . . . . . . . . . . . . .  81
          G.3.5.1.  Software Inventory  . . . . . . . . . . . . . . .  81
          G.3.5.2.  Collected Platform Configuration Posture
@@ -269,18 +272,18 @@ Internet-Draft           SACM Information Model           September 2015
    These activities are aimed at the level of the technology that
    performs operations to support collection, evaluation, and reporting.
 
-   Review of the SACM Use Case [I-D.ietf-sacm-use-cases] usage scenarios
-   show a common set of business process areas that are critical to
-   understanding endpoint posture such that appropriate policies,
-   security capabilities, and decisions can be developed and
-   implemented.
+   Review of the SACM Use Case [RFC7632] usage scenarios show a common
+   set of business process areas that are critical to understanding
 
 
 
-Waltermire, et al.       Expires March 26, 2016                 [Page 5]
+Waltermire, et al.        Expires July 8, 2016                  [Page 5]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
+
+   endpoint posture such that appropriate policies, security
+   capabilities, and decisions can be developed and implemented.
 
    For this information model we have chosen to focus on the following
    business process areas:
@@ -294,11 +297,10 @@ Internet-Draft           SACM Information Model           September 2015
    o  Vulnerability Management
 
    These management process areas are a way to connect the SACM use
-   cases and building blocks [I-D.ietf-sacm-use-cases] to the
-   organizational needs such that the definition of information
-   requirements has a clearly understood context. (/wandw).  For more
-   information, Appendix B maps the SACM information model to the SACM
-   use cases.
+   cases and building blocks [RFC7632] to the organizational needs such
+   that the definition of information requirements has a clearly
+   understood context. (/wandw).  For more information, Appendix B maps
+   the SACM information model to the SACM use cases.
 
    The SACM information model offers a loose coupling between providers
    and consumers of security information.  A provider can relay what it
@@ -331,11 +333,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-
-
-Waltermire, et al.       Expires March 26, 2016                 [Page 6]
+Waltermire, et al.        Expires July 8, 2016                  [Page 6]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    Administrators can't get technology from disparate sources to work
@@ -389,9 +389,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                 [Page 7]
+Waltermire, et al.        Expires July 8, 2016                  [Page 7]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  An endpoint identifier is generally subject to cloning, when a
@@ -445,9 +445,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                 [Page 8]
+Waltermire, et al.        Expires July 8, 2016                  [Page 8]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 2.1.  Requirements Language
@@ -501,9 +501,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                 [Page 9]
+Waltermire, et al.        Expires July 8, 2016                  [Page 9]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 3.4.  Relationships
@@ -557,32 +557,32 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 10]
+Waltermire, et al.        Expires July 8, 2016                 [Page 10]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
-                 +---------+*______in>_______*+-----+
-                 |Hardware |                  |!   !|
-                 |Component|   +---------+    |!   !|
-                 +---------+   |Software |in> |!   !|
-                     1|        |Component|____|!   !|
-                      |        +---------+*  *|!   !|
-                      |            1|         |!   !|
-                      |            *|         |     |       +----------+
-                      |        +---------+    |End- |*_____*| Identity |
-                     *|        |Software |in> |point| acts  +----------+
-                 +---------+   |Instance |____|     | for>
-                 |Hardware |   +---------+*  1|!   !|
-                 |Instance |__________________|!   !|
-                 +---------+*      in>       1|!   !|
-                                              |!   !|
-                                              |!   !|____
-                                              |!   !|0..1|
-                                              +-----+    |
-                                                 |*      |
-                                                 |_______|
-                                                    in>
+           +---------+*______in>_______*+-----+
+           |Hardware |                  |!   !|
+           |Component|   +---------+    |!   !|
+           +---------+   |Software |in> |!   !|
+               1|        |Component|____|!   !|
+                |        +---------+*  *|!   !|
+                |            1|         |!   !|
+                |            *|         |     |       +----------+
+                |        +---------+    |End- |*_____*| Identity |
+               *|        |Software |in> |point| acts  +----------+
+           +---------+   |Instance |____|     | for>
+           |Hardware |   +---------+*  1|!   !|
+           |Instance |__________________|!   !|
+           +---------+*      in>       1|!   !|
+                                        |!   !|
+                                        |!   !|____
+                                        |!   !|0..1|
+                                        +-----+    |
+                                           |*      |
+                                           |_______|
+                                              in>
 
 
                       Figure 1: Model of an Endpoint
@@ -613,9 +613,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 11]
+Waltermire, et al.        Expires July 8, 2016                 [Page 11]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    Hardware components may also be assets and/or harmful.  For example,
@@ -669,9 +669,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 12]
+Waltermire, et al.        Expires July 8, 2016                 [Page 12]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    protected by a countermeasure, or (c) required for a system's
@@ -725,9 +725,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 13]
+Waltermire, et al.        Expires July 8, 2016                 [Page 13]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 4.4.1.  Software Instance
@@ -781,9 +781,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 14]
+Waltermire, et al.        Expires July 8, 2016                 [Page 14]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  Additional information about the endpoint, such as a
@@ -800,28 +800,27 @@ Internet-Draft           SACM Information Model           September 2015
    Figure 2 introduces the endpoint attributes and their relationships.
 
 
-
-+---------+*______in>_______*+-----+
-|Hardware |                  |!   !|
-|Component|   +---------+    |!   !|       +--------+*________________
-+---------+   |Software |in> |!   !|*_____*|Location|___________   <in|
-    1|        |Component|____|!   !|  in>  +--------+*  <in    *|     |
-     |        +---------+*  *|!   !|                        +-------+ |
-     |            1|         |!   !|                        |Account| |
-     |            *|         |     |       +----------+     +-------+ |
-     |        +---------+    |End- |*_____*| Identity |_________|0..1 |
-    *|        |Software |in> |point| acts  +----------+* belongs      |
-+---------+   |Instance |____|     | for>    0..1|^        to>        |
-|Hardware |   +---------+*  1|!   !|             |acts                |
-|Instance |__________________|!   !|            *|for                 |*
-+---------+*      in>       1|!   !|_______+---------+         +-------+
+   +---------+*____in>______*+-----+
+   |Hardware |               |!   !|
+   |Component| +---------+   |!   !|      +--------+*______________
+   +---------+ |Software |in>|!   !|*____*|Location|_________   <in|
+       1|      |Component|___|!   !|  in> +--------+*  <in  *|     |
+        |      +---------+* *|!   !|                    +-------+  |
+        |          1|        |!   !|                    |Account|  |
+        |          *|        |     |      +----------+  +-------+  |
+        |     +--------+     |End- |*____*| Identity |______|0..1  |
+       *|     |Software|in>  |point| acts +----------+* belongs    |
+   +--------+ |Instance|_____|     | for>   0..1|^        to>      |
+   |Hardware| +--------+*   1|!   !|            |acts              |
+   |Instance|________________|!   !|           *|for               |*
+   +--------+*    in>       1|!   !|______+---------+          +-------+
                              |!   !|1 <in *|Network  |1_______*|Address|
-                             |!   !|____   |Interface| <bound  +-------+
-                             |!   !|0..1|  +---------+   to
+                             |!   !|____  |Interface| <bound   +-------+
+                             |!   !|0..1| +---------+   to
                              +-----+    |   *|   |0..1
                                 |*      |    |___|
                                 |_______|     in>
-                                   in>
+                                    in>
 
 
                       Figure 2: Model of an Endpoint
@@ -837,27 +836,29 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 15]
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 15]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
-                   +-----+            +---------+
-                   | AVP |____________|Endpoint |
-                   +-----+1..*       1|Attribute|
-                                      |Assertion|
-                                      +---------+
-                                        |*                     +-------+
-                                        |                      |Summary|
-                                        |                      +-------+
-                                        |produced-by               *|
-                                        |V                          |
-                                       1|                           |
-     +--------+              +-----------+                          |
-     |        |              | SACM      |__________________________|
-     |Guidance|              | Component |1      <produced-by
-     +--------+*____________1+-----------+
-                <produced-by
+            +-----+            +---------+
+            | AVP |____________|Endpoint |
+            +-----+1..*       1|Attribute|
+                               |Assertion|
+                               +---------+
+                                 |*                     +-------+
+                                 |                      |Summary|
+                                 |                      +-------+
+                                 |produced-by               *|
+                                 |V                          |
+                                1|                           |
+    +--------+              +-----------+                    |
+    |        |              | SACM      |____________________|
+    |Guidance|              | Component |1      <produced-by
+    +--------+*____________1+-----------+
+               <produced-by
+
 
                       Figure 3: Information Elements
 
@@ -892,10 +893,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-
-Waltermire, et al.       Expires March 26, 2016                [Page 16]
+Waltermire, et al.        Expires July 8, 2016                 [Page 16]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 5.1.  Identifying Attributes
@@ -949,9 +949,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 17]
+Waltermire, et al.        Expires July 8, 2016                 [Page 17]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
       *  The monitored endpoint is a virtual machine and the provider
@@ -1005,9 +1005,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 18]
+Waltermire, et al.        Expires July 8, 2016                 [Page 18]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    that VM and there would not necessarily be a reasonable scope string
@@ -1061,9 +1061,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 19]
+Waltermire, et al.        Expires July 8, 2016                 [Page 19]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  The provider MUST NOT include an IP address that the provider
@@ -1117,9 +1117,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 20]
+Waltermire, et al.        Expires July 8, 2016                 [Page 20]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 5.1.5.4.  Stability
@@ -1173,9 +1173,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 21]
+Waltermire, et al.        Expires July 8, 2016                 [Page 21]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    A private key is baked into hardware is almost immutable.  But again,
@@ -1229,9 +1229,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 22]
+Waltermire, et al.        Expires July 8, 2016                 [Page 22]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    the assertion will contain identifying attributes of two endpoints.
@@ -1264,8 +1264,8 @@ Internet-Draft           SACM Information Model           September 2015
    o  A network interface "acts for" an identity.  This occurs, for
       example, when the network interface is online because of
       successful 802.1X.  An internal collector may be aware of the
-      identity.  An external collector (such as a RADIUS server) will be
-      aware of the identity.
+      identity.  An external collector (such as a RADIUS server
+      [RFC3580]) will be aware of the identity.
 
 5.3.  Address
 
@@ -1285,9 +1285,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 23]
+Waltermire, et al.        Expires July 8, 2016                 [Page 23]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  A layer 4 address; a data model MUST support an IP-address-
@@ -1341,9 +1341,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 24]
+Waltermire, et al.        Expires July 8, 2016                 [Page 24]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 5.5.  Location
@@ -1397,9 +1397,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 25]
+Waltermire, et al.        Expires July 8, 2016                 [Page 25]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 5.6.  Endpoint Attribute Assertion
@@ -1453,9 +1453,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 26]
+Waltermire, et al.        Expires July 8, 2016                 [Page 26]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 5.6.3.  Example
@@ -1509,9 +1509,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 27]
+Waltermire, et al.        Expires July 8, 2016                 [Page 27]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    An *attribute* tends not to change until something causes a change.
@@ -1565,9 +1565,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 28]
+Waltermire, et al.        Expires July 8, 2016                 [Page 28]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  Endpoint: The value is a unique endpoint identifier.
@@ -1621,9 +1621,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 29]
+Waltermire, et al.        Expires July 8, 2016                 [Page 29]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 5.8.  Evaluation Result
@@ -1677,9 +1677,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 30]
+Waltermire, et al.        Expires July 8, 2016                 [Page 30]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    Some reports may be machine readable.  Machine readable reports may
@@ -1717,7 +1717,8 @@ Internet-Draft           SACM Information Model           September 2015
 
    Examples:
 
-   o  A RADIUS server whereby an endpoint has logged onto the network
+   o  A RADIUS server [RFC3580] whereby an endpoint has logged onto the
+      network
 
    o  A network profiling system, which discovers and classifies network
       nodes
@@ -1732,10 +1733,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-
-Waltermire, et al.       Expires March 26, 2016                [Page 31]
+Waltermire, et al.        Expires July 8, 2016                 [Page 31]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  A management system that configures and installs software on the
@@ -1789,9 +1789,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 32]
+Waltermire, et al.        Expires July 8, 2016                 [Page 32]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    [cek-I had not thought of this at all.  Would it make sense to treat
@@ -1845,9 +1845,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 33]
+Waltermire, et al.        Expires July 8, 2016                 [Page 33]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 5.13.  Endpoint
@@ -1901,9 +1901,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 34]
+Waltermire, et al.        Expires July 8, 2016                 [Page 34]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  An application
@@ -1957,9 +1957,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 35]
+Waltermire, et al.        Expires July 8, 2016                 [Page 35]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 6.  SACM Usage Scenario Example
@@ -1971,10 +1971,10 @@ Internet-Draft           SACM Information Model           September 2015
 
    This section illustrates the proposed SACM Information Model as
    applied to SACM Usage Scenario 2.2.3, Detection of Posture Deviations
-   [I-D.ietf-sacm-use-cases].  The following subsections describe the
-   elements (components and elements), graph model, and operations
-   (sample workflow) required to support the Detection of Posture
-   Deviations scenario.
+   [RFC7632].  The following subsections describe the elements
+   (components and elements), graph model, and operations (sample
+   workflow) required to support the Detection of Posture Deviations
+   scenario.
 
    The Detection of Posture Deviations scenario involves multiple
    elements interacting to accomplish the goals of the scenario.
@@ -2013,9 +2013,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 36]
+Waltermire, et al.        Expires July 8, 2016                 [Page 36]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
       access to appropriate information from the endpoint security
@@ -2069,9 +2069,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 37]
+Waltermire, et al.        Expires July 8, 2016                 [Page 37]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
       attached to the identity identifier of the endpoint, to notify
@@ -2125,9 +2125,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 38]
+Waltermire, et al.        Expires July 8, 2016                 [Page 38]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    3.  Transport fabric authenticates and establishes authorized
@@ -2181,9 +2181,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 39]
+Waltermire, et al.        Expires July 8, 2016                 [Page 39]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 9.  Operational Considerations
@@ -2237,22 +2237,22 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 40]
+Waltermire, et al.        Expires July 8, 2016                 [Page 40]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 12.  References
 
 12.1.  Normative References
 
-   [RFC0791]  Postel, J., "Internet Protocol", STD 5, RFC 791, DOI
-              10.17487/RFC0791, September 1981,
+   [RFC0791]  Postel, J., "Internet Protocol", STD 5, RFC 791,
+              DOI 10.17487/RFC0791, September 1981,
               <http://www.rfc-editor.org/info/rfc791>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/
-              RFC2119, March 1997,
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
               <http://www.rfc-editor.org/info/rfc2119>.
 
    [RFC3587]  Hinden, R., Deering, S., and E. Nordmark, "IPv6 Global
@@ -2293,9 +2293,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 41]
+Waltermire, et al.        Expires July 8, 2016                 [Page 41]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    [I-D.ietf-sacm-requirements]
@@ -2307,11 +2307,6 @@ Internet-Draft           SACM Information Model           September 2015
               Waltermire, D., Montville, A., Harrington, D., and N. Cam-
               Winget, "Terminology for Security Assessment", draft-ietf-
               sacm-terminology-05 (work in progress), August 2014.
-
-   [I-D.ietf-sacm-use-cases]
-              Waltermire, D. and D. Harrington, "Endpoint Security
-              Posture Assessment - Enterprise Use Cases", draft-ietf-
-              sacm-use-cases-10 (work in progress), July 2015.
 
    [I-D.salowey-sacm-xmpp-grid]
               Salowey, J., Lorenzin, L., Kahn, C., Pope, S., Appala, S.,
@@ -2343,17 +2338,6 @@ Internet-Draft           SACM Information Model           September 2015
               March 2013, <http://csrc.nist.gov/publications/nistir/
               ir7275-rev4/nistir-7275r4_updated-march-2012_clean.pdf>.
 
-
-
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 42]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
    [NISTIR-7693]
               Wunder, J., Halbardier, A., and D. Waltermire,
               "Specification for Asset Identification 1.1", NISTIR 7693,
@@ -2361,10 +2345,19 @@ Internet-Draft           SACM Information Model           September 2015
               <http://csrc.nist.gov/publications/nistir/ir7693/
               NISTIR-7693.pdf>.
 
+
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 42]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    [NISTIR-7694]
               Halbardier, A., Waltermire, D., and M. Johnson,
-              "Specification for the Asset Reporting Format 1.1", NISTIR
-              7694, June 2011,
+              "Specification for the Asset Reporting Format 1.1",
+              NISTIR 7694, June 2011,
               <http://csrc.nist.gov/publications/nistir/ir7694/
               NISTIR-7694.pdf>.
 
@@ -2403,17 +2396,19 @@ Internet-Draft           SACM Information Model           September 2015
               <http://csrc.nist.gov/publications/drafts/nistir-7848/
               draft_nistir_7848.pdf>.
 
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 43]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
    [OVAL-LANGUAGE]
               Baker, J., Hansbury, M., and D. Haynes, "The OVAL Language
               Specification version 5.10.1", January 2012,
               <https://oval.mitre.org/language/version5.10.1/>.
+
+
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 43]
+
+Internet-Draft           SACM Information Model             January 2016
+
 
    [RFC3411]  Harrington, D., Presuhn, R., and B. Wijnen, "An
               Architecture for Describing Simple Network Management
@@ -2422,8 +2417,8 @@ Internet-Draft           SACM Information Model           September 2015
               <http://www.rfc-editor.org/info/rfc3411>.
 
    [RFC3416]  Presuhn, R., Ed., "Version 2 of the Protocol Operations
-              for the Simple Network Management Protocol (SNMP)", STD
-              62, RFC 3416, DOI 10.17487/RFC3416, December 2002,
+              for the Simple Network Management Protocol (SNMP)",
+              STD 62, RFC 3416, DOI 10.17487/RFC3416, December 2002,
               <http://www.rfc-editor.org/info/rfc3416>.
 
    [RFC3418]  Presuhn, R., Ed., "Management Information Base (MIB) for
@@ -2432,14 +2427,14 @@ Internet-Draft           SACM Information Model           September 2015
               <http://www.rfc-editor.org/info/rfc3418>.
 
    [RFC3444]  Pras, A. and J. Schoenwaelder, "On the Difference between
-              Information Models and Data Models", RFC 3444, DOI
-              10.17487/RFC3444, January 2003,
+              Information Models and Data Models", RFC 3444,
+              DOI 10.17487/RFC3444, January 2003,
               <http://www.rfc-editor.org/info/rfc3444>.
 
    [RFC3580]  Congdon, P., Aboba, B., Smith, A., Zorn, G., and J. Roese,
               "IEEE 802.1X Remote Authentication Dial In User Service
-              (RADIUS) Usage Guidelines", RFC 3580, DOI 10.17487/
-              RFC3580, September 2003,
+              (RADIUS) Usage Guidelines", RFC 3580,
+              DOI 10.17487/RFC3580, September 2003,
               <http://www.rfc-editor.org/info/rfc3580>.
 
    [RFC3954]  Claise, B., Ed., "Cisco Systems NetFlow Services Export
@@ -2450,29 +2445,29 @@ Internet-Draft           SACM Information Model           September 2015
               Syndication Format", RFC 4287, DOI 10.17487/RFC4287,
               December 2005, <http://www.rfc-editor.org/info/rfc4287>.
 
-   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2", FYI
-              36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
+   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
+              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
               <http://www.rfc-editor.org/info/rfc4949>.
 
    [RFC5201]  Moskowitz, R., Nikander, P., Jokela, P., Ed., and T.
-              Henderson, "Host Identity Protocol", RFC 5201, DOI
-              10.17487/RFC5201, April 2008,
+              Henderson, "Host Identity Protocol", RFC 5201,
+              DOI 10.17487/RFC5201, April 2008,
               <http://www.rfc-editor.org/info/rfc5201>.
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 44]
-
-Internet-Draft           SACM Information Model           September 2015
-
 
    [RFC5209]  Sangster, P., Khosravi, H., Mani, M., Narayan, K., and J.
               Tardo, "Network Endpoint Assessment (NEA): Overview and
               Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
               <http://www.rfc-editor.org/info/rfc5209>.
 
-   [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424, DOI
-              10.17487/RFC5424, March 2009,
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 44]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
+   [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424,
+              DOI 10.17487/RFC5424, March 2009,
               <http://www.rfc-editor.org/info/rfc5424>.
 
    [RFC5792]  Sangster, P. and K. Narayan, "PA-TNC: A Posture Attribute
@@ -2496,14 +2491,19 @@ Internet-Draft           SACM Information Model           September 2015
               <http://www.rfc-editor.org/info/rfc6241>.
 
    [RFC6876]  Sangster, P., Cam-Winget, N., and J. Salowey, "A Posture
-              Transport Protocol over TLS (PT-TLS)", RFC 6876, DOI
-              10.17487/RFC6876, February 2013,
+              Transport Protocol over TLS (PT-TLS)", RFC 6876,
+              DOI 10.17487/RFC6876, February 2013,
               <http://www.rfc-editor.org/info/rfc6876>.
 
    [RFC7171]  Cam-Winget, N. and P. Sangster, "PT-EAP: Posture Transport
               (PT) Protocol for Extensible Authentication Protocol (EAP)
               Tunnel Methods", RFC 7171, DOI 10.17487/RFC7171, May 2014,
               <http://www.rfc-editor.org/info/rfc7171>.
+
+   [RFC7632]  Waltermire, D. and D. Harrington, "Endpoint Security
+              Posture Assessment: Enterprise Use Cases", RFC 7632,
+              DOI 10.17487/RFC7632, September 2015,
+              <http://www.rfc-editor.org/info/rfc7632>.
 
    [SP800-117]
               Quinn, S., Scarfone, K., and D. Waltermire, "Guide to
@@ -2517,16 +2517,16 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 45]
+Waltermire, et al.        Expires July 8, 2016                 [Page 45]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    [SP800-126]
               Waltermire, D., Quinn, S., Scarfone, K., and A.
               Halbardier, "The Technical Specification for the Security
-              Content Automation Protocol (SCAP): SCAP Version 1.2", SP
-              800-126, September 2011,
+              Content Automation Protocol (SCAP): SCAP Version 1.2",
+              SP 800-126, September 2011,
               <http://csrc.nist.gov/publications/nistpubs/800-126-rev2/
               SP800-126r2.pdf>.
 
@@ -2573,9 +2573,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 46]
+Waltermire, et al.        Expires July 8, 2016                 [Page 46]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    [W3C.REC-rdf11-concepts-20140225]
@@ -2629,9 +2629,9 @@ A.1.  Changes in Revision 01
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 47]
+Waltermire, et al.        Expires July 8, 2016                 [Page 47]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 A.2.  Changes in Revision 02
@@ -2661,18 +2661,35 @@ A.3.  Changes in Revision 03
    solve provenance rather give organizations enough information to
    figure it out.
 
+   Updated references to the Endpoint Security Posture Assessment:
+   Enterprise Use Cases document to reflect that it was published as an
+   RFC.
+
+   Fixed the formatting of a few figures.
+
+   Included references to [RFC3580] where RADIUS is mentioned.
+
 Appendix B.  Mapping to SACM Use Cases
 
    TODO: revise
 
    (wandw)This information model directly corresponds to all four use
-   cases defined in the SACM Use Cases draft [I-D.ietf-sacm-use-cases].
-   It uses these use cases in coordination to achieve a small set of
-   well-defined tasks.
+   cases defined in the SACM Use Cases draft [RFC7632].  It uses these
+   use cases in coordination to achieve a small set of well-defined
+   tasks.
 
    Sections [removed] thru [removed] address each of the process areas.
    For each process area, a "Process Area Description" sub-section
    represent an end state that is consistent with all the General
+
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 48]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    Requirements and many of the Use Case Requirements identified in the
    requirements draft [I-D.ietf-sacm-requirements].
 
@@ -2680,15 +2697,6 @@ Appendix B.  Mapping to SACM Use Cases
    this memo directly support REQ004 Endpoint Discovery; REQ005-006
    Attribute and Information Based Queries, and REQ0007 Asynchronous
    Publication.
-
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 48]
-
-Internet-Draft           SACM Information Model           September 2015
-
 
    In addition, the operations that defined for each business process in
    this memo directly correlate with the typical workflow identified in
@@ -2731,6 +2739,13 @@ C.2.  What is TNC IF-MAP?
    identifies an XML schema for it.  Due to the XML language, the set of
    metadata types is easily extensible.
 
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 49]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    The MAP is a graph database, not a relational database.  Metadata can
    be associated with an identifier (e.g. the email address
    "user@example.com") or with a link between two identifiers (e.g. the
@@ -2738,14 +2753,6 @@ C.2.  What is TNC IF-MAP?
    192.0.2.1) where the link defines an association (for example: a
    relation or state) between the identifiers.  These links between
    pairs of identifiers create an ad hoc graph of relationships between
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 49]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
    identifiers.  The emergent structure of this graph reflects a
    continuously evolving knowledge base of security-related metadata
    that is shared between various providers and consumers.
@@ -2784,23 +2791,23 @@ C.3.  What is the TNC Information Model?
    well as associated SOAP operations for managing sessions, error
    handling, etc.
 
+
+
+
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 50]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
 Appendix D.  Text for Possible Inclusion in the Terminology Draft
 
 D.1.  Terms and Definitions
 
    This section describes terms that have been defined by other RFCs and
    Internet Drafts, as well as new terms introduced in this document.
-
-
-
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 50]
-
-Internet-Draft           SACM Information Model           September 2015
-
 
 D.1.1.  Pre-defined and Modified Terms
 
@@ -2844,20 +2851,19 @@ D.1.2.  New Terms
            security policy, (b) intended to be protected by a
            countermeasure, or (c) required for a system's mission."
 
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 51]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    Security Content Automation Protocol (SCAP)  According to SP800-126,
            SCAP, pronounced "ess-cap", is "a suite of specifications
            that standardize the format and nomenclature by which
            software flaw and security configuration information is
            communicated, both to machines and humans."  SP800-117
            revision 1 [SP800-117] provides a general overview of SCAP
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 51]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
            1.2.  The 11 specifications that comprise SCAP 1.2 are
            synthesized by a master specification, SP800-126 revision 2
            [SP800-126], that addresses integration of the specifications
@@ -2900,19 +2906,19 @@ E.1.  Introduction
    SACM information model to address the requirements for scalability,
    timeliness, and security.
 
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 52]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
 E.2.  Core Principles
 
    This information model is built on the following core principles:
 
    o  Collection and Evaluation are separate tasks.
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 52]
-
-Internet-Draft           SACM Information Model           September 2015
-
 
    o  Collection and Evaluation can be performed on the endpoint, at a
       local server that communicates directly with the endpoint, or
@@ -2956,19 +2962,19 @@ E.3.  Architecture Assumptions
    This information model will focus on WHAT information needs to be
    exchanged to support the business process areas.  The architecture
    document is the best place to represent the HOW and the WHERE this
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 53]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    information is used.  In an effort to ensure that the data models
    derived from this information model scale to the architecture, four
    core architectural components need to be defined.  They are
    producers, consumers, capabilities, and repositories.  These elements
    are defined as follows:
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 53]
-
-Internet-Draft           SACM Information Model           September 2015
-
 
    o  Producers (e.g., Evaluation Producer) collect, aggregate, and/or
       derive information items and provide them to consumers.  For this
@@ -3012,19 +3018,17 @@ Internet-Draft           SACM Information Model           September 2015
 
              Figure 5: Example Producer/Consumer Interactions
 
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 54]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    As illustrated in Figure 6, writing and querying from data
    repositories are a way in which this interaction can occur in an
    asynchronous fashion.
-
-
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 54]
-
-Internet-Draft           SACM Information Model           September 2015
-
 
    +----------+                +----------+
    |          |                |          |
@@ -3073,13 +3077,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 55]
+Waltermire, et al.        Expires July 8, 2016                 [Page 55]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
                                +-------------+
@@ -3133,9 +3133,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 56]
+Waltermire, et al.        Expires July 8, 2016                 [Page 56]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    on these core architectural components as the basis for determining
@@ -3189,9 +3189,9 @@ F.2.  Problem Scope
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 57]
+Waltermire, et al.        Expires July 8, 2016                 [Page 57]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
        attributes that represent problems, such as vulnerabilities, that
@@ -3245,9 +3245,9 @@ G.1.1.  Generalized Workflow
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 58]
+Waltermire, et al.        Expires July 8, 2016                 [Page 58]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    3.  Transport fabric authenticates and establishes authorized
@@ -3288,25 +3288,24 @@ G.3.  Information Model Elements
    management process areas that use endpoint posture assessment to
    achieve organizational security objectives.  These process areas were
    then broken down into operations that mirrored the typical workflow
-   from the SACM Use Cases draft [I-D.ietf-sacm-use-cases].  These
-   operations identify architectural components and their information
-   needs.  In this section, information elements derived from those
-   information needs are mapped back to the four main activities listed
-   above.
+   from the SACM Use Cases draft [RFC7632].  These operations identify
+   architectural components and their information needs.  In this
+   section, information elements derived from those information needs
+   are mapped back to the four main activities listed above.
 
    The original liaison statement [IM-LIAISON-STATEMENT-NIST] requested
    contributions for the SACM information model in the four areas
    described below.  Based on the capabilities defined previously in
    this document, the requested areas alone do not provide a sufficient
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 59]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
    enough categorization of the necessary information model elements.
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 59]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    The following sub-sections directly address the requested areas as
    follows:
 
@@ -3354,15 +3353,15 @@ Internet-Draft           SACM Information Model           September 2015
    model elements.  In these cases additional work will be required by
    the WG to adapt the specification.  In some cases, existing work can
    largely be used in an unmodified fashion.  This is also indicated in
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 60]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
    the analysis.  Due to time constraints, the work in this section is
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 60]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    very biased to previous work supported by the authors and does not
    reflect a comprehensive listing.  An attempt has been made where
    possible to reference existing IETF work.  Additional research and
@@ -3406,23 +3405,19 @@ G.3.1.  Asset Identifiers
 
 G.3.1.1.  Related Work
 
-
-
-
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 61]
-
-Internet-Draft           SACM Information Model           September 2015
-
-
 G.3.1.1.1.  Asset Identification
 
    The Asset Identification specification [NISTIR-7693] is an XML-based
    data model that "provides the necessary constructs to uniquely
    identify assets based on known identifiers and/or known information
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 61]
+
+Internet-Draft           SACM Information Model             January 2016
+
+
    about the assets."  Asset identification plays an important role in
    an organization's ability to quickly correlate different sets of
    information about assets.  The Asset Identification specification
@@ -3469,9 +3464,14 @@ G.3.1.1.1.  Asset Identification
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 62]
+
+
+
+
+
+Waltermire, et al.        Expires July 8, 2016                 [Page 62]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
     This table presents a mapping of notional SACM asset types to those
@@ -3525,9 +3525,9 @@ G.3.1.2.  Endpoint Identification
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 63]
+Waltermire, et al.        Expires July 8, 2016                 [Page 63]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 G.3.1.2.1.  Related Work
@@ -3581,9 +3581,9 @@ G.3.1.3.1.  Related Work
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 64]
+Waltermire, et al.        Expires July 8, 2016                 [Page 64]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 G.3.1.3.1.1.  Common Platform Enumeration
@@ -3637,9 +3637,9 @@ G.3.1.3.1.1.1.  Background
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 65]
+Waltermire, et al.        Expires July 8, 2016                 [Page 65]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  Not enough primary source vendors provide platform and product
@@ -3693,9 +3693,9 @@ G.3.1.3.1.2.  Software Identification (SWID) Tags
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 66]
+Waltermire, et al.        Expires July 8, 2016                 [Page 66]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    SWID tags can be associated with software installation media,
@@ -3749,9 +3749,9 @@ G.3.2.1.  Platform Configuration Item Identifier
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 67]
+Waltermire, et al.        Expires July 8, 2016                 [Page 67]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    identifier should remain consistent with regards to what it
@@ -3805,9 +3805,9 @@ G.3.2.1.1.1.  Common Configuration Enumeration
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 68]
+Waltermire, et al.        Expires July 8, 2016                 [Page 68]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 G.3.2.1.1.2.  Open Vulnerability and Assessment Language
@@ -3861,9 +3861,9 @@ G.3.2.1.1.2.1.  Background
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 69]
+Waltermire, et al.        Expires July 8, 2016                 [Page 69]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    The following figure illustrates the OVAL data model.
@@ -3917,9 +3917,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 70]
+Waltermire, et al.        Expires July 8, 2016                 [Page 70]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
       *  Object(platform specific): A generalized construct that is
@@ -3973,9 +3973,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 71]
+Waltermire, et al.        Expires July 8, 2016                 [Page 71]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    Many of the elements in the OVAL model (i.e., Test, Object, State,
@@ -4029,9 +4029,9 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 72]
+Waltermire, et al.        Expires July 8, 2016                 [Page 72]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
       to be evolved to provide for greater extensibility in this area,
@@ -4085,9 +4085,9 @@ G.3.2.2.  Configuration Item Identifier
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 73]
+Waltermire, et al.        Expires July 8, 2016                 [Page 73]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    and for associating related metadata.  Use of an IANA registry
@@ -4141,9 +4141,9 @@ G.3.2.2.1.2.  A Potential Alternate Approach
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 74]
+Waltermire, et al.        Expires July 8, 2016                 [Page 74]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    o  Differing scopes of technological needs.
@@ -4197,9 +4197,9 @@ G.3.3.  Endpoint characterization
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 75]
+Waltermire, et al.        Expires July 8, 2016                 [Page 75]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    Also human input
@@ -4253,9 +4253,9 @@ G.3.3.1.1.2.  Applicability to Endpoint characterization
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 76]
+Waltermire, et al.        Expires July 8, 2016                 [Page 76]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    point for understanding the types of information that should be used
@@ -4309,9 +4309,9 @@ G.3.3.1.2.2.  Relationship to Endpoint Characterization
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 77]
+Waltermire, et al.        Expires July 8, 2016                 [Page 77]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    ARF is agnostic to the data formats of the collected posture
@@ -4365,9 +4365,9 @@ G.3.3.1.3.  The CPE Applicability Language
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 78]
+Waltermire, et al.        Expires July 8, 2016                 [Page 78]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    applicability statements against previously collected posture
@@ -4421,9 +4421,9 @@ G.3.4.2.  Platform Configuration Attributes
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 79]
+Waltermire, et al.        Expires July 8, 2016                 [Page 79]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    For example, a primary source vendor would create a platform-specific
@@ -4477,9 +4477,9 @@ G.3.4.2.1.3.  Simple Network Management Protocol and Management
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 80]
+Waltermire, et al.        Expires July 8, 2016                 [Page 80]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    endpoint and retrieved by SNMP is defined by the Management
@@ -4533,9 +4533,9 @@ G.3.5.1.1.2.  Software Identification Tags
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 81]
+Waltermire, et al.        Expires July 8, 2016                 [Page 81]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    identifier for each unit of installed software.  Given this, SWID
@@ -4589,9 +4589,9 @@ G.3.5.2.1.2.  NETCONF-Based Collection
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 82]
+Waltermire, et al.        Expires July 8, 2016                 [Page 82]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    provides a variety of filtering mechanisms (XPath, subtree, content
@@ -4645,9 +4645,9 @@ G.3.6.1.  Configuration Evaluation Guidance
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 83]
+Waltermire, et al.        Expires July 8, 2016                 [Page 83]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 G.3.6.1.1.  Related Work
@@ -4701,9 +4701,9 @@ G.3.6.1.1.2.  XCCDF Rule
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 84]
+Waltermire, et al.        Expires July 8, 2016                 [Page 84]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    that apply only to the DMZ endpoint would be disabled during the
@@ -4757,9 +4757,9 @@ G.3.7.1.1.1.  XCCDF TestResults
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 85]
+Waltermire, et al.        Expires July 8, 2016                 [Page 85]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    outcome of assessing a single endpoint against the assessed items
@@ -4813,9 +4813,9 @@ G.3.7.1.1.2.  Open Vulnerability and Assessment Language
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 86]
+Waltermire, et al.        Expires July 8, 2016                 [Page 86]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 G.3.7.1.1.3.  Asset Summary Reporting
@@ -4869,9 +4869,9 @@ Appendix H.  Graph Model
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 87]
+Waltermire, et al.        Expires July 8, 2016                 [Page 87]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    This architecture addresses information structure independently of
@@ -4925,9 +4925,9 @@ H.1.  Background: Graph Models
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 88]
+Waltermire, et al.        Expires July 8, 2016                 [Page 88]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
       +------------------+                 +-----------------+
@@ -4981,9 +4981,9 @@ H.3.  Identifiers
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 89]
+Waltermire, et al.        Expires July 8, 2016                 [Page 89]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    Identifiers are unique: two different vertices cannot have equivalent
@@ -5037,9 +5037,9 @@ H.5.  Metadata
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 90]
+Waltermire, et al.        Expires July 8, 2016                 [Page 90]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
 H.6.  Use for SACM
@@ -5093,9 +5093,9 @@ H.8.  Extensibility
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 91]
+Waltermire, et al.        Expires July 8, 2016                 [Page 91]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    innovation.  Intermediate software that conveys graph changes from
@@ -5149,9 +5149,9 @@ Authors' Addresses
 
 
 
-Waltermire, et al.       Expires March 26, 2016                [Page 92]
+Waltermire, et al.        Expires July 8, 2016                 [Page 92]
 
-Internet-Draft           SACM Information Model           September 2015
+Internet-Draft           SACM Information Model             January 2016
 
 
    Lisa Lorenzin
@@ -5163,6 +5163,13 @@ Internet-Draft           SACM Information Model           September 2015
    Email: llorenzin@pulsesecure.net
 
 
+   Daniel Haynes
+   The MITRE Corporation
+   202 Burlington Road
+   Bedford, MA  01730
+   USA
+
+   Email: dhaynes@mitre.org
 
 
 
@@ -5198,11 +5205,4 @@ Internet-Draft           SACM Information Model           September 2015
 
 
 
-
-
-
-
-
-
-
-Waltermire, et al.       Expires March 26, 2016                [Page 93]
+Waltermire, et al.        Expires July 8, 2016                 [Page 93]
