@@ -4,7 +4,6 @@
 <!-- One method to get references from the online citation libraries.
      There has to be one entity for each item to be referenced. 
      An alternate method (rfc include) is described in the references. -->
-
 <!ENTITY RFC0791 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.0791.xml">
 <!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC3411 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3411.xml">
@@ -25,7 +24,10 @@
 <!ENTITY RFC5793 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5793.xml">
 <!ENTITY RFC6020 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6020.xml">
 <!ENTITY RFC6241 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6241.xml">
+<!ENTITY RFC6313 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6313.xml">
 <!ENTITY RFC6876 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6876.xml">
+<!ENTITY RFC7012 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7012.xml">
+<!ENTITY RFC7013 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7013.xml">
 <!ENTITY RFC7171 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7171.xml">
 <!ENTITY RFC7632 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7632.xml">
 <!ENTITY I-D.ietf-sacm-terminology SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-sacm-terminology-05.xml">
@@ -35,6 +37,7 @@
 <!ENTITY W3C.REC-soap12-part1-20070427 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml4/reference.W3C.REC-soap12-part1-20070427.xml">
 <!ENTITY W3C.REC-rdf11-concepts-20140225 SYSTEM "http://xml2rfc.ietf.org/public/rfc/bibxml4/reference.W3C.REC-rdf11-concepts-20140225.xml">
 ]>
+
 <?xml-stylesheet type='text/xsl' href='http://xml2rfc.ietf.org/authoring/rfc2629.xslt' ?>
 <!-- used by XSLT processors -->
 <!-- For a complete list and description of processing instructions (PIs), 
@@ -60,7 +63,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-ietf-sacm-information-model-03" ipr="trust200902">
+<rfc category="info" docName="draft-ietf-sacm-information-model-04" ipr="trust200902">
     <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN" 
@@ -130,6 +133,24 @@
                 <email>llorenzin@pulsesecure.net</email>
             </address>
         </author>
+      <author fullname="Michael Cokus"
+        initials="M.C." surname="Cokus">
+        <organization>The MITRE
+          Corporation</organization>
+        <address>
+          <postal>
+            <street>903 Enterprise Parkway, Suite 200</street>
+            <!-- Reorder these if your country does things differently -->
+            <city>Hampton</city>
+            <region>VA</region>
+            <code>23666</code>
+            <country>USA</country>
+          </postal>
+          <phone/>
+          <email>msc@mitre.org</email>
+          <!-- uri and facsimile elements may also be added -->
+        </address>
+      </author>
         <author fullname="Daniel Haynes" initials="D.H." surname="Haynes">
           <organization>The MITRE Corporation</organization>
           <address>
@@ -166,7 +187,7 @@
          keywords will be used for the search engine. -->
   
         <abstract>
-            <t>This document proposes an information model 
+            <t>This document defines the information model 
                for SACM.</t>
     
         </abstract>
@@ -177,23 +198,27 @@
     
         <section title="Introduction" anchor="INTRO">
         
-            <t>This document defines a notional information model for endpoint posture assessment. It
-                describes the information needed to perform certain assessment activities. The scope
-                of the information model is to describe the structure of the information carried to
-                realize the assessment. It is meant to be a basis for the development of specific data
-                models. The terms information model and data model loosely align with the definitions
-                in RFC3444 <xref target="RFC3444"/>.</t>
+            <t>This document defines an information model for endpoint
+              posture assessment. The scope of the information model
+              is to describe the mandatory-to-implement information
+              needs required to realize the assessment of an endpoint
+              in a scalable and extensible way. The information model
+              aims to inform the development of specific data models
+              that support the endpoint posture assessment process.
+              The terms "information model" and "data model" align with
+              the definitions in <xref target="RFC3444"/>.</t>
 
-            <t>The four primary activities to support this information model are:<list
+            <t>The five primary activities to support this information model are:<list
                     style="numbers">
                     <t>Endpoint Identification</t>
                     <t>Endpoint Characterization</t>
-                    <t>Endpoint Attribute Expression/Representation</t>
-                    <t>Policy evaluation expression and results reporting</t>
+                    <t>Endpoint Attribute Expression</t>
+                    <t>Guidance Expression</t>
+                    <t>Endpoint Evaluation Result Expression</t>
                 </list></t>
 
             <t>These activities are aimed at the level of the technology that performs operations to
-                support collection, evaluation, and reporting.</t>
+                support the collection, communication, and evaluation of endpoint information.</t>
           <t>Review of the SACM Use Case <xref target="RFC7632"/> usage scenarios
                 show a common set of business process areas that are critical to understanding
                 endpoint posture such that appropriate policies, security capabilities, and
@@ -201,15 +226,16 @@
             <t>For this information model we have chosen to focus on the following business process
                     areas:<list style="symbols">
                     <t>Endpoint Management</t>
-                    <t>Software Management</t>
+                    <t>Software Inventory Management</t>
+                    <t>Hardware Inventory Management</t>  
                     <t>Configuration Management</t>
                     <t>Vulnerability Management</t>
                 </list></t>
             <t>These management process areas are a way to connect the SACM use cases and building
               blocks <xref target="RFC7632"/> to the organizational needs such
                 that the definition of information requirements has a clearly understood
-                context. (/wandw). For more information, <xref target="mapping-to-sacm-use-cases"/> 
-                maps the SACM information model to the SACM use cases.</t>
+                context. For more information, see <xref
+                  target="mapping-to-sacm-use-cases"/> which maps the SACM information model to the SACM use cases.</t>
 
             <t>The SACM information model offers a loose coupling between providers and
                 consumers of security information. A provider can relay what it observes or infers,
@@ -223,31 +249,36 @@
                 understand and will disregard it.</t> 
 
             <section title="Problem Statement">
-            
-                <t>TODO: revise</t>
-            
-                <t>(wandw)SACM requires a large and broad set of mission and business processes, and to make
-                the most effective of use of technology, the same data must support multiple
+              <!-- TODO: May need additional revision -->
+                <t>SACM requires a large and broad set of mission and business processes, and to make
+                the most effective use of technology, the same data must support multiple
                 processes. The activities and processes described within this document tend to build off
                 of each other to enable more complex characterization and assessment. In an effort
                 to create an information model that serves a common set of management processes
-                represented by the usage scenarios in the SACM Use Cases document, we have narrowed
-                down the scope of this model.(/wandw) [What does "narrowed down the scope of this model" mean? - LL]</t>
+                represented by the usage scenarios in the SACM Use Cases <xref target="RFC7632"/>, we have narrowed
+                down the scope of this model to focus on the
+                information needs required for endpoint
+                identification, endpoint characterization, endpoint
+                attribute expression, guidance expression, and
+                endpoint evaluation result expression.</t>
               
                 <t>Administrators can't get technology from disparate
                 sources to work together; they need information to make decisions, but the information
                 is not available. Everyone is collecting the same data, but storing it as different
                 information. Administrators therefore need to collect data and craft their own information,
                 which may not be accurate or interoperable because it's customized by each administrator, not
-                shared. A standard information model enables flexibility in collecting, storing, and sharing
+                shared. A standard information model enables
+                flexibility in collecting, storing, and exchanging
                 information despite platform differences.</t>
 
                 <t>A way is needed to exchange
-                 information that (a) has breadth, meaning the pieces of the notation are useful about a
-                 variety of endpoints and software components, and (b) has longevity, meaning that the
+                 information that (a) has breadth, meaning the pieces
+                 of the notation are useful for a
+                 variety of endpoint information, and (b) has longevity, meaning that the
                  pieces of the notation will stay useful over time.</t>
               
-                <t>When creating standards, it's not sufficient to go from requirements directly to protocol;
+                <t>When creating standards, it's not sufficient to go
+                  from the requirements directly to the protocol;
                 the standards must eliminate ambiguity in the information transported. This is
                 the purpose of information models generally. The SACM problem space is about integrating
                 many information sources. This information model addresses the need to integrate security
@@ -257,21 +288,39 @@
 
                 <section anchor="section-referring-to-an-endpoint" title="Referring to an Endpoint">
     
-                    <t>How to refer to an endpoint is problematic. Ideally, an endpoint would have a unique identifier. These identifiers would have a one-to-one relationship with endpoints. Every observation of an endpoint, or inference about an endpoint would be labeled with its identifier. </t>
+                    <t>How to refer to an endpoint is problematic. Ideally, an endpoint would have a 
+                      unique identifier. These identifiers would have a one-to-one relationship with 
+                      endpoints. Every observation of an endpoint, or inference about an endpoint 
+                      would be labeled with its identifier.</t>
     
                     <t>However:
                         <list style="symbols">
-                        <t> An external posture attribute collector typically cannot observe the unique identifier directly. An external posture attribute collector should be able to report exactly what it has observed, unembellished. It should not have to *infer* which endpoint it has observed; that inference should be leavable to other SACM components. So, SACM cannot require that every observation include the unique endpoint identifier.</t> 
+                        <t>An external posture attribute collector typically cannot observe the unique
+                          identifier directly. An external posture attribute collector should be able to 
+                          report exactly what it has observed, unembellished. It should not have to 
+                          *infer* which endpoint it has observed; that inference should be left to 
+                          other SACM components. So, SACM cannot require that every observation include 
+                          the unique endpoint identifier.</t> 
     
-                        <t>Internal posture attribute collectors are not present on all endpoints. They are not present on "dumb" devices such as Internet of Things (IoT) devices, or on Bring Your Own Device (BYOD) devices. In these cases, *no* observers have direct access to the unique endpoint identifier.</t>
+                        <t>Internal posture attribute collectors are not present on all endpoints. 
+                          They are not present on "dumb" devices such as Internet of Things (IoT) devices, 
+                          or on Bring Your Own Device (BYOD) devices. In these cases, *no* observers have 
+                          direct access to the unique endpoint identifier.</t>
     
-                        <t>An endpoint identifier is generally subject to cloning, when a system image is cloned. Then it is no longer unique.</t> 
+                        <t>An endpoint identifier is generally subject to cloning, when a system image 
+                          is cloned. Then, it is no longer unique.</t> 
     
-                        <t>Suppose the endpoint identifier is highly clone resistant -- such a unique certificate within a trusted platform module TPM.  Even so, it is possible to replace all of the software -- for example, changing a Windows machine to a Linux machine.  Is it still the same endpoint? For SACM purposes, it isn't really the same endpoint. </t>
+                        <t>Suppose the endpoint identifier is highly
+                          clone resistant -- such as a unique certificate within a hardware cryptographic 
+                          module.  Even so, it is possible to replace all of the software -- for example, 
+                          changing a Windows machine to a Linux machine. Is it still the same endpoint? 
+                          For SACM purposes, it isn't really the same endpoint. </t>
                         </list>
                     </t>
     
-                    <t>So SACM components must be able to put disparate observations together and form a picture of an endpoint -- somewhat like a detective. The SACM information model must facilitate this.</t>
+                    <t>So SACM components must be able to put disparate observations together and form a 
+                      picture of an endpoint -- somewhat like a detective. The SACM information model must 
+                      facilitate this.</t>
                    </section>
     
                 <section title="Dealing with Uncertainty">
@@ -281,12 +330,32 @@
                        Attackers may develop countermeasures to fool some SACM components.
                        Attackers may compromise some SACM components.</t>  
     
-                    <t>So the model must let SACM components and humans reason with uncertainty. There are no facts, only assertions. </t>
+                    <t>So the model must let SACM components and humans reason with 
+                      uncertainty. There are no facts, only assertions. </t>
     
-                    <t>SACM components must be able to cross check observations and inferences against each other. They should be able to give weight if an observation or inference is corroborated by more than one method. Although SACM will probably not prescribe *how* to do this cross checking, SACM should provide the components with provenance information.</t> 
+                    <t>SACM components must be able to cross check
+                      observations and inferences against each other.
+                      They should be able to give weight if an
+                      observation or inference is corroborated by more
+                      than one method. Although SACM will probably not
+                      prescribe *how* to do this cross checking, SACM
+                      should provide the components with information
+                      that can be used to determine provenance.</t> 
     
-                    <t>SACM components must be able to consider the reputation of the observer or inferrer. That reputation should account for the method  of observing or inferring, the implementer of the SACM component that made the observation or inference, and the compliance status of the endpoint on which the observation or inference was made.  For example, if some observers are found to be vulnerable to a Day 1 exploit, observations from those observers deserve less weight. The details of reputation technology may be out of scope for SACM. However, again, SACM should provide components with provenance information.</t>
-    
+                    <t>SACM components must be able to consider the
+                      reputation of the observer or inferrer. That
+                      reputation should account for the method of
+                      observing or inferring, the implementer of the
+                      SACM component that made the observation or
+                      inference, and the compliance status of the
+                      endpoint on which the observation or inference
+                      was made.  For example, if some observers are
+                      found to be vulnerable to a Day 1 exploit,
+                      observations from those observers deserve less
+                      weight. The details of reputation technology may
+                      be out of scope for SACM. However, again, SACM
+                      should provide components with information that
+                      enables them to make this determination.</t>
                     </section>
                 </section>
         </section>
@@ -300,39 +369,170 @@
             </section>
 
         <section title="Information Model Framework" anchor="information-model-framework">
-            <t>The SACM information model is structured around a core framework that can be easily extended to 
-               support the modeling needs for endpoint posture assessment. This section describes the key concepts
-               that make up this framework as well as the conventions used to model the different information model
-               objects in the following sections.</t> 
-            
-            <section title="Containers">
-                <t>TODO: Explain containers at a conceptual level and how they are the mechanism by which
-                   attributes and/or other containers can be logically grouped together to create more complex
-                   models. Additional information about containers can be modeled using metadata. QUESTION: We are 
-                   not sure "container" is the correct term to use here as it implies a hierarchy. Alternative 
-                   terms might be "construct", "object", or "class". This is something that needs to be decided.</t>                
+            <t>The SACM information model is structured around a core
+              framework that can be easily extended to support the
+              modeling needs for endpoint posture assessment. This
+              section describes the key concepts that make up this
+              framework as well as the IP Information Flow Export
+              (IPFIX) Information Model <xref target="RFC7012"/>
+              syntax used to model the different information model
+              concepts.</t> 
+          
+          <section title="Attributes" anchor="attributes">
+            <t>Attributes are used to model specific endpoint
+              information. At a minimum, an attribute must have a name
+              and a value. Additional information about attributes can
+              be modeled using metadata as described in <xref
+                target="metadata"/>.</t>
+            <section title="Syntax">
+              <t>Attributes must be defined using the IPFIX Information
+                Element Specification Template as described in Section
+                2.1 of <xref target="RFC7012"/>. The following is a
+                modified version of the template for Information
+                Elements provided in Section 9.1 of <xref
+                  target="RFC7013"/>.</t>
+              <figure
+                anchor="Attribute-Information-Element-Specification-Template">
+                <artwork>                  
+elementId:         Element identifier goes here if known, or 
+                   "TBD" if it will be assigned by IANA and 
+                   filled in at publication time.; obligatory             
+
+name:              Name goes here.; obligatory
+
+dataType:          Data type goes here; obligatory
+
+status:            Status goes here; obligatory
+
+description:       Description goes here.; obligatory
+
+                   For Information Elements that
+                   represent flags, please include a
+                   table that lists each flag value
+                   (hexadecimal) and description.
+                   The following is a template for that
+                   table.
+              
+                   +-------+----------------------------------+
+                   | Value | Description                      |
+                   +-------+----------------------------------+
+                   |       |                                  |
+                   +-------+----------------------------------+
+
+dataTypeSemantics: Data type semantics, if any, go here; optional
+
+units:             Units, if any, go here; optional
+
+range:             Range, if not implied by the data type, goes 
+                   here; optional
+
+references:        References to other RFCs or documents outside 
+                   the IETF, in which additional information is 
+                   given, or which are referenced by the 
+                   description, go here; optional
+                </artwork>
+              </figure>
             </section>
-            
-            <section title="Attributes">
-                <t>TODO: Explain attributes at a conceptual level and how they are used to model posture attribute 
-                   information on an endpoint. At a minimum, an attribute must have a name and a value.  However,
-                   there is work currently being done in the Endpoint ID Design Team to prepare a proposal for
-                   the working group to explain how triples (subject, predicate, object) could be used to model 
-                   attributes in the information model. Additional information about attributes can be modeled 
-                   using metadata.</t>
+          </section>
+          
+          <section title="Objects"><!-- TODO: Should we call this
+              container, construct, class, object, list? I went with
+              object for now because I don't believe it implies a
+              hierarchy like "containers" and because I am going to
+              use "constructs" to describe IPFIX syntax constructs
+              like basicList, subTemplateList, etc. -->
+            <t>Objects are the mechanism by which attributes
+              (<xref target="attributes"/>) and/or other objects
+              can be logically grouped together to create more
+              complex models. Additional information about objects
+              can be modeled using metadata as described in 
+              <xref target="metadata"/>.</t>
+            <section title="Syntax">
+              <t>Objects are complex Information Elements that can
+                be created using one of the following IPFIX constructs
+                that are defined in Section 3.1 of <xref target="RFC7012"/>.
+                <list style="symbols">
+                  <t>basicList: a list of zero or more instances of
+                    any Information Element</t>
+                  <t>subTemplateList: a list of zero or more
+                    instances of a single, specific Template</t>
+                  <t>subTemplateMultiList: a list of zero or more
+                    instances of any Template</t>
+                </list>
+                The following is a modified version of the template 
+                for Information Elements provided in Section 9.1 of 
+                <xref target="RFC7013"/> that can be used to model
+                objects.
+                <figure
+                  anchor="Object-Information-Element-Specification-Template">
+                  <artwork>                  
+elementId:         Element identifier goes here if known, or 
+                   "TBD" if it will be assigned by IANA and 
+                   filled in at publication time.; obligatory             
+                    
+name:              Name goes here.; obligatory
+                    
+dataType:          Data type goes here; obligatory
+                    
+status:            Status goes here; obligatory
+                    
+description:       Description goes here.; obligatory
+                    
+                   Please include a high-level model diagram that uses
+                   the following format which is a simplified version
+                   of a high-level diagram format used in [RFC6313]. 
+                    
+                   &lt;IE-Name&gt; = (&lt;IE-DataType&gt;, &lt;IE-DataTypeSemantic&gt;,
+                   &lt;IE-1&gt;,
+                   &lt;IE-2&gt;,
+                   &lt;IE-3&gt;,
+                   ...
+                   ) 
+                    
+                   dataTypeSemantics: Data type semantics, if any, go here; optional
+                   
+                   units:             Units, if any, go here; optional
+                    
+                   range:             Range, if not implied by the data type, goes 
+                                      here; optional
+                    
+                   references:        References to other RFCs or documents outside 
+                                      the IETF, in which additional information is 
+                                      given, or which are referenced by the 
+                                      description, go here; optional
+                  </artwork>
+                </figure>
+              </t>
             </section>
-            
-            <section title="Metadata">
-                <t>TODO: Explain metadata at a conceptual level and how it can be used to provide additional information
-                   about containers and attributes. We should be providing enough information so that SACM users 
-                   can determine provenance (e.g. source of origin, time of collection, observation, reporting,
-                   etc.) and use it when sharing and evaluating posture attribute information.</t>
-            </section>
+          </section>
+          
+          <section title="Metadata" anchor="metadata">
+            <t>Metadata allows components to annotate objects and
+              attributes with additional information that will allow
+              other components to make a determination about the provenance
+              of the objects and attributes during exchanges and
+              evaluations. 
+
+              A proposal outlining various options for
+              representing metadata attributes/objects in the IPFIX syntax is being
+              discussed on the mailing list. TODO: See IM issue #39 at
+              https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/39
+              for more information.
+            </t>
+          </section>
             
             <section title="Relationships">
                 <t>TODO: Define what a relationship is.  At the end of the day, we want to be able to describe the 
                    relationships between assets, endpoints, and attributes.  QUESTION: Are relationships just metadata? 
-                   Lisa's notes have some information on relationships: https://mailarchive.ietf.org/arch/msg/sacm/kWxlnboHAXD87cned9WavwPZy5w</t>     
+                   Lisa's notes have some information on relationships: https://mailarchive.ietf.org/arch/msg/sacm/kWxlnboHAXD87cned9WavwPZy5w.
+                   We also want to consider the relationships proposed by Nancy and Henk in 
+                   https://www.ietf.org/proceedings/94/slides/slides-94-sacm-7.pdf.
+                Nancy and Henk expect to provide additional information related to their Information Model work
+                that can be merged into this document at some point.
+                The information is expected to be ready in advance of
+                IETF 95. Please see issue #39 at
+                https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/39
+                for more information.</t>     
             </section>
             
             <section title="Designation">
@@ -341,16 +541,216 @@
                    attributes can be used to correlate endpoints, information about endpoints, events, etc. NOTE: Designation 
                    attributes are just those that are mandatory-to-implement. In practice, organizations may need to select additional
                    attributes beyond the mandatory-to-implement attributes to successfully identify an endpoint on their network.  Operational
-                   and privacy concerns will be covered in Operational Considerations and Privacy Considerations sections respectively.</t>
+                   and privacy concerns will be covered in Operational Considerations and Privacy Considerations sections respectively.
+                   
+                   A proposal outlining various options for
+                   representing designation attributes/objects in the IPFIX syntax is being
+                   discussed on the mailing list. See IM issue #39 at
+                   https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/39
+                   for more information.
+                </t>
+            </section>
+            
+            <section title="Privacy">
+              <t>TODO: In the IETF, there are privacy concerns with respect to endpoint identity and monitoring. As a result, it was proposed that a
+                privacy property be included to denote when a information element represents a privacy concern.
+          
+                A proposal outlining various options for
+                representing privacy attributes/objects in the IPFIX syntax is being
+                discussed on the mailing list. See IM issue #39 at
+                https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/39
+                for more information.
+              </t>
             </section>
 
-            <section title="Conventions for Modeling Information Model Objects">
-                <t>TODO: The working group needs to select the conventions that will be used to model the different objects defined in the
-                   information model.  Members of the Endpoint ID Design Team are looking into different examples of how other working groups
-                   have modeled the objects in their information models so that the working can select one that makes the most sense for SACM.
-                   Once conventions have been selected, they should be documented here for future reference.</t>
+          <section title="Type Space" anchor="type-space">
+            <t>This section describes the abstract data types that 
+              can be used for the specification of the SACM 
+              Information Elements in <xref target="information-model-elements"/>. 
+              <xref target="abstract-data-types"/> describes the set 
+              of abstract data types. This section used Section 3
+              of <xref target="RFC7012"/> as a starting point and was modified 
+              to address the needs of SACM.</t>
+            
+            <section title="Abstract Data Types" anchor="abstract-data-types">
+              <t>This section describes the set of valid abstract data
+                types of the SACM information model, independent of how
+                they are implemented in a data model.  Note that 
+                further abstract data types may be specified by future 
+                extensions of the SACM information model.</t>
+              <section title="unsigned8">
+                <t>The type "unsigned8" represents a non-negative
+                  integer value in the range of 0 to 255.</t>
+              </section>
+              <section title="unsigned16">
+                <t>The type "unsigned16" represents a non-negative 
+                  integer value in the range of 0 to 65535.</t>
+              </section>  
+              <section title="unsigned32">
+                <t>The type "unsigned32" represents a non-negative 
+                  integer value in the range of 0 to 4294967295.</t>
+              </section>
+              <section title="unsigned64">
+                <t>The type "unsigned64" represents a non-negative 
+                  integer value in the range of 0 to 
+                  18446744073709551615.</t>
+              </section>           
+              <section title="signed8">
+                <t>The type "signed8" represents an integer value in 
+                  the range of -128 to 127.</t>
+              </section>
+              <section title="signed16">
+                <t>The type "signed16" represents an integer value 
+                  in the range of -32768 to 32767.</t>
+              </section>           
+              <section title="signed32">
+                <t>The type "signed32" represents an integer value 
+                  in the range of -2147483648 to 2147483647.</t>
+              </section>
+              <section title="signed64">
+                <t>The type "signed64" represents an integer value 
+                  in the range of -9223372036854775808 to 
+                  9223372036854775807.</t>
+              </section>           
+              <section title="float32">
+                <t>The type "float32" corresponds to an IEEE 
+                  single-precision 32-bit floating point type as 
+                  defined in [IEEE.754.1985].</t>
+              </section>
+              <section title="float64">
+                <t>The type "float64" corresponds to an IEEE 
+                  double-precision 64-bit floating point type as 
+                  defined in [IEEE.754.1985].</t>
+              </section> 
+              <section title="boolean">
+                <t>The type "boolean" represents a binary value.  
+                  The only allowed values are "true" and "false".</t>
+              </section>    
+              <section title="macAddress">
+                <t>The type "macAddress" represents a MAC-48 address 
+                  as defined in [IEEE.802-3.2012].</t>
+              </section>
+              <section title="string">
+                <t>The type "string" represents a finite-length 
+                  string of valid characters from the Unicode coded 
+                  character set [ISO.10646].  Unicode incorporates 
+                  ASCII [RFC20] and the characters of many other 
+                  international character sets.</t>
+              </section>   
+              <section title="dateTimeSeconds">
+                <t>The type "dateTimeSeconds" represents a time 
+                  value expressed with second-level precision.</t>
+              </section>   
+              <section title="dateTimeMilliseconds">
+                <t>The type "dateTimeMilliseconds" represents a time 
+                  value expressed with millisecond-level precision.</t>
+              </section>           
+              <section title="dateTimeMicroseconds">
+                <t>The type "dateTimeMicroseconds" represents a time 
+                  value expressed with microsecond-level precision.</t>
+              </section>
+              <section title="dateTimeNanoseconds">
+                <t>The type "dateTimeNanoseconds" represents a time
+                  value expressed with nanosecond-level precision.</t>
+              </section>
+              <section title="ipv4Address">
+                <t>The type "ipv4Address" represents an IPv4 address as
+                  defined in <xref target="RFC0791"/>.</t>
+              </section>
+              <section title="ipv6Address">
+                <t>The type "ipv6Address" represents an IPv6 address as
+                  defined in <xref target="RFC3587"/>.</t>
+              </section>
+              <section title="basicList">
+                <t>The type "basicList" represents a list of zero or 
+                  more instances of any Information Element as defined
+                  in <xref target="RFC6313"/>.</t>
+              </section>
+              <section title="subTemplateList">
+                <t>The type "subTemplateList" represents a list of zero 
+                  or more instances of a structured data type, where 
+                  the data type of each list element is the same and 
+                  corresponds with a single Template Record as defined
+                  in <xref target="RFC6313"/>.</t>
+              </section>
+              <section title="subTemplateMultiList">
+                <t>The type "subTemplateMultiList" represents a list 
+                  of zero or more instances of a structured data type, 
+                  where the data type of each list element can be 
+                  different and corresponds with different Template
+                  definitions as defined in <xref target="RFC6313"/>.</t>
+              </section>           
             </section>
-
+            <section title="Data Type Semantics"
+              anchor="data-type-semantics">
+              <t>This section describes the set of valid data type 
+                semantics of the IPFIX information model.</t>
+              <t>Further data type semantics may be specified by future 
+                updates to this document.  Changes to the associated 
+                "IPFIX Information Element Semantics" subregistry 
+                [IANA-IPFIX] require a Standards Action [RFC5226].</t>
+            </section>
+            <section title="quantity" anchor="quantity">
+              <t>"quantity" is a numeric (integral or floating point) 
+                value representing a measured value pertaining to the 
+                record.  This is distinguished from counters that 
+                represent an ongoing measured value whose "odometer" 
+                reading is captured as part of a given record.  This 
+                is the default semantic type of all numeric data types.</t>
+            </section>
+            <section title="totalCounter" anchor="titleCounter">
+              <t>"totalCounter" is an integral value reporting the 
+                value of a counter. Counters are unsigned and wrap 
+                back to zero after reaching the limit of the type. 
+                For example, an unsigned64 with counter semantics will
+                continue to increment until reaching the value of 
+                2**64 - 1.  At this point, the next increment will 
+                wrap its value to zero and continue counting from 
+                zero.  The semantics of a total counter is similar to 
+                the semantics of counters used in the Simple Network 
+                Management Protocol (SNMP), such as Counter32 as 
+                defined in [RFC2578].  The only difference between 
+                total counters and counters used in SNMP is that the 
+                total counters have an initial value of 0.  A total 
+                counter counts independently of the export of its 
+                value.</t>
+            </section>
+            <section title="deltaCounter" anchor="deltaCounter">
+              <t>"deltaCounter" is an integral value reporting the value
+                of a counter. Counters are unsigned and wrap back to
+                zero after reaching the limit of the type.  For example,
+                an unsigned64 with counter semantics will continue to
+                increment until reaching the value of 2**64 - 1.  At
+                this point, the next increment will wrap its value to
+                zero and continue counting from zero.  The semantics of
+                a delta counter is similar to the semantics of counters
+                used in SNMP, such as Counter32 as defined in [RFC2578].
+                The only difference between delta counters and counters
+                used in SNMP is that the delta counters have an initial
+                value of 0.  A delta counter is reset to 0 each time 
+                it is exported and/or expires without export.</t>
+            </section>
+            <section title="identifier" anchor="identifier">
+              <t>"identifier" is an integral value that serves as an
+                identifier. Specifically, mathematical operations on two
+                identifiers (aside from the equality operation) are
+                meaningless. Identifiers MUST be one of the signed or 
+                unsigned data types.</t>
+            </section>
+            <section title="flags" anchor="flags">
+              <t>"flags" is an integral value that represents a set 
+                of bit fields. Logical operations are appropriate on 
+                such values, but other mathematical operations are 
+                not.  Flags MUST always be of an unsigned data type.</t>
+            </section>
+            <section title="list" anchor="list">
+              <t>A list represents an arbitrary-length sequence of 
+                zero or more Information Elements, either composed 
+                of regular Information Elements or composed of data 
+                conforming to a Template Record. See <xref
+                  target="RFC6313"/>.</t>
+            </section>
+          </section>
         </section>
         
         <section title="Information Model Assets" anchor="information-model-assets">
@@ -394,12 +794,23 @@
             </figure>
             
             <section title="Asset">
-                <t>TODO: Define Asset here in the context of the information model.</t>
+              <t>   TODO: Define Asset here in the context of the information model.</t>
+              <t><xref target="I-D.ietf-sacm-terminology"/>
+                  defines an asset as: 
+                  
+                  Defined in {{RFC4949}} as "a system resource that is 
+                  (a) required to be protected by an information system's 
+                  security policy, (b) intended to be protected by a 
+                  countermeasure, or (c) required for a system's mission". 
+                  In the scope of SACM, an asset can be composed of other 
+                  assets. Examples of Assets include: Endpoints, Software, 
+                  Guidance, or X.509 public key certificates. An asset is 
+                  not necessarily owned by an organization.</t>
             </section>
             
             <section title="Endpoint">
                 <t>TODO: Define an Endpoint asset.  Explain how it is made up of HW components, 
-                   SW components, asset identity, etc.  Take relevant information from the </t>
+                   SW components, asset identity, etc.</t>
                 
                 <t>An endpoint is the hollow center of the model. An endpoint is an abstract ideal. 
                    Any endpoint attribute assertion that mentions an endpoint mentions it by specifying 
@@ -422,7 +833,7 @@
                     perspective of (a) an asset that needs protection and (b) an asset
                     that can be compromised in some way to do harm.</t>
                 
-                <t>A data model MAY designate a hardware component by its manufacturer and a part number. </t>
+                <t>A data model MAY designate a hardware component by its manufacturer and a part number.</t>
                 
                 <section title="Hardware Instance">
                     <t>A hardware instance is just an instance of a particular
@@ -509,8 +920,7 @@
                         <t>A software instance is "in" an endpoint.</t>
                     </list></t>
                     
-                    <t>A data model MAY use ISO SWID tags to describe software instances.</t>
-                    
+                  <t>A data model MAY use ISO SWID tags to describe software instances.</t>                   
                 </section>
             </section>
             
@@ -525,10 +935,9 @@
                 <t>TODO: Define the relationships between assets (endpoints, hardware, software, etc.). 
                    These will depicted in the overview diagram.</t>
             </section>
-                        
         </section>
-
-        <section title="Information Model Elements">
+        
+        <section title="Information Model Elements" anchor="information-model-elements">
             <t>TODO: Define specific containers, attributes, and metadata.  We may want to consider 
                 adding small diagrams showing the relationships between each (see Lisa's notes: 
                 https://mailarchive.ietf.org/arch/msg/sacm/kWxlnboHAXD87cned9WavwPZy5w). This may be 
@@ -536,20 +945,15 @@
 
             <t>The SACM Information Model contains several elements 
                of the architecture, including:<list style="symbols">
-
                <t>SACM Components, which may be Collectors, Evaluators, etc. 
                    Collectors may be internal (performed within the
                    endpoint itself) or external (performed outside of the endpoint,
                    such as by a hypervisor or remote sensor)</t>
- 
                 <t>Guidance, which tells SACM components what to do</t>
-
                 <t>Posture, in the form of posture attributes and evaluation results</t>
-
                 <t>Additional information about the endpoint, such as a representation
                    of a software component, endpoint identity, user identity, address,
                    location, and authorization constraining the endpoint</t>
-
                 </list></t>
 
             <t>The SACM Information Model does not (in this draft) specify
@@ -559,7 +963,7 @@
                differently in an implementation, but that difference would be in data models,
                not in the information model. 
                </t>
-                          
+                                     
             <t><xref target="figure-model-of-endpoint"/> 
                introduces the endpoint attributes
                and their relationships.</t>
@@ -674,41 +1078,41 @@
                 so as to apply appropriate collection guidance to it.
                 We don't call this "identification".</t>
 
-                <section title="How Known">
-                    <t>Each attribute-value pair or triple
-                       MUST be marked with how the provider knows.
-                       There MUST be at least one marking.
-                       The possible markings follow.
-                       <list style="symbol">
-                           <t>"Self" means that the endpoint furnished the information:
-                              it is self-reported. "Self" does not (necessarily) mean that the
-                              provider runs on the the monitored endpoint.
-                              Self-reported information is generally subject to the
-                              Lying Endpoint Problem. (TODO: citation)</t>
-                           <t>"Authority" means that the provider got the information,
-                              directly or indirectly, from an authority that assigned it. 
-                              For example, the producer got an IP-MAC association 
-                              from a DHCP server
-                              (or was itself the DHCP server).</t>
-                           <t>"Observation" means that the provider got the information
-                              from observations of network traffic.
-                              For example, the producer saw the source address in
-                              an IP packet.</t>
-                           <t>"Verification" means that the provider has verified
-                              the information.
-                              For example:<list style="symbols">
-                                  <t>The provider does IP communication with the endpoint
-                                     and knows the IP address with which it communicates.</t>
-                                  <t>The provider makes an SSH connection to the endpoint
-                                     and knows the endpoint's public key by virtue of
-                                     authenticating it.</t>
-                                  <t>The monitored endpoint is a virtual machine and
-                                     the provider knows by peeking into it.</t>
-                                  </list></t>
-                           </list></t>
-                        <t>TODO: Explain security considerations and how
-                           consumers are meant to use these markings.</t>
-                    </section>
+          <section title="How Known">
+              <t>Each attribute-value pair or triple
+                 MUST be marked with how the provider knows.
+                 There MUST be at least one marking.
+                 The possible markings follow.
+                 <list style="symbol">
+                     <t>"Self" means that the endpoint furnished the information:
+                        it is self-reported. "Self" does not (necessarily) mean that the
+                        provider runs on the the monitored endpoint.
+                        Self-reported information is generally subject to the
+                        Lying Endpoint Problem. (TODO: citation)</t>
+                     <t>"Authority" means that the provider got the information,
+                        directly or indirectly, from an authority that assigned it. 
+                        For example, the producer got an IP-MAC association 
+                        from a DHCP server
+                        (or was itself the DHCP server).</t>
+                     <t>"Observation" means that the provider got the information
+                        from observations of network traffic.
+                        For example, the producer saw the source address in
+                        an IP packet.</t>
+                     <t>"Verification" means that the provider has verified
+                        the information.
+                        For example:<list style="symbols">
+                            <t>The provider does IP communication with the endpoint
+                               and knows the IP address with which it communicates.</t>
+                            <t>The provider makes an SSH connection to the endpoint
+                               and knows the endpoint's public key by virtue of
+                               authenticating it.</t>
+                            <t>The monitored endpoint is a virtual machine and
+                               the provider knows by peeking into it.</t>
+                            </list></t>
+                     </list></t>
+                  <t>TODO: Explain security considerations and how
+                     consumers are meant to use these markings.</t>
+              </section>
 
                 <section title="Whether to Include">
                     <t>When publishing an endpoint attribute assertion,
@@ -721,116 +1125,114 @@
                        </t>
                     </section>
 
-                <section title="IP Address">
-
-                    <section title="Range of Values">     
-                        <t>MUST be an IPv4 or IPv6 address,
-                            and optionally a scope string.
-                            MUST NOT be a broadcast, multicast, or loopback address.</t>
-                        <t>An IPv4 address MUST conform to <xref target="RFC0791"/>,
-                            section 3.2.</t>
-                        <t>An IPv6 address MUST conform to <xref target="RFC3587"/>.
-                           SHOULD NOT be a link-local address.</t>
-                        <t>Scope string: an administratively assigned string
-                           denoting the IP routing domain.
-                           Implementations MUST support this. 
-                           Administrators may use it to avoid ambiguity,
-                           for example if network address translation (NAT) is in use.</t>
-                        <t>ISSUE (Jim Schaad): Scope strings are interesting.
-                           However does this imply a potential need to create a new DHCP item so that 
-                           it can be sent out to a device for reporting back?
-                           Is there such a string already?</t>
-                        <t>(Cliff): Scope strings are like administrative-domain in IF-MAP.
-                           It would solve many problems if DHCP servers could provide this
-                           string to endpoints and to observers.
-                           I am not sure whether there is a standard DHCP option that
-                           fills the bill or not.
-                           I am not sure how easily application software can get
-                           the DHCP options from the underlying OS.
-                           But this is worth exploring.</t>
-                        <t>(Jim): We may need to look at what happens if
-                           a scope identifier is either not set or not available.
-                           I am thinking of the virtual network that is NATed on my machine.
-                           If those VMs reported [on themselves] then the network configuring
-                           systems may not know about that VM and there would not 
-                           necessarily be a reasonable scope string to report for it.</t>
-                        </section>
-
-                    <section title="Meaning">
-                        <t>Throughout the time interval of the AVP,
-                           the endpoint had the right to use,
-                           or was communicating using, the specified IP address.</t>
-                        </section>
-
-                    <section title="Relationships">
-                        <t>A network profiler might know an endpoint's address
-                           and something about the software running on the endpoint.
-                           The profiler might know nothing else.
-                           So data models MUST support an endpoint attribute assertion
-                           relating the IP address to a set of software components.</t>
-                        
-                        <t>A data model MUST support the following relationships:<list style="symbols">
-                            <t>An address is "bound to" a network interface.</t>
-                            <t>An address is considered "bound to" an endpoint just if the 
-                               address is "bound to" an interface that is "in" the endpoint.</t> 
-                            <t>An address may be "in" one or more locations. (DELETE?)</t>
-                            </list></t>
-                        </section>
-
-                    <section title="Multiplicity">
-                        <t>An endpoint attribute assertion MAY contain 
-                           one or more IP addresses.</t>
-                        <t>An IP address may be used by more than one endpoint at a time,
-                           largely because of Network Address Translation (NAT).
-                           Where practical, a scope string SHOULD be included,
-                           to disambiguate.</t>
-                        <t>In practice, an IP address can be used by only one 
-                           endpoint in an IP routing domain at a time.</t>
-                        </section>
-
-                    <section title="Stability">
-                        <t>The stability of IP address assignments varies widely.
-                           Some assignments are persistent, some volatile.
-                           The time interval of the AVP MUST NOT reach into the future,
-                           not even if (for example) the DHCP lease is infinite.</t>
-                        </section>
-
-                    <section title="Accuracy">
-                        <t>For IP addresses that a provider knows by
-                            observation or verification: <list style="symbols">
-                            <t>Network Address Translation (NAT, RFC2663) is a pitfall.</t>
-                            <t>The provider MUST NOT include an IP address that
-                               the provider knows to be a translated address.</t>
-                            <t>The provider SHOULD be configurable with
-                               a set of IP address blocks to be excluded.
-                               Address blocks set aside for NAT devices SHOULD
-                               be excluded, by administrators for example.</t>
-                            <t>ISSUE: In a later SACM version, it would be good to
-                               overcome this, by publishing the association
-                               between the internal and external address-port
-                               combinations.</t>
-                            </list></t>
-                         <t>For IP addresses that a provider
-                            knows by observation or verification,
-                            IP address spoofing is a pitfall.
-                            Network administrators SHOULD take countermeasures.
-                            Ingress filtering (RFC3704) is one.
-                            DHCP snooping is another: many Network Access Devices
-                            can confine endpoints to IP addresses assigned
-                            by authorized DHCP servers.</t>
-                         </section>
-
-                    <section title="Data Model Requirements">
-                        <t>All SACM data models MUST support this entire subsection.</t>
-                        </section>
-
-                    </section>
-
-                <section title="MAC Address">
-
-                    <t>TODO</t>
-                    </section>
-
+              <!--
+            <section title="IP Address">
+              
+              <section title="Range of Values">     
+                <t>MUST be an IPv4 or IPv6 address,
+                  and optionally a scope string.
+                  MUST NOT be a broadcast, multicast, or loopback address.</t>
+                <t>An IPv4 address MUST conform to <xref target="RFC0791"/>,
+                  section 3.2.</t>
+                <t>An IPv6 address MUST conform to <xref target="RFC3587"/>.
+                  SHOULD NOT be a link-local address.</t>
+                <t>Scope string: an administratively assigned string
+                  denoting the IP routing domain.
+                  Implementations MUST support this. 
+                  Administrators may use it to avoid ambiguity,
+                  for example if network address translation (NAT) is in use.</t>
+                <t>ISSUE (Jim Schaad): Scope strings are interesting.
+                  However does this imply a potential need to create a new DHCP item so that 
+                  it can be sent out to a device for reporting back?
+                  Is there such a string already?</t>
+                <t>(Cliff): Scope strings are like administrative-domain in IF-MAP.
+                  It would solve many problems if DHCP servers could provide this
+                  string to endpoints and to observers.
+                  I am not sure whether there is a standard DHCP option that
+                  fills the bill or not.
+                  I am not sure how easily application software can get
+                  the DHCP options from the underlying OS.
+                  But this is worth exploring.</t>
+                <t>(Jim): We may need to look at what happens if
+                  a scope identifier is either not set or not available.
+                  I am thinking of the virtual network that is NATed on my machine.
+                  If those VMs reported [on themselves] then the network configuring
+                  systems may not know about that VM and there would not 
+                  necessarily be a reasonable scope string to report for it.</t>
+              </section>
+              
+              <section title="Meaning">
+                <t>Throughout the time interval of the AVP,
+                  the endpoint had the right to use,
+                  or was communicating using, the specified IP address.</t>
+              </section>
+              
+              <section title="Relationships">
+                <t>A network profiler might know an endpoint's address
+                  and something about the software running on the endpoint.
+                  The profiler might know nothing else.
+                  So data models MUST support an endpoint attribute assertion
+                  relating the IP address to a set of software components.</t>
+                
+                <t>A data model MUST support the following relationships:<list style="symbols">
+                  <t>An address is "bound to" a network interface.</t>
+                  <t>An address is considered "bound to" an endpoint just if the 
+                    address is "bound to" an interface that is "in" the endpoint.</t> 
+                  <t>An address may be "in" one or more locations. (DELETE?)</t>
+                </list></t>
+              </section>
+              
+              <section title="Multiplicity">
+                <t>An endpoint attribute assertion MAY contain 
+                  one or more IP addresses.</t>
+                <t>An IP address may be used by more than one endpoint at a time,
+                  largely because of Network Address Translation (NAT).
+                  Where practical, a scope string SHOULD be included,
+                  to disambiguate.</t>
+                <t>In practice, an IP address can be used by only one 
+                  endpoint in an IP routing domain at a time.</t>
+              </section>
+              
+              <section title="Stability">
+                <t>The stability of IP address assignments varies widely.
+                  Some assignments are persistent, some volatile.
+                  The time interval of the AVP MUST NOT reach into the future,
+                  not even if (for example) the DHCP lease is infinite.</t>
+              </section>
+              
+              <section title="Accuracy">
+                <t>For IP addresses that a provider knows by
+                  observation or verification: <list style="symbols">
+                    <t>Network Address Translation (NAT, RFC2663) is a pitfall.</t>
+                    <t>The provider MUST NOT include an IP address that
+                      the provider knows to be a translated address.</t>
+                    <t>The provider SHOULD be configurable with
+                      a set of IP address blocks to be excluded.
+                      Address blocks set aside for NAT devices SHOULD
+                      be excluded, by administrators for example.</t>
+                    <t>ISSUE: In a later SACM version, it would be good to
+                      overcome this, by publishing the association
+                      between the internal and external address-port
+                      combinations.</t>
+                  </list></t>
+                <t>For IP addresses that a provider
+                  knows by observation or verification,
+                  IP address spoofing is a pitfall.
+                  Network administrators SHOULD take countermeasures.
+                  Ingress filtering (RFC3704) is one.
+                  DHCP snooping is another: many Network Access Devices
+                  can confine endpoints to IP addresses assigned
+                  by authorized DHCP servers.</t>
+              </section>
+              
+              <section title="Data Model Requirements">
+                <t>All SACM data models MUST support this entire subsection.</t>
+              </section>
+              
+            </section>
+            -->
+<!-- TODO: Integrate what we need into the information element and
+                remove what is unneeded.
                 <section title="Hardware Serial Number">
 
                     <section title="Range of Values">
@@ -871,7 +1273,7 @@
                         <t>All SACM data models MUST support this entire subsection.</t>
                         </section>
 
-                    </section>
+                    </section>-->
 
                 <section title="Certificate">
                     <section title="Range of values">
@@ -943,6 +1345,7 @@
                        from server endpoints somehow.</t>
                     </section>
 
+
                 <section title="Tool-Specific Identifier">
 
                     <t>TODO</t>
@@ -978,8 +1381,9 @@
                     </section>
 
                 </section>
-  
-
+          
+    <!-- TODO: Re-integrate this text into information element once we know how we are
+      representing relationships.
             <section title="Network Interface">
                 
                 <t>An endpoint generally has at least one network interface.</t>
@@ -997,44 +1401,8 @@
                        because of successful 802.1X.
                        An internal collector may be aware of the identity.
                        An external collector (such as a RADIUS server <xref target="RFC3580"/>) will be aware of the identity.</t>
-                    </list></t>
-                </section>
-
-            <section title="Address">
-
-                <t>TODO: DELETE THIS SECTION. ISSUE (CEK): Do we still want to model
-                   layer 4 addresses?</t>
- 
-                <t>An address SHALL BE any of:<list style="symbols">
-                    <t>A layer 2 address; a data model MUST support MAC addresses, 
-                       and MAY support others</t>
-                    <t>A layer 3 address; a data model MUST support IPv4 and IPv6 
-                       addresses, and MAY support others</t>
-                    <t>A layer 4 address; a data model MUST support 
-                       an IP-address-protocol-port combination, where protocol is TCP or UDP. 
-                       It MAY support others</t>
-                    </list></t>
-
-                <t>Addresses from other layers may be added in the future.</t>
-
-                <t>These addresses are not necessarily globally unique.
-                   Therefore, a data model SHOULD allow an address to be qualified with a scope.<list style="symbols">  
-
-                    <t>A data model SHOULD allow qualifying a MAC address with its 
-                        layer-2 broadcast domain. This MAY take the form of a VLAN ID 
-                        and an administratively assigned string denoting the LAN.</t> 
-                    <t>A data model SHOULD allow qualifying an IP address with an 
-                       administratively assigned string denoting the IP routing domain.</t>
-                    </list></t>
-
-                <t>A data model MUST support the following relationships:<list style="symbols">
-                    <t>An address is "bound to" a network interface.</t>
-                    <t>An address is considered "bound to" an endpoint just if the 
-                       address is "bound to" an interface that is "in" the endpoint.</t> 
-                    <t>An address may be "in" one or more locations.</t>
-                    </list></t>
-                </section>
-
+                    </list></t>-->
+                      
             <section title="Identity">
 
                 <t>TODO: Delete this section?</t>
@@ -1113,7 +1481,7 @@
 
                 </section>
 
-            <section title="Endpoint Attribute Assertion">
+          <section title="Endpoint Attribute Assertion">
                 <t>TODO: Integrate into the <xref target="information-model-framework"/> as appropriate.</t>
                 <section title="Form and Precise Meaning">
                     <t>An endpoint attribute assertion has:
@@ -1277,32 +1645,7 @@
                    an Evaluation Result. These mechanics are out of the scope of the Information Model.</t>
                 </section>
 
-            <section title="Report">
-
-                <t>ISSUE (CEK): Should we take modeling of reports out of scope?
-                   It is clear that reports are needed.
-                   But is a *standard* for reports needed, and does it
-                   deserve our priority? Endpoint ID Design Team: Yes, it should be removed.</t>
-                    <t>TODO: This should be removed if the working group decides that reports are out of scope for SACM.</t>
-
-                <t>An Endpoint Attribute Assertion concerns a single endpoint.
-                   Assertions about a set of endpoints are also needed -- for example, for trend analysis and for reports read by humans. These assertions are termed "reports". SACM components will consume Endpoint Attribute Assertions
-and generate reports.</t>
-
-                <t>A report contains its provenance, with the same form and meaning
-                   as the provenance of an Endpoint Attribute Assertion.</t>
-    
-                <t>A Report summarizes:<list style="symbols">
-                    <t>Endpoint Attribute Assertions, which may include Evaluation Results</t>
-                    <t>Other Reports</t>
-                    </list></t>
-
-                 <t>A Report may routine or ad hoc.</t>
-                 <t>Some reports may be machine readable. Machine readable reports may be
-                    consumable by SACM components and by automatic response systems (not specified by SACM).</t>
-                 </section>
-
-            <section title="SACM Component">
+          <section title="SACM Component">
                 <t>Although SACM components are mainly covered by the SACM architecture, we have some remarks. TODO: Move them to the architecture document?</t>
 
                 <t>ISSUE (CEK): Why do we need information elements that model SACM compoments?</t>
@@ -1356,18 +1699,6 @@ and generate reports.</t>
                     <t>[jmf- a NEA posture validator is not an example of this definition. A NEA posture assessment is, maybe?]</t>
                     <t>[cek-Why isn't a NEA posture validator an example?]</t>
                     </section>
-
-                <section title="Report Generator">
-                    <t>A report generator makes reports based on:<list style="symbols">
-                        <t>Endpoint Attribute Assertions, including Evaluation Results</t>
-                        <t>Other Reports (a weekly report may be created from daily
-                            reports)</t>
-                        </list></t>
-                    <t>It may summarize data continually, as the data arrives. It also may    
-                       summarize data in response to an ad hoc query.</t>
-                    <t>TODO: This should be removed if the working group decides that reports are out of scope for SACM.</t>
-                       
-                    </section>
                 </section>
 
             <section title="Organization?">
@@ -1415,11 +1746,7 @@ and generate reports.</t>
                        the guidance calling for the longest retention should take
                        precedence.</t>
                     </section>
-                <section title="Reporting Guidance">
-                    <t>A Report Generator typically needs Reporting Guidance to govern the
-                       reports it generates.  TODO: This should be removed if the working group
-                       decides that reports are out of scope for SACM.</t>
-                    </section>
+               
                 </section>
   
             <section title="Endpoint">
@@ -1513,8 +1840,1287 @@ the same.
                          of the user. @@@ Eh?</t>
                      </section>
                 </section>
+<section title="hardwareSerialNumber">
+  <figure>
+    <artwork>
+elementId: TBD
+name: hardwareSerialNumber	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A globally unique identifier for a particular 
+             piece of hardware assigned by the vendor.
+    </artwork>
+  </figure>
+</section> 
+<section title="interfaceName">
+  <figure>
+    <artwork>
+elementId: TBD
+name: interfaceName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A short name uniquely describing an interface, 
+             eg "Eth1/0". See [RFC2863] for the definition 
+             of the ifName object.
+    </artwork>
+  </figure>
+</section>
+<section title="interfaceIndex">
+  <figure>
+    <artwork>
+elementId: TBD
+name: interfaceIndex
+dataType: unsigned32
+dataTypeSemantics: identifier
+status: current	
+description: The index of an interface installed on an endpoint. 
+             The value matches the value of managed object 
+             'ifIndex' as defined in [RFC2863]. Note that ifIndex 
+             values are not assigned statically to an interface 
+             and that the interfaces may be renumbered every time 
+             the device's management system is re-initialized, 
+             as specified in [RFC2863].
+    </artwork>
+  </figure>
+</section>
+<section title="interfaceMacAddress">
+  <figure>
+    <artwork>
+elementId: TBD
+name: interfaceMacAddress
+dataType: macAddress
+dataTypeSemantics: default
+status: current
+description: The IEEE 802 MAC address associated with a network 
+             interface on an endpoint.
+    </artwork>
+  </figure>
+</section>
+<section title="interfaceType">
+  <figure>
+    <artwork>
+elementId: TBD
+name: interfaceType
+dataType: unsigned32
+dataTypeSemantics: identifier
+status: current
+description: The type of a network interface. The value matches 
+             the value of managed object 'ifType' as defined in 
+             [IANA registry ianaiftype-mib].
+    </artwork>
+  </figure>
+</section>
+<section title="interfaceFlags">
+  <figure>
+    <artwork>
+elementId: TBD
+name: interfaceFlags
+dataType: unsigned16
+dataTypeSemantics: flags
+status: current
+description: This information element specifies the flags 
+             associated with a network interface. Possible
+             values include:
+    </artwork>
+  </figure>
+  <texttable>
+    <ttcol>Value</ttcol>
+    <ttcol>Description</ttcol>
+    <c>0x1</c>
+    <c>interface is up</c> 
+    <c>0x2</c>
+    <c>broadcast address valid</c>
+    <c>0x4</c>
+    <c>turn on debugging</c>
+    <c>0x8</c>
+    <c>is a loopback net</c>
+    <c>0x10</c>
+    <c>interface is point-to-point link</c>
+    <c>0x20</c>
+    <c>avoid use of trailers</c>
+    <c>0x40</c>
+    <c>resources allocated</c>
+    <c>0x80</c>
+    <c>no address resolution protocol</c>
+    <c>0x100</c>
+    <c>receive all packets</c>
+  </texttable>
+</section>
+<section title="networkInterface">
+  <figure>
+    <artwork>
+elementId: TBD
+name: networkInterface
+dataType: basicList
+dataTypeSemantics: default
+status: current
+description: Information about a network interface 
+             installed on an endpoint. The 
+             following high-level digram  
+             describes the structure of 
+             networkInterface information 
+             element.
+    </artwork>
+  </figure>
+  <figure>
+    <artwork>
+             networkInterface = (basicList, allof,
+                                 interfaceName,
+                                 interfaceIndex,
+                                 macAddress,
+                                 ifType,
+                                 flags
+                                 )
+    </artwork>
+  </figure>
+</section>  
+  <section title="softwareIdentifier">
+    <figure>
+      <artwork>
+elementId: TBD
+name: softwareIdentifier	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A globally unique identifier for a particular 
+             software application.
+      </artwork>
+    </figure>
+  </section>
+  <section title="softwareTitle">
+    <figure>
+      <artwork>
+elementId: TBD
+name: softwareTitle
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The title of the software application.
+      </artwork>
+    </figure>
+  </section>
+  
+  <section title="softwareCreator">
+    <figure>
+      <artwork>
+elementId: TBD
+name: softwareCreator
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The software developer (e.g., vendor or author).      
+      </artwork>
+    </figure>
+  </section>
+  <section title="simpleVersion">
+    <figure>
+      <artwork>
+elementId: TBD
+name: simpleVersion
+dataType: simpleVersionType
+dataTypeSemantics: default
+status: current
+description: The version string for a software application that
+             follows the simple versioning scheme.      
+      </artwork>
+    </figure>
+  </section>
+  <section title="rpmVersion">
+    <figure>
+      <artwork>
+elementId: TBD
+name: rpmVersion
+dataType: rpmVersionType
+dataTypeSemantics: default
+status: current
+description: The version string for a software application that
+             follows the RPM versioning scheme.
+      </artwork>
+    </figure>
+  </section>
+  <section title="ciscoTrainVersion">
+    <figure>
+      <artwork>
+elementId: TBD
+name: ciscoTrainVersion
+dataType: ciscoTrainVersionType
+dataTypeSemantics: default
+status: current
+description: The version string for a software application that
+             follows the Cisco Train Release versioning scheme.
+      </artwork>
+    </figure>
+  </section>
+  <section title="softwareVersion">
+    <figure>
+      <artwork>
+elementId: TBD
+name: softwareVerison
+dataType: basicList
+dataTypeSemantics: default
+status: current
+description: The version of the software application. Software 
+             applications may be versioned using a number of
+             schemas. The following high-level digram describes
+             the structure of the softwareVersion information
+             element.
+
+softwareVersion(basicList, exactlyOneOf,
+                simpleVersion,
+                rpmVersion,
+                ciscoTrainVersion,
+                ...
+               )     
+      </artwork>
+    </figure>
+  </section>
+  <section title="lastUpdated">
+    <figure>
+      <artwork>
+elementId: TBD
+name: lastUpdated
+dataType: dateTimeSeconds
+dataTypeSemantics: default
+status: current
+description: The date and time when the software instance 
+             was last updated on the system (e.g., new 
+             version instlalled or patch applied)
+      </artwork>
+    </figure>
+  </section>
+  
+<section title="softwareInstance">
+  <figure>
+    <artwork>
+elementId: TBD
+name: softwareInstance
+dataType: subTemplateMultiList
+dataTypeSemantics: default
+status: current
+description: Information about an instance of software 
+             installed on an endpoint. The following 
+             high-level digram describes the structure of 
+             softwareInstance information element.
+
+             softwareInstance = (subTemplateMultiList, allof,
+                                 softwareIdentifier,
+                                 title,
+                                 creator,
+                                 softwareVersion,
+                                 lastUpdated
+                                )      
+    </artwork>
+  </figure>
+</section>   
+<section title="globallyUniqueIdentifier">
+  <figure>
+    <artwork>
+elementId: TBD
+name: globallyUniqueIdentifier	
+dataType: unsigned8
+dataTypeSemantics: identifier
+status: current
+metadata: true
+description: TODO.
+    </artwork>
+  </figure>
+</section>
+<section title="dataOrigin">
+  <figure>
+    <artwork>
+elementId: TBD
+name: dataOrigin	
+dataType: string
+dataTypeSemantics: default
+status: current
+metadata: true
+description: The origin of the data. TODO make a better
+             description.
+    </artwork>
+  </figure>
+</section>
+
+<section title="dataSource">
+  <figure>
+    <artwork>
+elementId: TBD
+name: dataSource	
+dataType: string
+dataTypeSemantics: default
+status: current
+metadata: true
+description: The source of the data. TODO make a better
+             description.
+    </artwork>
+  </figure>
+</section>
+
+<section title="creationTimestamp">
+  <figure>
+    <artwork>
+elementId: TBD
+name: creationTimestamp	
+dataType: dateTimeSeconds
+dataTypeSemantics: default
+status: current
+metadata: true
+description: The date and time when the posture
+             information was created by a SACM Component.
+    </artwork>
+  </figure>
+</section>
+<section title="collectionTimestamp">
+  <figure>
+    <artwork>
+elementId: TBD
+name: collectionTimestamp	
+dataType: dateTimeSeconds
+dataTypeSemantics: default
+status: current
+metadata: true
+description: The date and time when the posture
+             information was collected or observed by a SACM
+             Component.
+    </artwork>
+  </figure>
+</section>
+<section title="publicationTimestamp">
+  <figure>
+    <artwork>
+elementId: TBD
+name: publicationTimestamp	
+dataType: dateTimeSeconds
+dataTypeSemantics: default
+status: current
+metadata: true
+description: The date and time when the posture
+             information was published.
+    </artwork>
+  </figure>
+</section>
+<section title="relayTimestamp">
+  <figure>
+    <artwork>
+elementId: TBD
+name: relayTimestamp	
+dataType: dateTimeSeconds
+dataTypeSemantics: default
+status: current
+metadata: true
+description: The date and time when the posture
+             information was relayed to another SACM Component.
+    </artwork>
+  </figure>
+</section>
+<section title="storageTimestamp">
+  <figure>
+    <artwork>
+elementId: TBD
+name: storageTimestamp	
+dataType: dateTimeSeconds
+dataTypeSemantics: default
+status: current
+metadata: true
+description: The date and time when the posture
+             information was stored in a Repository.
+    </artwork>
+  </figure>
+</section>
+<section title="type">
+  <figure>
+    <artwork>
+elementId: TBD
+name: type	
+dataType: unsigned16
+dataTypeSemantics: flags
+status: current
+metadata: true
+description: The type of data model use to represent
+             some set of endpoint information. The following table
+             lists the set of data models supported by SACM.
+
+             +-------+----------------------------------+
+             | Value | Description                      |
+             +-------+----------------------------------+
+             | 0x00  | Data Model 1                     |
+             +-------+----------------------------------+
+             | 0x01  | Data Model 2                     |
+             +-------+----------------------------------+
+             | 0x02  | Data Model 3                     |
+             +-------+----------------------------------+
+             |...    | ...                              |
+             +-------+----------------------------------+
+    </artwork>
+  </figure>
+</section>
+<section title="protocolIdentifier">
+      <figure>
+         <artwork>
+elementId: TBD
+name: protocolIdentifier	
+dataType: unsigned8
+dataTypeSemantics: identifier
+status: current
+description: The value of the protocol number in the IP packet header.
+             The protocol number identifies the IP packet payload type.
+             Protocol numbers are defined in the IANA Protocol Numbers
+             registry.
+             
+             In Internet Protocol version 4 (IPv4), this is carried in the
+             Protocol field.  In Internet Protocol version 6 (IPv6), this
+             is carried in the Next Header field in the last extension
+             header of the packet.</artwork>
+      </figure>
+   </section>
+   <section title="sourceTransportPort">
+      <figure>
+         <artwork>
+elementId: TBD
+name: sourceTransportPort	
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: The source port identifier in the transport header.
+             For the transport protocols UDP, TCP, and SCTP, this is the
+             source port number given in the respective header.  This
+             field MAY also be used for future transport protocols that
+             have 16-bit source port identifiers.</artwork>
+      </figure>
+   </section>
+   <section title="sourceIPv4PrefixLength">
+      <figure>
+         <artwork>
+elementId: TBD
+name: sourceIPv4PrefixLength	
+dataType: unsigned8
+dataTypeSemantics: 
+status: current
+description: The number of contiguous bits that are relevant in the
+             sourceIPv4Prefix Information Element.</artwork>
+      </figure>
+   </section>
+   <section title="ingressInterface">
+      <figure>
+         <artwork>
+elementId: TBD
+name: ingressInterface	
+dataType: unsigned32
+dataTypeSemantics: identifier
+status: current
+description: The index of the IP interface where packets of this Flow
+             are being received.  The value matches the value of managed
+             object 'ifIndex' as defined in [RFC2863].
+             Note that ifIndex values are not assigned statically to an
+             interface and that the interfaces may be renumbered every
+             time the device's management system is re-initialized, as
+             specified in [RFC2863].</artwork>
+      </figure>
+   </section>
+   <section title="destinationTransportPort">
+      <figure>
+         <artwork>
+elementId: TBD
+name: destinationTransportPort	
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: The destination port identifier in the transport header.
+             For the transport protocols UDP, TCP, and SCTP, this is the
+             destination port number given in the respective header.
+             This field MAY also be used for future transport protocols
+             that have 16-bit destination port identifiers.</artwork>
+      </figure>
+   </section>
+   <section title="sourceIPv6PrefixLength">
+      <figure>
+         <artwork>
+elementId: TBD
+name: sourceIPv6PrefixLength	
+dataType: unsigned8
+dataTypeSemantics: 
+status: current
+description: The number of contiguous bits that are relevant in the
+             sourceIPv6Prefix Information Element.</artwork>
+      </figure>
+   </section>
+   <section title="sourceIPv4Prefix">
+      <figure>
+         <artwork>
+elementId: TBD
+name: sourceIPv4Prefix	
+dataType: ipv4Address
+dataTypeSemantics: default
+status: current
+description: IPv4 source address prefix.</artwork>
+      </figure>
+   </section>
+   <section title="destinationIPv4Prefix">
+      <figure>
+         <artwork>
+elementId: TBD
+name: destinationIPv4Prefix	
+dataType: ipv4Address
+dataTypeSemantics: default
+status: current
+description: IPv4 destination address prefix.</artwork>
+      </figure>
+   </section>
+   <section title="sourceMacAddress">
+      <figure>
+         <artwork>
+elementId: TBD
+name: sourceMacAddress	
+dataType: macAddress
+dataTypeSemantics: default
+status: current
+description: The IEEE 802 source MAC address field.</artwork>
+      </figure>
+   </section>
+   <section title="ipVersion">
+      <figure>
+         <artwork>
+elementId: TBD
+name: ipVersion	
+dataType: unsigned8
+dataTypeSemantics: identifier
+status: current
+description: The IP version field in the IP packet header.</artwork>
+      </figure>
+   </section>
+   <section title="interfaceName">
+      <figure>
+         <artwork>
+elementId: TBD
+name: interfaceName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A short name uniquely describing an interface, eg "Eth1/0".</artwork>
+      </figure>
+   </section>
+   <section title="interfaceDescription">
+      <figure>
+         <artwork>
+elementId: TBD
+name: interfaceDescription	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The description of an interface, eg "FastEthernet 1/0" or "ISP 
+connection".</artwork>
+      </figure>
+   </section>
+   <section title="applicationDescription">
+      <figure>
+         <artwork>
+elementId: TBD
+name: applicationDescription	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: Specifies the description of an application.</artwork>
+      </figure>
+   </section>
+   <section title="applicationId">
+      <figure>
+         <artwork>
+elementId: TBD
+name: applicationId	
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: Specifies an Application ID per [RFC6759].</artwork>
+      </figure>
+   </section>
+   <section title="applicationName">
+      <figure>
+         <artwork>
+elementId: TBD
+name: applicationName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: Specifies the name of an application.</artwork>
+      </figure>
+   </section>
+   <section title="exporterIPv4Address">
+      <figure>
+         <artwork>
+elementId: TBD
+name: exporterIPv4Address	
+dataType: ipv4Address
+dataTypeSemantics: default
+status: current
+description: The IPv4 address used by the Exporting Process.  This is used
+             by the Collector to identify the Exporter in cases where the
+             identity of the Exporter may have been obscured by the use of
+             a proxy.</artwork>
+      </figure>
+   </section>
+   <section title="exporterIPv6Address">
+      <figure>
+         <artwork>
+elementId: TBD
+name: exporterIPv6Address	
+dataType: ipv6Address
+dataTypeSemantics: default
+status: current
+description: The IPv6 address used by the Exporting Process.  This is used
+             by the Collector to identify the Exporter in cases where the
+             identity of the Exporter may have been obscured by the use of
+             a proxy.</artwork>
+      </figure>
+   </section>
+   <section title="portId">
+      <figure>
+         <artwork>
+elementId: TBD
+name: portId	
+dataType: unsigned32
+dataTypeSemantics: identifier
+status: current
+description: An identifier of a line port that is unique per IPFIX
+             Device hosting an Observation Point.  Typically, this
+             Information Element is used for limiting the scope
+             of other Information Elements.</artwork>
+      </figure>
+   </section>
+   <section title="templateId">
+      <figure>
+         <artwork>
+elementId: TBD
+name: templateId	
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: An identifier of a Template that is locally unique within a
+             combination of a Transport session and an Observation Domain.       
+              
+             Template IDs 0-255 are reserved for Template Sets, Options
+             Template Sets, and other reserved Sets yet to be created.
+             Template IDs of Data Sets are numbered from 256 to 65535.
+                
+             Typically, this Information Element is used for limiting
+             the scope of other Information Elements.
+             Note that after a re-start of the Exporting Process Template
+             identifiers may be re-assigned.</artwork>
+      </figure>
+   </section>
+   <section title="collectorIPv4Address">
+      <figure>
+         <artwork>
+elementId: TBD
+name: collectorIPv4Address	
+dataType: ipv4Address
+dataTypeSemantics: default
+status: current
+description: An IPv4 address to which the Exporting Process sends Flow
+             information.</artwork>
+      </figure>
+   </section>
+   <section title="collectorIPv6Address">
+      <figure>
+         <artwork>
+elementId: TBD
+name: collectorIPv6Address	
+dataType: ipv6Address
+dataTypeSemantics: default
+status: current
+description: An IPv6 address to which the Exporting Process sends Flow
+             information.</artwork>
+      </figure>
+   </section>
+   <section title="informationElementIndex">
+      <figure>
+         <artwork>
+elementId: TBD
+name: informationElementIndex	
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: A zero-based index of an Information Element
+             referenced by informationElementId within a Template referenced by
+             templateId; used to disambiguate scope for templates containing
+             multiple identical Information Elements.</artwork>
+      </figure>
+   </section>
+   <section title="basicList">
+      <figure>
+         <artwork>
+elementId: TBD
+name: basicList	
+dataType: basicList
+dataTypeSemantics: list
+status: current
+description: Specifies a generic Information Element with a basicList abstract
+             data type.  For example, a list of port numbers, a list of
+             interface indexes, etc.</artwork>
+      </figure>
+   </section>
+   <section title="subTemplateList">
+      <figure>
+         <artwork>
+elementId: TBD
+name: subTemplateList	
+dataType: subTemplateList
+dataTypeSemantics: list
+status: current
+description: Specifies a generic Information Element with a subTemplateList
+             abstract data type.</artwork>
+      </figure>
+   </section>
+   <section title="subTemplateMultiList">
+      <figure>
+         <artwork>
+elementId: TBD
+name: subTemplateMultiList	
+dataType: subTemplateMultiList
+dataTypeSemantics: list
+status: current
+description: Specifies a generic Information Element with a
+             subTemplateMultiList abstract data type.</artwork>
+      </figure>
+   </section>
+   <section title="informationElementId">
+      <figure>
+         <artwork>
+elementId: TBD
+name: informationElementId	
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: This Information Element contains the ID of another Information
+             Element.</artwork>
+      </figure>
+   </section>
+   <section title="informationElementDataType">
+      <figure>
+         <artwork>
+elementId: TBD
+name: informationElementDataType	
+dataType: unsigned8
+dataTypeSemantics: 
+status: current
+description: A description of the abstract data type of an IPFIX
+             information element.These are taken from the abstract data types
+             defined in section 3.1 of the IPFIX Information Model [RFC5102];
+             see that section for more information on the types described
+             in the informationElementDataType sub-registry.
+                          
+             These types are registered in the IANA IPFIX Information Element
+             Data Type subregistry.  This subregistry is intended to assign
+             numbers for type names, not to provide a mechanism for adding data
+             types to the IPFIX Protocol, and as such requires a Standards
+             Action [RFC5226] to modify.</artwork>
+      </figure>
+   </section>
+   <section title="informationElementDescription">
+      <figure>
+         <artwork>
+elementId: TBD
+name: informationElementDescription	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A UTF-8 [RFC3629] encoded Unicode string containing a
+             human-readable description of an Information Element.  The content
+             of the informationElementDescription MAY be annotated with one or
+             more language tags [RFC4646], encoded in-line [RFC2482] within the
+             UTF-8 string, in order to specify the language in which the
+             description is written.  Description text in multiple languages
+             MAY tag each section with its own language tag; in this case, the
+             description information in each language SHOULD have equivalent
+             meaning.  In the absence of any language tag, the "i-default"
+             [RFC2277] language SHOULD be assumed.  See the Security
+             Considerations section for notes on string handling for
+             Information Element type records.</artwork>
+      </figure>
+   </section>
+   <section title="informationElementName">
+      <figure>
+         <artwork>
+elementId: TBD
+name: informationElementName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A UTF-8 [RFC3629] encoded Unicode string containing
+             the name of an Information Element, intended as a simple
+             identifier.  See the Security Considerations section for notes on
+             string handling for Information Element type records.</artwork>
+      </figure>
+   </section>
+   <section title="informationElementRangeBegin">
+      <figure>
+         <artwork>
+elementId: TBD
+name: informationElementRangeBegin	
+dataType: unsigned64
+dataTypeSemantics: quantity
+status: current
+description: Contains the inclusive low end of the range of
+             acceptable values for an Information Element.</artwork>
+      </figure>
+   </section>
+   <section title="informationElementRangeEnd">
+      <figure>
+         <artwork>
+elementId: TBD
+name: informationElementRangeEnd	
+dataType: unsigned64
+dataTypeSemantics: quantity
+status: current
+description: Contains the inclusive high end of the range of
+             acceptable values for an Information Element.</artwork>
+      </figure>
+   </section>
+   <section title="informationElementSemantics">
+<figure>
+   <artwork>
+elementId: TBD
+name: informationElementSemantics	
+dataType: unsigned8
+dataTypeSemantics: 
+status: current
+description: A description of the semantics of an IPFIX 
+             Information Element.  These are taken from the data type 
+             semantics defined in section 3.2 of the IPFIX Information 
+             Model [RFC5102]; see that section for more information 
+             on the types defined in the informationElementSemantics 
+             sub-registry.  This field may take the values in Table ; 
+             the special value 0x00 (default) is used to note that 
+             no semantics apply to the field; it cannot be manipulated 
+             by a Collecting Process or File Reader that does not 
+             understand it a priori.
+                       
+             These semantics are registered in the IANA IPFIX 
+             Information Element Semantics subregistry.  This subregistry 
+             is intended to assign numbers for semantics names, not 
+             to provide a mechanism for adding semantics to the 
+             IPFIX Protocol, and as such requires a Standards 
+             Action [RFC5226] to modify.</artwork>
+  </figure>
+</section>
+   <section title="informationElementUnits">
+      <figure>
+         <artwork>
+elementId: TBD
+name: informationElementUnits	
+dataType: unsigned16
+dataTypeSemantics: 
+status: current
+description: A description of the units of an IPFIX Information
+             Element.  These correspond to the units implicitly defined in the
+             Information Element definitions in section 5 of the IPFIX
+             Information Model [RFC5102]; see that section for more information
+             on the types described in the informationElementsUnits sub-registry.  
+             This field may take the values in Table 3 below; the special value 
+             0x00 (none) is used to note that the field is unitless.
+                          
+             These types are registered in the IANA IPFIX Information Element
+             Units subregistry; new types may be added on a First Come First
+             Served [RFC5226] basis.</artwork>
+      </figure>
+   </section>
+   <section title="userName">
+      <figure>
+         <artwork>
+elementId: TBD
+name: userName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: User name associated with the flow.</artwork>
+      </figure>
+   </section>
+   <section title="applicationCategoryName">
+      <figure>
+         <artwork>
+elementId: TBD
+name: applicationCategoryName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: An attribute that provides a first level categorization for
+             each Application ID.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueInteger">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueInteger	
+dataType: signed64
+dataTypeSemantics: identifier
+status: current
+description: An IPFIX Information Element which denotes that the
+             integer value of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of Integer32
+             and INTEGER with IPFIX Reduced Size Encoding used as required.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of signed64.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueOctetString">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueOctetString	
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that an
+             Octet String or Opaque value of a MIB object will be exported.
+             The MIB Object Identifier ("mibObjectIdentifier") for this field
+             MUST be exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with the Base Syntax
+             of OCTET STRING and Opaque.  The value is encoded as per the
+             standard IPFIX Abstract Data Type of octetArray.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueOID">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueOID	
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that an
+             Object Identifier or OID value of a MIB object will be exported.
+             The MIB Object Identifier ("mibObjectIdentifier") for this field
+             MUST be exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with the Base Syntax
+             of OBJECT IDENTIFIER.  Note - In this case the
+             "mibObjectIdentifier" will define which MIB object is being
+             exported while the value contained in this Information Element
+             will be an OID as a value.  The mibObjectValueOID Information
+             Element is encoded as ASN.1/BER [BER] in an octetArray.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueBits">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueBits	
+dataType: octetArray
+dataTypeSemantics: flags
+status: current
+description: An IPFIX Information Element which denotes that a set
+             of Enumerated flags or bits from a MIB object will be exported.
+             The MIB Object Identifier ("mibObjectIdentifier") for this field
+             MUST be exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with the Base Syntax
+             of BITS.  The flags or bits are encoded as per the standard IPFIX
+             Abstract Data Type of octetArray, with sufficient length to
+             accommodate the required number of bits.  If the number of bits is
+             not an integer multiple of octets then the most significant bits
+             at end of the octetArray MUST be set to zero.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueIPAddress">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueIPAddress	
+dataType: ipv4Address
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that the
+             IPv4 Address of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of IPaddress.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of ipv4Address.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueCounter">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueCounter	
+dataType: unsigned64
+dataTypeSemantics: snmpCounter
+status: current
+description: An IPFIX Information Element which denotes that the
+             counter value of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of Counter32
+             or Counter64 with IPFIX Reduced Size Encoding used as required.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of unsigned64.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueGauge">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueGauge	
+dataType: unsigned32
+dataTypeSemantics: snmpGauge
+status: current
+description: An IPFIX Information Element which denotes that the
+             Gauge value of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of Gauge32.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of unsigned64.  This value will represent a non-negative integer,
+             which may increase or decrease, but shall never exceed a maximum
+             value, nor fall below a minimum value.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueTimeTicks">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueTimeTicks	
+dataType: unsigned32
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that the
+             TimeTicks value of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of TimeTicks.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of unsigned32.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueUnsigned">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueUnsigned	
+dataType: unsigned64
+dataTypeSemantics: identifier
+status: current
+description: An IPFIX Information Element which denotes that an
+             unsigned integer value of a MIB object will be exported.  The MIB
+             Object Identifier ("mibObjectIdentifier") for this field MUST be
+             exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with the Base Syntax
+             of unsigned64 with IPFIX Reduced Size Encoding used as required.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of unsigned64.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueTable">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueTable	
+dataType: subTemplateList
+dataTypeSemantics: list
+status: current
+description: An IPFIX Information Element which denotes that a
+             complete or partial conceptual table will be exported.  The MIB
+             Object Identifier ("mibObjectIdentifier") for this field MUST be
+             exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with a SYNTAX of
+             SEQUENCE.  This is encoded as a subTemplateList of mibObjectValue
+             Information Elements.  The template specified in the
+             subTemplateList MUST be an Options Template and MUST include all
+             the Objects listed in the INDEX clause as Scope Fields.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectValueRow">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectValueRow	
+dataType: subTemplateList
+dataTypeSemantics: list
+status: current
+description: An IPFIX Information Element which denotes that a
+             single row of a conceptual table will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with a SYNTAX of SEQUENCE.  This
+             is encoded as a subTemplateList of mibObjectValue Information
+             Elements.  The subTemplateList exported MUST contain exactly one
+             row (i.e., one instance of the subtemplate).  The template
+             specified in the subTemplateList MUST be an Options Template and
+             MUST include all the Objects listed in the INDEX clause as Scope
+             Fields.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectIdentifier">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectIdentifier	
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that a MIB
+             Object Identifier (MIB OID) is exported in the (Options) Template
+             Record.  The mibObjectIdentifier Information Element contains the
+             OID assigned to the MIB Object Type Definition encoded as ASN.1/
+             BER [BER].</artwork>
+      </figure>
+   </section>
+   <section title="mibSubIdentifier">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibSubIdentifier	
+dataType: unsigned32
+dataTypeSemantics: identifier
+status: current
+description: A non-negative sub-identifier of an Object Identifier (OID).</artwork>
+      </figure>
+   </section>
+   <section title="mibIndexIndicator">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibIndexIndicator	
+dataType: unsigned64
+dataTypeSemantics: flags
+status: current
+description: This set of bit fields is used for marking the
+             Information Elements of a Data Record that serve as INDEX MIB
+             objects for an indexed Columnar MIB object.  Each bit represents
+             an Information Element in the Data Record with the n-th bit
+             representing the n-th Information Element.  A bit set to value 1
+             indicates that the corresponding Information Element is an index
+             of the Columnar Object represented by the mibFieldValue.  A bit
+             set to value 0 indicates that this is not the case.
+                            
+             If the Data Record contains more than 64 Information Elements, the
+             corresponding Template SHOULD be designed such that all INDEX
+             Fields are among the first 64 Information Elements, because the
+             mibIndexIndicator only contains 64 bits.  If the Data Record
+             contains less than 64 Information Elements, then the extra bits in
+             the mibIndexIndicator for which no corresponding Information
+             Element exists MUST have the value 0, and must be disregarded by
+             the Collector.  This Information Element may be exported with
+             IPFIX Reduced Size Encoding.</artwork>
+      </figure>
+   </section>
+   <section title="mibCaptureTimeSemantics">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibCaptureTimeSemantics	
+dataType: unsigned8
+dataTypeSemantics: identifier
+status: current
+description: Indicates when in the lifetime of the flow the MIB
+             value was retrieved from the MIB for a mibObjectIdentifier.  This
+             is used to indicate if the value exported was collected from the
+             MIB closer to flow creation or flow export time and will refer to
+             the Timestamp fields included in the same record.  This field
+             SHOULD be used when exporting a mibObjectValue that specifies
+             counters or statistics.
+                         
+             If the MIB value was sampled by SNMP prior to the IPFIX Metering
+             Process or Exporting Process retrieving the value (i.e., the data
+             is already stale) and it's important to know the exact sampling
+             time, then an additional observationTime* element should be paired
+             with the OID using structured data.  Similarly, if different
+             mibCaptureTimeSemantics apply to different mibObject elements
+             within the Data Record, then individual mibCaptureTimeSemantics
+             should be paired with each OID using structured data.           
+                          
+             Values:           
+             0.  undefined
+             1.  begin - The value for the MIB object is captured from the
+             MIB when the Flow is first observed
+             2.  end - The value for the MIB object is captured from the MIB
+             when the Flow ends
+             3.  export - The value for the MIB object is captured from the
+             MIB at export time
+             4.  average - The value for the MIB object is an average of
+             multiple captures from the MIB over the observed life of the
+             Flow</artwork>
+      </figure>
+   </section>
+   <section title="mibContextEngineID">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibContextEngineID	
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: A mibContextEngineID that specifies the SNMP engine
+             ID for a MIB field being exported over IPFIX.  Definition as per
+             [RFC3411] section 3.3.</artwork>
+      </figure>
+   </section>
+   <section title="mibContextName">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibContextName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: This Information Element denotes that a MIB Context
+             Name is specified for a MIB field being exported over IPFIX. 
+             Reference [RFC3411] section 3.3.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectName">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The name (called a descriptor in [RFC2578] 
+             of an object type definition.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectDescription">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectDescription	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The value of the DESCRIPTION clause of an MIB object
+             type definition.</artwork>
+      </figure>
+   </section>
+   <section title="mibObjectSyntax">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibObjectSyntax	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The value of the SYNTAX clause of an MIB object type
+             definition, which may include a Textual Convention or Subtyping.
+             See [RFC2578].</artwork>
+      </figure>
+   </section>
+   <section title="mibModuleName">
+      <figure>
+         <artwork>
+elementId: TBD
+name: mibModuleName	
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The textual name of the MIB module that defines a MIB
+             Object.</artwork>
+      </figure>
+   </section>
 
             </section>
+            
 
         <section title="SACM Usage Scenario Example">
             
@@ -1744,12 +3350,13 @@ the same.
 
         <references title="Normative References">
             <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
-            &RFC0791; &RFC2119; &RFC3587; &RFC5280;</references>
+            &RFC0791; &RFC2119; &RFC3587; &RFC5280; &RFC6313;</references>
 
         <references title="Informative References">
             <!-- Here we use entities that we defined at the beginning. --> &RFC3411; &RFC3416;
             &RFC3418; &RFC3444; &RFC3580; &RFC3954; &RFC4287; &RFC4949; &RFC5201; &RFC5209;
-            &RFC5424; &RFC5792; &RFC5793; &RFC6020; &RFC6241; &RFC6876; &RFC7171; &RFC7632;
+            &RFC5424; &RFC5792; &RFC5793; &RFC6020; &RFC6241;
+            &RFC6876; &RFC7012; &RFC7013; &RFC7171; &RFC7632;
             
             &I-D.ietf-sacm-requirements; &I-D.ietf-sacm-terminology;
             &I-D.ietf-sacm-architecture;
@@ -2061,27 +3668,17 @@ the same.
         
         <section title="Change Log">
             <section title="Changes in Revision 01" anchor="changes-in-revision-01">
-                
                 <t>Renamed "credential" to "identity", following industry usage. A credential includes
                     proof, such as a key or password. A username or a distinguished name is called an
                     "identity".</t>
-                
                 <t>Removed Session, because an endpoint's network activity is not SACM's initial focus</t>
-                
                 <t>Removed Authorization, for the same reason</t>
-                
                 <t>Added many-to-many relationship between Hardware Component and Endpoint, for clarity</t>
-                
                 <t>Added many-to-many relationship between Software Component and Endpoint, for clarity</t>
-                
                 <t>Added "contains" relationship between Network Interface and Network Interface</t>
-                
                 <t>Removed relationship between Network Interface and Account. The endpoint knows the identity it used to gain network access. The PDP also knows that. But they probably do not know the account.</t>
-                
-                <t>Added relationship between Network Interface and Identity. The endpoint and the PDP will typically know the identity.</t>
-                
+                <t>Added relationship between Network Interface and Identity. The endpoint and the PDP will typically know the identity.</t>                
                 <t>Made identity-to-account a many-to-one relationship.</t>
-                
             </section>
             
             <section title="Changes in Revision 02" anchor="changes-in-revision-02">
@@ -2099,6 +3696,21 @@ the same.
                 <t>Updated references to the Endpoint Security Posture Assessment: Enterprise Use Cases document to reflect that it was published as an RFC.</t>
                 <t>Fixed the formatting of a few figures.</t>
                 <t>Included references to <xref target="RFC3580"/> where RADIUS is mentioned.</t>
+            </section>
+          
+            <section title="Changes in Revision 04">
+              <t>Integrated the IPFIX <xref target="RFC7012"/> syntax
+                into <xref target="information-model-framework"/>.</t>
+              <t>Converted many of the existing SACM Information
+                Elements to the IPFIX syntax.</t>
+              <t>Included existing IPFIX Information Elements and
+                datatypes that could likely be reused for SACM in <xref
+                  target="information-model-elements"/> and <xref
+                    target="information-model-framework"/>
+                respectively.</t>
+              <t>Removed the sections related to reports as described
+                in https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/30.</t>
+              <t>Cleaned up other text throughout the document.</t>
             </section>
             
         </section>
