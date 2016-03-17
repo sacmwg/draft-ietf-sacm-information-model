@@ -5,21 +5,22 @@
 SACM                                                  D. Waltermire, Ed.
 Internet-Draft                                                      NIST
 Intended status: Informational                                 K. Watson
-Expires: July 8, 2016                                                DHS
+Expires: September 18, 2016                                          DHS
                                                                  C. Kahn
                                                              L. Lorenzin
                                                        Pulse Secure, LLC
+                                                                M. Cokus
                                                                D. Haynes
                                                    The MITRE Corporation
-                                                         January 5, 2016
+                                                          March 17, 2016
 
 
                          SACM Information Model
-                  draft-ietf-sacm-information-model-03
+                  draft-ietf-sacm-information-model-04
 
 Abstract
 
-   This document proposes an information model for SACM.
+   This document defines the information model for SACM.
 
 Status of This Memo
 
@@ -36,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 8, 2016.
+   This Internet-Draft will expire on September 18, 2016.
 
 Copyright Notice
 
@@ -49,239 +50,352 @@ Copyright Notice
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
-   include Simplified BSD License text as described in Section 4.e of
 
 
 
-Waltermire, et al.        Expires July 8, 2016                  [Page 1]
+Waltermire, et al.     Expires September 18, 2016               [Page 1]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
+   include Simplified BSD License text as described in Section 4.e of
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
 Table of Contents
 
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   5
-     1.1.  Problem Statement . . . . . . . . . . . . . . . . . . . .   6
-       1.1.1.  Referring to an Endpoint  . . . . . . . . . . . . . .   7
-       1.1.2.  Dealing with Uncertainty  . . . . . . . . . . . . . .   8
-   2.  Conventions used in this document . . . . . . . . . . . . . .   8
-     2.1.  Requirements Language . . . . . . . . . . . . . . . . . .   9
-   3.  Information Model Framework . . . . . . . . . . . . . . . . .   9
-     3.1.  Containers  . . . . . . . . . . . . . . . . . . . . . . .   9
-     3.2.  Attributes  . . . . . . . . . . . . . . . . . . . . . . .   9
-     3.3.  Metadata  . . . . . . . . . . . . . . . . . . . . . . . .   9
-     3.4.  Relationships . . . . . . . . . . . . . . . . . . . . . .  10
-     3.5.  Designation . . . . . . . . . . . . . . . . . . . . . . .  10
-     3.6.  Conventions for Modeling Information Model Objects  . . .  10
-   4.  Information Model Assets  . . . . . . . . . . . . . . . . . .  10
-     4.1.  Asset . . . . . . . . . . . . . . . . . . . . . . . . . .  11
-     4.2.  Endpoint  . . . . . . . . . . . . . . . . . . . . . . . .  11
-     4.3.  Hardware Component  . . . . . . . . . . . . . . . . . . .  11
-       4.3.1.  Hardware Instance . . . . . . . . . . . . . . . . . .  12
-     4.4.  Software Component  . . . . . . . . . . . . . . . . . . .  12
-       4.4.1.  Software Instance . . . . . . . . . . . . . . . . . .  14
-     4.5.  Asset Identity  . . . . . . . . . . . . . . . . . . . . .  14
-     4.6.  Relationships . . . . . . . . . . . . . . . . . . . . . .  14
-   5.  Information Model Elements  . . . . . . . . . . . . . . . . .  14
-     5.1.  Identifying Attributes  . . . . . . . . . . . . . . . . .  17
-       5.1.1.  How Known . . . . . . . . . . . . . . . . . . . . . .  17
-       5.1.2.  Whether to Include  . . . . . . . . . . . . . . . . .  18
-       5.1.3.  IP Address  . . . . . . . . . . . . . . . . . . . . .  18
-         5.1.3.1.  Range of Values . . . . . . . . . . . . . . . . .  18
-         5.1.3.2.  Meaning . . . . . . . . . . . . . . . . . . . . .  19
-         5.1.3.3.  Relationships . . . . . . . . . . . . . . . . . .  19
-         5.1.3.4.  Multiplicity  . . . . . . . . . . . . . . . . . .  19
-         5.1.3.5.  Stability . . . . . . . . . . . . . . . . . . . .  19
-         5.1.3.6.  Accuracy  . . . . . . . . . . . . . . . . . . . .  19
-         5.1.3.7.  Data Model Requirements . . . . . . . . . . . . .  20
-       5.1.4.  MAC Address . . . . . . . . . . . . . . . . . . . . .  20
-       5.1.5.  Hardware Serial Number  . . . . . . . . . . . . . . .  20
-         5.1.5.1.  Range of Values . . . . . . . . . . . . . . . . .  20
-         5.1.5.2.  Meaning . . . . . . . . . . . . . . . . . . . . .  20
-         5.1.5.3.  Multiplicity  . . . . . . . . . . . . . . . . . .  20
-         5.1.5.4.  Stability . . . . . . . . . . . . . . . . . . . .  21
-         5.1.5.5.  Accuracy  . . . . . . . . . . . . . . . . . . . .  21
-         5.1.5.6.  Data Model Requirements . . . . . . . . . . . . .  21
-       5.1.6.  Certificate . . . . . . . . . . . . . . . . . . . . .  21
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   7
+     1.1.  Problem Statement . . . . . . . . . . . . . . . . . . . .   8
+       1.1.1.  Referring to an Endpoint  . . . . . . . . . . . . . .   9
+       1.1.2.  Dealing with Uncertainty  . . . . . . . . . . . . . .  10
+   2.  Conventions used in this document . . . . . . . . . . . . . .  11
+     2.1.  Requirements Language . . . . . . . . . . . . . . . . . .  11
+   3.  Information Model Framework . . . . . . . . . . . . . . . . .  11
+     3.1.  Attributes  . . . . . . . . . . . . . . . . . . . . . . .  11
+       3.1.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . .  11
+     3.2.  Objects . . . . . . . . . . . . . . . . . . . . . . . . .  12
+       3.2.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . .  13
+     3.3.  Metadata  . . . . . . . . . . . . . . . . . . . . . . . .  14
+     3.4.  Relationships . . . . . . . . . . . . . . . . . . . . . .  15
+     3.5.  Designation . . . . . . . . . . . . . . . . . . . . . . .  15
+     3.6.  Privacy . . . . . . . . . . . . . . . . . . . . . . . . .  15
+     3.7.  Type Space  . . . . . . . . . . . . . . . . . . . . . . .  16
+       3.7.1.  Abstract Data Types . . . . . . . . . . . . . . . . .  16
+         3.7.1.1.  unsigned8 . . . . . . . . . . . . . . . . . . . .  16
+         3.7.1.2.  unsigned16  . . . . . . . . . . . . . . . . . . .  16
+         3.7.1.3.  unsigned32  . . . . . . . . . . . . . . . . . . .  16
+         3.7.1.4.  unsigned64  . . . . . . . . . . . . . . . . . . .  16
+         3.7.1.5.  signed8 . . . . . . . . . . . . . . . . . . . . .  16
+         3.7.1.6.  signed16  . . . . . . . . . . . . . . . . . . . .  16
+         3.7.1.7.  signed32  . . . . . . . . . . . . . . . . . . . .  17
+         3.7.1.8.  signed64  . . . . . . . . . . . . . . . . . . . .  17
+         3.7.1.9.  float32 . . . . . . . . . . . . . . . . . . . . .  17
+         3.7.1.10. float64 . . . . . . . . . . . . . . . . . . . . .  17
+         3.7.1.11. boolean . . . . . . . . . . . . . . . . . . . . .  17
+         3.7.1.12. macAddress  . . . . . . . . . . . . . . . . . . .  17
+         3.7.1.13. string  . . . . . . . . . . . . . . . . . . . . .  17
+         3.7.1.14. dateTimeSeconds . . . . . . . . . . . . . . . . .  17
+         3.7.1.15. dateTimeMilliseconds  . . . . . . . . . . . . . .  17
+         3.7.1.16. dateTimeMicroseconds  . . . . . . . . . . . . . .  18
+         3.7.1.17. dateTimeNanoseconds . . . . . . . . . . . . . . .  18
+         3.7.1.18. ipv4Address . . . . . . . . . . . . . . . . . . .  18
+         3.7.1.19. ipv6Address . . . . . . . . . . . . . . . . . . .  18
+         3.7.1.20. basicList . . . . . . . . . . . . . . . . . . . .  18
+         3.7.1.21. subTemplateList . . . . . . . . . . . . . . . . .  18
+         3.7.1.22. subTemplateMultiList  . . . . . . . . . . . . . .  18
+       3.7.2.  Data Type Semantics . . . . . . . . . . . . . . . . .  18
+       3.7.3.  quantity  . . . . . . . . . . . . . . . . . . . . . .  19
+       3.7.4.  totalCounter  . . . . . . . . . . . . . . . . . . . .  19
 
 
 
-Waltermire, et al.        Expires July 8, 2016                  [Page 2]
+Waltermire, et al.     Expires September 18, 2016               [Page 2]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
-         5.1.6.1.  Range of values . . . . . . . . . . . . . . . . .  21
-         5.1.6.2.  Meaning . . . . . . . . . . . . . . . . . . . . .  21
-         5.1.6.3.  Multiplicity  . . . . . . . . . . . . . . . . . .  21
-         5.1.6.4.  Stability . . . . . . . . . . . . . . . . . . . .  21
-         5.1.6.5.  Accuracy  . . . . . . . . . . . . . . . . . . . .  22
-         5.1.6.6.  Data model requirements . . . . . . . . . . . . .  22
-       5.1.7.  Public Key  . . . . . . . . . . . . . . . . . . . . .  22
-       5.1.8.  Username? . . . . . . . . . . . . . . . . . . . . . .  22
-       5.1.9.  Tool-Specific Identifier  . . . . . . . . . . . . . .  22
-       5.1.10. Identification of Endpoints where SACM Components
-               Reside  . . . . . . . . . . . . . . . . . . . . . . .  22
-       5.1.11. Security Considerations . . . . . . . . . . . . . . .  23
-     5.2.  Network Interface . . . . . . . . . . . . . . . . . . . .  23
-     5.3.  Address . . . . . . . . . . . . . . . . . . . . . . . . .  23
-     5.4.  Identity  . . . . . . . . . . . . . . . . . . . . . . . .  24
-     5.5.  Location  . . . . . . . . . . . . . . . . . . . . . . . .  25
-     5.6.  Endpoint Attribute Assertion  . . . . . . . . . . . . . .  26
-       5.6.1.  Form and Precise Meaning  . . . . . . . . . . . . . .  26
-       5.6.2.  Asserter  . . . . . . . . . . . . . . . . . . . . . .  26
-       5.6.3.  Example . . . . . . . . . . . . . . . . . . . . . . .  27
-       5.6.4.  A Use Case  . . . . . . . . . . . . . . . . . . . . .  27
-       5.6.5.  Event . . . . . . . . . . . . . . . . . . . . . . . .  27
-       5.6.6.  Difference between Attribute and Event  . . . . . . .  27
-     5.7.  Attribute-Value Pair  . . . . . . . . . . . . . . . . . .  28
-       5.7.1.  Unique Endpoint Identifier  . . . . . . . . . . . . .  29
-       5.7.2.  Posture Attribute . . . . . . . . . . . . . . . . . .  29
-     5.8.  Evaluation Result . . . . . . . . . . . . . . . . . . . .  30
-     5.9.  Report  . . . . . . . . . . . . . . . . . . . . . . . . .  30
-     5.10. SACM Component  . . . . . . . . . . . . . . . . . . . . .  31
-       5.10.1.  External Attribute Collector . . . . . . . . . . . .  31
-       5.10.2.  Evaluator  . . . . . . . . . . . . . . . . . . . . .  32
-       5.10.3.  Report Generator . . . . . . . . . . . . . . . . . .  32
-     5.11. Organization? . . . . . . . . . . . . . . . . . . . . . .  32
-     5.12. Guidance  . . . . . . . . . . . . . . . . . . . . . . . .  33
-       5.12.1.  Internal Collection Guidance . . . . . . . . . . . .  33
-       5.12.2.  External Collection Guidance . . . . . . . . . . . .  33
-       5.12.3.  Evaluation Guidance  . . . . . . . . . . . . . . . .  33
-       5.12.4.  Retention Guidance . . . . . . . . . . . . . . . . .  33
-       5.12.5.  Reporting Guidance . . . . . . . . . . . . . . . . .  33
-     5.13. Endpoint  . . . . . . . . . . . . . . . . . . . . . . . .  34
-       5.13.1.  Endpoint Identity  . . . . . . . . . . . . . . . . .  34
-       5.13.2.  Software Component . . . . . . . . . . . . . . . . .  34
-         5.13.2.1.  Unique Software Identifier . . . . . . . . . . .  35
-     5.14. User  . . . . . . . . . . . . . . . . . . . . . . . . . .  35
-       5.14.1.  User Identity  . . . . . . . . . . . . . . . . . . .  35
-   6.  SACM Usage Scenario Example . . . . . . . . . . . . . . . . .  36
-     6.1.  Graph Model for Detection of Posture Deviation  . . . . .  36
-       6.1.1.  Components  . . . . . . . . . . . . . . . . . . . . .  36
+       3.7.5.  deltaCounter  . . . . . . . . . . . . . . . . . . . .  19
+       3.7.6.  identifier  . . . . . . . . . . . . . . . . . . . . .  19
+       3.7.7.  flags . . . . . . . . . . . . . . . . . . . . . . . .  19
+       3.7.8.  list  . . . . . . . . . . . . . . . . . . . . . . . .  20
+   4.  Information Model Assets  . . . . . . . . . . . . . . . . . .  20
+     4.1.  Asset . . . . . . . . . . . . . . . . . . . . . . . . . .  21
+     4.2.  Endpoint  . . . . . . . . . . . . . . . . . . . . . . . .  21
+     4.3.  Hardware Component  . . . . . . . . . . . . . . . . . . .  22
+       4.3.1.  Hardware Instance . . . . . . . . . . . . . . . . . .  22
+     4.4.  Software Component  . . . . . . . . . . . . . . . . . . .  22
+       4.4.1.  Software Instance . . . . . . . . . . . . . . . . . .  24
+     4.5.  Asset Identity  . . . . . . . . . . . . . . . . . . . . .  24
+     4.6.  Relationships . . . . . . . . . . . . . . . . . . . . . .  24
+   5.  Information Model Elements  . . . . . . . . . . . . . . . . .  24
+     5.1.  Identifying Attributes  . . . . . . . . . . . . . . . . .  27
+       5.1.1.  How Known . . . . . . . . . . . . . . . . . . . . . .  27
+       5.1.2.  Whether to Include  . . . . . . . . . . . . . . . . .  28
+       5.1.3.  Certificate . . . . . . . . . . . . . . . . . . . . .  28
+         5.1.3.1.  Range of values . . . . . . . . . . . . . . . . .  28
+         5.1.3.2.  Meaning . . . . . . . . . . . . . . . . . . . . .  28
+         5.1.3.3.  Multiplicity  . . . . . . . . . . . . . . . . . .  28
+         5.1.3.4.  Stability . . . . . . . . . . . . . . . . . . . .  29
+         5.1.3.5.  Accuracy  . . . . . . . . . . . . . . . . . . . .  29
+         5.1.3.6.  Data model requirements . . . . . . . . . . . . .  29
+       5.1.4.  Public Key  . . . . . . . . . . . . . . . . . . . . .  29
+       5.1.5.  Username? . . . . . . . . . . . . . . . . . . . . . .  29
+       5.1.6.  Tool-Specific Identifier  . . . . . . . . . . . . . .  29
+       5.1.7.  Identification of Endpoints where SACM Components
+               Reside  . . . . . . . . . . . . . . . . . . . . . . .  30
+       5.1.8.  Security Considerations . . . . . . . . . . . . . . .  30
+     5.2.  Identity  . . . . . . . . . . . . . . . . . . . . . . . .  30
+     5.3.  Location  . . . . . . . . . . . . . . . . . . . . . . . .  31
+     5.4.  Endpoint Attribute Assertion  . . . . . . . . . . . . . .  32
+       5.4.1.  Form and Precise Meaning  . . . . . . . . . . . . . .  32
+       5.4.2.  Asserter  . . . . . . . . . . . . . . . . . . . . . .  32
+       5.4.3.  Example . . . . . . . . . . . . . . . . . . . . . . .  33
+       5.4.4.  A Use Case  . . . . . . . . . . . . . . . . . . . . .  33
+       5.4.5.  Event . . . . . . . . . . . . . . . . . . . . . . . .  33
+       5.4.6.  Difference between Attribute and Event  . . . . . . .  33
+     5.5.  Attribute-Value Pair  . . . . . . . . . . . . . . . . . .  34
+       5.5.1.  Unique Endpoint Identifier  . . . . . . . . . . . . .  35
+       5.5.2.  Posture Attribute . . . . . . . . . . . . . . . . . .  35
+     5.6.  Evaluation Result . . . . . . . . . . . . . . . . . . . .  36
+     5.7.  SACM Component  . . . . . . . . . . . . . . . . . . . . .  36
+       5.7.1.  External Attribute Collector  . . . . . . . . . . . .  36
+       5.7.2.  Evaluator . . . . . . . . . . . . . . . . . . . . . .  37
+     5.8.  Organization? . . . . . . . . . . . . . . . . . . . . . .  37
+     5.9.  Guidance  . . . . . . . . . . . . . . . . . . . . . . . .  38
 
 
 
-Waltermire, et al.        Expires July 8, 2016                  [Page 3]
+Waltermire, et al.     Expires September 18, 2016               [Page 3]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
-       6.1.2.  Identifiers . . . . . . . . . . . . . . . . . . . . .  37
-       6.1.3.  Metadata  . . . . . . . . . . . . . . . . . . . . . .  37
-       6.1.4.  Relationships between Identifiers and Metadata  . . .  38
-     6.2.  Workflow  . . . . . . . . . . . . . . . . . . . . . . . .  38
-   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  39
-     7.1.  Contributors  . . . . . . . . . . . . . . . . . . . . . .  39
-   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  39
-   9.  Operational Considerations  . . . . . . . . . . . . . . . . .  40
-   10. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  40
-   11. Security Considerations . . . . . . . . . . . . . . . . . . .  40
-   12. References  . . . . . . . . . . . . . . . . . . . . . . . . .  41
-     12.1.  Normative References . . . . . . . . . . . . . . . . . .  41
-     12.2.  Informative References . . . . . . . . . . . . . . . . .  41
-   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  47
-     A.1.  Changes in Revision 01  . . . . . . . . . . . . . . . . .  47
-     A.2.  Changes in Revision 02  . . . . . . . . . . . . . . . . .  48
-     A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . .  48
-   Appendix B.  Mapping to SACM Use Cases  . . . . . . . . . . . . .  48
-   Appendix C.  Security Automation with TNC IF-MAP  . . . . . . . .  49
-     C.1.  What is Trusted Network Connect?  . . . . . . . . . . . .  49
-     C.2.  What is TNC IF-MAP? . . . . . . . . . . . . . . . . . . .  49
-     C.3.  What is the TNC Information Model?  . . . . . . . . . . .  50
-   Appendix D.  Text for Possible Inclusion in the Terminology Draft  51
-     D.1.  Terms and Definitions . . . . . . . . . . . . . . . . . .  51
-       D.1.1.  Pre-defined and Modified Terms  . . . . . . . . . . .  51
-       D.1.2.  New Terms . . . . . . . . . . . . . . . . . . . . . .  51
+       5.9.1.  Internal Collection Guidance  . . . . . . . . . . . .  38
+       5.9.2.  External Collection Guidance  . . . . . . . . . . . .  38
+       5.9.3.  Evaluation Guidance . . . . . . . . . . . . . . . . .  38
+       5.9.4.  Retention Guidance  . . . . . . . . . . . . . . . . .  38
+     5.10. Endpoint  . . . . . . . . . . . . . . . . . . . . . . . .  39
+       5.10.1.  Endpoint Identity  . . . . . . . . . . . . . . . . .  39
+       5.10.2.  Software Component . . . . . . . . . . . . . . . . .  39
+         5.10.2.1.  Unique Software Identifier . . . . . . . . . . .  40
+     5.11. User  . . . . . . . . . . . . . . . . . . . . . . . . . .  40
+       5.11.1.  User Identity  . . . . . . . . . . . . . . . . . . .  40
+     5.12. hardwareSerialNumber  . . . . . . . . . . . . . . . . . .  41
+     5.13. interfaceName . . . . . . . . . . . . . . . . . . . . . .  41
+     5.14. interfaceIndex  . . . . . . . . . . . . . . . . . . . . .  41
+     5.15. interfaceMacAddress . . . . . . . . . . . . . . . . . . .  41
+     5.16. interfaceType . . . . . . . . . . . . . . . . . . . . . .  42
+     5.17. interfaceFlags  . . . . . . . . . . . . . . . . . . . . .  42
+     5.18. networkInterface  . . . . . . . . . . . . . . . . . . . .  42
+     5.19. softwareIdentifier  . . . . . . . . . . . . . . . . . . .  43
+     5.20. softwareTitle . . . . . . . . . . . . . . . . . . . . . .  43
+     5.21. softwareCreator . . . . . . . . . . . . . . . . . . . . .  43
+     5.22. simpleVersion . . . . . . . . . . . . . . . . . . . . . .  44
+     5.23. rpmVersion  . . . . . . . . . . . . . . . . . . . . . . .  44
+     5.24. ciscoTrainVersion . . . . . . . . . . . . . . . . . . . .  44
+     5.25. softwareVersion . . . . . . . . . . . . . . . . . . . . .  44
+     5.26. lastUpdated . . . . . . . . . . . . . . . . . . . . . . .  45
+     5.27. softwareInstance  . . . . . . . . . . . . . . . . . . . .  45
+     5.28. globallyUniqueIdentifier  . . . . . . . . . . . . . . . .  46
+     5.29. dataOrigin  . . . . . . . . . . . . . . . . . . . . . . .  46
+     5.30. dataSource  . . . . . . . . . . . . . . . . . . . . . . .  46
+     5.31. creationTimestamp . . . . . . . . . . . . . . . . . . . .  46
+     5.32. collectionTimestamp . . . . . . . . . . . . . . . . . . .  46
+     5.33. publicationTimestamp  . . . . . . . . . . . . . . . . . .  47
+     5.34. relayTimestamp  . . . . . . . . . . . . . . . . . . . . .  47
+     5.35. storageTimestamp  . . . . . . . . . . . . . . . . . . . .  47
+     5.36. type  . . . . . . . . . . . . . . . . . . . . . . . . . .  47
+     5.37. protocolIdentifier  . . . . . . . . . . . . . . . . . . .  48
+     5.38. sourceTransportPort . . . . . . . . . . . . . . . . . . .  48
+     5.39. sourceIPv4PrefixLength  . . . . . . . . . . . . . . . . .  49
+     5.40. ingressInterface  . . . . . . . . . . . . . . . . . . . .  49
+     5.41. destinationTransportPort  . . . . . . . . . . . . . . . .  49
+     5.42. sourceIPv6PrefixLength  . . . . . . . . . . . . . . . . .  50
+     5.43. sourceIPv4Prefix  . . . . . . . . . . . . . . . . . . . .  50
+     5.44. destinationIPv4Prefix . . . . . . . . . . . . . . . . . .  50
+     5.45. sourceMacAddress  . . . . . . . . . . . . . . . . . . . .  50
+     5.46. ipVersion . . . . . . . . . . . . . . . . . . . . . . . .  50
+     5.47. interfaceName . . . . . . . . . . . . . . . . . . . . . .  51
+     5.48. interfaceDescription  . . . . . . . . . . . . . . . . . .  51
+     5.49. applicationDescription  . . . . . . . . . . . . . . . . .  51
+
+
+
+Waltermire, et al.     Expires September 18, 2016               [Page 4]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+     5.50. applicationId . . . . . . . . . . . . . . . . . . . . . .  51
+     5.51. applicationName . . . . . . . . . . . . . . . . . . . . .  51
+     5.52. exporterIPv4Address . . . . . . . . . . . . . . . . . . .  52
+     5.53. exporterIPv6Address . . . . . . . . . . . . . . . . . . .  52
+     5.54. portId  . . . . . . . . . . . . . . . . . . . . . . . . .  52
+     5.55. templateId  . . . . . . . . . . . . . . . . . . . . . . .  52
+     5.56. collectorIPv4Address  . . . . . . . . . . . . . . . . . .  53
+     5.57. collectorIPv6Address  . . . . . . . . . . . . . . . . . .  53
+     5.58. informationElementIndex . . . . . . . . . . . . . . . . .  53
+     5.59. basicList . . . . . . . . . . . . . . . . . . . . . . . .  54
+     5.60. subTemplateList . . . . . . . . . . . . . . . . . . . . .  54
+     5.61. subTemplateMultiList  . . . . . . . . . . . . . . . . . .  54
+     5.62. informationElementId  . . . . . . . . . . . . . . . . . .  54
+     5.63. informationElementDataType  . . . . . . . . . . . . . . .  54
+     5.64. informationElementDescription . . . . . . . . . . . . . .  55
+     5.65. informationElementName  . . . . . . . . . . . . . . . . .  55
+     5.66. informationElementRangeBegin  . . . . . . . . . . . . . .  56
+     5.67. informationElementRangeEnd  . . . . . . . . . . . . . . .  56
+     5.68. informationElementSemantics . . . . . . . . . . . . . . .  56
+     5.69. informationElementUnits . . . . . . . . . . . . . . . . .  57
+     5.70. userName  . . . . . . . . . . . . . . . . . . . . . . . .  57
+     5.71. applicationCategoryName . . . . . . . . . . . . . . . . .  57
+     5.72. mibObjectValueInteger . . . . . . . . . . . . . . . . . .  57
+     5.73. mibObjectValueOctetString . . . . . . . . . . . . . . . .  58
+     5.74. mibObjectValueOID . . . . . . . . . . . . . . . . . . . .  58
+     5.75. mibObjectValueBits  . . . . . . . . . . . . . . . . . . .  59
+     5.76. mibObjectValueIPAddress . . . . . . . . . . . . . . . . .  59
+     5.77. mibObjectValueCounter . . . . . . . . . . . . . . . . . .  59
+     5.78. mibObjectValueGauge . . . . . . . . . . . . . . . . . . .  60
+     5.79. mibObjectValueTimeTicks . . . . . . . . . . . . . . . . .  60
+     5.80. mibObjectValueUnsigned  . . . . . . . . . . . . . . . . .  60
+     5.81. mibObjectValueTable . . . . . . . . . . . . . . . . . . .  61
+     5.82. mibObjectValueRow . . . . . . . . . . . . . . . . . . . .  61
+     5.83. mibObjectIdentifier . . . . . . . . . . . . . . . . . . .  61
+     5.84. mibSubIdentifier  . . . . . . . . . . . . . . . . . . . .  62
+     5.85. mibIndexIndicator . . . . . . . . . . . . . . . . . . . .  62
+     5.86. mibCaptureTimeSemantics . . . . . . . . . . . . . . . . .  62
+     5.87. mibContextEngineID  . . . . . . . . . . . . . . . . . . .  63
+     5.88. mibContextName  . . . . . . . . . . . . . . . . . . . . .  64
+     5.89. mibObjectName . . . . . . . . . . . . . . . . . . . . . .  64
+     5.90. mibObjectDescription  . . . . . . . . . . . . . . . . . .  64
+     5.91. mibObjectSyntax . . . . . . . . . . . . . . . . . . . . .  64
+     5.92. mibModuleName . . . . . . . . . . . . . . . . . . . . . .  64
+   6.  SACM Usage Scenario Example . . . . . . . . . . . . . . . . .  65
+     6.1.  Graph Model for Detection of Posture Deviation  . . . . .  65
+       6.1.1.  Components  . . . . . . . . . . . . . . . . . . . . .  65
+       6.1.2.  Identifiers . . . . . . . . . . . . . . . . . . . . .  66
+       6.1.3.  Metadata  . . . . . . . . . . . . . . . . . . . . . .  66
+
+
+
+Waltermire, et al.     Expires September 18, 2016               [Page 5]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+       6.1.4.  Relationships between Identifiers and Metadata  . . .  67
+     6.2.  Workflow  . . . . . . . . . . . . . . . . . . . . . . . .  67
+   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  68
+     7.1.  Contributors  . . . . . . . . . . . . . . . . . . . . . .  68
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  68
+   9.  Operational Considerations  . . . . . . . . . . . . . . . . .  69
+   10. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  69
+   11. Security Considerations . . . . . . . . . . . . . . . . . . .  69
+   12. References  . . . . . . . . . . . . . . . . . . . . . . . . .  70
+     12.1.  Normative References . . . . . . . . . . . . . . . . . .  70
+     12.2.  Informative References . . . . . . . . . . . . . . . . .  70
+   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  76
+     A.1.  Changes in Revision 01  . . . . . . . . . . . . . . . . .  76
+     A.2.  Changes in Revision 02  . . . . . . . . . . . . . . . . .  77
+     A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . .  77
+     A.4.  Changes in Revision 04  . . . . . . . . . . . . . . . . .  78
+   Appendix B.  Mapping to SACM Use Cases  . . . . . . . . . . . . .  78
+   Appendix C.  Security Automation with TNC IF-MAP  . . . . . . . .  78
+     C.1.  What is Trusted Network Connect?  . . . . . . . . . . . .  78
+     C.2.  What is TNC IF-MAP? . . . . . . . . . . . . . . . . . . .  79
+     C.3.  What is the TNC Information Model?  . . . . . . . . . . .  79
+   Appendix D.  Text for Possible Inclusion in the Terminology Draft  80
+     D.1.  Terms and Definitions . . . . . . . . . . . . . . . . . .  80
+       D.1.1.  Pre-defined and Modified Terms  . . . . . . . . . . .  80
+       D.1.2.  New Terms . . . . . . . . . . . . . . . . . . . . . .  81
    Appendix E.  Text for Possible Inclusion in the Architecture or
-                Use Cases  . . . . . . . . . . . . . . . . . . . . .  52
-     E.1.  Introduction  . . . . . . . . . . . . . . . . . . . . . .  52
-     E.2.  Core Principles . . . . . . . . . . . . . . . . . . . . .  53
-     E.3.  Architecture Assumptions  . . . . . . . . . . . . . . . .  53
+                Use Cases  . . . . . . . . . . . . . . . . . . . . .  81
+     E.1.  Introduction  . . . . . . . . . . . . . . . . . . . . . .  82
+     E.2.  Core Principles . . . . . . . . . . . . . . . . . . . . .  82
+     E.3.  Architecture Assumptions  . . . . . . . . . . . . . . . .  83
    Appendix F.  Text for Possible Inclusion in the Requirements
-                Draft  . . . . . . . . . . . . . . . . . . . . . . .  57
-     F.1.  Problem Statement . . . . . . . . . . . . . . . . . . . .  57
-     F.2.  Problem Scope . . . . . . . . . . . . . . . . . . . . . .  57
-   Appendix G.  Text With No Clear Home Yet  . . . . . . . . . . . .  58
-     G.1.  Operations  . . . . . . . . . . . . . . . . . . . . . . .  58
-       G.1.1.  Generalized Workflow  . . . . . . . . . . . . . . . .  58
-     G.2.  From Information Needs to Information Elements  . . . . .  59
-     G.3.  Information Model Elements  . . . . . . . . . . . . . . .  59
-       G.3.1.  Asset Identifiers . . . . . . . . . . . . . . . . . .  61
-         G.3.1.2.  Endpoint Identification . . . . . . . . . . . . .  63
-         G.3.1.3.  Software Identification . . . . . . . . . . . . .  64
-         G.3.1.4.  Hardware Identification . . . . . . . . . . . . .  67
-       G.3.2.  Other Identifiers . . . . . . . . . . . . . . . . . .  67
-         G.3.2.1.  Platform Configuration Item Identifier  . . . . .  67
-         G.3.2.2.  Configuration Item Identifier . . . . . . . . . .  73
-         G.3.2.3.  Vulnerability Identifier  . . . . . . . . . . . .  75
+                Draft  . . . . . . . . . . . . . . . . . . . . . . .  87
+     F.1.  Problem Statement . . . . . . . . . . . . . . . . . . . .  87
+     F.2.  Problem Scope . . . . . . . . . . . . . . . . . . . . . .  87
+   Appendix G.  Text With No Clear Home Yet  . . . . . . . . . . . .  88
+     G.1.  Operations  . . . . . . . . . . . . . . . . . . . . . . .  88
+       G.1.1.  Generalized Workflow  . . . . . . . . . . . . . . . .  88
+     G.2.  From Information Needs to Information Elements  . . . . .  89
+     G.3.  Information Model Elements  . . . . . . . . . . . . . . .  89
+       G.3.1.  Asset Identifiers . . . . . . . . . . . . . . . . . .  91
+         G.3.1.2.  Endpoint Identification . . . . . . . . . . . . .  93
+         G.3.1.3.  Software Identification . . . . . . . . . . . . .  94
+         G.3.1.4.  Hardware Identification . . . . . . . . . . . . .  97
+       G.3.2.  Other Identifiers . . . . . . . . . . . . . . . . . .  97
+         G.3.2.1.  Platform Configuration Item Identifier  . . . . .  97
+         G.3.2.2.  Configuration Item Identifier . . . . . . . . . . 103
+         G.3.2.3.  Vulnerability Identifier  . . . . . . . . . . . . 105
+       G.3.3.  Endpoint characterization . . . . . . . . . . . . . . 105
 
 
 
-Waltermire, et al.        Expires July 8, 2016                  [Page 4]
+Waltermire, et al.     Expires September 18, 2016               [Page 6]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
-       G.3.3.  Endpoint characterization . . . . . . . . . . . . . .  75
-       G.3.4.  Posture Attribute Expression  . . . . . . . . . . . .  79
-         G.3.4.2.  Platform Configuration Attributes . . . . . . . .  79
-       G.3.5.  Actual Value Representation . . . . . . . . . . . . .  81
-         G.3.5.1.  Software Inventory  . . . . . . . . . . . . . . .  81
+       G.3.4.  Posture Attribute Expression  . . . . . . . . . . . . 109
+         G.3.4.2.  Platform Configuration Attributes . . . . . . . . 109
+       G.3.5.  Actual Value Representation . . . . . . . . . . . . . 111
+         G.3.5.1.  Software Inventory  . . . . . . . . . . . . . . . 111
          G.3.5.2.  Collected Platform Configuration Posture
-                   Attributes  . . . . . . . . . . . . . . . . . . .  82
-       G.3.6.  Evaluation Guidance . . . . . . . . . . . . . . . . .  83
-         G.3.6.1.  Configuration Evaluation Guidance . . . . . . . .  83
-       G.3.7.  Evaluation Result Reporting . . . . . . . . . . . . .  85
-         G.3.7.1.  Configuration Evaluation Results  . . . . . . . .  85
-         G.3.7.2.  Software Inventory Evaluation Results . . . . . .  87
-   Appendix H.  Graph Model  . . . . . . . . . . . . . . . . . . . .  87
-     H.1.  Background: Graph Models  . . . . . . . . . . . . . . . .  88
-     H.2.  Graph Model Overview  . . . . . . . . . . . . . . . . . .  89
-     H.3.  Identifiers . . . . . . . . . . . . . . . . . . . . . . .  89
-     H.4.  Links . . . . . . . . . . . . . . . . . . . . . . . . . .  90
-     H.5.  Metadata  . . . . . . . . . . . . . . . . . . . . . . . .  90
-     H.6.  Use for SACM  . . . . . . . . . . . . . . . . . . . . . .  91
-     H.7.  Provenance  . . . . . . . . . . . . . . . . . . . . . . .  91
-     H.8.  Extensibility . . . . . . . . . . . . . . . . . . . . . .  91
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  92
+                   Attributes  . . . . . . . . . . . . . . . . . . . 112
+       G.3.6.  Evaluation Guidance . . . . . . . . . . . . . . . . . 113
+         G.3.6.1.  Configuration Evaluation Guidance . . . . . . . . 113
+       G.3.7.  Evaluation Result Reporting . . . . . . . . . . . . . 115
+         G.3.7.1.  Configuration Evaluation Results  . . . . . . . . 115
+         G.3.7.2.  Software Inventory Evaluation Results . . . . . . 117
+   Appendix H.  Graph Model  . . . . . . . . . . . . . . . . . . . . 117
+     H.1.  Background: Graph Models  . . . . . . . . . . . . . . . . 118
+     H.2.  Graph Model Overview  . . . . . . . . . . . . . . . . . . 119
+     H.3.  Identifiers . . . . . . . . . . . . . . . . . . . . . . . 119
+     H.4.  Links . . . . . . . . . . . . . . . . . . . . . . . . . . 120
+     H.5.  Metadata  . . . . . . . . . . . . . . . . . . . . . . . . 120
+     H.6.  Use for SACM  . . . . . . . . . . . . . . . . . . . . . . 121
+     H.7.  Provenance  . . . . . . . . . . . . . . . . . . . . . . . 121
+     H.8.  Extensibility . . . . . . . . . . . . . . . . . . . . . . 121
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 122
 
 1.  Introduction
 
-   This document defines a notional information model for endpoint
-   posture assessment.  It describes the information needed to perform
-   certain assessment activities.  The scope of the information model is
-   to describe the structure of the information carried to realize the
-   assessment.  It is meant to be a basis for the development of
-   specific data models.  The terms information model and data model
-   loosely align with the definitions in RFC3444 [RFC3444].
+   This document defines an information model for endpoint posture
+   assessment.  The scope of the information model is to describe the
+   mandatory-to-implement information needs required to realize the
+   assessment of an endpoint in a scalable and extensible way.  The
+   information model aims to inform the development of specific data
+   models that support the endpoint posture assessment process.  The
+   terms "information model" and "data model" align with the definitions
+   in [RFC3444].
 
-   The four primary activities to support this information model are:
+   The five primary activities to support this information model are:
 
    1.  Endpoint Identification
 
    2.  Endpoint Characterization
 
-   3.  Endpoint Attribute Expression/Representation
+   3.  Endpoint Attribute Expression
 
-   4.  Policy evaluation expression and results reporting
+   4.  Guidance Expression
+
+   5.  Endpoint Evaluation Result Expression
 
    These activities are aimed at the level of the technology that
-   performs operations to support collection, evaluation, and reporting.
+   performs operations to support the collection, communication, and
+   evaluation of endpoint information.
+
+
+
+Waltermire, et al.     Expires September 18, 2016               [Page 7]
+
+Internet-Draft           SACM Information Model               March 2016
+
 
    Review of the SACM Use Case [RFC7632] usage scenarios show a common
    set of business process areas that are critical to understanding
-
-
-
-Waltermire, et al.        Expires July 8, 2016                  [Page 5]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    endpoint posture such that appropriate policies, security
    capabilities, and decisions can be developed and implemented.
 
@@ -290,7 +404,9 @@ Internet-Draft           SACM Information Model             January 2016
 
    o  Endpoint Management
 
-   o  Software Management
+   o  Software Inventory Management
+
+   o  Hardware Inventory Management
 
    o  Configuration Management
 
@@ -299,7 +415,7 @@ Internet-Draft           SACM Information Model             January 2016
    These management process areas are a way to connect the SACM use
    cases and building blocks [RFC7632] to the organizational needs such
    that the definition of information requirements has a clearly
-   understood context. (/wandw).  For more information, Appendix B maps
+   understood context.  For more information, see Appendix B which maps
    the SACM information model to the SACM use cases.
 
    The SACM information model offers a loose coupling between providers
@@ -318,25 +434,25 @@ Internet-Draft           SACM Information Model             January 2016
 
 1.1.  Problem Statement
 
-   TODO: revise
-
-   (wandw)SACM requires a large and broad set of mission and business
-   processes, and to make the most effective of use of technology, the
-   same data must support multiple processes.  The activities and
-   processes described within this document tend to build off of each
-   other to enable more complex characterization and assessment.  In an
-   effort to create an information model that serves a common set of
-   management processes represented by the usage scenarios in the SACM
-   Use Cases document, we have narrowed down the scope of this
-   model.(/wandw) [What does "narrowed down the scope of this model"
-   mean? - LL]
+   SACM requires a large and broad set of mission and business
+   processes, and to make the most effective use of technology, the same
+   data must support multiple processes.  The activities and processes
+   described within this document tend to build off of each other to
+   enable more complex characterization and assessment.  In an effort to
+   create an information model that serves a common set of management
+   processes represented by the usage scenarios in the SACM Use Cases
+   [RFC7632], we have narrowed down the scope of this model to focus on
 
 
 
-Waltermire, et al.        Expires July 8, 2016                  [Page 6]
+Waltermire, et al.     Expires September 18, 2016               [Page 8]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
+
+   the information needs required for endpoint identification, endpoint
+   characterization, endpoint attribute expression, guidance expression,
+   and endpoint evaluation result expression.
 
    Administrators can't get technology from disparate sources to work
    together; they need information to make decisions, but the
@@ -345,22 +461,22 @@ Internet-Draft           SACM Information Model             January 2016
    need to collect data and craft their own information, which may not
    be accurate or interoperable because it's customized by each
    administrator, not shared.  A standard information model enables
-   flexibility in collecting, storing, and sharing information despite
-   platform differences.
+   flexibility in collecting, storing, and exchanging information
+   despite platform differences.
 
    A way is needed to exchange information that (a) has breadth, meaning
-   the pieces of the notation are useful about a variety of endpoints
-   and software components, and (b) has longevity, meaning that the
-   pieces of the notation will stay useful over time.
+   the pieces of the notation are useful for a variety of endpoint
+   information, and (b) has longevity, meaning that the pieces of the
+   notation will stay useful over time.
 
-   When creating standards, it's not sufficient to go from requirements
-   directly to protocol; the standards must eliminate ambiguity in the
-   information transported.  This is the purpose of information models
-   generally.  The SACM problem space is about integrating many
-   information sources.  This information model addresses the need to
-   integrate security components, support multiple data models, and
-   provide interoperability in a way that is platform agnostic, scales,
-   and works over time.
+   When creating standards, it's not sufficient to go from the
+   requirements directly to the protocol; the standards must eliminate
+   ambiguity in the information transported.  This is the purpose of
+   information models generally.  The SACM problem space is about
+   integrating many information sources.  This information model
+   addresses the need to integrate security components, support multiple
+   data models, and provide interoperability in a way that is platform
+   agnostic, scales, and works over time.
 
 1.1.1.  Referring to an Endpoint
 
@@ -376,33 +492,33 @@ Internet-Draft           SACM Information Model             January 2016
       the unique identifier directly.  An external posture attribute
       collector should be able to report exactly what it has observed,
       unembellished.  It should not have to *infer* which endpoint it
-      has observed; that inference should be leavable to other SACM
+      has observed; that inference should be left to other SACM
       components.  So, SACM cannot require that every observation
       include the unique endpoint identifier.
 
    o  Internal posture attribute collectors are not present on all
       endpoints.  They are not present on "dumb" devices such as
+
+
+
+Waltermire, et al.     Expires September 18, 2016               [Page 9]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
       Internet of Things (IoT) devices, or on Bring Your Own Device
       (BYOD) devices.  In these cases, *no* observers have direct access
       to the unique endpoint identifier.
 
-
-
-
-Waltermire, et al.        Expires July 8, 2016                  [Page 7]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    o  An endpoint identifier is generally subject to cloning, when a
-      system image is cloned.  Then it is no longer unique.
+      system image is cloned.  Then, it is no longer unique.
 
    o  Suppose the endpoint identifier is highly clone resistant -- such
-      a unique certificate within a trusted platform module TPM.  Even
-      so, it is possible to replace all of the software -- for example,
-      changing a Windows machine to a Linux machine.  Is it still the
-      same endpoint?  For SACM purposes, it isn't really the same
-      endpoint.
+      as a unique certificate within a hardware cryptographic module.
+      Even so, it is possible to replace all of the software -- for
+      example, changing a Windows machine to a Linux machine.  Is it
+      still the same endpoint?  For SACM purposes, it isn't really the
+      same endpoint.
 
    So SACM components must be able to put disparate observations
    together and form a picture of an endpoint -- somewhat like a
@@ -422,8 +538,8 @@ Internet-Draft           SACM Information Model             January 2016
    inferences against each other.  They should be able to give weight if
    an observation or inference is corroborated by more than one method.
    Although SACM will probably not prescribe *how* to do this cross
-   checking, SACM should provide the components with provenance
-   information.
+   checking, SACM should provide the components with information that
+   can be used to determine provenance.
 
    SACM components must be able to consider the reputation of the
    observer or inferrer.  That reputation should account for the method
@@ -433,22 +549,20 @@ Internet-Draft           SACM Information Model             January 2016
    example, if some observers are found to be vulnerable to a Day 1
    exploit, observations from those observers deserve less weight.  The
    details of reputation technology may be out of scope for SACM.
-   However, again, SACM should provide components with provenance
-   information.
+   However, again, SACM should provide components with information that
+   enables them to make this determination.
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 10]
+
+Internet-Draft           SACM Information Model               March 2016
+
 
 2.  Conventions used in this document
-
-
-
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                  [Page 8]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
 2.1.  Requirements Language
 
@@ -461,49 +575,215 @@ Internet-Draft           SACM Information Model             January 2016
    The SACM information model is structured around a core framework that
    can be easily extended to support the modeling needs for endpoint
    posture assessment.  This section describes the key concepts that
-   make up this framework as well as the conventions used to model the
-   different information model objects in the following sections.
+   make up this framework as well as the IP Information Flow Export
+   (IPFIX) Information Model [RFC7012] syntax used to model the
+   different information model concepts.
 
-3.1.  Containers
+3.1.  Attributes
 
-   TODO: Explain containers at a conceptual level and how they are the
-   mechanism by which attributes and/or other containers can be
-   logically grouped together to create more complex models.  Additional
-   information about containers can be modeled using metadata.
-   QUESTION: We are not sure "container" is the correct term to use here
-   as it implies a hierarchy.  Alternative terms might be "construct",
-   "object", or "class".  This is something that needs to be decided.
+   Attributes are used to model specific endpoint information.  At a
+   minimum, an attribute must have a name and a value.  Additional
+   information about attributes can be modeled using metadata as
+   described in Section 3.3.
 
-3.2.  Attributes
+3.1.1.  Syntax
 
-   TODO: Explain attributes at a conceptual level and how they are used
-   to model posture attribute information on an endpoint.  At a minimum,
-   an attribute must have a name and a value.  However, there is work
-   currently being done in the Endpoint ID Design Team to prepare a
-   proposal for the working group to explain how triples (subject,
-   predicate, object) could be used to model attributes in the
-   information model.  Additional information about attributes can be
-   modeled using metadata.
+   Attributes must be defined using the IPFIX Information Element
+   Specification Template as described in Section 2.1 of [RFC7012].  The
+   following is a modified version of the template for Information
+   Elements provided in Section 9.1 of [RFC7013].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 11]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+   elementId:         Element identifier goes here if known, or
+                      "TBD" if it will be assigned by IANA and
+                      filled in at publication time.; obligatory
+
+   name:              Name goes here.; obligatory
+
+   dataType:          Data type goes here; obligatory
+
+   status:            Status goes here; obligatory
+
+   description:       Description goes here.; obligatory
+
+                      For Information Elements that
+                      represent flags, please include a
+                      table that lists each flag value
+                      (hexadecimal) and description.
+                      The following is a template for that
+                      table.
+
+                      +-------+----------------------------------+
+                      | Value | Description                      |
+                      +-------+----------------------------------+
+                      |       |                                  |
+                      +-------+----------------------------------+
+
+   dataTypeSemantics: Data type semantics, if any, go here; optional
+
+   units:             Units, if any, go here; optional
+
+   range:             Range, if not implied by the data type, goes
+                      here; optional
+
+   references:        References to other RFCs or documents outside
+                      the IETF, in which additional information is
+                      given, or which are referenced by the
+                      description, go here; optional
+
+                                 Figure 1
+
+3.2.  Objects
+
+   Objects are the mechanism by which attributes (Section 3.1) and/or
+   other objects can be logically grouped together to create more
+   complex models.  Additional information about objects can be modeled
+   using metadata as described in Section 3.3.
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 12]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+3.2.1.  Syntax
+
+   Objects are complex Information Elements that can be created using
+   one of the following IPFIX constructs that are defined in Section 3.1
+   of [RFC7012].
+
+   o  basicList: a list of zero or more instances of any Information
+      Element
+
+   o  subTemplateList: a list of zero or more instances of a single,
+      specific Template
+
+   o  subTemplateMultiList: a list of zero or more instances of any
+      Template
+
+   The following is a modified version of the template for Information
+   Elements provided in Section 9.1 of [RFC7013] that can be used to
+   model objects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 13]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+elementId:         Element identifier goes here if known, or
+                   "TBD" if it will be assigned by IANA and
+                   filled in at publication time.; obligatory
+
+name:              Name goes here.; obligatory
+
+dataType:          Data type goes here; obligatory
+
+status:            Status goes here; obligatory
+
+description:       Description goes here.; obligatory
+
+                   Please include a high-level model diagram that uses
+                   the following format which is a simplified version
+                   of a high-level diagram format used in [RFC6313].
+
+                   <IE-Name> = (<IE-DataType>, <IE-DataTypeSemantic>,
+                   <IE-1>,
+                   <IE-2>,
+                   <IE-3>,
+                   ...
+                   )
+
+                   dataTypeSemantics: Data type semantics, if any, go here; optional
+
+                   units:             Units, if any, go here; optional
+
+                   range:             Range, if not implied by the data type, goes
+                                      here; optional
+
+                   references:        References to other RFCs or documents outside
+                                      the IETF, in which additional information is
+                                      given, or which are referenced by the
+                                      description, go here; optional
+
+                                 Figure 2
 
 3.3.  Metadata
 
-   TODO: Explain metadata at a conceptual level and how it can be used
-   to provide additional information about containers and attributes.
-   We should be providing enough information so that SACM users can
-   determine provenance (e.g. source of origin, time of collection,
-   observation, reporting, etc.) and use it when sharing and evaluating
-   posture attribute information.
+   Metadata allows components to annotate objects and attributes with
+   additional information that will allow other components to make a
+   determination about the provenance of the objects and attributes
+   during exchanges and evaluations.  A proposal outlining various
+   options for representing metadata attributes/objects in the IPFIX
+   syntax is being discussed on the mailing list.  TODO: See IM issue
+   #39 at https://github.com/sacmwg/draft-ietf-sacm-information-model/
+   issues/39 for more information.
 
 
 
 
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                  [Page 9]
+Waltermire, et al.     Expires September 18, 2016              [Page 14]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 3.4.  Relationships
@@ -513,7 +793,14 @@ Internet-Draft           SACM Information Model             January 2016
    and attributes.  QUESTION: Are relationships just metadata?  Lisa's
    notes have some information on relationships:
    https://mailarchive.ietf.org/arch/msg/sacm/
-   kWxlnboHAXD87cned9WavwPZy5w
+   kWxlnboHAXD87cned9WavwPZy5w.  We also want to consider the
+   relationships proposed by Nancy and Henk in
+   https://www.ietf.org/proceedings/94/slides/slides-94-sacm-7.pdf.
+   Nancy and Henk expect to provide additional information related to
+   their Information Model work that can be merged into this document at
+   some point.  The information is expected to be ready in advance of
+   IETF 95.  Please see issue #39 at https://github.com/sacmwg/draft-
+   ietf-sacm-information-model/issues/39 for more information.
 
 3.5.  Designation
 
@@ -527,17 +814,266 @@ Internet-Draft           SACM Information Model             January 2016
    attributes beyond the mandatory-to-implement attributes to
    successfully identify an endpoint on their network.  Operational and
    privacy concerns will be covered in Operational Considerations and
-   Privacy Considerations sections respectively.
+   Privacy Considerations sections respectively.  A proposal outlining
+   various options for representing designation attributes/objects in
+   the IPFIX syntax is being discussed on the mailing list.  See IM
+   issue #39 at https://github.com/sacmwg/draft-ietf-sacm-information-
+   model/issues/39 for more information.
 
-3.6.  Conventions for Modeling Information Model Objects
+3.6.  Privacy
 
-   TODO: The working group needs to select the conventions that will be
-   used to model the different objects defined in the information model.
-   Members of the Endpoint ID Design Team are looking into different
-   examples of how other working groups have modeled the objects in
-   their information models so that the working can select one that
-   makes the most sense for SACM.  Once conventions have been selected,
-   they should be documented here for future reference.
+   TODO: In the IETF, there are privacy concerns with respect to
+   endpoint identity and monitoring.  As a result, it was proposed that
+   a privacy property be included to denote when a information element
+   represents a privacy concern.  A proposal outlining various options
+   for representing privacy attributes/objects in the IPFIX syntax is
+   being discussed on the mailing list.  See IM issue #39 at
+   https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/39
+   for more information.
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 15]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+3.7.  Type Space
+
+   This section describes the abstract data types that can be used for
+   the specification of the SACM Information Elements in Section 5.
+   Section 3.7.1 describes the set of abstract data types.  This section
+   used Section 3 of [RFC7012] as a starting point and was modified to
+   address the needs of SACM.
+
+3.7.1.  Abstract Data Types
+
+   This section describes the set of valid abstract data types of the
+   SACM information model, independent of how they are implemented in a
+   data model.  Note that further abstract data types may be specified
+   by future extensions of the SACM information model.
+
+3.7.1.1.  unsigned8
+
+   The type "unsigned8" represents a non-negative integer value in the
+   range of 0 to 255.
+
+3.7.1.2.  unsigned16
+
+   The type "unsigned16" represents a non-negative integer value in the
+   range of 0 to 65535.
+
+3.7.1.3.  unsigned32
+
+   The type "unsigned32" represents a non-negative integer value in the
+   range of 0 to 4294967295.
+
+3.7.1.4.  unsigned64
+
+   The type "unsigned64" represents a non-negative integer value in the
+   range of 0 to 18446744073709551615.
+
+3.7.1.5.  signed8
+
+   The type "signed8" represents an integer value in the range of -128
+   to 127.
+
+3.7.1.6.  signed16
+
+   The type "signed16" represents an integer value in the range of
+   -32768 to 32767.
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 16]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+3.7.1.7.  signed32
+
+   The type "signed32" represents an integer value in the range of
+   -2147483648 to 2147483647.
+
+3.7.1.8.  signed64
+
+   The type "signed64" represents an integer value in the range of
+   -9223372036854775808 to 9223372036854775807.
+
+3.7.1.9.  float32
+
+   The type "float32" corresponds to an IEEE single-precision 32-bit
+   floating point type as defined in [IEEE.754.1985].
+
+3.7.1.10.  float64
+
+   The type "float64" corresponds to an IEEE double-precision 64-bit
+   floating point type as defined in [IEEE.754.1985].
+
+3.7.1.11.  boolean
+
+   The type "boolean" represents a binary value.  The only allowed
+   values are "true" and "false".
+
+3.7.1.12.  macAddress
+
+   The type "macAddress" represents a MAC-48 address as defined in
+   [IEEE.802-3.2012].
+
+3.7.1.13.  string
+
+   The type "string" represents a finite-length string of valid
+   characters from the Unicode coded character set [ISO.10646].  Unicode
+   incorporates ASCII [RFC20] and the characters of many other
+   international character sets.
+
+3.7.1.14.  dateTimeSeconds
+
+   The type "dateTimeSeconds" represents a time value expressed with
+   second-level precision.
+
+3.7.1.15.  dateTimeMilliseconds
+
+   The type "dateTimeMilliseconds" represents a time value expressed
+   with millisecond-level precision.
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 17]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+3.7.1.16.  dateTimeMicroseconds
+
+   The type "dateTimeMicroseconds" represents a time value expressed
+   with microsecond-level precision.
+
+3.7.1.17.  dateTimeNanoseconds
+
+   The type "dateTimeNanoseconds" represents a time value expressed with
+   nanosecond-level precision.
+
+3.7.1.18.  ipv4Address
+
+   The type "ipv4Address" represents an IPv4 address as defined in
+   [RFC0791].
+
+3.7.1.19.  ipv6Address
+
+   The type "ipv6Address" represents an IPv6 address as defined in
+   [RFC3587].
+
+3.7.1.20.  basicList
+
+   The type "basicList" represents a list of zero or more instances of
+   any Information Element as defined in [RFC6313].
+
+3.7.1.21.  subTemplateList
+
+   The type "subTemplateList" represents a list of zero or more
+   instances of a structured data type, where the data type of each list
+   element is the same and corresponds with a single Template Record as
+   defined in [RFC6313].
+
+3.7.1.22.  subTemplateMultiList
+
+   The type "subTemplateMultiList" represents a list of zero or more
+   instances of a structured data type, where the data type of each list
+   element can be different and corresponds with different Template
+   definitions as defined in [RFC6313].
+
+3.7.2.  Data Type Semantics
+
+   This section describes the set of valid data type semantics of the
+   IPFIX information model.
+
+   Further data type semantics may be specified by future updates to
+   this document.  Changes to the associated "IPFIX Information Element
+   Semantics" subregistry [IANA-IPFIX] require a Standards Action
+   [RFC5226].
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 18]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+3.7.3.  quantity
+
+   "quantity" is a numeric (integral or floating point) value
+   representing a measured value pertaining to the record.  This is
+   distinguished from counters that represent an ongoing measured value
+   whose "odometer" reading is captured as part of a given record.  This
+   is the default semantic type of all numeric data types.
+
+3.7.4.  totalCounter
+
+   "totalCounter" is an integral value reporting the value of a counter.
+   Counters are unsigned and wrap back to zero after reaching the limit
+   of the type.  For example, an unsigned64 with counter semantics will
+   continue to increment until reaching the value of 2**64 - 1.  At this
+   point, the next increment will wrap its value to zero and continue
+   counting from zero.  The semantics of a total counter is similar to
+   the semantics of counters used in the Simple Network Management
+   Protocol (SNMP), such as Counter32 as defined in [RFC2578].  The only
+   difference between total counters and counters used in SNMP is that
+   the total counters have an initial value of 0.  A total counter
+   counts independently of the export of its value.
+
+3.7.5.  deltaCounter
+
+   "deltaCounter" is an integral value reporting the value of a counter.
+   Counters are unsigned and wrap back to zero after reaching the limit
+   of the type.  For example, an unsigned64 with counter semantics will
+   continue to increment until reaching the value of 2**64 - 1.  At this
+   point, the next increment will wrap its value to zero and continue
+   counting from zero.  The semantics of a delta counter is similar to
+   the semantics of counters used in SNMP, such as Counter32 as defined
+   in [RFC2578].  The only difference between delta counters and
+   counters used in SNMP is that the delta counters have an initial
+   value of 0.  A delta counter is reset to 0 each time it is exported
+   and/or expires without export.
+
+3.7.6.  identifier
+
+   "identifier" is an integral value that serves as an identifier.
+   Specifically, mathematical operations on two identifiers (aside from
+   the equality operation) are meaningless.  Identifiers MUST be one of
+   the signed or unsigned data types.
+
+3.7.7.  flags
+
+   "flags" is an integral value that represents a set of bit fields.
+   Logical operations are appropriate on such values, but other
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 19]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+   mathematical operations are not.  Flags MUST always be of an unsigned
+   data type.
+
+3.7.8.  list
+
+   A list represents an arbitrary-length sequence of zero or more
+   Information Elements, either composed of regular Information Elements
+   or composed of data conforming to a Template Record.  See [RFC6313].
 
 4.  Information Model Assets
 
@@ -557,9 +1093,33 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 10]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 20]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
            +---------+*______in>_______*+-----+
@@ -585,22 +1145,39 @@ Internet-Draft           SACM Information Model             January 2016
                                               in>
 
 
-                      Figure 1: Model of an Endpoint
+                      Figure 3: Model of an Endpoint
 
 4.1.  Asset
 
    TODO: Define Asset here in the context of the information model.
 
+   [I-D.ietf-sacm-terminology] defines an asset as: Defined in
+   {{RFC4949}} as "a system resource that is (a) required to be
+   protected by an information system's security policy, (b) intended to
+   be protected by a countermeasure, or (c) required for a system's
+   mission".  In the scope of SACM, an asset can be composed of other
+   assets.  Examples of Assets include: Endpoints, Software, Guidance,
+   or X.509 public key certificates.  An asset is not necessarily owned
+   by an organization.
+
 4.2.  Endpoint
 
    TODO: Define an Endpoint asset.  Explain how it is made up of HW
-   components, SW components, asset identity, etc.  Take relevant
-   information from the
+   components, SW components, asset identity, etc.
 
    An endpoint is the hollow center of the model.  An endpoint is an
    abstract ideal.  Any endpoint attribute assertion that mentions an
    endpoint mentions it by specifying identifying attributes.  Even if
    there is one preferred endpoint identity, that is modeled as an
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 21]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    identity.  We do not anticipate any AVP whose attribute type is
    "endpoint".
 
@@ -608,15 +1185,6 @@ Internet-Draft           SACM Information Model             January 2016
 
    TODO: Define a Hardware Component asset.  Explain how it is things
    like motherboards, network cards, etc.
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 11]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    Hardware components may also be assets and/or harmful.  For example,
    a USB port on a system may be disabled to prevent information flow
@@ -658,6 +1226,14 @@ Internet-Draft           SACM Information Model             January 2016
 
    Relationship:
 
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 22]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    o  If an endpoint has an instance of a software component, we say
       that the software component is "in" the endpoint.  This is a
       shorthand.
@@ -665,15 +1241,6 @@ Internet-Draft           SACM Information Model             January 2016
    Some software components are assets.  "Asset" is defined in RFC4949
    [RFC4949] as "a system resource that is (a) required to be protected
    by an information system's security policy, (b) intended to be
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 12]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    protected by a countermeasure, or (c) required for a system's
    mission."
 
@@ -714,21 +1281,21 @@ Internet-Draft           SACM Information Model             January 2016
    different components.  Software versioning is not built into the
    information model.
 
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 23]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    Each separately installable piece of software SHOULD be modeled as a
    component.  Sometimes it may be better to divide more finely: what an
    installer installs MAY be modeled as several components.
 
    A data model MAY identify a software component by parts of an ISO
    SWID tag.
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 13]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
 4.4.1.  Software Instance
 
@@ -770,6 +1337,15 @@ Internet-Draft           SACM Information Model             January 2016
    The SACM Information Model contains several elements of the
    architecture, including:
 
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 24]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    o  SACM Components, which may be Collectors, Evaluators, etc.
       Collectors may be internal (performed within the endpoint itself)
       or external (performed outside of the endpoint, such as by a
@@ -778,13 +1354,6 @@ Internet-Draft           SACM Information Model             January 2016
    o  Guidance, which tells SACM components what to do
 
    o  Posture, in the form of posture attributes and evaluation results
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 14]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    o  Additional information about the endpoint, such as a
       representation of a software component, endpoint identity, user
@@ -797,7 +1366,7 @@ Internet-Draft           SACM Information Model             January 2016
    represented differently in an implementation, but that difference
    would be in data models, not in the information model.
 
-   Figure 2 introduces the endpoint attributes and their relationships.
+   Figure 4 introduces the endpoint attributes and their relationships.
 
 
    +---------+*____in>______*+-----+
@@ -823,23 +1392,23 @@ Internet-Draft           SACM Information Model             January 2016
                                     in>
 
 
-                      Figure 2: Model of an Endpoint
+                      Figure 4: Model of an Endpoint
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 25]
+
+Internet-Draft           SACM Information Model               March 2016
+
 
    ISSUE (CEK): we agreed to remove location and account from the model,
    did we not?  TODO: Remove Network Interface, Location, Address, and
    Account from this diagram if we end up removing the corresponding
    sections from the information model.
 
-   Figure 3 is the core of the information model.  It represents the
+   Figure 5 is the core of the information model.  It represents the
    information elements and their relationships.
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 15]
-
-Internet-Draft           SACM Information Model             January 2016
 
 
             +-----+            +---------+
@@ -860,9 +1429,9 @@ Internet-Draft           SACM Information Model             January 2016
                <produced-by
 
 
-                      Figure 3: Information Elements
+                      Figure 5: Information Elements
 
-   Figure 4 is a potential alternative structure for assertions.  It is
+   Figure 6 is a potential alternative structure for assertions.  It is
    inspired by triple stores.  See http://www.w3.org/TR/2014/REC-rdf11-
    concepts-20140225/.
 
@@ -874,7 +1443,7 @@ Internet-Draft           SACM Information Model             January 2016
         |_____________________|
                <asserter
 
-                  Figure 4: Information Elements, Take 2
+                  Figure 6: Information Elements, Take 2
 
    Note: UML 2 is specified by [UML].
 
@@ -882,21 +1451,19 @@ Internet-Draft           SACM Information Model             January 2016
 
    Need to be clear in the description that ???
 
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 26]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    For some of the relationships, will need some language and guidance
    to the interfaces and relationships we expect to have happen, MUSTs
    and SHOULDs, as well as explaining the extensibility that other
    relationships can exist, show examples of how that can happen.
    Others that we haven't thought of yet, might be added by another RFC
    or in another way
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 16]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
 5.1.  Identifying Attributes
 
@@ -938,6 +1505,15 @@ Internet-Draft           SACM Information Model             January 2016
       observations of network traffic.  For example, the producer saw
       the source address in an IP packet.
 
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 27]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
       "Verification" means that the provider has verified the
       information.  For example:
 
@@ -946,13 +1522,6 @@ Internet-Draft           SACM Information Model             January 2016
 
       *  The provider makes an SSH connection to the endpoint and knows
          the endpoint's public key by virtue of authenticating it.
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 17]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
       *  The monitored endpoint is a virtual machine and the provider
          knows by peeking into it.
@@ -968,180 +1537,13 @@ Internet-Draft           SACM Information Model             January 2016
    knows at least one in another way, it MUST publish at least one.  The
    provider SHOULD publish all common identifying AVPs it knows.
 
-5.1.3.  IP Address
+5.1.3.  Certificate
 
-5.1.3.1.  Range of Values
-
-   MUST be an IPv4 or IPv6 address, and optionally a scope string.  MUST
-   NOT be a broadcast, multicast, or loopback address.
-
-   An IPv4 address MUST conform to [RFC0791], section 3.2.
-
-   An IPv6 address MUST conform to [RFC3587].  SHOULD NOT be a link-
-   local address.
-
-   Scope string: an administratively assigned string denoting the IP
-   routing domain.  Implementations MUST support this.  Administrators
-   may use it to avoid ambiguity, for example if network address
-   translation (NAT) is in use.
-
-   ISSUE (Jim Schaad): Scope strings are interesting.  However does this
-   imply a potential need to create a new DHCP item so that it can be
-   sent out to a device for reporting back?  Is there such a string
-   already?
-
-   (Cliff): Scope strings are like administrative-domain in IF-MAP.  It
-   would solve many problems if DHCP servers could provide this string
-   to endpoints and to observers.  I am not sure whether there is a
-   standard DHCP option that fills the bill or not.  I am not sure how
-   easily application software can get the DHCP options from the
-   underlying OS.  But this is worth exploring.
-
-   (Jim): We may need to look at what happens if a scope identifier is
-   either not set or not available.  I am thinking of the virtual
-   network that is NATed on my machine.  If those VMs reported [on
-   themselves] then the network configuring systems may not know about
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 18]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
-   that VM and there would not necessarily be a reasonable scope string
-   to report for it.
-
-5.1.3.2.  Meaning
-
-   Throughout the time interval of the AVP, the endpoint had the right
-   to use, or was communicating using, the specified IP address.
-
-5.1.3.3.  Relationships
-
-   A network profiler might know an endpoint's address and something
-   about the software running on the endpoint.  The profiler might know
-   nothing else.  So data models MUST support an endpoint attribute
-   assertion relating the IP address to a set of software components.
-
-   A data model MUST support the following relationships:
-
-   o  An address is "bound to" a network interface.
-
-   o  An address is considered "bound to" an endpoint just if the
-      address is "bound to" an interface that is "in" the endpoint.
-
-   o  An address may be "in" one or more locations.  (DELETE?)
-
-5.1.3.4.  Multiplicity
-
-   An endpoint attribute assertion MAY contain one or more IP addresses.
-
-   An IP address may be used by more than one endpoint at a time,
-   largely because of Network Address Translation (NAT).  Where
-   practical, a scope string SHOULD be included, to disambiguate.
-
-   In practice, an IP address can be used by only one endpoint in an IP
-   routing domain at a time.
-
-5.1.3.5.  Stability
-
-   The stability of IP address assignments varies widely.  Some
-   assignments are persistent, some volatile.  The time interval of the
-   AVP MUST NOT reach into the future, not even if (for example) the
-   DHCP lease is infinite.
-
-5.1.3.6.  Accuracy
-
-   For IP addresses that a provider knows by observation or
-   verification:
-
-   o  Network Address Translation (NAT, RFC2663) is a pitfall.
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 19]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
-   o  The provider MUST NOT include an IP address that the provider
-      knows to be a translated address.
-
-   o  The provider SHOULD be configurable with a set of IP address
-      blocks to be excluded.  Address blocks set aside for NAT devices
-      SHOULD be excluded, by administrators for example.
-
-   o  ISSUE: In a later SACM version, it would be good to overcome this,
-      by publishing the association between the internal and external
-      address-port combinations.
-
-   For IP addresses that a provider knows by observation or
-   verification, IP address spoofing is a pitfall.  Network
-   administrators SHOULD take countermeasures.  Ingress filtering
-   (RFC3704) is one.  DHCP snooping is another: many Network Access
-   Devices can confine endpoints to IP addresses assigned by authorized
-   DHCP servers.
-
-5.1.3.7.  Data Model Requirements
-
-   All SACM data models MUST support this entire subsection.
-
-5.1.4.  MAC Address
-
-   TODO
-
-5.1.5.  Hardware Serial Number
-
-5.1.5.1.  Range of Values
-
-   MUST be a vendor ID string and a serial number string string.  The
-   vendor ID string MAY be empty, a URI, or a vendor number.
-
-5.1.5.2.  Meaning
-
-   Throughout the time interval of the AVP, the endpoint had a hardware
-   component by the indicated manufacturer and having the specified
-   serial number.
-
-5.1.5.3.  Multiplicity
-
-   An endpoint may have any number of hardware instances, each with a
-   different serial number.  An endpoint attribute assertion may contain
-   AVPs for any subset of the hardware instances.
-
-   Vendors generally ensure that each serial number goes to only one
-   hardware instance.
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 20]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
-5.1.5.4.  Stability
-
-   Each hardware component is immutably associated with a hardware
-   serial number.  But hardware can be replaced or removed.  As endpoint
-   attributes, hardware serial numbers are *persistent* but not
-   *immutable*.
-
-5.1.5.5.  Accuracy
-
-5.1.5.6.  Data Model Requirements
-
-   All SACM data models MUST support this entire subsection.
-
-5.1.6.  Certificate
-
-5.1.6.1.  Range of values
+5.1.3.1.  Range of values
 
    MUST be X.509 certificate, per [RFC5280].
 
-5.1.6.2.  Meaning
+5.1.3.2.  Meaning
 
    Throughout the time interval of the AVP, the endpoint had the private
    key corresponding to the specified certificate.
@@ -1153,48 +1555,48 @@ Internet-Draft           SACM Information Model             January 2016
    revoked.  ISSUE (CEK): Do we want to get this PKI-ish?  If so, would
    we include the CA certificate as well?
 
-5.1.6.3.  Multiplicity
+5.1.3.3.  Multiplicity
 
    An endpoint may use, or have the right to use, one or more
    certificates.
 
    Some certificates may be used on more than one endpoint.  Other
    certificates are (by intent) bound to a single endpoint.  ISSUE
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 28]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    (CEK): Is there a standard way to distinguish the two?  We could
    perhaps provide a configurable criterion, as an information element.
    Should we?
 
-5.1.6.4.  Stability
+5.1.3.4.  Stability
 
    Certificates are replaced, due to expiration and other reasons.  By
    and large, they are not replaced often.  A year is a typical
    interval.  In sum, they are persistent.
 
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 21]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    A private key is baked into hardware is almost immutable.  But again,
    hardware can be replaced.
 
-5.1.6.5.  Accuracy
+5.1.3.5.  Accuracy
 
    If a certificate is known by verification, the attribute is highly
    accurate.
 
-5.1.6.6.  Data model requirements
+5.1.3.6.  Data model requirements
 
    All SACM data models MUST support this entire subsection.
 
-5.1.7.  Public Key
+5.1.4.  Public Key
 
    TODO
 
-5.1.8.  Username?
+5.1.5.  Username?
 
    ISSUE (CEK): If a user certificate can be an identifying attribute,
    why not a username also?  At an earlier stage of our discussions,
@@ -1207,7 +1609,7 @@ Internet-Draft           SACM Information Model             January 2016
    and password to many multi-user servers.  We would have to
    distinguish personal endpoints from server endpoints somehow.
 
-5.1.9.  Tool-Specific Identifier
+5.1.6.  Tool-Specific Identifier
 
    TODO
 
@@ -1215,10 +1617,19 @@ Internet-Draft           SACM Information Model             January 2016
    agree on a tool-specific identifier.  But a community may agree on an
    identifier notation, and might even create a formal standard.  All
    that's important is that each of these attributes has a type and
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 29]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    meaning *not* specified by the SACM internet drafts.  "Vendor-
    specific identifier?"  "Custom identifier?"
 
-5.1.10.  Identification of Endpoints where SACM Components Reside
+5.1.7.  Identification of Endpoints where SACM Components Reside
 
    Every information element needs identifying attributes of its
    producer's endpoint.  (TODO: Provide normative language.  SHOULD?
@@ -1226,18 +1637,10 @@ Internet-Draft           SACM Information Model             January 2016
 
    Specifically, in an endpoint attribute assertion, we need identifying
    attributes of the asserter's endpoint.  If the asserter is external,
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 22]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    the assertion will contain identifying attributes of two endpoints.
    (TODO: Discuss what this information is for.)
 
-5.1.11.  Security Considerations
+5.1.8.  Security Considerations
 
    Effects of misidentification
 
@@ -1245,77 +1648,7 @@ Internet-Draft           SACM Information Model             January 2016
 
    How minimize misidentification
 
-5.2.  Network Interface
-
-   An endpoint generally has at least one network interface.
-
-   Interfaces nest.  A virtual interface can nest in a physical
-   interface.
-
-   A data model MUST support the following relationships:
-
-   o  A network interface is "in" an endpoint.
-
-   o  A network interface is "in" another network interface; this is for
-      a nested interface.  CEK: And this allows representing compliance
-      policies that are worthwhile.  But is this too advanced for the
-      initial set of SACM RFCs?
-
-   o  A network interface "acts for" an identity.  This occurs, for
-      example, when the network interface is online because of
-      successful 802.1X.  An internal collector may be aware of the
-      identity.  An external collector (such as a RADIUS server
-      [RFC3580]) will be aware of the identity.
-
-5.3.  Address
-
-   TODO: DELETE THIS SECTION.  ISSUE (CEK): Do we still want to model
-   layer 4 addresses?
-
-   An address SHALL BE any of:
-
-   o  A layer 2 address; a data model MUST support MAC addresses, and
-      MAY support others
-
-   o  A layer 3 address; a data model MUST support IPv4 and IPv6
-      addresses, and MAY support others
-
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 23]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
-   o  A layer 4 address; a data model MUST support an IP-address-
-      protocol-port combination, where protocol is TCP or UDP.  It MAY
-      support others
-
-   Addresses from other layers may be added in the future.
-
-   These addresses are not necessarily globally unique.  Therefore, a
-   data model SHOULD allow an address to be qualified with a scope.
-
-   o  A data model SHOULD allow qualifying a MAC address with its
-      layer-2 broadcast domain.  This MAY take the form of a VLAN ID and
-      an administratively assigned string denoting the LAN.
-
-   o  A data model SHOULD allow qualifying an IP address with an
-      administratively assigned string denoting the IP routing domain.
-
-   A data model MUST support the following relationships:
-
-   o  An address is "bound to" a network interface.
-
-   o  An address is considered "bound to" an endpoint just if the
-      address is "bound to" an interface that is "in" the endpoint.
-
-   o  An address may be "in" one or more locations.
-
-5.4.  Identity
+5.2.  Identity
 
    TODO: Delete this section?
 
@@ -1341,12 +1674,15 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 24]
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 30]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
-5.5.  Location
+5.3.  Location
 
    TODO: Delete this section?
 
@@ -1397,16 +1733,16 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 25]
+Waltermire, et al.     Expires September 18, 2016              [Page 31]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
-5.6.  Endpoint Attribute Assertion
+5.4.  Endpoint Attribute Assertion
 
    TODO: Integrate into the Section 3 as appropriate.
 
-5.6.1.  Form and Precise Meaning
+5.4.1.  Form and Precise Meaning
 
    An endpoint attribute assertion has:
 
@@ -1439,7 +1775,7 @@ Internet-Draft           SACM Information Model             January 2016
    produces the Endpoint Attribute Assertion will not necessarily know
    what it is.
 
-5.6.2.  Asserter
+5.4.2.  Asserter
 
    An Endpoint Attribute Assertion may come from an attribute collector
    or an evaluator.  It may come from a SACM component that derives it
@@ -1453,12 +1789,12 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 26]
+Waltermire, et al.     Expires September 18, 2016              [Page 32]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
-5.6.3.  Example
+5.4.3.  Example
 
    For example, an attribute assertion might have these attribute-value
    pairs:
@@ -1473,7 +1809,7 @@ Internet-Draft           SACM Information Model             January 2016
    OS X 10.6.8 throughout the specified time interval.  A profiler might
    have provided this assertion.
 
-5.6.4.  A Use Case
+5.4.4.  A Use Case
 
    For example, Endpoint Attribute Assertions should help SACM
    components to track an endpoint as it roams or stays stationary.
@@ -1486,7 +1822,7 @@ Internet-Draft           SACM Information Model             January 2016
 
       The location of the endpoint and the user
 
-5.6.5.  Event
+5.4.5.  Event
 
    An event is represented as a Posture Attribute Assertion whose time
    interval has length zero.
@@ -1499,7 +1835,7 @@ Internet-Draft           SACM Information Model             January 2016
 
    o  A NetFlow message [RFC3954]
 
-5.6.6.  Difference between Attribute and Event
+5.4.6.  Difference between Attribute and Event
 
    Author: Henk Birkholz
 
@@ -1509,9 +1845,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 27]
+Waltermire, et al.     Expires September 18, 2016              [Page 33]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    An *attribute* tends not to change until something causes a change.
@@ -1533,7 +1869,7 @@ Internet-Draft           SACM Information Model             January 2016
    element, the "Endpoint Attribute Assertion", to describe both
    attributes and events.
 
-5.7.  Attribute-Value Pair
+5.5.  Attribute-Value Pair
 
    TODO: Integrate into the Section 3 as appropriate.
 
@@ -1544,7 +1880,7 @@ Internet-Draft           SACM Information Model             January 2016
    The value may be structured.  For example, it may something like XML.
 
    The information model requires a standard attribute type (or possibly
-   more than one) for each box in Figure 2:
+   more than one) for each box in Figure 4:
 
    o  Hardware Component: the value identifies the hardware type.  For
       example, it may consist of the make and model number.
@@ -1565,9 +1901,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 28]
+Waltermire, et al.     Expires September 18, 2016              [Page 34]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    o  Endpoint: The value is a unique endpoint identifier.
@@ -1587,7 +1923,7 @@ Internet-Draft           SACM Information Model             January 2016
    o  Address: The value is an IP, MAC, or other network address,
       possibly qualified with its scope.
 
-5.7.1.  Unique Endpoint Identifier
+5.5.1.  Unique Endpoint Identifier
 
    An organization should try to uniquely identify and label an
    endpoint, whether the endpoint is enrolled or is discovered in the
@@ -1601,7 +1937,7 @@ Internet-Draft           SACM Information Model             January 2016
    If the attribute type of an AVP is "endpoint", the value is a unique
    identifier of the endpoint.
 
-5.7.2.  Posture Attribute
+5.5.2.  Posture Attribute
 
    Some AVPs will be posture attributes.
 
@@ -1621,12 +1957,12 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 29]
+Waltermire, et al.     Expires September 18, 2016              [Page 35]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
-5.8.  Evaluation Result
+5.6.  Evaluation Result
 
    Evaluation Results (see [I-D.ietf-sacm-terminology]) are modeled as
    Endpoint Attribute Assertions.
@@ -1641,52 +1977,13 @@ Internet-Draft           SACM Information Model             January 2016
    time.
 
    An Evaluation Result may be retained longer than the Endpoint
-   Attribute Assertions from which it derives.  (Figure 2 does not show
+   Attribute Assertions from which it derives.  (Figure 4 does not show
    this.)  In the limiting case, Endpoint Attribute Assertions are not
    retained.  When as an Endpoint Attribute Assertion arrives, an
    evaluator produces an Evaluation Result.  These mechanics are out of
    the scope of the Information Model.
 
-5.9.  Report
-
-   ISSUE (CEK): Should we take modeling of reports out of scope?  It is
-   clear that reports are needed.  But is a *standard* for reports
-   needed, and does it deserve our priority?  Endpoint ID Design Team:
-   Yes, it should be removed.
-
-   TODO: This should be removed if the working group decides that
-   reports are out of scope for SACM.
-
-   An Endpoint Attribute Assertion concerns a single endpoint.
-   Assertions about a set of endpoints are also needed -- for example,
-   for trend analysis and for reports read by humans.  These assertions
-   are termed "reports".  SACM components will consume Endpoint
-   Attribute Assertions and generate reports.
-
-   A report contains its provenance, with the same form and meaning as
-   the provenance of an Endpoint Attribute Assertion.
-
-   A Report summarizes:
-
-   o  Endpoint Attribute Assertions, which may include Evaluation
-      Results
-
-   o  Other Reports
-
-   A Report may routine or ad hoc.
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 30]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
-   Some reports may be machine readable.  Machine readable reports may
-   be consumable by SACM components and by automatic response systems
-   (not specified by SACM).
-
-5.10.  SACM Component
+5.7.  SACM Component
 
    Although SACM components are mainly covered by the SACM architecture,
    we have some remarks.  TODO: Move them to the architecture document?
@@ -1694,7 +1991,7 @@ Internet-Draft           SACM Information Model             January 2016
    ISSUE (CEK): Why do we need information elements that model SACM
    compoments?
 
-5.10.1.  External Attribute Collector
+5.7.1.  External Attribute Collector
 
    An external collector is a collector that observes endpoints from
    outside. [kkw-many of these [collectors] are actually configured and
@@ -1711,6 +2008,15 @@ Internet-Draft           SACM Information Model             January 2016
    contribution to continuous monitoring.  I don't see the need to
    separate things whose primary job is monitoring from things whose
    primary job is something else.  Is there a need?]
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 36]
+
+Internet-Draft           SACM Information Model               March 2016
+
 
    [cek-to jmf's comment, that is what they are examples of; is a text
    change needed?]
@@ -1730,18 +2036,10 @@ Internet-Draft           SACM Information Model             January 2016
    o  A hypervisor that peeks into the endpoint, the endpoint being a
       virtual machine
 
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 31]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    o  A management system that configures and installs software on the
       endpoint
 
-5.10.2.  Evaluator
+5.7.2.  Evaluator
 
    An evaluator can consume endpoint attribute assertions, previous
    evaluations of posture attributes, or previous reports of evaluation
@@ -1759,21 +2057,7 @@ Internet-Draft           SACM Information Model             January 2016
 
    [cek-Why isn't a NEA posture validator an example?]
 
-5.10.3.  Report Generator
-
-   A report generator makes reports based on:
-
-   o  Endpoint Attribute Assertions, including Evaluation Results
-
-   o  Other Reports (a weekly report may be created from daily reports)
-
-   It may summarize data continually, as the data arrives.  It also may
-   summarize data in response to an ad hoc query.
-
-   TODO: This should be removed if the working group decides that
-   reports are out of scope for SACM.
-
-5.11.  Organization?
+5.8.  Organization?
 
    [kkw-from a reporting standpoint there needs to be some concept like
    organization or system. without this, there is no way to produce
@@ -1782,23 +2066,24 @@ Internet-Draft           SACM Information Model             January 2016
    trying to achieve. from a scoring or grading standpoint, an endpoint
    needs to be associated with exactly one organization or system. it
    can have a many to many relationship with other types of results
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 37]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    reporting "bins". is this important to include here? we had
    organization as a core asset type for this reason, so i think it is a
    key information element. but i also know that i do not want to define
    all the different reporting types, so i am unsure.]
 
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 32]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    [cek-I had not thought of this at all.  Would it make sense to treat
    the organization and the bins as part of the guidance for creating
    reports?  Maybe not.  We should discuss.]
 
-5.12.  Guidance
+5.9.  Guidance
 
    [jmf- the guidance sections need more detail. . .]
 
@@ -1806,22 +2091,22 @@ Internet-Draft           SACM Information Model             January 2016
 
    Guidance is generally configurable by human administrators.
 
-5.12.1.  Internal Collection Guidance
+5.9.1.  Internal Collection Guidance
 
    An internal collector may need guidance to govern what it collects
    and when.
 
-5.12.2.  External Collection Guidance
+5.9.2.  External Collection Guidance
 
    An external collector may need guidance to govern what it collects
    and when.
 
-5.12.3.  Evaluation Guidance
+5.9.3.  Evaluation Guidance
 
    An evaluator typically needs Evaluation Guidance to govern what it
    considers to be a good or bad security posture.
 
-5.12.4.  Retention Guidance
+5.9.4.  Retention Guidance
 
    A SACM deployment may retain posture attributes, events, or
    evaluation results for some time.  Retention supports ad hoc
@@ -1834,23 +2119,18 @@ Internet-Draft           SACM Information Model             January 2016
    information, the guidance calling for the longest retention should
    take precedence.
 
-5.12.5.  Reporting Guidance
-
-   A Report Generator typically needs Reporting Guidance to govern the
-   reports it generates.  TODO: This should be removed if the working
-   group decides that reports are out of scope for SACM.
 
 
 
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 33]
+Waltermire, et al.     Expires September 18, 2016              [Page 38]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
-5.13.  Endpoint
+5.10.  Endpoint
 
    See the definition in the SACM Terminology for Security Assessment
    [I-D.ietf-sacm-terminology].
@@ -1872,7 +2152,7 @@ Internet-Draft           SACM Information Model             January 2016
    is part of a redundancy group is replaced, the redundancy group can
    remain the same.
 
-5.13.1.  Endpoint Identity
+5.10.1.  Endpoint Identity
 
    An endpoint identity provides both identification and authentication
    of the endpoint.  For example, an identity may be an X.509
@@ -1881,7 +2161,7 @@ Internet-Draft           SACM Information Model             January 2016
 
    Not all kinds of identities are guaranteed to be unique.
 
-5.13.2.  Software Component
+5.10.2.  Software Component
 
    An endpoint contains and runs software components.
 
@@ -1901,9 +2181,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 34]
+Waltermire, et al.     Expires September 18, 2016              [Page 39]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    o  An application
@@ -1928,7 +2208,7 @@ Internet-Draft           SACM Information Model             January 2016
 
    o  A business application that shipped with a virus
 
-5.13.2.1.  Unique Software Identifier
+5.10.2.1.  Unique Software Identifier
 
    Organizations need to be able to uniquely identify and label software
    installed or run on an endpoint.  Specifically, they need to know the
@@ -1943,9 +2223,9 @@ Internet-Draft           SACM Information Model             January 2016
    A piece of software may have a unique identifier, such as a SWID tag
    (ISO/IEC 19770).
 
-5.14.  User
+5.11.  User
 
-5.14.1.  User Identity
+5.11.1.  User Identity
 
    An endpoint is often - but not always - associated with one or more
    users.
@@ -1957,10 +2237,1362 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 35]
+Waltermire, et al.     Expires September 18, 2016              [Page 40]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
+
+5.12.  hardwareSerialNumber
+
+   elementId: TBD
+   name: hardwareSerialNumber
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: A globally unique identifier for a particular
+                piece of hardware assigned by the vendor.
+
+5.13.  interfaceName
+
+   elementId: TBD
+   name: interfaceName
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: A short name uniquely describing an interface,
+                eg "Eth1/0". See [RFC2863] for the definition
+                of the ifName object.
+
+5.14.  interfaceIndex
+
+   elementId: TBD
+   name: interfaceIndex
+   dataType: unsigned32
+   dataTypeSemantics: identifier
+   status: current
+   description: The index of an interface installed on an endpoint.
+                The value matches the value of managed object
+                'ifIndex' as defined in [RFC2863]. Note that ifIndex
+                values are not assigned statically to an interface
+                and that the interfaces may be renumbered every time
+                the device's management system is re-initialized,
+                as specified in [RFC2863].
+
+5.15.  interfaceMacAddress
+
+   elementId: TBD
+   name: interfaceMacAddress
+   dataType: macAddress
+   dataTypeSemantics: default
+   status: current
+   description: The IEEE 802 MAC address associated with a network
+                interface on an endpoint.
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 41]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.16.  interfaceType
+
+   elementId: TBD
+   name: interfaceType
+   dataType: unsigned32
+   dataTypeSemantics: identifier
+   status: current
+   description: The type of a network interface. The value matches
+                the value of managed object 'ifType' as defined in
+                [IANA registry ianaiftype-mib].
+
+5.17.  interfaceFlags
+
+   elementId: TBD
+   name: interfaceFlags
+   dataType: unsigned16
+   dataTypeSemantics: flags
+   status: current
+   description: This information element specifies the flags
+                associated with a network interface. Possible
+                values include:
+
+               +-------+----------------------------------+
+               | Value | Description                      |
+               +-------+----------------------------------+
+               | 0x1   | interface is up                  |
+               | 0x2   | broadcast address valid          |
+               | 0x4   | turn on debugging                |
+               | 0x8   | is a loopback net                |
+               | 0x10  | interface is point-to-point link |
+               | 0x20  | avoid use of trailers            |
+               | 0x40  | resources allocated              |
+               | 0x80  | no address resolution protocol   |
+               | 0x100 | receive all packets              |
+               +-------+----------------------------------+
+
+5.18.  networkInterface
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 42]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+   elementId: TBD
+   name: networkInterface
+   dataType: basicList
+   dataTypeSemantics: default
+   status: current
+   description: Information about a network interface
+                installed on an endpoint. The
+                following high-level digram
+                describes the structure of
+                networkInterface information
+                element.
+
+                networkInterface = (basicList, allof,
+                                    interfaceName,
+                                    interfaceIndex,
+                                    macAddress,
+                                    ifType,
+                                    flags
+                                    )
+
+5.19.  softwareIdentifier
+
+   elementId: TBD
+   name: softwareIdentifier
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: A globally unique identifier for a particular
+                software application.
+
+5.20.  softwareTitle
+
+   elementId: TBD
+   name: softwareTitle
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: The title of the software application.
+
+5.21.  softwareCreator
+
+   elementId: TBD
+   name: softwareCreator
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: The software developer (e.g., vendor or author).
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 43]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.22.  simpleVersion
+
+   elementId: TBD
+   name: simpleVersion
+   dataType: simpleVersionType
+   dataTypeSemantics: default
+   status: current
+   description: The version string for a software application that
+                follows the simple versioning scheme.
+
+5.23.  rpmVersion
+
+   elementId: TBD
+   name: rpmVersion
+   dataType: rpmVersionType
+   dataTypeSemantics: default
+   status: current
+   description: The version string for a software application that
+                follows the RPM versioning scheme.
+
+5.24.  ciscoTrainVersion
+
+   elementId: TBD
+   name: ciscoTrainVersion
+   dataType: ciscoTrainVersionType
+   dataTypeSemantics: default
+   status: current
+   description: The version string for a software application that
+                follows the Cisco Train Release versioning scheme.
+
+5.25.  softwareVersion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 44]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+   elementId: TBD
+   name: softwareVerison
+   dataType: basicList
+   dataTypeSemantics: default
+   status: current
+   description: The version of the software application. Software
+                applications may be versioned using a number of
+                schemas. The following high-level digram describes
+                the structure of the softwareVersion information
+                element.
+
+   softwareVersion(basicList, exactlyOneOf,
+                   simpleVersion,
+                   rpmVersion,
+                   ciscoTrainVersion,
+                   ...
+                  )
+
+5.26.  lastUpdated
+
+   elementId: TBD
+   name: lastUpdated
+   dataType: dateTimeSeconds
+   dataTypeSemantics: default
+   status: current
+   description: The date and time when the software instance
+                was last updated on the system (e.g., new
+                version instlalled or patch applied)
+
+5.27.  softwareInstance
+
+   elementId: TBD
+   name: softwareInstance
+   dataType: subTemplateMultiList
+   dataTypeSemantics: default
+   status: current
+   description: Information about an instance of software
+                installed on an endpoint. The following
+                high-level digram describes the structure of
+                softwareInstance information element.
+
+                softwareInstance = (subTemplateMultiList, allof,
+                                    softwareIdentifier,
+                                    title,
+                                    creator,
+                                    softwareVersion,
+                                    lastUpdated
+                                   )
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 45]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.28.  globallyUniqueIdentifier
+
+   elementId: TBD
+   name: globallyUniqueIdentifier
+   dataType: unsigned8
+   dataTypeSemantics: identifier
+   status: current
+   metadata: true
+   description: TODO.
+
+5.29.  dataOrigin
+
+   elementId: TBD
+   name: dataOrigin
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   metadata: true
+   description: The origin of the data. TODO make a better
+                description.
+
+5.30.  dataSource
+
+   elementId: TBD
+   name: dataSource
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   metadata: true
+   description: The source of the data. TODO make a better
+                description.
+
+5.31.  creationTimestamp
+
+   elementId: TBD
+   name: creationTimestamp
+   dataType: dateTimeSeconds
+   dataTypeSemantics: default
+   status: current
+   metadata: true
+   description: The date and time when the posture
+                information was created by a SACM Component.
+
+5.32.  collectionTimestamp
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 46]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+   elementId: TBD
+   name: collectionTimestamp
+   dataType: dateTimeSeconds
+   dataTypeSemantics: default
+   status: current
+   metadata: true
+   description: The date and time when the posture
+                information was collected or observed by a SACM
+                Component.
+
+5.33.  publicationTimestamp
+
+   elementId: TBD
+   name: publicationTimestamp
+   dataType: dateTimeSeconds
+   dataTypeSemantics: default
+   status: current
+   metadata: true
+   description: The date and time when the posture
+                information was published.
+
+5.34.  relayTimestamp
+
+   elementId: TBD
+   name: relayTimestamp
+   dataType: dateTimeSeconds
+   dataTypeSemantics: default
+   status: current
+   metadata: true
+   description: The date and time when the posture
+                information was relayed to another SACM Component.
+
+5.35.  storageTimestamp
+
+   elementId: TBD
+   name: storageTimestamp
+   dataType: dateTimeSeconds
+   dataTypeSemantics: default
+   status: current
+   metadata: true
+   description: The date and time when the posture
+                information was stored in a Repository.
+
+5.36.  type
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 47]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+   elementId: TBD
+   name: type
+   dataType: unsigned16
+   dataTypeSemantics: flags
+   status: current
+   metadata: true
+   description: The type of data model use to represent
+                some set of endpoint information. The following table
+                lists the set of data models supported by SACM.
+
+                +-------+----------------------------------+
+                | Value | Description                      |
+                +-------+----------------------------------+
+                | 0x00  | Data Model 1                     |
+                +-------+----------------------------------+
+                | 0x01  | Data Model 2                     |
+                +-------+----------------------------------+
+                | 0x02  | Data Model 3                     |
+                +-------+----------------------------------+
+                |...    | ...                              |
+                +-------+----------------------------------+
+
+5.37.  protocolIdentifier
+
+elementId: TBD
+name: protocolIdentifier
+dataType: unsigned8
+dataTypeSemantics: identifier
+status: current
+description: The value of the protocol number in the IP packet header.
+             The protocol number identifies the IP packet payload type.
+             Protocol numbers are defined in the IANA Protocol Numbers
+             registry.
+
+             In Internet Protocol version 4 (IPv4), this is carried in the
+             Protocol field.  In Internet Protocol version 6 (IPv6), this
+             is carried in the Next Header field in the last extension
+             header of the packet.
+
+5.38.  sourceTransportPort
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 48]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+elementId: TBD
+name: sourceTransportPort
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: The source port identifier in the transport header.
+             For the transport protocols UDP, TCP, and SCTP, this is the
+             source port number given in the respective header.  This
+             field MAY also be used for future transport protocols that
+             have 16-bit source port identifiers.
+
+5.39.  sourceIPv4PrefixLength
+
+   elementId: TBD
+   name: sourceIPv4PrefixLength
+   dataType: unsigned8
+   dataTypeSemantics:
+   status: current
+   description: The number of contiguous bits that are relevant in the
+                sourceIPv4Prefix Information Element.
+
+5.40.  ingressInterface
+
+elementId: TBD
+name: ingressInterface
+dataType: unsigned32
+dataTypeSemantics: identifier
+status: current
+description: The index of the IP interface where packets of this Flow
+             are being received.  The value matches the value of managed
+             object 'ifIndex' as defined in [RFC2863].
+             Note that ifIndex values are not assigned statically to an
+             interface and that the interfaces may be renumbered every
+             time the device's management system is re-initialized, as
+             specified in [RFC2863].
+
+5.41.  destinationTransportPort
+
+elementId: TBD
+name: destinationTransportPort
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: The destination port identifier in the transport header.
+             For the transport protocols UDP, TCP, and SCTP, this is the
+             destination port number given in the respective header.
+             This field MAY also be used for future transport protocols
+             that have 16-bit destination port identifiers.
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 49]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.42.  sourceIPv6PrefixLength
+
+   elementId: TBD
+   name: sourceIPv6PrefixLength
+   dataType: unsigned8
+   dataTypeSemantics:
+   status: current
+   description: The number of contiguous bits that are relevant in the
+                sourceIPv6Prefix Information Element.
+
+5.43.  sourceIPv4Prefix
+
+   elementId: TBD
+   name: sourceIPv4Prefix
+   dataType: ipv4Address
+   dataTypeSemantics: default
+   status: current
+   description: IPv4 source address prefix.
+
+5.44.  destinationIPv4Prefix
+
+   elementId: TBD
+   name: destinationIPv4Prefix
+   dataType: ipv4Address
+   dataTypeSemantics: default
+   status: current
+   description: IPv4 destination address prefix.
+
+5.45.  sourceMacAddress
+
+   elementId: TBD
+   name: sourceMacAddress
+   dataType: macAddress
+   dataTypeSemantics: default
+   status: current
+   description: The IEEE 802 source MAC address field.
+
+5.46.  ipVersion
+
+   elementId: TBD
+   name: ipVersion
+   dataType: unsigned8
+   dataTypeSemantics: identifier
+   status: current
+   description: The IP version field in the IP packet header.
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 50]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.47.  interfaceName
+
+elementId: TBD
+name: interfaceName
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A short name uniquely describing an interface, eg "Eth1/0".
+
+5.48.  interfaceDescription
+
+elementId: TBD
+name: interfaceDescription
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The description of an interface, eg "FastEthernet 1/0" or "ISP
+connection".
+
+5.49.  applicationDescription
+
+   elementId: TBD
+   name: applicationDescription
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: Specifies the description of an application.
+
+5.50.  applicationId
+
+   elementId: TBD
+   name: applicationId
+   dataType: octetArray
+   dataTypeSemantics: default
+   status: current
+   description: Specifies an Application ID per [RFC6759].
+
+5.51.  applicationName
+
+   elementId: TBD
+   name: applicationName
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: Specifies the name of an application.
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 51]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.52.  exporterIPv4Address
+
+elementId: TBD
+name: exporterIPv4Address
+dataType: ipv4Address
+dataTypeSemantics: default
+status: current
+description: The IPv4 address used by the Exporting Process.  This is used
+             by the Collector to identify the Exporter in cases where the
+             identity of the Exporter may have been obscured by the use of
+             a proxy.
+
+5.53.  exporterIPv6Address
+
+elementId: TBD
+name: exporterIPv6Address
+dataType: ipv6Address
+dataTypeSemantics: default
+status: current
+description: The IPv6 address used by the Exporting Process.  This is used
+             by the Collector to identify the Exporter in cases where the
+             identity of the Exporter may have been obscured by the use of
+             a proxy.
+
+5.54.  portId
+
+   elementId: TBD
+   name: portId
+   dataType: unsigned32
+   dataTypeSemantics: identifier
+   status: current
+   description: An identifier of a line port that is unique per IPFIX
+                Device hosting an Observation Point.  Typically, this
+                Information Element is used for limiting the scope
+                of other Information Elements.
+
+5.55.  templateId
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 52]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+elementId: TBD
+name: templateId
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: An identifier of a Template that is locally unique within a
+             combination of a Transport session and an Observation Domain.
+
+             Template IDs 0-255 are reserved for Template Sets, Options
+             Template Sets, and other reserved Sets yet to be created.
+             Template IDs of Data Sets are numbered from 256 to 65535.
+
+             Typically, this Information Element is used for limiting
+             the scope of other Information Elements.
+             Note that after a re-start of the Exporting Process Template
+             identifiers may be re-assigned.
+
+5.56.  collectorIPv4Address
+
+  elementId: TBD
+  name: collectorIPv4Address
+  dataType: ipv4Address
+  dataTypeSemantics: default
+  status: current
+  description: An IPv4 address to which the Exporting Process sends Flow
+               information.
+
+5.57.  collectorIPv6Address
+
+  elementId: TBD
+  name: collectorIPv6Address
+  dataType: ipv6Address
+  dataTypeSemantics: default
+  status: current
+  description: An IPv6 address to which the Exporting Process sends Flow
+               information.
+
+5.58.  informationElementIndex
+
+elementId: TBD
+name: informationElementIndex
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: A zero-based index of an Information Element
+             referenced by informationElementId within a Template referenced by
+             templateId; used to disambiguate scope for templates containing
+             multiple identical Information Elements.
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 53]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.59.  basicList
+
+elementId: TBD
+name: basicList
+dataType: basicList
+dataTypeSemantics: list
+status: current
+description: Specifies a generic Information Element with a basicList abstract
+             data type.  For example, a list of port numbers, a list of
+             interface indexes, etc.
+
+5.60.  subTemplateList
+
+elementId: TBD
+name: subTemplateList
+dataType: subTemplateList
+dataTypeSemantics: list
+status: current
+description: Specifies a generic Information Element with a subTemplateList
+             abstract data type.
+
+5.61.  subTemplateMultiList
+
+   elementId: TBD
+   name: subTemplateMultiList
+   dataType: subTemplateMultiList
+   dataTypeSemantics: list
+   status: current
+   description: Specifies a generic Information Element with a
+                subTemplateMultiList abstract data type.
+
+5.62.  informationElementId
+
+elementId: TBD
+name: informationElementId
+dataType: unsigned16
+dataTypeSemantics: identifier
+status: current
+description: This Information Element contains the ID of another Information
+             Element.
+
+5.63.  informationElementDataType
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 54]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+elementId: TBD
+name: informationElementDataType
+dataType: unsigned8
+dataTypeSemantics:
+status: current
+description: A description of the abstract data type of an IPFIX
+             information element.These are taken from the abstract data types
+             defined in section 3.1 of the IPFIX Information Model [RFC5102];
+             see that section for more information on the types described
+             in the informationElementDataType sub-registry.
+
+             These types are registered in the IANA IPFIX Information Element
+             Data Type subregistry.  This subregistry is intended to assign
+             numbers for type names, not to provide a mechanism for adding data
+             types to the IPFIX Protocol, and as such requires a Standards
+             Action [RFC5226] to modify.
+
+5.64.  informationElementDescription
+
+elementId: TBD
+name: informationElementDescription
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A UTF-8 [RFC3629] encoded Unicode string containing a
+             human-readable description of an Information Element.  The content
+             of the informationElementDescription MAY be annotated with one or
+             more language tags [RFC4646], encoded in-line [RFC2482] within the
+             UTF-8 string, in order to specify the language in which the
+             description is written.  Description text in multiple languages
+             MAY tag each section with its own language tag; in this case, the
+             description information in each language SHOULD have equivalent
+             meaning.  In the absence of any language tag, the "i-default"
+             [RFC2277] language SHOULD be assumed.  See the Security
+             Considerations section for notes on string handling for
+             Information Element type records.
+
+5.65.  informationElementName
+
+elementId: TBD
+name: informationElementName
+dataType: string
+dataTypeSemantics: default
+status: current
+description: A UTF-8 [RFC3629] encoded Unicode string containing
+             the name of an Information Element, intended as a simple
+             identifier.  See the Security Considerations section for notes on
+             string handling for Information Element type records.
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 55]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.66.  informationElementRangeBegin
+
+   elementId: TBD
+   name: informationElementRangeBegin
+   dataType: unsigned64
+   dataTypeSemantics: quantity
+   status: current
+   description: Contains the inclusive low end of the range of
+                acceptable values for an Information Element.
+
+5.67.  informationElementRangeEnd
+
+   elementId: TBD
+   name: informationElementRangeEnd
+   dataType: unsigned64
+   dataTypeSemantics: quantity
+   status: current
+   description: Contains the inclusive high end of the range of
+                acceptable values for an Information Element.
+
+5.68.  informationElementSemantics
+
+elementId: TBD
+name: informationElementSemantics
+dataType: unsigned8
+dataTypeSemantics:
+status: current
+description: A description of the semantics of an IPFIX
+             Information Element.  These are taken from the data type
+             semantics defined in section 3.2 of the IPFIX Information
+             Model [RFC5102]; see that section for more information
+             on the types defined in the informationElementSemantics
+             sub-registry.  This field may take the values in Table ;
+             the special value 0x00 (default) is used to note that
+             no semantics apply to the field; it cannot be manipulated
+             by a Collecting Process or File Reader that does not
+             understand it a priori.
+
+             These semantics are registered in the IANA IPFIX
+             Information Element Semantics subregistry.  This subregistry
+             is intended to assign numbers for semantics names, not
+             to provide a mechanism for adding semantics to the
+             IPFIX Protocol, and as such requires a Standards
+             Action [RFC5226] to modify.
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 56]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.69.  informationElementUnits
+
+elementId: TBD
+name: informationElementUnits
+dataType: unsigned16
+dataTypeSemantics:
+status: current
+description: A description of the units of an IPFIX Information
+             Element.  These correspond to the units implicitly defined in the
+             Information Element definitions in section 5 of the IPFIX
+             Information Model [RFC5102]; see that section for more information
+             on the types described in the informationElementsUnits sub-registry.
+             This field may take the values in Table 3 below; the special value
+             0x00 (none) is used to note that the field is unitless.
+
+             These types are registered in the IANA IPFIX Information Element
+             Units subregistry; new types may be added on a First Come First
+             Served [RFC5226] basis.
+
+5.70.  userName
+
+   elementId: TBD
+   name: userName
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: User name associated with the flow.
+
+5.71.  applicationCategoryName
+
+elementId: TBD
+name: applicationCategoryName
+dataType: string
+dataTypeSemantics: default
+status: current
+description: An attribute that provides a first level categorization for
+             each Application ID.
+
+5.72.  mibObjectValueInteger
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 57]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+elementId: TBD
+name: mibObjectValueInteger
+dataType: signed64
+dataTypeSemantics: identifier
+status: current
+description: An IPFIX Information Element which denotes that the
+             integer value of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of Integer32
+             and INTEGER with IPFIX Reduced Size Encoding used as required.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of signed64.
+
+5.73.  mibObjectValueOctetString
+
+elementId: TBD
+name: mibObjectValueOctetString
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that an
+             Octet String or Opaque value of a MIB object will be exported.
+             The MIB Object Identifier ("mibObjectIdentifier") for this field
+             MUST be exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with the Base Syntax
+             of OCTET STRING and Opaque.  The value is encoded as per the
+             standard IPFIX Abstract Data Type of octetArray.
+
+5.74.  mibObjectValueOID
+
+elementId: TBD
+name: mibObjectValueOID
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that an
+             Object Identifier or OID value of a MIB object will be exported.
+             The MIB Object Identifier ("mibObjectIdentifier") for this field
+             MUST be exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with the Base Syntax
+             of OBJECT IDENTIFIER.  Note - In this case the
+             "mibObjectIdentifier" will define which MIB object is being
+             exported while the value contained in this Information Element
+             will be an OID as a value.  The mibObjectValueOID Information
+             Element is encoded as ASN.1/BER [BER] in an octetArray.
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 58]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.75.  mibObjectValueBits
+
+elementId: TBD
+name: mibObjectValueBits
+dataType: octetArray
+dataTypeSemantics: flags
+status: current
+description: An IPFIX Information Element which denotes that a set
+             of Enumerated flags or bits from a MIB object will be exported.
+             The MIB Object Identifier ("mibObjectIdentifier") for this field
+             MUST be exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with the Base Syntax
+             of BITS.  The flags or bits are encoded as per the standard IPFIX
+             Abstract Data Type of octetArray, with sufficient length to
+             accommodate the required number of bits.  If the number of bits is
+             not an integer multiple of octets then the most significant bits
+             at end of the octetArray MUST be set to zero.
+
+5.76.  mibObjectValueIPAddress
+
+elementId: TBD
+name: mibObjectValueIPAddress
+dataType: ipv4Address
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that the
+             IPv4 Address of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of IPaddress.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of ipv4Address.
+
+5.77.  mibObjectValueCounter
+
+elementId: TBD
+name: mibObjectValueCounter
+dataType: unsigned64
+dataTypeSemantics: snmpCounter
+status: current
+description: An IPFIX Information Element which denotes that the
+             counter value of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of Counter32
+             or Counter64 with IPFIX Reduced Size Encoding used as required.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of unsigned64.
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 59]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.78.  mibObjectValueGauge
+
+elementId: TBD
+name: mibObjectValueGauge
+dataType: unsigned32
+dataTypeSemantics: snmpGauge
+status: current
+description: An IPFIX Information Element which denotes that the
+             Gauge value of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of Gauge32.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of unsigned64.  This value will represent a non-negative integer,
+             which may increase or decrease, but shall never exceed a maximum
+             value, nor fall below a minimum value.
+
+5.79.  mibObjectValueTimeTicks
+
+elementId: TBD
+name: mibObjectValueTimeTicks
+dataType: unsigned32
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that the
+             TimeTicks value of a MIB object will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with the Base Syntax of TimeTicks.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of unsigned32.
+
+5.80.  mibObjectValueUnsigned
+
+elementId: TBD
+name: mibObjectValueUnsigned
+dataType: unsigned64
+dataTypeSemantics: identifier
+status: current
+description: An IPFIX Information Element which denotes that an
+             unsigned integer value of a MIB object will be exported.  The MIB
+             Object Identifier ("mibObjectIdentifier") for this field MUST be
+             exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with the Base Syntax
+             of unsigned64 with IPFIX Reduced Size Encoding used as required.
+             The value is encoded as per the standard IPFIX Abstract Data Type
+             of unsigned64.
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 60]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.81.  mibObjectValueTable
+
+elementId: TBD
+name: mibObjectValueTable
+dataType: subTemplateList
+dataTypeSemantics: list
+status: current
+description: An IPFIX Information Element which denotes that a
+             complete or partial conceptual table will be exported.  The MIB
+             Object Identifier ("mibObjectIdentifier") for this field MUST be
+             exported in a MIB Field Option or via another means.  This
+             Information Element is used for MIB objects with a SYNTAX of
+             SEQUENCE.  This is encoded as a subTemplateList of mibObjectValue
+             Information Elements.  The template specified in the
+             subTemplateList MUST be an Options Template and MUST include all
+             the Objects listed in the INDEX clause as Scope Fields.
+
+5.82.  mibObjectValueRow
+
+elementId: TBD
+name: mibObjectValueRow
+dataType: subTemplateList
+dataTypeSemantics: list
+status: current
+description: An IPFIX Information Element which denotes that a
+             single row of a conceptual table will be exported.  The MIB Object
+             Identifier ("mibObjectIdentifier") for this field MUST be exported
+             in a MIB Field Option or via another means.  This Information
+             Element is used for MIB objects with a SYNTAX of SEQUENCE.  This
+             is encoded as a subTemplateList of mibObjectValue Information
+             Elements.  The subTemplateList exported MUST contain exactly one
+             row (i.e., one instance of the subtemplate).  The template
+             specified in the subTemplateList MUST be an Options Template and
+             MUST include all the Objects listed in the INDEX clause as Scope
+             Fields.
+
+5.83.  mibObjectIdentifier
+
+elementId: TBD
+name: mibObjectIdentifier
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: An IPFIX Information Element which denotes that a MIB
+             Object Identifier (MIB OID) is exported in the (Options) Template
+             Record.  The mibObjectIdentifier Information Element contains the
+             OID assigned to the MIB Object Type Definition encoded as ASN.1/
+             BER [BER].
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 61]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.84.  mibSubIdentifier
+
+elementId: TBD
+name: mibSubIdentifier
+dataType: unsigned32
+dataTypeSemantics: identifier
+status: current
+description: A non-negative sub-identifier of an Object Identifier (OID).
+
+5.85.  mibIndexIndicator
+
+elementId: TBD
+name: mibIndexIndicator
+dataType: unsigned64
+dataTypeSemantics: flags
+status: current
+description: This set of bit fields is used for marking the
+             Information Elements of a Data Record that serve as INDEX MIB
+             objects for an indexed Columnar MIB object.  Each bit represents
+             an Information Element in the Data Record with the n-th bit
+             representing the n-th Information Element.  A bit set to value 1
+             indicates that the corresponding Information Element is an index
+             of the Columnar Object represented by the mibFieldValue.  A bit
+             set to value 0 indicates that this is not the case.
+
+             If the Data Record contains more than 64 Information Elements, the
+             corresponding Template SHOULD be designed such that all INDEX
+             Fields are among the first 64 Information Elements, because the
+             mibIndexIndicator only contains 64 bits.  If the Data Record
+             contains less than 64 Information Elements, then the extra bits in
+             the mibIndexIndicator for which no corresponding Information
+             Element exists MUST have the value 0, and must be disregarded by
+             the Collector.  This Information Element may be exported with
+             IPFIX Reduced Size Encoding.
+
+5.86.  mibCaptureTimeSemantics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 62]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+elementId: TBD
+name: mibCaptureTimeSemantics
+dataType: unsigned8
+dataTypeSemantics: identifier
+status: current
+description: Indicates when in the lifetime of the flow the MIB
+             value was retrieved from the MIB for a mibObjectIdentifier.  This
+             is used to indicate if the value exported was collected from the
+             MIB closer to flow creation or flow export time and will refer to
+             the Timestamp fields included in the same record.  This field
+             SHOULD be used when exporting a mibObjectValue that specifies
+             counters or statistics.
+
+             If the MIB value was sampled by SNMP prior to the IPFIX Metering
+             Process or Exporting Process retrieving the value (i.e., the data
+             is already stale) and it's important to know the exact sampling
+             time, then an additional observationTime* element should be paired
+             with the OID using structured data.  Similarly, if different
+             mibCaptureTimeSemantics apply to different mibObject elements
+             within the Data Record, then individual mibCaptureTimeSemantics
+             should be paired with each OID using structured data.
+
+             Values:
+             0.  undefined
+             1.  begin - The value for the MIB object is captured from the
+             MIB when the Flow is first observed
+             2.  end - The value for the MIB object is captured from the MIB
+             when the Flow ends
+             3.  export - The value for the MIB object is captured from the
+             MIB at export time
+             4.  average - The value for the MIB object is an average of
+             multiple captures from the MIB over the observed life of the
+             Flow
+
+5.87.  mibContextEngineID
+
+elementId: TBD
+name: mibContextEngineID
+dataType: octetArray
+dataTypeSemantics: default
+status: current
+description: A mibContextEngineID that specifies the SNMP engine
+             ID for a MIB field being exported over IPFIX.  Definition as per
+             [RFC3411] section 3.3.
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 63]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+5.88.  mibContextName
+
+elementId: TBD
+name: mibContextName
+dataType: string
+dataTypeSemantics: default
+status: current
+description: This Information Element denotes that a MIB Context
+             Name is specified for a MIB field being exported over IPFIX.
+             Reference [RFC3411] section 3.3.
+
+5.89.  mibObjectName
+
+   elementId: TBD
+   name: mibObjectName
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: The name (called a descriptor in [RFC2578]
+                of an object type definition.
+
+5.90.  mibObjectDescription
+
+   elementId: TBD
+   name: mibObjectDescription
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: The value of the DESCRIPTION clause of an MIB object
+                type definition.
+
+5.91.  mibObjectSyntax
+
+elementId: TBD
+name: mibObjectSyntax
+dataType: string
+dataTypeSemantics: default
+status: current
+description: The value of the SYNTAX clause of an MIB object type
+             definition, which may include a Textual Convention or Subtyping.
+             See [RFC2578].
+
+5.92.  mibModuleName
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 64]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+   elementId: TBD
+   name: mibModuleName
+   dataType: string
+   dataTypeSemantics: default
+   status: current
+   description: The textual name of the MIB module that defines a MIB
+                Object.
 
 6.  SACM Usage Scenario Example
 
@@ -1978,7 +3610,7 @@ Internet-Draft           SACM Information Model             January 2016
 
    The Detection of Posture Deviations scenario involves multiple
    elements interacting to accomplish the goals of the scenario.
-   Figure 2 illustrates those elements along with their major
+   Figure 4 illustrates those elements along with their major
    communication paths.
 
 6.1.  Graph Model for Detection of Posture Deviation
@@ -2002,6 +3634,14 @@ Internet-Draft           SACM Information Model             January 2016
       service which monitors the compliance state of the endpoint and
       reports any deviations for the expected posture.
 
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 65]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    o  The Posture Attribute Information Consumer is an analytics engine
       which absorbs information from around the network and generates a
       "heat map" of which areas in the network are seeing unusually high
@@ -2009,15 +3649,6 @@ Internet-Draft           SACM Information Model             January 2016
 
    o  The Control Plane is a security automation broker which receives
       subscription requests from the analytics engine and authorizes
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 36]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
       access to appropriate information from the endpoint security
       service.
 
@@ -2059,21 +3690,20 @@ Internet-Draft           SACM Information Model             January 2016
    o  Location metadata attached to a link between a network session
       identifier and an address identifier.
 
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 66]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    o  Event metadata attached to an address identifier or an identity
       identifier of an endpoint, which would be made available to
       interested parties at the time of publication, but not stored
       long-term.  For example, when a user disables required security
       software, an internal collector associated with an endpoint
       security service might publish guidance violation event metadata
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 37]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
       attached to the identity identifier of the endpoint, to notify
       consumers of the change in endpoint state.
 
@@ -2117,18 +3747,15 @@ Internet-Draft           SACM Information Model             January 2016
        establishes connectivity and authorization with the transport
        fabric, and subscribes to updates on posture deviations.
 
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 67]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    2.  The endpoint security service (Posture Assessment Information
        Provider) requests connection to the transport fabric.
-
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 38]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    3.  Transport fabric authenticates and establishes authorized
        privileges (e.g. privilege to publish and/or subscribe to
@@ -2178,12 +3805,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 39]
+Waltermire, et al.     Expires September 18, 2016              [Page 68]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 9.  Operational Considerations
@@ -2237,9 +3861,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 40]
+Waltermire, et al.     Expires September 18, 2016              [Page 69]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 12.  References
@@ -2265,6 +3889,11 @@ Internet-Draft           SACM Information Model             January 2016
               (CRL) Profile", RFC 5280, DOI 10.17487/RFC5280, May 2008,
               <http://www.rfc-editor.org/info/rfc5280>.
 
+   [RFC6313]  Claise, B., Dhandapani, G., Aitken, P., and S. Yates,
+              "Export of Structured Data in IP Flow Information Export
+              (IPFIX)", RFC 6313, DOI 10.17487/RFC6313, July 2011,
+              <http://www.rfc-editor.org/info/rfc6313>.
+
 12.2.  Informative References
 
    [CCE]      The National Institute of Standards and Technology,
@@ -2284,19 +3913,20 @@ Internet-Draft           SACM Information Model             January 2016
               The MITRE Corporation, "Common Vulnerabilities and
               Exposures", 2014, <http://cve.mitre.org/about/>.
 
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 70]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    [I-D.ietf-sacm-architecture]
               Cam-Winget, N., Ford, B., Lorenzin, L., McDonald, I., and
               l. loxx@cisco.com, "Secure Automation and Continuous
               Monitoring (SACM) Architecture", draft-ietf-sacm-
               architecture-00 (work in progress), October 2014.
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 41]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    [I-D.ietf-sacm-requirements]
               Cam-Winget, N. and L. Lorenzin, "Secure Automation and
@@ -2338,21 +3968,22 @@ Internet-Draft           SACM Information Model             January 2016
               March 2013, <http://csrc.nist.gov/publications/nistir/
               ir7275-rev4/nistir-7275r4_updated-march-2012_clean.pdf>.
 
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 71]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    [NISTIR-7693]
               Wunder, J., Halbardier, A., and D. Waltermire,
               "Specification for Asset Identification 1.1", NISTIR 7693,
               June 2011,
               <http://csrc.nist.gov/publications/nistir/ir7693/
               NISTIR-7693.pdf>.
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 42]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    [NISTIR-7694]
               Halbardier, A., Waltermire, D., and M. Johnson,
@@ -2396,19 +4027,17 @@ Internet-Draft           SACM Information Model             January 2016
               <http://csrc.nist.gov/publications/drafts/nistir-7848/
               draft_nistir_7848.pdf>.
 
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 72]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    [OVAL-LANGUAGE]
               Baker, J., Hansbury, M., and D. Haynes, "The OVAL Language
               Specification version 5.10.1", January 2012,
               <https://oval.mitre.org/language/version5.10.1/>.
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 43]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    [RFC3411]  Harrington, D., Presuhn, R., and B. Wijnen, "An
               Architecture for Describing Simple Network Management
@@ -2454,17 +4083,17 @@ Internet-Draft           SACM Information Model             January 2016
               DOI 10.17487/RFC5201, April 2008,
               <http://www.rfc-editor.org/info/rfc5201>.
 
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 73]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    [RFC5209]  Sangster, P., Khosravi, H., Mani, M., Narayan, K., and J.
               Tardo, "Network Endpoint Assessment (NEA): Overview and
               Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
               <http://www.rfc-editor.org/info/rfc5209>.
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 44]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424,
               DOI 10.17487/RFC5424, March 2009,
@@ -2495,6 +4124,28 @@ Internet-Draft           SACM Information Model             January 2016
               DOI 10.17487/RFC6876, February 2013,
               <http://www.rfc-editor.org/info/rfc6876>.
 
+   [RFC7012]  Claise, B., Ed. and B. Trammell, Ed., "Information Model
+              for IP Flow Information Export (IPFIX)", RFC 7012,
+              DOI 10.17487/RFC7012, September 2013,
+              <http://www.rfc-editor.org/info/rfc7012>.
+
+   [RFC7013]  Trammell, B. and B. Claise, "Guidelines for Authors and
+              Reviewers of IP Flow Information Export (IPFIX)
+              Information Elements", BCP 184, RFC 7013,
+              DOI 10.17487/RFC7013, September 2013,
+              <http://www.rfc-editor.org/info/rfc7013>.
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 74]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    [RFC7171]  Cam-Winget, N. and P. Sangster, "PT-EAP: Posture Transport
               (PT) Protocol for Extensible Authentication Protocol (EAP)
               Tunnel Methods", RFC 7171, DOI 10.17487/RFC7171, May 2014,
@@ -2511,16 +4162,6 @@ Internet-Draft           SACM Information Model             January 2016
               Protocol (SCAP) Version 1.2", SP 800-117, January 2012,
               <http://csrc.nist.gov/publications/drafts/800-117-R1/
               Draft-SP800-117-r1.pdf>.
-
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 45]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    [SP800-126]
               Waltermire, D., Quinn, S., Scarfone, K., and A.
@@ -2554,6 +4195,13 @@ Internet-Draft           SACM Information Model             January 2016
               Trusted Computing Group, ""TNC IF-T: Binding to TLS",
               Specification Version 2.0", February 2013.
 
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 75]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    [TNC-IF-T-Tunneled-EAP]
               Trusted Computing Group, ""TNC IF-T: Protocol Bindings for
               Tunneled EAP Methods", Specification Version 2.0", May
@@ -2565,18 +4213,6 @@ Internet-Draft           SACM Information Model             January 2016
 
    [UML]      Object Management Group, ""Unified Modeling Language TM
               (UML (R))", Version 2.4.1", August 2011.
-
-
-
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 46]
-
-Internet-Draft           SACM Information Model             January 2016
-
 
    [W3C.REC-rdf11-concepts-20140225]
               Cyganiak, R., Wood, D., and M. Lanthaler, "RDF 1.1
@@ -2614,6 +4250,14 @@ A.1.  Changes in Revision 01
    Added "contains" relationship between Network Interface and Network
    Interface
 
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 76]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    Removed relationship between Network Interface and Account.  The
    endpoint knows the identity it used to gain network access.  The PDP
    also knows that.  But they probably do not know the account.
@@ -2623,24 +4267,13 @@ A.1.  Changes in Revision 01
 
    Made identity-to-account a many-to-one relationship.
 
-
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 47]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
 A.2.  Changes in Revision 02
 
    Added Section 5.1, Identifying Attributes.
 
-   Split the figure into Figure 2 and Figure 3.
+   Split the figure into Figure 4 and Figure 5.
 
-   Added Figure 4, proposing a triple-store model.
+   Added Figure 6, proposing a triple-store model.
 
    Some editorial cleanup
 
@@ -2669,6 +4302,34 @@ A.3.  Changes in Revision 03
 
    Included references to [RFC3580] where RADIUS is mentioned.
 
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 77]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
+A.4.  Changes in Revision 04
+
+   Integrated the IPFIX [RFC7012] syntax into Section 3.
+
+   Converted many of the existing SACM Information Elements to the IPFIX
+   syntax.
+
+   Included existing IPFIX Information Elements and datatypes that could
+   likely be reused for SACM in Section 5 and Section 3 respectively.
+
+   Removed the sections related to reports as described in
+   https://github.com/sacmwg/draft-ietf-sacm-information-model/
+   issues/30.
+
+   Cleaned up other text throughout the document.
+
 Appendix B.  Mapping to SACM Use Cases
 
    TODO: revise
@@ -2681,15 +4342,6 @@ Appendix B.  Mapping to SACM Use Cases
    Sections [removed] thru [removed] address each of the process areas.
    For each process area, a "Process Area Description" sub-section
    represent an end state that is consistent with all the General
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 48]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    Requirements and many of the Use Case Requirements identified in the
    requirements draft [I-D.ietf-sacm-requirements].
 
@@ -2710,6 +4362,14 @@ C.1.  What is Trusted Network Connect?
    [TNC-Architecture] and a set of open standards for network security
    developed by the Trusted Computing Group (TCG).  TNC standards
    integrate security components across end user systems, servers, and
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 78]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    network infrastructure devices into an intelligent, responsive,
    coordinated defense.  TNC standards have been widely adopted by
    vendors and customers; the TNC endpoint assessment protocols [TNC-IF-
@@ -2739,13 +4399,6 @@ C.2.  What is TNC IF-MAP?
    identifies an XML schema for it.  Due to the XML language, the set of
    metadata types is easily extensible.
 
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 49]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    The MAP is a graph database, not a relational database.  Metadata can
    be associated with an identifier (e.g. the email address
    "user@example.com") or with a link between two identifiers (e.g. the
@@ -2765,6 +4418,14 @@ C.3.  What is the TNC Information Model?
    infrastructure devices can act upon.  The IF-MAP operations and
    metadata schema specifications (TNC IF-MAP Binding for SOAP
    [TNC-IF-MAP-SOAP-Binding], TNC IF-MAP Metadata for Network Security
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 79]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    [TNC-IF-MAP-NETSEC-METADATA], and TNC IF-MAP Metadata for ICS
    Security [TNC-IF-MAP-ICS-METADATA]) define an extensible set of
    identifiers and data types.
@@ -2791,17 +4452,6 @@ C.3.  What is the TNC Information Model?
    well as associated SOAP operations for managing sessions, error
    handling, etc.
 
-
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 50]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
 Appendix D.  Text for Possible Inclusion in the Terminology Draft
 
 D.1.  Terms and Definitions
@@ -2824,6 +4474,14 @@ D.1.1.  Pre-defined and Modified Terms
            [I-D.ietf-sacm-terminology].  Originally defined in [RFC4949]
            and referenced in [I-D.ietf-sacm-terminology] as "a system
            resource that is (a) required to be protected by an
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 80]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
            information system's security policy, (b) intended to be
            protected by a countermeasure, or (c) required for a system's
            mission."  This definition generally relates to an "IT
@@ -2851,13 +4509,6 @@ D.1.2.  New Terms
            security policy, (b) intended to be protected by a
            countermeasure, or (c) required for a system's mission."
 
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 51]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    Security Content Automation Protocol (SCAP)  According to SP800-126,
            SCAP, pronounced "ess-cap", is "a suite of specifications
            that standardize the format and nomenclature by which
@@ -2874,6 +4525,18 @@ Internet-Draft           SACM Information Model             January 2016
 
 Appendix E.  Text for Possible Inclusion in the Architecture or Use
              Cases
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 81]
+
+Internet-Draft           SACM Information Model               March 2016
+
 
 E.1.  Introduction
 
@@ -2906,14 +4569,6 @@ E.1.  Introduction
    SACM information model to address the requirements for scalability,
    timeliness, and security.
 
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 52]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
 E.2.  Core Principles
 
    This information model is built on the following core principles:
@@ -2931,6 +4586,14 @@ E.2.  Core Principles
       Authentication is a key step in all of the processes, and while
       needed to support the business processes, information needs to
       support authentication are not highlighted in this information
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 82]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
       model.  There is already a large amount of existing work that
       defines information needs for authentication.
 
@@ -2962,14 +4625,6 @@ E.3.  Architecture Assumptions
    This information model will focus on WHAT information needs to be
    exchanged to support the business process areas.  The architecture
    document is the best place to represent the HOW and the WHERE this
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 53]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
    information is used.  In an effort to ensure that the data models
    derived from this information model scale to the architecture, four
    core architectural components need to be defined.  They are
@@ -2986,6 +4641,15 @@ Internet-Draft           SACM Information Model             January 2016
       model there are Collection, Evaluation, and Results Consumers.
       There may or may not be Guidance Consumers.
 
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 83]
+
+Internet-Draft           SACM Information Model               March 2016
+
+
    o  Capabilities (e.g., Posture Evaluation Capability) take the input
       from one or more producers and perform some function on or with
       that information.  For this model there are Collection Guidance,
@@ -3001,7 +4665,7 @@ Internet-Draft           SACM Information Model             January 2016
    of these components will be specified in each of the business process
    areas.
 
-   In the most trivial example, illustrated in Figure 5, Consumers
+   In the most trivial example, illustrated in Figure 7, Consumers
    either request information from, or are notified by, Producers.
 
    +----------+     Request     +----------+
@@ -3016,19 +4680,31 @@ Internet-Draft           SACM Information Model             January 2016
    |          |                 |          |
    +----------+                 +----------+
 
-             Figure 5: Example Producer/Consumer Interactions
+             Figure 7: Example Producer/Consumer Interactions
 
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 54]
-
-Internet-Draft           SACM Information Model             January 2016
-
-
-   As illustrated in Figure 6, writing and querying from data
+   As illustrated in Figure 8, writing and querying from data
    repositories are a way in which this interaction can occur in an
    asynchronous fashion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 84]
+
+Internet-Draft           SACM Information Model               March 2016
+
 
    +----------+                +----------+
    |          |                |          |
@@ -3042,7 +4718,7 @@ Internet-Draft           SACM Information Model             January 2016
                |            |
                +------------+
 
-            Figure 6: Producer/Consumer Repository Interaction
+            Figure 8: Producer/Consumer Repository Interaction
 
    To perform an assessment, these elements are chained together.  The
    diagram below is illustrative of this and process, and is meant to
@@ -3077,9 +4753,13 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 55]
+
+
+
+
+Waltermire, et al.     Expires September 18, 2016              [Page 85]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
                                +-------------+
@@ -3125,17 +4805,17 @@ Internet-Draft           SACM Information Model             January 2016
                                          |             |
                                          +-------------+
 
-                Figure 7: Producer/Consumer Complex Example
+                Figure 9: Producer/Consumer Complex Example
 
-   This illustrative example in Figure 7 provides a set of information
+   This illustrative example in Figure 9 provides a set of information
    exchanges that need to occur to perform a posture assessment.  The
    rest of this information model is using this set of exchanges based
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 56]
+Waltermire, et al.     Expires September 18, 2016              [Page 86]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    on these core architectural components as the basis for determining
@@ -3189,9 +4869,9 @@ F.2.  Problem Scope
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 57]
+Waltermire, et al.     Expires September 18, 2016              [Page 87]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
        attributes that represent problems, such as vulnerabilities, that
@@ -3245,9 +4925,9 @@ G.1.1.  Generalized Workflow
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 58]
+Waltermire, et al.     Expires September 18, 2016              [Page 88]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    3.  Transport fabric authenticates and establishes authorized
@@ -3301,9 +4981,9 @@ G.3.  Information Model Elements
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 59]
+Waltermire, et al.     Expires September 18, 2016              [Page 89]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    The following sub-sections directly address the requested areas as
@@ -3357,9 +5037,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 60]
+Waltermire, et al.     Expires September 18, 2016              [Page 90]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    very biased to previous work supported by the authors and does not
@@ -3413,9 +5093,9 @@ G.3.1.1.1.  Asset Identification
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 61]
+Waltermire, et al.     Expires September 18, 2016              [Page 91]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    about the assets."  Asset identification plays an important role in
@@ -3428,7 +5108,7 @@ Internet-Draft           SACM Information Model             January 2016
    and also provides a way to represent relationships between assets.
 
    The model is organized using an inheritance hierarchy of specialized
-   asset types/classes (see Figure 8), providing for extension at any
+   asset types/classes (see Figure 10), providing for extension at any
    level of abstraction.  For a given asset type, a number of properties
    are defined that provide for capturing identifying characteristics
    and the referencing of namespace qualified asset identifiers, called
@@ -3451,7 +5131,7 @@ Internet-Draft           SACM Information Model             January 2016
           +-organization
           +-person
 
-              Figure 8: Asset Identification Class Hierarchy
+              Figure 10: Asset Identification Class Hierarchy
 
 
 
@@ -3469,9 +5149,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 62]
+Waltermire, et al.     Expires September 18, 2016              [Page 92]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
     This table presents a mapping of notional SACM asset types to those
@@ -3525,9 +5205,9 @@ G.3.1.2.  Endpoint Identification
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 63]
+Waltermire, et al.     Expires September 18, 2016              [Page 93]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 G.3.1.2.1.  Related Work
@@ -3581,9 +5261,9 @@ G.3.1.3.1.  Related Work
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 64]
+Waltermire, et al.     Expires September 18, 2016              [Page 94]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 G.3.1.3.1.1.  Common Platform Enumeration
@@ -3637,9 +5317,9 @@ G.3.1.3.1.1.1.  Background
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 65]
+Waltermire, et al.     Expires September 18, 2016              [Page 95]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    o  Not enough primary source vendors provide platform and product
@@ -3693,9 +5373,9 @@ G.3.1.3.1.2.  Software Identification (SWID) Tags
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 66]
+Waltermire, et al.     Expires September 18, 2016              [Page 96]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    SWID tags can be associated with software installation media,
@@ -3749,9 +5429,9 @@ G.3.2.1.  Platform Configuration Item Identifier
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 67]
+Waltermire, et al.     Expires September 18, 2016              [Page 97]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    identifier should remain consistent with regards to what it
@@ -3805,9 +5485,9 @@ G.3.2.1.1.1.  Common Configuration Enumeration
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 68]
+Waltermire, et al.     Expires September 18, 2016              [Page 98]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 G.3.2.1.1.2.  Open Vulnerability and Assessment Language
@@ -3861,9 +5541,9 @@ G.3.2.1.1.2.1.  Background
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 69]
+Waltermire, et al.     Expires September 18, 2016              [Page 99]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    The following figure illustrates the OVAL data model.
@@ -3892,9 +5572,9 @@ Internet-Draft           SACM Information Model             January 2016
 
    Note: The direction of the arrows indicate a model dependency
 
-                       Figure 9: The OVAL Data Model
+                      Figure 11: The OVAL Data Model
 
-   The OVAL data model [OVAL-LANGUAGE], visualized in Figure 9, is
+   The OVAL data model [OVAL-LANGUAGE], visualized in Figure 11, is
    composed of a number of different components.  The components are:
 
    o  Common: Constructs, enumerations, and identifier formats that are
@@ -3917,9 +5597,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 70]
+Waltermire, et al.     Expires September 18, 2016             [Page 100]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
       *  Object(platform specific): A generalized construct that is
@@ -3973,9 +5653,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 71]
+Waltermire, et al.     Expires September 18, 2016             [Page 101]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    Many of the elements in the OVAL model (i.e., Test, Object, State,
@@ -4029,9 +5709,9 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 72]
+Waltermire, et al.     Expires September 18, 2016             [Page 102]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
       to be evolved to provide for greater extensibility in this area,
@@ -4085,9 +5765,9 @@ G.3.2.2.  Configuration Item Identifier
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 73]
+Waltermire, et al.     Expires September 18, 2016             [Page 103]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    and for associating related metadata.  Use of an IANA registry
@@ -4141,9 +5821,9 @@ G.3.2.2.1.2.  A Potential Alternate Approach
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 74]
+Waltermire, et al.     Expires September 18, 2016             [Page 104]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    o  Differing scopes of technological needs.
@@ -4197,9 +5877,9 @@ G.3.3.  Endpoint characterization
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 75]
+Waltermire, et al.     Expires September 18, 2016             [Page 105]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    Also human input
@@ -4253,9 +5933,9 @@ G.3.3.1.1.2.  Applicability to Endpoint characterization
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 76]
+Waltermire, et al.     Expires September 18, 2016             [Page 106]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    point for understanding the types of information that should be used
@@ -4309,9 +5989,9 @@ G.3.3.1.2.2.  Relationship to Endpoint Characterization
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 77]
+Waltermire, et al.     Expires September 18, 2016             [Page 107]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    ARF is agnostic to the data formats of the collected posture
@@ -4365,9 +6045,9 @@ G.3.3.1.3.  The CPE Applicability Language
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 78]
+Waltermire, et al.     Expires September 18, 2016             [Page 108]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    applicability statements against previously collected posture
@@ -4421,9 +6101,9 @@ G.3.4.2.  Platform Configuration Attributes
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 79]
+Waltermire, et al.     Expires September 18, 2016             [Page 109]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    For example, a primary source vendor would create a platform-specific
@@ -4477,9 +6157,9 @@ G.3.4.2.1.3.  Simple Network Management Protocol and Management
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 80]
+Waltermire, et al.     Expires September 18, 2016             [Page 110]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    endpoint and retrieved by SNMP is defined by the Management
@@ -4533,9 +6213,9 @@ G.3.5.1.1.2.  Software Identification Tags
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 81]
+Waltermire, et al.     Expires September 18, 2016             [Page 111]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    identifier for each unit of installed software.  Given this, SWID
@@ -4589,9 +6269,9 @@ G.3.5.2.1.2.  NETCONF-Based Collection
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 82]
+Waltermire, et al.     Expires September 18, 2016             [Page 112]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    provides a variety of filtering mechanisms (XPath, subtree, content
@@ -4645,9 +6325,9 @@ G.3.6.1.  Configuration Evaluation Guidance
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 83]
+Waltermire, et al.     Expires September 18, 2016             [Page 113]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 G.3.6.1.1.  Related Work
@@ -4701,9 +6381,9 @@ G.3.6.1.1.2.  XCCDF Rule
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 84]
+Waltermire, et al.     Expires September 18, 2016             [Page 114]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    that apply only to the DMZ endpoint would be disabled during the
@@ -4757,9 +6437,9 @@ G.3.7.1.1.1.  XCCDF TestResults
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 85]
+Waltermire, et al.     Expires September 18, 2016             [Page 115]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    outcome of assessing a single endpoint against the assessed items
@@ -4813,9 +6493,9 @@ G.3.7.1.1.2.  Open Vulnerability and Assessment Language
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 86]
+Waltermire, et al.     Expires September 18, 2016             [Page 116]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 G.3.7.1.1.3.  Asset Summary Reporting
@@ -4869,9 +6549,9 @@ Appendix H.  Graph Model
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 87]
+Waltermire, et al.     Expires September 18, 2016             [Page 117]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    This architecture addresses information structure independently of
@@ -4925,9 +6605,9 @@ H.1.  Background: Graph Models
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 88]
+Waltermire, et al.     Expires September 18, 2016             [Page 118]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
       +------------------+                 +-----------------+
@@ -4938,7 +6618,7 @@ Internet-Draft           SACM Information Model             January 2016
 
             A VERTEX          AN EDGE           A VERTEX
 
-                Figure 10: Knowledge represented by a graph
+                Figure 12: Knowledge represented by a graph
 
    A pair of vertices connected by an edge is commonly referred to as a
    triple that comprises subject, predicate and object.  For example,
@@ -4981,9 +6661,9 @@ H.3.  Identifiers
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 89]
+Waltermire, et al.     Expires September 18, 2016             [Page 119]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    Identifiers are unique: two different vertices cannot have equivalent
@@ -5037,9 +6717,9 @@ H.5.  Metadata
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 90]
+Waltermire, et al.     Expires September 18, 2016             [Page 120]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
 H.6.  Use for SACM
@@ -5093,9 +6773,9 @@ H.8.  Extensibility
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 91]
+Waltermire, et al.     Expires September 18, 2016             [Page 121]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    innovation.  Intermediate software that conveys graph changes from
@@ -5149,9 +6829,9 @@ Authors' Addresses
 
 
 
-Waltermire, et al.        Expires July 8, 2016                 [Page 92]
+Waltermire, et al.     Expires September 18, 2016             [Page 122]
 
-Internet-Draft           SACM Information Model             January 2016
+Internet-Draft           SACM Information Model               March 2016
 
 
    Lisa Lorenzin
@@ -5161,6 +6841,15 @@ Internet-Draft           SACM Information Model             January 2016
    USA
 
    Email: llorenzin@pulsesecure.net
+
+
+   Michael Cokus
+   The MITRE Corporation
+   903 Enterprise Parkway, Suite 200
+   Hampton, VA  23666
+   USA
+
+   Email: msc@mitre.org
 
 
    Daniel Haynes
@@ -5196,13 +6885,4 @@ Internet-Draft           SACM Information Model             January 2016
 
 
 
-
-
-
-
-
-
-
-
-
-Waltermire, et al.        Expires July 8, 2016                 [Page 93]
+Waltermire, et al.     Expires September 18, 2016             [Page 123]
