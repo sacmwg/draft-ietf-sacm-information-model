@@ -1842,7 +1842,7 @@ the same.
                 </section>
 <section title="hardwareSerialNumber">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: hardwareSerialNumber	
 dataType: string
@@ -1855,7 +1855,7 @@ description: A globally unique identifier for a particular
 </section> 
 <section title="interfaceName">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceName	
 dataType: string
@@ -1869,7 +1869,7 @@ description: A short name uniquely describing an interface,
 </section>
 <section title="interfaceIndex">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceIndex
 dataType: unsigned32
@@ -1887,7 +1887,7 @@ description: The index of an interface installed on an endpoint.
 </section>
 <section title="interfaceMacAddress">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceMacAddress
 dataType: macAddress
@@ -1900,7 +1900,7 @@ description: The IEEE 802 MAC address associated with a network
 </section>
 <section title="interfaceType">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceType
 dataType: unsigned32
@@ -1914,7 +1914,7 @@ description: The type of a network interface. The value matches
 </section>
 <section title="interfaceFlags">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceFlags
 dataType: unsigned16
@@ -1950,7 +1950,7 @@ description: This information element specifies the flags
 </section>
 <section title="networkInterface">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: networkInterface
 dataType: basicList
@@ -1965,7 +1965,7 @@ description: Information about a network interface
     </artwork>
   </figure>
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
              networkInterface = (basicList, allof,
                                  interfaceName,
                                  interfaceIndex,
@@ -1978,7 +1978,7 @@ description: Information about a network interface
 </section>  
   <section title="softwareIdentifier">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: softwareIdentifier	
 dataType: string
@@ -1991,7 +1991,7 @@ description: A globally unique identifier for a particular
   </section>
   <section title="softwareTitle">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: softwareTitle
 dataType: string
@@ -2004,7 +2004,7 @@ description: The title of the software application.
   
   <section title="softwareCreator">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: softwareCreator
 dataType: string
@@ -2016,7 +2016,7 @@ description: The software developer (e.g., vendor or author).
   </section>
   <section title="simpleVersion">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: simpleVersion
 dataType: simpleVersionType
@@ -2029,7 +2029,7 @@ description: The version string for a software application that
   </section>
   <section title="rpmVersion">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: rpmVersion
 dataType: rpmVersionType
@@ -2042,7 +2042,7 @@ description: The version string for a software application that
   </section>
   <section title="ciscoTrainVersion">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: ciscoTrainVersion
 dataType: ciscoTrainVersionType
@@ -2055,7 +2055,7 @@ description: The version string for a software application that
   </section>
   <section title="softwareVersion">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: softwareVerison
 dataType: basicList
@@ -2078,7 +2078,7 @@ softwareVersion(basicList, exactlyOneOf,
   </section>
   <section title="lastUpdated">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: lastUpdated
 dataType: dateTimeSeconds
@@ -2093,7 +2093,7 @@ description: The date and time when the software instance
   
 <section title="softwareInstance">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: softwareInstance
 dataType: subTemplateMultiList
@@ -2116,7 +2116,7 @@ description: Information about an instance of software
 </section>   
 <section title="globallyUniqueIdentifier">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: globallyUniqueIdentifier	
 dataType: unsigned8
@@ -2129,7 +2129,7 @@ description: TODO.
 </section>
 <section title="dataOrigin">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: dataOrigin	
 dataType: string
@@ -2144,7 +2144,7 @@ description: The origin of the data. TODO make a better
 
 <section title="dataSource">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: dataSource	
 dataType: string
@@ -2159,7 +2159,7 @@ description: The source of the data. TODO make a better
 
 <section title="creationTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: creationTimestamp	
 dataType: dateTimeSeconds
@@ -2173,7 +2173,7 @@ description: The date and time when the posture
 </section>
 <section title="collectionTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: collectionTimestamp	
 dataType: dateTimeSeconds
@@ -2188,7 +2188,7 @@ description: The date and time when the posture
 </section>
 <section title="publicationTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: publicationTimestamp	
 dataType: dateTimeSeconds
@@ -2202,7 +2202,7 @@ description: The date and time when the posture
 </section>
 <section title="relayTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: relayTimestamp	
 dataType: dateTimeSeconds
@@ -2216,7 +2216,7 @@ description: The date and time when the posture
 </section>
 <section title="storageTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: storageTimestamp	
 dataType: dateTimeSeconds
@@ -2230,7 +2230,7 @@ description: The date and time when the posture
 </section>
 <section title="type">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: type	
 dataType: unsigned16
@@ -2257,7 +2257,7 @@ description: The type of data model use to represent
 </section>
 <section title="protocolIdentifier">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: protocolIdentifier	
 dataType: unsigned8
@@ -2276,7 +2276,7 @@ description: The value of the protocol number in the IP packet header.
    </section>
    <section title="sourceTransportPort">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceTransportPort	
 dataType: unsigned16
@@ -2291,7 +2291,7 @@ description: The source port identifier in the transport header.
    </section>
    <section title="sourceIPv4PrefixLength">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceIPv4PrefixLength	
 dataType: unsigned8
@@ -2303,7 +2303,7 @@ description: The number of contiguous bits that are relevant in the
    </section>
    <section title="ingressInterface">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: ingressInterface	
 dataType: unsigned32
@@ -2320,7 +2320,7 @@ description: The index of the IP interface where packets of this Flow
    </section>
    <section title="destinationTransportPort">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: destinationTransportPort	
 dataType: unsigned16
@@ -2335,7 +2335,7 @@ description: The destination port identifier in the transport header.
    </section>
    <section title="sourceIPv6PrefixLength">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceIPv6PrefixLength	
 dataType: unsigned8
@@ -2347,7 +2347,7 @@ description: The number of contiguous bits that are relevant in the
    </section>
    <section title="sourceIPv4Prefix">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceIPv4Prefix	
 dataType: ipv4Address
@@ -2358,7 +2358,7 @@ description: IPv4 source address prefix.</artwork>
    </section>
    <section title="destinationIPv4Prefix">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: destinationIPv4Prefix	
 dataType: ipv4Address
@@ -2369,7 +2369,7 @@ description: IPv4 destination address prefix.</artwork>
    </section>
    <section title="sourceMacAddress">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceMacAddress	
 dataType: macAddress
@@ -2380,7 +2380,7 @@ description: The IEEE 802 source MAC address field.</artwork>
    </section>
    <section title="ipVersion">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: ipVersion	
 dataType: unsigned8
@@ -2391,7 +2391,7 @@ description: The IP version field in the IP packet header.</artwork>
    </section>
    <section title="interfaceName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: interfaceName	
 dataType: string
@@ -2402,7 +2402,7 @@ description: A short name uniquely describing an interface, eg "Eth1/0".</artwor
    </section>
    <section title="interfaceDescription">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: interfaceDescription	
 dataType: string
@@ -2414,7 +2414,7 @@ connection".</artwork>
    </section>
    <section title="applicationDescription">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: applicationDescription	
 dataType: string
@@ -2425,7 +2425,7 @@ description: Specifies the description of an application.</artwork>
    </section>
    <section title="applicationId">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: applicationId	
 dataType: octetArray
@@ -2436,7 +2436,7 @@ description: Specifies an Application ID per [RFC6759].</artwork>
    </section>
    <section title="applicationName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: applicationName	
 dataType: string
@@ -2447,7 +2447,7 @@ description: Specifies the name of an application.</artwork>
    </section>
    <section title="exporterIPv4Address">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: exporterIPv4Address	
 dataType: ipv4Address
@@ -2461,7 +2461,7 @@ description: The IPv4 address used by the Exporting Process.  This is used
    </section>
    <section title="exporterIPv6Address">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: exporterIPv6Address	
 dataType: ipv6Address
@@ -2475,7 +2475,7 @@ description: The IPv6 address used by the Exporting Process.  This is used
    </section>
    <section title="portId">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: portId	
 dataType: unsigned32
@@ -2489,7 +2489,7 @@ description: An identifier of a line port that is unique per IPFIX
    </section>
    <section title="templateId">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: templateId	
 dataType: unsigned16
@@ -2510,7 +2510,7 @@ description: An identifier of a Template that is locally unique within a
    </section>
    <section title="collectorIPv4Address">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: collectorIPv4Address	
 dataType: ipv4Address
@@ -2522,7 +2522,7 @@ description: An IPv4 address to which the Exporting Process sends Flow
    </section>
    <section title="collectorIPv6Address">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: collectorIPv6Address	
 dataType: ipv6Address
@@ -2534,7 +2534,7 @@ description: An IPv6 address to which the Exporting Process sends Flow
    </section>
    <section title="informationElementIndex">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementIndex	
 dataType: unsigned16
@@ -2548,7 +2548,7 @@ description: A zero-based index of an Information Element
    </section>
    <section title="basicList">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: basicList	
 dataType: basicList
@@ -2561,7 +2561,7 @@ description: Specifies a generic Information Element with a basicList abstract
    </section>
    <section title="subTemplateList">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: subTemplateList	
 dataType: subTemplateList
@@ -2573,7 +2573,7 @@ description: Specifies a generic Information Element with a subTemplateList
    </section>
    <section title="subTemplateMultiList">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: subTemplateMultiList	
 dataType: subTemplateMultiList
@@ -2585,7 +2585,7 @@ description: Specifies a generic Information Element with a
    </section>
    <section title="informationElementId">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementId	
 dataType: unsigned16
@@ -2597,7 +2597,7 @@ description: This Information Element contains the ID of another Information
    </section>
    <section title="informationElementDataType">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementDataType	
 dataType: unsigned8
@@ -2618,7 +2618,7 @@ description: A description of the abstract data type of an IPFIX
    </section>
    <section title="informationElementDescription">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementDescription	
 dataType: string
@@ -2640,7 +2640,7 @@ description: A UTF-8 [RFC3629] encoded Unicode string containing a
    </section>
    <section title="informationElementName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementName	
 dataType: string
@@ -2654,7 +2654,7 @@ description: A UTF-8 [RFC3629] encoded Unicode string containing
    </section>
    <section title="informationElementRangeBegin">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementRangeBegin	
 dataType: unsigned64
@@ -2666,7 +2666,7 @@ description: Contains the inclusive low end of the range of
    </section>
    <section title="informationElementRangeEnd">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementRangeEnd	
 dataType: unsigned64
@@ -2678,7 +2678,7 @@ description: Contains the inclusive high end of the range of
    </section>
    <section title="informationElementSemantics">
 <figure>
-   <artwork>
+   <artwork type="IPFIX">
 elementId: TBD
 name: informationElementSemantics	
 dataType: unsigned8
@@ -2705,7 +2705,7 @@ description: A description of the semantics of an IPFIX
 </section>
    <section title="informationElementUnits">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementUnits	
 dataType: unsigned16
@@ -2726,7 +2726,7 @@ description: A description of the units of an IPFIX Information
    </section>
    <section title="userName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: userName	
 dataType: string
@@ -2737,7 +2737,7 @@ description: User name associated with the flow.</artwork>
    </section>
    <section title="applicationCategoryName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: applicationCategoryName	
 dataType: string
@@ -2749,7 +2749,7 @@ description: An attribute that provides a first level categorization for
    </section>
    <section title="mibObjectValueInteger">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueInteger	
 dataType: signed64
@@ -2767,7 +2767,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueOctetString">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueOctetString	
 dataType: octetArray
@@ -2784,7 +2784,7 @@ description: An IPFIX Information Element which denotes that an
    </section>
    <section title="mibObjectValueOID">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueOID	
 dataType: octetArray
@@ -2804,7 +2804,7 @@ description: An IPFIX Information Element which denotes that an
    </section>
    <section title="mibObjectValueBits">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueBits	
 dataType: octetArray
@@ -2824,7 +2824,7 @@ description: An IPFIX Information Element which denotes that a set
    </section>
    <section title="mibObjectValueIPAddress">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueIPAddress	
 dataType: ipv4Address
@@ -2841,7 +2841,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueCounter">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueCounter	
 dataType: unsigned64
@@ -2859,7 +2859,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueGauge">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueGauge	
 dataType: unsigned32
@@ -2878,7 +2878,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueTimeTicks">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueTimeTicks	
 dataType: unsigned32
@@ -2895,7 +2895,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueUnsigned">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueUnsigned	
 dataType: unsigned64
@@ -2913,7 +2913,7 @@ description: An IPFIX Information Element which denotes that an
    </section>
    <section title="mibObjectValueTable">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueTable	
 dataType: subTemplateList
@@ -2932,7 +2932,7 @@ description: An IPFIX Information Element which denotes that a
    </section>
    <section title="mibObjectValueRow">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueRow	
 dataType: subTemplateList
@@ -2953,7 +2953,7 @@ description: An IPFIX Information Element which denotes that a
    </section>
    <section title="mibObjectIdentifier">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectIdentifier	
 dataType: octetArray
@@ -2968,7 +2968,7 @@ description: An IPFIX Information Element which denotes that a MIB
    </section>
    <section title="mibSubIdentifier">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibSubIdentifier	
 dataType: unsigned32
@@ -2979,7 +2979,7 @@ description: A non-negative sub-identifier of an Object Identifier (OID).</artwo
    </section>
    <section title="mibIndexIndicator">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibIndexIndicator	
 dataType: unsigned64
@@ -3007,7 +3007,7 @@ description: This set of bit fields is used for marking the
    </section>
    <section title="mibCaptureTimeSemantics">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibCaptureTimeSemantics	
 dataType: unsigned8
@@ -3045,7 +3045,7 @@ description: Indicates when in the lifetime of the flow the MIB
    </section>
    <section title="mibContextEngineID">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibContextEngineID	
 dataType: octetArray
@@ -3058,7 +3058,7 @@ description: A mibContextEngineID that specifies the SNMP engine
    </section>
    <section title="mibContextName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibContextName	
 dataType: string
@@ -3071,7 +3071,7 @@ description: This Information Element denotes that a MIB Context
    </section>
    <section title="mibObjectName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectName	
 dataType: string
@@ -3083,7 +3083,7 @@ description: The name (called a descriptor in [RFC2578]
    </section>
    <section title="mibObjectDescription">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectDescription	
 dataType: string
@@ -3095,7 +3095,7 @@ description: The value of the DESCRIPTION clause of an MIB object
    </section>
    <section title="mibObjectSyntax">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectSyntax	
 dataType: string
@@ -3108,7 +3108,7 @@ description: The value of the SYNTAX clause of an MIB object type
    </section>
    <section title="mibModuleName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibModuleName	
 dataType: string
