@@ -302,6 +302,7 @@ Internet-Draft           SACM Information Model                June 2016
      A.2.  Changes in Revision 02  . . . . . . . . . . . . . . . . .  82
      A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . .  82
      A.4.  Changes in Revision 04  . . . . . . . . . . . . . . . . .  82
+     A.5.  Changes in Revision 05  . . . . . . . . . . . . . . . . .  83
    Appendix B.  Mapping to SACM Use Cases  . . . . . . . . . . . . .  83
    Appendix C.  Security Automation with TNC IF-MAP  . . . . . . . .  83
      C.1.  What is Trusted Network Connect?  . . . . . . . . . . . .  83
@@ -317,19 +318,18 @@ Internet-Draft           SACM Information Model                June 2016
      E.2.  Core Principles . . . . . . . . . . . . . . . . . . . . .  87
      E.3.  Architecture Assumptions  . . . . . . . . . . . . . . . .  88
    Appendix F.  Text for Possible Inclusion in the Requirements
-                Draft  . . . . . . . . . . . . . . . . . . . . . . .  91
-     F.1.  Problem Statement . . . . . . . . . . . . . . . . . . . .  91
-     F.2.  Problem Scope . . . . . . . . . . . . . . . . . . . . . .  91
-   Appendix G.  Text With No Clear Home Yet  . . . . . . . . . . . .  92
-     G.1.  Operations  . . . . . . . . . . . . . . . . . . . . . . .  92
-       G.1.1.  Generalized Workflow  . . . . . . . . . . . . . . . .  92
-     G.2.  From Information Needs to Information Elements  . . . . .  93
-     G.3.  Information Model Elements  . . . . . . . . . . . . . . .  93
-       G.3.1.  Asset Identifiers . . . . . . . . . . . . . . . . . .  95
-         G.3.1.2.  Endpoint Identification . . . . . . . . . . . . .  97
-         G.3.1.3.  Software Identification . . . . . . . . . . . . .  98
-         G.3.1.4.  Hardware Identification . . . . . . . . . . . . . 101
-       G.3.2.  Other Identifiers . . . . . . . . . . . . . . . . . . 101
+                Draft  . . . . . . . . . . . . . . . . . . . . . . .  92
+     F.1.  Problem Statement . . . . . . . . . . . . . . . . . . . .  92
+     F.2.  Problem Scope . . . . . . . . . . . . . . . . . . . . . .  92
+   Appendix G.  Text With No Clear Home Yet  . . . . . . . . . . . .  93
+     G.1.  Operations  . . . . . . . . . . . . . . . . . . . . . . .  93
+       G.1.1.  Generalized Workflow  . . . . . . . . . . . . . . . .  93
+     G.2.  From Information Needs to Information Elements  . . . . .  94
+     G.3.  Information Model Elements  . . . . . . . . . . . . . . .  94
+       G.3.1.  Asset Identifiers . . . . . . . . . . . . . . . . . .  96
+         G.3.1.2.  Endpoint Identification . . . . . . . . . . . . .  98
+         G.3.1.3.  Software Identification . . . . . . . . . . . . .  99
+         G.3.1.4.  Hardware Identification . . . . . . . . . . . . . 102
 
 
 
@@ -338,31 +338,32 @@ Waltermire, et al.      Expires December 10, 2016               [Page 6]
 Internet-Draft           SACM Information Model                June 2016
 
 
-         G.3.2.1.  Platform Configuration Item Identifier  . . . . . 101
-         G.3.2.2.  Configuration Item Identifier . . . . . . . . . . 107
-         G.3.2.3.  Vulnerability Identifier  . . . . . . . . . . . . 109
-       G.3.3.  Endpoint characterization . . . . . . . . . . . . . . 109
-       G.3.4.  Posture Attribute Expression  . . . . . . . . . . . . 113
-         G.3.4.2.  Platform Configuration Attributes . . . . . . . . 113
-       G.3.5.  Actual Value Representation . . . . . . . . . . . . . 115
-         G.3.5.1.  Software Inventory  . . . . . . . . . . . . . . . 115
+       G.3.2.  Other Identifiers . . . . . . . . . . . . . . . . . . 102
+         G.3.2.1.  Platform Configuration Item Identifier  . . . . . 102
+         G.3.2.2.  Configuration Item Identifier . . . . . . . . . . 108
+         G.3.2.3.  Vulnerability Identifier  . . . . . . . . . . . . 110
+       G.3.3.  Endpoint characterization . . . . . . . . . . . . . . 110
+       G.3.4.  Posture Attribute Expression  . . . . . . . . . . . . 114
+         G.3.4.2.  Platform Configuration Attributes . . . . . . . . 114
+       G.3.5.  Actual Value Representation . . . . . . . . . . . . . 116
+         G.3.5.1.  Software Inventory  . . . . . . . . . . . . . . . 116
          G.3.5.2.  Collected Platform Configuration Posture
-                   Attributes  . . . . . . . . . . . . . . . . . . . 116
-       G.3.6.  Evaluation Guidance . . . . . . . . . . . . . . . . . 117
-         G.3.6.1.  Configuration Evaluation Guidance . . . . . . . . 117
-       G.3.7.  Evaluation Result Reporting . . . . . . . . . . . . . 119
-         G.3.7.1.  Configuration Evaluation Results  . . . . . . . . 119
-         G.3.7.2.  Software Inventory Evaluation Results . . . . . . 121
-   Appendix H.  Graph Model  . . . . . . . . . . . . . . . . . . . . 121
-     H.1.  Background: Graph Models  . . . . . . . . . . . . . . . . 122
-     H.2.  Graph Model Overview  . . . . . . . . . . . . . . . . . . 123
-     H.3.  Identifiers . . . . . . . . . . . . . . . . . . . . . . . 123
-     H.4.  Links . . . . . . . . . . . . . . . . . . . . . . . . . . 124
-     H.5.  Metadata  . . . . . . . . . . . . . . . . . . . . . . . . 124
-     H.6.  Use for SACM  . . . . . . . . . . . . . . . . . . . . . . 125
-     H.7.  Provenance  . . . . . . . . . . . . . . . . . . . . . . . 125
-     H.8.  Extensibility . . . . . . . . . . . . . . . . . . . . . . 125
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 126
+                   Attributes  . . . . . . . . . . . . . . . . . . . 117
+       G.3.6.  Evaluation Guidance . . . . . . . . . . . . . . . . . 118
+         G.3.6.1.  Configuration Evaluation Guidance . . . . . . . . 118
+       G.3.7.  Evaluation Result Reporting . . . . . . . . . . . . . 120
+         G.3.7.1.  Configuration Evaluation Results  . . . . . . . . 120
+         G.3.7.2.  Software Inventory Evaluation Results . . . . . . 122
+   Appendix H.  Graph Model  . . . . . . . . . . . . . . . . . . . . 122
+     H.1.  Background: Graph Models  . . . . . . . . . . . . . . . . 123
+     H.2.  Graph Model Overview  . . . . . . . . . . . . . . . . . . 124
+     H.3.  Identifiers . . . . . . . . . . . . . . . . . . . . . . . 124
+     H.4.  Links . . . . . . . . . . . . . . . . . . . . . . . . . . 125
+     H.5.  Metadata  . . . . . . . . . . . . . . . . . . . . . . . . 125
+     H.6.  Use for SACM  . . . . . . . . . . . . . . . . . . . . . . 126
+     H.7.  Provenance  . . . . . . . . . . . . . . . . . . . . . . . 126
+     H.8.  Extensibility . . . . . . . . . . . . . . . . . . . . . . 126
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 127
 
 1.  Introduction
 
@@ -385,7 +386,6 @@ Internet-Draft           SACM Information Model                June 2016
    Nevertheless, the information elements (IE) and their relationships
    defined in this document can be leveraged to create and align
    corresponding data models for data at rest.
-
 
 
 
@@ -4596,6 +4596,17 @@ Internet-Draft           SACM Information Model                June 2016
 
    Cleaned up other text throughout the document.
 
+A.5.  Changes in Revision 05
+
+   Merged proposed changes from the I-D IM into the WG IM
+   (https://github.com/sacmwg/draft-ietf-sacm-information-model/
+   issues/41).
+
+   Fixed some formatting warnings.
+
+   Removed a duplicate IE and added a few IE datatypes that were
+   missing.
+
 Appendix B.  Mapping to SACM Use Cases
 
    TODO: revise
@@ -4631,6 +4642,14 @@ C.1.  What is Trusted Network Connect?
    network infrastructure devices into an intelligent, responsive,
    coordinated defense.  TNC standards have been widely adopted by
    vendors and customers; the TNC endpoint assessment protocols [TNC-IF-
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 83]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
    M-TLV-Binding][TNC-IF-TNCCS-TLV-Binding][TNC-IF-T-Tunneled-EAP][TNC-I
    F-T-TLS] were used as the base for the IETF NEA RFCs
    [RFC5792][RFC5793][RFC7171][RFC6876].
@@ -4642,14 +4661,6 @@ C.1.  What is Trusted Network Connect?
    model contained in its Interface for Metadata Access Points (IF-MAP)
    [TNC-IF-MAP-SOAP-Binding].  IF-MAP provides a query-able repository
    of security telemetry that may be used for storage or retrieval of
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 83]
-
-Internet-Draft           SACM Information Model                June 2016
-
-
    such data by multiple types of security systems and endpoints on a
    vendor-neutral basis.  The information model underlying the IF-MAP
    repository covers, directly or indirectly, all of the security
@@ -4688,6 +4699,13 @@ C.3.  What is the TNC Information Model?
    Security [TNC-IF-MAP-ICS-METADATA]) define an extensible set of
    identifiers and data types.
 
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 84]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
    Each IF-MAP client may interact with the IF-MAP graph data store
    through three fundamental types of operation requests:
 
@@ -4696,15 +4714,6 @@ C.3.  What is the TNC Information Model?
 
    o  Search, which retrieves a selected sub-graph according to a set of
       search criteria
-
-
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 84]
-
-Internet-Draft           SACM Information Model                June 2016
-
 
    o  Subscribe, which allows a client to manage a set of search
       commands which asynchronously return selected sub-graphs when
@@ -4745,6 +4754,14 @@ D.1.1.  Pre-defined and Modified Terms
            protected by a countermeasure, or (c) required for a system's
            mission."  This definition generally relates to an "IT
            Asset", which in the context of this document is overly
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 85]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
            limiting.  For use in this document, a broader definition of
            the term is needed to represent non-IT asset types as well.
 
@@ -4754,14 +4771,6 @@ D.1.1.  Pre-defined and Modified Terms
            technology (IT) system, IT network, IT circuit, software
            (both an installed instance and a physical instance), virtual
            computing platform (common in cloud and virtualized
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 85]
-
-Internet-Draft           SACM Information Model                June 2016
-
-
            computing), and related hardware (e.g., locks, cabinets,
            keyboards)."  This definition aligns better with common
            dictionary definitions of the term and better fits the needs
@@ -4801,6 +4810,14 @@ E.1.  Introduction
    A system administrator needs to be able to determine which elements
    of an endpoint have a security problem and which do not conform the
    organization's security policies.  The CIO needs to be able to
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 86]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
    determine whether endpoints have security postures that conform to
    the organization's policies to ensure that the organization is
    complying with its fiduciary and regulatory responsibilities.  The
@@ -4809,14 +4826,6 @@ E.1.  Introduction
    regulations and due diligence expectations are being met.  The
    operator needs to understand which assets have deviated from
    organizational policies so that those assets can be remedied.
-
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 86]
-
-Internet-Draft           SACM Information Model                June 2016
-
 
    Operators will focus on which endpoints are composed of specific
    assets with problems.  CIO and auditors need a characterization of
@@ -4857,15 +4866,6 @@ E.2.  Core Principles
 
    o  Guidance will often be generated by humans or through the use of
       transformations on existing automation data.  In some cases,
-      guidance will be generated dynamically based on shared information
-      or current operational needs.  As guidance is created it will be
-      published to an appropriate guidance data store allowing guidance
-      to be managed in and retrieved from convenient locations.
-
-   o  Operators of a continuous monitoring or security automation system
-      will need to make decisions when defining policies about what
-      guidance to use or reference.  The guidance used may be directly
-
 
 
 
@@ -4874,6 +4874,14 @@ Waltermire, et al.      Expires December 10, 2016              [Page 87]
 Internet-Draft           SACM Information Model                June 2016
 
 
+      guidance will be generated dynamically based on shared information
+      or current operational needs.  As guidance is created it will be
+      published to an appropriate guidance data store allowing guidance
+      to be managed in and retrieved from convenient locations.
+
+   o  Operators of a continuous monitoring or security automation system
+      will need to make decisions when defining policies about what
+      guidance to use or reference.  The guidance used may be directly
       associated with policy or may be queried dynamically based on
       associated metadata.
 
@@ -4913,6 +4921,15 @@ E.3.  Architecture Assumptions
 
    o  Repositories (e.g., Enterprise Repository) store information items
       that are input to or output from Capabilities, Producers, and
+
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 88]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
       Consumers.  For this model we refer to generic Enterprise and
       Guidance Repositories.
 
@@ -4922,13 +4939,6 @@ E.3.  Architecture Assumptions
 
    In the most trivial example, illustrated in Figure 13, Consumers
    either request information from, or are notified by, Producers.
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 88]
-
-Internet-Draft           SACM Information Model                June 2016
-
 
    +----------+     Request     +----------+
    |          <-----------------+          |
@@ -4969,6 +4979,13 @@ Internet-Draft           SACM Information Model                June 2016
 
    For example:
 
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 89]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
    o  the collection capability can reside on the endpoint or not.
 
    o  the collection producer can be part of the collection capability
@@ -4981,7 +4998,46 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 89]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 90]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5037,7 +5093,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 90]
+Waltermire, et al.      Expires December 10, 2016              [Page 91]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5093,7 +5149,7 @@ F.2.  Problem Scope
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 91]
+Waltermire, et al.      Expires December 10, 2016              [Page 92]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5149,7 +5205,7 @@ G.1.1.  Generalized Workflow
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 92]
+Waltermire, et al.      Expires December 10, 2016              [Page 93]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5205,7 +5261,7 @@ G.3.  Information Model Elements
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 93]
+Waltermire, et al.      Expires December 10, 2016              [Page 94]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5261,7 +5317,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 94]
+Waltermire, et al.      Expires December 10, 2016              [Page 95]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5317,7 +5373,7 @@ G.3.1.1.1.  Asset Identification
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 95]
+Waltermire, et al.      Expires December 10, 2016              [Page 96]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5373,7 +5429,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 96]
+Waltermire, et al.      Expires December 10, 2016              [Page 97]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5429,7 +5485,7 @@ G.3.1.2.  Endpoint Identification
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 97]
+Waltermire, et al.      Expires December 10, 2016              [Page 98]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5485,7 +5541,7 @@ G.3.1.3.1.  Related Work
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 98]
+Waltermire, et al.      Expires December 10, 2016              [Page 99]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5541,7 +5597,7 @@ G.3.1.3.1.1.1.  Background
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 99]
+Waltermire, et al.      Expires December 10, 2016             [Page 100]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5597,7 +5653,7 @@ G.3.1.3.1.2.  Software Identification (SWID) Tags
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 100]
+Waltermire, et al.      Expires December 10, 2016             [Page 101]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5653,7 +5709,7 @@ G.3.2.1.  Platform Configuration Item Identifier
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 101]
+Waltermire, et al.      Expires December 10, 2016             [Page 102]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5709,7 +5765,7 @@ G.3.2.1.1.1.  Common Configuration Enumeration
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 102]
+Waltermire, et al.      Expires December 10, 2016             [Page 103]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5765,7 +5821,7 @@ G.3.2.1.1.2.1.  Background
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 103]
+Waltermire, et al.      Expires December 10, 2016             [Page 104]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5821,7 +5877,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 104]
+Waltermire, et al.      Expires December 10, 2016             [Page 105]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5877,7 +5933,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 105]
+Waltermire, et al.      Expires December 10, 2016             [Page 106]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5933,7 +5989,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 106]
+Waltermire, et al.      Expires December 10, 2016             [Page 107]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5989,7 +6045,7 @@ G.3.2.2.  Configuration Item Identifier
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 107]
+Waltermire, et al.      Expires December 10, 2016             [Page 108]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6045,7 +6101,7 @@ G.3.2.2.1.2.  A Potential Alternate Approach
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 108]
+Waltermire, et al.      Expires December 10, 2016             [Page 109]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6101,7 +6157,7 @@ G.3.3.  Endpoint characterization
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 109]
+Waltermire, et al.      Expires December 10, 2016             [Page 110]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6157,7 +6213,7 @@ G.3.3.1.1.2.  Applicability to Endpoint characterization
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 110]
+Waltermire, et al.      Expires December 10, 2016             [Page 111]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6213,7 +6269,7 @@ G.3.3.1.2.2.  Relationship to Endpoint Characterization
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 111]
+Waltermire, et al.      Expires December 10, 2016             [Page 112]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6269,7 +6325,7 @@ G.3.3.1.3.  The CPE Applicability Language
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 112]
+Waltermire, et al.      Expires December 10, 2016             [Page 113]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6325,7 +6381,7 @@ G.3.4.2.  Platform Configuration Attributes
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 113]
+Waltermire, et al.      Expires December 10, 2016             [Page 114]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6381,7 +6437,7 @@ G.3.4.2.1.3.  Simple Network Management Protocol and Management
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 114]
+Waltermire, et al.      Expires December 10, 2016             [Page 115]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6437,7 +6493,7 @@ G.3.5.1.1.2.  Software Identification Tags
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 115]
+Waltermire, et al.      Expires December 10, 2016             [Page 116]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6493,7 +6549,7 @@ G.3.5.2.1.2.  NETCONF-Based Collection
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 116]
+Waltermire, et al.      Expires December 10, 2016             [Page 117]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6549,7 +6605,7 @@ G.3.6.1.  Configuration Evaluation Guidance
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 117]
+Waltermire, et al.      Expires December 10, 2016             [Page 118]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6605,7 +6661,7 @@ G.3.6.1.1.2.  XCCDF Rule
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 118]
+Waltermire, et al.      Expires December 10, 2016             [Page 119]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6661,7 +6717,7 @@ G.3.7.1.1.1.  XCCDF TestResults
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 119]
+Waltermire, et al.      Expires December 10, 2016             [Page 120]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6717,7 +6773,7 @@ G.3.7.1.1.2.  Open Vulnerability and Assessment Language
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 120]
+Waltermire, et al.      Expires December 10, 2016             [Page 121]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6773,7 +6829,7 @@ Appendix H.  Graph Model
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 121]
+Waltermire, et al.      Expires December 10, 2016             [Page 122]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6829,7 +6885,7 @@ H.1.  Background: Graph Models
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 122]
+Waltermire, et al.      Expires December 10, 2016             [Page 123]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6885,7 +6941,7 @@ H.3.  Identifiers
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 123]
+Waltermire, et al.      Expires December 10, 2016             [Page 124]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6941,7 +6997,7 @@ H.5.  Metadata
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 124]
+Waltermire, et al.      Expires December 10, 2016             [Page 125]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6997,7 +7053,7 @@ H.8.  Extensibility
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 125]
+Waltermire, et al.      Expires December 10, 2016             [Page 126]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -7053,7 +7109,7 @@ Authors' Addresses
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 126]
+Waltermire, et al.      Expires December 10, 2016             [Page 127]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -7109,4 +7165,4 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 127]
+Waltermire, et al.      Expires December 10, 2016             [Page 128]
