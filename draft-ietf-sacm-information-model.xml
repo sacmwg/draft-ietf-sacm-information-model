@@ -9,17 +9,14 @@
 <!ENTITY RFC3411 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3411.xml">
 <!ENTITY RFC3416 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3416.xml">
 <!ENTITY RFC3418 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3418.xml">
-<!ENTITY RFC3444 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3444.xml">
 <!ENTITY RFC3580 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3580.xml">
 <!ENTITY RFC3580 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3580.xml">
 <!ENTITY RFC3587 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3587.xml">
-<!ENTITY RFC3954 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3954.xml">
 <!ENTITY RFC4949 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4949.xml">
 <!ENTITY RFC4287 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4287.xml">
 <!ENTITY RFC5201 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5201.xml">
 <!ENTITY RFC5209 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5209.xml">
 <!ENTITY RFC5280 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5280.xml">
-<!ENTITY RFC5424 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5424.xml">
 <!ENTITY RFC5792 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5792.xml">
 <!ENTITY RFC5793 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5793.xml">
 <!ENTITY RFC6020 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6020.xml">
@@ -213,7 +210,7 @@
           </t>
           
           <t>A complete set of requirements imposed on the IM can be
-            found in <xref target="I-D.ietf-sacm-architecture"/>. The 
+            found in <xref target="I-D.ietf-sacm-requirements"/>. The 
             SACM IM is intended to be used for standardized data exchange between SACM components 
             (data in motion). Nevertheless, the information elements (IE) and their relationships 
             defined in this document can be leveraged to create and align corresponding data models 
@@ -239,6 +236,7 @@
               <t>SACM Component Registration</t>
             </list>
           </t>
+           <t>These tasks are defined in <xref target="I-D.ietf-sacm-terminology"/>.</t>
         </section>
         
         <section title="Conventions used in this document">
@@ -309,12 +307,12 @@
           <figure title="Example instance of an attribute and subject."
             anchor="attribute-subject-example">
             <artwork>                  
-              hostname = "arbutus"
-              
-              coordinates = (
-              latitude = N27.99619,
-              longitude = E86.92761
-              )      
+      hostname = "arbutus"
+      
+      coordinates = (
+      latitude = N27.99619,
+      longitude = E86.92761
+      )      
             </artwork>
           </figure>
           
@@ -361,24 +359,28 @@
               title="Attribute Information Element Specification Template"
               anchor="Attribute-Information-Element-Specification-Template">
               <artwork>                  
-                elementId:         Element identifier goes here if known, or 
-                                   "TBD" if it will be assigned by IANA and 
-                                   filled in at publication time.; obligatory             
+                elementId:         Element identifier goes here 
+                                   if known, or "TBD" if it will 
+                                   be assigned by IANA and filled 
+                                   in at publication time.; 
+                                   obligatory             
                 
                 name:              Name goes here.; obligatory
                 
-                dataType:          Data type goes here; obligatory
+                dataType:          Data type goes here; 
+                                   obligatory
                 
                 status:            Status goes here; obligatory
                 
-                description:       Description goes here.; obligatory
+                description:       Description goes here.; 
+                                   obligatory
                 
                                    For Information Elements that
-                                   represent flags, please include a
-                                   table that lists each flag value
-                                   (hexadecimal) and description.
-                                   The following is a template for that
-                                   table.
+                                   represent flags, please 
+                                   include a table that lists 
+                                   each flag value (hexadecimal) 
+                                   and description. The following 
+                                   is a template for that table.
                 
                 +-------+----------------------------------+
                 | Value | Description                      |
@@ -386,16 +388,20 @@
                 |       |                                  |
                 +-------+----------------------------------+
                 
-                dataTypeSemantics: Data type semantics, if any, go here; optional
+                dataTypeSemantics: Data type semantics, if any, 
+                                   go here; optional
                 
-                units:             Units, if any, go here; optional
+                units:             Units, if any, go here; 
+                                   optional
                 
-                range:             Range, if not implied by the data type, goes 
-                                   here; optional
+                range:             Range, if not implied by the 
+                                   data type, goes here; optional
                 
-                references:        References to other RFCs or documents outside 
-                                   the IETF, in which additional information is 
-                                   given, or which are referenced by the 
+                references:        References to other RFCs or 
+                                   documents outside the IETF, 
+                                   in which additional 
+                                   information is given, or which 
+                                   are referenced by the 
                                    description, go here; optional
               </artwork>
             </figure>
@@ -423,40 +429,55 @@
                 title="Subject Information Element Specification Template"
                 anchor="Subject-Information-Element-Specification-Template">
                 <artwork>                  
-                  elementId:         Element identifier goes here if known, or 
-                                     "TBD" if it will be assigned by IANA and 
-                                     filled in at publication time.; obligatory             
+                  elementId:         Element identifier goes here 
+                                     if known, or "TBD" if it 
+                                     will be assigned by IANA and 
+                                     filled in at publication 
+                                     time.; obligatory             
                   
                   name:              Name goes here.; obligatory
                   
-                  dataType:          Data type goes here; obligatory
+                  dataType:          Data type goes here; 
+                                     obligatory
                   
                   status:            Status goes here; obligatory
                   
-                  description:       Description goes here.; obligatory
+                  description:       Description goes here.; 
+                                     obligatory
                   
-                                     Please include a high-level model diagram that uses
-                                     the following format which is a simplified version
-                                     of a high-level diagram format used in [RFC6313]. 
+                                     Please include a high-level 
+                                     model diagram that uses
+                                     the following format which 
+                                     is a simplified version
+                                     of a high-level diagram 
+                                     format used in [RFC6313]. 
                   
-                                     &lt;IE-Name&gt; = (&lt;IE-DataType&gt;, &lt;IE-DataTypeSemantic&gt;,
+                                     &lt;IE-Name&gt; = 
+                                      (&lt;IE-DataType&gt;, 
+                                       &lt;IE-DataTypeSemantic&gt;,
                                        &lt;IE-1&gt;,
                                        &lt;IE-2&gt;,
                                        &lt;IE-3&gt;,
                                        ...
                                      ) 
                   
-                  dataTypeSemantics: Data type semantics, if any, go here; optional
+                  dataTypeSemantics: Data type semantics, if any, 
+                                     go here; optional
                   
-                  units:             Units, if any, go here; optional
+                  units:             Units, if any, go here; 
+                                     optional
                   
-                  range:             Range, if not implied by the data type, goes 
+                  range:             Range, if not implied by 
+                                     the data type, goes 
                   here; optional
                   
-                  references:        References to other RFCs or documents outside 
-                                     the IETF, in which additional information is 
-                                     given, or which are referenced by the 
-                                     description, go here; optional
+                  references:        References to other RFCs or 
+                                     documents outside the IETF, 
+                                     in which additional 
+                                     information is given, or 
+                                     which are referenced by the 
+                                     description, go here; 
+                                     optional
                 </artwork>
               </figure>
             </t>
@@ -475,17 +496,17 @@
             <figure title="Example set of IEs associated with a timestamp and a
               target endpoint label." anchor="sacm-content-element-example">
               <artwork>                  
-                content-element = (
-                  content-metadata = (
-                    collection-timestamp = 146193322,
-                    data-source = fb02e551-7101-4e68-8dec-1fde6bd10981
-                  ),
-                  hostname = "arbutus",
-                  coordinates = (
-                    latitude = N27.99619,
-                    longitude = E86.92761
-                  )
-                )
+        content-element = (
+          content-metadata = (
+            collection-timestamp = 146193322,
+            data-source = fb02e551-7101-4e68-8dec-1fde6bd10981
+          ),
+          hostname = "arbutus",
+          coordinates = (
+            latitude = N27.99619,
+            longitude = E86.92761
+          )
+        )
               </artwork>
             </figure>
           </section>
@@ -507,60 +528,60 @@
 
             <figure title="Example of a simple SACM statement including a single content-element." anchor="sacm-statement-example-1">
               <artwork>                  
-                sacm-statement = (
-                  statement-metadata = (
-                    publish-timestamp = 1461934031,
-                    data-origin = 24e67957-3d31-4878-8892-da2b35e121c2,
-                    content-type = observation
-                  ),
-                  content-element = (
-                    content-metadata = (
-                      collection-timestamp = 146193322,
-                      data-source = fb02e551-7101-4e68-8dec-1fde6bd10981
-                    ),
-                    hostname = "arbutus"
-                  )
-                )
+        sacm-statement = (
+          statement-metadata = (
+            publish-timestamp = 1461934031,
+            data-origin = 24e67957-3d31-4878-8892-da2b35e121c2,
+            content-type = observation
+          ),
+          content-element = (
+            content-metadata = (
+              collection-timestamp = 146193322,
+              data-source = fb02e551-7101-4e68-8dec-1fde6bd10981
+            ),
+            hostname = "arbutus"
+          )
+        )
               </artwork>
             </figure>
             
             <figure title="Example of conflicting information originating from different SACM components." anchor="sacm-statement-example-2">
               <artwork>                  
-                sacm-statement = (
-                  statement-metadata = (
-                    publish-timestamp = 1461934031,
-                    data-origin = 24e67957-3d31-4878-8892-da2b35e121c2
-                    content-type = observation
-                  ),
-                  content-element = (
-                    content-metadata = (
-                      collection-timestamp = 146193322,
-                      data-source = fb02e551-7101-4e68-8dec-1fde6bd10981
-                    ),
-                    coordinates = (
-                      latitude = N27.99619,
-                      longitude = E86.92761
-                    )
-                  )
-                )
-                
-                sacm-statement = (
-                  statement-metadata = (
-                    publish-timestamp = 1461934744,
-                    data-origin = e42885a1-0270-44e9-bb5c-865cf6bd4800,
-                    content-type = observation
-                  ),
-                  content-element = (
-                    content-metadata = (
-                      collection-timestamp = 146193821,
-                      te-label = fb02e551-7101-4e68-8dec-1fde6bd10981
-                    ),
-                    coordinates = (
-                      latitude = N16.67622,
-                      longitude = E141.55321
-                    )
-                  )
-                )
+       sacm-statement = (
+         statement-metadata = (
+           publish-timestamp = 1461934031,
+           data-origin = 24e67957-3d31-4878-8892-da2b35e121c2
+           content-type = observation
+         ),
+         content-element = (
+           content-metadata = (
+             collection-timestamp = 146193322,
+             data-source = fb02e551-7101-4e68-8dec-1fde6bd10981
+           ),
+           coordinates = (
+             latitude = N27.99619,
+             longitude = E86.92761
+           )
+         )
+       )
+       
+       sacm-statement = (
+         statement-metadata = (
+           publish-timestamp = 1461934744,
+           data-origin = e42885a1-0270-44e9-bb5c-865cf6bd4800,
+           content-type = observation
+         ),
+         content-element = (
+           content-metadata = (
+             collection-timestamp = 146193821,
+             te-label = fb02e551-7101-4e68-8dec-1fde6bd10981
+           ),
+           coordinates = (
+             latitude = N16.67622,
+             longitude = E141.55321
+           )
+         )
+       )
               </artwork>
             </figure>
           </section>
@@ -594,26 +615,28 @@
             <figure title="Example instance of a content-element subject associated with 
               another subject via its content metadata." anchor="sacm-relationship-example">
               <artwork>                  
-                content-element = (
-                  content-metadata = (
-                    collection-timestamp = 1461934031,
-                    te-label = fb02e551-7101-4e68-8dec-1fde6bd10981
-                    relationships = (
-                      associated-with-user-account = f3d70ef4-7e18-42af-a894-8955ba87c95d
-                    )
-                  ),
-                  hostname = "arbutus"
-                )
-                
-                content-element = (
-                  content-metadata = (
-                    content-label = f3d70ef4-7e18-42af-a894-8955ba87c95d
-                  ),
-                  user-account = (
-                    username = romeo
-                    authentication = local
-                  )
-                )  
+        content-element = (
+          content-metadata = (
+            collection-timestamp = 1461934031,
+            te-label = 
+              fb02e551-7101-4e68-8dec-1fde6bd10981
+            relationships = (
+              associated-with-user-account = 
+                f3d70ef4-7e18-42af-a894-8955ba87c95d
+            )
+          ),
+          hostname = "arbutus"
+        )
+        
+        content-element = (
+          content-metadata = (
+            content-label = f3d70ef4-7e18-42af-a894-8955ba87c95d
+          ),
+          user-account = (
+            username = romeo
+            authentication = local
+          )
+        )  
               </artwork>
             </figure>
           </section>
@@ -632,33 +655,35 @@
             </t>
             <figure title="Example of a SACM statement containing an event." anchor="sacm-event-example">
               <artwork>                  
-                sacm-statement = (
-                  statement-metadata = (
-                    publish-timestamp = 1461934031,
-                    data-origin = 24e67957-3d31-4878-8892-da2b35e121c2,
-                    content-type = event
-                  ),
-                  event = (
-                    event-attributes = (
-                      event-name = "host-name change",
-                      content-element = (
-                        content-metadata = (
-                          collection-timestamp = 146193322,
-                          data-source = fb02e551-7101-4e68-8dec-1fde6bd10981,
-                          event-component = past-state
-                        ),
-                        hostname = "arbutus"
-                     ),
-                    content-element = (
-                      content-metadata = (
-                        collection-timestamp = 146195723,
-                        data-source = fb02e551-7101-4e68-8dec-1fde6bd10981,
-                        event-component = current-state
-                      ),
-                      hostname = "lilac"
-                   )
-                  )
-                )  
+        sacm-statement = (
+          statement-metadata = (
+            publish-timestamp = 1461934031,
+            data-origin = 24e67957-3d31-4878-8892-da2b35e121c2,
+            content-type = event
+          ),
+          event = (
+            event-attributes = (
+              event-name = "host-name change",
+              content-element = (
+                content-metadata = (
+                  collection-timestamp = 146193322,
+                  data-source = 
+                    fb02e551-7101-4e68-8dec-1fde6bd10981,
+                  event-component = past-state
+                ),
+                hostname = "arbutus"
+             ),
+            content-element = (
+              content-metadata = (
+                collection-timestamp = 146195723,
+                data-source = 
+                  fb02e551-7101-4e68-8dec-1fde6bd10981,
+                event-component = current-state
+              ),
+              hostname = "lilac"
+           )
+          )
+        )  
               </artwork>
             </figure>
           </section>
@@ -1922,11 +1947,11 @@ the same.
   <figure>
     <artwork>
 elementId: TBD
-name: hardwareSerialNumber	
+name: hardwareSerialNumber
 dataType: string
 dataTypeSemantics: default
 status: current
-description: A globally unique identifier for a particular 
+description: A globally unique identifier for a particular
              piece of hardware assigned by the vendor.
     </artwork>
   </figure>
@@ -1935,12 +1960,12 @@ description: A globally unique identifier for a particular
   <figure>
     <artwork>
 elementId: TBD
-name: interfaceName	
+name: interfaceName
 dataType: string
 dataTypeSemantics: default
 status: current
-description: A short name uniquely describing an interface, 
-             eg "Eth1/0". See [RFC2863] for the definition 
+description: A short name uniquely describing an interface,
+             eg "Eth1/0". See [RFC2863] for the definition
              of the ifName object.
     </artwork>
   </figure>
@@ -1952,13 +1977,13 @@ elementId: TBD
 name: interfaceIndex
 dataType: unsigned32
 dataTypeSemantics: identifier
-status: current	
-description: The index of an interface installed on an endpoint. 
-             The value matches the value of managed object 
-             'ifIndex' as defined in [RFC2863]. Note that ifIndex 
-             values are not assigned statically to an interface 
-             and that the interfaces may be renumbered every time 
-             the device's management system is re-initialized, 
+status: current
+description: The index of an interface installed on an endpoint.
+             The value matches the value of managed object
+             'ifIndex' as defined in [RFC2863]. Note that ifIndex
+             values are not assigned statically to an interface
+             and that the interfaces may be renumbered every time
+             the device's management system is re-initialized,
              as specified in [RFC2863].
     </artwork>
   </figure>
@@ -1971,7 +1996,7 @@ name: interfaceMacAddress
 dataType: macAddress
 dataTypeSemantics: default
 status: current
-description: The IEEE 802 MAC address associated with a network 
+description: The IEEE 802 MAC address associated with a network
              interface on an endpoint.
     </artwork>
   </figure>
@@ -2058,7 +2083,7 @@ description: Information about a network interface
     <figure>
       <artwork>
 elementId: TBD
-name: softwareIdentifier	
+name: softwareIdentifier
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -2196,7 +2221,7 @@ description: Information about an instance of software
   <figure>
     <artwork>
 elementId: TBD
-name: globallyUniqueIdentifier	
+name: globallyUniqueIdentifier
 dataType: unsigned8
 dataTypeSemantics: identifier
 status: current
@@ -2209,7 +2234,7 @@ description: TODO.
   <figure>
     <artwork>
 elementId: TBD
-name: dataOrigin	
+name: dataOrigin
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -2224,7 +2249,7 @@ description: The origin of the data. TODO make a better
   <figure>
     <artwork>
 elementId: TBD
-name: dataSource	
+name: dataSource
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -2239,7 +2264,7 @@ description: The source of the data. TODO make a better
   <figure>
     <artwork>
 elementId: TBD
-name: creationTimestamp	
+name: creationTimestamp
 dataType: dateTimeSeconds
 dataTypeSemantics: default
 status: current
@@ -2253,7 +2278,7 @@ description: The date and time when the posture
   <figure>
     <artwork>
 elementId: TBD
-name: collectionTimestamp	
+name: collectionTimestamp
 dataType: dateTimeSeconds
 dataTypeSemantics: default
 status: current
@@ -2268,7 +2293,7 @@ description: The date and time when the posture
   <figure>
     <artwork>
 elementId: TBD
-name: publicationTimestamp	
+name: publicationTimestamp
 dataType: dateTimeSeconds
 dataTypeSemantics: default
 status: current
@@ -2282,7 +2307,7 @@ description: The date and time when the posture
   <figure>
     <artwork>
 elementId: TBD
-name: relayTimestamp	
+name: relayTimestamp
 dataType: dateTimeSeconds
 dataTypeSemantics: default
 status: current
@@ -2296,7 +2321,7 @@ description: The date and time when the posture
   <figure>
     <artwork>
 elementId: TBD
-name: storageTimestamp	
+name: storageTimestamp
 dataType: dateTimeSeconds
 dataTypeSemantics: default
 status: current
@@ -2310,14 +2335,14 @@ description: The date and time when the posture
   <figure>
     <artwork>
 elementId: TBD
-name: type	
+name: type
 dataType: unsigned16
 dataTypeSemantics: flags
 status: current
 metadata: true
 description: The type of data model use to represent
-             some set of endpoint information. The following table
-             lists the set of data models supported by SACM.
+             some set of endpoint information. The following 
+             table lists the set of data models supported by SACM.
 
              +-------+----------------------------------+
              | Value | Description                      |
@@ -2337,97 +2362,99 @@ description: The type of data model use to represent
       <figure>
          <artwork>
 elementId: TBD
-name: protocolIdentifier	
+name: protocolIdentifier
 dataType: unsigned8
 dataTypeSemantics: identifier
 status: current
-description: The value of the protocol number in the IP packet header.
-             The protocol number identifies the IP packet payload type.
-             Protocol numbers are defined in the IANA Protocol Numbers
-             registry.
+description: The value of the protocol number in the IP packet 
+             header. The protocol number identifies the IP packet 
+             payload type. Protocol numbers are defined in the 
+             IANA Protocol Numbers registry.
              
-             In Internet Protocol version 4 (IPv4), this is carried in the
-             Protocol field.  In Internet Protocol version 6 (IPv6), this
-             is carried in the Next Header field in the last extension
-             header of the packet.</artwork>
+             In Internet Protocol version 4 (IPv4), this is 
+             carried in the Protocol field.  In Internet Protocol 
+             version 6 (IPv6), this is carried in the Next Header 
+             field in the last extension header of the packet.</artwork>
       </figure>
    </section>
    <section title="sourceTransportPort">
       <figure>
          <artwork>
 elementId: TBD
-name: sourceTransportPort	
+name: sourceTransportPort
 dataType: unsigned16
 dataTypeSemantics: identifier
 status: current
 description: The source port identifier in the transport header.
-             For the transport protocols UDP, TCP, and SCTP, this is the
-             source port number given in the respective header.  This
-             field MAY also be used for future transport protocols that
-             have 16-bit source port identifiers.</artwork>
+             For the transport protocols UDP, TCP, and SCTP, this 
+             is the source port number given in the respective 
+             header.  This field MAY also be used for future 
+             transport protocols that have 16-bit source port 
+             identifiers.</artwork>
       </figure>
    </section>
    <section title="sourceIPv4PrefixLength">
       <figure>
          <artwork>
 elementId: TBD
-name: sourceIPv4PrefixLength	
+name: sourceIPv4PrefixLength
 dataType: unsigned8
 dataTypeSemantics: 
 status: current
-description: The number of contiguous bits that are relevant in the
-             sourceIPv4Prefix Information Element.</artwork>
+description: The number of contiguous bits that are relevant in 
+             the sourceIPv4Prefix Information Element.</artwork>
       </figure>
    </section>
    <section title="ingressInterface">
       <figure>
          <artwork>
 elementId: TBD
-name: ingressInterface	
+name: ingressInterface
 dataType: unsigned32
 dataTypeSemantics: identifier
 status: current
-description: The index of the IP interface where packets of this Flow
-             are being received.  The value matches the value of managed
-             object 'ifIndex' as defined in [RFC2863].
-             Note that ifIndex values are not assigned statically to an
-             interface and that the interfaces may be renumbered every
-             time the device's management system is re-initialized, as
-             specified in [RFC2863].</artwork>
+description: The index of the IP interface where packets of this 
+             Flow are being received.  The value matches the 
+             value of managed object 'ifIndex' as defined in 
+             [RFC2863]. Note that ifIndex values are not assigned 
+             statically to an interface and that the interfaces 
+             may be renumbered every time the device's management 
+             system is re-initialized, as specified in [RFC2863].</artwork>
       </figure>
    </section>
    <section title="destinationTransportPort">
       <figure>
          <artwork>
 elementId: TBD
-name: destinationTransportPort	
+name: destinationTransportPort
 dataType: unsigned16
 dataTypeSemantics: identifier
 status: current
-description: The destination port identifier in the transport header.
-             For the transport protocols UDP, TCP, and SCTP, this is the
-             destination port number given in the respective header.
-             This field MAY also be used for future transport protocols
-             that have 16-bit destination port identifiers.</artwork>
+description: The destination port identifier in the transport 
+             header. For the transport protocols UDP, TCP, and 
+             SCTP, this is the destination port number given in 
+             the respective header. This field MAY also be used 
+             for future transport protocols that have 16-bit 
+             destination port identifiers.</artwork>
       </figure>
    </section>
    <section title="sourceIPv6PrefixLength">
       <figure>
          <artwork>
 elementId: TBD
-name: sourceIPv6PrefixLength	
+name: sourceIPv6PrefixLength
 dataType: unsigned8
 dataTypeSemantics: 
 status: current
-description: The number of contiguous bits that are relevant in the
-             sourceIPv6Prefix Information Element.</artwork>
+description: The number of contiguous bits that are relevant in 
+             the sourceIPv6Prefix Information Element.</artwork>
       </figure>
    </section>
    <section title="sourceIPv4Prefix">
       <figure>
          <artwork>
 elementId: TBD
-name: sourceIPv4Prefix	
+name: sourceIPv4Prefix
 dataType: ipv4Address
 dataTypeSemantics: default
 status: current
@@ -2438,7 +2465,7 @@ description: IPv4 source address prefix.</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: destinationIPv4Prefix	
+name: destinationIPv4Prefix
 dataType: ipv4Address
 dataTypeSemantics: default
 status: current
@@ -2449,7 +2476,7 @@ description: IPv4 destination address prefix.</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: sourceMacAddress	
+name: sourceMacAddress
 dataType: macAddress
 dataTypeSemantics: default
 status: current
@@ -2460,7 +2487,7 @@ description: The IEEE 802 source MAC address field.</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: ipVersion	
+name: ipVersion
 dataType: unsigned8
 dataTypeSemantics: identifier
 status: current
@@ -2471,22 +2498,24 @@ description: The IP version field in the IP packet header.</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: interfaceName	
+name: interfaceName
 dataType: string
 dataTypeSemantics: default
 status: current
-description: A short name uniquely describing an interface, eg "Eth1/0".</artwork>
+description: A short name uniquely describing an interface, 
+             eg "Eth1/0".</artwork>
       </figure>
    </section>
    <section title="interfaceDescription">
       <figure>
          <artwork>
 elementId: TBD
-name: interfaceDescription	
+name: interfaceDescription
 dataType: string
 dataTypeSemantics: default
 status: current
-description: The description of an interface, eg "FastEthernet 1/0" or "ISP 
+description: The description of an interface, eg "FastEthernet 
+             1/0" or "ISP 
 connection".</artwork>
       </figure>
    </section>
@@ -2494,7 +2523,7 @@ connection".</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: applicationDescription	
+name: applicationDescription
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -2505,7 +2534,7 @@ description: Specifies the description of an application.</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: applicationId	
+name: applicationId
 dataType: octetArray
 dataTypeSemantics: default
 status: current
@@ -2516,7 +2545,7 @@ description: Specifies an Application ID per [RFC6759].</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: applicationName	
+name: applicationName
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -2527,133 +2556,137 @@ description: Specifies the name of an application.</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: exporterIPv4Address	
+name: exporterIPv4Address
 dataType: ipv4Address
 dataTypeSemantics: default
 status: current
-description: The IPv4 address used by the Exporting Process.  This is used
-             by the Collector to identify the Exporter in cases where the
-             identity of the Exporter may have been obscured by the use of
-             a proxy.</artwork>
+description: The IPv4 address used by the Exporting Process. 
+             This is used by the Collector to identify the 
+             Exporter in cases where the identity of the Exporter 
+             may have been obscured by the use of a proxy.</artwork>
       </figure>
    </section>
    <section title="exporterIPv6Address">
       <figure>
          <artwork>
 elementId: TBD
-name: exporterIPv6Address	
+name: exporterIPv6Address
 dataType: ipv6Address
 dataTypeSemantics: default
 status: current
-description: The IPv6 address used by the Exporting Process.  This is used
-             by the Collector to identify the Exporter in cases where the
-             identity of the Exporter may have been obscured by the use of
-             a proxy.</artwork>
+description: The IPv6 address used by the Exporting Process.  
+             This is used by the Collector to identify the 
+             Exporter in cases where the identity of the 
+             Exporter may have been obscured by the use of a 
+             proxy.</artwork>
       </figure>
    </section>
    <section title="portId">
       <figure>
          <artwork>
 elementId: TBD
-name: portId	
+name: portId
 dataType: unsigned32
 dataTypeSemantics: identifier
 status: current
-description: An identifier of a line port that is unique per IPFIX
-             Device hosting an Observation Point.  Typically, this
-             Information Element is used for limiting the scope
-             of other Information Elements.</artwork>
+description: An identifier of a line port that is unique per 
+             IPFIX Device hosting an Observation Point.  
+             Typically, this Information Element is used for 
+             limiting the scope of other Information Elements.</artwork>
       </figure>
    </section>
    <section title="templateId">
       <figure>
          <artwork>
 elementId: TBD
-name: templateId	
+name: templateId
 dataType: unsigned16
 dataTypeSemantics: identifier
 status: current
-description: An identifier of a Template that is locally unique within a
-             combination of a Transport session and an Observation Domain.       
+description: An identifier of a Template that is locally unique 
+             within a combination of a Transport session and an 
+             Observation Domain.       
               
-             Template IDs 0-255 are reserved for Template Sets, Options
-             Template Sets, and other reserved Sets yet to be created.
-             Template IDs of Data Sets are numbered from 256 to 65535.
+             Template IDs 0-255 are reserved for Template Sets, 
+             Options Template Sets, and other reserved Sets yet 
+             to be created. Template IDs of Data Sets are 
+             numbered from 256 to 65535.
                 
-             Typically, this Information Element is used for limiting
-             the scope of other Information Elements.
-             Note that after a re-start of the Exporting Process Template
-             identifiers may be re-assigned.</artwork>
+             Typically, this Information Element is used for 
+             limiting the scope of other Information Elements.
+             Note that after a re-start of the Exporting Process 
+             Template identifiers may be re-assigned.</artwork>
       </figure>
    </section>
    <section title="collectorIPv4Address">
       <figure>
          <artwork>
 elementId: TBD
-name: collectorIPv4Address	
+name: collectorIPv4Address
 dataType: ipv4Address
 dataTypeSemantics: default
 status: current
-description: An IPv4 address to which the Exporting Process sends Flow
-             information.</artwork>
+description: An IPv4 address to which the Exporting Process sends 
+             Flow information.</artwork>
       </figure>
    </section>
    <section title="collectorIPv6Address">
       <figure>
          <artwork>
 elementId: TBD
-name: collectorIPv6Address	
+name: collectorIPv6Address
 dataType: ipv6Address
 dataTypeSemantics: default
 status: current
-description: An IPv6 address to which the Exporting Process sends Flow
-             information.</artwork>
+description: An IPv6 address to which the Exporting Process sends 
+             Flow information.</artwork>
       </figure>
    </section>
    <section title="informationElementIndex">
       <figure>
          <artwork>
 elementId: TBD
-name: informationElementIndex	
+name: informationElementIndex
 dataType: unsigned16
 dataTypeSemantics: identifier
 status: current
 description: A zero-based index of an Information Element
-             referenced by informationElementId within a Template referenced by
-             templateId; used to disambiguate scope for templates containing
-             multiple identical Information Elements.</artwork>
+             referenced by informationElementId within a Template 
+             referenced by templateId; used to disambiguate 
+             scope for templates containing multiple identical 
+             Information Elements.</artwork>
       </figure>
    </section>
    <section title="basicList">
       <figure>
          <artwork>
 elementId: TBD
-name: basicList	
+name: basicList
 dataType: basicList
 dataTypeSemantics: list
 status: current
-description: Specifies a generic Information Element with a basicList abstract
-             data type.  For example, a list of port numbers, a list of
-             interface indexes, etc.</artwork>
+description: Specifies a generic Information Element with a 
+             basicList abstract data type.  For example, a list 
+             of port numbers, a list of interface indexes, etc.</artwork>
       </figure>
    </section>
    <section title="subTemplateList">
       <figure>
          <artwork>
 elementId: TBD
-name: subTemplateList	
+name: subTemplateList
 dataType: subTemplateList
 dataTypeSemantics: list
 status: current
-description: Specifies a generic Information Element with a subTemplateList
-             abstract data type.</artwork>
+description: Specifies a generic Information Element with a 
+             subTemplateList abstract data type.</artwork>
       </figure>
    </section>
    <section title="subTemplateMultiList">
       <figure>
          <artwork>
 elementId: TBD
-name: subTemplateMultiList	
+name: subTemplateMultiList
 dataType: subTemplateMultiList
 dataTypeSemantics: list
 status: current
@@ -2665,76 +2698,82 @@ description: Specifies a generic Information Element with a
       <figure>
          <artwork>
 elementId: TBD
-name: informationElementId	
+name: informationElementId
 dataType: unsigned16
 dataTypeSemantics: identifier
 status: current
-description: This Information Element contains the ID of another Information
-             Element.</artwork>
+description: This Information Element contains the ID of another 
+             Information Element.</artwork>
       </figure>
    </section>
    <section title="informationElementDataType">
       <figure>
          <artwork>
 elementId: TBD
-name: informationElementDataType	
+name: informationElementDataType
 dataType: unsigned8
 dataTypeSemantics: 
 status: current
 description: A description of the abstract data type of an IPFIX
-             information element.These are taken from the abstract data types
-             defined in section 3.1 of the IPFIX Information Model [RFC5102];
-             see that section for more information on the types described
-             in the informationElementDataType sub-registry.
+             information element.These are taken from the 
+             abstract data types defined in section 3.1 of the 
+             IPFIX Information Model [RFC5102]; see that section 
+             for more information on the types described in the 
+             informationElementDataType sub-registry.
                           
-             These types are registered in the IANA IPFIX Information Element
-             Data Type subregistry.  This subregistry is intended to assign
-             numbers for type names, not to provide a mechanism for adding data
-             types to the IPFIX Protocol, and as such requires a Standards
-             Action [RFC5226] to modify.</artwork>
+             These types are registered in the IANA IPFIX 
+             Information Element Data Type subregistry.  This 
+             subregistry is intended to assign numbers for type 
+             names, not to provide a mechanism for adding data 
+             types to the IPFIX Protocol, and as such requires a 
+             Standards Action [RFC5226] to modify.</artwork>
       </figure>
    </section>
    <section title="informationElementDescription">
       <figure>
          <artwork>
 elementId: TBD
-name: informationElementDescription	
+name: informationElementDescription
 dataType: string
 dataTypeSemantics: default
 status: current
-description: A UTF-8 [RFC3629] encoded Unicode string containing a
-             human-readable description of an Information Element.  The content
-             of the informationElementDescription MAY be annotated with one or
-             more language tags [RFC4646], encoded in-line [RFC2482] within the
-             UTF-8 string, in order to specify the language in which the
-             description is written.  Description text in multiple languages
-             MAY tag each section with its own language tag; in this case, the
-             description information in each language SHOULD have equivalent
-             meaning.  In the absence of any language tag, the "i-default"
-             [RFC2277] language SHOULD be assumed.  See the Security
-             Considerations section for notes on string handling for
-             Information Element type records.</artwork>
+description: A UTF-8 [RFC3629] encoded Unicode string containing 
+             a human-readable description of an Information 
+             Element.  The content of the 
+             informationElementDescription MAY be annotated with 
+             one or more language tags [RFC4646], encoded 
+             in-line [RFC2482] within the UTF-8 string, in order 
+             to specify the language in which the description is 
+             written.  Description text in multiple languages MAY 
+             tag each section with its own language tag; in this 
+             case, the description information in each language 
+             SHOULD have equivalent meaning.  In the absence of 
+             any language tag, the "i-default" [RFC2277] language 
+             SHOULD be assumed.  See the Security Considerations 
+             section for notes on string handling for Information 
+             Element type records.</artwork>
       </figure>
    </section>
    <section title="informationElementName">
       <figure>
          <artwork>
 elementId: TBD
-name: informationElementName	
+name: informationElementName
 dataType: string
 dataTypeSemantics: default
 status: current
 description: A UTF-8 [RFC3629] encoded Unicode string containing
-             the name of an Information Element, intended as a simple
-             identifier.  See the Security Considerations section for notes on
-             string handling for Information Element type records.</artwork>
+             the name of an Information Element, intended as a 
+             simple identifier.  See the Security Considerations 
+             section for notes on string handling for Information 
+             Element type records.</artwork>
       </figure>
    </section>
    <section title="informationElementRangeBegin">
       <figure>
          <artwork>
 elementId: TBD
-name: informationElementRangeBegin	
+name: informationElementRangeBegin
 dataType: unsigned64
 dataTypeSemantics: quantity
 status: current
@@ -2746,7 +2785,7 @@ description: Contains the inclusive low end of the range of
       <figure>
          <artwork>
 elementId: TBD
-name: informationElementRangeEnd	
+name: informationElementRangeEnd
 dataType: unsigned64
 dataTypeSemantics: quantity
 status: current
@@ -2758,55 +2797,59 @@ description: Contains the inclusive high end of the range of
 <figure>
    <artwork>
 elementId: TBD
-name: informationElementSemantics	
+name: informationElementSemantics
 dataType: unsigned8
 dataTypeSemantics: 
 status: current
 description: A description of the semantics of an IPFIX 
-             Information Element.  These are taken from the data type 
-             semantics defined in section 3.2 of the IPFIX Information 
-             Model [RFC5102]; see that section for more information 
-             on the types defined in the informationElementSemantics 
-             sub-registry.  This field may take the values in Table ; 
-             the special value 0x00 (default) is used to note that 
-             no semantics apply to the field; it cannot be manipulated 
-             by a Collecting Process or File Reader that does not 
-             understand it a priori.
+             Information Element.  These are taken from the data 
+             type semantics defined in section 3.2 of the IPFIX 
+             Information Model [RFC5102]; see that section for 
+             more information on the types defined in the 
+             informationElementSemantics sub-registry.  This 
+             field may take the values in Table ; the special 
+             value 0x00 (default) is used to note that no 
+             semantics apply to the field; it cannot be 
+             manipulated by a Collecting Process or File Reader 
+             that does not understand it a priori.
                        
              These semantics are registered in the IANA IPFIX 
-             Information Element Semantics subregistry.  This subregistry 
-             is intended to assign numbers for semantics names, not 
-             to provide a mechanism for adding semantics to the 
-             IPFIX Protocol, and as such requires a Standards 
-             Action [RFC5226] to modify.</artwork>
+             Information Element Semantics subregistry.  This 
+             subregistry is intended to assign numbers for 
+             semantics names, not to provide a mechanism for 
+             adding semantics to the IPFIX Protocol, and as such 
+             requires a Standards Action [RFC5226] to modify.</artwork>
   </figure>
 </section>
    <section title="informationElementUnits">
       <figure>
          <artwork>
 elementId: TBD
-name: informationElementUnits	
+name: informationElementUnits
 dataType: unsigned16
 dataTypeSemantics: 
 status: current
 description: A description of the units of an IPFIX Information
-             Element.  These correspond to the units implicitly defined in the
-             Information Element definitions in section 5 of the IPFIX
-             Information Model [RFC5102]; see that section for more information
-             on the types described in the informationElementsUnits sub-registry.  
-             This field may take the values in Table 3 below; the special value 
-             0x00 (none) is used to note that the field is unitless.
+             Element.  These correspond to the units implicitly 
+             defined in the Information Element definitions in 
+             section 5 of the IPFIX Information Model [RFC5102]; 
+             see that section for more information on the types 
+             described in the informationElementsUnits 
+             sub-registry. This field may take the values in 
+             Table 3 below; the special value 0x00 (none) is 
+             used to note that the field is unitless.
                           
-             These types are registered in the IANA IPFIX Information Element
-             Units subregistry; new types may be added on a First Come First
-             Served [RFC5226] basis.</artwork>
+             These types are registered in the IANA IPFIX 
+             Information Element Units subregistry; new types 
+             may be added on a First Come First Served [RFC5226] 
+             basis.</artwork>
       </figure>
    </section>
    <section title="userName">
       <figure>
          <artwork>
 elementId: TBD
-name: userName	
+name: userName
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -2817,29 +2860,31 @@ description: User name associated with the flow.</artwork>
       <figure>
          <artwork>
 elementId: TBD
-name: applicationCategoryName	
+name: applicationCategoryName
 dataType: string
 dataTypeSemantics: default
 status: current
-description: An attribute that provides a first level categorization for
-             each Application ID.</artwork>
+description: An attribute that provides a first level 
+             categorization for each Application ID.</artwork>
       </figure>
    </section>
    <section title="mibObjectValueInteger">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueInteger	
+name: mibObjectValueInteger
 dataType: signed64
 dataTypeSemantics: identifier
 status: current
 description: An IPFIX Information Element which denotes that the
-             integer value of a MIB object will be exported.  The MIB Object
-             Identifier ("mibObjectIdentifier") for this field MUST be exported
-             in a MIB Field Option or via another means.  This Information
-             Element is used for MIB objects with the Base Syntax of Integer32
-             and INTEGER with IPFIX Reduced Size Encoding used as required.
-             The value is encoded as per the standard IPFIX Abstract Data Type
+             integer value of a MIB object will be exported.  
+             The MIB Object Identifier ("mibObjectIdentifier") 
+             for this field MUST be exported in a MIB Field 
+             Option or via another means.  This Information
+             Element is used for MIB objects with the Base 
+             Syntax of Integer32 and INTEGER with IPFIX Reduced 
+             Size Encoding used as required. The value is 
+             encoded as per the standard IPFIX Abstract Data Type
              of signed64.</artwork>
       </figure>
    </section>
@@ -2847,91 +2892,102 @@ description: An IPFIX Information Element which denotes that the
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueOctetString	
+name: mibObjectValueOctetString
 dataType: octetArray
 dataTypeSemantics: default
 status: current
 description: An IPFIX Information Element which denotes that an
-             Octet String or Opaque value of a MIB object will be exported.
-             The MIB Object Identifier ("mibObjectIdentifier") for this field
-             MUST be exported in a MIB Field Option or via another means.  This
-             Information Element is used for MIB objects with the Base Syntax
-             of OCTET STRING and Opaque.  The value is encoded as per the
-             standard IPFIX Abstract Data Type of octetArray.</artwork>
+             Octet String or Opaque value of a MIB object will 
+             be exported. The MIB Object Identifier 
+             ("mibObjectIdentifier") for this field MUST be 
+             exported in a MIB Field Option or via another means. 
+             This Information Element is used for MIB objects 
+             with the Base Syntax of OCTET STRING and Opaque. The 
+             value is encoded as per the standard IPFIX Abstract 
+             Data Type of octetArray.</artwork>
       </figure>
    </section>
    <section title="mibObjectValueOID">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueOID	
+name: mibObjectValueOID
 dataType: octetArray
 dataTypeSemantics: default
 status: current
 description: An IPFIX Information Element which denotes that an
-             Object Identifier or OID value of a MIB object will be exported.
-             The MIB Object Identifier ("mibObjectIdentifier") for this field
-             MUST be exported in a MIB Field Option or via another means.  This
-             Information Element is used for MIB objects with the Base Syntax
-             of OBJECT IDENTIFIER.  Note - In this case the
-             "mibObjectIdentifier" will define which MIB object is being
-             exported while the value contained in this Information Element
-             will be an OID as a value.  The mibObjectValueOID Information
-             Element is encoded as ASN.1/BER [BER] in an octetArray.</artwork>
+             Object Identifier or OID value of a MIB object will 
+             be exported. The MIB Object Identifier 
+             ("mibObjectIdentifier") for this field MUST be 
+             exported in a MIB Field Option or via another means.  
+             This Information Element is used for MIB objects 
+             with the Base Syntax of OBJECT IDENTIFIER.  Note - 
+             In this case the "mibObjectIdentifier" will define 
+             which MIB object is being exported while the value 
+             contained in this Information Element will be an 
+             OID as a value.  The mibObjectValueOID Information
+             Element is encoded as ASN.1/BER [BER] in an 
+             octetArray.</artwork>
       </figure>
    </section>
    <section title="mibObjectValueBits">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueBits	
+name: mibObjectValueBits
 dataType: octetArray
 dataTypeSemantics: flags
 status: current
-description: An IPFIX Information Element which denotes that a set
-             of Enumerated flags or bits from a MIB object will be exported.
-             The MIB Object Identifier ("mibObjectIdentifier") for this field
-             MUST be exported in a MIB Field Option or via another means.  This
-             Information Element is used for MIB objects with the Base Syntax
-             of BITS.  The flags or bits are encoded as per the standard IPFIX
-             Abstract Data Type of octetArray, with sufficient length to
-             accommodate the required number of bits.  If the number of bits is
-             not an integer multiple of octets then the most significant bits
-             at end of the octetArray MUST be set to zero.</artwork>
+description: An IPFIX Information Element which denotes that a 
+             set of Enumerated flags or bits from a MIB object 
+             will be exported. The MIB Object Identifier 
+             ("mibObjectIdentifier") for this field MUST be 
+             exported in a MIB Field Option or via another means.  
+             This Information Element is used for MIB objects 
+             with the Base Syntax of BITS.  The flags or bits are 
+             encoded as per the standard IPFIX Abstract Data Type 
+             of octetArray, with sufficient length to accommodate 
+             the required number of bits.  If the number of bits 
+             is not an integer multiple of octets then the most 
+             significant bits at end of the octetArray MUST be 
+             set to zero.</artwork>
       </figure>
    </section>
    <section title="mibObjectValueIPAddress">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueIPAddress	
+name: mibObjectValueIPAddress
 dataType: ipv4Address
 dataTypeSemantics: default
 status: current
 description: An IPFIX Information Element which denotes that the
-             IPv4 Address of a MIB object will be exported.  The MIB Object
-             Identifier ("mibObjectIdentifier") for this field MUST be exported
-             in a MIB Field Option or via another means.  This Information
-             Element is used for MIB objects with the Base Syntax of IPaddress.
-             The value is encoded as per the standard IPFIX Abstract Data Type
-             of ipv4Address.</artwork>
+             IPv4 Address of a MIB object will be exported.  The 
+             MIB Object Identifier ("mibObjectIdentifier") for 
+             this field MUST be exported in a MIB Field Option 
+             or via another means.  This Information Element is 
+             used for MIB objects with the Base Syntax of 
+             IPaddress. The value is encoded as per the standard 
+             IPFIX Abstract Data Type of ipv4Address.</artwork>
       </figure>
    </section>
    <section title="mibObjectValueCounter">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueCounter	
+name: mibObjectValueCounter
 dataType: unsigned64
 dataTypeSemantics: snmpCounter
 status: current
 description: An IPFIX Information Element which denotes that the
-             counter value of a MIB object will be exported.  The MIB Object
-             Identifier ("mibObjectIdentifier") for this field MUST be exported
-             in a MIB Field Option or via another means.  This Information
-             Element is used for MIB objects with the Base Syntax of Counter32
-             or Counter64 with IPFIX Reduced Size Encoding used as required.
-             The value is encoded as per the standard IPFIX Abstract Data Type
+             counter value of a MIB object will be exported.  
+             The MIB Object Identifier ("mibObjectIdentifier") 
+             for this field MUST be exported in a MIB Field 
+             Option or via another means.  This Information 
+             Element is used for MIB objects with the Base 
+             Syntax of Counter32 or Counter64 with IPFIX Reduced 
+             Size Encoding used as required. The value is encoded 
+             as per the standard IPFIX Abstract Data Type
              of unsigned64.</artwork>
       </figure>
    </section>
@@ -2939,18 +2995,20 @@ description: An IPFIX Information Element which denotes that the
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueGauge	
+name: mibObjectValueGauge
 dataType: unsigned32
 dataTypeSemantics: snmpGauge
 status: current
 description: An IPFIX Information Element which denotes that the
-             Gauge value of a MIB object will be exported.  The MIB Object
-             Identifier ("mibObjectIdentifier") for this field MUST be exported
-             in a MIB Field Option or via another means.  This Information
-             Element is used for MIB objects with the Base Syntax of Gauge32.
-             The value is encoded as per the standard IPFIX Abstract Data Type
-             of unsigned64.  This value will represent a non-negative integer,
-             which may increase or decrease, but shall never exceed a maximum
+             Gauge value of a MIB object will be exported.  The 
+             MIB Object Identifier ("mibObjectIdentifier") for 
+             this field MUST be exported in a MIB Field Option 
+             or via another means.  This Information Element is 
+             used for MIB objects with the Base Syntax of Gauge32.
+             The value is encoded as per the standard IPFIX 
+             Abstract Data Type of unsigned64.  This value will 
+             represent a non-negative integer, which may increase 
+             or decrease, but shall never exceed a maximum
              value, nor fall below a minimum value.</artwork>
       </figure>
    </section>
@@ -2958,34 +3016,37 @@ description: An IPFIX Information Element which denotes that the
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueTimeTicks	
+name: mibObjectValueTimeTicks
 dataType: unsigned32
 dataTypeSemantics: default
 status: current
 description: An IPFIX Information Element which denotes that the
-             TimeTicks value of a MIB object will be exported.  The MIB Object
-             Identifier ("mibObjectIdentifier") for this field MUST be exported
-             in a MIB Field Option or via another means.  This Information
-             Element is used for MIB objects with the Base Syntax of TimeTicks.
-             The value is encoded as per the standard IPFIX Abstract Data Type
-             of unsigned32.</artwork>
+             TimeTicks value of a MIB object will be exported.  
+             The MIB Object Identifier ("mibObjectIdentifier") 
+             for this field MUST be exported in a MIB Field 
+             Option or via another means.  This Information 
+             Element is used for MIB objects with the Base 
+             Syntax of TimeTicks. The value is encoded as per 
+             the standard IPFIX Abstract Data Type of unsigned32.</artwork>
       </figure>
    </section>
    <section title="mibObjectValueUnsigned">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueUnsigned	
+name: mibObjectValueUnsigned
 dataType: unsigned64
 dataTypeSemantics: identifier
 status: current
 description: An IPFIX Information Element which denotes that an
-             unsigned integer value of a MIB object will be exported.  The MIB
-             Object Identifier ("mibObjectIdentifier") for this field MUST be
-             exported in a MIB Field Option or via another means.  This
-             Information Element is used for MIB objects with the Base Syntax
-             of unsigned64 with IPFIX Reduced Size Encoding used as required.
-             The value is encoded as per the standard IPFIX Abstract Data Type
+             unsigned integer value of a MIB object will be 
+             exported.  The MIB Object Identifier 
+             ("mibObjectIdentifier") for this field MUST be
+             exported in a MIB Field Option or via another means.  
+             This Information Element is used for MIB objects 
+             with the Base Syntax of unsigned64 with IPFIX 
+             Reduced Size Encoding used as required. The value is 
+             encoded as per the standard IPFIX Abstract Data Type
              of unsigned64.</artwork>
       </figure>
    </section>
@@ -2993,93 +3054,105 @@ description: An IPFIX Information Element which denotes that an
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueTable	
+name: mibObjectValueTable
 dataType: subTemplateList
 dataTypeSemantics: list
 status: current
-description: An IPFIX Information Element which denotes that a
-             complete or partial conceptual table will be exported.  The MIB
-             Object Identifier ("mibObjectIdentifier") for this field MUST be
-             exported in a MIB Field Option or via another means.  This
-             Information Element is used for MIB objects with a SYNTAX of
-             SEQUENCE.  This is encoded as a subTemplateList of mibObjectValue
-             Information Elements.  The template specified in the
-             subTemplateList MUST be an Options Template and MUST include all
-             the Objects listed in the INDEX clause as Scope Fields.</artwork>
+description: An IPFIX Information Element which denotes that a 
+             complete or partial conceptual table will be 
+             exported.  The MIB Object Identifier 
+             ("mibObjectIdentifier") for this field MUST be 
+             exported in a MIB Field Option or via another means.  
+             This Information Element is used for MIB objects 
+             with a SYNTAX of SEQUENCE.  This is encoded as a 
+             subTemplateList of mibObjectValue Information 
+             Elements.  The template specified in the
+             subTemplateList MUST be an Options Template and 
+             MUST include all the Objects listed in the INDEX 
+             clause as Scope Fields.</artwork>
       </figure>
    </section>
    <section title="mibObjectValueRow">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectValueRow	
+name: mibObjectValueRow
 dataType: subTemplateList
 dataTypeSemantics: list
 status: current
-description: An IPFIX Information Element which denotes that a
-             single row of a conceptual table will be exported.  The MIB Object
-             Identifier ("mibObjectIdentifier") for this field MUST be exported
-             in a MIB Field Option or via another means.  This Information
-             Element is used for MIB objects with a SYNTAX of SEQUENCE.  This
-             is encoded as a subTemplateList of mibObjectValue Information
-             Elements.  The subTemplateList exported MUST contain exactly one
-             row (i.e., one instance of the subtemplate).  The template
-             specified in the subTemplateList MUST be an Options Template and
-             MUST include all the Objects listed in the INDEX clause as Scope
-             Fields.</artwork>
+description: An IPFIX Information Element which denotes that a 
+             single row of a conceptual table will be exported.  
+             The MIB Object Identifier ("mibObjectIdentifier") 
+             for this field MUST be exported in a MIB Field 
+             Option or via another means.  This Information 
+             Element is used for MIB objects with a SYNTAX of 
+             SEQUENCE.  This is encoded as a subTemplateList of 
+             mibObjectValue Information Elements.  The 
+             subTemplateList exported MUST contain exactly one 
+             row (i.e., one instance of the subtemplate).  The 
+             template specified in the subTemplateList MUST be 
+             an Options Template and MUST include all the 
+             Objects listed in the INDEX clause as Scope Fields.</artwork>
       </figure>
    </section>
    <section title="mibObjectIdentifier">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectIdentifier	
+name: mibObjectIdentifier
 dataType: octetArray
 dataTypeSemantics: default
 status: current
-description: An IPFIX Information Element which denotes that a MIB
-             Object Identifier (MIB OID) is exported in the (Options) Template
-             Record.  The mibObjectIdentifier Information Element contains the
-             OID assigned to the MIB Object Type Definition encoded as ASN.1/
-             BER [BER].</artwork>
+description: An IPFIX Information Element which denotes that a 
+             MIB Object Identifier (MIB OID) is exported in the 
+             (Options) Template Record.  The mibObjectIdentifier 
+             Information Element contains the OID assigned to 
+             the MIB Object Type Definition encoded as 
+             ASN.1/BER [BER].</artwork>
       </figure>
    </section>
    <section title="mibSubIdentifier">
       <figure>
          <artwork>
 elementId: TBD
-name: mibSubIdentifier	
+name: mibSubIdentifier
 dataType: unsigned32
 dataTypeSemantics: identifier
 status: current
-description: A non-negative sub-identifier of an Object Identifier (OID).</artwork>
+description: A non-negative sub-identifier of an Object 
+             Identifier (OID).</artwork>
       </figure>
    </section>
    <section title="mibIndexIndicator">
       <figure>
          <artwork>
 elementId: TBD
-name: mibIndexIndicator	
+name: mibIndexIndicator
 dataType: unsigned64
 dataTypeSemantics: flags
 status: current
 description: This set of bit fields is used for marking the
-             Information Elements of a Data Record that serve as INDEX MIB
-             objects for an indexed Columnar MIB object.  Each bit represents
-             an Information Element in the Data Record with the n-th bit
-             representing the n-th Information Element.  A bit set to value 1
-             indicates that the corresponding Information Element is an index
-             of the Columnar Object represented by the mibFieldValue.  A bit
-             set to value 0 indicates that this is not the case.
+             Information Elements of a Data Record that serve as 
+             INDEX MIB objects for an indexed Columnar MIB 
+             object.  Each bit represents an Information Element 
+             in the Data Record with the n-th bit representing 
+             the n-th Information Element.  A bit set to value 1
+             indicates that the corresponding Information Element 
+             is an index of the Columnar Object represented by 
+             the mibFieldValue.  A bit set to value 0 indicates 
+             that this is not the case.
                             
-             If the Data Record contains more than 64 Information Elements, the
-             corresponding Template SHOULD be designed such that all INDEX
-             Fields are among the first 64 Information Elements, because the
-             mibIndexIndicator only contains 64 bits.  If the Data Record
-             contains less than 64 Information Elements, then the extra bits in
-             the mibIndexIndicator for which no corresponding Information
-             Element exists MUST have the value 0, and must be disregarded by
-             the Collector.  This Information Element may be exported with
+             If the Data Record contains more than 64 
+             Information Elements, the corresponding Template 
+             SHOULD be designed such that all INDEX
+             Fields are among the first 64 Information Elements, 
+             because the mibIndexIndicator only contains 64 bits.  
+             If the Data Record contains less than 64 
+             Information Elements, then the extra bits in the 
+             mibIndexIndicator for which no corresponding 
+             Information Element exists MUST have the value 0, 
+             and must be disregarded by the Collector.  This 
+             Information Element may be exported with
              IPFIX Reduced Size Encoding.</artwork>
       </figure>
    </section>
@@ -3087,71 +3160,75 @@ description: This set of bit fields is used for marking the
       <figure>
          <artwork>
 elementId: TBD
-name: mibCaptureTimeSemantics	
+name: mibCaptureTimeSemantics
 dataType: unsigned8
 dataTypeSemantics: identifier
 status: current
 description: Indicates when in the lifetime of the flow the MIB
-             value was retrieved from the MIB for a mibObjectIdentifier.  This
-             is used to indicate if the value exported was collected from the
-             MIB closer to flow creation or flow export time and will refer to
-             the Timestamp fields included in the same record.  This field
-             SHOULD be used when exporting a mibObjectValue that specifies
-             counters or statistics.
+             value was retrieved from the MIB for a 
+             mibObjectIdentifier.  This is used to indicate if 
+             the value exported was collected from the MIB 
+             closer to flow creation or flow export time and 
+             will refer to the Timestamp fields included in the 
+             same record.  This field SHOULD be used when 
+             exporting a mibObjectValue that specifies counters 
+             or statistics.
                          
-             If the MIB value was sampled by SNMP prior to the IPFIX Metering
-             Process or Exporting Process retrieving the value (i.e., the data
-             is already stale) and it's important to know the exact sampling
-             time, then an additional observationTime* element should be paired
-             with the OID using structured data.  Similarly, if different
-             mibCaptureTimeSemantics apply to different mibObject elements
-             within the Data Record, then individual mibCaptureTimeSemantics
+             If the MIB value was sampled by SNMP prior to the 
+             IPFIX Metering Process or Exporting Process 
+             retrieving the value (i.e., the data is already 
+             stale) and it's important to know the exact sampling 
+             time, then an additional observationTime* element 
+             should be paired with the OID using structured data.  
+             Similarly, if different mibCaptureTimeSemantics 
+             apply to different mibObject elements within the 
+             Data Record, then individual mibCaptureTimeSemantics
              should be paired with each OID using structured data.           
                           
              Values:           
              0.  undefined
-             1.  begin - The value for the MIB object is captured from the
-             MIB when the Flow is first observed
-             2.  end - The value for the MIB object is captured from the MIB
-             when the Flow ends
-             3.  export - The value for the MIB object is captured from the
-             MIB at export time
-             4.  average - The value for the MIB object is an average of
-             multiple captures from the MIB over the observed life of the
-             Flow</artwork>
+             1.  begin - The value for the MIB object is captured 
+             from the MIB when the Flow is first observed
+             2.  end - The value for the MIB object is captured 
+             from the MIB when the Flow ends
+             3.  export - The value for the MIB object is 
+             captured from the MIB at export time
+             4.  average - The value for the MIB object is an 
+             average of multiple captures from the MIB over the 
+             observed life of the Flow</artwork>
       </figure>
    </section>
    <section title="mibContextEngineID">
       <figure>
          <artwork>
 elementId: TBD
-name: mibContextEngineID	
+name: mibContextEngineID
 dataType: octetArray
 dataTypeSemantics: default
 status: current
 description: A mibContextEngineID that specifies the SNMP engine
-             ID for a MIB field being exported over IPFIX.  Definition as per
-             [RFC3411] section 3.3.</artwork>
+             ID for a MIB field being exported over IPFIX.  
+             Definition as per [RFC3411] section 3.3.</artwork>
       </figure>
    </section>
    <section title="mibContextName">
       <figure>
          <artwork>
 elementId: TBD
-name: mibContextName	
+name: mibContextName
 dataType: string
 dataTypeSemantics: default
 status: current
 description: This Information Element denotes that a MIB Context
-             Name is specified for a MIB field being exported over IPFIX. 
-             Reference [RFC3411] section 3.3.</artwork>
+             Name is specified for a MIB field being exported 
+             over IPFIX. Reference [RFC3411] section 3.3.</artwork>
       </figure>
    </section>
    <section title="mibObjectName">
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectName	
+name: mibObjectName
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -3163,7 +3240,7 @@ description: The name (called a descriptor in [RFC2578]
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectDescription	
+name: mibObjectDescription
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -3175,20 +3252,20 @@ description: The value of the DESCRIPTION clause of an MIB object
       <figure>
          <artwork>
 elementId: TBD
-name: mibObjectSyntax	
+name: mibObjectSyntax
 dataType: string
 dataTypeSemantics: default
 status: current
 description: The value of the SYNTAX clause of an MIB object type
-             definition, which may include a Textual Convention or Subtyping.
-             See [RFC2578].</artwork>
+             definition, which may include a Textual Convention 
+             or Subtyping. See [RFC2578].</artwork>
       </figure>
    </section>
    <section title="mibModuleName">
       <figure>
          <artwork>
 elementId: TBD
-name: mibModuleName	
+name: mibModuleName
 dataType: string
 dataTypeSemantics: default
 status: current
@@ -3202,7 +3279,8 @@ description: The textual name of the MIB module that defines a MIB
 
         <section title="SACM Usage Scenario Example">
             
-            <t>TODO: this section needs to refer out to wherever the operations / generalized workflow
+            <t>TODO: this section needs to refer out to wherever 
+                the operations / generalized workflow
                 content ends up</t>
             <t>TODO: revise to eliminate graph references</t>
 
@@ -3432,8 +3510,8 @@ description: The textual name of the MIB module that defines a MIB
 
         <references title="Informative References">
             <!-- Here we use entities that we defined at the beginning. --> &RFC3411; &RFC3416;
-            &RFC3418; &RFC3444; &RFC3580; &RFC3954; &RFC4287; &RFC4949; &RFC5201; &RFC5209;
-            &RFC5424; &RFC5792; &RFC5793; &RFC6020; &RFC6241;
+            &RFC3418; &RFC3580; &RFC4287; &RFC4949; &RFC5201; &RFC5209;
+            &RFC5792; &RFC5793; &RFC6020; &RFC6241;
             &RFC6876; &RFC7012; &RFC7013; &RFC7171; &RFC7632;
             
             &I-D.ietf-sacm-requirements; &I-D.ietf-sacm-terminology;
