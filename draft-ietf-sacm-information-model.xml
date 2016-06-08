@@ -799,6 +799,10 @@
                 <t>The type "macAddress" represents a MAC-48 address 
                   as defined in [IEEE.802-3.2012].</t>
               </section>
+              <section title="octetArray">
+                <t>The type "octetArray" represents a finite-length
+                string of octets.</t>
+              </section>
               <section title="string">
                 <t>The type "string" represents a finite-length 
                   string of valid characters from the Unicode coded 
@@ -829,6 +833,22 @@
               <section title="ipv6Address">
                 <t>The type "ipv6Address" represents an IPv6 address as
                   defined in <xref target="RFC3587"/>.</t>
+              </section>
+              <section title="ciscoTrainSoftwareVersion">
+                  <t>The type "ciscoTrainSoftwareVersion" represents 
+                      a software version that conforms to the Cisco 
+                      IOS Train string format.</t>
+              </section>
+              <section title="rpmSoftwareVersion">
+                  <t>The type "rpmSoftwareVersion" represents a
+                      software version that conforms to the 
+                      EPOCH:VERSION-RELEASE format.</t>
+              </section>
+              <section title="simpleSoftwareVersion">
+                  <t>The type "simpleSoftwareVersion" represents 
+                      a software version that is a hierarchical 
+                      list of non-negative integers separated by 
+                      a single character delimiter.</t>
               </section>
               <section title="basicList">
                 <t>The type "basicList" represents a list of zero or 
@@ -2117,12 +2137,12 @@ description: The software developer (e.g., vendor or author).
       </artwork>
     </figure>
   </section>
-  <section title="simpleVersion">
+  <section title="simpleSoftwareVersion">
     <figure>
       <artwork>
 elementId: TBD
-name: simpleVersion
-dataType: simpleVersionType
+name: simpleSoftwareVersion
+dataType: simpleVersion
 dataTypeSemantics: default
 status: current
 description: The version string for a software application that
@@ -2130,12 +2150,12 @@ description: The version string for a software application that
       </artwork>
     </figure>
   </section>
-  <section title="rpmVersion">
+  <section title="rpmSoftwareVersion">
     <figure>
       <artwork>
 elementId: TBD
-name: rpmVersion
-dataType: rpmVersionType
+name: rpmSoftwareVersion
+dataType: rpmVersion
 dataTypeSemantics: default
 status: current
 description: The version string for a software application that
@@ -2143,12 +2163,12 @@ description: The version string for a software application that
       </artwork>
     </figure>
   </section>
-  <section title="ciscoTrainVersion">
+  <section title="ciscoTrainSoftwareVersion">
     <figure>
       <artwork>
 elementId: TBD
-name: ciscoTrainVersion
-dataType: ciscoTrainVersionType
+name: ciscoTrainSoftwareVersion
+dataType: ciscoTrainVersion
 dataTypeSemantics: default
 status: current
 description: The version string for a software application that
@@ -2171,9 +2191,9 @@ description: The version of the software application. Software
              element.
 
 softwareVersion(basicList, exactlyOneOf,
-                simpleVersion,
-                rpmVersion,
-                ciscoTrainVersion,
+                simpleSoftwareVersion,
+                rpmSoftwareVersion,
+                ciscoTrainSoftwareVersion,
                 ...
                )     
       </artwork>
@@ -2494,18 +2514,6 @@ status: current
 description: The IP version field in the IP packet header.</artwork>
       </figure>
    </section>
-   <section title="interfaceName">
-      <figure>
-         <artwork>
-elementId: TBD
-name: interfaceName
-dataType: string
-dataTypeSemantics: default
-status: current
-description: A short name uniquely describing an interface, 
-             eg "Eth1/0".</artwork>
-      </figure>
-   </section>
    <section title="interfaceDescription">
       <figure>
          <artwork>
@@ -2655,43 +2663,6 @@ description: A zero-based index of an Information Element
              referenced by templateId; used to disambiguate 
              scope for templates containing multiple identical 
              Information Elements.</artwork>
-      </figure>
-   </section>
-   <section title="basicList">
-      <figure>
-         <artwork>
-elementId: TBD
-name: basicList
-dataType: basicList
-dataTypeSemantics: list
-status: current
-description: Specifies a generic Information Element with a 
-             basicList abstract data type.  For example, a list 
-             of port numbers, a list of interface indexes, etc.</artwork>
-      </figure>
-   </section>
-   <section title="subTemplateList">
-      <figure>
-         <artwork>
-elementId: TBD
-name: subTemplateList
-dataType: subTemplateList
-dataTypeSemantics: list
-status: current
-description: Specifies a generic Information Element with a 
-             subTemplateList abstract data type.</artwork>
-      </figure>
-   </section>
-   <section title="subTemplateMultiList">
-      <figure>
-         <artwork>
-elementId: TBD
-name: subTemplateMultiList
-dataType: subTemplateMultiList
-dataTypeSemantics: list
-status: current
-description: Specifies a generic Information Element with a
-             subTemplateMultiList abstract data type.</artwork>
       </figure>
    </section>
    <section title="informationElementId">
