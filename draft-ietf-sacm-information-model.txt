@@ -101,11 +101,11 @@ Table of Contents
          4.10.1.10. float64  . . . . . . . . . . . . . . . . . . . .  21
          4.10.1.11. boolean  . . . . . . . . . . . . . . . . . . . .  21
          4.10.1.12. macAddress . . . . . . . . . . . . . . . . . . .  21
-         4.10.1.13. string . . . . . . . . . . . . . . . . . . . . .  21
-         4.10.1.14. dateTimeSeconds  . . . . . . . . . . . . . . . .  21
-         4.10.1.15. dateTimeMilliseconds . . . . . . . . . . . . . .  21
-         4.10.1.16. dateTimeMicroseconds . . . . . . . . . . . . . .  22
-         4.10.1.17. dateTimeNanoseconds  . . . . . . . . . . . . . .  22
+         4.10.1.13. octetArray . . . . . . . . . . . . . . . . . . .  21
+         4.10.1.14. string . . . . . . . . . . . . . . . . . . . . .  21
+         4.10.1.15. dateTimeSeconds  . . . . . . . . . . . . . . . .  21
+         4.10.1.16. dateTimeMilliseconds . . . . . . . . . . . . . .  22
+         4.10.1.17. dateTimeMicroseconds . . . . . . . . . . . . . .  22
 
 
 
@@ -114,17 +114,21 @@ Waltermire, et al.      Expires December 10, 2016               [Page 2]
 Internet-Draft           SACM Information Model                June 2016
 
 
-         4.10.1.18. ipv4Address  . . . . . . . . . . . . . . . . . .  22
-         4.10.1.19. ipv6Address  . . . . . . . . . . . . . . . . . .  22
-         4.10.1.20. basicList  . . . . . . . . . . . . . . . . . . .  22
-         4.10.1.21. subTemplateList  . . . . . . . . . . . . . . . .  22
-         4.10.1.22. subTemplateMultiList . . . . . . . . . . . . . .  22
-       4.10.2.  Data Type Semantics  . . . . . . . . . . . . . . . .  22
+         4.10.1.18. dateTimeNanoseconds  . . . . . . . . . . . . . .  22
+         4.10.1.19. ipv4Address  . . . . . . . . . . . . . . . . . .  22
+         4.10.1.20. ipv6Address  . . . . . . . . . . . . . . . . . .  22
+         4.10.1.21. ciscoTrainSoftwareVersion  . . . . . . . . . . .  22
+         4.10.1.22. rpmSoftwareVersion . . . . . . . . . . . . . . .  22
+         4.10.1.23. simpleSoftwareVersion  . . . . . . . . . . . . .  22
+         4.10.1.24. basicList  . . . . . . . . . . . . . . . . . . .  22
+         4.10.1.25. subTemplateList  . . . . . . . . . . . . . . . .  23
+         4.10.1.26. subTemplateMultiList . . . . . . . . . . . . . .  23
+       4.10.2.  Data Type Semantics  . . . . . . . . . . . . . . . .  23
        4.10.3.  quantity . . . . . . . . . . . . . . . . . . . . . .  23
        4.10.4.  totalCounter . . . . . . . . . . . . . . . . . . . .  23
-       4.10.5.  deltaCounter . . . . . . . . . . . . . . . . . . . .  23
-       4.10.6.  identifier . . . . . . . . . . . . . . . . . . . . .  23
-       4.10.7.  flags  . . . . . . . . . . . . . . . . . . . . . . .  23
+       4.10.5.  deltaCounter . . . . . . . . . . . . . . . . . . . .  24
+       4.10.6.  identifier . . . . . . . . . . . . . . . . . . . . .  24
+       4.10.7.  flags  . . . . . . . . . . . . . . . . . . . . . . .  24
        4.10.8.  list . . . . . . . . . . . . . . . . . . . . . . . .  24
    5.  Information Model Assets  . . . . . . . . . . . . . . . . . .  24
      5.1.  Asset . . . . . . . . . . . . . . . . . . . . . . . . . .  25
@@ -158,10 +162,6 @@ Internet-Draft           SACM Information Model                June 2016
        6.4.1.  Form and Precise Meaning  . . . . . . . . . . . . . .  36
        6.4.2.  Asserter  . . . . . . . . . . . . . . . . . . . . . .  36
        6.4.3.  Example . . . . . . . . . . . . . . . . . . . . . . .  37
-       6.4.4.  A Use Case  . . . . . . . . . . . . . . . . . . . . .  37
-       6.4.5.  Difference between Attribute and Event  . . . . . . .  37
-     6.5.  Attribute-Value Pair  . . . . . . . . . . . . . . . . . .  38
-       6.5.1.  Unique Endpoint Identifier  . . . . . . . . . . . . .  39
 
 
 
@@ -170,6 +170,10 @@ Waltermire, et al.      Expires December 10, 2016               [Page 3]
 Internet-Draft           SACM Information Model                June 2016
 
 
+       6.4.4.  A Use Case  . . . . . . . . . . . . . . . . . . . . .  37
+       6.4.5.  Difference between Attribute and Event  . . . . . . .  37
+     6.5.  Attribute-Value Pair  . . . . . . . . . . . . . . . . . .  38
+       6.5.1.  Unique Endpoint Identifier  . . . . . . . . . . . . .  39
        6.5.2.  Posture Attribute . . . . . . . . . . . . . . . . . .  39
      6.6.  Evaluation Result . . . . . . . . . . . . . . . . . . . .  39
      6.7.  Organization? . . . . . . . . . . . . . . . . . . . . . .  40
@@ -194,9 +198,9 @@ Internet-Draft           SACM Information Model                June 2016
      6.18. softwareIdentifier  . . . . . . . . . . . . . . . . . . .  45
      6.19. softwareTitle . . . . . . . . . . . . . . . . . . . . . .  46
      6.20. softwareCreator . . . . . . . . . . . . . . . . . . . . .  46
-     6.21. simpleVersion . . . . . . . . . . . . . . . . . . . . . .  46
-     6.22. rpmVersion  . . . . . . . . . . . . . . . . . . . . . . .  46
-     6.23. ciscoTrainVersion . . . . . . . . . . . . . . . . . . . .  46
+     6.21. simpleSoftwareVersion . . . . . . . . . . . . . . . . . .  46
+     6.22. rpmSoftwareVersion  . . . . . . . . . . . . . . . . . . .  46
+     6.23. ciscoTrainSoftwareVersion . . . . . . . . . . . . . . . .  46
      6.24. softwareVersion . . . . . . . . . . . . . . . . . . . . .  47
      6.25. lastUpdated . . . . . . . . . . . . . . . . . . . . . . .  47
      6.26. softwareInstance  . . . . . . . . . . . . . . . . . . . .  47
@@ -214,10 +218,6 @@ Internet-Draft           SACM Information Model                June 2016
      6.38. sourceIPv4PrefixLength  . . . . . . . . . . . . . . . . .  51
      6.39. ingressInterface  . . . . . . . . . . . . . . . . . . . .  51
      6.40. destinationTransportPort  . . . . . . . . . . . . . . . .  52
-     6.41. sourceIPv6PrefixLength  . . . . . . . . . . . . . . . . .  52
-     6.42. sourceIPv4Prefix  . . . . . . . . . . . . . . . . . . . .  52
-     6.43. destinationIPv4Prefix . . . . . . . . . . . . . . . . . .  53
-     6.44. sourceMacAddress  . . . . . . . . . . . . . . . . . . . .  53
 
 
 
@@ -226,54 +226,54 @@ Waltermire, et al.      Expires December 10, 2016               [Page 4]
 Internet-Draft           SACM Information Model                June 2016
 
 
+     6.41. sourceIPv6PrefixLength  . . . . . . . . . . . . . . . . .  52
+     6.42. sourceIPv4Prefix  . . . . . . . . . . . . . . . . . . . .  52
+     6.43. destinationIPv4Prefix . . . . . . . . . . . . . . . . . .  53
+     6.44. sourceMacAddress  . . . . . . . . . . . . . . . . . . . .  53
      6.45. ipVersion . . . . . . . . . . . . . . . . . . . . . . . .  53
-     6.46. interfaceName . . . . . . . . . . . . . . . . . . . . . .  53
-     6.47. interfaceDescription  . . . . . . . . . . . . . . . . . .  53
-     6.48. applicationDescription  . . . . . . . . . . . . . . . . .  54
-     6.49. applicationId . . . . . . . . . . . . . . . . . . . . . .  54
-     6.50. applicationName . . . . . . . . . . . . . . . . . . . . .  54
-     6.51. exporterIPv4Address . . . . . . . . . . . . . . . . . . .  54
-     6.52. exporterIPv6Address . . . . . . . . . . . . . . . . . . .  54
-     6.53. portId  . . . . . . . . . . . . . . . . . . . . . . . . .  55
-     6.54. templateId  . . . . . . . . . . . . . . . . . . . . . . .  55
-     6.55. collectorIPv4Address  . . . . . . . . . . . . . . . . . .  56
-     6.56. collectorIPv6Address  . . . . . . . . . . . . . . . . . .  56
-     6.57. informationElementIndex . . . . . . . . . . . . . . . . .  56
-     6.58. basicList . . . . . . . . . . . . . . . . . . . . . . . .  56
-     6.59. subTemplateList . . . . . . . . . . . . . . . . . . . . .  57
-     6.60. subTemplateMultiList  . . . . . . . . . . . . . . . . . .  57
-     6.61. informationElementId  . . . . . . . . . . . . . . . . . .  57
-     6.62. informationElementDataType  . . . . . . . . . . . . . . .  57
-     6.63. informationElementDescription . . . . . . . . . . . . . .  58
-     6.64. informationElementName  . . . . . . . . . . . . . . . . .  58
-     6.65. informationElementRangeBegin  . . . . . . . . . . . . . .  59
-     6.66. informationElementRangeEnd  . . . . . . . . . . . . . . .  59
-     6.67. informationElementSemantics . . . . . . . . . . . . . . .  59
-     6.68. informationElementUnits . . . . . . . . . . . . . . . . .  60
-     6.69. userName  . . . . . . . . . . . . . . . . . . . . . . . .  61
-     6.70. applicationCategoryName . . . . . . . . . . . . . . . . .  61
-     6.71. mibObjectValueInteger . . . . . . . . . . . . . . . . . .  61
-     6.72. mibObjectValueOctetString . . . . . . . . . . . . . . . .  61
-     6.73. mibObjectValueOID . . . . . . . . . . . . . . . . . . . .  62
-     6.74. mibObjectValueBits  . . . . . . . . . . . . . . . . . . .  62
-     6.75. mibObjectValueIPAddress . . . . . . . . . . . . . . . . .  63
-     6.76. mibObjectValueCounter . . . . . . . . . . . . . . . . . .  63
-     6.77. mibObjectValueGauge . . . . . . . . . . . . . . . . . . .  64
-     6.78. mibObjectValueTimeTicks . . . . . . . . . . . . . . . . .  64
-     6.79. mibObjectValueUnsigned  . . . . . . . . . . . . . . . . .  65
-     6.80. mibObjectValueTable . . . . . . . . . . . . . . . . . . .  65
-     6.81. mibObjectValueRow . . . . . . . . . . . . . . . . . . . .  66
-     6.82. mibObjectIdentifier . . . . . . . . . . . . . . . . . . .  66
-     6.83. mibSubIdentifier  . . . . . . . . . . . . . . . . . . . .  67
-     6.84. mibIndexIndicator . . . . . . . . . . . . . . . . . . . .  67
-     6.85. mibCaptureTimeSemantics . . . . . . . . . . . . . . . . .  68
-     6.86. mibContextEngineID  . . . . . . . . . . . . . . . . . . .  69
-     6.87. mibContextName  . . . . . . . . . . . . . . . . . . . . .  70
-     6.88. mibObjectName . . . . . . . . . . . . . . . . . . . . . .  70
-     6.89. mibObjectDescription  . . . . . . . . . . . . . . . . . .  70
-     6.90. mibObjectSyntax . . . . . . . . . . . . . . . . . . . . .  70
-     6.91. mibModuleName . . . . . . . . . . . . . . . . . . . . . .  70
-   7.  SACM Usage Scenario Example . . . . . . . . . . . . . . . . .  71
+     6.46. interfaceDescription  . . . . . . . . . . . . . . . . . .  53
+     6.47. applicationDescription  . . . . . . . . . . . . . . . . .  53
+     6.48. applicationId . . . . . . . . . . . . . . . . . . . . . .  54
+     6.49. applicationName . . . . . . . . . . . . . . . . . . . . .  54
+     6.50. exporterIPv4Address . . . . . . . . . . . . . . . . . . .  54
+     6.51. exporterIPv6Address . . . . . . . . . . . . . . . . . . .  54
+     6.52. portId  . . . . . . . . . . . . . . . . . . . . . . . . .  54
+     6.53. templateId  . . . . . . . . . . . . . . . . . . . . . . .  55
+     6.54. collectorIPv4Address  . . . . . . . . . . . . . . . . . .  55
+     6.55. collectorIPv6Address  . . . . . . . . . . . . . . . . . .  55
+     6.56. informationElementIndex . . . . . . . . . . . . . . . . .  56
+     6.57. informationElementId  . . . . . . . . . . . . . . . . . .  56
+     6.58. informationElementDataType  . . . . . . . . . . . . . . .  56
+     6.59. informationElementDescription . . . . . . . . . . . . . .  57
+     6.60. informationElementName  . . . . . . . . . . . . . . . . .  57
+     6.61. informationElementRangeBegin  . . . . . . . . . . . . . .  58
+     6.62. informationElementRangeEnd  . . . . . . . . . . . . . . .  58
+     6.63. informationElementSemantics . . . . . . . . . . . . . . .  58
+     6.64. informationElementUnits . . . . . . . . . . . . . . . . .  59
+     6.65. userName  . . . . . . . . . . . . . . . . . . . . . . . .  60
+     6.66. applicationCategoryName . . . . . . . . . . . . . . . . .  60
+     6.67. mibObjectValueInteger . . . . . . . . . . . . . . . . . .  60
+     6.68. mibObjectValueOctetString . . . . . . . . . . . . . . . .  60
+     6.69. mibObjectValueOID . . . . . . . . . . . . . . . . . . . .  61
+     6.70. mibObjectValueBits  . . . . . . . . . . . . . . . . . . .  61
+     6.71. mibObjectValueIPAddress . . . . . . . . . . . . . . . . .  62
+     6.72. mibObjectValueCounter . . . . . . . . . . . . . . . . . .  62
+     6.73. mibObjectValueGauge . . . . . . . . . . . . . . . . . . .  63
+     6.74. mibObjectValueTimeTicks . . . . . . . . . . . . . . . . .  63
+     6.75. mibObjectValueUnsigned  . . . . . . . . . . . . . . . . .  64
+     6.76. mibObjectValueTable . . . . . . . . . . . . . . . . . . .  64
+     6.77. mibObjectValueRow . . . . . . . . . . . . . . . . . . . .  65
+     6.78. mibObjectIdentifier . . . . . . . . . . . . . . . . . . .  65
+     6.79. mibSubIdentifier  . . . . . . . . . . . . . . . . . . . .  66
+     6.80. mibIndexIndicator . . . . . . . . . . . . . . . . . . . .  66
+     6.81. mibCaptureTimeSemantics . . . . . . . . . . . . . . . . .  67
+     6.82. mibContextEngineID  . . . . . . . . . . . . . . . . . . .  68
+     6.83. mibContextName  . . . . . . . . . . . . . . . . . . . . .  69
+     6.84. mibObjectName . . . . . . . . . . . . . . . . . . . . . .  69
+     6.85. mibObjectDescription  . . . . . . . . . . . . . . . . . .  69
+     6.86. mibObjectSyntax . . . . . . . . . . . . . . . . . . . . .  69
+     6.87. mibModuleName . . . . . . . . . . . . . . . . . . . . . .  69
+   7.  SACM Usage Scenario Example . . . . . . . . . . . . . . . . .  70
 
 
 
@@ -282,54 +282,54 @@ Waltermire, et al.      Expires December 10, 2016               [Page 5]
 Internet-Draft           SACM Information Model                June 2016
 
 
-     7.1.  Graph Model for Detection of Posture Deviation  . . . . .  71
-       7.1.1.  Components  . . . . . . . . . . . . . . . . . . . . .  71
-       7.1.2.  Identifiers . . . . . . . . . . . . . . . . . . . . .  72
-       7.1.3.  Metadata  . . . . . . . . . . . . . . . . . . . . . .  72
-       7.1.4.  Relationships between Identifiers and Metadata  . . .  73
-     7.2.  Workflow  . . . . . . . . . . . . . . . . . . . . . . . .  73
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  74
-     8.1.  Contributors  . . . . . . . . . . . . . . . . . . . . . .  74
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  74
-   10. Operational Considerations  . . . . . . . . . . . . . . . . .  75
-   11. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  75
-   12. Security Considerations . . . . . . . . . . . . . . . . . . .  75
-   13. References  . . . . . . . . . . . . . . . . . . . . . . . . .  76
-     13.1.  Normative References . . . . . . . . . . . . . . . . . .  76
-     13.2.  Informative References . . . . . . . . . . . . . . . . .  76
-   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  82
-     A.1.  Changes in Revision 01  . . . . . . . . . . . . . . . . .  82
-     A.2.  Changes in Revision 02  . . . . . . . . . . . . . . . . .  83
-     A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . .  83
-     A.4.  Changes in Revision 04  . . . . . . . . . . . . . . . . .  83
-   Appendix B.  Mapping to SACM Use Cases  . . . . . . . . . . . . .  84
-   Appendix C.  Security Automation with TNC IF-MAP  . . . . . . . .  84
-     C.1.  What is Trusted Network Connect?  . . . . . . . . . . . .  84
-     C.2.  What is TNC IF-MAP? . . . . . . . . . . . . . . . . . . .  85
-     C.3.  What is the TNC Information Model?  . . . . . . . . . . .  85
-   Appendix D.  Text for Possible Inclusion in the Terminology Draft  86
-     D.1.  Terms and Definitions . . . . . . . . . . . . . . . . . .  86
-       D.1.1.  Pre-defined and Modified Terms  . . . . . . . . . . .  86
-       D.1.2.  New Terms . . . . . . . . . . . . . . . . . . . . . .  87
+     7.1.  Graph Model for Detection of Posture Deviation  . . . . .  70
+       7.1.1.  Components  . . . . . . . . . . . . . . . . . . . . .  70
+       7.1.2.  Identifiers . . . . . . . . . . . . . . . . . . . . .  71
+       7.1.3.  Metadata  . . . . . . . . . . . . . . . . . . . . . .  71
+       7.1.4.  Relationships between Identifiers and Metadata  . . .  72
+     7.2.  Workflow  . . . . . . . . . . . . . . . . . . . . . . . .  72
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  73
+     8.1.  Contributors  . . . . . . . . . . . . . . . . . . . . . .  73
+   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  73
+   10. Operational Considerations  . . . . . . . . . . . . . . . . .  74
+   11. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  74
+   12. Security Considerations . . . . . . . . . . . . . . . . . . .  74
+   13. References  . . . . . . . . . . . . . . . . . . . . . . . . .  75
+     13.1.  Normative References . . . . . . . . . . . . . . . . . .  75
+     13.2.  Informative References . . . . . . . . . . . . . . . . .  75
+   Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  81
+     A.1.  Changes in Revision 01  . . . . . . . . . . . . . . . . .  81
+     A.2.  Changes in Revision 02  . . . . . . . . . . . . . . . . .  82
+     A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . .  82
+     A.4.  Changes in Revision 04  . . . . . . . . . . . . . . . . .  82
+   Appendix B.  Mapping to SACM Use Cases  . . . . . . . . . . . . .  83
+   Appendix C.  Security Automation with TNC IF-MAP  . . . . . . . .  83
+     C.1.  What is Trusted Network Connect?  . . . . . . . . . . . .  83
+     C.2.  What is TNC IF-MAP? . . . . . . . . . . . . . . . . . . .  84
+     C.3.  What is the TNC Information Model?  . . . . . . . . . . .  84
+   Appendix D.  Text for Possible Inclusion in the Terminology Draft  85
+     D.1.  Terms and Definitions . . . . . . . . . . . . . . . . . .  85
+       D.1.1.  Pre-defined and Modified Terms  . . . . . . . . . . .  85
+       D.1.2.  New Terms . . . . . . . . . . . . . . . . . . . . . .  86
    Appendix E.  Text for Possible Inclusion in the Architecture or
-                Use Cases  . . . . . . . . . . . . . . . . . . . . .  87
-     E.1.  Introduction  . . . . . . . . . . . . . . . . . . . . . .  87
-     E.2.  Core Principles . . . . . . . . . . . . . . . . . . . . .  88
-     E.3.  Architecture Assumptions  . . . . . . . . . . . . . . . .  89
+                Use Cases  . . . . . . . . . . . . . . . . . . . . .  86
+     E.1.  Introduction  . . . . . . . . . . . . . . . . . . . . . .  86
+     E.2.  Core Principles . . . . . . . . . . . . . . . . . . . . .  87
+     E.3.  Architecture Assumptions  . . . . . . . . . . . . . . . .  88
    Appendix F.  Text for Possible Inclusion in the Requirements
-                Draft  . . . . . . . . . . . . . . . . . . . . . . .  92
-     F.1.  Problem Statement . . . . . . . . . . . . . . . . . . . .  92
-     F.2.  Problem Scope . . . . . . . . . . . . . . . . . . . . . .  92
-   Appendix G.  Text With No Clear Home Yet  . . . . . . . . . . . .  93
-     G.1.  Operations  . . . . . . . . . . . . . . . . . . . . . . .  93
-       G.1.1.  Generalized Workflow  . . . . . . . . . . . . . . . .  93
-     G.2.  From Information Needs to Information Elements  . . . . .  94
-     G.3.  Information Model Elements  . . . . . . . . . . . . . . .  94
-       G.3.1.  Asset Identifiers . . . . . . . . . . . . . . . . . .  96
-         G.3.1.2.  Endpoint Identification . . . . . . . . . . . . .  98
-         G.3.1.3.  Software Identification . . . . . . . . . . . . .  99
-         G.3.1.4.  Hardware Identification . . . . . . . . . . . . . 102
-       G.3.2.  Other Identifiers . . . . . . . . . . . . . . . . . . 102
+                Draft  . . . . . . . . . . . . . . . . . . . . . . .  91
+     F.1.  Problem Statement . . . . . . . . . . . . . . . . . . . .  91
+     F.2.  Problem Scope . . . . . . . . . . . . . . . . . . . . . .  91
+   Appendix G.  Text With No Clear Home Yet  . . . . . . . . . . . .  92
+     G.1.  Operations  . . . . . . . . . . . . . . . . . . . . . . .  92
+       G.1.1.  Generalized Workflow  . . . . . . . . . . . . . . . .  92
+     G.2.  From Information Needs to Information Elements  . . . . .  93
+     G.3.  Information Model Elements  . . . . . . . . . . . . . . .  93
+       G.3.1.  Asset Identifiers . . . . . . . . . . . . . . . . . .  95
+         G.3.1.2.  Endpoint Identification . . . . . . . . . . . . .  97
+         G.3.1.3.  Software Identification . . . . . . . . . . . . .  98
+         G.3.1.4.  Hardware Identification . . . . . . . . . . . . . 101
+       G.3.2.  Other Identifiers . . . . . . . . . . . . . . . . . . 101
 
 
 
@@ -338,31 +338,31 @@ Waltermire, et al.      Expires December 10, 2016               [Page 6]
 Internet-Draft           SACM Information Model                June 2016
 
 
-         G.3.2.1.  Platform Configuration Item Identifier  . . . . . 102
-         G.3.2.2.  Configuration Item Identifier . . . . . . . . . . 108
-         G.3.2.3.  Vulnerability Identifier  . . . . . . . . . . . . 110
-       G.3.3.  Endpoint characterization . . . . . . . . . . . . . . 110
-       G.3.4.  Posture Attribute Expression  . . . . . . . . . . . . 114
-         G.3.4.2.  Platform Configuration Attributes . . . . . . . . 114
-       G.3.5.  Actual Value Representation . . . . . . . . . . . . . 116
-         G.3.5.1.  Software Inventory  . . . . . . . . . . . . . . . 116
+         G.3.2.1.  Platform Configuration Item Identifier  . . . . . 101
+         G.3.2.2.  Configuration Item Identifier . . . . . . . . . . 107
+         G.3.2.3.  Vulnerability Identifier  . . . . . . . . . . . . 109
+       G.3.3.  Endpoint characterization . . . . . . . . . . . . . . 109
+       G.3.4.  Posture Attribute Expression  . . . . . . . . . . . . 113
+         G.3.4.2.  Platform Configuration Attributes . . . . . . . . 113
+       G.3.5.  Actual Value Representation . . . . . . . . . . . . . 115
+         G.3.5.1.  Software Inventory  . . . . . . . . . . . . . . . 115
          G.3.5.2.  Collected Platform Configuration Posture
-                   Attributes  . . . . . . . . . . . . . . . . . . . 117
-       G.3.6.  Evaluation Guidance . . . . . . . . . . . . . . . . . 118
-         G.3.6.1.  Configuration Evaluation Guidance . . . . . . . . 118
-       G.3.7.  Evaluation Result Reporting . . . . . . . . . . . . . 120
-         G.3.7.1.  Configuration Evaluation Results  . . . . . . . . 120
-         G.3.7.2.  Software Inventory Evaluation Results . . . . . . 122
-   Appendix H.  Graph Model  . . . . . . . . . . . . . . . . . . . . 122
-     H.1.  Background: Graph Models  . . . . . . . . . . . . . . . . 123
-     H.2.  Graph Model Overview  . . . . . . . . . . . . . . . . . . 124
-     H.3.  Identifiers . . . . . . . . . . . . . . . . . . . . . . . 124
-     H.4.  Links . . . . . . . . . . . . . . . . . . . . . . . . . . 125
-     H.5.  Metadata  . . . . . . . . . . . . . . . . . . . . . . . . 125
-     H.6.  Use for SACM  . . . . . . . . . . . . . . . . . . . . . . 126
-     H.7.  Provenance  . . . . . . . . . . . . . . . . . . . . . . . 126
-     H.8.  Extensibility . . . . . . . . . . . . . . . . . . . . . . 126
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 127
+                   Attributes  . . . . . . . . . . . . . . . . . . . 116
+       G.3.6.  Evaluation Guidance . . . . . . . . . . . . . . . . . 117
+         G.3.6.1.  Configuration Evaluation Guidance . . . . . . . . 117
+       G.3.7.  Evaluation Result Reporting . . . . . . . . . . . . . 119
+         G.3.7.1.  Configuration Evaluation Results  . . . . . . . . 119
+         G.3.7.2.  Software Inventory Evaluation Results . . . . . . 121
+   Appendix H.  Graph Model  . . . . . . . . . . . . . . . . . . . . 121
+     H.1.  Background: Graph Models  . . . . . . . . . . . . . . . . 122
+     H.2.  Graph Model Overview  . . . . . . . . . . . . . . . . . . 123
+     H.3.  Identifiers . . . . . . . . . . . . . . . . . . . . . . . 123
+     H.4.  Links . . . . . . . . . . . . . . . . . . . . . . . . . . 124
+     H.5.  Metadata  . . . . . . . . . . . . . . . . . . . . . . . . 124
+     H.6.  Use for SACM  . . . . . . . . . . . . . . . . . . . . . . 125
+     H.7.  Provenance  . . . . . . . . . . . . . . . . . . . . . . . 125
+     H.8.  Extensibility . . . . . . . . . . . . . . . . . . . . . . 125
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 126
 
 1.  Introduction
 
@@ -1152,22 +1152,22 @@ Internet-Draft           SACM Information Model                June 2016
    The type "macAddress" represents a MAC-48 address as defined in
    [IEEE.802-3.2012].
 
-4.10.1.13.  string
+4.10.1.13.  octetArray
+
+   The type "octetArray" represents a finite-length string of octets.
+
+4.10.1.14.  string
 
    The type "string" represents a finite-length string of valid
    characters from the Unicode coded character set [ISO.10646].  Unicode
    incorporates ASCII [RFC20] and the characters of many other
    international character sets.
 
-4.10.1.14.  dateTimeSeconds
+4.10.1.15.  dateTimeSeconds
 
    The type "dateTimeSeconds" represents a time value expressed with
    second-level precision.
 
-4.10.1.15.  dateTimeMilliseconds
-
-   The type "dateTimeMilliseconds" represents a time value expressed
-   with millisecond-level precision.
 
 
 
@@ -1178,39 +1178,70 @@ Waltermire, et al.      Expires December 10, 2016              [Page 21]
 Internet-Draft           SACM Information Model                June 2016
 
 
-4.10.1.16.  dateTimeMicroseconds
+4.10.1.16.  dateTimeMilliseconds
+
+   The type "dateTimeMilliseconds" represents a time value expressed
+   with millisecond-level precision.
+
+4.10.1.17.  dateTimeMicroseconds
 
    The type "dateTimeMicroseconds" represents a time value expressed
    with microsecond-level precision.
 
-4.10.1.17.  dateTimeNanoseconds
+4.10.1.18.  dateTimeNanoseconds
 
    The type "dateTimeNanoseconds" represents a time value expressed with
    nanosecond-level precision.
 
-4.10.1.18.  ipv4Address
+4.10.1.19.  ipv4Address
 
    The type "ipv4Address" represents an IPv4 address as defined in
    [RFC0791].
 
-4.10.1.19.  ipv6Address
+4.10.1.20.  ipv6Address
 
    The type "ipv6Address" represents an IPv6 address as defined in
    [RFC3587].
 
-4.10.1.20.  basicList
+4.10.1.21.  ciscoTrainSoftwareVersion
+
+   The type "ciscoTrainSoftwareVersion" represents a software version
+   that conforms to the Cisco IOS Train string format.
+
+4.10.1.22.  rpmSoftwareVersion
+
+   The type "rpmSoftwareVersion" represents a software version that
+   conforms to the EPOCH:VERSION-RELEASE format.
+
+4.10.1.23.  simpleSoftwareVersion
+
+   The type "simpleSoftwareVersion" represents a software version that
+   is a hierarchical list of non-negative integers separated by a single
+   character delimiter.
+
+4.10.1.24.  basicList
 
    The type "basicList" represents a list of zero or more instances of
    any Information Element as defined in [RFC6313].
 
-4.10.1.21.  subTemplateList
+
+
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 22]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
+4.10.1.25.  subTemplateList
 
    The type "subTemplateList" represents a list of zero or more
    instances of a structured data type, where the data type of each list
    element is the same and corresponds with a single Template Record as
    defined in [RFC6313].
 
-4.10.1.22.  subTemplateMultiList
+4.10.1.26.  subTemplateMultiList
 
    The type "subTemplateMultiList" represents a list of zero or more
    instances of a structured data type, where the data type of each list
@@ -1226,13 +1257,6 @@ Internet-Draft           SACM Information Model                June 2016
    this document.  Changes to the associated "IPFIX Information Element
    Semantics" subregistry [IANA-IPFIX] require a Standards Action
    [RFC5226].
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 22]
-
-Internet-Draft           SACM Information Model                June 2016
-
 
 4.10.3.  quantity
 
@@ -1255,6 +1279,16 @@ Internet-Draft           SACM Information Model                June 2016
    difference between total counters and counters used in SNMP is that
    the total counters have an initial value of 0.  A total counter
    counts independently of the export of its value.
+
+
+
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 23]
+
+Internet-Draft           SACM Information Model                June 2016
+
 
 4.10.5.  deltaCounter
 
@@ -1281,15 +1315,6 @@ Internet-Draft           SACM Information Model                June 2016
 
    "flags" is an integral value that represents a set of bit fields.
    Logical operations are appropriate on such values, but other
-
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 23]
-
-Internet-Draft           SACM Information Model                June 2016
-
-
    mathematical operations are not.  Flags MUST always be of an unsigned
    data type.
 
@@ -1313,31 +1338,6 @@ Internet-Draft           SACM Information Model                June 2016
 
    TODO: The figure below needs to be updated to show the relationships
    between the different types of assets.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2540,31 +2540,31 @@ Internet-Draft           SACM Information Model                June 2016
    status: current
    description: The software developer (e.g., vendor or author).
 
-6.21.  simpleVersion
+6.21.  simpleSoftwareVersion
 
    elementId: TBD
-   name: simpleVersion
-   dataType: simpleVersionType
+   name: simpleSoftwareVersion
+   dataType: simpleVersion
    dataTypeSemantics: default
    status: current
    description: The version string for a software application that
                 follows the simple versioning scheme.
 
-6.22.  rpmVersion
+6.22.  rpmSoftwareVersion
 
    elementId: TBD
-   name: rpmVersion
-   dataType: rpmVersionType
+   name: rpmSoftwareVersion
+   dataType: rpmVersion
    dataTypeSemantics: default
    status: current
    description: The version string for a software application that
                 follows the RPM versioning scheme.
 
-6.23.  ciscoTrainVersion
+6.23.  ciscoTrainSoftwareVersion
 
    elementId: TBD
-   name: ciscoTrainVersion
-   dataType: ciscoTrainVersionType
+   name: ciscoTrainSoftwareVersion
+   dataType: ciscoTrainVersion
    dataTypeSemantics: default
    status: current
    description: The version string for a software application that
@@ -2592,9 +2592,9 @@ Internet-Draft           SACM Information Model                June 2016
                 element.
 
    softwareVersion(basicList, exactlyOneOf,
-                   simpleVersion,
-                   rpmVersion,
-                   ciscoTrainVersion,
+                   simpleSoftwareVersion,
+                   rpmSoftwareVersion,
+                   ciscoTrainSoftwareVersion,
                    ...
                   )
 
@@ -2941,17 +2941,7 @@ Internet-Draft           SACM Information Model                June 2016
    status: current
    description: The IP version field in the IP packet header.
 
-6.46.  interfaceName
-
-   elementId: TBD
-   name: interfaceName
-   dataType: string
-   dataTypeSemantics: default
-   status: current
-   description: A short name uniquely describing an interface,
-                eg "Eth1/0".
-
-6.47.  interfaceDescription
+6.46.  interfaceDescription
 
    elementId: TBD
    name: interfaceDescription
@@ -2962,15 +2952,7 @@ Internet-Draft           SACM Information Model                June 2016
                 1/0" or "ISP
    connection".
 
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 53]
-
-Internet-Draft           SACM Information Model                June 2016
-
-
-6.48.  applicationDescription
+6.47.  applicationDescription
 
    elementId: TBD
    name: applicationDescription
@@ -2979,7 +2961,16 @@ Internet-Draft           SACM Information Model                June 2016
    status: current
    description: Specifies the description of an application.
 
-6.49.  applicationId
+
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 53]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
+6.48.  applicationId
 
    elementId: TBD
    name: applicationId
@@ -2988,7 +2979,7 @@ Internet-Draft           SACM Information Model                June 2016
    status: current
    description: Specifies an Application ID per [RFC6759].
 
-6.50.  applicationName
+6.49.  applicationName
 
    elementId: TBD
    name: applicationName
@@ -2997,7 +2988,7 @@ Internet-Draft           SACM Information Model                June 2016
    status: current
    description: Specifies the name of an application.
 
-6.51.  exporterIPv4Address
+6.50.  exporterIPv4Address
 
    elementId: TBD
    name: exporterIPv4Address
@@ -3009,11 +3000,20 @@ Internet-Draft           SACM Information Model                June 2016
                 Exporter in cases where the identity of the Exporter
                 may have been obscured by the use of a proxy.
 
-6.52.  exporterIPv6Address
+6.51.  exporterIPv6Address
 
+   elementId: TBD
+   name: exporterIPv6Address
+   dataType: ipv6Address
+   dataTypeSemantics: default
+   status: current
+   description: The IPv6 address used by the Exporting Process.
+                This is used by the Collector to identify the
+                Exporter in cases where the identity of the
+                Exporter may have been obscured by the use of a
+                proxy.
 
-
-
+6.52.  portId
 
 
 
@@ -3027,19 +3027,6 @@ Internet-Draft           SACM Information Model                June 2016
 
 
    elementId: TBD
-   name: exporterIPv6Address
-   dataType: ipv6Address
-   dataTypeSemantics: default
-   status: current
-   description: The IPv6 address used by the Exporting Process.
-                This is used by the Collector to identify the
-                Exporter in cases where the identity of the
-                Exporter may have been obscured by the use of a
-                proxy.
-
-6.53.  portId
-
-   elementId: TBD
    name: portId
    dataType: unsigned32
    dataTypeSemantics: identifier
@@ -3049,7 +3036,7 @@ Internet-Draft           SACM Information Model                June 2016
                 Typically, this Information Element is used for
                 limiting the scope of other Information Elements.
 
-6.54.  templateId
+6.53.  templateId
 
    elementId: TBD
    name: templateId
@@ -3070,6 +3057,19 @@ Internet-Draft           SACM Information Model                June 2016
                 Note that after a re-start of the Exporting Process
                 Template identifiers may be re-assigned.
 
+6.54.  collectorIPv4Address
+
+   elementId: TBD
+   name: collectorIPv4Address
+   dataType: ipv4Address
+   dataTypeSemantics: default
+   status: current
+   description: An IPv4 address to which the Exporting Process sends
+                Flow information.
+
+6.55.  collectorIPv6Address
+
+
 
 
 
@@ -3082,18 +3082,6 @@ Waltermire, et al.      Expires December 10, 2016              [Page 55]
 Internet-Draft           SACM Information Model                June 2016
 
 
-6.55.  collectorIPv4Address
-
-   elementId: TBD
-   name: collectorIPv4Address
-   dataType: ipv4Address
-   dataTypeSemantics: default
-   status: current
-   description: An IPv4 address to which the Exporting Process sends
-                Flow information.
-
-6.56.  collectorIPv6Address
-
    elementId: TBD
    name: collectorIPv6Address
    dataType: ipv6Address
@@ -3102,7 +3090,7 @@ Internet-Draft           SACM Information Model                June 2016
    description: An IPv6 address to which the Exporting Process sends
                 Flow information.
 
-6.57.  informationElementIndex
+6.56.  informationElementIndex
 
    elementId: TBD
    name: informationElementIndex
@@ -3115,50 +3103,7 @@ Internet-Draft           SACM Information Model                June 2016
                 scope for templates containing multiple identical
                 Information Elements.
 
-6.58.  basicList
-
-   elementId: TBD
-   name: basicList
-   dataType: basicList
-   dataTypeSemantics: list
-   status: current
-   description: Specifies a generic Information Element with a
-                basicList abstract data type.  For example, a list
-                of port numbers, a list of interface indexes, etc.
-
-
-
-
-
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 56]
-
-Internet-Draft           SACM Information Model                June 2016
-
-
-6.59.  subTemplateList
-
-   elementId: TBD
-   name: subTemplateList
-   dataType: subTemplateList
-   dataTypeSemantics: list
-   status: current
-   description: Specifies a generic Information Element with a
-                subTemplateList abstract data type.
-
-6.60.  subTemplateMultiList
-
-   elementId: TBD
-   name: subTemplateMultiList
-   dataType: subTemplateMultiList
-   dataTypeSemantics: list
-   status: current
-   description: Specifies a generic Information Element with a
-                subTemplateMultiList abstract data type.
-
-6.61.  informationElementId
+6.57.  informationElementId
 
    elementId: TBD
    name: informationElementId
@@ -3168,7 +3113,7 @@ Internet-Draft           SACM Information Model                June 2016
    description: This Information Element contains the ID of another
                 Information Element.
 
-6.62.  informationElementDataType
+6.58.  informationElementDataType
 
 
 
@@ -3188,8 +3133,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-
-Waltermire, et al.      Expires December 10, 2016              [Page 57]
+Waltermire, et al.      Expires December 10, 2016              [Page 56]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3213,7 +3157,7 @@ Internet-Draft           SACM Information Model                June 2016
                 types to the IPFIX Protocol, and as such requires a
                 Standards Action [RFC5226] to modify.
 
-6.63.  informationElementDescription
+6.59.  informationElementDescription
 
    elementId: TBD
    name: informationElementDescription
@@ -3236,7 +3180,7 @@ Internet-Draft           SACM Information Model                June 2016
                 section for notes on string handling for Information
                 Element type records.
 
-6.64.  informationElementName
+6.60.  informationElementName
 
 
 
@@ -3245,7 +3189,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 58]
+Waltermire, et al.      Expires December 10, 2016              [Page 57]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3261,7 +3205,7 @@ Internet-Draft           SACM Information Model                June 2016
                 section for notes on string handling for Information
                 Element type records.
 
-6.65.  informationElementRangeBegin
+6.61.  informationElementRangeBegin
 
    elementId: TBD
    name: informationElementRangeBegin
@@ -3271,7 +3215,7 @@ Internet-Draft           SACM Information Model                June 2016
    description: Contains the inclusive low end of the range of
                 acceptable values for an Information Element.
 
-6.66.  informationElementRangeEnd
+6.62.  informationElementRangeEnd
 
    elementId: TBD
    name: informationElementRangeEnd
@@ -3281,7 +3225,7 @@ Internet-Draft           SACM Information Model                June 2016
    description: Contains the inclusive high end of the range of
                 acceptable values for an Information Element.
 
-6.67.  informationElementSemantics
+6.63.  informationElementSemantics
 
 
 
@@ -3301,7 +3245,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 59]
+Waltermire, et al.      Expires December 10, 2016              [Page 58]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3330,7 +3274,7 @@ Internet-Draft           SACM Information Model                June 2016
                 adding semantics to the IPFIX Protocol, and as such
                 requires a Standards Action [RFC5226] to modify.
 
-6.68.  informationElementUnits
+6.64.  informationElementUnits
 
    elementId: TBD
    name: informationElementUnits
@@ -3357,12 +3301,12 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 60]
+Waltermire, et al.      Expires December 10, 2016              [Page 59]
 
 Internet-Draft           SACM Information Model                June 2016
 
 
-6.69.  userName
+6.65.  userName
 
    elementId: TBD
    name: userName
@@ -3371,7 +3315,7 @@ Internet-Draft           SACM Information Model                June 2016
    status: current
    description: User name associated with the flow.
 
-6.70.  applicationCategoryName
+6.66.  applicationCategoryName
 
    elementId: TBD
    name: applicationCategoryName
@@ -3381,7 +3325,7 @@ Internet-Draft           SACM Information Model                June 2016
    description: An attribute that provides a first level
                 categorization for each Application ID.
 
-6.71.  mibObjectValueInteger
+6.67.  mibObjectValueInteger
 
    elementId: TBD
    name: mibObjectValueInteger
@@ -3399,7 +3343,7 @@ Internet-Draft           SACM Information Model                June 2016
                 encoded as per the standard IPFIX Abstract Data Type
                 of signed64.
 
-6.72.  mibObjectValueOctetString
+6.68.  mibObjectValueOctetString
 
 
 
@@ -3413,7 +3357,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 61]
+Waltermire, et al.      Expires December 10, 2016              [Page 60]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3433,7 +3377,7 @@ Internet-Draft           SACM Information Model                June 2016
                 value is encoded as per the standard IPFIX Abstract
                 Data Type of octetArray.
 
-6.73.  mibObjectValueOID
+6.69.  mibObjectValueOID
 
    elementId: TBD
    name: mibObjectValueOID
@@ -3454,7 +3398,7 @@ Internet-Draft           SACM Information Model                June 2016
                 Element is encoded as ASN.1/BER [BER] in an
                 octetArray.
 
-6.74.  mibObjectValueBits
+6.70.  mibObjectValueBits
 
 
 
@@ -3469,7 +3413,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 62]
+Waltermire, et al.      Expires December 10, 2016              [Page 61]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3493,7 +3437,7 @@ Internet-Draft           SACM Information Model                June 2016
                 significant bits at end of the octetArray MUST be
                 set to zero.
 
-6.75.  mibObjectValueIPAddress
+6.71.  mibObjectValueIPAddress
 
    elementId: TBD
    name: mibObjectValueIPAddress
@@ -3509,7 +3453,63 @@ Internet-Draft           SACM Information Model                June 2016
                 IPaddress. The value is encoded as per the standard
                 IPFIX Abstract Data Type of ipv4Address.
 
-6.76.  mibObjectValueCounter
+6.72.  mibObjectValueCounter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.      Expires December 10, 2016              [Page 62]
+
+Internet-Draft           SACM Information Model                June 2016
+
+
+   elementId: TBD
+   name: mibObjectValueCounter
+   dataType: unsigned64
+   dataTypeSemantics: snmpCounter
+   status: current
+   description: An IPFIX Information Element which denotes that the
+                counter value of a MIB object will be exported.
+                The MIB Object Identifier ("mibObjectIdentifier")
+                for this field MUST be exported in a MIB Field
+                Option or via another means.  This Information
+                Element is used for MIB objects with the Base
+                Syntax of Counter32 or Counter64 with IPFIX Reduced
+                Size Encoding used as required. The value is encoded
+                as per the standard IPFIX Abstract Data Type
+                of unsigned64.
+
+6.73.  mibObjectValueGauge
+
+   elementId: TBD
+   name: mibObjectValueGauge
+   dataType: unsigned32
+   dataTypeSemantics: snmpGauge
+   status: current
+   description: An IPFIX Information Element which denotes that the
+                Gauge value of a MIB object will be exported.  The
+                MIB Object Identifier ("mibObjectIdentifier") for
+                this field MUST be exported in a MIB Field Option
+                or via another means.  This Information Element is
+                used for MIB objects with the Base Syntax of Gauge32.
+                The value is encoded as per the standard IPFIX
+                Abstract Data Type of unsigned64.  This value will
+                represent a non-negative integer, which may increase
+                or decrease, but shall never exceed a maximum
+                value, nor fall below a minimum value.
+
+6.74.  mibObjectValueTimeTicks
 
 
 
@@ -3531,62 +3531,6 @@ Internet-Draft           SACM Information Model                June 2016
 
 
    elementId: TBD
-   name: mibObjectValueCounter
-   dataType: unsigned64
-   dataTypeSemantics: snmpCounter
-   status: current
-   description: An IPFIX Information Element which denotes that the
-                counter value of a MIB object will be exported.
-                The MIB Object Identifier ("mibObjectIdentifier")
-                for this field MUST be exported in a MIB Field
-                Option or via another means.  This Information
-                Element is used for MIB objects with the Base
-                Syntax of Counter32 or Counter64 with IPFIX Reduced
-                Size Encoding used as required. The value is encoded
-                as per the standard IPFIX Abstract Data Type
-                of unsigned64.
-
-6.77.  mibObjectValueGauge
-
-   elementId: TBD
-   name: mibObjectValueGauge
-   dataType: unsigned32
-   dataTypeSemantics: snmpGauge
-   status: current
-   description: An IPFIX Information Element which denotes that the
-                Gauge value of a MIB object will be exported.  The
-                MIB Object Identifier ("mibObjectIdentifier") for
-                this field MUST be exported in a MIB Field Option
-                or via another means.  This Information Element is
-                used for MIB objects with the Base Syntax of Gauge32.
-                The value is encoded as per the standard IPFIX
-                Abstract Data Type of unsigned64.  This value will
-                represent a non-negative integer, which may increase
-                or decrease, but shall never exceed a maximum
-                value, nor fall below a minimum value.
-
-6.78.  mibObjectValueTimeTicks
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Waltermire, et al.      Expires December 10, 2016              [Page 64]
-
-Internet-Draft           SACM Information Model                June 2016
-
-
-   elementId: TBD
    name: mibObjectValueTimeTicks
    dataType: unsigned32
    dataTypeSemantics: default
@@ -3600,7 +3544,7 @@ Internet-Draft           SACM Information Model                June 2016
                 Syntax of TimeTicks. The value is encoded as per
                 the standard IPFIX Abstract Data Type of unsigned32.
 
-6.79.  mibObjectValueUnsigned
+6.75.  mibObjectValueUnsigned
 
    elementId: TBD
    name: mibObjectValueUnsigned
@@ -3618,7 +3562,7 @@ Internet-Draft           SACM Information Model                June 2016
                 encoded as per the standard IPFIX Abstract Data Type
                 of unsigned64.
 
-6.80.  mibObjectValueTable
+6.76.  mibObjectValueTable
 
 
 
@@ -3637,7 +3581,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 65]
+Waltermire, et al.      Expires December 10, 2016              [Page 64]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3660,7 +3604,7 @@ Internet-Draft           SACM Information Model                June 2016
                 MUST include all the Objects listed in the INDEX
                 clause as Scope Fields.
 
-6.81.  mibObjectValueRow
+6.77.  mibObjectValueRow
 
    elementId: TBD
    name: mibObjectValueRow
@@ -3681,7 +3625,7 @@ Internet-Draft           SACM Information Model                June 2016
                 an Options Template and MUST include all the
                 Objects listed in the INDEX clause as Scope Fields.
 
-6.82.  mibObjectIdentifier
+6.78.  mibObjectIdentifier
 
 
 
@@ -3693,7 +3637,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 66]
+Waltermire, et al.      Expires December 10, 2016              [Page 65]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3710,7 +3654,7 @@ Internet-Draft           SACM Information Model                June 2016
                 the MIB Object Type Definition encoded as
                 ASN.1/BER [BER].
 
-6.83.  mibSubIdentifier
+6.79.  mibSubIdentifier
 
    elementId: TBD
    name: mibSubIdentifier
@@ -3720,7 +3664,7 @@ Internet-Draft           SACM Information Model                June 2016
    description: A non-negative sub-identifier of an Object
                 Identifier (OID).
 
-6.84.  mibIndexIndicator
+6.80.  mibIndexIndicator
 
 
 
@@ -3749,7 +3693,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 67]
+Waltermire, et al.      Expires December 10, 2016              [Page 66]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3783,7 +3727,7 @@ Internet-Draft           SACM Information Model                June 2016
                 Information Element may be exported with
                 IPFIX Reduced Size Encoding.
 
-6.85.  mibCaptureTimeSemantics
+6.81.  mibCaptureTimeSemantics
 
 
 
@@ -3805,7 +3749,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 68]
+Waltermire, et al.      Expires December 10, 2016              [Page 67]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3848,7 +3792,7 @@ Internet-Draft           SACM Information Model                June 2016
                 average of multiple captures from the MIB over the
                 observed life of the Flow
 
-6.86.  mibContextEngineID
+6.82.  mibContextEngineID
 
    elementId: TBD
    name: mibContextEngineID
@@ -3861,12 +3805,12 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 69]
+Waltermire, et al.      Expires December 10, 2016              [Page 68]
 
 Internet-Draft           SACM Information Model                June 2016
 
 
-6.87.  mibContextName
+6.83.  mibContextName
 
    elementId: TBD
    name: mibContextName
@@ -3877,7 +3821,7 @@ Internet-Draft           SACM Information Model                June 2016
                 Name is specified for a MIB field being exported
                 over IPFIX. Reference [RFC3411] section 3.3.
 
-6.88.  mibObjectName
+6.84.  mibObjectName
 
    elementId: TBD
    name: mibObjectName
@@ -3887,7 +3831,7 @@ Internet-Draft           SACM Information Model                June 2016
    description: The name (called a descriptor in [RFC2578]
                 of an object type definition.
 
-6.89.  mibObjectDescription
+6.85.  mibObjectDescription
 
    elementId: TBD
    name: mibObjectDescription
@@ -3897,7 +3841,7 @@ Internet-Draft           SACM Information Model                June 2016
    description: The value of the DESCRIPTION clause of an MIB object
                 type definition.
 
-6.90.  mibObjectSyntax
+6.86.  mibObjectSyntax
 
    elementId: TBD
    name: mibObjectSyntax
@@ -3908,7 +3852,7 @@ Internet-Draft           SACM Information Model                June 2016
                 definition, which may include a Textual Convention
                 or Subtyping. See [RFC2578].
 
-6.91.  mibModuleName
+6.87.  mibModuleName
 
 
 
@@ -3917,7 +3861,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 70]
+Waltermire, et al.      Expires December 10, 2016              [Page 69]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -3973,7 +3917,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 71]
+Waltermire, et al.      Expires December 10, 2016              [Page 70]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4029,7 +3973,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 72]
+Waltermire, et al.      Expires December 10, 2016              [Page 71]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4085,7 +4029,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 73]
+Waltermire, et al.      Expires December 10, 2016              [Page 72]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4141,7 +4085,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 74]
+Waltermire, et al.      Expires December 10, 2016              [Page 73]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4197,7 +4141,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 75]
+Waltermire, et al.      Expires December 10, 2016              [Page 74]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4253,7 +4197,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 76]
+Waltermire, et al.      Expires December 10, 2016              [Page 75]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4309,7 +4253,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 77]
+Waltermire, et al.      Expires December 10, 2016              [Page 76]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4365,7 +4309,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 78]
+Waltermire, et al.      Expires December 10, 2016              [Page 77]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4421,7 +4365,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 79]
+Waltermire, et al.      Expires December 10, 2016              [Page 78]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4477,7 +4421,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 80]
+Waltermire, et al.      Expires December 10, 2016              [Page 79]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4533,7 +4477,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 81]
+Waltermire, et al.      Expires December 10, 2016              [Page 80]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4589,7 +4533,7 @@ A.1.  Changes in Revision 01
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 82]
+Waltermire, et al.      Expires December 10, 2016              [Page 81]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4645,7 +4589,7 @@ A.4.  Changes in Revision 04
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 83]
+Waltermire, et al.      Expires December 10, 2016              [Page 82]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4701,7 +4645,7 @@ C.1.  What is Trusted Network Connect?
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 84]
+Waltermire, et al.      Expires December 10, 2016              [Page 83]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4757,7 +4701,7 @@ C.3.  What is the TNC Information Model?
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 85]
+Waltermire, et al.      Expires December 10, 2016              [Page 84]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4813,7 +4757,7 @@ D.1.1.  Pre-defined and Modified Terms
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 86]
+Waltermire, et al.      Expires December 10, 2016              [Page 85]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4869,7 +4813,7 @@ E.1.  Introduction
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 87]
+Waltermire, et al.      Expires December 10, 2016              [Page 86]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4925,7 +4869,7 @@ E.2.  Core Principles
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 88]
+Waltermire, et al.      Expires December 10, 2016              [Page 87]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -4981,7 +4925,7 @@ E.3.  Architecture Assumptions
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 89]
+Waltermire, et al.      Expires December 10, 2016              [Page 88]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5037,7 +4981,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 90]
+Waltermire, et al.      Expires December 10, 2016              [Page 89]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5093,7 +5037,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 91]
+Waltermire, et al.      Expires December 10, 2016              [Page 90]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5149,7 +5093,7 @@ F.2.  Problem Scope
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 92]
+Waltermire, et al.      Expires December 10, 2016              [Page 91]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5205,7 +5149,7 @@ G.1.1.  Generalized Workflow
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 93]
+Waltermire, et al.      Expires December 10, 2016              [Page 92]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5261,7 +5205,7 @@ G.3.  Information Model Elements
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 94]
+Waltermire, et al.      Expires December 10, 2016              [Page 93]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5317,7 +5261,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 95]
+Waltermire, et al.      Expires December 10, 2016              [Page 94]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5373,7 +5317,7 @@ G.3.1.1.1.  Asset Identification
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 96]
+Waltermire, et al.      Expires December 10, 2016              [Page 95]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5429,7 +5373,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 97]
+Waltermire, et al.      Expires December 10, 2016              [Page 96]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5485,7 +5429,7 @@ G.3.1.2.  Endpoint Identification
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 98]
+Waltermire, et al.      Expires December 10, 2016              [Page 97]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5541,7 +5485,7 @@ G.3.1.3.1.  Related Work
 
 
 
-Waltermire, et al.      Expires December 10, 2016              [Page 99]
+Waltermire, et al.      Expires December 10, 2016              [Page 98]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5597,7 +5541,7 @@ G.3.1.3.1.1.1.  Background
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 100]
+Waltermire, et al.      Expires December 10, 2016              [Page 99]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5653,7 +5597,7 @@ G.3.1.3.1.2.  Software Identification (SWID) Tags
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 101]
+Waltermire, et al.      Expires December 10, 2016             [Page 100]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5709,7 +5653,7 @@ G.3.2.1.  Platform Configuration Item Identifier
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 102]
+Waltermire, et al.      Expires December 10, 2016             [Page 101]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5765,7 +5709,7 @@ G.3.2.1.1.1.  Common Configuration Enumeration
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 103]
+Waltermire, et al.      Expires December 10, 2016             [Page 102]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5821,7 +5765,7 @@ G.3.2.1.1.2.1.  Background
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 104]
+Waltermire, et al.      Expires December 10, 2016             [Page 103]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5877,7 +5821,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 105]
+Waltermire, et al.      Expires December 10, 2016             [Page 104]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5933,7 +5877,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 106]
+Waltermire, et al.      Expires December 10, 2016             [Page 105]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -5989,7 +5933,7 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 107]
+Waltermire, et al.      Expires December 10, 2016             [Page 106]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6045,7 +5989,7 @@ G.3.2.2.  Configuration Item Identifier
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 108]
+Waltermire, et al.      Expires December 10, 2016             [Page 107]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6101,7 +6045,7 @@ G.3.2.2.1.2.  A Potential Alternate Approach
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 109]
+Waltermire, et al.      Expires December 10, 2016             [Page 108]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6157,7 +6101,7 @@ G.3.3.  Endpoint characterization
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 110]
+Waltermire, et al.      Expires December 10, 2016             [Page 109]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6213,7 +6157,7 @@ G.3.3.1.1.2.  Applicability to Endpoint characterization
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 111]
+Waltermire, et al.      Expires December 10, 2016             [Page 110]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6269,7 +6213,7 @@ G.3.3.1.2.2.  Relationship to Endpoint Characterization
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 112]
+Waltermire, et al.      Expires December 10, 2016             [Page 111]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6325,7 +6269,7 @@ G.3.3.1.3.  The CPE Applicability Language
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 113]
+Waltermire, et al.      Expires December 10, 2016             [Page 112]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6381,7 +6325,7 @@ G.3.4.2.  Platform Configuration Attributes
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 114]
+Waltermire, et al.      Expires December 10, 2016             [Page 113]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6437,7 +6381,7 @@ G.3.4.2.1.3.  Simple Network Management Protocol and Management
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 115]
+Waltermire, et al.      Expires December 10, 2016             [Page 114]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6493,7 +6437,7 @@ G.3.5.1.1.2.  Software Identification Tags
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 116]
+Waltermire, et al.      Expires December 10, 2016             [Page 115]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6549,7 +6493,7 @@ G.3.5.2.1.2.  NETCONF-Based Collection
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 117]
+Waltermire, et al.      Expires December 10, 2016             [Page 116]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6605,7 +6549,7 @@ G.3.6.1.  Configuration Evaluation Guidance
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 118]
+Waltermire, et al.      Expires December 10, 2016             [Page 117]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6661,7 +6605,7 @@ G.3.6.1.1.2.  XCCDF Rule
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 119]
+Waltermire, et al.      Expires December 10, 2016             [Page 118]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6717,7 +6661,7 @@ G.3.7.1.1.1.  XCCDF TestResults
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 120]
+Waltermire, et al.      Expires December 10, 2016             [Page 119]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6773,7 +6717,7 @@ G.3.7.1.1.2.  Open Vulnerability and Assessment Language
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 121]
+Waltermire, et al.      Expires December 10, 2016             [Page 120]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6829,7 +6773,7 @@ Appendix H.  Graph Model
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 122]
+Waltermire, et al.      Expires December 10, 2016             [Page 121]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6885,7 +6829,7 @@ H.1.  Background: Graph Models
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 123]
+Waltermire, et al.      Expires December 10, 2016             [Page 122]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6941,7 +6885,7 @@ H.3.  Identifiers
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 124]
+Waltermire, et al.      Expires December 10, 2016             [Page 123]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -6997,7 +6941,7 @@ H.5.  Metadata
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 125]
+Waltermire, et al.      Expires December 10, 2016             [Page 124]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -7053,7 +6997,7 @@ H.8.  Extensibility
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 126]
+Waltermire, et al.      Expires December 10, 2016             [Page 125]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -7109,7 +7053,7 @@ Authors' Addresses
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 127]
+Waltermire, et al.      Expires December 10, 2016             [Page 126]
 
 Internet-Draft           SACM Information Model                June 2016
 
@@ -7165,4 +7109,4 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 10, 2016             [Page 128]
+Waltermire, et al.      Expires December 10, 2016             [Page 127]
