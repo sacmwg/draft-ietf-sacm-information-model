@@ -1519,7 +1519,7 @@ Internet-Draft           SACM Information Model                June 2016
    installer installs MAY be modeled as several components.
 
    A data model MAY identify a software component by parts of an ISO
-   SWID tag.
+   SWID tag [ISO.19770-2].
 
 5.4.1.  Software Instance
 
@@ -5636,9 +5636,9 @@ G.3.1.3.1.1.2.  Applicability to Software Identification
 
 G.3.1.3.1.2.  Software Identification (SWID) Tags
 
-   The software identification tag specification [ISO.19770-2] is an
-   XML-based data model that is used to describe a unit of installable
-   software.  A SWID tag contains data elements that:
+   The software identification tag specification is an XML-based data
+   model that is used to describe a unit of installable software.  A
+   SWID tag contains data elements that:
 
    o  Identify a specific unit of installable software,
 
