@@ -1097,7 +1097,7 @@
                     component. Sometimes it may be better to divide more finely:
                     what an installer installs MAY be modeled as several components.</t> 
                 
-                <t>A data model MAY identify a software component by parts of an ISO SWID tag.</t>
+                <t>A data model MAY identify a software component by parts of an ISO SWID tag <xref target="ISO.19770-2"/>.</t>
                     
                 <section title="Software Instance">
                     <t>Each copy of a piece of software is called a software instance.
@@ -4638,8 +4638,7 @@ Write |     +------------+       | Query
                             </section>
                             <section title="Software Identification (SWID) Tags"
                                 anchor="SWID-BACKGROUND">
-                                <t>The software identification tag specification <xref
-                                        target="ISO.19770-2"/> is an XML-based data model that is used
+                                <t>The software identification tag specification is an XML-based data model that is used
                                     to describe a unit of installable software. A SWID tag contains data
                                     elements that:<list style="symbols">
                                         <t>Identify a specific unit of installable software,</t>
