@@ -1962,10 +1962,7 @@ description: Information about a network interface
              describes the structure of 
              networkInterface information 
              element.
-    </artwork>
-  </figure>
-  <figure>
-    <artwork type="IPFIX">
+
              networkInterface = (basicList, allof,
                                  interfaceName,
                                  interfaceIndex,
