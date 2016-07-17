@@ -5,14 +5,14 @@
 SACM                                                  D. Waltermire, Ed.
 Internet-Draft                                                      NIST
 Intended status: Standards Track                               K. Watson
-Expires: December 11, 2016                                           DHS
+Expires: January 18, 2017                                            DHS
                                                                  C. Kahn
                                                              L. Lorenzin
                                                        Pulse Secure, LLC
                                                                 M. Cokus
                                                                D. Haynes
                                                    The MITRE Corporation
-                                                            June 9, 2016
+                                                           July 17, 2016
 
 
                          SACM Information Model
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on December 11, 2016.
+   This Internet-Draft will expire on January 18, 2017.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 1]
+Waltermire, et al.      Expires January 18, 2017                [Page 1]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 2]
+Waltermire, et al.      Expires January 18, 2017                [Page 2]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
          4.10.1.18. dateTimeNanoseconds  . . . . . . . . . . . . . .  22
@@ -165,9 +165,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 3]
+Waltermire, et al.      Expires January 18, 2017                [Page 3]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
        6.4.4.  A Use Case  . . . . . . . . . . . . . . . . . . . . .  37
@@ -221,9 +221,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 4]
+Waltermire, et al.      Expires January 18, 2017                [Page 4]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
      6.41. sourceIPv6PrefixLength  . . . . . . . . . . . . . . . . .  52
@@ -277,9 +277,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 5]
+Waltermire, et al.      Expires January 18, 2017                [Page 5]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
      7.1.  Graph Model for Detection of Posture Deviation  . . . . .  70
@@ -333,9 +333,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 6]
+Waltermire, et al.      Expires January 18, 2017                [Page 6]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
        G.3.2.  Other Identifiers . . . . . . . . . . . . . . . . . . 102
@@ -389,9 +389,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 7]
+Waltermire, et al.      Expires January 18, 2017                [Page 7]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    The information model expresses, for example, target endpoint (TE)
@@ -445,9 +445,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 8]
+Waltermire, et al.      Expires January 18, 2017                [Page 8]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    how corresponding SACM IEs should be defined in Section 6.  The
@@ -501,9 +501,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016               [Page 9]
+Waltermire, et al.      Expires January 18, 2017                [Page 9]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  Attributes: an instance of an attribute type is the simplest IE
@@ -557,9 +557,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 10]
+Waltermire, et al.      Expires January 18, 2017               [Page 10]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    The notation the SACM IM is defined in is based on the IP Information
@@ -613,9 +613,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 11]
+Waltermire, et al.      Expires January 18, 2017               [Page 11]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
                    elementId:         Element identifier goes here
@@ -669,9 +669,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 12]
+Waltermire, et al.      Expires January 18, 2017               [Page 12]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.2.  Subject Syntax
@@ -725,9 +725,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 13]
+Waltermire, et al.      Expires January 18, 2017               [Page 13]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
                                           ...
@@ -781,9 +781,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 14]
+Waltermire, et al.      Expires January 18, 2017               [Page 14]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.4.  SACM Statements
@@ -802,7 +802,7 @@ Internet-Draft           SACM Information Model                June 2016
    consuming SACM component actually deals with conflicting information
    is out-of-scope of the SACM IM.  Semantically, the term statement
    implies that the SACM content provided by a SACM component might not
-   be correct in every context, but rather is the result of an best-
+   be correct in every context, but rather is the result of a best-
    effort to produce correct information.
 
            sacm-statement = (
@@ -837,9 +837,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 15]
+Waltermire, et al.      Expires January 18, 2017               [Page 15]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
           sacm-statement = (
@@ -893,9 +893,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 16]
+Waltermire, et al.      Expires January 18, 2017               [Page 16]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    references.  Therefore, there are at least two ways to reference
@@ -949,9 +949,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 17]
+Waltermire, et al.      Expires January 18, 2017               [Page 17]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.6.  Event
@@ -1005,9 +1005,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 18]
+Waltermire, et al.      Expires January 18, 2017               [Page 18]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.7.  Categories
@@ -1061,9 +1061,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 19]
+Waltermire, et al.      Expires January 18, 2017               [Page 19]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.10.  Type Space
@@ -1117,9 +1117,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 20]
+Waltermire, et al.      Expires January 18, 2017               [Page 20]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.10.1.7.  signed32
@@ -1173,9 +1173,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 21]
+Waltermire, et al.      Expires January 18, 2017               [Page 21]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.10.1.16.  dateTimeMilliseconds
@@ -1229,9 +1229,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 22]
+Waltermire, et al.      Expires January 18, 2017               [Page 22]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.10.1.25.  subTemplateList
@@ -1285,9 +1285,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 23]
+Waltermire, et al.      Expires January 18, 2017               [Page 23]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 4.10.5.  deltaCounter
@@ -1341,9 +1341,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 24]
+Waltermire, et al.      Expires January 18, 2017               [Page 24]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
            +---------+*______in>_______*+-----+
@@ -1397,9 +1397,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 25]
+Waltermire, et al.      Expires January 18, 2017               [Page 25]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    identity.  We do not anticipate any AVP whose attribute type is
@@ -1453,9 +1453,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 26]
+Waltermire, et al.      Expires January 18, 2017               [Page 26]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  If an endpoint has an instance of a software component, we say
@@ -1509,9 +1509,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 27]
+Waltermire, et al.      Expires January 18, 2017               [Page 27]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    Each separately installable piece of software SHOULD be modeled as a
@@ -1565,9 +1565,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 28]
+Waltermire, et al.      Expires January 18, 2017               [Page 28]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  SACM Components, which may be Collectors, Evaluators, etc.
@@ -1621,9 +1621,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 29]
+Waltermire, et al.      Expires January 18, 2017               [Page 29]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    ISSUE (CEK): we agreed to remove location and account from the model,
@@ -1677,9 +1677,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 30]
+Waltermire, et al.      Expires January 18, 2017               [Page 30]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    For some of the relationships, will need some language and guidance
@@ -1733,9 +1733,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 31]
+Waltermire, et al.      Expires January 18, 2017               [Page 31]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
       "Verification" means that the provider has verified the
@@ -1789,9 +1789,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 32]
+Waltermire, et al.      Expires January 18, 2017               [Page 32]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    (CEK): Is there a standard way to distinguish the two?  We could
@@ -1845,9 +1845,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 33]
+Waltermire, et al.      Expires January 18, 2017               [Page 33]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    meaning *not* specified by the SACM internet drafts.  "Vendor-
@@ -1901,9 +1901,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 34]
+Waltermire, et al.      Expires January 18, 2017               [Page 34]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.3.  Location
@@ -1957,9 +1957,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 35]
+Waltermire, et al.      Expires January 18, 2017               [Page 35]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.4.  Endpoint Attribute Assertion
@@ -2013,9 +2013,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 36]
+Waltermire, et al.      Expires January 18, 2017               [Page 36]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.4.3.  Example
@@ -2069,9 +2069,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 37]
+Waltermire, et al.      Expires January 18, 2017               [Page 37]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    may be modeled as an event.  An endpoint's crashing also may be
@@ -2125,9 +2125,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 38]
+Waltermire, et al.      Expires January 18, 2017               [Page 38]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  User: [cek: Do we want this?  If one user uses different
@@ -2181,9 +2181,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 39]
+Waltermire, et al.      Expires January 18, 2017               [Page 39]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    An evaluator may be able to evaluate better if history is available.
@@ -2237,9 +2237,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 40]
+Waltermire, et al.      Expires January 18, 2017               [Page 40]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.8.3.  Evaluation Guidance
@@ -2293,9 +2293,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 41]
+Waltermire, et al.      Expires January 18, 2017               [Page 41]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.9.2.  Software Component
@@ -2349,9 +2349,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 42]
+Waltermire, et al.      Expires January 18, 2017               [Page 42]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    organization have a stable and consistent means to identify software
@@ -2405,9 +2405,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 43]
+Waltermire, et al.      Expires January 18, 2017               [Page 43]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -2461,9 +2461,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 44]
+Waltermire, et al.      Expires January 18, 2017               [Page 44]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
                +-------+----------------------------------+
@@ -2517,9 +2517,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 45]
+Waltermire, et al.      Expires January 18, 2017               [Page 45]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.19.  softwareTitle
@@ -2573,9 +2573,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 46]
+Waltermire, et al.      Expires January 18, 2017               [Page 46]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.24.  softwareVersion
@@ -2629,9 +2629,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 47]
+Waltermire, et al.      Expires January 18, 2017               [Page 47]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -2685,9 +2685,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 48]
+Waltermire, et al.      Expires January 18, 2017               [Page 48]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -2741,9 +2741,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 49]
+Waltermire, et al.      Expires January 18, 2017               [Page 49]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -2797,9 +2797,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 50]
+Waltermire, et al.      Expires January 18, 2017               [Page 50]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.36.  protocolIdentifier
@@ -2853,9 +2853,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 51]
+Waltermire, et al.      Expires January 18, 2017               [Page 51]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -2909,9 +2909,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 52]
+Waltermire, et al.      Expires January 18, 2017               [Page 52]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.43.  destinationIPv4Prefix
@@ -2965,9 +2965,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 53]
+Waltermire, et al.      Expires January 18, 2017               [Page 53]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.48.  applicationId
@@ -3021,9 +3021,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 54]
+Waltermire, et al.      Expires January 18, 2017               [Page 54]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3077,9 +3077,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 55]
+Waltermire, et al.      Expires January 18, 2017               [Page 55]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3133,9 +3133,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 56]
+Waltermire, et al.      Expires January 18, 2017               [Page 56]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3189,9 +3189,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 57]
+Waltermire, et al.      Expires January 18, 2017               [Page 57]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3245,9 +3245,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 58]
+Waltermire, et al.      Expires January 18, 2017               [Page 58]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3301,9 +3301,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 59]
+Waltermire, et al.      Expires January 18, 2017               [Page 59]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.65.  userName
@@ -3357,9 +3357,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 60]
+Waltermire, et al.      Expires January 18, 2017               [Page 60]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3413,9 +3413,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 61]
+Waltermire, et al.      Expires January 18, 2017               [Page 61]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3469,9 +3469,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 62]
+Waltermire, et al.      Expires January 18, 2017               [Page 62]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3525,9 +3525,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 63]
+Waltermire, et al.      Expires January 18, 2017               [Page 63]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3581,9 +3581,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 64]
+Waltermire, et al.      Expires January 18, 2017               [Page 64]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3637,9 +3637,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 65]
+Waltermire, et al.      Expires January 18, 2017               [Page 65]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3693,9 +3693,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 66]
+Waltermire, et al.      Expires January 18, 2017               [Page 66]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3749,9 +3749,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 67]
+Waltermire, et al.      Expires January 18, 2017               [Page 67]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3805,9 +3805,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 68]
+Waltermire, et al.      Expires January 18, 2017               [Page 68]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 6.83.  mibContextName
@@ -3861,9 +3861,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 69]
+Waltermire, et al.      Expires January 18, 2017               [Page 69]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    elementId: TBD
@@ -3917,9 +3917,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 70]
+Waltermire, et al.      Expires January 18, 2017               [Page 70]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  The Posture Attribute Information Consumer is an analytics engine
@@ -3973,9 +3973,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 71]
+Waltermire, et al.      Expires January 18, 2017               [Page 71]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  Event metadata attached to an address identifier or an identity
@@ -4029,9 +4029,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 72]
+Waltermire, et al.      Expires January 18, 2017               [Page 72]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    2.  The endpoint security service (Posture Assessment Information
@@ -4085,9 +4085,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 73]
+Waltermire, et al.      Expires January 18, 2017               [Page 73]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 10.  Operational Considerations
@@ -4141,9 +4141,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 74]
+Waltermire, et al.      Expires January 18, 2017               [Page 74]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 13.  References
@@ -4197,9 +4197,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 75]
+Waltermire, et al.      Expires January 18, 2017               [Page 75]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    [I-D.ietf-sacm-architecture]
@@ -4253,9 +4253,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 76]
+Waltermire, et al.      Expires January 18, 2017               [Page 76]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    [NISTIR-7693]
@@ -4309,9 +4309,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 77]
+Waltermire, et al.      Expires January 18, 2017               [Page 77]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    [OVAL-LANGUAGE]
@@ -4365,9 +4365,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 78]
+Waltermire, et al.      Expires January 18, 2017               [Page 78]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    [RFC5792]  Sangster, P. and K. Narayan, "PA-TNC: A Posture Attribute
@@ -4421,9 +4421,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 79]
+Waltermire, et al.      Expires January 18, 2017               [Page 79]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    [SP800-117]
@@ -4477,9 +4477,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 80]
+Waltermire, et al.      Expires January 18, 2017               [Page 80]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    [UML]      Object Management Group, ""Unified Modeling Language TM
@@ -4533,9 +4533,9 @@ A.1.  Changes in Revision 01
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 81]
+Waltermire, et al.      Expires January 18, 2017               [Page 81]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 A.2.  Changes in Revision 02
@@ -4589,9 +4589,9 @@ A.4.  Changes in Revision 04
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 82]
+Waltermire, et al.      Expires January 18, 2017               [Page 82]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    Cleaned up other text throughout the document.
@@ -4645,9 +4645,9 @@ C.1.  What is Trusted Network Connect?
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 83]
+Waltermire, et al.      Expires January 18, 2017               [Page 83]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    M-TLV-Binding][TNC-IF-TNCCS-TLV-Binding][TNC-IF-T-Tunneled-EAP][TNC-I
@@ -4701,9 +4701,9 @@ C.3.  What is the TNC Information Model?
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 84]
+Waltermire, et al.      Expires January 18, 2017               [Page 84]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    Each IF-MAP client may interact with the IF-MAP graph data store
@@ -4757,9 +4757,9 @@ D.1.1.  Pre-defined and Modified Terms
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 85]
+Waltermire, et al.      Expires January 18, 2017               [Page 85]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
            limiting.  For use in this document, a broader definition of
@@ -4813,9 +4813,9 @@ E.1.  Introduction
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 86]
+Waltermire, et al.      Expires January 18, 2017               [Page 86]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    determine whether endpoints have security postures that conform to
@@ -4869,9 +4869,9 @@ E.2.  Core Principles
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 87]
+Waltermire, et al.      Expires January 18, 2017               [Page 87]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
       guidance will be generated dynamically based on shared information
@@ -4925,9 +4925,9 @@ E.3.  Architecture Assumptions
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 88]
+Waltermire, et al.      Expires January 18, 2017               [Page 88]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
       Consumers.  For this model we refer to generic Enterprise and
@@ -4981,9 +4981,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 89]
+Waltermire, et al.      Expires January 18, 2017               [Page 89]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  the collection capability can reside on the endpoint or not.
@@ -5037,9 +5037,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 90]
+Waltermire, et al.      Expires January 18, 2017               [Page 90]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
                                +-------------+
@@ -5093,9 +5093,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 91]
+Waltermire, et al.      Expires January 18, 2017               [Page 91]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    on these core architectural components as the basis for determining
@@ -5149,9 +5149,9 @@ F.2.  Problem Scope
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 92]
+Waltermire, et al.      Expires January 18, 2017               [Page 92]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
        attributes that represent problems, such as vulnerabilities, that
@@ -5205,9 +5205,9 @@ G.1.1.  Generalized Workflow
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 93]
+Waltermire, et al.      Expires January 18, 2017               [Page 93]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    3.  Transport fabric authenticates and establishes authorized
@@ -5261,9 +5261,9 @@ G.3.  Information Model Elements
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 94]
+Waltermire, et al.      Expires January 18, 2017               [Page 94]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    The following sub-sections directly address the requested areas as
@@ -5317,9 +5317,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 95]
+Waltermire, et al.      Expires January 18, 2017               [Page 95]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    very biased to previous work supported by the authors and does not
@@ -5373,9 +5373,9 @@ G.3.1.1.1.  Asset Identification
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 96]
+Waltermire, et al.      Expires January 18, 2017               [Page 96]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    about the assets."  Asset identification plays an important role in
@@ -5429,9 +5429,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 97]
+Waltermire, et al.      Expires January 18, 2017               [Page 97]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
     This table presents a mapping of notional SACM asset types to those
@@ -5485,9 +5485,9 @@ G.3.1.2.  Endpoint Identification
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 98]
+Waltermire, et al.      Expires January 18, 2017               [Page 98]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 G.3.1.2.1.  Related Work
@@ -5541,9 +5541,9 @@ G.3.1.3.1.  Related Work
 
 
 
-Waltermire, et al.      Expires December 11, 2016              [Page 99]
+Waltermire, et al.      Expires January 18, 2017               [Page 99]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 G.3.1.3.1.1.  Common Platform Enumeration
@@ -5597,9 +5597,9 @@ G.3.1.3.1.1.1.  Background
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 100]
+Waltermire, et al.      Expires January 18, 2017              [Page 100]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  Not enough primary source vendors provide platform and product
@@ -5653,9 +5653,9 @@ G.3.1.3.1.2.  Software Identification (SWID) Tags
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 101]
+Waltermire, et al.      Expires January 18, 2017              [Page 101]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    SWID tags can be associated with software installation media,
@@ -5709,9 +5709,9 @@ G.3.2.1.  Platform Configuration Item Identifier
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 102]
+Waltermire, et al.      Expires January 18, 2017              [Page 102]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    identifier should remain consistent with regards to what it
@@ -5765,9 +5765,9 @@ G.3.2.1.1.1.  Common Configuration Enumeration
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 103]
+Waltermire, et al.      Expires January 18, 2017              [Page 103]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 G.3.2.1.1.2.  Open Vulnerability and Assessment Language
@@ -5821,9 +5821,9 @@ G.3.2.1.1.2.1.  Background
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 104]
+Waltermire, et al.      Expires January 18, 2017              [Page 104]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    The following figure illustrates the OVAL data model.
@@ -5877,9 +5877,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 105]
+Waltermire, et al.      Expires January 18, 2017              [Page 105]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
       *  Object(platform specific): A generalized construct that is
@@ -5933,9 +5933,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 106]
+Waltermire, et al.      Expires January 18, 2017              [Page 106]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    Many of the elements in the OVAL model (i.e., Test, Object, State,
@@ -5989,9 +5989,9 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 107]
+Waltermire, et al.      Expires January 18, 2017              [Page 107]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
       to be evolved to provide for greater extensibility in this area,
@@ -6045,9 +6045,9 @@ G.3.2.2.  Configuration Item Identifier
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 108]
+Waltermire, et al.      Expires January 18, 2017              [Page 108]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    and for associating related metadata.  Use of an IANA registry
@@ -6101,9 +6101,9 @@ G.3.2.2.1.2.  A Potential Alternate Approach
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 109]
+Waltermire, et al.      Expires January 18, 2017              [Page 109]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    o  Differing scopes of technological needs.
@@ -6157,9 +6157,9 @@ G.3.3.  Endpoint characterization
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 110]
+Waltermire, et al.      Expires January 18, 2017              [Page 110]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    Also human input
@@ -6213,9 +6213,9 @@ G.3.3.1.1.2.  Applicability to Endpoint characterization
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 111]
+Waltermire, et al.      Expires January 18, 2017              [Page 111]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    point for understanding the types of information that should be used
@@ -6269,9 +6269,9 @@ G.3.3.1.2.2.  Relationship to Endpoint Characterization
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 112]
+Waltermire, et al.      Expires January 18, 2017              [Page 112]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    ARF is agnostic to the data formats of the collected posture
@@ -6325,9 +6325,9 @@ G.3.3.1.3.  The CPE Applicability Language
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 113]
+Waltermire, et al.      Expires January 18, 2017              [Page 113]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    applicability statements against previously collected posture
@@ -6381,9 +6381,9 @@ G.3.4.2.  Platform Configuration Attributes
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 114]
+Waltermire, et al.      Expires January 18, 2017              [Page 114]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    For example, a primary source vendor would create a platform-specific
@@ -6437,9 +6437,9 @@ G.3.4.2.1.3.  Simple Network Management Protocol and Management
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 115]
+Waltermire, et al.      Expires January 18, 2017              [Page 115]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    endpoint and retrieved by SNMP is defined by the Management
@@ -6493,9 +6493,9 @@ G.3.5.1.1.2.  Software Identification Tags
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 116]
+Waltermire, et al.      Expires January 18, 2017              [Page 116]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    identifier for each unit of installed software.  Given this, SWID
@@ -6549,9 +6549,9 @@ G.3.5.2.1.2.  NETCONF-Based Collection
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 117]
+Waltermire, et al.      Expires January 18, 2017              [Page 117]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    provides a variety of filtering mechanisms (XPath, subtree, content
@@ -6605,9 +6605,9 @@ G.3.6.1.  Configuration Evaluation Guidance
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 118]
+Waltermire, et al.      Expires January 18, 2017              [Page 118]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 G.3.6.1.1.  Related Work
@@ -6661,9 +6661,9 @@ G.3.6.1.1.2.  XCCDF Rule
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 119]
+Waltermire, et al.      Expires January 18, 2017              [Page 119]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    that apply only to the DMZ endpoint would be disabled during the
@@ -6717,9 +6717,9 @@ G.3.7.1.1.1.  XCCDF TestResults
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 120]
+Waltermire, et al.      Expires January 18, 2017              [Page 120]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    outcome of assessing a single endpoint against the assessed items
@@ -6773,9 +6773,9 @@ G.3.7.1.1.2.  Open Vulnerability and Assessment Language
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 121]
+Waltermire, et al.      Expires January 18, 2017              [Page 121]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 G.3.7.1.1.3.  Asset Summary Reporting
@@ -6829,9 +6829,9 @@ Appendix H.  Graph Model
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 122]
+Waltermire, et al.      Expires January 18, 2017              [Page 122]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    This architecture addresses information structure independently of
@@ -6885,9 +6885,9 @@ H.1.  Background: Graph Models
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 123]
+Waltermire, et al.      Expires January 18, 2017              [Page 123]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
       +------------------+                 +-----------------+
@@ -6941,9 +6941,9 @@ H.3.  Identifiers
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 124]
+Waltermire, et al.      Expires January 18, 2017              [Page 124]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    Identifiers are unique: two different vertices cannot have equivalent
@@ -6997,9 +6997,9 @@ H.5.  Metadata
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 125]
+Waltermire, et al.      Expires January 18, 2017              [Page 125]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
 H.6.  Use for SACM
@@ -7053,9 +7053,9 @@ H.8.  Extensibility
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 126]
+Waltermire, et al.      Expires January 18, 2017              [Page 126]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    innovation.  Intermediate software that conveys graph changes from
@@ -7109,9 +7109,9 @@ Authors' Addresses
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 127]
+Waltermire, et al.      Expires January 18, 2017              [Page 127]
 
-Internet-Draft           SACM Information Model                June 2016
+Internet-Draft           SACM Information Model                July 2016
 
 
    Lisa Lorenzin
@@ -7165,4 +7165,4 @@ Internet-Draft           SACM Information Model                June 2016
 
 
 
-Waltermire, et al.      Expires December 11, 2016             [Page 128]
+Waltermire, et al.      Expires January 18, 2017              [Page 128]
