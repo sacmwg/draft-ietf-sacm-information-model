@@ -520,7 +520,7 @@
               the same statement metadata and are of the same content-type can be included in a single 
               SACM statement. A SACM statement functions similar to an envelope or a header. Its purpose 
               is to enable the tracking of the origin of data inside a SACM domain and more importantly 
-              to enable the mitigation of conflicting information that my originate from different SACM 
+              to enable the mitigation of conflicting information that may originate from different SACM 
               components. How a consuming SACM component actually deals with conflicting information is 
               out-of-scope of the SACM IM. Semantically, the term statement implies that the SACM content 
               provided by a SACM component might not be correct in every context, but rather is the result 
