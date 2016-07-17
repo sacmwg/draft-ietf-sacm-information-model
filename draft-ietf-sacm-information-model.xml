@@ -514,7 +514,7 @@
           <section title="SACM Statements"
             anchor="sacm-statements">
             <t>One or more SACM content elements are bundled in a SACM statement. In contrast to 
-              content-metadata, statement-metatdata focuses on the providing SACM component instead of the 
+              content-metadata, statement-metadata focuses on the providing SACM component instead of the 
               target endpoint that the content is about. The only content-specific metadata included in 
               the SACM statement is the content-type IE. Therefore, multiple content-elements that share 
               the same statement metadata and are of the same content-type can be included in a single 
