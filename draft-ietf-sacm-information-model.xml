@@ -524,7 +524,7 @@
               components. How a consuming SACM component actually deals with conflicting information is 
               out-of-scope of the SACM IM. Semantically, the term statement implies that the SACM content 
               provided by a SACM component might not be correct in every context, but rather is the result 
-              of an best-effort to produce correct information.</t>
+              of a best-effort to produce correct information.</t>
 
             <figure title="Example of a simple SACM statement including a single content-element." anchor="sacm-statement-example-1">
               <artwork>                  
