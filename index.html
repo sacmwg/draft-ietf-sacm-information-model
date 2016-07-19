@@ -710,7 +710,7 @@ ul.toc a:first-child {
 
   <meta name="dct.creator" content="Waltermire, D., Ed., Watson, K., Kahn, C., Lorenzin, L., Cokus, M., and D. Haynes" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-information-model-06" />
-  <meta name="dct.issued" scheme="ISO8601" content="2016-7-17" />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-7-19" />
   <meta name="dct.abstract" content="This document defines the information elements that are transported between SACM components and their interconnected relationships. The primary purpose of the Secure Automation and Continuous Monitoring (SACM) Information Model is to ensure the interoperability of corresponding SACM data models and addresses the use cases defined by SACM. The information elements and corresponding types are maintained as the IANA &quot;SACM Information Elements&quot; registry." />
   <meta name="description" content="This document defines the information elements that are transported between SACM components and their interconnected relationships. The primary purpose of the Secure Automation and Continuous Monitoring (SACM) Information Model is to ensure the interoperability of corresponding SACM data models and addresses the use cases defined by SACM. The information elements and corresponding types are maintained as the IANA &quot;SACM Information Elements&quot; registry." />
 
@@ -734,7 +734,7 @@ ul.toc a:first-child {
   <td class="right">K. Watson</td>
 </tr>
 <tr>
-  <td class="left">Expires: January 18, 2017</td>
+  <td class="left">Expires: January 20, 2017</td>
   <td class="right">DHS</td>
 </tr>
 <tr>
@@ -763,7 +763,7 @@ ul.toc a:first-child {
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">July 17, 2016</td>
+  <td class="right">July 19, 2016</td>
 </tr>
 
     	
@@ -783,7 +783,7 @@ ul.toc a:first-child {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on January 18, 2017.</p>
+<p>This Internet-Draft will expire on January 20, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -3375,15 +3375,31 @@ description: The textual name of the MIB module that defines a MIB
 </table>
 <h1 id="rfc.appendix.A"><a href="#rfc.appendix.A">Appendix A.</a> Change Log</h1>
 <h1 id="rfc.appendix.A.1"><a href="#rfc.appendix.A.1">A.1.</a> <a href="#changes-in-revision-01" id="changes-in-revision-01">Changes in Revision 01</a></h1>
-<p id="rfc.section.A.1.p.1">Renamed "credential" to "identity", following industry usage. A credential includes proof, such as a key or password. A username or a distinguished name is called an "identity".</p>
-<p id="rfc.section.A.1.p.2">Removed Session, because an endpoint's network activity is not SACM's initial focus</p>
-<p id="rfc.section.A.1.p.3">Removed Authorization, for the same reason</p>
-<p id="rfc.section.A.1.p.4">Added many-to-many relationship between Hardware Component and Endpoint, for clarity</p>
-<p id="rfc.section.A.1.p.5">Added many-to-many relationship between Software Component and Endpoint, for clarity</p>
-<p id="rfc.section.A.1.p.6">Added "contains" relationship between Network Interface and Network Interface</p>
-<p id="rfc.section.A.1.p.7">Removed relationship between Network Interface and Account. The endpoint knows the identity it used to gain network access. The PDP also knows that. But they probably do not know the account.</p>
-<p id="rfc.section.A.1.p.8">Added relationship between Network Interface and Identity. The endpoint and the PDP will typically know the identity.</p>
-<p id="rfc.section.A.1.p.9">Made identity-to-account a many-to-one relationship.</p>
+<p id="rfc.section.A.1.p.1">Added some proposed normative text.</p>
+<p id="rfc.section.A.1.p.2">For provenance: </p>
+
+<ul class="empty">
+  <li>Added a class "Method"</li>
+  <li>Added the produced-using relationship between an AVP and a method</li>
+  <li>Added the produced-by relationship between a Guidance and a SACM Component</li>
+  <li>Added the hosted-by relationship between a SACM Component and an Endpoint</li>
+</ul>
+
+<p> </p>
+<p id="rfc.section.A.1.p.3">asserted-by and summarized-by have been renamed to produced-by.</p>
+<p id="rfc.section.A.1.p.4">"User" is now "Account".  If a user has different credentials, SACM cannot know that they belong to the same user.  But, per Kim W, many organizations do have accounts that associate credentials.</p>
+<p id="rfc.section.A.1.p.5">The multiplicity of the based-on relationships has been corrected.</p>
+<p id="rfc.section.A.1.p.6">More relationships now have labels, per UML convention.</p>
+<p id="rfc.section.A.1.p.7">The diagram no longer has causal arrow.  They had become redundant and were nonstandard and clutter.</p>
+<p id="rfc.section.A.1.p.8">Renamed "credential" to "identity", following industry usage. A credential includes proof, such as a key or password. A username or a distinguished name is called an "identity".</p>
+<p id="rfc.section.A.1.p.9">Removed Session, because an endpoint's network activity is not SACM's initial focus</p>
+<p id="rfc.section.A.1.p.10">Removed Authorization, for the same reason</p>
+<p id="rfc.section.A.1.p.11">Added many-to-many relationship between Hardware Component and Endpoint, for clarity</p>
+<p id="rfc.section.A.1.p.12">Added many-to-many relationship between Software Component and Endpoint, for clarity</p>
+<p id="rfc.section.A.1.p.13">Added "contains" relationship between Network Interface and Network Interface</p>
+<p id="rfc.section.A.1.p.14">Removed relationship between Network Interface and Account. The endpoint knows the identity it used to gain network access. The PDP also knows that. But they probably do not know the account.</p>
+<p id="rfc.section.A.1.p.15">Added relationship between Network Interface and Identity. The endpoint and the PDP will typically know the identity.</p>
+<p id="rfc.section.A.1.p.16">Made identity-to-account a many-to-one relationship.</p>
 <h1 id="rfc.appendix.A.2"><a href="#rfc.appendix.A.2">A.2.</a> <a href="#changes-in-revision-02" id="changes-in-revision-02">Changes in Revision 02</a></h1>
 <p id="rfc.section.A.2.p.1">Added <a href="#section-identifying-attributes">Section 6.1</a>, Identifying Attributes.</p>
 <p id="rfc.section.A.2.p.2">Split the figure into <a href="#figure-model-of-endpoint">Figure 10</a> and <a href="#figure-information-elements">Figure 11</a>.</p>
