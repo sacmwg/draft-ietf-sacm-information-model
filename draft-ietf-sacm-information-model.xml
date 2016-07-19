@@ -3796,6 +3796,23 @@ description: The textual name of the MIB module that defines a MIB
         
         <section title="Change Log">
             <section title="Changes in Revision 01" anchor="changes-in-revision-01">
+            	             <t>Added some proposed normative text.</t>     
+                <t>For provenance:
+                    <list style="symbol">     
+                        <t>Added a class "Method"</t>     
+                        <t>Added the produced-using relationship between an AVP and a method</t>     
+                        <t>Added the produced-by relationship between a Guidance and a SACM Component</t>     
+                        <t>Added the hosted-by relationship between a SACM Component and an Endpoint</t>     
+                    </list>
+                </t>
+                <t>asserted-by and summarized-by have been renamed to produced-by.</t>     
+                <t>"User" is now "Account".  If a user has different credentials, SACM     
+                cannot know that they belong to the same user.  But, per Kim W, many     
+                organizations do have accounts that associate credentials.</t>
+                <t>The multiplicity of the based-on relationships has been corrected.</t>     
+                <t>More relationships now have labels, per UML convention.</t>                
+                <t>The diagram no longer has causal arrow.  They had become redundant and were 
+                nonstandard and clutter.</t> 
                 <t>Renamed "credential" to "identity", following industry usage. A credential includes
                     proof, such as a key or password. A username or a distinguished name is called an
                     "identity".</t>
