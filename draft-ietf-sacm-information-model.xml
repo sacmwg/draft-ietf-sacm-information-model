@@ -471,17 +471,17 @@
             <section title="SACM Statements"
                 anchor="sacm-statements">
                 <t>One or more SACM content elements are bundled in a SACM statement. In contrast to 
-                    content-metadata, statement-metatdata focuses on the providing SACM component instead of the 
+                    content-metadata, statement-metadata focuses on the providing SACM component instead of the 
                     target endpoint that the content is about. The only content-specific metadata included in 
                     the SACM statement is the content-type IE. Therefore, multiple content-elements that share 
                     the same statement metadata and are of the same content-type can be included in a single 
                     SACM statement. A SACM statement functions similar to an envelope or a header. Its purpose 
                     is to enable the tracking of the origin of data inside a SACM domain and more importantly 
-                    to enable the mitigation of conflicting information that my originate from different SACM 
+                    to enable the mitigation of conflicting information that may originate from different SACM 
                     components. How a consuming SACM component actually deals with conflicting information is 
                     out-of-scope of the SACM IM. Semantically, the term statement implies that the SACM content 
                     provided by a SACM component might not be correct in every context, but rather is the result 
-                    of an best-effort to produce correct information.</t>
+                    of a best-effort to produce correct information.</t>
                 
                 <figure title="Example of a simple SACM statement including a single content-element." anchor="sacm-statement-example-1">
                     <artwork>                  
@@ -2454,6 +2454,23 @@ description: The textual name of the MIB module that defines a MIB
         
         <section title="Change Log">
             <section title="Changes in Revision 01" anchor="changes-in-revision-01">
+                <t>Added some proposed normative text.</t>     
+                <t>For provenance:
+                    <list style="symbol">     
+                        <t>Added a class "Method"</t>     
+                        <t>Added the produced-using relationship between an AVP and a method</t>     
+                        <t>Added the produced-by relationship between a Guidance and a SACM Component</t>     
+                        <t>Added the hosted-by relationship between a SACM Component and an Endpoint</t>     
+                    </list>
+                </t>
+                <t>asserted-by and summarized-by have been renamed to produced-by.</t>     
+                <t>"User" is now "Account".  If a user has different credentials, SACM     
+                    cannot know that they belong to the same user.  But, per Kim W, many     
+                    organizations do have accounts that associate credentials.</t>
+                <t>The multiplicity of the based-on relationships has been corrected.</t>     
+                <t>More relationships now have labels, per UML convention.</t>                
+                <t>The diagram no longer has causal arrow.  They had become redundant and were 
+                    nonstandard and clutter.</t> 
                 <t>Renamed "credential" to "identity", following industry usage. A credential includes
                     proof, such as a key or password. A username or a distinguished name is called an
                     "identity".</t>
