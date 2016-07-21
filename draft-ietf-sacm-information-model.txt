@@ -227,10 +227,10 @@ Internet-Draft           SACM Information Model                July 2016
 
 
      A.2.  Changes in Revision 02  . . . . . . . . . . . . . . . . .  56
-     A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . .  56
+     A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . .  57
      A.4.  Changes in Revision 04  . . . . . . . . . . . . . . . . .  57
-     A.5.  Changes in Revision 05  . . . . . . . . . . . . . . . . .  57
-     A.6.  Changes in Revision 06  . . . . . . . . . . . . . . . . .  57
+     A.5.  Changes in Revision 05  . . . . . . . . . . . . . . . . .  58
+     A.6.  Changes in Revision 06  . . . . . . . . . . . . . . . . .  58
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  58
 
 1.  Introduction
@@ -580,7 +580,7 @@ Internet-Draft           SACM Information Model                July 2016
 4.2.  SACM Statements
 
    One or more SACM content elements are bundled in a SACM statement.
-   In contrast to content-metadata, statement-metatdata focuses on the
+   In contrast to content-metadata, statement-metadata focuses on the
    providing SACM component instead of the target endpoint that the
    content is about.  The only content-specific metadata included in the
    SACM statement is the content-type IE.  Therefore, multiple content-
@@ -589,11 +589,11 @@ Internet-Draft           SACM Information Model                July 2016
    statement functions similar to an envelope or a header.  Its purpose
    is to enable the tracking of the origin of data inside a SACM domain
    and more importantly to enable the mitigation of conflicting
-   information that my originate from different SACM components.  How a
+   information that may originate from different SACM components.  How a
    consuming SACM component actually deals with conflicting information
    is out-of-scope of the SACM IM.  Semantically, the term statement
    implies that the SACM content provided by a SACM component might not
-   be correct in every context, but rather is the result of an best-
+   be correct in every context, but rather is the result of a best-
    effort to produce correct information.
 
 
@@ -3063,6 +3063,41 @@ Appendix A.  Change Log
 
 A.1.  Changes in Revision 01
 
+   Added some proposed normative text.
+
+   For provenance:
+
+      Added a class "Method"
+
+      Added the produced-using relationship between an AVP and a method
+
+      Added the produced-by relationship between a Guidance and a SACM
+      Component
+
+
+
+
+Waltermire, et al.      Expires January 22, 2017               [Page 55]
+
+Internet-Draft           SACM Information Model                July 2016
+
+
+      Added the hosted-by relationship between a SACM Component and an
+      Endpoint
+
+   asserted-by and summarized-by have been renamed to produced-by.
+
+   "User" is now "Account".  If a user has different credentials, SACM
+   cannot know that they belong to the same user.  But, per Kim W, many
+   organizations do have accounts that associate credentials.
+
+   The multiplicity of the based-on relationships has been corrected.
+
+   More relationships now have labels, per UML convention.
+
+   The diagram no longer has causal arrow.  They had become redundant
+   and were nonstandard and clutter.
+
    Renamed "credential" to "identity", following industry usage.  A
    credential includes proof, such as a key or password.  A username or
    a distinguished name is called an "identity".
@@ -3074,13 +3109,6 @@ A.1.  Changes in Revision 01
 
    Added many-to-many relationship between Hardware Component and
    Endpoint, for clarity
-
-
-
-Waltermire, et al.      Expires January 22, 2017               [Page 55]
-
-Internet-Draft           SACM Information Model                July 2016
-
 
    Added many-to-many relationship between Software Component and
    Endpoint, for clarity
@@ -3100,6 +3128,15 @@ Internet-Draft           SACM Information Model                July 2016
 A.2.  Changes in Revision 02
 
    Added Section Identifying Attributes.
+
+
+
+
+
+Waltermire, et al.      Expires January 22, 2017               [Page 56]
+
+Internet-Draft           SACM Information Model                July 2016
+
 
    Split the figure into Figure Model of Endpoint and Figure Information
    Elements.
@@ -3130,14 +3167,6 @@ A.3.  Changes in Revision 03
    Enterprise Use Cases document to reflect that it was published as an
    RFC.
 
-
-
-
-Waltermire, et al.      Expires January 22, 2017               [Page 56]
-
-Internet-Draft           SACM Information Model                July 2016
-
-
    Fixed the formatting of a few figures.
 
    Included references to [RFC3580] where RADIUS is mentioned.
@@ -3157,6 +3186,13 @@ A.4.  Changes in Revision 04
    issues/30.
 
    Cleaned up other text throughout the document.
+
+
+
+Waltermire, et al.      Expires January 22, 2017               [Page 57]
+
+Internet-Draft           SACM Information Model                July 2016
+
 
 A.5.  Changes in Revision 05
 
@@ -3185,15 +3221,6 @@ A.6.  Changes in Revision 06
    Performed various clean-up and refactoring in Sections 6 and 7.
    Still need to go through Section 8.
 
-
-
-
-
-Waltermire, et al.      Expires January 22, 2017               [Page 57]
-
-Internet-Draft           SACM Information Model                July 2016
-
-
    Removed appendices that were not referenced in the body of the draft.
    The text from them is still available in previous revisions of this
    document if needed.
@@ -3207,6 +3234,20 @@ Authors' Addresses
    USA
 
    Email: david.waltermire@nist.gov
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.      Expires January 22, 2017               [Page 58]
+
+Internet-Draft           SACM Information Model                July 2016
 
 
    Kim Watson
@@ -3238,18 +3279,6 @@ Authors' Addresses
    Email: llorenzin@pulsesecure.net
 
 
-
-
-
-
-
-
-
-Waltermire, et al.      Expires January 22, 2017               [Page 58]
-
-Internet-Draft           SACM Information Model                July 2016
-
-
    Michael Cokus
    The MITRE Corporation
    903 Enterprise Parkway, Suite 200
@@ -3266,35 +3295,6 @@ Internet-Draft           SACM Information Model                July 2016
    USA
 
    Email: dhaynes@mitre.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

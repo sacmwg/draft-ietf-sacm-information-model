@@ -1014,7 +1014,7 @@ ul.toc a:first-child {
                     </pre>
 <p class="figure">Figure 3: Example set of IEs associated with a timestamp and a                     target endpoint label.</p>
 <h1 id="rfc.section.4.2"><a href="#rfc.section.4.2">4.2.</a> <a href="#sacm-statements" id="sacm-statements">SACM Statements</a></h1>
-<p id="rfc.section.4.2.p.1">One or more SACM content elements are bundled in a SACM statement. In contrast to content-metadata, statement-metatdata focuses on the providing SACM component instead of the target endpoint that the content is about. The only content-specific metadata included in the SACM statement is the content-type IE. Therefore, multiple content-elements that share the same statement metadata and are of the same content-type can be included in a single SACM statement. A SACM statement functions similar to an envelope or a header. Its purpose is to enable the tracking of the origin of data inside a SACM domain and more importantly to enable the mitigation of conflicting information that my originate from different SACM components. How a consuming SACM component actually deals with conflicting information is out-of-scope of the SACM IM. Semantically, the term statement implies that the SACM content provided by a SACM component might not be correct in every context, but rather is the result of an best-effort to produce correct information.</p>
+<p id="rfc.section.4.2.p.1">One or more SACM content elements are bundled in a SACM statement. In contrast to content-metadata, statement-metadata focuses on the providing SACM component instead of the target endpoint that the content is about. The only content-specific metadata included in the SACM statement is the content-type IE. Therefore, multiple content-elements that share the same statement metadata and are of the same content-type can be included in a single SACM statement. A SACM statement functions similar to an envelope or a header. Its purpose is to enable the tracking of the origin of data inside a SACM domain and more importantly to enable the mitigation of conflicting information that may originate from different SACM components. How a consuming SACM component actually deals with conflicting information is out-of-scope of the SACM IM. Semantically, the term statement implies that the SACM content provided by a SACM component might not be correct in every context, but rather is the result of a best-effort to produce correct information.</p>
 <div id="rfc.figure.4"/>
 <div id="sacm-statement-example-1"/>
 <pre>                  
@@ -2513,15 +2513,31 @@ description: The textual name of the MIB module that defines a MIB
 </table>
 <h1 id="rfc.appendix.A"><a href="#rfc.appendix.A">Appendix A.</a> Change Log</h1>
 <h1 id="rfc.appendix.A.1"><a href="#rfc.appendix.A.1">A.1.</a> <a href="#changes-in-revision-01" id="changes-in-revision-01">Changes in Revision 01</a></h1>
-<p id="rfc.section.A.1.p.1">Renamed "credential" to "identity", following industry usage. A credential includes proof, such as a key or password. A username or a distinguished name is called an "identity".</p>
-<p id="rfc.section.A.1.p.2">Removed Session, because an endpoint's network activity is not SACM's initial focus</p>
-<p id="rfc.section.A.1.p.3">Removed Authorization, for the same reason</p>
-<p id="rfc.section.A.1.p.4">Added many-to-many relationship between Hardware Component and Endpoint, for clarity</p>
-<p id="rfc.section.A.1.p.5">Added many-to-many relationship between Software Component and Endpoint, for clarity</p>
-<p id="rfc.section.A.1.p.6">Added "contains" relationship between Network Interface and Network Interface</p>
-<p id="rfc.section.A.1.p.7">Removed relationship between Network Interface and Account. The endpoint knows the identity it used to gain network access. The PDP also knows that. But they probably do not know the account.</p>
-<p id="rfc.section.A.1.p.8">Added relationship between Network Interface and Identity. The endpoint and the PDP will typically know the identity.</p>
-<p id="rfc.section.A.1.p.9">Made identity-to-account a many-to-one relationship.</p>
+<p id="rfc.section.A.1.p.1">Added some proposed normative text.</p>
+<p id="rfc.section.A.1.p.2">For provenance: </p>
+
+<ul class="empty">
+  <li>Added a class "Method"</li>
+  <li>Added the produced-using relationship between an AVP and a method</li>
+  <li>Added the produced-by relationship between a Guidance and a SACM Component</li>
+  <li>Added the hosted-by relationship between a SACM Component and an Endpoint</li>
+</ul>
+
+<p> </p>
+<p id="rfc.section.A.1.p.3">asserted-by and summarized-by have been renamed to produced-by.</p>
+<p id="rfc.section.A.1.p.4">"User" is now "Account".  If a user has different credentials, SACM cannot know that they belong to the same user.  But, per Kim W, many organizations do have accounts that associate credentials.</p>
+<p id="rfc.section.A.1.p.5">The multiplicity of the based-on relationships has been corrected.</p>
+<p id="rfc.section.A.1.p.6">More relationships now have labels, per UML convention.</p>
+<p id="rfc.section.A.1.p.7">The diagram no longer has causal arrow.  They had become redundant and were nonstandard and clutter.</p>
+<p id="rfc.section.A.1.p.8">Renamed "credential" to "identity", following industry usage. A credential includes proof, such as a key or password. A username or a distinguished name is called an "identity".</p>
+<p id="rfc.section.A.1.p.9">Removed Session, because an endpoint's network activity is not SACM's initial focus</p>
+<p id="rfc.section.A.1.p.10">Removed Authorization, for the same reason</p>
+<p id="rfc.section.A.1.p.11">Added many-to-many relationship between Hardware Component and Endpoint, for clarity</p>
+<p id="rfc.section.A.1.p.12">Added many-to-many relationship between Software Component and Endpoint, for clarity</p>
+<p id="rfc.section.A.1.p.13">Added "contains" relationship between Network Interface and Network Interface</p>
+<p id="rfc.section.A.1.p.14">Removed relationship between Network Interface and Account. The endpoint knows the identity it used to gain network access. The PDP also knows that. But they probably do not know the account.</p>
+<p id="rfc.section.A.1.p.15">Added relationship between Network Interface and Identity. The endpoint and the PDP will typically know the identity.</p>
+<p id="rfc.section.A.1.p.16">Made identity-to-account a many-to-one relationship.</p>
 <h1 id="rfc.appendix.A.2"><a href="#rfc.appendix.A.2">A.2.</a> <a href="#changes-in-revision-02" id="changes-in-revision-02">Changes in Revision 02</a></h1>
 <p id="rfc.section.A.2.p.1">Added Section Identifying Attributes.</p>
 <p id="rfc.section.A.2.p.2">Split the figure into Figure Model of Endpoint and Figure Information Elements.</p>
