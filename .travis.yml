@@ -1,17 +1,17 @@
 language: python
 rvm:
-- 2.2.0
-before_install:
-- sudo apt-get update -qq
-- sudo apt-get install -y python-lxml python-pip
-install:
-- deactivate
-- sudo pip install xml2rfc
+- 4.4.0
+sudo: false
+addons:
+  apt:
+    packages:
+      - python-pip
 script:
-- make ghpages
+- make ghpages-all
 env:
   global:
-  - secure: FlbOvCDNPeBkjvI5MtM2fAf0b4H8nqc3bYwnLZLGJ9xbfNqgVtONC99i7R9x/clLfrEsiXFxLj7p4YgxOpz+PCQEhXFBTG7MUIyH2I5n5aUckdpJQy+Y6ibWf7qQDrWhM4YetsLHbX6+rWutr3fYRQ/naQgUTpRUiuy48hpTif4C5Y2jLQyFy8kB6i8ITKGjcXtAb+nJhBCzhupDzFSVGz/vRR2rYauRDTXXObjthmF7K0s4SiPSbo8nQy+yvcLvA/vveNMCfXu39sSMHL3Ht5eTaJ0Hh4T4CaE7hKeSOiztBti3naUPeIHk0yoF+AU0oUagzX3KULEegCb2taIUFzXtuyi8zfc5wwNH1TLqpH750/UO93jU6owu18m3Nddq2d8gPdXWnAQMdKQFgSHegps+m83b2uwprgo5/qywLjJJg6vUwk18TlzymoXlOXQuaa97rI5zgakPyLyIL81f+GoeN9wYFWy10w/zq5XfO4qbFGnU4ktp7qhafXtFbf5doClsnvB9jkFR6vwu9FqK9yo+RPoVWo203pg4v3AuR5liab/TkEj3e34nXmE0BYR09XtAUML3w4ejiNNSRskQe+m417JiyNzqIjiD+y90HycLzKno7SO1FVlLZHvZ0KOG87JH4uwPMwqlmay+r3OAkkGN6Yl5Gergwx4Fu8pH/uI=
+  - secure: FlbOvCDNPeBkjvI5MtM2fAf0b4H8nqc3bYwnLZLGJ9xbfNqgVtONC99i7R9x/clLfrEsiXFxLj7p4YgxOpz+PCQEhXFBTG7MUIyH2I5n5aUckdpJQy+Y6ibWf7qQDrWhM4YetsLHbX6+rWutr3fYRQ/naQgUTpRUiuy48hpTif4C5Y2jLQyFy8kB6i8ITKGjcXtAb+nJhBCzhupDzFSVGz/vRR2rYauRD
+  TXXObjthmF7K0s4SiPSbo8nQy+yvcLvA/vveNMCfXu39sSMHL3Ht5eTaJ0Hh4T4CaE7hKeSOiztBti3naUPeIHk0yoF+AU0oUagzX3KULEegCb2taIUFzXtuyi8zfc5wwNH1TLqpH750/UO93jU6owu18m3Nddq2d8gPdXWnAQMdKQFgSHegps+m83b2uwprgo5/qywLjJJg6vUwk18TlzymoXlOXQuaa97rI5zgakPyLyIL81f+GoeN9wYFWy10w/zq5XfO4qbFGnU4ktp7qhafXtFbf5doClsnvB9jkFR6vwu9FqK9yo+RPoVWo203pg4v3AuR5liab/TkEj3e34nXmE0BYR09XtAUML3w4ejiNNSRskQe+m417JiyNzqIjiD+y90HycLzKno7SO1FVlLZHvZ0KOG87JH4uwPMwqlmay+r3OAkkGN6Yl5Gergwx4Fu8pH/uI=
 before_deploy: make submit
 deploy:
   provider: releases
