@@ -1,10 +1,13 @@
 language: python
-rvm:
-- 3.4.0
+pytnon:
+- 3.4
 sudo: false
 addons:
   apt:
     packages:
+      - python-lxml
       - python-pip
+install:
+- pip install xml2rfc
 script:
 - make ghpagesAll
