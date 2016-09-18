@@ -19,6 +19,8 @@ class ListToken:
         if self.cardinality:
             v += self.cardinality
         if self.next:
+            if self.next == "|":
+                v += " "
             v += self.next
         return v
 
