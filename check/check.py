@@ -435,21 +435,27 @@ def main():
         print("<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en-us'>", file=fout)
         print("<head>", file=fout)
         print("<title>SACM Information Model</title>", file=fout)
+        
         print("<script type='text/javascript'>", file=fout)
         CopyFile('css/jquery.js', fout)
         print("</script>", file=fout)
+        
         print("<script type='text/javascript'>", file=fout)
         CopyFile('css/tablesorter.min.js', fout)
         print("</script>", file=fout)
+        
         print("<script type='text/javascript'>", file=fout)
         print("$(document).ready(function(){ $('#myTable').tablesorter();});", file=fout)
         print("</script>", file=fout)
+        
         # print("<style>", file=fout)
         # CopyFile('css/jq.css', fout)
         # print("</script>", file=fout)
+        
         print("<style>", file=fout)
         CopyFile('css/style.css', fout)
         print("</style>", file=fout)
+        
         print("</head>", file=fout)
         print("<body>", file=fout)
         print("<table id='myTable' class='tablesorter'>", file=fout)
