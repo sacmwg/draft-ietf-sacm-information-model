@@ -8,7 +8,7 @@ im.html:
 
 impages: $(GHPAGES_TMP) im.html
 	cp im.html $(GHPAGES_TMP)
-	cp -r css $(GHPAGES_TMP)/css
+	cp -r css $(GHPAGES_TMP)
 	ls -R $(GHPAGES_TMP)
 
 ghpagesAll: impages ghpages
