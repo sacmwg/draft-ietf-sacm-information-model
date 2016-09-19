@@ -34,22 +34,22 @@ class enumValue:
             raise SyntaxError("Incorrect number of fields in enumeration")
         
         x = re.match("^[0-9a-zA-Z_]+$", values[0].strip())
-        # if not x:
-        #     print("Error Line: '" + line + "'", file=sys.stderr)
-        #     raise SyntaxError("Name does not match pattern")
+        if not x:
+            print("Error Line: '" + line + "'", file=sys.stderr)
+            raise SyntaxError("Name does not match pattern")
         self.name = values[0].strip()
         
-        # x = re.match("^0x([0-9a-fA-F]+)$", values[1].strip())
-        # if not x:
-        #    print("Error Line: '" + line + "'", file=sys.stderr)
-        #    raise SyntaxError("Value is not a hexadecimal number")
+        x = re.match("^0x([0-9a-fA-F]+)$", values[1].strip())
+        if not x:
+           print("Error Line: '" + line + "'", file=sys.stderr)
+           raise SyntaxError("Value is not a hexadecimal number")
         self.tag = values[1].strip()
         self.value = int(values[1].strip(), 16)
 
-        # x = re.match("^[0-9a-zA-Z\.,_ ]+$", values[2].strip())
-        # if not x:
-        #     print("Error Line: '" + line + "'", file=sys.stderr)
-        #     print("Description does not match pattern", file=sys.stderr)
+        x = re.match("^[0-9a-zA-Z\.,_ ]+$", values[2].strip())
+        if not x:
+            print("Error Line: '" + line + "'", file=sys.stderr)
+            print("Description does not match pattern", file=sys.stderr)
         self.description = values[2].strip()
         
 class IPFIX:
@@ -407,8 +407,7 @@ def main():
            "float32":None, "float64":None, "boolean":None, "macAddress":None,
            "string":None, "dateTimeSeconds":None, "dateTimeMilliseconds":None,
            "dateTimeNanoseconds":None, "ipv4Address":None, "ipv6Address":None,
-           "octetArray":None, "list":None, "orderedList":None, "enumeration":None,
-           "integer":None, "ipAddress":None, "timeStamp":None, "float":None
+           "octetArray":None, "list":None, "orderedList":None, "enumeration":None
     }
     
     for element in tree.getroot().iter():
@@ -436,13 +435,21 @@ def main():
         print("<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en-us'>", file=fout)
         print("<head>", file=fout)
         print("<title>SACM Information Model</title>", file=fout)
-        print("<script type='text/javascript' src='css/jquery.js'></script>", file=fout)
-        print("<script type='text/javascript' src='css/tablesorter.min.js'></script>", file=fout)
+        print("<script type='text/javascript'>", file=fout)
+        CopyFile('css/jquery.js', fout)
+        print("</script>", file=fout)
+        print("<script type='text/javascript'>", file=fout)
+        CopyFile('css/tablesorter.min.js', fout)
+        print("</script>", file=fout)
         print("<script type='text/javascript'>", file=fout)
         print("$(document).ready(function(){ $('#myTable').tablesorter();});", file=fout)
         print("</script>", file=fout)
-        print("<link rel='stylesheet' href='css/jq.css' type='text/css'/>", file=fout)
-        print("<link rel='stylesheet' href='css/style.css' type='text/css'/>", file=fout)
+        # print("<style>", file=fout)
+        # CopyFile('css/jq.css', fout)
+        # print("</script>", file=fout)
+        print("<style>", file=fout)
+        CopyFile('css/style.css', fout)
+        print("</style>", file=fout)
         print("</head>", file=fout)
         print("<body>", file=fout)
         print("<table id='myTable' class='tablesorter'>", file=fout)
@@ -477,6 +484,14 @@ def main():
     if options.html:
         print("</tbody>", file=fout)
         print("</body>", file=fout)
+
+def CopyFile(fileName, fileOut):
+    fin = open(fileName,"r");
+    lines = fin.readlines()
+    for line in lines:
+        print(line, file=fileOut)
+    fin.close()
+    
 
 def PrintError(node, text):
     if node == None:

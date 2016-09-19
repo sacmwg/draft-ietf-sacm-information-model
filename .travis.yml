@@ -10,4 +10,4 @@ addons:
 install:
 - pip install xml2rfc
 script:
-- make ghpagesAll
+- make ghpages

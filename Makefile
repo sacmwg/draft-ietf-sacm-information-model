@@ -6,9 +6,5 @@ lib/main.mk:
 im.html:
 	python check/check.py --html --output im.html draft-ietf-sacm-information-model.xml
 
-impages: $(GHPAGES_TMP) im.html
-	cp im.html $(GHPAGES_TMP)
-	cp -r css/* $(GHPAGES_TMP)
-	ls -R $(GHPAGES_TMP)
+ghpages: im.html
 
-ghpagesAll: impages ghpages
