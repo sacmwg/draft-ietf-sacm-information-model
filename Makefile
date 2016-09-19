@@ -13,4 +13,5 @@ impages: $(GHPAGES_TMP) im.html
 	cp -r css/* $(GHPAGES_TMP)
 	ls -R $(GHPAGES_TMP)
 
-ghpagesAll: ghpages
+ghpages: im.html
+

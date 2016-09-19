@@ -34,22 +34,22 @@ class enumValue:
             raise SyntaxError("Incorrect number of fields in enumeration")
         
         x = re.match("^[0-9a-zA-Z_]+$", values[0].strip())
-        # if not x:
-        #     print("Error Line: '" + line + "'", file=sys.stderr)
-        #     raise SyntaxError("Name does not match pattern")
+        if not x:
+            print("Error Line: '" + line + "'", file=sys.stderr)
+            raise SyntaxError("Name does not match pattern")
         self.name = values[0].strip()
         
-        # x = re.match("^0x([0-9a-fA-F]+)$", values[1].strip())
-        # if not x:
-        #    print("Error Line: '" + line + "'", file=sys.stderr)
-        #    raise SyntaxError("Value is not a hexadecimal number")
+        x = re.match("^0x([0-9a-fA-F]+)$", values[1].strip())
+        if not x:
+           print("Error Line: '" + line + "'", file=sys.stderr)
+           raise SyntaxError("Value is not a hexadecimal number")
         self.tag = values[1].strip()
         self.value = int(values[1].strip(), 16)
 
-        # x = re.match("^[0-9a-zA-Z\.,_ ]+$", values[2].strip())
-        # if not x:
-        #     print("Error Line: '" + line + "'", file=sys.stderr)
-        #     print("Description does not match pattern", file=sys.stderr)
+        x = re.match("^[0-9a-zA-Z\.,_ ]+$", values[2].strip())
+        if not x:
+            print("Error Line: '" + line + "'", file=sys.stderr)
+            print("Description does not match pattern", file=sys.stderr)
         self.description = values[2].strip()
         
 class IPFIX:
@@ -407,8 +407,7 @@ def main():
            "float32":None, "float64":None, "boolean":None, "macAddress":None,
            "string":None, "dateTimeSeconds":None, "dateTimeMilliseconds":None,
            "dateTimeNanoseconds":None, "ipv4Address":None, "ipv6Address":None,
-           "octetArray":None, "list":None, "orderedList":None, "enumeration":None,
-           "integer":None, "ipAddress":None, "timeStamp":None, "float":None
+           "octetArray":None, "list":None, "orderedList":None, "enumeration":None
     }
     
     for element in tree.getroot().iter():
