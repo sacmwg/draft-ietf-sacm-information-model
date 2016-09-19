@@ -1018,7 +1018,7 @@ name, hex-value, description
             implemented by data models and transported between SACM Components.</t>
 <section title="accessPrivilegeType">
     <figure>
-        <artwork>
+      <artwork type="IPFIX">
             elementId: TBD
             name: accessPrivilegeType
             dataType: string
@@ -1030,7 +1030,7 @@ name, hex-value, description
 </section> 
 <section title="accountName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: accountName
             dataType: string
@@ -1043,7 +1043,7 @@ name, hex-value, description
 </section> 
 <section title="administrativeDomainType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: accessPrivilegeType
             dataType: string
@@ -1055,7 +1055,7 @@ name, hex-value, description
 </section> 
 <section title="addressAssociationType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: accessPrivilegeType
             dataType: string
@@ -1067,7 +1067,7 @@ name, hex-value, description
 </section> 
 <section title="addressMaskValue">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: addressMaskValue
             dataType: string
@@ -1079,7 +1079,7 @@ name, hex-value, description
 </section> 
 <section title="addressType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: addressType
             dataType: string
@@ -1092,7 +1092,7 @@ name, hex-value, description
 </section> 
 <section title="addressValue">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: addressValue
             dataType: string
@@ -1104,7 +1104,7 @@ name, hex-value, description
 </section> 
 <section title="applicationComponent">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: applicationComponent
             dataType: string
@@ -1117,7 +1117,7 @@ name, hex-value, description
 </section> 
 <section title="applicationLabel">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: applicationLabel
             dataType: string
@@ -1129,7 +1129,7 @@ name, hex-value, description
 </section> 
 <section title="applicationType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: applicationType
             dataType: string
@@ -1144,7 +1144,7 @@ name, hex-value, description
 </section> 
 <section title="applicationManufacturer">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: applicationManufacturer
             dataType: string
@@ -1156,7 +1156,7 @@ name, hex-value, description
 </section> 
 <section title="authenticator">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: authenticator
             dataType: string
@@ -1170,7 +1170,7 @@ name, hex-value, description
 </section> 
 <section title="authenticationType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: authenticationType
             dataType: string
@@ -1183,7 +1183,7 @@ name, hex-value, description
 </section> 
 <section title="birthdate">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: birthdate
             dataType: string
@@ -1197,7 +1197,7 @@ name, hex-value, description
 </section> 
 <section title="bytesReceived">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: bytesReceived
             dataType: string
@@ -1209,7 +1209,7 @@ name, hex-value, description
 </section> 
 <section title="bytesSent">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: bytesSent
             dataType: string
@@ -1221,7 +1221,7 @@ name, hex-value, description
 </section> 
 <section title="bytesSent">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: bytesSent
             dataType: string
@@ -1234,7 +1234,7 @@ name, hex-value, description
 
 <section title="certificate">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: certificate
             dataType: string
@@ -1247,7 +1247,7 @@ name, hex-value, description
 
 <section title="collectionTaskType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: collectionTaskType
             dataType: string
@@ -1265,7 +1265,7 @@ name, hex-value, description
 
 <section title="confidence">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: confidence
             dataType: string
@@ -1280,7 +1280,7 @@ name, hex-value, description
 
 <section title="contentAction">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: contentAction
             dataType: string
@@ -1295,7 +1295,7 @@ name, hex-value, description
 
 <section title="countryCode">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: countryCode
             dataType: string
@@ -1307,7 +1307,7 @@ name, hex-value, description
 
 <section title="dataOrigin">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: dataOrigin
             dataType: string
@@ -1320,7 +1320,7 @@ name, hex-value, description
 
 <section title="dataSource">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: dataSource
             dataType: string
@@ -1338,7 +1338,7 @@ name, hex-value, description
 
 <section title="default-depth">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: default-depth
             dataType: string
@@ -1352,7 +1352,7 @@ name, hex-value, description
 
 <section title="discoverer">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: contentAction
             dataType: string
@@ -1368,7 +1368,7 @@ name, hex-value, description
 
 <section title="emailAddress">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: countryCode
             dataType: string
@@ -1380,7 +1380,7 @@ name, hex-value, description
 
 <section title="eventType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: eventType
             dataType: string
@@ -1395,7 +1395,7 @@ name, hex-value, description
 
 <section title="eventThreshold">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: eventThreshold
             dataType: string
@@ -1409,7 +1409,7 @@ name, hex-value, description
 
 <section title="eventThresholdName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: eventThresholdName
             dataType: string
@@ -1424,7 +1424,7 @@ name, hex-value, description
 
 <section title="eventTrigger">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: eventTrigger
             dataType: string
@@ -1439,7 +1439,7 @@ name, hex-value, description
 
 <section title="eventTrigger">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: eventTrigger
             dataType: string
@@ -1453,7 +1453,7 @@ name, hex-value, description
 
 <section title="firmwareId">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: firmwareId
             dataType: string
@@ -1466,7 +1466,7 @@ name, hex-value, description
 
 <section title="hostName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: hostName
             dataType: string
@@ -1481,7 +1481,7 @@ name, hex-value, description
             
 <section title="interfaceLabel">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: interfaceLabel
             dataType: string
@@ -1495,7 +1495,7 @@ name, hex-value, description
 
 <section title="ipv6AddressSubnetMask">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: ipv6AddressSubnetMask
             dataType: string
@@ -1508,7 +1508,7 @@ name, hex-value, description
 
 <section title="ipv6AddressSubnetMaskCidrNotation">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: ipv6AddressSubnetMaskCidrNotation
             dataType: string
@@ -1521,7 +1521,7 @@ name, hex-value, description
 
 <section title="ipv6AddressValue">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: ipv6AddressValue
             dataType: ipv6Address
@@ -1534,7 +1534,7 @@ name, hex-value, description
 
 <section title="ipv4AddressSubnetMask">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: ipv4AddressSubnetMask
             dataType: string
@@ -1546,7 +1546,7 @@ name, hex-value, description
             
 <section title="ipv4AddressSubnetMaskCidrNotation">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: ipv4AddressSubnetMaskCidrNotation
             dataType: string
@@ -1559,7 +1559,7 @@ name, hex-value, description
 
 <section title="ipv4AddressValue">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: ipv4AddressValue
             dataType: ipv4Address
@@ -1571,7 +1571,7 @@ name, hex-value, description
 
 <section title="layer2InterfaceType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: layer2InterfaceType
             dataType: string
@@ -1583,7 +1583,7 @@ name, hex-value, description
           
 <section title="layer4PortAddress">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: layer4PortAddress
             dataType: unsigned32 
@@ -1597,7 +1597,7 @@ name, hex-value, description
 
 <section title="layer4Protocol">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: layer4Protocol
             dataType: string
@@ -1610,7 +1610,7 @@ name, hex-value, description
             
 <section title="locationName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: locationName
             dataType: string
@@ -1623,7 +1623,7 @@ name, hex-value, description
 
 <section title="macAddressValue">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: macAddressValue
             dataType: string
@@ -1635,7 +1635,7 @@ name, hex-value, description
             
 <section title="methodLabel">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: methodLabel
             dataType: string
@@ -1650,7 +1650,7 @@ name, hex-value, description
             
 <section title="methodRepository">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: methodRepository
             dataType: string
@@ -1666,7 +1666,7 @@ name, hex-value, description
             
 <section title="networkAccessLevelType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: networkAccessLevelType
             dataType: string
@@ -1679,7 +1679,7 @@ name, hex-value, description
 
 <section title="networkId">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: networkId
             dataType: string
@@ -1693,7 +1693,7 @@ name, hex-value, description
 
 <section title="networkInterfaceName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: networkInterfaceName
             dataType: string
@@ -1706,7 +1706,7 @@ name, hex-value, description
 
 <section title="networkLayer">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: networkLayer
             dataType: string
@@ -1719,7 +1719,7 @@ name, hex-value, description
             
 <section title="networkName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: networkName
             dataType: string
@@ -1733,7 +1733,7 @@ name, hex-value, description
 
 <section title="organizationId">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: organizationId
             dataType: string
@@ -1746,7 +1746,7 @@ name, hex-value, description
 
 <section title="osComponent">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: osComponent
             dataType: string
@@ -1760,7 +1760,7 @@ name, hex-value, description
             
 <section title="osLabel">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: osLabel
             dataType: string
@@ -1773,7 +1773,7 @@ name, hex-value, description
 
 <section title="osName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: osName
             dataType: string
@@ -1785,7 +1785,7 @@ name, hex-value, description
 
 <section title="osType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: osType
             dataType: string
@@ -1799,7 +1799,7 @@ name, hex-value, description
             
 <section title="osVersion">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: osVersion
             dataType: string
@@ -1812,7 +1812,7 @@ name, hex-value, description
 
 <section title="patchId">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: patchId
             dataType: string
@@ -1826,7 +1826,7 @@ name, hex-value, description
 
 <section title="patchName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: osVersion
             dataType: string
@@ -1838,7 +1838,7 @@ name, hex-value, description
 
 <section title="personFirstName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: patchId
             dataType: string
@@ -1850,7 +1850,7 @@ name, hex-value, description
 
 <section title="personLastName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: personLastName
             dataType: string
@@ -1862,7 +1862,7 @@ name, hex-value, description
 
 <section title="personMiddleName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: personMiddleName
             dataType: string
@@ -1874,7 +1874,7 @@ name, hex-value, description
 
 <section title="phoneNumber">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: phoneNumber
             dataType: string
@@ -1887,7 +1887,7 @@ name, hex-value, description
 
 <section title="phoneNumberType">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: phoneNumberType
             dataType: string
@@ -1901,7 +1901,7 @@ name, hex-value, description
 
 <section title="privilegeName">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: privilegeName
             dataType: string
@@ -1914,7 +1914,7 @@ name, hex-value, description
 
 <section title="privilegeValue">
     <figure>
-        <artwork>
+        <artwork type="IPFIX">
             elementId: TBD
             name: privilegeValue
             dataType: string
@@ -1927,7 +1927,7 @@ name, hex-value, description
 
 <section title="protocol">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: protocol
             dataType: string
@@ -1940,7 +1940,7 @@ name, hex-value, description
 </section> 
 <section title="publicKey">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: publicKey
             dataType: string
@@ -1953,7 +1953,7 @@ name, hex-value, description
 </section> 
 <section title="relationshipContentElementGuid">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: relationshipContentElementGuid
             dataType: string
@@ -1966,7 +1966,7 @@ name, hex-value, description
 
 <section title="relationshipStatementElementGuid">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: relationshipStatementElementGuid
             dataType: string
@@ -1979,7 +1979,7 @@ name, hex-value, description
             
 <section title="relationshipObjectLabel">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: relationshipObjectLabel
             dataType: string
@@ -1996,7 +1996,7 @@ name, hex-value, description
 
 <section title="relationshipType">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: relationshipType
             dataType: string
@@ -2013,7 +2013,7 @@ name, hex-value, description
 
 <section title="roleName">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: roleName
             dataType: string
@@ -2027,7 +2027,7 @@ name, hex-value, description
 
 <section title="sessionStateType">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: sessionStateType
             dataType: string
@@ -2042,7 +2042,7 @@ name, hex-value, description
 
 <section title="statementGuid">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: statementGuid
             dataType: string
@@ -2056,7 +2056,7 @@ name, hex-value, description
 
 <section title="statementType">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: statementType
             dataType: string
@@ -2071,7 +2071,7 @@ name, hex-value, description
 
 <section title="status">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: status
             dataType: string
@@ -2085,7 +2085,7 @@ name, hex-value, description
 
 <section title="subAdministrativeDomain">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: subAdministrativeDomain
             dataType: string
@@ -2099,7 +2099,7 @@ name, hex-value, description
 
 <section title="subInterfaceLabel">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: subInterfaceLabel
             dataType: string
@@ -2112,7 +2112,7 @@ name, hex-value, description
 </section> 
 <section title="superAdministrativeDomain">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: superAdministrativeDomain
             dataType: string
@@ -2126,7 +2126,7 @@ name, hex-value, description
 
 <section title="superInterfaceLabel">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: superInterfaceLabel
             dataType: string
@@ -2141,7 +2141,7 @@ name, hex-value, description
 
 <section title="teAssessmentState">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: teAssessmentState
             dataType: string
@@ -2157,7 +2157,7 @@ name, hex-value, description
 
 <section title="teLabel">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: teLabel
             dataType: string
@@ -2171,7 +2171,7 @@ name, hex-value, description
 
 <section title="teId">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: teId
             dataType: string
@@ -2186,7 +2186,7 @@ name, hex-value, description
 
 <section title="timestampType">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: timestampType
             dataType: string
@@ -2202,7 +2202,7 @@ name, hex-value, description
 
 <section title="unitsReceived">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: unitsReceived
             dataType: string
@@ -2217,7 +2217,7 @@ name, hex-value, description
 
 <section title="unitsSent">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: unitsSent
             dataType: string
@@ -2231,7 +2231,7 @@ name, hex-value, description
 
 <section title="username">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: username
             dataType: string
@@ -2246,7 +2246,7 @@ name, hex-value, description
 
 <section title="userDirectory">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: userDirectory
             dataType: string
@@ -2260,7 +2260,7 @@ name, hex-value, description
 
 <section title="userId">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: userId
             dataType: string
@@ -2273,7 +2273,7 @@ name, hex-value, description
 
 <section title="webSite">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: webSite
             dataType: string
@@ -2285,7 +2285,7 @@ name, hex-value, description
 
 <section title="WGS84Longitude">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Longitude
             dataType: float
@@ -2298,7 +2298,7 @@ name, hex-value, description
 
 <section title="WGS84Latitude">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Latitude
             dataType: float
@@ -2311,7 +2311,7 @@ name, hex-value, description
 
 <section title="WGS84Altitude">
     <figure>
-        <artwork> 
+        <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Altitude
             dataType: float
@@ -2324,7 +2324,7 @@ name, hex-value, description
 
 <section title="hardwareSerialNumber">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: hardwareSerialNumber
 dataType: string
@@ -2336,7 +2336,7 @@ description: A globally unique identifier for a particular
 </section> 
 <section title="interfaceName">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceName
 dataType: string
@@ -2349,7 +2349,7 @@ description: A short name uniquely describing an interface,
 </section>
 <section title="interfaceIndex">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceIndex
 dataType: unsigned32
@@ -2366,7 +2366,7 @@ description: The index of an interface installed on an endpoint.
 </section>
 <section title="interfaceMacAddress">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceMacAddress
 dataType: macAddress
@@ -2378,7 +2378,7 @@ description: The IEEE 802 MAC address associated with a network
 </section>
 <section title="interfaceType">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceType
 dataType: unsigned32
@@ -2391,7 +2391,7 @@ description: The type of a network interface. The value matches
 </section>
 <section title="interfaceFlags">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: interfaceFlags
 dataType: unsigned16
@@ -2415,7 +2415,7 @@ structure: Up                  ; 0x1   ; Interface is up.
 </section>
 <section title="networkInterface">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: networkInterface
 dataType: orderedList
@@ -2433,7 +2433,7 @@ structure: orderedList(interfaceName, interfaceIndex, macAddress,
 </section>  
   <section title="softwareIdentifier">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: softwareIdentifier
 dataType: string
@@ -2445,7 +2445,7 @@ description: A globally unique identifier for a particular
   </section>
   <section title="softwareTitle">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: softwareTitle
 dataType: string
@@ -2457,7 +2457,7 @@ description: The title of the software application.
   
   <section title="softwareCreator">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: softwareCreator
 dataType: string
@@ -2468,7 +2468,7 @@ description: The software developer (e.g., vendor or author).
   </section>
   <section title="simpleSoftwareVersion">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: simpleSoftwareVersion
 dataType: string
@@ -2482,7 +2482,7 @@ description: The version string for a software application that
   </section>
   <section title="rpmSoftwareVersion">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: rpmSoftwareVersion
 dataType: string
@@ -2494,7 +2494,7 @@ description: The version string for a software application that
   </section>
   <section title="ciscoTrainSoftwareVersion">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: ciscoTrainSoftwareVersion
 dataType: string
@@ -2506,7 +2506,7 @@ description: The version string for a software application that
   </section>
   <section title="softwareVersion">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: softwareVerison
 dataType: list     
@@ -2524,7 +2524,7 @@ structure: list(simpleSoftwareVersion | rpmSoftwareVersion |
   </section>
   <section title="lastUpdated">
     <figure>
-      <artwork>
+      <artwork type="IPFIX">
 elementId: TBD
 name: lastUpdated
 dataType: dateTimeSeconds
@@ -2538,7 +2538,7 @@ description: The date and time when the software instance
   
 <section title="softwareInstance">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: softwareInstance
 dataType: orderedList     
@@ -2554,7 +2554,7 @@ structure: orderedList(softwareIdentifier, title, creator,
 </section>   
 <section title="globallyUniqueIdentifier">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: globallyUniqueIdentifier
 dataType: unsigned8
@@ -2566,7 +2566,7 @@ description: TODO.
 </section>
 <section title="dataOrigin">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: dataOrigin
 dataType: string
@@ -2579,7 +2579,7 @@ description: The origin of the data.
 
 <section title="dataSource">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: dataSource
 dataType: string
@@ -2592,7 +2592,7 @@ description: The source of the data.
 
 <section title="creationTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: creationTimestamp
 dataType: dateTimeSeconds
@@ -2605,7 +2605,7 @@ description: The date and time when the posture
 </section>
 <section title="collectionTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: collectionTimestamp
 dataType: dateTimeSeconds
@@ -2619,7 +2619,7 @@ description: The date and time when the posture
 </section>
 <section title="publicationTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: publicationTimestamp
 dataType: dateTimeSeconds
@@ -2632,7 +2632,7 @@ description: The date and time when the posture
 </section>
 <section title="relayTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: relayTimestamp
 dataType: dateTimeSeconds
@@ -2645,7 +2645,7 @@ description: The date and time when the posture
 </section>
 <section title="storageTimestamp">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: storageTimestamp
 dataType: dateTimeSeconds
@@ -2658,7 +2658,7 @@ description: The date and time when the posture
 </section>
 <section title="type">
   <figure>
-    <artwork>
+    <artwork type="IPFIX">
 elementId: TBD
 name: type
 dataType: enumeration
@@ -2673,7 +2673,7 @@ structure: TBD
 </section>
 <section title="protocolIdentifier">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: protocolIdentifier
 dataType: unsigned8
@@ -2691,7 +2691,7 @@ description: The value of the protocol number in the IP packet
    </section>
    <section title="sourceTransportPort">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceTransportPort
 dataType: unsigned16
@@ -2706,7 +2706,7 @@ description: The source port identifier in the transport header.
    </section>
    <section title="sourceIPv4PrefixLength">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceIPv4PrefixLength
 dataType: unsigned8
@@ -2717,7 +2717,7 @@ description: The number of contiguous bits that are relevant in
    </section>
    <section title="ingressInterface">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: ingressInterface
 dataType: unsigned32
@@ -2733,7 +2733,7 @@ description: The index of the IP interface where packets of this
    </section>
    <section title="destinationTransportPort">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: destinationTransportPort
 dataType: unsigned16
@@ -2748,7 +2748,7 @@ description: The destination port identifier in the transport
    </section>
    <section title="sourceIPv6PrefixLength">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceIPv6PrefixLength
 dataType: unsigned8
@@ -2759,7 +2759,7 @@ description: The number of contiguous bits that are relevant in
    </section>
    <section title="sourceIPv4Prefix">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceIPv4Prefix
 dataType: ipv4Address
@@ -2769,7 +2769,7 @@ description: IPv4 source address prefix.</artwork>
    </section>
    <section title="destinationIPv4Prefix">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: destinationIPv4Prefix
 dataType: ipv4Address
@@ -2779,7 +2779,7 @@ description: IPv4 destination address prefix.</artwork>
    </section>
    <section title="sourceMacAddress">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: sourceMacAddress
 dataType: macAddress
@@ -2789,7 +2789,7 @@ description: The IEEE 802 source MAC address field.</artwork>
    </section>
    <section title="ipVersion">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: ipVersion
 dataType: unsigned8
@@ -2799,7 +2799,7 @@ description: The IP version field in the IP packet header.</artwork>
    </section>
    <section title="interfaceDescription">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: interfaceDescription
 dataType: string
@@ -2811,7 +2811,7 @@ connection".</artwork>
    </section>
    <section title="applicationDescription">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: applicationDescription
 dataType: string
@@ -2821,7 +2821,7 @@ description: Specifies the description of an application.</artwork>
    </section>
    <section title="applicationId">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: applicationId
 dataType: octetArray
@@ -2831,7 +2831,7 @@ description: Specifies an Application ID per [RFC6759].</artwork>
    </section>
    <section title="applicationName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: applicationName
 dataType: string
@@ -2841,7 +2841,7 @@ description: Specifies the name of an application.</artwork>
    </section>
    <section title="exporterIPv4Address">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: exporterIPv4Address
 dataType: ipv4Address
@@ -2854,7 +2854,7 @@ description: The IPv4 address used by the Exporting Process.
    </section>
    <section title="exporterIPv6Address">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: exporterIPv6Address
 dataType: ipv6Address
@@ -2868,7 +2868,7 @@ description: The IPv6 address used by the Exporting Process.
    </section>
    <section title="portId">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: portId
 dataType: unsigned32
@@ -2881,7 +2881,7 @@ description: An identifier of a line port that is unique per
    </section>
    <section title="templateId">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: templateId
 dataType: unsigned16
@@ -2903,7 +2903,7 @@ description: An identifier of a Template that is locally unique
    </section>
    <section title="collectorIPv4Address">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: collectorIPv4Address
 dataType: ipv4Address
@@ -2914,7 +2914,7 @@ description: An IPv4 address to which the Exporting Process sends
    </section>
    <section title="collectorIPv6Address">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: collectorIPv6Address
 dataType: ipv6Address
@@ -2925,7 +2925,7 @@ description: An IPv6 address to which the Exporting Process sends
    </section>
    <section title="informationElementIndex">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementIndex
 dataType: unsigned16
@@ -2939,7 +2939,7 @@ description: A zero-based index of an Information Element
    </section>
    <section title="informationElementId">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementId
 dataType: unsigned16
@@ -2950,7 +2950,7 @@ description: This Information Element contains the ID of another
    </section>
    <section title="informationElementDataType">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementDataType
 dataType: unsigned8
@@ -2972,7 +2972,7 @@ description: A description of the abstract data type of an IPFIX
    </section>
    <section title="informationElementDescription">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementDescription
 dataType: string
@@ -2996,7 +2996,7 @@ description: A UTF-8 [RFC3629] encoded Unicode string containing
    </section>
    <section title="informationElementName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementName
 dataType: string
@@ -3010,7 +3010,7 @@ description: A UTF-8 [RFC3629] encoded Unicode string containing
    </section>
    <section title="informationElementRangeBegin">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementRangeBegin
 dataType: unsigned64
@@ -3021,7 +3021,7 @@ description: Contains the inclusive low end of the range of
    </section>
    <section title="informationElementRangeEnd">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementRangeEnd
 dataType: unsigned64
@@ -3032,7 +3032,7 @@ description: Contains the inclusive high end of the range of
    </section>
    <section title="informationElementSemantics">
 <figure>
-   <artwork>
+   <artwork type="IPFIX">
 elementId: TBD
 name: informationElementSemantics
 dataType: unsigned8
@@ -3059,7 +3059,7 @@ description: A description of the semantics of an IPFIX
 </section>
    <section title="informationElementUnits">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: informationElementUnits
 dataType: unsigned16
@@ -3082,7 +3082,7 @@ description: A description of the units of an IPFIX Information
    </section>
    <section title="userName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: userName
 dataType: string
@@ -3092,7 +3092,7 @@ description: User name associated with the flow.</artwork>
    </section>
    <section title="applicationCategoryName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: applicationCategoryName
 dataType: string
@@ -3103,7 +3103,7 @@ description: An attribute that provides a first level
    </section>
    <section title="mibObjectValueInteger">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueInteger
 dataType: signed64
@@ -3122,7 +3122,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueOctetString">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueOctetString
 dataType: octetArray
@@ -3140,7 +3140,7 @@ description: An IPFIX Information Element which denotes that an
    </section>
    <section title="mibObjectValueOID">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueOID
 dataType: octetArray
@@ -3162,7 +3162,7 @@ description: An IPFIX Information Element which denotes that an
    </section>
    <section title="mibObjectValueBits">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueBits
 dataType: octetArray
@@ -3184,7 +3184,7 @@ description: An IPFIX Information Element which denotes that a
    </section>
    <section title="mibObjectValueIPAddress">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueIPAddress
 dataType: ipv4Address
@@ -3201,7 +3201,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueCounter">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueCounter
 dataType: unsigned64
@@ -3220,7 +3220,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueGauge">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueGauge
 dataType: unsigned32
@@ -3240,7 +3240,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueTimeTicks">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueTimeTicks
 dataType: unsigned32
@@ -3257,7 +3257,7 @@ description: An IPFIX Information Element which denotes that the
    </section>
    <section title="mibObjectValueUnsigned">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueUnsigned
 dataType: unsigned64
@@ -3277,7 +3277,7 @@ description: An IPFIX Information Element which denotes that an
  
    <section title="mibObjectValueTable">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueTable
 dataType: orderedList
@@ -3301,7 +3301,7 @@ structure:   orderedList(mibObjectValueRow+)
             
    <section title="mibObjectValueRow">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectValueRow
 dataType: orderedList
@@ -3326,7 +3326,7 @@ structure:   orderedList(mibObjectValue+)
    </section>
    <section title="mibObjectIdentifier">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectIdentifier
 dataType: octetArray
@@ -3341,7 +3341,7 @@ description: An IPFIX Information Element which denotes that a
    </section>
    <section title="mibSubIdentifier">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibSubIdentifier
 dataType: unsigned32
@@ -3352,7 +3352,7 @@ description: A non-negative sub-identifier of an Object
    </section>
    <section title="mibIndexIndicator">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibIndexIndicator
 dataType: unsigned64
@@ -3384,7 +3384,7 @@ description: This set of bit fields is used for marking the
    </section>
    <section title="mibCaptureTimeSemantics">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibCaptureTimeSemantics
 dataType: unsigned8
@@ -3425,7 +3425,7 @@ description: Indicates when in the lifetime of the flow the MIB
    </section>
    <section title="mibContextEngineID">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibContextEngineID
 dataType: octetArray
@@ -3437,7 +3437,7 @@ description: A mibContextEngineID that specifies the SNMP engine
    </section>
    <section title="mibContextName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibContextName
 dataType: string
@@ -3449,7 +3449,7 @@ description: This Information Element denotes that a MIB Context
    </section>
    <section title="mibObjectName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectName
 dataType: string
@@ -3460,7 +3460,7 @@ description: The name (called a descriptor in [RFC2578]
    </section>
    <section title="mibObjectDescription">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectDescription
 dataType: string
@@ -3471,7 +3471,7 @@ description: The value of the DESCRIPTION clause of an MIB object
    </section>
    <section title="mibObjectSyntax">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibObjectSyntax
 dataType: string
@@ -3483,7 +3483,7 @@ description: The value of the SYNTAX clause of an MIB object type
    </section>
    <section title="mibModuleName">
       <figure>
-         <artwork>
+         <artwork type="IPFIX">
 elementId: TBD
 name: mibModuleName
 dataType: string
@@ -3494,7 +3494,7 @@ description: The textual name of the MIB module that defines a MIB
    </section>
     <section title="interface">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: interface
 dataType: list
@@ -3506,7 +3506,7 @@ options.</artwork>
     </section>
     <section title="interfaceName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: interfaceName
 dataType: string
@@ -3517,7 +3517,7 @@ description: The interface
     </section>
     <section title="iflisteners">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: iflisteners
 dataType: list
@@ -3530,7 +3530,7 @@ are bound to an ethernet interface on the system.</artwork>
     </section>
     <section title="physicalProtocol">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: physicalProtocol
 dataType: enumeration
@@ -3595,7 +3595,7 @@ socket.</artwork>
     </section>
     <section title="hwAddress">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: hwAddress
 dataType: string
@@ -3606,7 +3606,7 @@ description: The hardware address associated
     </section>
     <section title="programName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: programName
 dataType: string
@@ -3617,7 +3617,7 @@ description: The name of the communicating
     </section>
     <section title="userId">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: userId
 dataType: integer
@@ -3627,15 +3627,14 @@ description: The numeric user id.</artwork>
     </section>
     <section title="inetlisteningserver">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: inetlisteningserver
 dataType: list
 structure: list (transportProtocol, localAddress,
       localPort, localFullAddress, programName, foreignAddress, 
       foreignPort, foreignFullAddress, pid, userId)
-status:
-      current
+status: current
 description: Stores the results of checking for network servers 
 currently active on a system. It holds information pertaining to 
 a specific protocol-address-port combination.</artwork>
@@ -3643,7 +3642,7 @@ a specific protocol-address-port combination.</artwork>
     </section>
     <section title="transportProtocol">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: transportProtocol
 dataType: string
@@ -3654,7 +3653,7 @@ description: The transport-layer
     </section>
     <section title="localAddress">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: localAddress
 dataType: ipAddress
@@ -3665,7 +3664,7 @@ the IP address can be IPv4 or IPv6.</artwork>
     </section>
     <section title="localPort">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: localPort
 dataType: integer
@@ -3676,7 +3675,7 @@ description: This is the TCP or UDP port
     </section>
     <section title="localFullAddress">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: localFullAddress
 dataType: string
@@ -3688,10 +3687,10 @@ that the IP address can be IPv4 or IPv6.</artwork>
     </section>
     <section title="foreignAddress">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: foreignAddress
-dataType: ipAddresss
+dataType: ipAddress
 status: current
 description: The IP address with which the program is 
 communicating, or with which it will communicate. Note that the 
@@ -3700,10 +3699,10 @@ IP address can be IPv4 or IPv6.</artwork>
     </section>
     <section title="foreignFullAddress">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: foreignFullAddress
-dataType: ipAddresss
+dataType: ipAddress
 status: current
 description: The IP address and network port to which the program
 is communicating or will accept communications from, including 
@@ -3713,7 +3712,7 @@ can be IPv4 or IPv6.</artwork>
     </section>
     <section title="selinuxboolean">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: selinuxboolean
 dataType: list
@@ -3727,7 +3726,7 @@ SELinux boolean.
     </section>
     <section title="selinuxName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: selinuxName
 dataType: string
@@ -3738,7 +3737,7 @@ description: The name of the SELinux
     </section>
     <section title="currentStatus">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: currentStatus
 dataType: boolean
@@ -3749,7 +3748,7 @@ description: Indicates current state of
     </section>
     <section title="pendingStatus">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: pendingStatus
 dataType: boolean
@@ -3760,7 +3759,7 @@ description: Indicates the pending
     </section>
     <section title="selinuxsecuritycontext">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: selinuxsecuritycontext
 dataType: list
@@ -3775,7 +3774,7 @@ description: Describes the SELinux security
     </section>
     <section title="filepath">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: filepath
 dataType: string
@@ -3786,7 +3785,7 @@ machine. A directory cannot be specified as a filepath.</artwork>
     </section>
     <section title="path">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: path
 dataType: string
@@ -3797,7 +3796,7 @@ description: Specifies the directory component of
     </section>
     <section title="filename">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: filename
 dataType: string
@@ -3807,7 +3806,7 @@ description: The name of the file.</artwork>
     </section>
     <section title="pid">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: pid
 dataType: integer
@@ -3818,7 +3817,7 @@ description: The process ID of the
     </section>
     <section title="role">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: role
 dataType: string
@@ -3829,7 +3828,7 @@ description: Specifies the types that a process
     </section>
     <section title="domainType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: domainType
 dataType: string
@@ -3840,7 +3839,7 @@ or the domain in which a process executes.</artwork>
     </section>
     <section title="lowSensitivity">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lowSensitivity
 dataType: string
@@ -3851,7 +3850,7 @@ process.</artwork>
     </section>
     <section title="lowCategory">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lowCategory
 dataType: string
@@ -3862,7 +3861,7 @@ description: Specifies the set of
     </section>
     <section title="highSensitivity">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: highSensitivity
 dataType: string
@@ -3873,7 +3872,7 @@ description: Specifies the maximum
     </section>
     <section title="highCategory">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: highCategory
 dataType: string
@@ -3884,7 +3883,7 @@ description: Specifies the set of
     </section>
     <section title="rawlowSensitivity">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: rawlowSensitivity
 dataType: string
@@ -3895,7 +3894,7 @@ process but in its raw context.</artwork>
     </section>
     <section title="rawlowCategory">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: rawlowCategory
 dataType: string
@@ -3906,7 +3905,7 @@ low sensitivity but in its raw context.</artwork>
     </section>
     <section title="rawhighSensitivity">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: rawhighSensitivity
 dataType: string
@@ -3917,7 +3916,7 @@ clearance for a process but in its raw context.</artwork>
     </section>
     <section title="rawhighCategory">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: rawhighCategory
 dataType: string
@@ -3928,7 +3927,7 @@ high sensitivity but in its raw context.</artwork>
     </section>
     <section title="systemdunitdependency">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: systemdunitdependency
 dataType: list
@@ -3941,7 +3940,7 @@ unit.</artwork>
     </section>
     <section title="unit">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: unit
 dataType: string
@@ -3954,7 +3953,7 @@ usually also the filename of the unit configuration file.
     </section>
     <section title="dependency">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: dependency
 dataType: string
@@ -3965,7 +3964,7 @@ be a dependency of the given unit.</artwork>
     </section>
     <section title="systemdunitproperty">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: systemdunitproperty
 dataType: list
@@ -3978,7 +3977,7 @@ description: Stores the properties and values of a systemd unit.
     </section>
     <section title="property">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: property
 dataType: string
@@ -3989,7 +3988,7 @@ description: The property associated with a
     </section>
     <section title="systemdunitValue">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: systemdunitValue
 dataType: string
@@ -4002,7 +4001,7 @@ one value.</artwork>
     </section>
     <section title="file">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: file
 dataType: list
@@ -4015,7 +4014,7 @@ description: The metadata associated with a file on the endpoint.
     </section>
     <section title="fileType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileType
 dataType: string
@@ -4027,7 +4026,7 @@ special.)</artwork>
     </section>
     <section title="groupId">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: groupId
 dataType: integer
@@ -4038,7 +4037,7 @@ description: The group owner of the file, by
     </section>
     <section title="aTime">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: aTime
 dataType: timeStamp
@@ -4049,7 +4048,7 @@ description: The time that the file was last
     </section>
     <section title="changeTime">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: changeTime
 dataType: timeStamp
@@ -4060,7 +4059,7 @@ description: The time of the last change
     </section>
     <section title="mTime">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: mTime
 dataType: timeStamp
@@ -4071,7 +4070,7 @@ description: The time of the last change to
     </section>
     <section title="size">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: size
 dataType: integer
@@ -4082,7 +4081,7 @@ description: This is the size of the file in
     </section>
     <section title="suid">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: suid
 dataType: boolean
@@ -4094,7 +4093,7 @@ user.</artwork>
     </section>
     <section title="sgid">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: sgid
 dataType: boolean
@@ -4106,7 +4105,7 @@ calling user's group.</artwork>
     </section>
     <section title="sticky">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: sticky
 dataType: boolean
@@ -4118,7 +4117,7 @@ those users.</artwork>
     </section>
     <section title="hasExtendedAcl">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: hasExtendedAcl
 dataType: boolean
@@ -4135,7 +4134,7 @@ the entity will have a status of 'does not exist'.</artwork>
     </section>
     <section title="inetd">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: inetd
 dataType: list
@@ -4148,7 +4147,7 @@ description: Holds information associated
     </section>
     <section title="serverProgram">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serverProgram
 dataType: string
@@ -4160,7 +4159,7 @@ internal if inetd itself provides the service.</artwork>
     </section>
     <section title="endpointType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: endpointType
 dataType: enumeration
@@ -4186,7 +4185,7 @@ the service.</artwork>
     </section>
     <section title="execAsUser">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: execAsUser
 dataType: string
@@ -4197,7 +4196,7 @@ description: The user id of the user the
     </section>
     <section title="waitStatus">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: waitStatus
 dataType: enumeration
@@ -4225,7 +4224,7 @@ service requests. The legal values are "wait" or "nowait".
     </section>
     <section title="inetAddr">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: inetAddr
 dataType: ipAddress
@@ -4236,7 +4235,7 @@ the IP address can be IPv4 or IPv6.</artwork>
     </section>
     <section title="netmask">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: netmask
 dataType: ipAddress
@@ -4247,7 +4246,7 @@ description: The bitmask used to calculate
     </section>
     <section title="passwordInfo">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: passwordInfo
 dataType: list
@@ -4260,7 +4259,7 @@ description: Describes user account information for a
     </section>
     <section title="username">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: username
 dataType: string
@@ -4270,7 +4269,7 @@ description: The name of the user.</artwork>
     </section>
     <section title="password">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: password
 dataType: string
@@ -4281,17 +4280,18 @@ description: The encrypted version of the
     </section>
     <section title="gcos">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: gcos
 dataType: string
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="homeDir">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: homeDir
 dataType: string
@@ -4302,7 +4302,7 @@ description: The user's home
     </section>
     <section title="loginShell">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: loginShell
 dataType: string
@@ -4313,7 +4313,7 @@ description: The user's shell
     </section>
     <section title="lastLogin">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lastLogin
 dataType: integer
@@ -4324,7 +4324,7 @@ description: The date and time when the
     </section>
     <section title="process">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: process
 dataType: list
@@ -4337,7 +4337,7 @@ description: Information about a process running on an endpoint.
     </section>    
 <section title="commandLine">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: commandLine
 dataType: string
@@ -4349,7 +4349,7 @@ description: The string used to start the
     </section>
     <section title="ppid">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: ppid
 dataType: integer
@@ -4360,7 +4360,7 @@ description: The process ID of the process's
     </section>
     <section title="priority">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: priority
 dataType: integer
@@ -4371,7 +4371,7 @@ description: The scheduling priority with
     </section>
     <section title="startTime">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: startTime
 dataType: string
@@ -4382,7 +4382,7 @@ description: The time of day the process
     </section>
     <section title="routingtable">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: routingtable
 dataType: list
@@ -4395,10 +4395,10 @@ entry found in a system's primary routing table.</artwork>
     </section>
     <section title="destination">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: destination
-dataType: ipaddress
+dataType: ipAddress
 status: current
 description: The destination IP address
       prefix of the routing table entry.</artwork>
@@ -4406,10 +4406,10 @@ description: The destination IP address
     </section>
     <section title="gateway">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: gateway
-dataType: ipaddress
+dataType: ipAddress
 status: current
 description: The gateway of the specified
       routing table entry.</artwork>
@@ -4417,7 +4417,7 @@ description: The gateway of the specified
     </section>
     <section title="runlevelInfo">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: runlevelInfo
 dataType: list
@@ -4431,7 +4431,7 @@ specified service at a given runlevel.
     </section>
     <section title="runlevel">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: runlevel
 dataType: string
@@ -4442,7 +4442,7 @@ description: Specifies the system runlevel
     </section>
     <section title="start">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: start
 dataType: boolean
@@ -4453,7 +4453,7 @@ description: Specifies whether the service is
     </section>
     <section title="kill">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: kill
 dataType: boolean
@@ -4464,19 +4464,20 @@ description: Specifies whether the service is
     </section>
     <section title="shadowItem">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: shadowItem
 dataType: list
 structure: list (username, password, chgLst, chgAllow,
       chgReq, expWarn, expInact, expDate, flags, encryptMethod)
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="chgLst">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: chgLst
 dataType: timeStamp
@@ -4487,7 +4488,7 @@ description: The date of the last password
     </section>
     <section title="chgAllow">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: chgAllow
 dataType: integer
@@ -4499,7 +4500,7 @@ description: Specifies how often in days a
     </section>
     <section title="chgReq">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: chgReq
 dataType: integer
@@ -4510,7 +4511,7 @@ description: Describes how long a user can
     </section>
     <section title="expWarn">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: expWarn
 dataType: integer
@@ -4521,7 +4522,7 @@ description: Describes how long before
     </section>
     <section title="expInact">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: expInact
 dataType: integer
@@ -4533,7 +4534,7 @@ description: Describes how many days of
     </section>
     <section title="expDate">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: expDate
 dataType: timeStamp
@@ -4544,7 +4545,7 @@ description: Specifies when will the
     </section>
     <section title="encryptMethod">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: encryptMethod
 dataType: enumeration
@@ -4570,7 +4571,7 @@ description: Describes method that is used for hashing
     </section>
     <section title="symlink">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: symlink
 dataType: list
@@ -4582,7 +4583,7 @@ description: Identifies the result generated for a symlink.</artwork>
     </section>
     <section title="symlinkFilepath">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: symlinkFilepath
 dataType: string
@@ -4593,7 +4594,7 @@ description: Specifies the filepath to
     </section>
     <section title="canonicalPath">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: canonicalPath
 dataType: string
@@ -4605,7 +4606,7 @@ description: Specifies the canonical
     </section>
     <section title="sysctl">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: sysctl
 dataType: list
@@ -4620,7 +4621,7 @@ description: Stores
     </section>
     <section title="kernelParameterName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: kernelParameterName
 dataType: string
@@ -4631,7 +4632,7 @@ description: The name of a kernel
     </section>
     <section title="kernelParameterValue">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: kernelParameterValue
 dataType: string
@@ -4642,7 +4643,7 @@ description: The current value(s)
     </section>
     <section title="uname">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: uname
 dataType: list
@@ -4655,7 +4656,7 @@ description: Information about the hardware the machine is running
     </section>
     <section title="machineClass">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: machineClass
 dataType: string
@@ -4666,7 +4667,7 @@ description: Specifies the machine
     </section>
     <section title="nodeName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: nodeName
 dataType: string
@@ -4677,7 +4678,7 @@ description: Specifies the host
     </section>
     <section title="osName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: osName
 dataType: string
@@ -4688,7 +4689,7 @@ description: Specifies the operating system
     </section>
     <section title="osRelease">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: osRelease
 dataType: string
@@ -4699,7 +4700,7 @@ description: Specifies the build
     </section>
     <section title="osVersion">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: osVersion
 dataType: string
@@ -4710,7 +4711,7 @@ description: Specifies the operating system
     </section>
     <section title="processorType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: processorType
 dataType: string
@@ -4721,7 +4722,7 @@ description: Specifies the processor
     </section>
     <section title="internetService">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: internetService
 dataType: list
@@ -4735,7 +4736,7 @@ description: Holds information associated with Internet services.</artwork>
     </section>
     <section title="serviceProtocol">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceProtocol
 dataType: string
@@ -4746,7 +4747,7 @@ description: Specifies the protocol
     </section>
     <section title="serviceName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceName
 dataType: string
@@ -4757,7 +4758,7 @@ description: Specifies the name of the
     </section>
     <section title="flags">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: flags
 dataType: string
@@ -4768,7 +4769,7 @@ description: Specifies miscellaneous settings
     </section>
     <section title="noAccess">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: noAccess
 dataType: string
@@ -4779,7 +4780,7 @@ description: Specifies the remote hosts to
     </section>
     <section title="onlyFrom">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: onlyFrom
 dataType: ipAddress
@@ -4790,7 +4791,7 @@ description: Specifies the remote hosts to
     </section>
     <section title="port">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: port
 dataType: integer
@@ -4801,7 +4802,7 @@ description: The port entity specifies the port
     </section>
     <section title="server">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: server
 dataType: string
@@ -4812,7 +4813,7 @@ description: Specifies the executable that is
     </section>
     <section title="serverArguments">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serverArguments
 dataType: string
@@ -4823,7 +4824,7 @@ description: Specifies the arguments
     </section>
     <section title="socketType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: socketType
 dataType: string
@@ -4835,7 +4836,7 @@ description: Specifies the type of socket
     </section>
     <section title="registeredServiceType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: registeredServiceType
 dataType: enumeration
@@ -4862,7 +4863,7 @@ description: Specifies the type of internet service.</artwork>
     </section>
     <section title="wait">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: wait
 dataType: boolean
@@ -4877,7 +4878,7 @@ threaded and xinetd will accept the connection.</artwork>
     </section>
     <section title="disabled">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: disabled
 dataType: boolean
@@ -4890,7 +4891,7 @@ description: Specifies whether or not the
     </section>
     <section title="windowsView">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: windowsView
 dataType: enumeration
@@ -4908,7 +4909,7 @@ description: Indicates from which
     </section>
     <section title="fileauditedpermissions">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileauditedpermissions
 dataType: list
@@ -4931,7 +4932,7 @@ all access control entries (ACEs) in the SACL.</artwork>
     </section>
     <section title="trusteeName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: trusteeName
 dataType: string
@@ -4943,7 +4944,7 @@ description: Specifies the trustee name. A
     </section>
     <section title="auditStandardDelete">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditStandardDelete
 dataType: enumeration
@@ -4966,7 +4967,7 @@ description: The right to delete the object.</artwork>
     </section>
     <section title="auditStandardReadControl">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditStandardReadControl
 dataType: enumeration
@@ -4990,7 +4991,7 @@ security descriptor, not including the information in the SACL.</artwork>
     </section>
     <section title="auditStandardWriteDac">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditStandardWriteDac
 dataType: enumeration
@@ -5014,7 +5015,7 @@ description: The right to modify the DACL in the object's security
     </section>
     <section title="auditStandardWriteOwner">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditStandardWriteOwner
 dataType: enumeration
@@ -5038,7 +5039,7 @@ description: The right to change the owner in the object's security
     </section>
     <section title="auditStandardSynchronize">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditStandardSynchronize
 dataType: enumeration
@@ -5063,7 +5064,7 @@ state. Some object types do not support this access right.</artwork>
     </section>
     <section title="auditAccessSystemSecurity">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditAccessSystemSecurity
 dataType: enumeration
@@ -5086,7 +5087,7 @@ description: Indicates access to a system access control list (SACL).</artwork>
     </section>
     <section title="auditGenericRead">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditGenericRead
 dataType: enumeration
@@ -5109,7 +5110,7 @@ description: Read access.</artwork>
     </section>
     <section title="auditGenericWrite">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditGenericWrite
 dataType: enumeration
@@ -5132,7 +5133,7 @@ description: Write access.</artwork>
     </section>
     <section title="auditGenericExecute">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditGenericExecute
 dataType: enumeration
@@ -5155,7 +5156,7 @@ description: Execute access.</artwork>
     </section>
     <section title="auditGenericAll">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditGenericAll
 dataType: enumeration
@@ -5178,7 +5179,7 @@ description: Read, write, and execute access.</artwork>
     </section>
     <section title="auditFileReadData">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileReadData
 dataType: enumeration
@@ -5201,7 +5202,7 @@ description: Grants the right to read data from the file.</artwork>
     </section>
     <section title="auditFileWriteData">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileWriteData
 dataType: enumeration
@@ -5224,7 +5225,7 @@ description: Grants the right to write data to the file.</artwork>
     </section>
     <section title="auditFileAppendData">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileAppendData
 dataType: enumeration
@@ -5247,7 +5248,7 @@ description: Grants the right to append data to the file.</artwork>
     </section>
     <section title="auditFileReadEa">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileReadEa
 dataType: enumeration
@@ -5270,7 +5271,7 @@ description: Grants the right to read extended attributes.</artwork>
     </section>
     <section title="auditFileWriteEa">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileWriteEa
 dataType: enumeration
@@ -5293,7 +5294,7 @@ description: Grants the right to write extended attributes.</artwork>
     </section>
     <section title="auditFileExecute">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileExecute
 dataType: enumeration
@@ -5316,7 +5317,7 @@ description: Grants the right to execute a file.</artwork>
     </section>
     <section title="auditFileDeleteChild">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileDeleteChild
 dataType: enumeration
@@ -5340,7 +5341,7 @@ contains (its children), even if the files are read-only.</artwork>
     </section>
     <section title="auditFileReadAttributes">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileReadAttributes
 dataType: enumeration
@@ -5363,7 +5364,7 @@ description: Grants the right to read file attributes.</artwork>
     </section>
     <section title="auditFileWriteAttributes">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditFileWriteAttributes
 dataType: enumeration
@@ -5386,7 +5387,7 @@ description: Grants the right to change file attributes.</artwork>
     </section>
     <section title="fileeffectiverights">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileeffectiverights
 dataType: list
@@ -5408,7 +5409,7 @@ description: Stores the effective rights of a file that a
     </section>
     <section title="standardDelete">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: standardDelete
 dataType: boolean
@@ -5419,7 +5420,7 @@ description: The right to delete the
     </section>
     <section title="standardReadControl">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: standardReadControl
 dataType: boolean
@@ -5431,7 +5432,7 @@ description: The right to read
     </section>
     <section title="standardWriteDac">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: standardWriteDac
 dataType: boolean
@@ -5442,7 +5443,7 @@ description: The right to modify the
     </section>
     <section title="standardWriteOwner">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: standardWriteOwner
 dataType: boolean
@@ -5453,7 +5454,7 @@ description: The right to change
     </section>
     <section title="standardSynchronize">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: standardSynchronize
 dataType: boolean
@@ -5466,7 +5467,7 @@ description: The right to use the
     </section>
     <section title="accessSystemSecurity">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: accessSystemSecurity
 dataType: boolean
@@ -5477,7 +5478,7 @@ description: Indicates access to
     </section>
     <section title="genericRead">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: genericRead
 dataType: boolean
@@ -5487,7 +5488,7 @@ description: Read access.</artwork>
     </section>
     <section title="genericWrite">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: genericWrite
 dataType: boolean
@@ -5497,7 +5498,7 @@ description: Write access.</artwork>
     </section>
     <section title="genericExecute">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: genericExecute
 dataType: boolean
@@ -5507,7 +5508,7 @@ description: Execute access.</artwork>
     </section>
     <section title="genericAll">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: genericAll
 dataType: boolean
@@ -5518,7 +5519,7 @@ description: Read, write, and execute
     </section>
     <section title="fileReadData">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileReadData
 dataType: boolean
@@ -5529,7 +5530,7 @@ description: Grants the right to read
     </section>
     <section title="fileWriteData">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileWriteData
 dataType: boolean
@@ -5540,7 +5541,7 @@ description: Grants the right to write
     </section>
     <section title="fileAppendData">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileAppendData
 dataType: boolean
@@ -5551,7 +5552,7 @@ description: Grants the right to
     </section>
     <section title="fileReadEa">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileReadEa
 dataType: boolean
@@ -5562,7 +5563,7 @@ description: Grants the right to read
     </section>
     <section title="fileWriteEa">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileWriteEa
 dataType: boolean
@@ -5573,7 +5574,7 @@ description: Grants the right to write
     </section>
     <section title="fileExecute">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileExecute
 dataType: boolean
@@ -5584,7 +5585,7 @@ description: Grants the right to execute
     </section>
     <section title="fileDeleteChild">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileDeleteChild
 dataType: boolean
@@ -5596,7 +5597,7 @@ description: Right to delete a
     </section>
     <section title="fileReadAttributes">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileReadAttributes
 dataType: boolean
@@ -5607,7 +5608,7 @@ description: Grants the right to
     </section>
     <section title="fileWriteAttributes">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: fileWriteAttributes
 dataType: boolean
@@ -5618,7 +5619,7 @@ description: Grants the right to
     </section>
     <section title="groupInfo">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: groupInfo
 dataType: list
@@ -5630,7 +5631,7 @@ directly belong to specific groups.</artwork>
     </section>
     <section title="group">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: group
 dataType: string
@@ -5641,7 +5642,7 @@ description: Represents the name of a particular
     </section>
     <section title="user">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: user
 dataType: string
@@ -5652,7 +5653,7 @@ description: Represents the name of a particular
     </section>
     <section title="subgroup">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: subgroup
 dataType: string
@@ -5663,13 +5664,12 @@ description: Represents the name of a
     </section>
     <section title="groupSidInfo">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: groupSidInfo
 dataType: list
 structure: list (groupSid, userSid, subgroupSid)
-status:
-      current
+status: current
 description: Specifies the different users and subgroups, that 
 directly belong to specific groups
       (identified by SID).</artwork>
@@ -5677,7 +5677,7 @@ directly belong to specific groups
     </section>
     <section title="userSidInfo">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: userSidInfo
 dataType: list
@@ -5690,7 +5690,7 @@ that a user belongs to.</artwork>
     </section>
     <section title="userSid">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: userSid
 dataType: string
@@ -5701,7 +5701,7 @@ description: Represents the SID of a
     </section>
     <section title="subgroupSid">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: subgroupSid
 dataType: string
@@ -5712,7 +5712,7 @@ description: Represents the SID of a
     </section>
     <section title="lockoutpolicy">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lockoutpolicy
 dataType: list
@@ -5726,7 +5726,7 @@ description: Specifies various attributes associated
     </section>
     <section title="forceLogoff">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: forceLogoff
 dataType: integer
@@ -5739,7 +5739,7 @@ description: Specifies, in seconds, the
     </section>
     <section title="lockoutDuration">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lockoutDuration
 dataType: integer
@@ -5751,7 +5751,7 @@ description: Specifies, in seconds,
     </section>
     <section title="lockoutObservationWindow">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lockoutObservationWindow
 dataType: integer
@@ -5763,7 +5763,7 @@ description: Specifies the
     </section>
     <section title="lockoutThreshold">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lockoutThreshold
 dataType: integer
@@ -5775,7 +5775,7 @@ description: Specifies the number of
     </section>
     <section title="passwordpolicy">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: passwordpolicy
 dataType: list
@@ -5789,7 +5789,7 @@ description: Specifies
     </section>
     <section title="maxPasswdAge">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: maxPasswdAge
 dataType: integer
@@ -5805,7 +5805,7 @@ description: Specifies, in seconds (from
     </section>
     <section title="minPasswdAge">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: minPasswdAge
 dataType: integer
@@ -5819,7 +5819,7 @@ description: Specifies the minimum
     </section>
     <section title="minPasswdLen">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: minPasswdLen
 dataType: integer
@@ -5831,7 +5831,7 @@ description: Specifies the minimum
     </section>
     <section title="passwordHistLen">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: passwordHistLen
 dataType: integer
@@ -5844,7 +5844,7 @@ description: Specifies the length of
     </section>
     <section title="passwordComplexity">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: passwordComplexity
 dataType: boolean
@@ -5856,7 +5856,7 @@ description: Indicates whether
     </section>
     <section title="reversibleEncryption">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: reversibleEncryption
 dataType: boolean
@@ -5867,7 +5867,7 @@ description: Indicates whether
     </section>
     <section title="portInfo">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: portInfo
 dataType: list
@@ -5879,7 +5879,7 @@ description: Information about open listening ports.</artwork>
     </section>
     <section title="foreignPort">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: foreignPort
 dataType: string
@@ -5890,7 +5890,7 @@ description: The TCP or UDP port to which
     </section>
     <section title="printereffectiverights">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: printereffectiverights
 dataType: list
@@ -5910,7 +5910,7 @@ entries (ACEs) in the DACL.</artwork>
     </section>
     <section title="printerName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: printerName
 dataType: string
@@ -5921,47 +5921,51 @@ description: Specifies the name of the
     </section>
     <section title="printerAccessAdminister">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: printerAccessAdminister
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="printerAccessUse">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: printerAccessUse
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="jobAccessAdminister">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: jobAccessAdminister
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="jobAccessRead">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: jobAccessRead
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="registry">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: registry
 dataType: list
@@ -5974,7 +5978,7 @@ description: Specifies information that can be
     </section>
     <section title="hive">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: hive
 dataType: enumeration
@@ -6000,7 +6004,7 @@ description: The
     </section>
     <section title="registryKey">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: registryKey
 dataType: string
@@ -6013,7 +6017,7 @@ description: Describes the registry key.
     </section>
     <section title="registryKeyName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: registryKeyName
 dataType: string
@@ -6024,7 +6028,7 @@ description: Describes the name of a
     </section>
     <section title="lastWriteTime">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lastWriteTime
 dataType: integer
@@ -6047,7 +6051,7 @@ description: The last time that the key or any of its value entries
     </section>
     <section title="registryKeyType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: registryKeyType
 dataType: enumeration
@@ -6102,7 +6106,7 @@ description:
     </section>
     <section title="registryKeyValue">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: registryKeyValue
 dataType: string
@@ -6140,7 +6144,7 @@ description: Holds the actual value
     </section>
     <section title="regkeyauditedpermissions">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: regkeyauditedpermissions
 dataType: list
@@ -6161,7 +6165,7 @@ determined checking all access control entries (ACEs) in the SACL.</artwork>
     </section>
     <section title="auditKeyQueryValue">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeyQueryValue
 dataType: enumeration
@@ -6179,12 +6183,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="auditKeySetValue">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeySetValue
 dataType: enumeration
@@ -6202,12 +6207,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="auditKeyCreateSubKey">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeyCreateSubKey
 dataType: enumeration
@@ -6225,12 +6231,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="auditKeyEnumerateSubKeys">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeyEnumerateSubKeys
 dataType: enumeration
@@ -6248,12 +6255,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="auditKeyNotify">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeyNotify
 dataType: enumeration
@@ -6271,12 +6279,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="auditKeyCreateLink">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeyCreateLink
 dataType: enumeration
@@ -6294,12 +6303,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="auditKeyWow6464Key">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeyWow6464Key
 dataType: enumeration
@@ -6317,12 +6327,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="auditKeyWow6432Key">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeyWow6432Key
 dataType: enumeration
@@ -6340,12 +6351,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="auditKeyWow64Res">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: auditKeyWow64Res
 dataType: enumeration
@@ -6363,12 +6375,13 @@ occurrences of the specified events when auditing is enabled.
 ; 0x5 ; The empty string value is permitted here to allow for 
 detailed error reporting.
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="regkeyeffectiverights">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: regkeyeffectiverights
 dataType: list
@@ -6390,7 +6403,7 @@ entries (ACEs) in the DACL.</artwork>
     </section>
     <section title="keyQueryValue">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keyQueryValue
 dataType: boolean
@@ -6401,7 +6414,7 @@ description: Specifies whether or not
     </section>
     <section title="keySetValue">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keySetValue
 dataType: boolean
@@ -6412,7 +6425,7 @@ description: Specifies whether or not
     </section>
     <section title="keyCreateSubKey">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keyCreateSubKey
 dataType: boolean
@@ -6423,7 +6436,7 @@ description: Specifies whether or not
     </section>
     <section title="keyEnumerateSubKeys">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keyEnumerateSubKeys
 dataType: boolean
@@ -6435,57 +6448,62 @@ description: Specifies whether or
     </section>
     <section title="keyNotify">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keyNotify
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="keyCreateLink">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keyCreateLink
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="keyWow6464Key">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keyWow6464Key
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="keyWow6432Key">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keyWow6432Key
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="keyWow64Res">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: keyWow64Res
 dataType: boolean
 status: current
-description:</artwork>
+description:
+</artwork>
         </figure>
     </section>
     <section title="service">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: service
 dataType: list
@@ -6499,7 +6517,7 @@ present on the system.</artwork>
     </section>
     <section title="displayName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: displayName
 dataType: string
@@ -6510,7 +6528,7 @@ description: Specifies the name of the
     </section>
     <section title="description">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: description
 dataType: string
@@ -6521,7 +6539,7 @@ description: Specifies the description of
     </section>
     <section title="serviceType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceType
 dataType: enumeration
@@ -6552,7 +6570,7 @@ description:
     </section>
     <section title="startType">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: startType
 dataType: enumeration
@@ -6582,7 +6600,7 @@ description: Specifies when the service should be started.</artwork>
     </section>
     <section title="currentState">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: currentState
 dataType: enumeration
@@ -6622,10 +6640,11 @@ description: Specifies the current state of
     </section>
     <section title="controlsAccepted">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: controlsAccepted
-dataType: enumeration strucutre: SERVICE_ACCEPT_NETBINDCHANGE ; 0x1 ;
+dataType: enumeration
+structure: SERVICE_ACCEPT_NETBINDCHANGE ; 0x1 ;
       The SERVICE_ACCEPT_NETBINDCHANGE type means that the 
       service is a network component and can accept changes in its
       binding without being stopped or restarted. The DWORD value 
@@ -6681,7 +6700,7 @@ description: Specifies the control codes that a service will
     </section>
     <section title="startName">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: startName
 dataType: string
@@ -6692,7 +6711,7 @@ description: Specifies the account under
     </section>
     <section title="serviceFlag">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceFlag
 dataType: boolean
@@ -6705,7 +6724,7 @@ description: Specifies whether the
     </section>
     <section title="dependencies">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: dependencies
 dataType: string
@@ -6716,7 +6735,7 @@ description: Specifies the dependencies
     </section>
     <section title="serviceeffectiverights">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceeffectiverights
 dataType: list
@@ -6738,7 +6757,7 @@ description: Stores the
     </section>
     <section title="trusteeSid">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: trusteeSid
 dataType: string
@@ -6750,7 +6769,7 @@ description: Specifies the SID that is
     </section>
     <section title="serviceQueryConf">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceQueryConf
 dataType: boolean
@@ -6761,7 +6780,7 @@ description: Specifies whether or
     </section>
     <section title="serviceChangeConf">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceChangeConf
 dataType: boolean
@@ -6772,7 +6791,7 @@ description: Specifies whether or
     </section>
     <section title="serviceQueryStat">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceQueryStat
 dataType: boolean
@@ -6784,7 +6803,7 @@ description: Specifies whether or
     </section>
     <section title="serviceEnumDependents">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceEnumDependents
 dataType: boolean
@@ -6796,7 +6815,7 @@ description: Specifies whether
     </section>
     <section title="serviceStart">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceStart
 dataType: boolean
@@ -6807,7 +6826,7 @@ description: Specifies whether or not
     </section>
     <section title="serviceStop">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceStop
 dataType: boolean
@@ -6818,7 +6837,7 @@ description: Specifies whether or not
     </section>
     <section title="servicePause">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: servicePause
 dataType: boolean
@@ -6829,7 +6848,7 @@ description: Specifies whether or not
     </section>
     <section title="serviceInterrogate">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceInterrogate
 dataType: boolean
@@ -6840,7 +6859,7 @@ description: Specifies whether or not permission is granted to
     </section>
     <section title="serviceUserDefined">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: serviceUserDefined
 dataType: boolean
@@ -6852,7 +6871,7 @@ description: Specifies whether or
     </section>
     <section title="sharedresourceauditedpermissions">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: sharedresourceauditedpermissions
 dataType: list
@@ -6872,7 +6891,7 @@ description: Stores
     </section>
     <section title="netname">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: netname
 dataType: string
@@ -6883,7 +6902,7 @@ description: Specifies the name associated
     </section>
     <section title="sharedresourceeffectiverights">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: sharedresourceeffectiverights
 dataType: list
@@ -6903,7 +6922,7 @@ description: Stores
     </section>
     <section title="user">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: user
 dataType: list
@@ -6914,7 +6933,7 @@ description: Specifies the groups to which a user belongs.</artwork>
     </section>
     <section title="enabled">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: enabled
 dataType: boolean
@@ -6925,7 +6944,7 @@ description: Represents whether the
     </section>
     <section title="lastLogon">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: lastLogon
 dataType: integer
@@ -6936,7 +6955,7 @@ description: The date and time when the
     </section>
     <section title="groupSid">
         <figure>
-  <artwork>
+  <artwork type="IPFIX">
 elementId: TBD
 name: groupSid
 dataType: string
