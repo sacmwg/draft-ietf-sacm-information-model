@@ -10,4 +10,4 @@ impages: $(GHPAGES_TMP) im.html
 	cp im.html $(GHPAGES_TMP)
 	cp -r css $(GHPAGES_TMP)/css
 
-ghpagesAll: ghpages
+ghpagesAll: impages ghpages
