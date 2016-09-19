@@ -3,7 +3,7 @@ include lib/main.mk
 lib/main.mk:
 	git submodule update --init
 
-drafts_html = $(drafts_html) im.html
+drafts_html := $(drafts_html) im.html
 
 im.html:
 	python check/check.py --html --output im.html draft-ietf-sacm-information-model.xml
