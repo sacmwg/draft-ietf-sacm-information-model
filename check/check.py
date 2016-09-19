@@ -435,13 +435,21 @@ def main():
         print("<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en-us'>", file=fout)
         print("<head>", file=fout)
         print("<title>SACM Information Model</title>", file=fout)
-        print("<script type='text/javascript' src='css/jquery.js'></script>", file=fout)
-        print("<script type='text/javascript' src='css/tablesorter.min.js'></script>", file=fout)
+        print("<script type='text/javascript'>", file=fout)
+        CopyFile('css/jquery.js', fout)
+        print("</script>", file=fout)
+        print("<script type='text/javascript'>", file=fout)
+        CopyFile('css/tablesorter.min.js', fout)
+        print("</script>", file=fout)
         print("<script type='text/javascript'>", file=fout)
         print("$(document).ready(function(){ $('#myTable').tablesorter();});", file=fout)
         print("</script>", file=fout)
-        print("<link rel='stylesheet' href='css/jq.css' type='text/css'/>", file=fout)
-        print("<link rel='stylesheet' href='css/style.css' type='text/css'/>", file=fout)
+        # print("<style>", file=fout)
+        # CopyFile('css/jq.css', fout)
+        # print("</script>", file=fout)
+        print("<style>", file=fout)
+        CopyFile('css/style.css', fout)
+        print("</style>", file=fout)
         print("</head>", file=fout)
         print("<body>", file=fout)
         print("<table id='myTable' class='tablesorter'>", file=fout)
@@ -476,6 +484,14 @@ def main():
     if options.html:
         print("</tbody>", file=fout)
         print("</body>", file=fout)
+
+def CopyFile(fileName, fileOut):
+    fin = open(fileName,"r");
+    lines = fin.readlines()
+    for line in lines:
+        print(line, file=fileOut)
+    fin.close()
+    
 
 def PrintError(node, text):
     if node == None:
