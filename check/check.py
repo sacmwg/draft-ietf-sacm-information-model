@@ -471,7 +471,7 @@ def main():
                 if v.enumeration:
                     print("<table>", file=fout)
                     for ve in v.enumeration:
-                        print("<tr><td>" + ve.name + "</td><td>")
+                        print("<tr><td>" + ve.name + "</td><td>", file=fout)
                         if ve.tag == None:
                             print("NONE", file=fout)
                         else:
