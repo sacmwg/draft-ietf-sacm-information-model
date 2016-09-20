@@ -26,31 +26,36 @@ class ListToken:
 
     
 class enumValue:
-    def __init__(self, line):
+    def __init__(self, node, line):
         line = line.strip()
         values = line.split(";")
-        if len(values) != 3:
-            print("Error Line: '" + line + "'", file=sys.stderr)
-            raise SyntaxError("Incorrect number of fields in enumeration")
+        self.value = None
+        self.tag = None
+        self.description = None
         
+        if len(values) != 3:
+            PrintError(node, "Incorrect number of fields for enumeration.\nLine is '" + line + "'")
+
+        if len(values) == 0:
+            return None
         x = re.match("^[0-9a-zA-Z_]+$", values[0].strip())
         if not x:
-            print("Error Line: '" + line + "'", file=sys.stderr)
-            raise SyntaxError("Name does not match pattern")
+            PrintError(node, "Enumeration name does not match pattern\nLine is '" + line + "'")
         self.name = values[0].strip()
-        
-        x = re.match("^0x([0-9a-fA-F]+)$", values[1].strip())
-        if not x:
-           print("Error Line: '" + line + "'", file=sys.stderr)
-           raise SyntaxError("Value is not a hexadecimal number")
-        self.tag = values[1].strip()
-        self.value = int(values[1].strip(), 16)
 
-        x = re.match("^[0-9a-zA-Z\.,_ ]+$", values[2].strip())
-        if not x:
-            print("Error Line: '" + line + "'", file=sys.stderr)
-            print("Description does not match pattern", file=sys.stderr)
-        self.description = values[2].strip()
+        if len(values) > 1:
+            x = re.match("^0x([0-9a-fA-F]+)$", values[1].strip())
+            if not x:
+                PrintError(node, "Enumeration value is not a hexadecimal number\nLine is '" + line + "'")
+            else:
+                self.value = int(values[1].strip(), 16)
+            self.tag = values[1].strip()
+
+        if len(values) > 2:
+            x = re.match("^[0-9a-zA-Z\.,_ ]+$", values[2].strip())
+            if not x:
+                PrintError(node, "Enumeration description does not match pattern\nLine is '" + line + "'")
+            self.description = values[2].strip()
         
 class IPFIX:
     def __init__(self, node):
@@ -81,42 +86,42 @@ class IPFIX:
             x = re.match("elementId:\s+(\w+)\s*$", line)
             if x:
                 if self.id:
-                    raise SyntaxError("Duplicate elementId field");
+                    PrintError(node, "Duplicate elementId field");
+                self.id = x.group(1)
+                continue
+    
+            x = re.match("enterpriseId:\s+(\w+)\s*$", line)
+            if x:
+                if self.id:
+                    PrintError(node, "Duplicate enterpriseId field");
                 self.id = x.group(1)
                 continue
     
             x = re.match("name:\s+([\w-]+)\s*$", line)
             if x:
                 if self.name:
-                    raise SyntaxError("Duplicate name field")
+                    PrintError(node, "Duplicate name field")
                 self.name = x.group(1)
                 continue
 
             x = re.match("dataType:\s+(\w+)", line);
             if x:
                 if self.dataType:
-                    raise SyntaxError("Duplicate dataType field")
+                    PrintError(node, "Duplicate dataType field")
                 self.dataType = x.group(1)
-                continue
-
-            x = re.match("dataTypeSemantics:\s+(\w+)", line);
-            if x:
-                if self.dataTypeStatus:
-                    raise SyntaxError("Duplicate dataTypeSemantics");
-                self.dataTypeStatus = x.group(1)
                 continue
 
             x = re.match("status:\s+(\w+)", line);
             if x:
                 if self.status:
-                    raise SyntaxError("duplicate status field")
+                    PrintError(node, "Duplicate status field")
                 self.status = x.group(1)
                 continue
 
             x = re.match("description:\s+(.+)", line);
             if x:
                 if self.description:
-                    raise SyntaxError("Duplicate description field");
+                    PrintError(node, "Duplicate description field");
                 this = "description"
                 self.description = x.group(1);
                 continue
@@ -127,31 +132,10 @@ class IPFIX:
                 self.description = ""
                 continue
 
-            x = re.match("range:\s+(\w+)", line)
-            if x:
-                if self.range:
-                    raise SyntaxError("Duplicate range field")
-                self.range = x.group(1)
-                continue
-
-            x = re.match("units:\s+(\w+)", line)
-            if x:
-                if self.units:
-                    raise SyntaxError("Duplicate units field")
-                self.units = x.group(1)
-                continue
-
-            x = re.match("references:\s*(\w+)", line)
-            if x:
-                if self.references:
-                    raise SyntaxError("Duplicate references field")
-                self.references = x.group(1)
-                continue
-
             x = re.match("structure:(.*)", line)
             if x:
                 if self.structure:
-                    raise SyntaxError("Duplicate structure field")
+                    PrintError(node, "Duplicate structure field")
                 this = "structure"
                 try:
                     self.structure = x.group(1)
@@ -163,6 +147,14 @@ class IPFIX:
             if x:
                 last = "structure"
                 continue
+
+            x = re.match("references:\s*(\w+)", line)
+            if x:
+                if self.references:
+                    PrintError(node, "Duplicate references field")
+                self.references = x.group(1)
+                continue
+
 
             if last == "description":
                 t = line.lstrip()
@@ -180,7 +172,8 @@ class IPFIX:
                 this = last
                 
         if (self.description == None):
-            raise SyntaxError("description is a required elment")
+            PrintError(node, "description is a required elment")
+            self.description = "MISSING"
         while (self.description[-1:] == '\n'):
             self.description = self.description[:-1]
 
@@ -189,37 +182,42 @@ class IPFIX:
         if not self.name:
             raise SyntaxError("name is a required element")
         if not self.dataType:
-            raise SyntaxError("dataType is a required element")
+            PrintError(node, "dataType is a required element")
+            self.dataType = "Unknown"
 
         if self.dataType == "enumeration":
             if not self.structure:
-                raise SyntaxError("Structure field is missing for enumeration")
-            self.processEnumeration(node)
+                PrintError(node, "Structure field is missing for enumeration")
+            else:
+                self.processEnumeration(node)
 
         if self.dataType == "orderedList":
             if not self.structure:
-                raise SyntaxError("Structure field is missing for orderedList")
-            self.processOrderedList(node)
+                PrintError(node, "Structure field is missing for orderedList")
+            else:
+                self.processOrderedList(node)
 
         if self.dataType == "list":
             if not self.structure:
-                raise SyntaxError("Structure field is missing for list")
-            self.processList(node)
+                PrintError(node, "Structure field is missing for list")
+            else:
+                self.processList(node)
             
     def processEnumLine(self, line, node):
         if line.strip() == "":
             return
         try:
-            item = enumValue(line)
-            if item.name in self.enums:
-                print("Error: name '" + item.name + "' defined twice in enumeration", file=sys.stderr)
-            else:
-                self.enums[item.name] = item
-                if item.value in self.enumByValue:
-                    print("Error: value '" + format(item.value, "#x") + "' defined twice in enumeration", file=sys.stderr)
+            item = enumValue(node, line)
+            if item != None:
+                if item.name in self.enums:
+                    PrintError(node, "Enumeration name '" + item.name + "' defined twice in enumeration")
+                else:
+                    self.enums[item.name] = item
+                    if item.value != None and item.value in self.enumByValue:
+                        PrintError(node, "Value '" + format(item.value, "#x") + "' defined twice in enumeration", file=sys.stderr)
             return item
         except SyntaxError as e:
-            print("Error at line " + str(node.sourceline) + ": " + e.msg, file=sys.stderr)
+            PrintError(node, e.msg)
 
     def processEnumeration(self, node):
         enums = self.structure.split("\n")
@@ -473,7 +471,15 @@ def main():
                 if v.enumeration:
                     print("<table>", file=fout)
                     for ve in v.enumeration:
-                        print("<tr><td>" + ve.name + "</td><td>" + ve.tag + "</td><td>" + ve.description + "</td></tr>", file=fout)
+                        print("<tr><td>" + ve.name + "</td><td>")
+                        if ve.tag == None:
+                            print("NONE", file=fout)
+                        else:
+                            print(ve.tag, file=fout)
+                        print("</td><td>", file=fout)
+                        if ve.description != None:
+                            print(ve.description, file=fout)
+                        print("</td></tr>", file=fout)
                     print("</table>", file=fout)
                 if (v.dataType == "list" or v.dataType == "orderedList") and (v.tokenList != None):
                     print("<br>" + v.dataType + "(", file=fout)
@@ -502,6 +508,10 @@ def CopyFile(fileName, fileOut):
 def PrintError(node, text):
     if node == None:
         print("Error: " + text, file=sys.stderr)
+    elif type(node) is int:
+        print("Error at line " + str(node) + ": " + text, file=sys.stderr)
+    elif type(node) is str:
+        print("Error at line " + node + ": " + text, file=sys.stderr)
     else:
         print("Error at line " + str(node.sourceline) + ": " + text, file=sys.stderr)
 
