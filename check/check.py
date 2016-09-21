@@ -14,8 +14,14 @@ class ListToken:
         self.maximum = None
         self.next = None
 
-    def toString(self):
-        v = "<a href='#node__" + self.element + "'>" + self.element + "</a>"
+    def toString(self, reference):
+        if reference:
+            v = "<a href='#node__" + self.element + "'>"
+        else:
+            v = ""
+        v += self.element
+        if reference:
+            v += "</a>"
         if self.cardinality:
             v += self.cardinality
         if self.next:
@@ -62,6 +68,7 @@ class IPFIX:
         lastItem = None
 
         self.id = None
+        self.enterpriseId = None
         self.name=None
         self.dataType = None
         self.description = None
@@ -72,6 +79,7 @@ class IPFIX:
         self.references = None
         self.structure = None
         self.enumeration = None
+        self.tokenList = None
 
         this = None
 
@@ -92,9 +100,9 @@ class IPFIX:
     
             x = re.match("enterpriseId:\s+(\w+)\s*$", line)
             if x:
-                if self.id:
+                if self.enterpiseId:
                     PrintError(node, "Duplicate enterpriseId field");
-                self.id = x.group(1)
+                self.enterpriseId = x.group(1)
                 continue
     
             x = re.match("name:\s+([\w-]+)\s*$", line)
@@ -372,6 +380,8 @@ def main():
                              dest='quite', help='dont print anything')
     plain_options.add_option('-5', '--html', action='store_true',
                              dest='html', help='Output HTML format')
+    plain_options.add_option('-C', '--csv', action='store_true',
+                             dest='csv', help='Output CSV format')
     plain_options.add_option('-A', '--asn', action='store_true',
                              dest='asn', help='Output ASN.1 format')
     plain_options.add_option('-o', '--output', help='file to print to',
@@ -461,6 +471,9 @@ def main():
         print("<tr><th>Name</th><th>Type</th><th>Description</th></tr>", file=fout)
         print("<tbody>", file=fout)
 
+    if options.csv:
+        print("elementId,enterpriseId,name,dataType,status,description,structure,references", file=fout)
+
     for k,v in all.items():
         if v != None:
             if options.html:
@@ -484,9 +497,40 @@ def main():
                 if (v.dataType == "list" or v.dataType == "orderedList") and (v.tokenList != None):
                     print("<br>" + v.dataType + "(", file=fout)
                     for token in v.tokenList:
-                        print(token.toString(), file=fout)
+                        print(token.toString(True), file=fout)
                     print(")", file=fout)
                 print("</td>", file=fout)
+            elif options.csv:
+                # print("elementId,enterpriseId,name,dataType,status,description,structure,references", file=fout)
+                tmp = v.id + ","
+                if v.enterpriseId:
+                    tmp += ve.enterpriseId
+                tmp += ","
+                tmp += v.name + ","
+                tmp += v.dataType + ","
+                tmp += v.status + ","
+                tmp += '"' + v.description.replace("\n", "||") + '",'
+                if v.enumeration:
+                    tmp += '"'
+                    for ve in v.enumeration:
+                        tmp += ve.name + ";"
+                        if ve.tag != None:
+                            tmp += ve.tag
+                        tmp += ";"
+                        if ve.description:
+                            tmp += ve.description
+                        tmp += "||"
+                    tmp += '"'
+                if v.tokenList != None:
+                    tmp += v.dataType + "("
+                    for token in v.tokenList:
+                        tmp += token.toString(False)
+                    tmp += ")"
+                tmp += ','
+                if v.references:
+                    tmp += v.references
+                    
+                print(tmp, file=fout)
             elif options.asn:
                 print("", file=fout)
                 #if v.description:
