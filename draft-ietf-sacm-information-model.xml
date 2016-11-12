@@ -457,13 +457,12 @@
             </section>
             <section title="SACM Content Elements"
                 anchor="sacm-content-elements">
-                <t>Every piece of information that is provided by a SACM component is always associated 
-                    with a set of metadata, for example, the timestamp at which this set of information 
-                    was produced (e.g. by a collection task) or what target endpoint this set of 
-                    information is about (e.g. the data-source or a target endpoint identifier, respectively). 
-                    The subject that associates content IE with content-metadata IE is called a 
-                    content-element. Content metadata can also include relationships that express associations 
-                    with other content-elements.</t>
+                 <t>Every piece of information that is provided by a SACM Component is always associated 
+                    with a set of data source metadata (e.g. the timestamp when the information was collected, the target 
+                    endpoint from which the this set of information is about, etc.) which is provided in the SACM Content
+					Element Metadata. The SACM Content Element is the subject information element that associates the 
+					information with the SACM Content Element Metadata. The SACM Content Element Metadata may also include
+					relationships that express associations with other SACM Content Elements.</t>
                 
                 <figure title="Example set of IEs associated with a timestamp and a
                     target endpoint label." anchor="sacm-content-element-example">
@@ -485,18 +484,20 @@
             
             <section title="SACM Statements"
                 anchor="sacm-statements">
-                <t>One or more SACM content elements are bundled in a SACM statement. In contrast to 
-                    content-metadata, statement-metadata focuses on the providing SACM component instead of the 
-                    target endpoint that the content is about. The only content-specific metadata included in 
-                    the SACM statement is the content-type IE. Therefore, multiple content-elements that share 
-                    the same statement metadata and are of the same content-type can be included in a single 
-                    SACM statement. A SACM statement functions similar to an envelope or a header. Its purpose 
-                    is to enable the tracking of the origin of data inside a SACM domain and more importantly 
-                    to enable the mitigation of conflicting information that may originate from different SACM 
-                    components. How a consuming SACM component actually deals with conflicting information is 
-                    out-of-scope of the SACM IM. Semantically, the term statement implies that the SACM content 
-                    provided by a SACM component might not be correct in every context, but rather is the result 
-                    of a best-effort to produce correct information.</t>
+                <t>One or more SACM Content Elements are bundled in a SACM Statement. In contrast to 
+                    SACM Content Element Metadata, SACM Statement Metadata focuses on the providing information 
+					about the SACM Component that provided it rather than the target endpoint that the content 
+					is about. The only content-specific metadata included in the SACM Statement is the 
+					content-type IE. Therefore, multiple SACM Content Elements that share the same SACM Statement 
+					Metadata and are of the same content-type can be included in a single SACM Statement. A SACM 
+					Statement functions similar to an envelope or a header and is the subject information element
+					that associates SACM Statement Metadata with security automation information provided in its
+					SACM Content Element(s). Its purpose is to enable the tracking of the origin of data inside a 
+					SACM domain and more importantly to enable the mitigation of conflicting information that may 
+					originate from different SACM Components. How a consuming SACM Component actually deals with 
+					conflicting information is out-of-scope of the SACM IM. Semantically, the term statement 
+					implies that the SACM content provided by a SACM Component might not be correct in every context, 
+					but, rather is the result of a best-effort to produce correct information.</t>
                 
                 <figure title="Example of a simple SACM statement including a single content-element." anchor="sacm-statement-example-1">
                     <artwork>                  
@@ -1016,6 +1017,64 @@ name, hex-value, description
         <section title="Information Model Elements" anchor="information-model-elements">
             <t>This section defines the specific Information Elements and relationships that will be 
             implemented by data models and transported between SACM Components.</t>
+<section title="sacmStatement">
+    <figure>
+      <artwork type="IPFIX">
+            elementId: TBD
+            name: sacmStatement
+            dataType: orderedList
+            status: current
+            description: Associates SACM Statement Metadata which provides data origin information about
+			the providing SACM Component with one or more SACM Content Elements that contain security
+			automation information. 
+			structure: orderedList(sacmStatementMetadata, sacmContentElement+)
+        </artwork>
+    </figure>
+</section>
+<section title="sacmStatementMetadata">
+    <figure>
+      <artwork type="IPFIX">
+            elementId: TBD
+            name: sacmStatementMetadata
+            dataType: orderedList
+            status: current
+            description: Contains IEs that provide information about the data origin of the
+			providing SACM Component as well as the information necessary for other SACM
+			Components to understand the type of security automation information in the SACM
+			Statement's SACM Content Element(s). 
+			structure: orderedList(publishTimestamp, dataOrigin)
+        </artwork>
+    </figure>
+</section>
+<section title="sacmContentElement">
+    <figure>
+      <artwork type="IPFIX">
+            elementId: TBD
+            name: sacmContentElement
+            dataType: list
+            status: current
+            description: Associates SACM Content Element Metadata which provides information
+			about the data source and type of security automation information with the actual security automation
+			information. 
+			structure: TODO
+        </artwork>
+    </figure>
+</section>
+<section title="sacmContentElementMetadata">
+    <figure>
+      <artwork type="IPFIX">
+            elementId: TBD
+            name: sacmContentElementMetadata
+            dataType: orderedList
+            status: current
+            description: Contains IEs that provide information about the data source and type
+            of security automation information such that other SACM Components are able to
+			parse and understand the security automation information contained within the SACM
+			Statement's SACM Content Element(s). 
+			structure: orderedList(collectionTimestamp, targetEndpointLabel)
+        </artwork>
+    </figure>
+</section>
 <section title="accessPrivilegeType">
     <figure>
       <artwork type="IPFIX">
