@@ -2559,7 +2559,6 @@ elementId: TBD
 name: globallyUniqueIdentifier
 dataType: unsigned8
 status: current
-metadata: true
 description: TODO.
     </artwork>
   </figure>
@@ -2571,7 +2570,6 @@ elementId: TBD
 name: dataOrigin
 dataType: string
 status: current
-metadata: true
 description: The origin of the data. 
     </artwork>
   </figure>
@@ -2584,7 +2582,6 @@ elementId: TBD
 name: dataSource
 dataType: string
 status: current
-metadata: true
 description: The source of the data. 
     </artwork>
   </figure>
@@ -2597,7 +2594,6 @@ elementId: TBD
 name: creationTimestamp
 dataType: dateTimeSeconds
 status: current
-metadata: true
 description: The date and time when the posture
              information was created by a SACM Component.
     </artwork>
@@ -2610,7 +2606,6 @@ elementId: TBD
 name: collectionTimestamp
 dataType: dateTimeSeconds
 status: current
-metadata: true
 description: The date and time when the posture
              information was collected or observed by a SACM
              Component.
@@ -2624,7 +2619,6 @@ elementId: TBD
 name: publicationTimestamp
 dataType: dateTimeSeconds
 status: current
-metadata: true
 description: The date and time when the posture
              information was published.
     </artwork>
@@ -2637,7 +2631,6 @@ elementId: TBD
 name: relayTimestamp
 dataType: dateTimeSeconds
 status: current
-metadata: true
 description: The date and time when the posture
              information was relayed to another SACM Component.
     </artwork>
@@ -2650,7 +2643,6 @@ elementId: TBD
 name: storageTimestamp
 dataType: dateTimeSeconds
 status: current
-metadata: true
 description: The date and time when the posture
              information was stored in a Repository.
     </artwork>
@@ -2663,7 +2655,6 @@ elementId: TBD
 name: type
 dataType: enumeration
 status: current
-metadata: true
 description: The type of data model use to represent
              some set of endpoint information. The following 
              table lists the set of data models supported by SACM.
