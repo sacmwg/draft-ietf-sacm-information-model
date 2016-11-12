@@ -316,9 +316,11 @@
                     
           <figure title="Example instance of an attribute and subject."
             anchor="attribute-subject-example">
-            <artwork>                  
+            <artwork>    
+      Example Instance of an Attribute:			
       hostname = "arbutus"
       
+      Example Instance of a Subject:
       coordinates = (
       latitude = N27.99619,
       longitude = E86.92761
@@ -1024,10 +1026,13 @@ name, hex-value, description
             name: sacmStatement
             dataType: orderedList
             status: current
-            description: Associates SACM Statement Metadata which provides data origin information about
-			the providing SACM Component with one or more SACM Content Elements that contain security
-			automation information. 
-			structure: orderedList(sacmStatementMetadata, sacmContentElement+)
+            description: Associates SACM Statement Metadata 
+            which provides data origin information about
+            the providing SACM Component with one or more 
+            SACM Content Elements that contain security
+            automation information. 
+            structure: orderedList(sacmStatementMetadata, 
+                                   sacmContentElement+)
         </artwork>
     </figure>
 </section>
@@ -1038,11 +1043,15 @@ name, hex-value, description
             name: sacmStatementMetadata
             dataType: orderedList
             status: current
-            description: Contains IEs that provide information about the data origin of the
-			providing SACM Component as well as the information necessary for other SACM
-			Components to understand the type of security automation information in the SACM
-			Statement's SACM Content Element(s). 
-			structure: orderedList(publishTimestamp, dataOrigin)
+            description: Contains IEs that provide 
+            information about the data origin of the 
+            providing SACM Component as well as the 
+			information necessary for other SACM
+			Components to understand the type of 
+			security automation information in the 
+			SACM Statement's SACM Content Element(s). 
+			structure: orderedList(publishTimestamp, 
+			                       dataOrigin)
         </artwork>
     </figure>
 </section>
@@ -1053,8 +1062,10 @@ name, hex-value, description
             name: sacmContentElement
             dataType: list
             status: current
-            description: Associates SACM Content Element Metadata which provides information
-			about the data source and type of security automation information with the actual security automation
+            description: Associates SACM Content Element 
+			Metadata which provides information about the 
+			data source and type of security automation 
+			information with the actual security automation
 			information. 
 			structure: TODO
         </artwork>
@@ -1067,11 +1078,14 @@ name, hex-value, description
             name: sacmContentElementMetadata
             dataType: orderedList
             status: current
-            description: Contains IEs that provide information about the data source and type
-            of security automation information such that other SACM Components are able to
-			parse and understand the security automation information contained within the SACM
-			Statement's SACM Content Element(s). 
-			structure: orderedList(collectionTimestamp, targetEndpointLabel)
+            description: Contains IEs that provide 
+			information about the data source and type of 
+			security automation information such that other 
+			SACM Components are able to parse and understand 
+			the security automation information contained 
+			within the SACM Statement's SACM Content Element(s). 
+			structure: orderedList(collectionTimestamp, 
+			                       targetEndpointLabel)
         </artwork>
     </figure>
 </section>
