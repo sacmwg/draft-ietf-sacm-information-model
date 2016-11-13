@@ -317,7 +317,7 @@
           <figure title="Example instance of an attribute and subject."
             anchor="attribute-subject-example">
             <artwork>    
-      Example Instance of an Attribute:			
+      Example Instance of an Attribute:            
       hostname = "arbutus"
       
       Example Instance of a Subject:
@@ -463,7 +463,7 @@
                     with a set of data source metadata (e.g. the timestamp when the information was collected, the target 
                     endpoint from which the this set of information is about, etc.) which is provided in the SACM Content
 					Element Metadata. The SACM Content Element is the subject information element that associates the 
-					information with the SACM Content Element Metadata. The SACM Content Element Metadata may also include
+            		information with the SACM Content Element Metadata. The SACM Content Element Metadata may also include
 					relationships that express associations with other SACM Content Elements.</t>
                 
                 <figure title="Example set of IEs associated with a timestamp and a
@@ -667,17 +667,13 @@
                 <t>Categories are special IEs that enable to refer to multiple 
                     types of IE via just one name. Therefore, they are similar 
                     to a type-choice. A prominent example of a category is 
-                    network-address. Network-address is a category that every 
-                    kind of network address is associated with, e.g. mac-address, 
-                    ipv4-address, ipv6-address, or typed-network-address. If a 
-                    subject includes network-address as one of its components, 
-                    any of the category members are valid to be used in its place.
-                </t>
-                <t>Another prominent example is EndpointIdentifier. Some IEs 
-                   can be used to identify (and over time re-recognize) target 
-                   endpoints - those are associated with the category 
-                   endpoint-identifier.
-                </t>
+                    when identifying a target endpoint. In some cases, a target 
+					endpoint will be identified by a set of identifying attributes
+					and in other cases a target endpoint will be identified by a
+					target endpoint label which is unique within a SACM domain.
+					If a subject includes the targetEndpoint information element
+					as one of its components, any of the category members (targetEndpointIdentifier
+					or targetEndpointLabel) are valid to be used in its place.</t>
             </section>
           </section>
         
@@ -813,6 +809,27 @@ name, hex-value, description
                         </artwork>
                     </figure>
                 </section>
+				 <section title="Category Datatype" anchor="category-datatype">
+					<t>SACM defines the following abstract category datatype that is used to
+						represent a type-choice between a set of information elements.</t>
+					<figure title="Syntax for Defining an Category Datatype" anchor="category-datatype-bnf">
+						<artwork>
+	
+	&lt;category-def&gt; -&gt; "category(" &lt;ie-expression&gt; ")"
+        &lt;ie-expression&gt; -&gt; &lt;ie-name&gt; ("|" &lt;ie-name&gt;)*
+	&lt;name&gt; -&gt; [0-9a-zA-Z]+ 
+						</artwork>
+					</figure>
+					
+					<t>Below is an example of a structured Information Element definition for a category.</t>
+										
+					<figure title="Example of Defining a Structured Category Datatype" anchor="example-of-defining-a-structured-category-datatype">
+						<artwork>
+    targetEndpoint = category(targetEndpointIdentifier | 
+	                      targetEndpointLabel) 
+						</artwork>
+					</figure>
+				</section>
             </section>
         </section>
        
@@ -1046,12 +1063,12 @@ name, hex-value, description
             description: Contains IEs that provide 
             information about the data origin of the 
             providing SACM Component as well as the 
-			information necessary for other SACM
-			Components to understand the type of 
-			security automation information in the 
-			SACM Statement's SACM Content Element(s). 
-			structure: orderedList(publishTimestamp, 
-			                       dataOrigin)
+            information necessary for other SACM
+            Components to understand the type of 
+            security automation information in the 
+            SACM Statement's SACM Content Element(s). 
+            structure: orderedList(publishTimestamp, 
+                                   dataOrigin, anyIE*)
         </artwork>
     </figure>
 </section>
@@ -1063,11 +1080,11 @@ name, hex-value, description
             dataType: list
             status: current
             description: Associates SACM Content Element 
-			Metadata which provides information about the 
-			data source and type of security automation 
-			information with the actual security automation
-			information. 
-			structure: TODO
+            Metadata which provides information about the 
+            data source and type of security automation 
+            information with the actual security automation
+            information. 
+            structure: TODO
         </artwork>
     </figure>
 </section>
@@ -1079,16 +1096,75 @@ name, hex-value, description
             dataType: orderedList
             status: current
             description: Contains IEs that provide 
-			information about the data source and type of 
-			security automation information such that other 
-			SACM Components are able to parse and understand 
-			the security automation information contained 
-			within the SACM Statement's SACM Content Element(s). 
-			structure: orderedList(collectionTimestamp, 
-			                       targetEndpointLabel)
+            information about the data source and type of 
+            security automation information such that other 
+            SACM Components are able to parse and understand 
+            the security automation information contained 
+            within the SACM Statement's SACM Content Element(s). 
+            structure: orderedList(collectionTimestamp, 
+                                   targetEndpoint, anyIE*)
         </artwork>
     </figure>
 </section>
+<section title="targetEndpoint">
+    <figure>
+      <artwork type="IPFIX">
+            elementId: TBD
+            name: targetEndpoint
+            dataType: category
+            status: current
+            description: Information that identifies a target
+			endpoint on the network. This may be a set of
+            attributes that can be used to identify an endpoint
+            on the network or a label that is unique to a SACM
+            domain.			
+			structure: category(targetEndpointIdentifier | 
+			                    targetEndpointLabel)
+        </artwork>
+    </figure>
+</section> 
+<section title="targetEndpointIdentifier">
+    <figure>
+      <artwork type="IPFIX">
+            elementId: TBD
+            name: targetEndpointIdentifier
+            dataType: list
+            status: current
+            description: A set of attributes that uniquely
+			identify a target endpoint on the network.
+            structure: list(anyIE+)			
+        </artwork>
+    </figure>
+</section> 
+<section title="targetEndpointLabel">
+    <figure>
+      <artwork type="IPFIX">
+            elementId: TBD
+            name: targetEndpointLabel
+            dataType: string
+            status: current
+            description: A label that uniquely identifies
+			a target endpoint on SACM domain. 
+        </artwork>
+    </figure>
+</section> 
+<section title="anyIE">
+    <figure>
+      <artwork type="IPFIX">
+            elementId: TBD
+            name: anyIE
+            dataType: category
+            status: current
+            description: This category is a placeholder 
+			for any information element defined within 
+			the SACM Information Model. Its purpose is
+            to provide an extension point in other 
+			information elements that enable them to 
+			support the specific needs of an enterprise, 
+			user, product, or service.
+        </artwork>
+    </figure>
+</section> 
 <section title="accessPrivilegeType">
     <figure>
       <artwork type="IPFIX">
@@ -1118,7 +1194,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: accessPrivilegeType
+            name: administrativeDomainType
             dataType: string
             status: current
             description: A label the is supposed to uniquely 
