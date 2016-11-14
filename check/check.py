@@ -275,7 +275,7 @@ class IPFIX:
         token = None
         tokenIndex = 0
         self.tokenList = []
-        if tokens[-1] == "":
+        if len(tokens) > 0 and tokens[-1] == "":
             tokens = tokens[:-1]
         while True:
             if token == None:
@@ -417,6 +417,13 @@ def main():
            "dateTimeNanoseconds":None, "ipv4Address":None, "ipv6Address":None,
            "octetArray":None, "list":None, "orderedList":None, "enumeration":None
     }
+
+    asn1 = {"octetArray":"OCTET STRING", "string":"UTF8String",
+            "unsigned8":"INTEGER", "unsigned16":"INTEGER", "unsigned32":"INTEGER", "unsigned64":"INTEGER",
+            "signed8":"INTEGER", "signed16":"INTEGER", "signed32":"INTEGER", "signed64":"INTEGER",
+            "float32":"FLOAT", "float64":"FLOAT",
+            "boolean":"BOOLEAN"
+            }
     
     for element in tree.getroot().iter():
         if element.tag == "artwork" and "type" in element.attrib:
@@ -474,6 +481,42 @@ def main():
     if options.csv:
         print("elementId,enterpriseId,name,dataType,status,description,structure,references", file=fout)
 
+    if options.asn:
+        print("SACM")
+        print("DEFINITIONS IMPLICIT TAGS ::=")
+        print("BEGIN")
+        print("")
+        print("    ContentElement ::= SEQUENCE {")
+        print("        content-metaData ::= SEQUENCE {")
+        print("             I DONT KNOW WHAT GOES HERE ")
+        print("        },")
+        print("        subjects  SEQUENCE (1..MAX) OF CHOICE {")
+        print("")
+        print("    SacmStatement ::= SEQUENCE {")
+        print("        statementMetaData ::= SEQUENCE {")
+        print("            I DONT KNOW WHAT GOES HERE ")
+        print("        },")
+        print("        node CHOICE {")
+        print("            contentElements SEQUENCE OF (1..MAX) ContentElement")
+        print("            event SEQUENCE {")
+        print("                eventAttributes SEQUENCE {")
+        print("                    eventName UTF8String,")
+        print("                    contentElement SEQUENCE OF (1..MAX) ContentElement")
+        print("                }")
+        print("            }")
+        print("        }")
+        print("    }")
+
+        print("    Statements ::= CHOICE {")
+        for k,v in all.items():
+            if v != None:
+                continue
+                # print("        {0}    [{1!s}] {2},".format(v.name, v.id, asn1[v.dataType] if v.dataType in asn1 else v.name), file=fout)
+        print("        ...")
+        print("    }")
+        print("")
+        
+
     for k,v in all.items():
         if v != None:
             if options.html:
@@ -529,13 +572,19 @@ def main():
                 tmp += ','
                 if v.references:
                     tmp += v.references
-                    
+                     
                 print(tmp, file=fout)
             elif options.asn:
-                print("", file=fout)
-                #if v.description:
-                #    print("-- " + v.description);
-                print(v.name + " ::= " + v.dataType, file=fout)
+                if not v.dataType in asn1:
+                    print("", file=fout)
+                    if v.enumeration:
+                        ASN_EmitEnumeration(v, fout)
+                    elif v.tokenList:
+                        ASN_EmitTokenList(v, fout)
+                    else:
+                        #if v.description:
+                        #    print("-- " + v.description);
+                        print("X_" + v.name + " ::= " + v.dataType, file=fout)
     
     if options.html:
         print("</tbody>", file=fout)
@@ -551,13 +600,55 @@ def CopyFile(fileName, fileOut):
 
 def PrintError(node, text):
     if node == None:
-        print("Error: " + text, file=sys.stderr)
+        print("Error: {0}".format(text), file=sys.stderr)
     elif type(node) is int:
-        print("Error at line " + str(node) + ": " + text, file=sys.stderr)
+        print("Error at line {0!s}: {1}".format(node, text), file=sys.stderr)
     elif type(node) is str:
-        print("Error at line " + node + ": " + text, file=sys.stderr)
+        print("Error at line {0}: {1}".format(node, text), file=sys.stderr)
     else:
-        print("Error at line " + str(node.sourceline) + ": " + text, file=sys.stderr)
+        print("Error at line {0!s}: {1}".format(node.sourceline, text), file=sys.stderr)
+
+def ASN_EmitEnumeration(v, fout):
+    print("X_" + v.name + " ::= ENUMERATED {", file=fout)
+    for e in v.enumeration:
+        x = ""
+        if e.value:
+            x = "({0!s})".format(e.value)
+        # print("    {0}{1},".format(e.name, x), file=fout)
+    print("    ...")
+    print("}")
+
+def ASN_EmitTokenList(v, fout):
+    # ordered ==> SEQUENCE
+    xx = ""
+    for i in v.tokenList:
+        xx += i.toString(False)
+    print("-- " + xx)
+    seq = "CHOICE"
+    for i in v.tokenList:
+        if i.next and i.next != "|":
+            seq = "SET"
+            if v.dataType == "orderedList":
+                seq = "SEQUENCE"
+            break
+
+    print("X_{0} ::= {1} {{".format(v.name, seq), file=fout)
+    inChoice = False
+    for i in v.tokenList:
+        optional = ""
+        sequence = ""
+        if i.cardinality:
+            if i.cardinality == "?":
+                optional = "OPTIONAL"
+            elif i.cardinality == "+":
+                sequence = "SEQUENCE OF (1..MAX)"
+            elif i.cardinality == "*":
+                sequence = "SEQUENCE OF (0..MAX)"
+            elif i.cardinality == ",":
+                sequence = "SEQUENCE OF ({0!s}..{1!s}".format(i.minimum, self.maximum if self.maximum else "MAX")
+                
+        print("    {0} {3} {1} {2}{4}".format(i.element, "X_" + i.element, optional, sequence, "," if i.next else ""), file=fout)
+    print("}")
 
 if __name__ == '__main__':
     main()
