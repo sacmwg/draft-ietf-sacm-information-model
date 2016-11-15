@@ -2423,7 +2423,7 @@ name, hex-value, description
         <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Longitude
-            dataType: float
+            dataType: float64
             status: current
             description: a label that represents WGS 84 rev 2004 
             longitude.
@@ -2436,7 +2436,7 @@ name, hex-value, description
         <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Latitude
-            dataType: float
+            dataType: float64
             status: current
             description: a label that represents WGS 84 rev 2004 
             latitude.
@@ -2449,7 +2449,7 @@ name, hex-value, description
         <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Altitude
-            dataType: float
+            dataType: float64
             status: current
             description: a label that represents WGS 84 rev 2004 
             altitude.
@@ -3712,7 +3712,7 @@ description: The name of the communicating
   <artwork type="IPFIX">
 elementId: TBD
 name: userId
-dataType: integer
+dataType: unsigned32
 status: current
 description: The numeric user id.</artwork>
         </figure>
@@ -3759,7 +3759,7 @@ the IP address can be IPv4 or IPv6.</artwork>
   <artwork type="IPFIX">
 elementId: TBD
 name: localPort
-dataType: integer
+dataType: unsigned32
 status: current
 description: This is the TCP or UDP port
       being listened to.</artwork>
@@ -3901,7 +3901,7 @@ description: The name of the file.</artwork>
   <artwork type="IPFIX">
 elementId: TBD
 name: pid
-dataType: integer
+dataType: unsigned32
 status: current
 description: The process ID of the
       process.</artwork>
@@ -4165,7 +4165,7 @@ description: The time of the last change to
   <artwork type="IPFIX">
 elementId: TBD
 name: size
-dataType: integer
+dataType: unsigned32
 status: current
 description: This is the size of the file in
       bytes.</artwork>
@@ -4408,7 +4408,7 @@ description: The user's shell
   <artwork type="IPFIX">
 elementId: TBD
 name: lastLogin
-dataType: integer
+dataType: unsigned32
 status: current
 description: The date and time when the
       last login occurred.</artwork>
@@ -4444,7 +4444,7 @@ description: The string used to start the
   <artwork type="IPFIX">
 elementId: TBD
 name: ppid
-dataType: integer
+dataType: unsigned32
 status: current
 description: The process ID of the process's
       parent process.</artwork>
@@ -4455,7 +4455,7 @@ description: The process ID of the process's
   <artwork type="IPFIX">
 elementId: TBD
 name: priority
-dataType: integer
+dataType: unsigned32
 status: current
 description: The scheduling priority with
       which the process runs.</artwork>
@@ -4583,7 +4583,7 @@ description: The date of the last password
   <artwork type="IPFIX">
 elementId: TBD
 name: chgAllow
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies how often in days a
       user may change their password. It can also be thought of 
@@ -4595,7 +4595,7 @@ description: Specifies how often in days a
   <artwork type="IPFIX">
 elementId: TBD
 name: chgReq
-dataType: integer
+dataType: unsigned32
 status: current
 description: Describes how long a user can
       keep a password before the system forces her to change it.</artwork>
@@ -4606,7 +4606,7 @@ description: Describes how long a user can
   <artwork type="IPFIX">
 elementId: TBD
 name: expWarn
-dataType: integer
+dataType: unsigned32
 status: current
 description: Describes how long before
       password expiration the system begins warning the user.</artwork>
@@ -4617,7 +4617,7 @@ description: Describes how long before
   <artwork type="IPFIX">
 elementId: TBD
 name: expInact
-dataType: integer
+dataType: unsigned32
 status: current
 description: Describes how many days of
       account inactivity the system will wait after a password 
@@ -4875,7 +4875,7 @@ description: Specifies the remote hosts to
   <artwork type="IPFIX">
 elementId: TBD
 name: port
-dataType: integer
+dataType: unsigned32
 status: current
 description: The port entity specifies the port
       used by the service.</artwork>
@@ -5810,7 +5810,7 @@ description: Specifies various attributes associated
   <artwork type="IPFIX">
 elementId: TBD
 name: forceLogoff
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies, in seconds, the
       amount of time between the end of the valid logon time and 
@@ -5823,7 +5823,7 @@ description: Specifies, in seconds, the
   <artwork type="IPFIX">
 elementId: TBD
 name: lockoutDuration
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies, in seconds,
       how long a locked account remains locked before it is
@@ -5835,7 +5835,7 @@ description: Specifies, in seconds,
   <artwork type="IPFIX">
 elementId: TBD
 name: lockoutObservationWindow
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the
       maximum time, in seconds, that can elapse between any two 
@@ -5847,7 +5847,7 @@ description: Specifies the
   <artwork type="IPFIX">
 elementId: TBD
 name: lockoutThreshold
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the number of
       invalid password authentications that can occur before an 
@@ -5873,7 +5873,7 @@ description: Specifies
   <artwork type="IPFIX">
 elementId: TBD
 name: maxPasswdAge
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies, in seconds (from
       a DWORD), the maximum allowable password age. A value of 
@@ -5889,7 +5889,7 @@ description: Specifies, in seconds (from
   <artwork type="IPFIX">
 elementId: TBD
 name: minPasswdAge
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the minimum
       number of seconds that can elapse between the time a password 
@@ -5903,7 +5903,7 @@ description: Specifies the minimum
   <artwork type="IPFIX">
 elementId: TBD
 name: minPasswdLen
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the minimum
       allowable password length. Valid values for this element are 
@@ -5915,7 +5915,7 @@ description: Specifies the minimum
   <artwork type="IPFIX">
 elementId: TBD
 name: passwordHistLen
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the length of
       password history maintained. A new password cannot match any 
@@ -6112,7 +6112,7 @@ description: Describes the name of a
   <artwork type="IPFIX">
 elementId: TBD
 name: lastWriteTime
-dataType: integer
+dataType: unsigned64
 status: current
 description: The last time that the key or any of its value entries 
       were modified. The value of this entity represents the 
