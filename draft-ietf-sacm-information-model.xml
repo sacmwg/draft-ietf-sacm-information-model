@@ -1207,7 +1207,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: accessPrivilegeType
+            name: addressAssociationType
             dataType: string
             status: current
             description: A label the is supposed to uniquely 
@@ -1357,11 +1357,11 @@ name, hex-value, description
         </artwork>
     </figure>
 </section> 
-<section title="bytesSent">
+<section title="bytesReceived">
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: bytesSent
+            name: bytesReceived
             dataType: string
             status: current
             description: A value that represents the number of
@@ -1504,7 +1504,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: contentAction
+            name: discoverer
             dataType: string
             status: current
             description: A label that refers to the SACM component 
@@ -1520,7 +1520,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: countryCode
+            name: emailAddress
             dataType: string
             status: current
             description: A value that expresses an email-address.
@@ -1567,21 +1567,6 @@ name, hex-value, description
             description: If an event is created due to a crossed 
             threshold, the threshold might have a name associated 
             with it that can be expressed via this value.
-        </artwork>
-    </figure>
-</section> 
-
-
-<section title="eventTrigger">
-    <figure>
-        <artwork type="IPFIX">
-            elementId: TBD
-            name: eventTrigger
-            dataType: string
-            status: current
-            description: This value is used to express more 
-            complex trigger conditions that may cause the creation 
-            of an event.
         </artwork>
     </figure>
 </section> 
@@ -1978,7 +1963,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: osVersion
+            name: patchName
             dataType: string
             status: current
             description: The vendor's name of a software patch.
@@ -1990,7 +1975,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: patchId
+            name: personFirstName
             dataType: string
             status: current
             description: The first name of a natural person.
@@ -2408,11 +2393,11 @@ name, hex-value, description
     </figure>
 </section> 
 
-<section title="userId">
+<section title="sacmUserId">
     <figure>
         <artwork type="IPFIX"> 
             elementId: TBD
-            name: userId
+            name: sacmUserId
             dataType: string
             status: current
             description: a label that references a specific user 
@@ -2659,24 +2644,24 @@ description: The version string for a software application that
       <artwork type="IPFIX">
 elementId: TBD
 name: softwareVerison
-dataType: list     
+dataType: category     
 status: current
 description: The version of the software application. Software 
              applications may be versioned using a number of
              schemas. The following high-level digram describes 
              the structure of the softwareVersion information
              element.
-structure: list(simpleSoftwareVersion | rpmSoftwareVersion | 
+structure: category(simpleSoftwareVersion | rpmSoftwareVersion | 
                 ciscoTrainSoftwareVersion)
              
       </artwork>
     </figure>
   </section>
-  <section title="lastUpdated">
+  <section title="softwareLastUpdated">
     <figure>
       <artwork type="IPFIX">
 elementId: TBD
-name: lastUpdated
+name: softwareLastUpdated
 dataType: dateTimeSeconds
 status: current
 description: The date and time when the software instance 
@@ -2697,8 +2682,9 @@ description: Information about an instance of software
              installed on an endpoint. The following 
              high-level digram describes the structure of 
              softwareInstance information element.
-structure: orderedList(softwareIdentifier, title, creator, 
-                       softwareVersion, lastUpdated)   
+structure: orderedList(softwareIdentifier, softwareTitle, 
+                       softwareCreator, softwareVersion, 
+					   softwareLastUpdated)   
     </artwork>
   </figure>
 </section>   
@@ -2713,30 +2699,6 @@ description: TODO.
     </artwork>
   </figure>
 </section>
-<section title="dataOrigin">
-  <figure>
-    <artwork type="IPFIX">
-elementId: TBD
-name: dataOrigin
-dataType: string
-status: current
-description: The origin of the data. 
-    </artwork>
-  </figure>
-</section>
-
-<section title="dataSource">
-  <figure>
-    <artwork type="IPFIX">
-elementId: TBD
-name: dataSource
-dataType: string
-status: current
-description: The source of the data. 
-    </artwork>
-  </figure>
-</section>
-
 <section title="creationTimestamp">
   <figure>
     <artwork type="IPFIX">
@@ -3639,21 +3601,10 @@ description: The textual name of the MIB module that defines a MIB
 elementId: TBD
 name: interface
 dataType: list
-structure: list (InterfaceName, hwAddress, inetAddr, netmask)
+structure: list (interfaceName, hwAddress, inetAddr, netmask)
 status: current
 description: Represents an interface and its configuration 
 options.</artwork>
-        </figure>
-    </section>
-    <section title="interfaceName">
-        <figure>
-  <artwork type="IPFIX">
-elementId: TBD
-name: interfaceName
-dataType: string
-status: current
-description: The interface
-      name.</artwork>
         </figure>
     </section>
     <section title="iflisteners">
@@ -4836,17 +4787,6 @@ name: osRelease
 dataType: string
 status: current
 description: Specifies the build
-      version.</artwork>
-        </figure>
-    </section>
-    <section title="osVersion">
-        <figure>
-  <artwork type="IPFIX">
-elementId: TBD
-name: osVersion
-dataType: string
-status: current
-description: Specifies the operating system
       version.</artwork>
         </figure>
     </section>
@@ -6110,18 +6050,18 @@ description:
 elementId: TBD
 name: registry
 dataType: list
-structure: list (hive, key, registryKeyName, lastWriteTime,
+structure: list (registryHive, registryKey, registryKeyName, lastWriteTime,
       registryKeyType, registryKeyValue, windowsView)
 status: current
 description: Specifies information that can be
       collected about a particular registry key.</artwork>
         </figure>
     </section>
-    <section title="hive">
+    <section title="registryHive">
         <figure>
   <artwork type="IPFIX">
 elementId: TBD
-name: hive
+name: registryHive
 dataType: enumeration
 structure: HKEY_CLASSES_ROOT ; 0x1 ; This registry subtree
       contains information that associates file types with programs 
@@ -6289,9 +6229,9 @@ description: Holds the actual value
 elementId: TBD
 name: regkeyauditedpermissions
 dataType: list
-structure: list (key, trusteeSid, trusteeName,
+structure: list (registryKey, trusteeSid, trusteeName,
       standardDelete, standardReadControl, standardWriteDac, 
-      standardWriteOwners, tandardSynchronize,
+      standardWriteOwner, standardSynchronize,
       accessSystemSecurity, genericRead, genericWrite, 
       genericExecute, genericAll, keyQueryValue, keySetValue,
       keyCreateSubKey, keyEnumerateSubKeys, keyNotify, 
@@ -6526,7 +6466,7 @@ description:
 elementId: TBD
 name: regkeyeffectiverights
 dataType: list
-structure: list (hive, key, trusteeSid,
+structure: list (registryHive, registryKey, trusteeSid,
       trusteeName, standardDelete, standardReadControl, 
       standardWriteDac, standardWriteOwner, standardSynchronize,
       accessSystemSecurity, genericRead, genericWrite, 
@@ -6883,7 +6823,7 @@ dataType: list
 structure: list (serviceName, trusteeSid,
       standardDelete, standardReadControl, standardWriteDac, 
       standardWriteOwner, genericRead, genericWrite,
-      genericExecute, serviceQueryConfs, erviceChangeConf, 
+      genericExecute, serviceQueryConf, serviceChangeConf, 
       serviceQueryStat, serviceEnumDependents, serviceStart,
       serviceStop, servicePause, serviceInterrogate, 
       serviceUserDefined)
