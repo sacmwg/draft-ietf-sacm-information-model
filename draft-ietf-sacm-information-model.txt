@@ -2982,7 +2982,7 @@ Internet-Draft           SACM Information Model           September 2016
 
                elementId: TBD
                name: WGS84Longitude
-               dataType: float
+               dataType: float64
                status: current
                description: a label that represents WGS 84 rev 2004
                longitude.
@@ -2991,7 +2991,7 @@ Internet-Draft           SACM Information Model           September 2016
 
                elementId: TBD
                name: WGS84Latitude
-               dataType: float
+               dataType: float64
                status: current
                description: a label that represents WGS 84 rev 2004
                latitude.
@@ -3000,7 +3000,7 @@ Internet-Draft           SACM Information Model           September 2016
 
                elementId: TBD
                name: WGS84Altitude
-               dataType: float
+               dataType: float64
                status: current
                description: a label that represents WGS 84 rev 2004
                altitude.
@@ -4439,7 +4439,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: userId
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: The numeric user id.
 
@@ -4486,7 +4486,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: localPort
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: This is the TCP or UDP port
          being listened to.
@@ -4624,7 +4624,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: pid
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: The process ID of the
          process.
@@ -4887,7 +4887,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: size
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: This is the size of the file in
          bytes.
@@ -5165,7 +5165,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: lastLogin
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: The date and time when the
          last login occurred.
@@ -5194,7 +5194,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: ppid
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: The process ID of the process's
          parent process.
@@ -5214,7 +5214,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: priority
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: The scheduling priority with
          which the process runs.
@@ -5335,7 +5335,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: chgAllow
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies how often in days a
          user may change their password. It can also be thought of
@@ -5345,7 +5345,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: chgReq
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Describes how long a user can
          keep a password before the system forces her to change it.
@@ -5354,7 +5354,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: expWarn
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Describes how long before
          password expiration the system begins warning the user.
@@ -5363,7 +5363,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: expInact
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Describes how many days of
          account inactivity the system will wait after a password
@@ -5624,7 +5624,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: port
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: The port entity specifies the port
          used by the service.
@@ -6680,7 +6680,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: forceLogoff
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies, in seconds, the
          amount of time between the end of the valid logon time and
@@ -6691,7 +6691,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: lockoutDuration
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies, in seconds,
          how long a locked account remains locked before it is
@@ -6701,7 +6701,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: lockoutObservationWindow
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies the
          maximum time, in seconds, that can elapse between any two
@@ -6724,7 +6724,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: lockoutThreshold
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies the number of
          invalid password authentications that can occur before an
@@ -6746,7 +6746,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: maxPasswdAge
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies, in seconds (from
          a DWORD), the maximum allowable password age. A value of
@@ -6760,7 +6760,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: minPasswdAge
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies the minimum
          number of seconds that can elapse between the time a password
@@ -6782,7 +6782,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: minPasswdLen
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies the minimum
          allowable password length. Valid values for this element are
@@ -6792,7 +6792,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: passwordHistLen
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: Specifies the length of
          password history maintained. A new password cannot match any
@@ -7004,7 +7004,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: lastWriteTime
-   dataType: integer
+   dataType: unsigned64
    status: current
    description: The last time that the key or any of its value entries
          were modified. The value of this entity represents the
