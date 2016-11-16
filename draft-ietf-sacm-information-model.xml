@@ -1068,7 +1068,7 @@ name, hex-value, description
             Components to understand the type of 
             security automation information in the 
             SACM Statement's SACM Content Element(s). 
-            structure: orderedList(publishTimestamp, 
+            structure: orderedList(publicationTimestamp, 
                                    dataOrigin, anyIE*)
         </artwork>
     </figure>
@@ -2364,21 +2364,6 @@ name, hex-value, description
     </figure>
 </section> 
 
-<section title="username">
-    <figure>
-        <artwork type="IPFIX"> 
-            elementId: TBD
-            name: username
-            dataType: string
-            status: current
-            description: a part of the credentials required to 
-            access an account that can be collected from a target 
-            endpoint.
-        </artwork>
-    </figure>
-</section> 
-
-
 <section title="userDirectory">
     <figure>
         <artwork type="IPFIX"> 
@@ -2562,7 +2547,7 @@ description: Information about a network interface
              networkInterface information 
              element.
 structure: orderedList(interfaceName, interfaceIndex, macAddress, 
-                       ifType, flags) 
+                       interfaceType, flags) 
     </artwork>
   </figure>
 </section>  
@@ -3181,16 +3166,6 @@ description: A description of the units of an IPFIX Information
              Information Element Units subregistry; new types 
              may be added on a First Come First Served [RFC5226] 
              basis.</artwork>
-      </figure>
-   </section>
-   <section title="userName">
-      <figure>
-         <artwork type="IPFIX">
-elementId: TBD
-name: userName
-dataType: string
-status: current
-description: User name associated with the flow.</artwork>
       </figure>
    </section>
    <section title="applicationCategoryName">
@@ -4142,7 +4117,7 @@ description: The time that the file was last
         <figure>
   <artwork type="IPFIX">
 elementId: TBD
-name: changeTime
+name: cTime
 dataType: dateTimeSeconds
 status: current
 description: The time of the last change
@@ -5719,17 +5694,6 @@ dataType: string
 status: current
 description: Represents the name of a particular
       group.</artwork>
-        </figure>
-    </section>
-    <section title="user">
-        <figure>
-  <artwork type="IPFIX">
-elementId: TBD
-name: user
-dataType: string
-status: current
-description: Represents the name of a particular
-      user.</artwork>
         </figure>
     </section>
     <section title="subgroup">
