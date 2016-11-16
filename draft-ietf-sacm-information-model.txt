@@ -370,7 +370,7 @@ Internet-Draft           SACM Information Model           September 2016
      7.218. fileType . . . . . . . . . . . . . . . . . . . . . . . .  87
      7.219. groupId  . . . . . . . . . . . . . . . . . . . . . . . .  87
      7.220. aTime  . . . . . . . . . . . . . . . . . . . . . . . . .  87
-     7.221. changeTime . . . . . . . . . . . . . . . . . . . . . . .  87
+     7.221. cTime  . . . . . . . . . . . . . . . . . . . . . . . . .  87
      7.222. mTime  . . . . . . . . . . . . . . . . . . . . . . . . .  88
      7.223. size . . . . . . . . . . . . . . . . . . . . . . . . . .  88
      7.224. suid . . . . . . . . . . . . . . . . . . . . . . . . . .  88
@@ -4824,7 +4824,7 @@ Internet-Draft           SACM Information Model           September 2016
    name: file
    dataType: list
    structure: list (filepath, path, filename, fileType, userId,
-   aTime, changeTime, mTime, size)
+   aTime, cTime, mTime, size)
    status: current
    description: The metadata associated with a file on the endpoint.
 
@@ -4842,7 +4842,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: groupId
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: The group owner of the file, by
          group number.
@@ -4851,16 +4851,16 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: aTime
-   dataType: timeStamp
+   dataType: dateTimeSeconds
    status: current
    description: The time that the file was last
          accessed.
 
-7.221.  changeTime
+7.221.  cTime
 
    elementId: TBD
    name: changeTime
-   dataType: timeStamp
+   dataType: dateTimeSeconds
    status: current
    description: The time of the last change
          to the file's inode.
@@ -4878,7 +4878,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: mTime
-   dataType: timeStamp
+   dataType: dateTimeSeconds
    status: current
    description: The time of the last change to
          the file's contents.
@@ -5326,7 +5326,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: chgLst
-   dataType: timeStamp
+   dataType: dateTimeSeconds
    status: current
    description: The date of the last password
          change.
@@ -5382,7 +5382,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: expDate
-   dataType: timeStamp
+   dataType: dateTimeSeconds
    status: current
    description: Specifies when will the
          account's password expire.
@@ -7574,7 +7574,7 @@ Internet-Draft           SACM Information Model           September 2016
    name: service
    dataType: list
    structure: list (serviceName, displayName, description,
-         serviceType, tartType, currentState, controlsAccepted,
+         serviceType, startType, currentState, controlsAccepted,
          startName, path, pid, serviceFlag, dependencies)
    status: current
    description: Stores information about Windows services that are
@@ -8088,7 +8088,7 @@ Internet-Draft           SACM Information Model           September 2016
 
    elementId: TBD
    name: lastLogon
-   dataType: integer
+   dataType: unsigned32
    status: current
    description: The date and time when the
          last logon occurred.

@@ -523,7 +523,7 @@ li, p {
 <link href="#rfc.section.7.218" rel="Chapter" title="7.218 fileType"/>
 <link href="#rfc.section.7.219" rel="Chapter" title="7.219 groupId"/>
 <link href="#rfc.section.7.220" rel="Chapter" title="7.220 aTime"/>
-<link href="#rfc.section.7.221" rel="Chapter" title="7.221 changeTime"/>
+<link href="#rfc.section.7.221" rel="Chapter" title="7.221 cTime"/>
 <link href="#rfc.section.7.222" rel="Chapter" title="7.222 mTime"/>
 <link href="#rfc.section.7.223" rel="Chapter" title="7.223 size"/>
 <link href="#rfc.section.7.224" rel="Chapter" title="7.224 suid"/>
@@ -1088,7 +1088,7 @@ li, p {
 <li>7.218.   <a href="#rfc.section.7.218">fileType</a></li>
 <li>7.219.   <a href="#rfc.section.7.219">groupId</a></li>
 <li>7.220.   <a href="#rfc.section.7.220">aTime</a></li>
-<li>7.221.   <a href="#rfc.section.7.221">changeTime</a></li>
+<li>7.221.   <a href="#rfc.section.7.221">cTime</a></li>
 <li>7.222.   <a href="#rfc.section.7.222">mTime</a></li>
 <li>7.223.   <a href="#rfc.section.7.223">size</a></li>
 <li>7.224.   <a href="#rfc.section.7.224">suid</a></li>
@@ -4188,7 +4188,7 @@ elementId: TBD
 name: file
 dataType: list
 structure: list (filepath, path, filename, fileType, userId, 
-aTime, changeTime, mTime, size)
+aTime, cTime, mTime, size)
 status: current
 description: The metadata associated with a file on the endpoint.
 </pre>
@@ -4205,7 +4205,7 @@ special.)</pre>
 <pre>
 elementId: TBD
 name: groupId
-dataType: integer
+dataType: unsigned32
 status: current
 description: The group owner of the file, by
       group number.</pre>
@@ -4213,15 +4213,15 @@ description: The group owner of the file, by
 <pre>
 elementId: TBD
 name: aTime
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The time that the file was last
       accessed.</pre>
-<h1 id="rfc.section.7.221"><a href="#rfc.section.7.221">7.221.</a> changeTime</h1>
+<h1 id="rfc.section.7.221"><a href="#rfc.section.7.221">7.221.</a> cTime</h1>
 <pre>
 elementId: TBD
 name: changeTime
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The time of the last change
       to the file's inode.</pre>
@@ -4229,7 +4229,7 @@ description: The time of the last change
 <pre>
 elementId: TBD
 name: mTime
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The time of the last change to
       the file's contents.</pre>
@@ -4548,7 +4548,7 @@ description:
 <pre>
 elementId: TBD
 name: chgLst
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The date of the last password
       change.</pre>
@@ -4590,7 +4590,7 @@ description: Describes how many days of
 <pre>
 elementId: TBD
 name: expDate
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: Specifies when will the
       account's password expire.</pre>
@@ -6178,7 +6178,7 @@ elementId: TBD
 name: service
 dataType: list
 structure: list (serviceName, displayName, description,
-      serviceType, tartType, currentState, controlsAccepted, 
+      serviceType, startType, currentState, controlsAccepted, 
       startName, path, pid, serviceFlag, dependencies)
 status: current
 description: Stores information about Windows services that are 
@@ -6539,7 +6539,7 @@ description: Represents whether the
 <pre>
 elementId: TBD
 name: lastLogon
-dataType: integer
+dataType: unsigned32
 status: current
 description: The date and time when the
       last logon occurred.</pre>
