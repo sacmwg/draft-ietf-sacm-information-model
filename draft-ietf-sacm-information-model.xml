@@ -4098,7 +4098,7 @@ elementId: TBD
 name: file
 dataType: list
 structure: list (filepath, path, filename, fileType, userId, 
-aTime, changeTime, mTime, size)
+aTime, cTime, mTime, size)
 status: current
 description: The metadata associated with a file on the endpoint.
 </artwork>
@@ -4121,7 +4121,7 @@ special.)</artwork>
   <artwork type="IPFIX">
 elementId: TBD
 name: groupId
-dataType: integer
+dataType: unsigned32
 status: current
 description: The group owner of the file, by
       group number.</artwork>
@@ -4132,18 +4132,18 @@ description: The group owner of the file, by
   <artwork type="IPFIX">
 elementId: TBD
 name: aTime
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The time that the file was last
       accessed.</artwork>
         </figure>
     </section>
-    <section title="changeTime">
+    <section title="cTime">
         <figure>
   <artwork type="IPFIX">
 elementId: TBD
 name: changeTime
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The time of the last change
       to the file's inode.</artwork>
@@ -4154,7 +4154,7 @@ description: The time of the last change
   <artwork type="IPFIX">
 elementId: TBD
 name: mTime
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The time of the last change to
       the file's contents.</artwork>
@@ -4572,7 +4572,7 @@ description:
   <artwork type="IPFIX">
 elementId: TBD
 name: chgLst
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The date of the last password
       change.</artwork>
@@ -4629,7 +4629,7 @@ description: Describes how many days of
   <artwork type="IPFIX">
 elementId: TBD
 name: expDate
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: Specifies when will the
       account's password expire.</artwork>
@@ -6589,7 +6589,7 @@ elementId: TBD
 name: service
 dataType: list
 structure: list (serviceName, displayName, description,
-      serviceType, tartType, currentState, controlsAccepted, 
+      serviceType, startType, currentState, controlsAccepted, 
       startName, path, pid, serviceFlag, dependencies)
 status: current
 description: Stores information about Windows services that are 
@@ -7028,7 +7028,7 @@ description: Represents whether the
   <artwork type="IPFIX">
 elementId: TBD
 name: lastLogon
-dataType: integer
+dataType: unsigned32
 status: current
 description: The date and time when the
       last logon occurred.</artwork>
