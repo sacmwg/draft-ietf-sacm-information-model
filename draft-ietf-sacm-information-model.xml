@@ -1068,7 +1068,7 @@ name, hex-value, description
             Components to understand the type of 
             security automation information in the 
             SACM Statement's SACM Content Element(s). 
-            structure: orderedList(publishTimestamp, 
+            structure: orderedList(publicationTimestamp, 
                                    dataOrigin, anyIE*)
         </artwork>
     </figure>
@@ -1207,7 +1207,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: accessPrivilegeType
+            name: addressAssociationType
             dataType: string
             status: current
             description: A label the is supposed to uniquely 
@@ -1357,11 +1357,11 @@ name, hex-value, description
         </artwork>
     </figure>
 </section> 
-<section title="bytesSent">
+<section title="bytesReceived">
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: bytesSent
+            name: bytesReceived
             dataType: string
             status: current
             description: A value that represents the number of
@@ -1504,7 +1504,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: contentAction
+            name: discoverer
             dataType: string
             status: current
             description: A label that refers to the SACM component 
@@ -1520,7 +1520,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: countryCode
+            name: emailAddress
             dataType: string
             status: current
             description: A value that expresses an email-address.
@@ -1567,21 +1567,6 @@ name, hex-value, description
             description: If an event is created due to a crossed 
             threshold, the threshold might have a name associated 
             with it that can be expressed via this value.
-        </artwork>
-    </figure>
-</section> 
-
-
-<section title="eventTrigger">
-    <figure>
-        <artwork type="IPFIX">
-            elementId: TBD
-            name: eventTrigger
-            dataType: string
-            status: current
-            description: This value is used to express more 
-            complex trigger conditions that may cause the creation 
-            of an event.
         </artwork>
     </figure>
 </section> 
@@ -1978,7 +1963,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: osVersion
+            name: patchName
             dataType: string
             status: current
             description: The vendor's name of a software patch.
@@ -1990,7 +1975,7 @@ name, hex-value, description
     <figure>
         <artwork type="IPFIX">
             elementId: TBD
-            name: patchId
+            name: personFirstName
             dataType: string
             status: current
             description: The first name of a natural person.
@@ -2379,21 +2364,6 @@ name, hex-value, description
     </figure>
 </section> 
 
-<section title="username">
-    <figure>
-        <artwork type="IPFIX"> 
-            elementId: TBD
-            name: username
-            dataType: string
-            status: current
-            description: a part of the credentials required to 
-            access an account that can be collected from a target 
-            endpoint.
-        </artwork>
-    </figure>
-</section> 
-
-
 <section title="userDirectory">
     <figure>
         <artwork type="IPFIX"> 
@@ -2408,11 +2378,11 @@ name, hex-value, description
     </figure>
 </section> 
 
-<section title="userId">
+<section title="sacmUserId">
     <figure>
         <artwork type="IPFIX"> 
             elementId: TBD
-            name: userId
+            name: sacmUserId
             dataType: string
             status: current
             description: a label that references a specific user 
@@ -2438,7 +2408,7 @@ name, hex-value, description
         <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Longitude
-            dataType: float
+            dataType: float64
             status: current
             description: a label that represents WGS 84 rev 2004 
             longitude.
@@ -2451,7 +2421,7 @@ name, hex-value, description
         <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Latitude
-            dataType: float
+            dataType: float64
             status: current
             description: a label that represents WGS 84 rev 2004 
             latitude.
@@ -2464,7 +2434,7 @@ name, hex-value, description
         <artwork type="IPFIX"> 
             elementId: TBD
             name: WGS84Altitude
-            dataType: float
+            dataType: float64
             status: current
             description: a label that represents WGS 84 rev 2004 
             altitude.
@@ -2577,7 +2547,7 @@ description: Information about a network interface
              networkInterface information 
              element.
 structure: orderedList(interfaceName, interfaceIndex, macAddress, 
-                       ifType, flags) 
+                       interfaceType, flags) 
     </artwork>
   </figure>
 </section>  
@@ -2659,24 +2629,24 @@ description: The version string for a software application that
       <artwork type="IPFIX">
 elementId: TBD
 name: softwareVerison
-dataType: list     
+dataType: category     
 status: current
 description: The version of the software application. Software 
              applications may be versioned using a number of
              schemas. The following high-level digram describes 
              the structure of the softwareVersion information
              element.
-structure: list(simpleSoftwareVersion | rpmSoftwareVersion | 
+structure: category(simpleSoftwareVersion | rpmSoftwareVersion | 
                 ciscoTrainSoftwareVersion)
              
       </artwork>
     </figure>
   </section>
-  <section title="lastUpdated">
+  <section title="softwareLastUpdated">
     <figure>
       <artwork type="IPFIX">
 elementId: TBD
-name: lastUpdated
+name: softwareLastUpdated
 dataType: dateTimeSeconds
 status: current
 description: The date and time when the software instance 
@@ -2697,8 +2667,9 @@ description: Information about an instance of software
              installed on an endpoint. The following 
              high-level digram describes the structure of 
              softwareInstance information element.
-structure: orderedList(softwareIdentifier, title, creator, 
-                       softwareVersion, lastUpdated)   
+structure: orderedList(softwareIdentifier, softwareTitle, 
+                       softwareCreator, softwareVersion, 
+					   softwareLastUpdated)   
     </artwork>
   </figure>
 </section>   
@@ -2713,30 +2684,6 @@ description: TODO.
     </artwork>
   </figure>
 </section>
-<section title="dataOrigin">
-  <figure>
-    <artwork type="IPFIX">
-elementId: TBD
-name: dataOrigin
-dataType: string
-status: current
-description: The origin of the data. 
-    </artwork>
-  </figure>
-</section>
-
-<section title="dataSource">
-  <figure>
-    <artwork type="IPFIX">
-elementId: TBD
-name: dataSource
-dataType: string
-status: current
-description: The source of the data. 
-    </artwork>
-  </figure>
-</section>
-
 <section title="creationTimestamp">
   <figure>
     <artwork type="IPFIX">
@@ -3221,16 +3168,6 @@ description: A description of the units of an IPFIX Information
              basis.</artwork>
       </figure>
    </section>
-   <section title="userName">
-      <figure>
-         <artwork type="IPFIX">
-elementId: TBD
-name: userName
-dataType: string
-status: current
-description: User name associated with the flow.</artwork>
-      </figure>
-   </section>
    <section title="applicationCategoryName">
       <figure>
          <artwork type="IPFIX">
@@ -3639,21 +3576,10 @@ description: The textual name of the MIB module that defines a MIB
 elementId: TBD
 name: interface
 dataType: list
-structure: list (InterfaceName, hwAddress, inetAddr, netmask)
+structure: list (interfaceName, hwAddress, inetAddr, netmask)
 status: current
 description: Represents an interface and its configuration 
 options.</artwork>
-        </figure>
-    </section>
-    <section title="interfaceName">
-        <figure>
-  <artwork type="IPFIX">
-elementId: TBD
-name: interfaceName
-dataType: string
-status: current
-description: The interface
-      name.</artwork>
         </figure>
     </section>
     <section title="iflisteners">
@@ -3761,7 +3687,7 @@ description: The name of the communicating
   <artwork type="IPFIX">
 elementId: TBD
 name: userId
-dataType: integer
+dataType: unsigned32
 status: current
 description: The numeric user id.</artwork>
         </figure>
@@ -3808,7 +3734,7 @@ the IP address can be IPv4 or IPv6.</artwork>
   <artwork type="IPFIX">
 elementId: TBD
 name: localPort
-dataType: integer
+dataType: unsigned32
 status: current
 description: This is the TCP or UDP port
       being listened to.</artwork>
@@ -3950,7 +3876,7 @@ description: The name of the file.</artwork>
   <artwork type="IPFIX">
 elementId: TBD
 name: pid
-dataType: integer
+dataType: unsigned32
 status: current
 description: The process ID of the
       process.</artwork>
@@ -4147,7 +4073,7 @@ elementId: TBD
 name: file
 dataType: list
 structure: list (filepath, path, filename, fileType, userId, 
-aTime, changeTime, mTime, size)
+aTime, cTime, mTime, size)
 status: current
 description: The metadata associated with a file on the endpoint.
 </artwork>
@@ -4170,7 +4096,7 @@ special.)</artwork>
   <artwork type="IPFIX">
 elementId: TBD
 name: groupId
-dataType: integer
+dataType: unsigned32
 status: current
 description: The group owner of the file, by
       group number.</artwork>
@@ -4181,18 +4107,18 @@ description: The group owner of the file, by
   <artwork type="IPFIX">
 elementId: TBD
 name: aTime
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The time that the file was last
       accessed.</artwork>
         </figure>
     </section>
-    <section title="changeTime">
+    <section title="cTime">
         <figure>
   <artwork type="IPFIX">
 elementId: TBD
-name: changeTime
-dataType: timeStamp
+name: cTime
+dataType: dateTimeSeconds
 status: current
 description: The time of the last change
       to the file's inode.</artwork>
@@ -4203,7 +4129,7 @@ description: The time of the last change
   <artwork type="IPFIX">
 elementId: TBD
 name: mTime
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The time of the last change to
       the file's contents.</artwork>
@@ -4214,7 +4140,7 @@ description: The time of the last change to
   <artwork type="IPFIX">
 elementId: TBD
 name: size
-dataType: integer
+dataType: unsigned32
 status: current
 description: This is the size of the file in
       bytes.</artwork>
@@ -4457,7 +4383,7 @@ description: The user's shell
   <artwork type="IPFIX">
 elementId: TBD
 name: lastLogin
-dataType: integer
+dataType: unsigned32
 status: current
 description: The date and time when the
       last login occurred.</artwork>
@@ -4493,7 +4419,7 @@ description: The string used to start the
   <artwork type="IPFIX">
 elementId: TBD
 name: ppid
-dataType: integer
+dataType: unsigned32
 status: current
 description: The process ID of the process's
       parent process.</artwork>
@@ -4504,7 +4430,7 @@ description: The process ID of the process's
   <artwork type="IPFIX">
 elementId: TBD
 name: priority
-dataType: integer
+dataType: unsigned32
 status: current
 description: The scheduling priority with
       which the process runs.</artwork>
@@ -4621,7 +4547,7 @@ description:
   <artwork type="IPFIX">
 elementId: TBD
 name: chgLst
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: The date of the last password
       change.</artwork>
@@ -4632,7 +4558,7 @@ description: The date of the last password
   <artwork type="IPFIX">
 elementId: TBD
 name: chgAllow
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies how often in days a
       user may change their password. It can also be thought of 
@@ -4644,7 +4570,7 @@ description: Specifies how often in days a
   <artwork type="IPFIX">
 elementId: TBD
 name: chgReq
-dataType: integer
+dataType: unsigned32
 status: current
 description: Describes how long a user can
       keep a password before the system forces her to change it.</artwork>
@@ -4655,7 +4581,7 @@ description: Describes how long a user can
   <artwork type="IPFIX">
 elementId: TBD
 name: expWarn
-dataType: integer
+dataType: unsigned32
 status: current
 description: Describes how long before
       password expiration the system begins warning the user.</artwork>
@@ -4666,7 +4592,7 @@ description: Describes how long before
   <artwork type="IPFIX">
 elementId: TBD
 name: expInact
-dataType: integer
+dataType: unsigned32
 status: current
 description: Describes how many days of
       account inactivity the system will wait after a password 
@@ -4678,7 +4604,7 @@ description: Describes how many days of
   <artwork type="IPFIX">
 elementId: TBD
 name: expDate
-dataType: timeStamp
+dataType: dateTimeSeconds
 status: current
 description: Specifies when will the
       account's password expire.</artwork>
@@ -4839,17 +4765,6 @@ description: Specifies the build
       version.</artwork>
         </figure>
     </section>
-    <section title="osVersion">
-        <figure>
-  <artwork type="IPFIX">
-elementId: TBD
-name: osVersion
-dataType: string
-status: current
-description: Specifies the operating system
-      version.</artwork>
-        </figure>
-    </section>
     <section title="processorType">
         <figure>
   <artwork type="IPFIX">
@@ -4935,7 +4850,7 @@ description: Specifies the remote hosts to
   <artwork type="IPFIX">
 elementId: TBD
 name: port
-dataType: integer
+dataType: unsigned32
 status: current
 description: The port entity specifies the port
       used by the service.</artwork>
@@ -5781,17 +5696,6 @@ description: Represents the name of a particular
       group.</artwork>
         </figure>
     </section>
-    <section title="user">
-        <figure>
-  <artwork type="IPFIX">
-elementId: TBD
-name: user
-dataType: string
-status: current
-description: Represents the name of a particular
-      user.</artwork>
-        </figure>
-    </section>
     <section title="subgroup">
         <figure>
   <artwork type="IPFIX">
@@ -5870,7 +5774,7 @@ description: Specifies various attributes associated
   <artwork type="IPFIX">
 elementId: TBD
 name: forceLogoff
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies, in seconds, the
       amount of time between the end of the valid logon time and 
@@ -5883,7 +5787,7 @@ description: Specifies, in seconds, the
   <artwork type="IPFIX">
 elementId: TBD
 name: lockoutDuration
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies, in seconds,
       how long a locked account remains locked before it is
@@ -5895,7 +5799,7 @@ description: Specifies, in seconds,
   <artwork type="IPFIX">
 elementId: TBD
 name: lockoutObservationWindow
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the
       maximum time, in seconds, that can elapse between any two 
@@ -5907,7 +5811,7 @@ description: Specifies the
   <artwork type="IPFIX">
 elementId: TBD
 name: lockoutThreshold
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the number of
       invalid password authentications that can occur before an 
@@ -5933,7 +5837,7 @@ description: Specifies
   <artwork type="IPFIX">
 elementId: TBD
 name: maxPasswdAge
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies, in seconds (from
       a DWORD), the maximum allowable password age. A value of 
@@ -5949,7 +5853,7 @@ description: Specifies, in seconds (from
   <artwork type="IPFIX">
 elementId: TBD
 name: minPasswdAge
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the minimum
       number of seconds that can elapse between the time a password 
@@ -5963,7 +5867,7 @@ description: Specifies the minimum
   <artwork type="IPFIX">
 elementId: TBD
 name: minPasswdLen
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the minimum
       allowable password length. Valid values for this element are 
@@ -5975,7 +5879,7 @@ description: Specifies the minimum
   <artwork type="IPFIX">
 elementId: TBD
 name: passwordHistLen
-dataType: integer
+dataType: unsigned32
 status: current
 description: Specifies the length of
       password history maintained. A new password cannot match any 
@@ -6110,18 +6014,18 @@ description:
 elementId: TBD
 name: registry
 dataType: list
-structure: list (hive, key, registryKeyName, lastWriteTime,
+structure: list (registryHive, registryKey, registryKeyName, lastWriteTime,
       registryKeyType, registryKeyValue, windowsView)
 status: current
 description: Specifies information that can be
       collected about a particular registry key.</artwork>
         </figure>
     </section>
-    <section title="hive">
+    <section title="registryHive">
         <figure>
   <artwork type="IPFIX">
 elementId: TBD
-name: hive
+name: registryHive
 dataType: enumeration
 structure: HKEY_CLASSES_ROOT ; 0x1 ; This registry subtree
       contains information that associates file types with programs 
@@ -6172,7 +6076,7 @@ description: Describes the name of a
   <artwork type="IPFIX">
 elementId: TBD
 name: lastWriteTime
-dataType: integer
+dataType: unsigned64
 status: current
 description: The last time that the key or any of its value entries 
       were modified. The value of this entity represents the 
@@ -6289,9 +6193,9 @@ description: Holds the actual value
 elementId: TBD
 name: regkeyauditedpermissions
 dataType: list
-structure: list (key, trusteeSid, trusteeName,
+structure: list (registryKey, trusteeSid, trusteeName,
       standardDelete, standardReadControl, standardWriteDac, 
-      standardWriteOwners, tandardSynchronize,
+      standardWriteOwner, standardSynchronize,
       accessSystemSecurity, genericRead, genericWrite, 
       genericExecute, genericAll, keyQueryValue, keySetValue,
       keyCreateSubKey, keyEnumerateSubKeys, keyNotify, 
@@ -6526,7 +6430,7 @@ description:
 elementId: TBD
 name: regkeyeffectiverights
 dataType: list
-structure: list (hive, key, trusteeSid,
+structure: list (registryHive, registryKey, trusteeSid,
       trusteeName, standardDelete, standardReadControl, 
       standardWriteDac, standardWriteOwner, standardSynchronize,
       accessSystemSecurity, genericRead, genericWrite, 
@@ -6649,7 +6553,7 @@ elementId: TBD
 name: service
 dataType: list
 structure: list (serviceName, displayName, description,
-      serviceType, tartType, currentState, controlsAccepted, 
+      serviceType, startType, currentState, controlsAccepted, 
       startName, path, pid, serviceFlag, dependencies)
 status: current
 description: Stores information about Windows services that are 
@@ -6883,7 +6787,7 @@ dataType: list
 structure: list (serviceName, trusteeSid,
       standardDelete, standardReadControl, standardWriteDac, 
       standardWriteOwner, genericRead, genericWrite,
-      genericExecute, serviceQueryConfs, erviceChangeConf, 
+      genericExecute, serviceQueryConf, serviceChangeConf, 
       serviceQueryStat, serviceEnumDependents, serviceStart,
       serviceStop, servicePause, serviceInterrogate, 
       serviceUserDefined)
@@ -7088,7 +6992,7 @@ description: Represents whether the
   <artwork type="IPFIX">
 elementId: TBD
 name: lastLogon
-dataType: integer
+dataType: unsigned32
 status: current
 description: The date and time when the
       last logon occurred.</artwork>
