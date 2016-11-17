@@ -615,8 +615,8 @@ def ASN_EmitEnumeration(v, fout):
         if e.value:
             x = "({0!s})".format(e.value)
         # print("    {0}{1},".format(e.name, x), file=fout)
-    print("    ...")
-    print("}")
+    print("    ...", file=fout)
+    print("}", file=fout)
 
 def ASN_EmitTokenList(v, fout):
     # ordered ==> SEQUENCE
@@ -648,7 +648,7 @@ def ASN_EmitTokenList(v, fout):
                 sequence = "SEQUENCE OF ({0!s}..{1!s}".format(i.minimum, self.maximum if self.maximum else "MAX")
                 
         print("    {0} {3} {1} {2}{4}".format(i.element, "X_" + i.element, optional, sequence, "," if i.next else ""), file=fout)
-    print("}")
+    print("}", file=fout)
 
 if __name__ == '__main__':
     main()
