@@ -210,6 +210,12 @@ class IPFIX:
                 PrintError(node, "Structure field is missing for list")
             else:
                 self.processList(node)
+
+        if self.dataType == "category":
+            if not self.structure:
+                PrintError(node,"Structure field is missing for category")
+            else:
+                self.processCategory(node)
             
     def processEnumLine(self, line, node):
         if line.strip() == "":
@@ -265,6 +271,15 @@ class IPFIX:
         if tokens[0].strip() != "list":
             PrintError(node, "List element does not have list structure " + tokens[0])
         self.buildListTokens(node, tokens[1:])
+
+    def processCategory(self, node):
+        fullLine = self.structure.split("\n");
+        fullLine = " ".join(fullLine)
+        fullLine= fullLine.strip()
+        tokens = re.split("([\(\)|])", fullLine);
+        if tokens[0].strip() != "category":
+            PrintError(node, "Category element does not have list structure " + tokens[0])
+        self.buildListTokens(node,tokens[1:])
 
     # Run the state machine for
     # rule = '(' node ( ("|" | ",") node ) ')'
@@ -537,7 +552,7 @@ def main():
                             print(ve.description, file=fout)
                         print("</td></tr>", file=fout)
                     print("</table>", file=fout)
-                if (v.dataType == "list" or v.dataType == "orderedList") and (v.tokenList != None):
+                if (v.dataType == "list" or v.dataType == "orderedList" or v.dataType == "category") and (v.tokenList != None):
                     print("<br>" + v.dataType + "(", file=fout)
                     for token in v.tokenList:
                         print(token.toString(True), file=fout)
