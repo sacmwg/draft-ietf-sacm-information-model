@@ -17,7 +17,6 @@
 <!ENTITY RFC4287 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4287.xml">
 <!ENTITY RFC5209 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5209.xml">
 <!ENTITY RFC5792 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5792.xml">
-<!ENTITY RFC5793 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5793.xml">
 <!ENTITY RFC6020 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6020.xml">
 <!ENTITY RFC6241 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6241.xml">
 <!ENTITY RFC6313 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6313.xml">
@@ -1860,8 +1859,9 @@ name, hex-value, description
             dataType: string
             status: current
             description: A label that is associated with a network.
-            Some networks, for example, effetive layer2-broadcast-domains
-            are difficult to "grasp" and therefore quite difficult to name.
+            Some networks, for example, effective 
+            layer2-broadcast-domains are difficult to "grasp" and 
+            therefore quite difficult to name.
         </artwork>
     </figure>
 </section> 
@@ -6014,8 +6014,9 @@ description:
 elementId: TBD
 name: registry
 dataType: list
-structure: list (registryHive, registryKey, registryKeyName, lastWriteTime,
-      registryKeyType, registryKeyValue, windowsView)
+structure: list (registryHive, registryKey, registryKeyName, 
+                 lastWriteTime, registryKeyType, registryKeyValue, 
+                 windowsView)
 status: current
 description: Specifies information that can be
       collected about a particular registry key.</artwork>
@@ -7207,7 +7208,7 @@ description: Represents the SID of a
         <references title="Informative References">
             <!-- Here we use entities that we defined at the beginning. --> 
             &RFC3580; &RFC4949; &RFC5209; &RFC2434;
-            &RFC5793; &RFC7012; &RFC7632;
+            &RFC7012; &RFC7632;
             
             &I-D.ietf-sacm-requirements; &I-D.ietf-sacm-terminology;
         </references>
@@ -7309,6 +7310,15 @@ description: Represents the SID of a
                    scenario.</t>
                 <t>Added text for the IANA considerations, security considerations, operational considerations,
                    and privacy considerations sections.</t>
+                <t>Performed various other editorial changes and clean-up.</t>
+            </section>
+            <section title="Changes in Revision 08">
+                <t>Clarified text that describes subjects and attributes.</t>
+                <t>Clarified text that describes SACM Statements and Content Elements.</t>
+                <t>Removed stray metadata property fields from the definitions of several IEs.</t>
+                <t>Specified a syntax for defining category IEs.</t>
+                <t>Added an anyCategory IE that represents any IE in the IM.</t>
+                <t>Fixed several errors reported by the Travis-CI continuous integration service.</t>
                 <t>Performed various other editorial changes and clean-up.</t>
             </section>
         </section>
