@@ -532,28 +532,28 @@ Internet-Draft           SACM Information Model           September 2016
      7.356. registryKey  . . . . . . . . . . . . . . . . . . . . . . 124
      7.357. registryKeyName  . . . . . . . . . . . . . . . . . . . . 124
      7.358. lastWriteTime  . . . . . . . . . . . . . . . . . . . . . 124
-     7.359. registryKeyType  . . . . . . . . . . . . . . . . . . . . 124
+     7.359. registryKeyType  . . . . . . . . . . . . . . . . . . . . 125
      7.360. registryKeyValue . . . . . . . . . . . . . . . . . . . . 126
-     7.361. regkeyauditedpermissions . . . . . . . . . . . . . . . . 126
-     7.362. auditKeyQueryValue . . . . . . . . . . . . . . . . . . . 127
-     7.363. auditKeySetValue . . . . . . . . . . . . . . . . . . . . 127
-     7.364. auditKeyCreateSubKey . . . . . . . . . . . . . . . . . . 128
-     7.365. auditKeyEnumerateSubKeys . . . . . . . . . . . . . . . . 128
-     7.366. auditKeyNotify . . . . . . . . . . . . . . . . . . . . . 129
-     7.367. auditKeyCreateLink . . . . . . . . . . . . . . . . . . . 129
-     7.368. auditKeyWow6464Key . . . . . . . . . . . . . . . . . . . 130
-     7.369. auditKeyWow6432Key . . . . . . . . . . . . . . . . . . . 130
-     7.370. auditKeyWow64Res . . . . . . . . . . . . . . . . . . . . 131
-     7.371. regkeyeffectiverights  . . . . . . . . . . . . . . . . . 131
-     7.372. keyQueryValue  . . . . . . . . . . . . . . . . . . . . . 132
-     7.373. keySetValue  . . . . . . . . . . . . . . . . . . . . . . 132
-     7.374. keyCreateSubKey  . . . . . . . . . . . . . . . . . . . . 132
-     7.375. keyEnumerateSubKeys  . . . . . . . . . . . . . . . . . . 133
-     7.376. keyNotify  . . . . . . . . . . . . . . . . . . . . . . . 133
-     7.377. keyCreateLink  . . . . . . . . . . . . . . . . . . . . . 133
-     7.378. keyWow6464Key  . . . . . . . . . . . . . . . . . . . . . 133
-     7.379. keyWow6432Key  . . . . . . . . . . . . . . . . . . . . . 133
-     7.380. keyWow64Res  . . . . . . . . . . . . . . . . . . . . . . 133
+     7.361. regkeyauditedpermissions . . . . . . . . . . . . . . . . 127
+     7.362. auditKeyQueryValue . . . . . . . . . . . . . . . . . . . 128
+     7.363. auditKeySetValue . . . . . . . . . . . . . . . . . . . . 128
+     7.364. auditKeyCreateSubKey . . . . . . . . . . . . . . . . . . 129
+     7.365. auditKeyEnumerateSubKeys . . . . . . . . . . . . . . . . 129
+     7.366. auditKeyNotify . . . . . . . . . . . . . . . . . . . . . 130
+     7.367. auditKeyCreateLink . . . . . . . . . . . . . . . . . . . 130
+     7.368. auditKeyWow6464Key . . . . . . . . . . . . . . . . . . . 131
+     7.369. auditKeyWow6432Key . . . . . . . . . . . . . . . . . . . 131
+     7.370. auditKeyWow64Res . . . . . . . . . . . . . . . . . . . . 132
+     7.371. regkeyeffectiverights  . . . . . . . . . . . . . . . . . 132
+     7.372. keyQueryValue  . . . . . . . . . . . . . . . . . . . . . 133
+     7.373. keySetValue  . . . . . . . . . . . . . . . . . . . . . . 133
+     7.374. keyCreateSubKey  . . . . . . . . . . . . . . . . . . . . 133
+     7.375. keyEnumerateSubKeys  . . . . . . . . . . . . . . . . . . 134
+     7.376. keyNotify  . . . . . . . . . . . . . . . . . . . . . . . 134
+     7.377. keyCreateLink  . . . . . . . . . . . . . . . . . . . . . 134
+     7.378. keyWow6464Key  . . . . . . . . . . . . . . . . . . . . . 134
+     7.379. keyWow6432Key  . . . . . . . . . . . . . . . . . . . . . 134
+     7.380. keyWow64Res  . . . . . . . . . . . . . . . . . . . . . . 134
 
 
 
@@ -562,54 +562,54 @@ Waltermire, et al.        Expires March 5, 2017                [Page 10]
 Internet-Draft           SACM Information Model           September 2016
 
 
-     7.381. service  . . . . . . . . . . . . . . . . . . . . . . . . 134
-     7.382. displayName  . . . . . . . . . . . . . . . . . . . . . . 134
-     7.383. description  . . . . . . . . . . . . . . . . . . . . . . 134
-     7.384. serviceType  . . . . . . . . . . . . . . . . . . . . . . 134
-     7.385. startType  . . . . . . . . . . . . . . . . . . . . . . . 135
-     7.386. currentState . . . . . . . . . . . . . . . . . . . . . . 136
-     7.387. controlsAccepted . . . . . . . . . . . . . . . . . . . . 137
-     7.388. startName  . . . . . . . . . . . . . . . . . . . . . . . 139
-     7.389. serviceFlag  . . . . . . . . . . . . . . . . . . . . . . 139
-     7.390. dependencies . . . . . . . . . . . . . . . . . . . . . . 139
-     7.391. serviceeffectiverights . . . . . . . . . . . . . . . . . 139
-     7.392. trusteeSid . . . . . . . . . . . . . . . . . . . . . . . 140
-     7.393. serviceQueryConf . . . . . . . . . . . . . . . . . . . . 140
-     7.394. serviceChangeConf  . . . . . . . . . . . . . . . . . . . 140
-     7.395. serviceQueryStat . . . . . . . . . . . . . . . . . . . . 140
-     7.396. serviceEnumDependents  . . . . . . . . . . . . . . . . . 140
-     7.397. serviceStart . . . . . . . . . . . . . . . . . . . . . . 141
-     7.398. serviceStop  . . . . . . . . . . . . . . . . . . . . . . 141
-     7.399. servicePause . . . . . . . . . . . . . . . . . . . . . . 141
-     7.400. serviceInterrogate . . . . . . . . . . . . . . . . . . . 141
-     7.401. serviceUserDefined . . . . . . . . . . . . . . . . . . . 141
-     7.402. sharedresourceauditedpermissions . . . . . . . . . . . . 142
-     7.403. netname  . . . . . . . . . . . . . . . . . . . . . . . . 142
-     7.404. sharedresourceeffectiverights  . . . . . . . . . . . . . 142
-     7.405. user . . . . . . . . . . . . . . . . . . . . . . . . . . 143
-     7.406. enabled  . . . . . . . . . . . . . . . . . . . . . . . . 143
-     7.407. lastLogon  . . . . . . . . . . . . . . . . . . . . . . . 143
-     7.408. groupSid . . . . . . . . . . . . . . . . . . . . . . . . 143
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . 143
-   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . . 144
-   10. Security Considerations . . . . . . . . . . . . . . . . . . . 144
-   11. Operational Considerations  . . . . . . . . . . . . . . . . . 145
-     11.1.  Endpoint Designation . . . . . . . . . . . . . . . . . . 145
-     11.2.  Timestamp Accuracy . . . . . . . . . . . . . . . . . . . 146
-   12. Privacy Considerations  . . . . . . . . . . . . . . . . . . . 147
-   13. References  . . . . . . . . . . . . . . . . . . . . . . . . . 147
-     13.1.  Normative References . . . . . . . . . . . . . . . . . . 147
-     13.2.  Informative References . . . . . . . . . . . . . . . . . 148
+     7.381. service  . . . . . . . . . . . . . . . . . . . . . . . . 135
+     7.382. displayName  . . . . . . . . . . . . . . . . . . . . . . 135
+     7.383. description  . . . . . . . . . . . . . . . . . . . . . . 135
+     7.384. serviceType  . . . . . . . . . . . . . . . . . . . . . . 135
+     7.385. startType  . . . . . . . . . . . . . . . . . . . . . . . 136
+     7.386. currentState . . . . . . . . . . . . . . . . . . . . . . 137
+     7.387. controlsAccepted . . . . . . . . . . . . . . . . . . . . 138
+     7.388. startName  . . . . . . . . . . . . . . . . . . . . . . . 140
+     7.389. serviceFlag  . . . . . . . . . . . . . . . . . . . . . . 140
+     7.390. dependencies . . . . . . . . . . . . . . . . . . . . . . 140
+     7.391. serviceeffectiverights . . . . . . . . . . . . . . . . . 140
+     7.392. trusteeSid . . . . . . . . . . . . . . . . . . . . . . . 141
+     7.393. serviceQueryConf . . . . . . . . . . . . . . . . . . . . 141
+     7.394. serviceChangeConf  . . . . . . . . . . . . . . . . . . . 141
+     7.395. serviceQueryStat . . . . . . . . . . . . . . . . . . . . 141
+     7.396. serviceEnumDependents  . . . . . . . . . . . . . . . . . 141
+     7.397. serviceStart . . . . . . . . . . . . . . . . . . . . . . 142
+     7.398. serviceStop  . . . . . . . . . . . . . . . . . . . . . . 142
+     7.399. servicePause . . . . . . . . . . . . . . . . . . . . . . 142
+     7.400. serviceInterrogate . . . . . . . . . . . . . . . . . . . 142
+     7.401. serviceUserDefined . . . . . . . . . . . . . . . . . . . 142
+     7.402. sharedresourceauditedpermissions . . . . . . . . . . . . 143
+     7.403. netname  . . . . . . . . . . . . . . . . . . . . . . . . 143
+     7.404. sharedresourceeffectiverights  . . . . . . . . . . . . . 143
+     7.405. user . . . . . . . . . . . . . . . . . . . . . . . . . . 144
+     7.406. enabled  . . . . . . . . . . . . . . . . . . . . . . . . 144
+     7.407. lastLogon  . . . . . . . . . . . . . . . . . . . . . . . 144
+     7.408. groupSid . . . . . . . . . . . . . . . . . . . . . . . . 144
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . 144
+   9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . . 145
+   10. Security Considerations . . . . . . . . . . . . . . . . . . . 145
+   11. Operational Considerations  . . . . . . . . . . . . . . . . . 146
+     11.1.  Endpoint Designation . . . . . . . . . . . . . . . . . . 146
+     11.2.  Timestamp Accuracy . . . . . . . . . . . . . . . . . . . 147
+   12. Privacy Considerations  . . . . . . . . . . . . . . . . . . . 148
+   13. References  . . . . . . . . . . . . . . . . . . . . . . . . . 148
+     13.1.  Normative References . . . . . . . . . . . . . . . . . . 148
+     13.2.  Informative References . . . . . . . . . . . . . . . . . 149
    Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . . 149
-     A.1.  Changes in Revision 01  . . . . . . . . . . . . . . . . . 149
-     A.2.  Changes in Revision 02  . . . . . . . . . . . . . . . . . 150
-     A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . . 150
-     A.4.  Changes in Revision 04  . . . . . . . . . . . . . . . . . 151
-     A.5.  Changes in Revision 05  . . . . . . . . . . . . . . . . . 151
-     A.6.  Changes in Revision 06  . . . . . . . . . . . . . . . . . 151
-     A.7.  Changes in Revision 07  . . . . . . . . . . . . . . . . . 152
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 152
-
+     A.1.  Changes in Revision 01  . . . . . . . . . . . . . . . . . 150
+     A.2.  Changes in Revision 02  . . . . . . . . . . . . . . . . . 151
+     A.3.  Changes in Revision 03  . . . . . . . . . . . . . . . . . 151
+     A.4.  Changes in Revision 04  . . . . . . . . . . . . . . . . . 152
+     A.5.  Changes in Revision 05  . . . . . . . . . . . . . . . . . 152
+     A.6.  Changes in Revision 06  . . . . . . . . . . . . . . . . . 152
+     A.7.  Changes in Revision 07  . . . . . . . . . . . . . . . . . 153
+     A.8.  Changes in Revision 08  . . . . . . . . . . . . . . . . . 153
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 153
 
 
 
@@ -2477,13 +2477,14 @@ Internet-Draft           SACM Information Model           September 2016
 
 7.60.  networkName
 
-            elementId: TBD
-            name: networkName
-            dataType: string
-            status: current
-            description: A label that is associated with a network.
-            Some networks, for example, effetive layer2-broadcast-domains
-            are difficult to "grasp" and therefore quite difficult to name.
+               elementId: TBD
+               name: networkName
+               dataType: string
+               status: current
+               description: A label that is associated with a network.
+               Some networks, for example, effective
+               layer2-broadcast-domains are difficult to "grasp" and
+               therefore quite difficult to name.
 
 7.61.  organizationId
 
@@ -2512,7 +2513,6 @@ Internet-Draft           SACM Information Model           September 2016
                status: current
                description: A label that references a specific version
                of an operating system, including patches and hotfixes.
-
 
 
 
@@ -6850,16 +6850,45 @@ Internet-Draft           SACM Information Model           September 2016
 
 7.354.  registry
 
-elementId: TBD
-name: registry
-dataType: list
-structure: list (registryHive, registryKey, registryKeyName, lastWriteTime,
-      registryKeyType, registryKeyValue, windowsView)
-status: current
-description: Specifies information that can be
-      collected about a particular registry key.
+   elementId: TBD
+   name: registry
+   dataType: list
+   structure: list (registryHive, registryKey, registryKeyName,
+                    lastWriteTime, registryKeyType, registryKeyValue,
+                    windowsView)
+   status: current
+   description: Specifies information that can be
+         collected about a particular registry key.
 
 7.355.  registryHive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 123]
+
+Internet-Draft           SACM Information Model           September 2016
+
 
    elementId: TBD
    name: registryHive
@@ -6883,13 +6912,6 @@ description: Specifies information that can be
    description: The
          hive that the registry key belongs to.
 
-
-
-Waltermire, et al.        Expires March 5, 2017               [Page 123]
-
-Internet-Draft           SACM Information Model           September 2016
-
-
 7.356.  registryKey
 
    elementId: TBD
@@ -6911,6 +6933,18 @@ Internet-Draft           SACM Information Model           September 2016
          registry key.
 
 7.358.  lastWriteTime
+
+
+
+
+
+
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 124]
+
+Internet-Draft           SACM Information Model           September 2016
+
 
    elementId: TBD
    name: lastWriteTime
@@ -6938,14 +6972,6 @@ Internet-Draft           SACM Information Model           September 2016
    dataType: enumeration
    structure: reg_binary ; 0x1 ; The reg_binary type
          is used by registry keys that specify binary data in any
-
-
-
-Waltermire, et al.        Expires March 5, 2017               [Page 124]
-
-Internet-Draft           SACM Information Model           September 2016
-
-
          form.
          reg_dword ; 0x2 ; The reg_dword type is used by
          registry keys that specify an unsigned 32-bit integer.
@@ -6968,6 +6994,14 @@ Internet-Draft           SACM Information Model           September 2016
          reg_multi_sz ; 0x7 ; The reg_multi_sz type is used by
          registry keys that specify an array of null-terminated
          strings, terminated by two null characters.
+
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 125]
+
+Internet-Draft           SACM Information Model           September 2016
+
+
          reg_none; 0x8 ;
          The reg_none type is used by registry keys that have no
          defined value type.
@@ -6992,17 +7026,37 @@ Internet-Draft           SACM Information Model           September 2016
    description:
          Specifies the type of data stored by the registry key.
 
+7.360.  registryKeyValue
 
 
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 125]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 126]
 
 Internet-Draft           SACM Information Model           September 2016
 
-
-7.360.  registryKeyValue
 
    elementId: TBD
    name: registryKeyValue
@@ -7053,7 +7107,9 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 126]
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 127]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7109,7 +7165,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 127]
+Waltermire, et al.        Expires March 5, 2017               [Page 128]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7165,7 +7221,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 128]
+Waltermire, et al.        Expires March 5, 2017               [Page 129]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7221,7 +7277,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 129]
+Waltermire, et al.        Expires March 5, 2017               [Page 130]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7277,7 +7333,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 130]
+Waltermire, et al.        Expires March 5, 2017               [Page 131]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7333,7 +7389,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 131]
+Waltermire, et al.        Expires March 5, 2017               [Page 132]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7389,7 +7445,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 132]
+Waltermire, et al.        Expires March 5, 2017               [Page 133]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7445,7 +7501,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 133]
+Waltermire, et al.        Expires March 5, 2017               [Page 134]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7501,7 +7557,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 134]
+Waltermire, et al.        Expires March 5, 2017               [Page 135]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7557,7 +7613,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 135]
+Waltermire, et al.        Expires March 5, 2017               [Page 136]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7613,7 +7669,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 136]
+Waltermire, et al.        Expires March 5, 2017               [Page 137]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7669,7 +7725,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 137]
+Waltermire, et al.        Expires March 5, 2017               [Page 138]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7725,7 +7781,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 138]
+Waltermire, et al.        Expires March 5, 2017               [Page 139]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7781,7 +7837,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 139]
+Waltermire, et al.        Expires March 5, 2017               [Page 140]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7837,7 +7893,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 140]
+Waltermire, et al.        Expires March 5, 2017               [Page 141]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7893,7 +7949,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 141]
+Waltermire, et al.        Expires March 5, 2017               [Page 142]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -7949,7 +8005,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 142]
+Waltermire, et al.        Expires March 5, 2017               [Page 143]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8005,7 +8061,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 143]
+Waltermire, et al.        Expires March 5, 2017               [Page 144]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8061,7 +8117,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 144]
+Waltermire, et al.        Expires March 5, 2017               [Page 145]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8117,7 +8173,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 145]
+Waltermire, et al.        Expires March 5, 2017               [Page 146]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8173,7 +8229,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 146]
+Waltermire, et al.        Expires March 5, 2017               [Page 147]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8229,7 +8285,7 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 147]
+Waltermire, et al.        Expires March 5, 2017               [Page 148]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8266,11 +8322,6 @@ Internet-Draft           SACM Information Model           September 2016
               Requirements", RFC 5209, DOI 10.17487/RFC5209, June 2008,
               <http://www.rfc-editor.org/info/rfc5209>.
 
-   [RFC5793]  Sahita, R., Hanna, S., Hurst, R., and K. Narayan, "PB-TNC:
-              A Posture Broker (PB) Protocol Compatible with Trusted
-              Network Connect (TNC)", RFC 5793, DOI 10.17487/RFC5793,
-              March 2010, <http://www.rfc-editor.org/info/rfc5793>.
-
    [RFC7012]  Claise, B., Ed. and B. Trammell, Ed., "Information Model
               for IP Flow Information Export (IPFIX)", RFC 7012,
               DOI 10.17487/RFC7012, September 2013,
@@ -8281,16 +8332,19 @@ Internet-Draft           SACM Information Model           September 2016
               DOI 10.17487/RFC7632, September 2015,
               <http://www.rfc-editor.org/info/rfc7632>.
 
+Appendix A.  Change Log
 
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 148]
+
+
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 149]
 
 Internet-Draft           SACM Information Model           September 2016
 
-
-Appendix A.  Change Log
 
 A.1.  Changes in Revision 01
 
@@ -8341,7 +8395,9 @@ A.1.  Changes in Revision 01
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 149]
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 150]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8397,7 +8453,7 @@ A.3.  Changes in Revision 03
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 150]
+Waltermire, et al.        Expires March 5, 2017               [Page 151]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8453,7 +8509,7 @@ A.6.  Changes in Revision 06
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 151]
+Waltermire, et al.        Expires March 5, 2017               [Page 152]
 
 Internet-Draft           SACM Information Model           September 2016
 
@@ -8477,6 +8533,24 @@ A.7.  Changes in Revision 07
 
    Performed various other editorial changes and clean-up.
 
+A.8.  Changes in Revision 08
+
+   Clarified text that describes subjects and attributes.
+
+   Clarified text that describes SACM Statements and Content Elements.
+
+   Removed stray metadata property fields from the definitions of
+   several IEs.
+
+   Specified a syntax for defining category IEs.
+
+   Added an anyCategory IE that represents any IE in the IM.
+
+   Fixed several errors reported by the Travis-CI continuous integration
+   service.
+
+   Performed various other editorial changes and clean-up.
+
 Authors' Addresses
 
    David Waltermire (editor)
@@ -8486,6 +8560,14 @@ Authors' Addresses
    USA
 
    Email: david.waltermire@nist.gov
+
+
+
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 153]
+
+Internet-Draft           SACM Information Model           September 2016
 
 
    Kim Watson
@@ -8506,12 +8588,6 @@ Authors' Addresses
    USA
 
    Email: cliffordk@pulsesecure.net
-
-
-
-Waltermire, et al.        Expires March 5, 2017               [Page 152]
-
-Internet-Draft           SACM Information Model           September 2016
 
 
    Lisa Lorenzin
@@ -8541,6 +8617,15 @@ Internet-Draft           SACM Information Model           September 2016
    Email: dhaynes@mitre.org
 
 
+
+
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 154]
+
+Internet-Draft           SACM Information Model           September 2016
+
+
    Henk Birkholz
    Fraunhofer SIT
    Rheinstrasse 75
@@ -8565,4 +8650,31 @@ Internet-Draft           SACM Information Model           September 2016
 
 
 
-Waltermire, et al.        Expires March 5, 2017               [Page 153]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Waltermire, et al.        Expires March 5, 2017               [Page 155]
