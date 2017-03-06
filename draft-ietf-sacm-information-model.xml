@@ -1755,6 +1755,47 @@ name, hex-value, description
         </artwork>
     </figure>
 </section> 
+            
+<section title="networkZoneLocation">
+    <figure>
+        <artwork type="IPFIX">
+            elementId: TBD
+            name: networkZoneLocation
+            dataType: string
+            status: current
+            description: The zone location of an endpoint on the
+                         network (e.g. internet, enterprise DMZ,
+                         enterprise WAN, enclave DMZ, enclave).
+        </artwork>
+    </figure>
+</section> 
+            
+<section title="layer2NetworkLocation">
+    <figure>
+        <artwork type="IPFIX">
+            elementId: TBD
+            name: layer2NetworkLocation
+            dataType: string
+            status: current
+            description: The location of a layer-2 interface on 
+            the network (e.g. link-layer neighborhood,
+            shared broadcast domain).
+        </artwork>
+    </figure>
+</section> 
+            
+<section title="layer3NetworkLocation">
+    <figure>
+        <artwork type="IPFIX">
+            elementId: TBD
+            name: layer3NetworkLocation
+            dataType: string
+            status: current
+            description: The location of a layer-3 interface on 
+            the network (e.g. next-hop routing neighbor).
+        </artwork>
+    </figure>
+</section> 
 
 <section title="macAddressValue">
     <figure>
@@ -7327,6 +7368,8 @@ description: Represents the SID of a
                     IE (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/18).</t>
                 <t>Updated IE examples that use content-type to use statement-type 
                     (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/56).</t>
+                <t>Added "networkZoneLocation", "layer2NetworkLocation", and "layer3NetworkLocation" 
+                    IEs (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/9).</t>
             </section>
         </section>
     </back>
