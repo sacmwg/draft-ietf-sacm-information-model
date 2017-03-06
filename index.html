@@ -1494,7 +1494,7 @@ li, p {
                     </pre>
 <p class="figure">Figure 3: Example set of IEs associated with a timestamp and a                     target endpoint label.</p>
 <h1 id="rfc.section.4.3"><a href="#rfc.section.4.3">4.3.</a> <a href="#sacm-statements" id="sacm-statements">SACM Statements</a></h1>
-<p id="rfc.section.4.3.p.1">One or more SACM Content Elements are bundled in a SACM Statement. In contrast to SACM Content Element Metadata, SACM Statement Metadata focuses on the providing information about the SACM Component that provided it rather than the target endpoint that the content is about. The only content-specific metadata included in the SACM Statement is the content-type IE. Therefore, multiple SACM Content Elements that share the same SACM Statement Metadata and are of the same content-type can be included in a single SACM Statement. A SACM Statement functions similar to an envelope or a header and is the subject information element that associates SACM Statement Metadata with security automation information provided in its SACM Content Element(s). Its purpose is to enable the tracking of the origin of data inside a SACM domain and more importantly to enable the mitigation of conflicting information that may originate from different SACM Components. How a consuming SACM Component actually deals with conflicting information is out-of-scope of the SACM IM. Semantically, the term statement implies that the SACM content provided by a SACM Component might not be correct in every context, but, rather is the result of a best-effort to produce correct information.</p>
+<p id="rfc.section.4.3.p.1">One or more SACM Content Elements are bundled in a SACM Statement. In contrast to SACM Content Element Metadata, SACM Statement Metadata focuses on the providing information about the SACM Component that provided it rather than the target endpoint that the content is about. The only content-specific metadata included in the SACM Statement is the statement-type IE. Therefore, multiple SACM Content Elements that share the same SACM Statement Metadata and are of the same statement-type can be included in a single SACM Statement. A SACM Statement functions similar to an envelope or a header and is the subject information element that associates SACM Statement Metadata with security automation information provided in its SACM Content Element(s). Its purpose is to enable the tracking of the origin of data inside a SACM domain and more importantly to enable the mitigation of conflicting information that may originate from different SACM Components. How a consuming SACM Component actually deals with conflicting information is out-of-scope of the SACM IM. Semantically, the term statement implies that the SACM content provided by a SACM Component might not be correct in every context, but, rather is the result of a best-effort to produce correct information.</p>
 <div id="rfc.figure.4"/>
 <div id="sacm-statement-example-1"/>
 <pre>                  
@@ -1502,7 +1502,7 @@ li, p {
               statement-metadata = (
                 publish-timestamp = 1461934031,
                 data-origin = 24e67957-3d31-4878-8892-da2b35e121c2,
-                content-type = observation
+                statement-type = observation
               ),
               content-element = (
                 content-metadata = (
@@ -1521,7 +1521,7 @@ li, p {
               statement-metadata = (
                 publish-timestamp = 1461934031,
                 data-origin = 24e67957-3d31-4878-8892-da2b35e121c2
-                content-type = observation
+                statement-type = observation
               ),
               content-element = (
                 content-metadata = (
@@ -1539,7 +1539,7 @@ li, p {
               statement-metadata = (
                 publish-timestamp = 1461934744,
                 data-origin = e42885a1-0270-44e9-bb5c-865cf6bd4800,
-                content-type = observation
+                statement-type = observation
               ),
               content-element = (
                 content-metadata = (
@@ -1600,7 +1600,7 @@ li, p {
           statement-metadata = (
             publish-timestamp = 1461934031,
             data-origin = 24e67957-3d31-4878-8892-da2b35e121c2,
-            content-type = event
+            statement-type = event
           ),
           event = (
             event-attributes = (
@@ -2712,7 +2712,7 @@ name, hex-value, description
             description: A set of types that define the type of 
             content that is included in a SACM statement (e.g. 
             Observation, DirectoryContent, Correlation, Assessment, 
-            Guidance).
+            Guidance, Event).
         </pre>
 <h1 id="rfc.section.7.86"><a href="#rfc.section.7.86">7.86.</a> status</h1>
 <pre> 
@@ -6730,6 +6730,7 @@ description: Represents the SID of a
 <p id="rfc.section.A.8.p.7">Performed various other editorial changes and clean-up.</p>
 <h1 id="rfc.appendix.A.9"><a href="#rfc.appendix.A.9">A.9.</a> Changes in Revision 08</h1>
 <p id="rfc.section.A.9.p.1">Added "derived", "authority", and "verified" to the collectionTaskType IE (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/18).</p>
+<p id="rfc.section.A.9.p.2">Updated IE examples that use content-type to use statement-type (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/56).</p>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Authors' Addresses</a>
 </h1>
