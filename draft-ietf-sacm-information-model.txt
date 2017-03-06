@@ -178,46 +178,46 @@ Internet-Draft           SACM Information Model            December 2016
      7.50. layer4PortAddress . . . . . . . . . . . . . . . . . . . .  43
      7.51. layer4Protocol  . . . . . . . . . . . . . . . . . . . . .  43
      7.52. locationName  . . . . . . . . . . . . . . . . . . . . . .  43
-     7.53. macAddressValue . . . . . . . . . . . . . . . . . . . . .  43
-     7.54. methodLabel . . . . . . . . . . . . . . . . . . . . . . .  44
-     7.55. methodRepository  . . . . . . . . . . . . . . . . . . . .  44
-     7.56. networkAccessLevelType  . . . . . . . . . . . . . . . . .  44
-     7.57. networkId . . . . . . . . . . . . . . . . . . . . . . . .  44
-     7.58. networkInterfaceName  . . . . . . . . . . . . . . . . . .  44
-     7.59. networkLayer  . . . . . . . . . . . . . . . . . . . . . .  45
-     7.60. networkName . . . . . . . . . . . . . . . . . . . . . . .  45
-     7.61. organizationId  . . . . . . . . . . . . . . . . . . . . .  45
-     7.62. osComponent . . . . . . . . . . . . . . . . . . . . . . .  45
-     7.63. osLabel . . . . . . . . . . . . . . . . . . . . . . . . .  45
-     7.64. osName  . . . . . . . . . . . . . . . . . . . . . . . . .  46
-     7.65. osType  . . . . . . . . . . . . . . . . . . . . . . . . .  46
-     7.66. osVersion . . . . . . . . . . . . . . . . . . . . . . . .  46
-     7.67. patchId . . . . . . . . . . . . . . . . . . . . . . . . .  46
-     7.68. patchName . . . . . . . . . . . . . . . . . . . . . . . .  46
-     7.69. personFirstName . . . . . . . . . . . . . . . . . . . . .  47
-     7.70. personLastName  . . . . . . . . . . . . . . . . . . . . .  47
-     7.71. personMiddleName  . . . . . . . . . . . . . . . . . . . .  47
-     7.72. phoneNumber . . . . . . . . . . . . . . . . . . . . . . .  47
-     7.73. phoneNumberType . . . . . . . . . . . . . . . . . . . . .  47
-     7.74. privilegeName . . . . . . . . . . . . . . . . . . . . . .  47
-     7.75. privilegeValue  . . . . . . . . . . . . . . . . . . . . .  48
-     7.76. protocol  . . . . . . . . . . . . . . . . . . . . . . . .  48
-     7.77. publicKey . . . . . . . . . . . . . . . . . . . . . . . .  48
-     7.78. relationshipContentElementGuid  . . . . . . . . . . . . .  48
-     7.79. relationshipStatementElementGuid  . . . . . . . . . . . .  49
-     7.80. relationshipObjectLabel . . . . . . . . . . . . . . . . .  49
-     7.81. relationshipType  . . . . . . . . . . . . . . . . . . . .  49
-     7.82. roleName  . . . . . . . . . . . . . . . . . . . . . . . .  49
-     7.83. sessionStateType  . . . . . . . . . . . . . . . . . . . .  50
-     7.84. statementGuid . . . . . . . . . . . . . . . . . . . . . .  50
-     7.85. statementType . . . . . . . . . . . . . . . . . . . . . .  50
-     7.86. status  . . . . . . . . . . . . . . . . . . . . . . . . .  50
-     7.87. subAdministrativeDomain . . . . . . . . . . . . . . . . .  50
-     7.88. subInterfaceLabel . . . . . . . . . . . . . . . . . . . .  51
-     7.89. superAdministrativeDomain . . . . . . . . . . . . . . . .  51
-     7.90. superInterfaceLabel . . . . . . . . . . . . . . . . . . .  51
-     7.91. teAssessmentState . . . . . . . . . . . . . . . . . . . .  51
-     7.92. teLabel . . . . . . . . . . . . . . . . . . . . . . . . .  52
+     7.53. networkZoneLocation . . . . . . . . . . . . . . . . . . .  43
+     7.54. layer2NetworkLocation . . . . . . . . . . . . . . . . . .  44
+     7.55. layer3NetworkLocation . . . . . . . . . . . . . . . . . .  44
+     7.56. macAddressValue . . . . . . . . . . . . . . . . . . . . .  44
+     7.57. methodLabel . . . . . . . . . . . . . . . . . . . . . . .  44
+     7.58. methodRepository  . . . . . . . . . . . . . . . . . . . .  44
+     7.59. networkAccessLevelType  . . . . . . . . . . . . . . . . .  45
+     7.60. networkId . . . . . . . . . . . . . . . . . . . . . . . .  45
+     7.61. networkInterfaceName  . . . . . . . . . . . . . . . . . .  45
+     7.62. networkLayer  . . . . . . . . . . . . . . . . . . . . . .  45
+     7.63. networkName . . . . . . . . . . . . . . . . . . . . . . .  45
+     7.64. organizationId  . . . . . . . . . . . . . . . . . . . . .  46
+     7.65. osComponent . . . . . . . . . . . . . . . . . . . . . . .  46
+     7.66. osLabel . . . . . . . . . . . . . . . . . . . . . . . . .  46
+     7.67. osName  . . . . . . . . . . . . . . . . . . . . . . . . .  46
+     7.68. osType  . . . . . . . . . . . . . . . . . . . . . . . . .  46
+     7.69. osVersion . . . . . . . . . . . . . . . . . . . . . . . .  47
+     7.70. patchId . . . . . . . . . . . . . . . . . . . . . . . . .  47
+     7.71. patchName . . . . . . . . . . . . . . . . . . . . . . . .  47
+     7.72. personFirstName . . . . . . . . . . . . . . . . . . . . .  47
+     7.73. personLastName  . . . . . . . . . . . . . . . . . . . . .  47
+     7.74. personMiddleName  . . . . . . . . . . . . . . . . . . . .  47
+     7.75. phoneNumber . . . . . . . . . . . . . . . . . . . . . . .  48
+     7.76. phoneNumberType . . . . . . . . . . . . . . . . . . . . .  48
+     7.77. privilegeName . . . . . . . . . . . . . . . . . . . . . .  48
+     7.78. privilegeValue  . . . . . . . . . . . . . . . . . . . . .  48
+     7.79. protocol  . . . . . . . . . . . . . . . . . . . . . . . .  48
+     7.80. publicKey . . . . . . . . . . . . . . . . . . . . . . . .  49
+     7.81. relationshipContentElementGuid  . . . . . . . . . . . . .  49
+     7.82. relationshipStatementElementGuid  . . . . . . . . . . . .  49
+     7.83. relationshipObjectLabel . . . . . . . . . . . . . . . . .  49
+     7.84. relationshipType  . . . . . . . . . . . . . . . . . . . .  50
+     7.85. roleName  . . . . . . . . . . . . . . . . . . . . . . . .  50
+     7.86. sessionStateType  . . . . . . . . . . . . . . . . . . . .  50
+     7.87. statementGuid . . . . . . . . . . . . . . . . . . . . . .  50
+     7.88. statementType . . . . . . . . . . . . . . . . . . . . . .  51
+     7.89. status  . . . . . . . . . . . . . . . . . . . . . . . . .  51
+     7.90. subAdministrativeDomain . . . . . . . . . . . . . . . . .  51
+     7.91. subInterfaceLabel . . . . . . . . . . . . . . . . . . . .  51
+     7.92. superAdministrativeDomain . . . . . . . . . . . . . . . .  51
 
 
 
@@ -226,54 +226,54 @@ Waltermire, et al.        Expires June 4, 2017                  [Page 4]
 Internet-Draft           SACM Information Model            December 2016
 
 
-     7.93. teId  . . . . . . . . . . . . . . . . . . . . . . . . . .  52
-     7.94. timestampType . . . . . . . . . . . . . . . . . . . . . .  52
-     7.95. unitsReceived . . . . . . . . . . . . . . . . . . . . . .  52
-     7.96. unitsSent . . . . . . . . . . . . . . . . . . . . . . . .  53
-     7.97. userDirectory . . . . . . . . . . . . . . . . . . . . . .  53
-     7.98. sacmUserId  . . . . . . . . . . . . . . . . . . . . . . .  53
-     7.99. webSite . . . . . . . . . . . . . . . . . . . . . . . . .  53
-     7.100. WGS84Longitude . . . . . . . . . . . . . . . . . . . . .  54
-     7.101. WGS84Latitude  . . . . . . . . . . . . . . . . . . . . .  54
-     7.102. WGS84Altitude  . . . . . . . . . . . . . . . . . . . . .  54
-     7.103. hardwareSerialNumber . . . . . . . . . . . . . . . . . .  54
-     7.104. interfaceName  . . . . . . . . . . . . . . . . . . . . .  54
-     7.105. interfaceIndex . . . . . . . . . . . . . . . . . . . . .  55
-     7.106. interfaceMacAddress  . . . . . . . . . . . . . . . . . .  55
-     7.107. interfaceType  . . . . . . . . . . . . . . . . . . . . .  55
-     7.108. interfaceFlags . . . . . . . . . . . . . . . . . . . . .  55
-     7.109. networkInterface . . . . . . . . . . . . . . . . . . . .  56
-     7.110. softwareIdentifier . . . . . . . . . . . . . . . . . . .  56
-     7.111. softwareTitle  . . . . . . . . . . . . . . . . . . . . .  56
-     7.112. softwareCreator  . . . . . . . . . . . . . . . . . . . .  57
-     7.113. simpleSoftwareVersion  . . . . . . . . . . . . . . . . .  57
-     7.114. rpmSoftwareVersion . . . . . . . . . . . . . . . . . . .  57
-     7.115. ciscoTrainSoftwareVersion  . . . . . . . . . . . . . . .  57
-     7.116. softwareVersion  . . . . . . . . . . . . . . . . . . . .  57
-     7.117. softwareLastUpdated  . . . . . . . . . . . . . . . . . .  58
-     7.118. softwareInstance . . . . . . . . . . . . . . . . . . . .  58
-     7.119. globallyUniqueIdentifier . . . . . . . . . . . . . . . .  58
-     7.120. creationTimestamp  . . . . . . . . . . . . . . . . . . .  59
-     7.121. collectionTimestamp  . . . . . . . . . . . . . . . . . .  59
-     7.122. publicationTimestamp . . . . . . . . . . . . . . . . . .  59
-     7.123. relayTimestamp . . . . . . . . . . . . . . . . . . . . .  59
-     7.124. storageTimestamp . . . . . . . . . . . . . . . . . . . .  59
-     7.125. type . . . . . . . . . . . . . . . . . . . . . . . . . .  60
-     7.126. protocolIdentifier . . . . . . . . . . . . . . . . . . .  60
-     7.127. sourceTransportPort  . . . . . . . . . . . . . . . . . .  60
-     7.128. sourceIPv4PrefixLength . . . . . . . . . . . . . . . . .  60
-     7.129. ingressInterface . . . . . . . . . . . . . . . . . . . .  61
-     7.130. destinationTransportPort . . . . . . . . . . . . . . . .  61
-     7.131. sourceIPv6PrefixLength . . . . . . . . . . . . . . . . .  61
-     7.132. sourceIPv4Prefix . . . . . . . . . . . . . . . . . . . .  61
-     7.133. destinationIPv4Prefix  . . . . . . . . . . . . . . . . .  62
-     7.134. sourceMacAddress . . . . . . . . . . . . . . . . . . . .  62
-     7.135. ipVersion  . . . . . . . . . . . . . . . . . . . . . . .  62
-     7.136. interfaceDescription . . . . . . . . . . . . . . . . . .  62
-     7.137. applicationDescription . . . . . . . . . . . . . . . . .  62
-     7.138. applicationId  . . . . . . . . . . . . . . . . . . . . .  62
-     7.139. applicationName  . . . . . . . . . . . . . . . . . . . .  63
-     7.140. exporterIPv4Address  . . . . . . . . . . . . . . . . . .  63
+     7.93. superInterfaceLabel . . . . . . . . . . . . . . . . . . .  52
+     7.94. teAssessmentState . . . . . . . . . . . . . . . . . . . .  52
+     7.95. teLabel . . . . . . . . . . . . . . . . . . . . . . . . .  52
+     7.96. teId  . . . . . . . . . . . . . . . . . . . . . . . . . .  52
+     7.97. timestampType . . . . . . . . . . . . . . . . . . . . . .  53
+     7.98. unitsReceived . . . . . . . . . . . . . . . . . . . . . .  53
+     7.99. unitsSent . . . . . . . . . . . . . . . . . . . . . . . .  53
+     7.100. userDirectory  . . . . . . . . . . . . . . . . . . . . .  53
+     7.101. sacmUserId . . . . . . . . . . . . . . . . . . . . . . .  54
+     7.102. webSite  . . . . . . . . . . . . . . . . . . . . . . . .  54
+     7.103. WGS84Longitude . . . . . . . . . . . . . . . . . . . . .  54
+     7.104. WGS84Latitude  . . . . . . . . . . . . . . . . . . . . .  54
+     7.105. WGS84Altitude  . . . . . . . . . . . . . . . . . . . . .  54
+     7.106. hardwareSerialNumber . . . . . . . . . . . . . . . . . .  55
+     7.107. interfaceName  . . . . . . . . . . . . . . . . . . . . .  55
+     7.108. interfaceIndex . . . . . . . . . . . . . . . . . . . . .  55
+     7.109. interfaceMacAddress  . . . . . . . . . . . . . . . . . .  55
+     7.110. interfaceType  . . . . . . . . . . . . . . . . . . . . .  56
+     7.111. interfaceFlags . . . . . . . . . . . . . . . . . . . . .  56
+     7.112. networkInterface . . . . . . . . . . . . . . . . . . . .  56
+     7.113. softwareIdentifier . . . . . . . . . . . . . . . . . . .  57
+     7.114. softwareTitle  . . . . . . . . . . . . . . . . . . . . .  57
+     7.115. softwareCreator  . . . . . . . . . . . . . . . . . . . .  57
+     7.116. simpleSoftwareVersion  . . . . . . . . . . . . . . . . .  57
+     7.117. rpmSoftwareVersion . . . . . . . . . . . . . . . . . . .  57
+     7.118. ciscoTrainSoftwareVersion  . . . . . . . . . . . . . . .  58
+     7.119. softwareVersion  . . . . . . . . . . . . . . . . . . . .  58
+     7.120. softwareLastUpdated  . . . . . . . . . . . . . . . . . .  58
+     7.121. softwareInstance . . . . . . . . . . . . . . . . . . . .  58
+     7.122. globallyUniqueIdentifier . . . . . . . . . . . . . . . .  59
+     7.123. creationTimestamp  . . . . . . . . . . . . . . . . . . .  59
+     7.124. collectionTimestamp  . . . . . . . . . . . . . . . . . .  59
+     7.125. publicationTimestamp . . . . . . . . . . . . . . . . . .  59
+     7.126. relayTimestamp . . . . . . . . . . . . . . . . . . . . .  59
+     7.127. storageTimestamp . . . . . . . . . . . . . . . . . . . .  60
+     7.128. type . . . . . . . . . . . . . . . . . . . . . . . . . .  60
+     7.129. protocolIdentifier . . . . . . . . . . . . . . . . . . .  60
+     7.130. sourceTransportPort  . . . . . . . . . . . . . . . . . .  60
+     7.131. sourceIPv4PrefixLength . . . . . . . . . . . . . . . . .  61
+     7.132. ingressInterface . . . . . . . . . . . . . . . . . . . .  61
+     7.133. destinationTransportPort . . . . . . . . . . . . . . . .  61
+     7.134. sourceIPv6PrefixLength . . . . . . . . . . . . . . . . .  61
+     7.135. sourceIPv4Prefix . . . . . . . . . . . . . . . . . . . .  62
+     7.136. destinationIPv4Prefix  . . . . . . . . . . . . . . . . .  62
+     7.137. sourceMacAddress . . . . . . . . . . . . . . . . . . . .  62
+     7.138. ipVersion  . . . . . . . . . . . . . . . . . . . . . . .  62
+     7.139. interfaceDescription . . . . . . . . . . . . . . . . . .  62
+     7.140. applicationDescription . . . . . . . . . . . . . . . . .  62
 
 
 
@@ -282,54 +282,54 @@ Waltermire, et al.        Expires June 4, 2017                  [Page 5]
 Internet-Draft           SACM Information Model            December 2016
 
 
-     7.141. exporterIPv6Address  . . . . . . . . . . . . . . . . . .  63
-     7.142. portId . . . . . . . . . . . . . . . . . . . . . . . . .  63
-     7.143. templateId . . . . . . . . . . . . . . . . . . . . . . .  64
-     7.144. collectorIPv4Address . . . . . . . . . . . . . . . . . .  64
-     7.145. collectorIPv6Address . . . . . . . . . . . . . . . . . .  64
-     7.146. informationElementIndex  . . . . . . . . . . . . . . . .  64
-     7.147. informationElementId . . . . . . . . . . . . . . . . . .  65
-     7.148. informationElementDataType . . . . . . . . . . . . . . .  65
-     7.149. informationElementDescription  . . . . . . . . . . . . .  65
-     7.150. informationElementName . . . . . . . . . . . . . . . . .  66
-     7.151. informationElementRangeBegin . . . . . . . . . . . . . .  66
-     7.152. informationElementRangeEnd . . . . . . . . . . . . . . .  66
-     7.153. informationElementSemantics  . . . . . . . . . . . . . .  67
-     7.154. informationElementUnits  . . . . . . . . . . . . . . . .  67
-     7.155. applicationCategoryName  . . . . . . . . . . . . . . . .  68
-     7.156. mibObjectValueInteger  . . . . . . . . . . . . . . . . .  68
-     7.157. mibObjectValueOctetString  . . . . . . . . . . . . . . .  69
-     7.158. mibObjectValueOID  . . . . . . . . . . . . . . . . . . .  69
-     7.159. mibObjectValueBits . . . . . . . . . . . . . . . . . . .  69
-     7.160. mibObjectValueIPAddress  . . . . . . . . . . . . . . . .  70
-     7.161. mibObjectValueCounter  . . . . . . . . . . . . . . . . .  70
-     7.162. mibObjectValueGauge  . . . . . . . . . . . . . . . . . .  71
-     7.163. mibObjectValueTimeTicks  . . . . . . . . . . . . . . . .  71
-     7.164. mibObjectValueUnsigned . . . . . . . . . . . . . . . . .  72
-     7.165. mibObjectValueTable  . . . . . . . . . . . . . . . . . .  72
-     7.166. mibObjectValueRow  . . . . . . . . . . . . . . . . . . .  72
-     7.167. mibObjectIdentifier  . . . . . . . . . . . . . . . . . .  73
-     7.168. mibSubIdentifier . . . . . . . . . . . . . . . . . . . .  73
-     7.169. mibIndexIndicator  . . . . . . . . . . . . . . . . . . .  73
-     7.170. mibCaptureTimeSemantics  . . . . . . . . . . . . . . . .  74
-     7.171. mibContextEngineID . . . . . . . . . . . . . . . . . . .  75
-     7.172. mibContextName . . . . . . . . . . . . . . . . . . . . .  76
-     7.173. mibObjectName  . . . . . . . . . . . . . . . . . . . . .  76
-     7.174. mibObjectDescription . . . . . . . . . . . . . . . . . .  76
-     7.175. mibObjectSyntax  . . . . . . . . . . . . . . . . . . . .  76
-     7.176. mibModuleName  . . . . . . . . . . . . . . . . . . . . .  76
-     7.177. interface  . . . . . . . . . . . . . . . . . . . . . . .  77
-     7.178. iflisteners  . . . . . . . . . . . . . . . . . . . . . .  77
-     7.179. physicalProtocol . . . . . . . . . . . . . . . . . . . .  77
-     7.180. hwAddress  . . . . . . . . . . . . . . . . . . . . . . .  78
-     7.181. programName  . . . . . . . . . . . . . . . . . . . . . .  79
-     7.182. userId . . . . . . . . . . . . . . . . . . . . . . . . .  79
-     7.183. inetlisteningserver  . . . . . . . . . . . . . . . . . .  79
-     7.184. transportProtocol  . . . . . . . . . . . . . . . . . . .  79
-     7.185. localAddress . . . . . . . . . . . . . . . . . . . . . .  79
-     7.186. localPort  . . . . . . . . . . . . . . . . . . . . . . .  80
-     7.187. localFullAddress . . . . . . . . . . . . . . . . . . . .  80
-     7.188. foreignAddress . . . . . . . . . . . . . . . . . . . . .  80
+     7.141. applicationId  . . . . . . . . . . . . . . . . . . . . .  63
+     7.142. applicationName  . . . . . . . . . . . . . . . . . . . .  63
+     7.143. exporterIPv4Address  . . . . . . . . . . . . . . . . . .  63
+     7.144. exporterIPv6Address  . . . . . . . . . . . . . . . . . .  63
+     7.145. portId . . . . . . . . . . . . . . . . . . . . . . . . .  64
+     7.146. templateId . . . . . . . . . . . . . . . . . . . . . . .  64
+     7.147. collectorIPv4Address . . . . . . . . . . . . . . . . . .  64
+     7.148. collectorIPv6Address . . . . . . . . . . . . . . . . . .  64
+     7.149. informationElementIndex  . . . . . . . . . . . . . . . .  65
+     7.150. informationElementId . . . . . . . . . . . . . . . . . .  65
+     7.151. informationElementDataType . . . . . . . . . . . . . . .  65
+     7.152. informationElementDescription  . . . . . . . . . . . . .  65
+     7.153. informationElementName . . . . . . . . . . . . . . . . .  66
+     7.154. informationElementRangeBegin . . . . . . . . . . . . . .  66
+     7.155. informationElementRangeEnd . . . . . . . . . . . . . . .  66
+     7.156. informationElementSemantics  . . . . . . . . . . . . . .  67
+     7.157. informationElementUnits  . . . . . . . . . . . . . . . .  67
+     7.158. applicationCategoryName  . . . . . . . . . . . . . . . .  68
+     7.159. mibObjectValueInteger  . . . . . . . . . . . . . . . . .  68
+     7.160. mibObjectValueOctetString  . . . . . . . . . . . . . . .  69
+     7.161. mibObjectValueOID  . . . . . . . . . . . . . . . . . . .  69
+     7.162. mibObjectValueBits . . . . . . . . . . . . . . . . . . .  69
+     7.163. mibObjectValueIPAddress  . . . . . . . . . . . . . . . .  70
+     7.164. mibObjectValueCounter  . . . . . . . . . . . . . . . . .  70
+     7.165. mibObjectValueGauge  . . . . . . . . . . . . . . . . . .  71
+     7.166. mibObjectValueTimeTicks  . . . . . . . . . . . . . . . .  71
+     7.167. mibObjectValueUnsigned . . . . . . . . . . . . . . . . .  72
+     7.168. mibObjectValueTable  . . . . . . . . . . . . . . . . . .  72
+     7.169. mibObjectValueRow  . . . . . . . . . . . . . . . . . . .  72
+     7.170. mibObjectIdentifier  . . . . . . . . . . . . . . . . . .  73
+     7.171. mibSubIdentifier . . . . . . . . . . . . . . . . . . . .  73
+     7.172. mibIndexIndicator  . . . . . . . . . . . . . . . . . . .  73
+     7.173. mibCaptureTimeSemantics  . . . . . . . . . . . . . . . .  74
+     7.174. mibContextEngineID . . . . . . . . . . . . . . . . . . .  75
+     7.175. mibContextName . . . . . . . . . . . . . . . . . . . . .  76
+     7.176. mibObjectName  . . . . . . . . . . . . . . . . . . . . .  76
+     7.177. mibObjectDescription . . . . . . . . . . . . . . . . . .  76
+     7.178. mibObjectSyntax  . . . . . . . . . . . . . . . . . . . .  76
+     7.179. mibModuleName  . . . . . . . . . . . . . . . . . . . . .  76
+     7.180. interface  . . . . . . . . . . . . . . . . . . . . . . .  77
+     7.181. iflisteners  . . . . . . . . . . . . . . . . . . . . . .  77
+     7.182. physicalProtocol . . . . . . . . . . . . . . . . . . . .  77
+     7.183. hwAddress  . . . . . . . . . . . . . . . . . . . . . . .  78
+     7.184. programName  . . . . . . . . . . . . . . . . . . . . . .  79
+     7.185. userId . . . . . . . . . . . . . . . . . . . . . . . . .  79
+     7.186. inetlisteningserver  . . . . . . . . . . . . . . . . . .  79
+     7.187. transportProtocol  . . . . . . . . . . . . . . . . . . .  79
+     7.188. localAddress . . . . . . . . . . . . . . . . . . . . . .  79
 
 
 
@@ -338,54 +338,54 @@ Waltermire, et al.        Expires June 4, 2017                  [Page 6]
 Internet-Draft           SACM Information Model            December 2016
 
 
-     7.189. foreignFullAddress . . . . . . . . . . . . . . . . . . .  80
-     7.190. selinuxboolean . . . . . . . . . . . . . . . . . . . . .  80
-     7.191. selinuxName  . . . . . . . . . . . . . . . . . . . . . .  81
-     7.192. currentStatus  . . . . . . . . . . . . . . . . . . . . .  81
-     7.193. pendingStatus  . . . . . . . . . . . . . . . . . . . . .  81
-     7.194. selinuxsecuritycontext . . . . . . . . . . . . . . . . .  81
-     7.195. filepath . . . . . . . . . . . . . . . . . . . . . . . .  82
-     7.196. path . . . . . . . . . . . . . . . . . . . . . . . . . .  82
-     7.197. filename . . . . . . . . . . . . . . . . . . . . . . . .  82
-     7.198. pid  . . . . . . . . . . . . . . . . . . . . . . . . . .  82
-     7.199. role . . . . . . . . . . . . . . . . . . . . . . . . . .  82
-     7.200. domainType . . . . . . . . . . . . . . . . . . . . . . .  83
-     7.201. lowSensitivity . . . . . . . . . . . . . . . . . . . . .  83
-     7.202. lowCategory  . . . . . . . . . . . . . . . . . . . . . .  83
-     7.203. highSensitivity  . . . . . . . . . . . . . . . . . . . .  83
-     7.204. highCategory . . . . . . . . . . . . . . . . . . . . . .  83
-     7.205. rawlowSensitivity  . . . . . . . . . . . . . . . . . . .  84
-     7.206. rawlowCategory . . . . . . . . . . . . . . . . . . . . .  84
-     7.207. rawhighSensitivity . . . . . . . . . . . . . . . . . . .  84
-     7.208. rawhighCategory  . . . . . . . . . . . . . . . . . . . .  84
-     7.209. systemdunitdependency  . . . . . . . . . . . . . . . . .  84
-     7.210. unit . . . . . . . . . . . . . . . . . . . . . . . . . .  85
-     7.211. dependency . . . . . . . . . . . . . . . . . . . . . . .  85
-     7.212. systemdunitproperty  . . . . . . . . . . . . . . . . . .  85
-     7.213. property . . . . . . . . . . . . . . . . . . . . . . . .  85
-     7.214. systemdunitValue . . . . . . . . . . . . . . . . . . . .  85
-     7.215. file . . . . . . . . . . . . . . . . . . . . . . . . . .  86
-     7.216. fileType . . . . . . . . . . . . . . . . . . . . . . . .  86
-     7.217. groupId  . . . . . . . . . . . . . . . . . . . . . . . .  86
-     7.218. aTime  . . . . . . . . . . . . . . . . . . . . . . . . .  86
-     7.219. cTime  . . . . . . . . . . . . . . . . . . . . . . . . .  86
-     7.220. mTime  . . . . . . . . . . . . . . . . . . . . . . . . .  87
-     7.221. size . . . . . . . . . . . . . . . . . . . . . . . . . .  87
-     7.222. suid . . . . . . . . . . . . . . . . . . . . . . . . . .  87
-     7.223. sgid . . . . . . . . . . . . . . . . . . . . . . . . . .  87
-     7.224. sticky . . . . . . . . . . . . . . . . . . . . . . . . .  87
-     7.225. hasExtendedAcl . . . . . . . . . . . . . . . . . . . . .  88
-     7.226. inetd  . . . . . . . . . . . . . . . . . . . . . . . . .  88
-     7.227. serverProgram  . . . . . . . . . . . . . . . . . . . . .  88
-     7.228. endpointType . . . . . . . . . . . . . . . . . . . . . .  88
-     7.229. execAsUser . . . . . . . . . . . . . . . . . . . . . . .  89
-     7.230. waitStatus . . . . . . . . . . . . . . . . . . . . . . .  89
-     7.231. inetAddr . . . . . . . . . . . . . . . . . . . . . . . .  90
-     7.232. netmask  . . . . . . . . . . . . . . . . . . . . . . . .  90
-     7.233. passwordInfo . . . . . . . . . . . . . . . . . . . . . .  90
-     7.234. username . . . . . . . . . . . . . . . . . . . . . . . .  91
-     7.235. password . . . . . . . . . . . . . . . . . . . . . . . .  91
-     7.236. gcos . . . . . . . . . . . . . . . . . . . . . . . . . .  91
+     7.189. localPort  . . . . . . . . . . . . . . . . . . . . . . .  80
+     7.190. localFullAddress . . . . . . . . . . . . . . . . . . . .  80
+     7.191. foreignAddress . . . . . . . . . . . . . . . . . . . . .  80
+     7.192. foreignFullAddress . . . . . . . . . . . . . . . . . . .  80
+     7.193. selinuxboolean . . . . . . . . . . . . . . . . . . . . .  80
+     7.194. selinuxName  . . . . . . . . . . . . . . . . . . . . . .  81
+     7.195. currentStatus  . . . . . . . . . . . . . . . . . . . . .  81
+     7.196. pendingStatus  . . . . . . . . . . . . . . . . . . . . .  81
+     7.197. selinuxsecuritycontext . . . . . . . . . . . . . . . . .  81
+     7.198. filepath . . . . . . . . . . . . . . . . . . . . . . . .  82
+     7.199. path . . . . . . . . . . . . . . . . . . . . . . . . . .  82
+     7.200. filename . . . . . . . . . . . . . . . . . . . . . . . .  82
+     7.201. pid  . . . . . . . . . . . . . . . . . . . . . . . . . .  82
+     7.202. role . . . . . . . . . . . . . . . . . . . . . . . . . .  82
+     7.203. domainType . . . . . . . . . . . . . . . . . . . . . . .  83
+     7.204. lowSensitivity . . . . . . . . . . . . . . . . . . . . .  83
+     7.205. lowCategory  . . . . . . . . . . . . . . . . . . . . . .  83
+     7.206. highSensitivity  . . . . . . . . . . . . . . . . . . . .  83
+     7.207. highCategory . . . . . . . . . . . . . . . . . . . . . .  83
+     7.208. rawlowSensitivity  . . . . . . . . . . . . . . . . . . .  84
+     7.209. rawlowCategory . . . . . . . . . . . . . . . . . . . . .  84
+     7.210. rawhighSensitivity . . . . . . . . . . . . . . . . . . .  84
+     7.211. rawhighCategory  . . . . . . . . . . . . . . . . . . . .  84
+     7.212. systemdunitdependency  . . . . . . . . . . . . . . . . .  84
+     7.213. unit . . . . . . . . . . . . . . . . . . . . . . . . . .  85
+     7.214. dependency . . . . . . . . . . . . . . . . . . . . . . .  85
+     7.215. systemdunitproperty  . . . . . . . . . . . . . . . . . .  85
+     7.216. property . . . . . . . . . . . . . . . . . . . . . . . .  85
+     7.217. systemdunitValue . . . . . . . . . . . . . . . . . . . .  85
+     7.218. file . . . . . . . . . . . . . . . . . . . . . . . . . .  86
+     7.219. fileType . . . . . . . . . . . . . . . . . . . . . . . .  86
+     7.220. groupId  . . . . . . . . . . . . . . . . . . . . . . . .  86
+     7.221. aTime  . . . . . . . . . . . . . . . . . . . . . . . . .  86
+     7.222. cTime  . . . . . . . . . . . . . . . . . . . . . . . . .  86
+     7.223. mTime  . . . . . . . . . . . . . . . . . . . . . . . . .  87
+     7.224. size . . . . . . . . . . . . . . . . . . . . . . . . . .  87
+     7.225. suid . . . . . . . . . . . . . . . . . . . . . . . . . .  87
+     7.226. sgid . . . . . . . . . . . . . . . . . . . . . . . . . .  87
+     7.227. sticky . . . . . . . . . . . . . . . . . . . . . . . . .  87
+     7.228. hasExtendedAcl . . . . . . . . . . . . . . . . . . . . .  88
+     7.229. inetd  . . . . . . . . . . . . . . . . . . . . . . . . .  88
+     7.230. serverProgram  . . . . . . . . . . . . . . . . . . . . .  88
+     7.231. endpointType . . . . . . . . . . . . . . . . . . . . . .  88
+     7.232. execAsUser . . . . . . . . . . . . . . . . . . . . . . .  89
+     7.233. waitStatus . . . . . . . . . . . . . . . . . . . . . . .  89
+     7.234. inetAddr . . . . . . . . . . . . . . . . . . . . . . . .  90
+     7.235. netmask  . . . . . . . . . . . . . . . . . . . . . . . .  90
+     7.236. passwordInfo . . . . . . . . . . . . . . . . . . . . . .  90
 
 
 
@@ -394,54 +394,54 @@ Waltermire, et al.        Expires June 4, 2017                  [Page 7]
 Internet-Draft           SACM Information Model            December 2016
 
 
-     7.237. homeDir  . . . . . . . . . . . . . . . . . . . . . . . .  91
-     7.238. loginShell . . . . . . . . . . . . . . . . . . . . . . .  91
-     7.239. lastLogin  . . . . . . . . . . . . . . . . . . . . . . .  92
-     7.240. process  . . . . . . . . . . . . . . . . . . . . . . . .  92
-     7.241. commandLine  . . . . . . . . . . . . . . . . . . . . . .  92
-     7.242. ppid . . . . . . . . . . . . . . . . . . . . . . . . . .  92
-     7.243. priority . . . . . . . . . . . . . . . . . . . . . . . .  93
-     7.244. startTime  . . . . . . . . . . . . . . . . . . . . . . .  93
-     7.245. routingtable . . . . . . . . . . . . . . . . . . . . . .  93
-     7.246. destination  . . . . . . . . . . . . . . . . . . . . . .  93
-     7.247. gateway  . . . . . . . . . . . . . . . . . . . . . . . .  93
-     7.248. runlevelInfo . . . . . . . . . . . . . . . . . . . . . .  94
-     7.249. runlevel . . . . . . . . . . . . . . . . . . . . . . . .  94
-     7.250. start  . . . . . . . . . . . . . . . . . . . . . . . . .  94
-     7.251. kill . . . . . . . . . . . . . . . . . . . . . . . . . .  94
-     7.252. shadowItem . . . . . . . . . . . . . . . . . . . . . . .  94
-     7.253. chgLst . . . . . . . . . . . . . . . . . . . . . . . . .  95
-     7.254. chgAllow . . . . . . . . . . . . . . . . . . . . . . . .  95
-     7.255. chgReq . . . . . . . . . . . . . . . . . . . . . . . . .  95
-     7.256. expWarn  . . . . . . . . . . . . . . . . . . . . . . . .  95
-     7.257. expInact . . . . . . . . . . . . . . . . . . . . . . . .  95
-     7.258. expDate  . . . . . . . . . . . . . . . . . . . . . . . .  96
-     7.259. encryptMethod  . . . . . . . . . . . . . . . . . . . . .  96
-     7.260. symlink  . . . . . . . . . . . . . . . . . . . . . . . .  96
-     7.261. symlinkFilepath  . . . . . . . . . . . . . . . . . . . .  96
-     7.262. canonicalPath  . . . . . . . . . . . . . . . . . . . . .  97
-     7.263. sysctl . . . . . . . . . . . . . . . . . . . . . . . . .  97
-     7.264. kernelParameterName  . . . . . . . . . . . . . . . . . .  97
-     7.265. kernelParameterValue . . . . . . . . . . . . . . . . . .  97
-     7.266. uname  . . . . . . . . . . . . . . . . . . . . . . . . .  98
-     7.267. machineClass . . . . . . . . . . . . . . . . . . . . . .  98
-     7.268. nodeName . . . . . . . . . . . . . . . . . . . . . . . .  98
-     7.269. osName . . . . . . . . . . . . . . . . . . . . . . . . .  98
-     7.270. osRelease  . . . . . . . . . . . . . . . . . . . . . . .  98
-     7.271. processorType  . . . . . . . . . . . . . . . . . . . . .  99
-     7.272. internetService  . . . . . . . . . . . . . . . . . . . .  99
-     7.273. serviceProtocol  . . . . . . . . . . . . . . . . . . . .  99
-     7.274. serviceName  . . . . . . . . . . . . . . . . . . . . . .  99
-     7.275. flags  . . . . . . . . . . . . . . . . . . . . . . . . .  99
-     7.276. noAccess . . . . . . . . . . . . . . . . . . . . . . . . 100
-     7.277. onlyFrom . . . . . . . . . . . . . . . . . . . . . . . . 100
-     7.278. port . . . . . . . . . . . . . . . . . . . . . . . . . . 100
-     7.279. server . . . . . . . . . . . . . . . . . . . . . . . . . 100
-     7.280. serverArguments  . . . . . . . . . . . . . . . . . . . . 100
-     7.281. socketType . . . . . . . . . . . . . . . . . . . . . . . 101
-     7.282. registeredServiceType  . . . . . . . . . . . . . . . . . 101
-     7.283. wait . . . . . . . . . . . . . . . . . . . . . . . . . . 101
-     7.284. disabled . . . . . . . . . . . . . . . . . . . . . . . . 102
+     7.237. username . . . . . . . . . . . . . . . . . . . . . . . .  91
+     7.238. password . . . . . . . . . . . . . . . . . . . . . . . .  91
+     7.239. gcos . . . . . . . . . . . . . . . . . . . . . . . . . .  91
+     7.240. homeDir  . . . . . . . . . . . . . . . . . . . . . . . .  91
+     7.241. loginShell . . . . . . . . . . . . . . . . . . . . . . .  91
+     7.242. lastLogin  . . . . . . . . . . . . . . . . . . . . . . .  92
+     7.243. process  . . . . . . . . . . . . . . . . . . . . . . . .  92
+     7.244. commandLine  . . . . . . . . . . . . . . . . . . . . . .  92
+     7.245. ppid . . . . . . . . . . . . . . . . . . . . . . . . . .  92
+     7.246. priority . . . . . . . . . . . . . . . . . . . . . . . .  93
+     7.247. startTime  . . . . . . . . . . . . . . . . . . . . . . .  93
+     7.248. routingtable . . . . . . . . . . . . . . . . . . . . . .  93
+     7.249. destination  . . . . . . . . . . . . . . . . . . . . . .  93
+     7.250. gateway  . . . . . . . . . . . . . . . . . . . . . . . .  93
+     7.251. runlevelInfo . . . . . . . . . . . . . . . . . . . . . .  94
+     7.252. runlevel . . . . . . . . . . . . . . . . . . . . . . . .  94
+     7.253. start  . . . . . . . . . . . . . . . . . . . . . . . . .  94
+     7.254. kill . . . . . . . . . . . . . . . . . . . . . . . . . .  94
+     7.255. shadowItem . . . . . . . . . . . . . . . . . . . . . . .  94
+     7.256. chgLst . . . . . . . . . . . . . . . . . . . . . . . . .  95
+     7.257. chgAllow . . . . . . . . . . . . . . . . . . . . . . . .  95
+     7.258. chgReq . . . . . . . . . . . . . . . . . . . . . . . . .  95
+     7.259. expWarn  . . . . . . . . . . . . . . . . . . . . . . . .  95
+     7.260. expInact . . . . . . . . . . . . . . . . . . . . . . . .  95
+     7.261. expDate  . . . . . . . . . . . . . . . . . . . . . . . .  96
+     7.262. encryptMethod  . . . . . . . . . . . . . . . . . . . . .  96
+     7.263. symlink  . . . . . . . . . . . . . . . . . . . . . . . .  96
+     7.264. symlinkFilepath  . . . . . . . . . . . . . . . . . . . .  96
+     7.265. canonicalPath  . . . . . . . . . . . . . . . . . . . . .  97
+     7.266. sysctl . . . . . . . . . . . . . . . . . . . . . . . . .  97
+     7.267. kernelParameterName  . . . . . . . . . . . . . . . . . .  97
+     7.268. kernelParameterValue . . . . . . . . . . . . . . . . . .  97
+     7.269. uname  . . . . . . . . . . . . . . . . . . . . . . . . .  98
+     7.270. machineClass . . . . . . . . . . . . . . . . . . . . . .  98
+     7.271. nodeName . . . . . . . . . . . . . . . . . . . . . . . .  98
+     7.272. osName . . . . . . . . . . . . . . . . . . . . . . . . .  98
+     7.273. osRelease  . . . . . . . . . . . . . . . . . . . . . . .  98
+     7.274. processorType  . . . . . . . . . . . . . . . . . . . . .  99
+     7.275. internetService  . . . . . . . . . . . . . . . . . . . .  99
+     7.276. serviceProtocol  . . . . . . . . . . . . . . . . . . . .  99
+     7.277. serviceName  . . . . . . . . . . . . . . . . . . . . . .  99
+     7.278. flags  . . . . . . . . . . . . . . . . . . . . . . . . .  99
+     7.279. noAccess . . . . . . . . . . . . . . . . . . . . . . . . 100
+     7.280. onlyFrom . . . . . . . . . . . . . . . . . . . . . . . . 100
+     7.281. port . . . . . . . . . . . . . . . . . . . . . . . . . . 100
+     7.282. server . . . . . . . . . . . . . . . . . . . . . . . . . 100
+     7.283. serverArguments  . . . . . . . . . . . . . . . . . . . . 100
+     7.284. socketType . . . . . . . . . . . . . . . . . . . . . . . 101
 
 
 
@@ -450,54 +450,54 @@ Waltermire, et al.        Expires June 4, 2017                  [Page 8]
 Internet-Draft           SACM Information Model            December 2016
 
 
-     7.285. windowsView  . . . . . . . . . . . . . . . . . . . . . . 102
-     7.286. fileauditedpermissions . . . . . . . . . . . . . . . . . 102
-     7.287. trusteeName  . . . . . . . . . . . . . . . . . . . . . . 103
-     7.288. auditStandardDelete  . . . . . . . . . . . . . . . . . . 103
-     7.289. auditStandardReadControl . . . . . . . . . . . . . . . . 103
-     7.290. auditStandardWriteDac  . . . . . . . . . . . . . . . . . 104
-     7.291. auditStandardWriteOwner  . . . . . . . . . . . . . . . . 104
-     7.292. auditStandardSynchronize . . . . . . . . . . . . . . . . 105
-     7.293. auditAccessSystemSecurity  . . . . . . . . . . . . . . . 105
-     7.294. auditGenericRead . . . . . . . . . . . . . . . . . . . . 106
-     7.295. auditGenericWrite  . . . . . . . . . . . . . . . . . . . 106
-     7.296. auditGenericExecute  . . . . . . . . . . . . . . . . . . 107
-     7.297. auditGenericAll  . . . . . . . . . . . . . . . . . . . . 107
-     7.298. auditFileReadData  . . . . . . . . . . . . . . . . . . . 108
-     7.299. auditFileWriteData . . . . . . . . . . . . . . . . . . . 108
-     7.300. auditFileAppendData  . . . . . . . . . . . . . . . . . . 109
-     7.301. auditFileReadEa  . . . . . . . . . . . . . . . . . . . . 109
-     7.302. auditFileWriteEa . . . . . . . . . . . . . . . . . . . . 110
-     7.303. auditFileExecute . . . . . . . . . . . . . . . . . . . . 110
-     7.304. auditFileDeleteChild . . . . . . . . . . . . . . . . . . 111
-     7.305. auditFileReadAttributes  . . . . . . . . . . . . . . . . 111
-     7.306. auditFileWriteAttributes . . . . . . . . . . . . . . . . 112
-     7.307. fileeffectiverights  . . . . . . . . . . . . . . . . . . 112
-     7.308. standardDelete . . . . . . . . . . . . . . . . . . . . . 113
-     7.309. standardReadControl  . . . . . . . . . . . . . . . . . . 113
-     7.310. standardWriteDac . . . . . . . . . . . . . . . . . . . . 113
-     7.311. standardWriteOwner . . . . . . . . . . . . . . . . . . . 114
-     7.312. standardSynchronize  . . . . . . . . . . . . . . . . . . 114
-     7.313. accessSystemSecurity . . . . . . . . . . . . . . . . . . 114
-     7.314. genericRead  . . . . . . . . . . . . . . . . . . . . . . 114
-     7.315. genericWrite . . . . . . . . . . . . . . . . . . . . . . 114
-     7.316. genericExecute . . . . . . . . . . . . . . . . . . . . . 115
-     7.317. genericAll . . . . . . . . . . . . . . . . . . . . . . . 115
-     7.318. fileReadData . . . . . . . . . . . . . . . . . . . . . . 115
-     7.319. fileWriteData  . . . . . . . . . . . . . . . . . . . . . 115
-     7.320. fileAppendData . . . . . . . . . . . . . . . . . . . . . 115
-     7.321. fileReadEa . . . . . . . . . . . . . . . . . . . . . . . 116
-     7.322. fileWriteEa  . . . . . . . . . . . . . . . . . . . . . . 116
-     7.323. fileExecute  . . . . . . . . . . . . . . . . . . . . . . 116
-     7.324. fileDeleteChild  . . . . . . . . . . . . . . . . . . . . 116
-     7.325. fileReadAttributes . . . . . . . . . . . . . . . . . . . 116
-     7.326. fileWriteAttributes  . . . . . . . . . . . . . . . . . . 117
-     7.327. groupInfo  . . . . . . . . . . . . . . . . . . . . . . . 117
-     7.328. group  . . . . . . . . . . . . . . . . . . . . . . . . . 117
-     7.329. subgroup . . . . . . . . . . . . . . . . . . . . . . . . 117
-     7.330. groupSidInfo . . . . . . . . . . . . . . . . . . . . . . 117
-     7.331. userSidInfo  . . . . . . . . . . . . . . . . . . . . . . 118
-     7.332. userSid  . . . . . . . . . . . . . . . . . . . . . . . . 118
+     7.285. registeredServiceType  . . . . . . . . . . . . . . . . . 101
+     7.286. wait . . . . . . . . . . . . . . . . . . . . . . . . . . 101
+     7.287. disabled . . . . . . . . . . . . . . . . . . . . . . . . 102
+     7.288. windowsView  . . . . . . . . . . . . . . . . . . . . . . 102
+     7.289. fileauditedpermissions . . . . . . . . . . . . . . . . . 102
+     7.290. trusteeName  . . . . . . . . . . . . . . . . . . . . . . 103
+     7.291. auditStandardDelete  . . . . . . . . . . . . . . . . . . 103
+     7.292. auditStandardReadControl . . . . . . . . . . . . . . . . 103
+     7.293. auditStandardWriteDac  . . . . . . . . . . . . . . . . . 104
+     7.294. auditStandardWriteOwner  . . . . . . . . . . . . . . . . 104
+     7.295. auditStandardSynchronize . . . . . . . . . . . . . . . . 105
+     7.296. auditAccessSystemSecurity  . . . . . . . . . . . . . . . 105
+     7.297. auditGenericRead . . . . . . . . . . . . . . . . . . . . 106
+     7.298. auditGenericWrite  . . . . . . . . . . . . . . . . . . . 106
+     7.299. auditGenericExecute  . . . . . . . . . . . . . . . . . . 107
+     7.300. auditGenericAll  . . . . . . . . . . . . . . . . . . . . 107
+     7.301. auditFileReadData  . . . . . . . . . . . . . . . . . . . 108
+     7.302. auditFileWriteData . . . . . . . . . . . . . . . . . . . 108
+     7.303. auditFileAppendData  . . . . . . . . . . . . . . . . . . 109
+     7.304. auditFileReadEa  . . . . . . . . . . . . . . . . . . . . 109
+     7.305. auditFileWriteEa . . . . . . . . . . . . . . . . . . . . 110
+     7.306. auditFileExecute . . . . . . . . . . . . . . . . . . . . 110
+     7.307. auditFileDeleteChild . . . . . . . . . . . . . . . . . . 111
+     7.308. auditFileReadAttributes  . . . . . . . . . . . . . . . . 111
+     7.309. auditFileWriteAttributes . . . . . . . . . . . . . . . . 112
+     7.310. fileeffectiverights  . . . . . . . . . . . . . . . . . . 112
+     7.311. standardDelete . . . . . . . . . . . . . . . . . . . . . 113
+     7.312. standardReadControl  . . . . . . . . . . . . . . . . . . 113
+     7.313. standardWriteDac . . . . . . . . . . . . . . . . . . . . 113
+     7.314. standardWriteOwner . . . . . . . . . . . . . . . . . . . 114
+     7.315. standardSynchronize  . . . . . . . . . . . . . . . . . . 114
+     7.316. accessSystemSecurity . . . . . . . . . . . . . . . . . . 114
+     7.317. genericRead  . . . . . . . . . . . . . . . . . . . . . . 114
+     7.318. genericWrite . . . . . . . . . . . . . . . . . . . . . . 114
+     7.319. genericExecute . . . . . . . . . . . . . . . . . . . . . 115
+     7.320. genericAll . . . . . . . . . . . . . . . . . . . . . . . 115
+     7.321. fileReadData . . . . . . . . . . . . . . . . . . . . . . 115
+     7.322. fileWriteData  . . . . . . . . . . . . . . . . . . . . . 115
+     7.323. fileAppendData . . . . . . . . . . . . . . . . . . . . . 115
+     7.324. fileReadEa . . . . . . . . . . . . . . . . . . . . . . . 116
+     7.325. fileWriteEa  . . . . . . . . . . . . . . . . . . . . . . 116
+     7.326. fileExecute  . . . . . . . . . . . . . . . . . . . . . . 116
+     7.327. fileDeleteChild  . . . . . . . . . . . . . . . . . . . . 116
+     7.328. fileReadAttributes . . . . . . . . . . . . . . . . . . . 116
+     7.329. fileWriteAttributes  . . . . . . . . . . . . . . . . . . 117
+     7.330. groupInfo  . . . . . . . . . . . . . . . . . . . . . . . 117
+     7.331. group  . . . . . . . . . . . . . . . . . . . . . . . . . 117
+     7.332. subgroup . . . . . . . . . . . . . . . . . . . . . . . . 117
 
 
 
@@ -506,54 +506,54 @@ Waltermire, et al.        Expires June 4, 2017                  [Page 9]
 Internet-Draft           SACM Information Model            December 2016
 
 
-     7.333. subgroupSid  . . . . . . . . . . . . . . . . . . . . . . 118
-     7.334. lockoutpolicy  . . . . . . . . . . . . . . . . . . . . . 118
-     7.335. forceLogoff  . . . . . . . . . . . . . . . . . . . . . . 118
-     7.336. lockoutDuration  . . . . . . . . . . . . . . . . . . . . 119
-     7.337. lockoutObservationWindow . . . . . . . . . . . . . . . . 119
-     7.338. lockoutThreshold . . . . . . . . . . . . . . . . . . . . 119
-     7.339. passwordpolicy . . . . . . . . . . . . . . . . . . . . . 119
-     7.340. maxPasswdAge . . . . . . . . . . . . . . . . . . . . . . 120
-     7.341. minPasswdAge . . . . . . . . . . . . . . . . . . . . . . 120
-     7.342. minPasswdLen . . . . . . . . . . . . . . . . . . . . . . 120
-     7.343. passwordHistLen  . . . . . . . . . . . . . . . . . . . . 121
-     7.344. passwordComplexity . . . . . . . . . . . . . . . . . . . 121
-     7.345. reversibleEncryption . . . . . . . . . . . . . . . . . . 121
-     7.346. portInfo . . . . . . . . . . . . . . . . . . . . . . . . 121
-     7.347. foreignPort  . . . . . . . . . . . . . . . . . . . . . . 121
-     7.348. printereffectiverights . . . . . . . . . . . . . . . . . 122
-     7.349. printerName  . . . . . . . . . . . . . . . . . . . . . . 122
-     7.350. printerAccessAdminister  . . . . . . . . . . . . . . . . 122
-     7.351. printerAccessUse . . . . . . . . . . . . . . . . . . . . 122
-     7.352. jobAccessAdminister  . . . . . . . . . . . . . . . . . . 122
-     7.353. jobAccessRead  . . . . . . . . . . . . . . . . . . . . . 123
-     7.354. registry . . . . . . . . . . . . . . . . . . . . . . . . 123
-     7.355. registryHive . . . . . . . . . . . . . . . . . . . . . . 123
-     7.356. registryKey  . . . . . . . . . . . . . . . . . . . . . . 124
-     7.357. registryKeyName  . . . . . . . . . . . . . . . . . . . . 124
-     7.358. lastWriteTime  . . . . . . . . . . . . . . . . . . . . . 124
-     7.359. registryKeyType  . . . . . . . . . . . . . . . . . . . . 125
-     7.360. registryKeyValue . . . . . . . . . . . . . . . . . . . . 126
-     7.361. regkeyauditedpermissions . . . . . . . . . . . . . . . . 127
-     7.362. auditKeyQueryValue . . . . . . . . . . . . . . . . . . . 128
-     7.363. auditKeySetValue . . . . . . . . . . . . . . . . . . . . 128
-     7.364. auditKeyCreateSubKey . . . . . . . . . . . . . . . . . . 129
-     7.365. auditKeyEnumerateSubKeys . . . . . . . . . . . . . . . . 129
-     7.366. auditKeyNotify . . . . . . . . . . . . . . . . . . . . . 130
-     7.367. auditKeyCreateLink . . . . . . . . . . . . . . . . . . . 130
-     7.368. auditKeyWow6464Key . . . . . . . . . . . . . . . . . . . 131
-     7.369. auditKeyWow6432Key . . . . . . . . . . . . . . . . . . . 131
-     7.370. auditKeyWow64Res . . . . . . . . . . . . . . . . . . . . 132
-     7.371. regkeyeffectiverights  . . . . . . . . . . . . . . . . . 132
-     7.372. keyQueryValue  . . . . . . . . . . . . . . . . . . . . . 133
-     7.373. keySetValue  . . . . . . . . . . . . . . . . . . . . . . 133
-     7.374. keyCreateSubKey  . . . . . . . . . . . . . . . . . . . . 133
-     7.375. keyEnumerateSubKeys  . . . . . . . . . . . . . . . . . . 134
-     7.376. keyNotify  . . . . . . . . . . . . . . . . . . . . . . . 134
-     7.377. keyCreateLink  . . . . . . . . . . . . . . . . . . . . . 134
-     7.378. keyWow6464Key  . . . . . . . . . . . . . . . . . . . . . 134
-     7.379. keyWow6432Key  . . . . . . . . . . . . . . . . . . . . . 134
-     7.380. keyWow64Res  . . . . . . . . . . . . . . . . . . . . . . 134
+     7.333. groupSidInfo . . . . . . . . . . . . . . . . . . . . . . 117
+     7.334. userSidInfo  . . . . . . . . . . . . . . . . . . . . . . 118
+     7.335. userSid  . . . . . . . . . . . . . . . . . . . . . . . . 118
+     7.336. subgroupSid  . . . . . . . . . . . . . . . . . . . . . . 118
+     7.337. lockoutpolicy  . . . . . . . . . . . . . . . . . . . . . 118
+     7.338. forceLogoff  . . . . . . . . . . . . . . . . . . . . . . 118
+     7.339. lockoutDuration  . . . . . . . . . . . . . . . . . . . . 119
+     7.340. lockoutObservationWindow . . . . . . . . . . . . . . . . 119
+     7.341. lockoutThreshold . . . . . . . . . . . . . . . . . . . . 119
+     7.342. passwordpolicy . . . . . . . . . . . . . . . . . . . . . 119
+     7.343. maxPasswdAge . . . . . . . . . . . . . . . . . . . . . . 120
+     7.344. minPasswdAge . . . . . . . . . . . . . . . . . . . . . . 120
+     7.345. minPasswdLen . . . . . . . . . . . . . . . . . . . . . . 120
+     7.346. passwordHistLen  . . . . . . . . . . . . . . . . . . . . 121
+     7.347. passwordComplexity . . . . . . . . . . . . . . . . . . . 121
+     7.348. reversibleEncryption . . . . . . . . . . . . . . . . . . 121
+     7.349. portInfo . . . . . . . . . . . . . . . . . . . . . . . . 121
+     7.350. foreignPort  . . . . . . . . . . . . . . . . . . . . . . 121
+     7.351. printereffectiverights . . . . . . . . . . . . . . . . . 122
+     7.352. printerName  . . . . . . . . . . . . . . . . . . . . . . 122
+     7.353. printerAccessAdminister  . . . . . . . . . . . . . . . . 122
+     7.354. printerAccessUse . . . . . . . . . . . . . . . . . . . . 122
+     7.355. jobAccessAdminister  . . . . . . . . . . . . . . . . . . 122
+     7.356. jobAccessRead  . . . . . . . . . . . . . . . . . . . . . 123
+     7.357. registry . . . . . . . . . . . . . . . . . . . . . . . . 123
+     7.358. registryHive . . . . . . . . . . . . . . . . . . . . . . 123
+     7.359. registryKey  . . . . . . . . . . . . . . . . . . . . . . 124
+     7.360. registryKeyName  . . . . . . . . . . . . . . . . . . . . 124
+     7.361. lastWriteTime  . . . . . . . . . . . . . . . . . . . . . 124
+     7.362. registryKeyType  . . . . . . . . . . . . . . . . . . . . 125
+     7.363. registryKeyValue . . . . . . . . . . . . . . . . . . . . 126
+     7.364. regkeyauditedpermissions . . . . . . . . . . . . . . . . 127
+     7.365. auditKeyQueryValue . . . . . . . . . . . . . . . . . . . 128
+     7.366. auditKeySetValue . . . . . . . . . . . . . . . . . . . . 128
+     7.367. auditKeyCreateSubKey . . . . . . . . . . . . . . . . . . 129
+     7.368. auditKeyEnumerateSubKeys . . . . . . . . . . . . . . . . 129
+     7.369. auditKeyNotify . . . . . . . . . . . . . . . . . . . . . 130
+     7.370. auditKeyCreateLink . . . . . . . . . . . . . . . . . . . 130
+     7.371. auditKeyWow6464Key . . . . . . . . . . . . . . . . . . . 131
+     7.372. auditKeyWow6432Key . . . . . . . . . . . . . . . . . . . 131
+     7.373. auditKeyWow64Res . . . . . . . . . . . . . . . . . . . . 132
+     7.374. regkeyeffectiverights  . . . . . . . . . . . . . . . . . 132
+     7.375. keyQueryValue  . . . . . . . . . . . . . . . . . . . . . 133
+     7.376. keySetValue  . . . . . . . . . . . . . . . . . . . . . . 133
+     7.377. keyCreateSubKey  . . . . . . . . . . . . . . . . . . . . 133
+     7.378. keyEnumerateSubKeys  . . . . . . . . . . . . . . . . . . 134
+     7.379. keyNotify  . . . . . . . . . . . . . . . . . . . . . . . 134
+     7.380. keyCreateLink  . . . . . . . . . . . . . . . . . . . . . 134
 
 
 
@@ -562,34 +562,37 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 10]
 Internet-Draft           SACM Information Model            December 2016
 
 
-     7.381. service  . . . . . . . . . . . . . . . . . . . . . . . . 135
-     7.382. displayName  . . . . . . . . . . . . . . . . . . . . . . 135
-     7.383. description  . . . . . . . . . . . . . . . . . . . . . . 135
-     7.384. serviceType  . . . . . . . . . . . . . . . . . . . . . . 135
-     7.385. startType  . . . . . . . . . . . . . . . . . . . . . . . 136
-     7.386. currentState . . . . . . . . . . . . . . . . . . . . . . 137
-     7.387. controlsAccepted . . . . . . . . . . . . . . . . . . . . 138
-     7.388. startName  . . . . . . . . . . . . . . . . . . . . . . . 140
-     7.389. serviceFlag  . . . . . . . . . . . . . . . . . . . . . . 140
-     7.390. dependencies . . . . . . . . . . . . . . . . . . . . . . 140
-     7.391. serviceeffectiverights . . . . . . . . . . . . . . . . . 140
-     7.392. trusteeSid . . . . . . . . . . . . . . . . . . . . . . . 141
-     7.393. serviceQueryConf . . . . . . . . . . . . . . . . . . . . 141
-     7.394. serviceChangeConf  . . . . . . . . . . . . . . . . . . . 141
-     7.395. serviceQueryStat . . . . . . . . . . . . . . . . . . . . 141
-     7.396. serviceEnumDependents  . . . . . . . . . . . . . . . . . 141
-     7.397. serviceStart . . . . . . . . . . . . . . . . . . . . . . 142
-     7.398. serviceStop  . . . . . . . . . . . . . . . . . . . . . . 142
-     7.399. servicePause . . . . . . . . . . . . . . . . . . . . . . 142
-     7.400. serviceInterrogate . . . . . . . . . . . . . . . . . . . 142
-     7.401. serviceUserDefined . . . . . . . . . . . . . . . . . . . 142
-     7.402. sharedresourceauditedpermissions . . . . . . . . . . . . 143
-     7.403. netname  . . . . . . . . . . . . . . . . . . . . . . . . 143
-     7.404. sharedresourceeffectiverights  . . . . . . . . . . . . . 143
-     7.405. user . . . . . . . . . . . . . . . . . . . . . . . . . . 144
-     7.406. enabled  . . . . . . . . . . . . . . . . . . . . . . . . 144
-     7.407. lastLogon  . . . . . . . . . . . . . . . . . . . . . . . 144
-     7.408. groupSid . . . . . . . . . . . . . . . . . . . . . . . . 144
+     7.381. keyWow6464Key  . . . . . . . . . . . . . . . . . . . . . 134
+     7.382. keyWow6432Key  . . . . . . . . . . . . . . . . . . . . . 134
+     7.383. keyWow64Res  . . . . . . . . . . . . . . . . . . . . . . 134
+     7.384. service  . . . . . . . . . . . . . . . . . . . . . . . . 135
+     7.385. displayName  . . . . . . . . . . . . . . . . . . . . . . 135
+     7.386. description  . . . . . . . . . . . . . . . . . . . . . . 135
+     7.387. serviceType  . . . . . . . . . . . . . . . . . . . . . . 135
+     7.388. startType  . . . . . . . . . . . . . . . . . . . . . . . 136
+     7.389. currentState . . . . . . . . . . . . . . . . . . . . . . 137
+     7.390. controlsAccepted . . . . . . . . . . . . . . . . . . . . 138
+     7.391. startName  . . . . . . . . . . . . . . . . . . . . . . . 140
+     7.392. serviceFlag  . . . . . . . . . . . . . . . . . . . . . . 140
+     7.393. dependencies . . . . . . . . . . . . . . . . . . . . . . 140
+     7.394. serviceeffectiverights . . . . . . . . . . . . . . . . . 140
+     7.395. trusteeSid . . . . . . . . . . . . . . . . . . . . . . . 141
+     7.396. serviceQueryConf . . . . . . . . . . . . . . . . . . . . 141
+     7.397. serviceChangeConf  . . . . . . . . . . . . . . . . . . . 141
+     7.398. serviceQueryStat . . . . . . . . . . . . . . . . . . . . 141
+     7.399. serviceEnumDependents  . . . . . . . . . . . . . . . . . 141
+     7.400. serviceStart . . . . . . . . . . . . . . . . . . . . . . 142
+     7.401. serviceStop  . . . . . . . . . . . . . . . . . . . . . . 142
+     7.402. servicePause . . . . . . . . . . . . . . . . . . . . . . 142
+     7.403. serviceInterrogate . . . . . . . . . . . . . . . . . . . 142
+     7.404. serviceUserDefined . . . . . . . . . . . . . . . . . . . 142
+     7.405. sharedresourceauditedpermissions . . . . . . . . . . . . 143
+     7.406. netname  . . . . . . . . . . . . . . . . . . . . . . . . 143
+     7.407. sharedresourceeffectiverights  . . . . . . . . . . . . . 143
+     7.408. user . . . . . . . . . . . . . . . . . . . . . . . . . . 144
+     7.409. enabled  . . . . . . . . . . . . . . . . . . . . . . . . 144
+     7.410. lastLogon  . . . . . . . . . . . . . . . . . . . . . . . 144
+     7.411. groupSid . . . . . . . . . . . . . . . . . . . . . . . . 144
    8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . 144
    9.  IANA Considerations . . . . . . . . . . . . . . . . . . . . . 145
    10. Security Considerations . . . . . . . . . . . . . . . . . . . 145
@@ -607,9 +610,6 @@ Internet-Draft           SACM Information Model            December 2016
      A.4.  Changes in Revision 04  . . . . . . . . . . . . . . . . . 152
      A.5.  Changes in Revision 05  . . . . . . . . . . . . . . . . . 152
      A.6.  Changes in Revision 06  . . . . . . . . . . . . . . . . . 152
-     A.7.  Changes in Revision 07  . . . . . . . . . . . . . . . . . 153
-     A.8.  Changes in Revision 08  . . . . . . . . . . . . . . . . . 153
-     A.9.  Changes in Revision 08  . . . . . . . . . . . . . . . . . 153
 
 
 
@@ -618,6 +618,9 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 11]
 Internet-Draft           SACM Information Model            December 2016
 
 
+     A.7.  Changes in Revision 07  . . . . . . . . . . . . . . . . . 153
+     A.8.  Changes in Revision 08  . . . . . . . . . . . . . . . . . 153
+     A.9.  Changes in Revision 08  . . . . . . . . . . . . . . . . . 153
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 154
 
 1.  Introduction
@@ -664,15 +667,14 @@ Internet-Draft           SACM Information Model            December 2016
 
    o  SACM Component Discovery
 
-   o  SACM Component Authentication
-
-
 
 
 Waltermire, et al.        Expires June 4, 2017                 [Page 12]
 
 Internet-Draft           SACM Information Model            December 2016
 
+
+   o  SACM Component Authentication
 
    o  SACM Component Authorization
 
@@ -721,14 +723,14 @@ Internet-Draft           SACM Information Model            December 2016
 
    o  Hardware Inventory Management
 
-   o  Configuration Management
-
 
 
 Waltermire, et al.        Expires June 4, 2017                 [Page 13]
 
 Internet-Draft           SACM Information Model            December 2016
 
+
+   o  Configuration Management
 
    o  Vulnerability Management
 
@@ -775,8 +777,6 @@ Internet-Draft           SACM Information Model            December 2016
    assessment or further enriches the quality of the assessment process
    can be associated with metadata.  In the SACM IM, metadata is
    represented by specific subjects and is bundled with other attributes
-   or subjects to provide additional information about them.  The IM
-   explicitly defines two kinds of metadata:
 
 
 
@@ -785,6 +785,9 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 14]
 
 Internet-Draft           SACM Information Model            December 2016
 
+
+   or subjects to provide additional information about them.  The IM
+   explicitly defines two kinds of metadata:
 
    o  Metadata focusing on the data origin (the SACM component that
       provides the information to the SACM domain)
@@ -831,9 +834,6 @@ Internet-Draft           SACM Information Model            December 2016
                                 assigned by IANA and filled
                                 in at publication time.
 
-       enterpriseId (optional): Enterprises may wish to define
-                                Information Elements without
-                                registering them with IANA, for
 
 
 
@@ -842,6 +842,9 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 15]
 Internet-Draft           SACM Information Model            December 2016
 
 
+       enterpriseId (optional): Enterprises may wish to define
+                                Information Elements without
+                                registering them with IANA, for
                                 example, for enterprise-internal
                                 purposes.  For such Information
                                 Elements, the elementId is
@@ -887,9 +890,6 @@ Internet-Draft           SACM Information Model            December 2016
                                 "deprecated" status is TBD.
 
        description (required): Describes the meaning of the
-                               Information Element, how it is
-                               derived, conditions for its use,
-                               etc.
 
 
 
@@ -897,6 +897,10 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 16]
 
 Internet-Draft           SACM Information Model            December 2016
 
+
+                               Information Element, how it is
+                               derived, conditions for its use,
+                               etc.
 
        structure (optional):   A parsable property that provides
                                details about the definition of
@@ -938,10 +942,6 @@ Internet-Draft           SACM Information Model            December 2016
    information with the SACM Content Element Metadata.  The SACM Content
    Element Metadata may also include relationships that express
    associations with other SACM Content Elements.
-
-
-
-
 
 
 
@@ -2390,15 +2390,15 @@ Internet-Draft           SACM Information Model            December 2016
                description: A value that represents a named region of
                             physical space.
 
-7.53.  macAddressValue
+7.53.  networkZoneLocation
 
                elementId: TBD
-               name: macAddressValue
+               name: networkZoneLocation
                dataType: string
                status: current
-               description: A value that expresses an Ethernet address.
-
-
+               description: The zone location of an endpoint on the
+                            network (e.g. internet, enterprise DMZ,
+                            enterprise WAN, enclave DMZ, enclave).
 
 
 
@@ -2410,7 +2410,34 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 43]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.54.  methodLabel
+7.54.  layer2NetworkLocation
+
+               elementId: TBD
+               name: layer2NetworkLocation
+               dataType: string
+               status: current
+               description: The location of a layer-2 interface on
+               the network (e.g. link-layer neighborhood,
+               shared broadcast domain).
+
+7.55.  layer3NetworkLocation
+
+               elementId: TBD
+               name: layer3NetworkLocation
+               dataType: string
+               status: current
+               description: The location of a layer-3 interface on
+               the network (e.g. next-hop routing neighbor).
+
+7.56.  macAddressValue
+
+               elementId: TBD
+               name: macAddressValue
+               dataType: string
+               status: current
+               description: A value that expresses an Ethernet address.
+
+7.57.  methodLabel
 
                elementId: TBD
                name: methodLabel
@@ -2421,7 +2448,7 @@ Internet-Draft           SACM Information Model            December 2016
                match and re-identify target endpoints via identifying
                attributes).
 
-7.55.  methodRepository
+7.58.  methodRepository
 
                elementId: TBD
                name: methodRepository
@@ -2432,7 +2459,14 @@ Internet-Draft           SACM Information Model            December 2016
                guidance in the form of registered methods to other
                SACM components.
 
-7.56.  networkAccessLevelType
+
+
+Waltermire, et al.        Expires June 4, 2017                 [Page 44]
+
+Internet-Draft           SACM Information Model            December 2016
+
+
+7.59.  networkAccessLevelType
 
                elementId: TBD
                name: networkAccessLevelType
@@ -2441,7 +2475,7 @@ Internet-Draft           SACM Information Model            December 2016
                description: A set of types that expresses categories
                of network access-levels (e.g. block, quarantine, etc.).
 
-7.57.  networkId
+7.60.  networkId
 
                elementId: TBD
                name: networkId
@@ -2450,7 +2484,7 @@ Internet-Draft           SACM Information Model            December 2016
                description: Most networks such as AS, OSBF domains,
                or VLANs can have an ID.
 
-7.58.  networkInterfaceName
+7.61.  networkInterfaceName
 
               elementId: TBD
               name: networkInterfaceName
@@ -2459,14 +2493,7 @@ Internet-Draft           SACM Information Model            December 2016
               description: A label that uniquely identifies an interface
               associated with a distinguishable endpoint.
 
-
-
-Waltermire, et al.        Expires June 4, 2017                 [Page 44]
-
-Internet-Draft           SACM Information Model            December 2016
-
-
-7.59.  networkLayer
+7.62.  networkLayer
 
                elementId: TBD
                name: networkLayer
@@ -2475,7 +2502,7 @@ Internet-Draft           SACM Information Model            December 2016
                description: A set of layers that expresses the specific
                network layer an interface operates on.
 
-7.60.  networkName
+7.63.  networkName
 
                elementId: TBD
                name: networkName
@@ -2486,33 +2513,6 @@ Internet-Draft           SACM Information Model            December 2016
                layer2-broadcast-domains are difficult to "grasp" and
                therefore quite difficult to name.
 
-7.61.  organizationId
-
-               elementId: TBD
-               name: organizationId
-               dataType: string
-               status: current
-               description: A label that uniquely identifies an
-                            organization via a PEN.
-
-7.62.  osComponent
-
-               elementId: TBD
-               name: osComponent
-               dataType: string
-               status: current
-               description: A label that references a "sub-component"
-               that is part of the operating system (e.g. a kernel
-               module, microcode, or ACPI table).
-
-7.63.  osLabel
-
-               elementId: TBD
-               name: osLabel
-               dataType: string
-               status: current
-               description: A label that references a specific version
-               of an operating system, including patches and hotfixes.
 
 
 
@@ -2522,7 +2522,35 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 45]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.64.  osName
+7.64.  organizationId
+
+               elementId: TBD
+               name: organizationId
+               dataType: string
+               status: current
+               description: A label that uniquely identifies an
+                            organization via a PEN.
+
+7.65.  osComponent
+
+               elementId: TBD
+               name: osComponent
+               dataType: string
+               status: current
+               description: A label that references a "sub-component"
+               that is part of the operating system (e.g. a kernel
+               module, microcode, or ACPI table).
+
+7.66.  osLabel
+
+               elementId: TBD
+               name: osLabel
+               dataType: string
+               status: current
+               description: A label that references a specific version
+               of an operating system, including patches and hotfixes.
+
+7.67.  osName
 
                elementId: TBD
                name: osName
@@ -2530,7 +2558,7 @@ Internet-Draft           SACM Information Model            December 2016
                status: current
                description: The name of an operating system.
 
-7.65.  osType
+7.68.  osType
 
                elementId: TBD
                name: osType
@@ -2539,34 +2567,6 @@ Internet-Draft           SACM Information Model            December 2016
                description: A set of types that identifies the type
                of an operating system (e.g. real-time,
                security-enhanced, consumer, server).
-
-7.66.  osVersion
-
-               elementId: TBD
-               name: osVersion
-               dataType: string
-               status: current
-               description: A value that represents the version of
-               an operating-system.
-
-7.67.  patchId
-
-               elementId: TBD
-               name: patchId
-               dataType: string
-               status: current
-               description: A label the uniquely identifies a specific
-                            software patch.
-
-7.68.  patchName
-
-               elementId: TBD
-               name: patchName
-               dataType: string
-               status: current
-               description: The vendor's name of a software patch.
-
-
 
 
 
@@ -2578,7 +2578,33 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 46]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.69.  personFirstName
+7.69.  osVersion
+
+               elementId: TBD
+               name: osVersion
+               dataType: string
+               status: current
+               description: A value that represents the version of
+               an operating-system.
+
+7.70.  patchId
+
+               elementId: TBD
+               name: patchId
+               dataType: string
+               status: current
+               description: A label the uniquely identifies a specific
+                            software patch.
+
+7.71.  patchName
+
+               elementId: TBD
+               name: patchName
+               dataType: string
+               status: current
+               description: The vendor's name of a software patch.
+
+7.72.  personFirstName
 
                elementId: TBD
                name: personFirstName
@@ -2586,7 +2612,7 @@ Internet-Draft           SACM Information Model            December 2016
                status: current
                description: The first name of a natural person.
 
-7.70.  personLastName
+7.73.  personLastName
 
                elementId: TBD
                name: personLastName
@@ -2594,34 +2620,8 @@ Internet-Draft           SACM Information Model            December 2016
                status: current
                description: The last name of a natural person.
 
-7.71.  personMiddleName
+7.74.  personMiddleName
 
-               elementId: TBD
-               name: personMiddleName
-               dataType: string
-               status: current
-               description: The middle name of a natural person.
-
-7.72.  phoneNumber
-
-             elementId: TBD
-             name: phoneNumber
-             dataType: string
-             status: current
-             description: A label that expresses the U.S. national
-             phone number (e.g. pattern value="((\d{3}) )?\d{3}-\d{4}").
-
-7.73.  phoneNumberType
-
-               elementId: TBD
-               name: phoneNumberType
-               dataType: string
-               status: current
-               description: A set of types that express the type of
-               a phone number (e.g. DSN, Fax, Home, Mobile, Pager,
-               Secure, Unsecure, Work, Other).
-
-7.74.  privilegeName
 
 
 
@@ -2635,13 +2635,40 @@ Internet-Draft           SACM Information Model            December 2016
 
 
                elementId: TBD
+               name: personMiddleName
+               dataType: string
+               status: current
+               description: The middle name of a natural person.
+
+7.75.  phoneNumber
+
+             elementId: TBD
+             name: phoneNumber
+             dataType: string
+             status: current
+             description: A label that expresses the U.S. national
+             phone number (e.g. pattern value="((\d{3}) )?\d{3}-\d{4}").
+
+7.76.  phoneNumberType
+
+               elementId: TBD
+               name: phoneNumberType
+               dataType: string
+               status: current
+               description: A set of types that express the type of
+               a phone number (e.g. DSN, Fax, Home, Mobile, Pager,
+               Secure, Unsecure, Work, Other).
+
+7.77.  privilegeName
+
+               elementId: TBD
                name: privilegeName
                dataType: string
                status: current
                description: The attribute name of the privilege
                represented as an AVP.
 
-7.75.  privilegeValue
+7.78.  privilegeValue
 
                elementId: TBD
                name: privilegeValue
@@ -2650,34 +2677,7 @@ Internet-Draft           SACM Information Model            December 2016
                description: The value content of the privilege
                represented as an AVP.
 
-7.76.  protocol
-
-               elementId: TBD
-               name: protocol
-               dataType: string
-               status: current
-               description: A set of types that defines specific
-               protocols above layer 4 (e.g. http, https, dns, ipp,
-               or unknown).
-
-7.77.  publicKey
-
-               elementId: TBD
-               name: publicKey
-               dataType: string
-               status: current
-               description: The value of a public key (regardless of its
-               method of creation, crypto-system, or signature scheme)
-               that can be collected from a target endpoint.
-
-7.78.  relationshipContentElementGuid
-
-               elementId: TBD
-               name: relationshipContentElementGuid
-               dataType: string
-               status: current
-               description: A reference to a specific content element
-               used in a relationship subject.
+7.79.  protocol
 
 
 
@@ -2690,7 +2690,34 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 48]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.79.  relationshipStatementElementGuid
+               elementId: TBD
+               name: protocol
+               dataType: string
+               status: current
+               description: A set of types that defines specific
+               protocols above layer 4 (e.g. http, https, dns, ipp,
+               or unknown).
+
+7.80.  publicKey
+
+               elementId: TBD
+               name: publicKey
+               dataType: string
+               status: current
+               description: The value of a public key (regardless of its
+               method of creation, crypto-system, or signature scheme)
+               that can be collected from a target endpoint.
+
+7.81.  relationshipContentElementGuid
+
+               elementId: TBD
+               name: relationshipContentElementGuid
+               dataType: string
+               status: current
+               description: A reference to a specific content element
+               used in a relationship subject.
+
+7.82.  relationshipStatementElementGuid
 
                elementId: TBD
                name: relationshipStatementElementGuid
@@ -2699,7 +2726,7 @@ Internet-Draft           SACM Information Model            December 2016
                description: A reference to a specific SACM statement
                used in a relationship subject.
 
-7.80.  relationshipObjectLabel
+7.83.  relationshipObjectLabel
 
              elementId: TBD
              name: relationshipObjectLabel
@@ -2712,7 +2739,14 @@ Internet-Draft           SACM Information Model            December 2016
              included in addition to a relationship-content-element-guid
              reference.
 
-7.81.  relationshipType
+
+
+Waltermire, et al.        Expires June 4, 2017                 [Page 49]
+
+Internet-Draft           SACM Information Model            December 2016
+
+
+7.84.  relationshipType
 
             elementId: TBD
             name: relationshipType
@@ -2725,7 +2759,7 @@ Internet-Draft           SACM Information Model            December 2016
             applies_to_session, seen_on_interface, associated_with_flow,
             contains_virtual_device).
 
-7.82.  roleName
+7.85.  roleName
 
                elementId: TBD
                name: roleName
@@ -2735,18 +2769,7 @@ Internet-Draft           SACM Information Model            December 2016
                privileges assigned to a specific entity (identity?
                FIXME).
 
-
-
-
-
-
-
-Waltermire, et al.        Expires June 4, 2017                 [Page 49]
-
-Internet-Draft           SACM Information Model            December 2016
-
-
-7.83.  sessionStateType
+7.86.  sessionStateType
 
                elementId: TBD
                name: sessionStateType
@@ -2757,7 +2780,7 @@ Internet-Draft           SACM Information Model            December 2016
                Authenticating, Authenticated, Postured, Started,
                Disconnected).
 
-7.84.  statementGuid
+7.87.  statementGuid
 
                elementId: TBD
                name: statementGuid
@@ -2766,29 +2789,6 @@ Internet-Draft           SACM Information Model            December 2016
                description: A label that expresses a global unique
                ID referencing a specific SACM statement that was
                produced by a SACM component.
-
-7.85.  statementType
-
-               elementId: TBD
-               name: statementType
-               dataType: string
-               status: current
-               description: A set of types that define the type of
-               content that is included in a SACM statement (e.g.
-               Observation, DirectoryContent, Correlation, Assessment,
-               Guidance, Event).
-
-7.86.  status
-
-               elementId: TBD
-               name: status
-               dataType: string
-               status: current
-               description: A set of types that defines possible
-               result values for a finding in general (e.g. true,
-               false, error, unknown, not applicable, not evaluated).
-
-7.87.  subAdministrativeDomain
 
 
 
@@ -2802,6 +2802,29 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 50]
 Internet-Draft           SACM Information Model            December 2016
 
 
+7.88.  statementType
+
+               elementId: TBD
+               name: statementType
+               dataType: string
+               status: current
+               description: A set of types that define the type of
+               content that is included in a SACM statement (e.g.
+               Observation, DirectoryContent, Correlation, Assessment,
+               Guidance, Event).
+
+7.89.  status
+
+               elementId: TBD
+               name: status
+               dataType: string
+               status: current
+               description: A set of types that defines possible
+               result values for a finding in general (e.g. true,
+               false, error, unknown, not applicable, not evaluated).
+
+7.90.  subAdministrativeDomain
+
                elementId: TBD
                name: subAdministrativeDomain
                dataType: string
@@ -2810,7 +2833,7 @@ Internet-Draft           SACM Information Model            December 2016
                administrative domain can be composed of (used in the
                subject administrative-domain)
 
-7.88.  subInterfaceLabel
+7.91.  subInterfaceLabel
 
                elementId: TBD
                name: subInterfaceLabel
@@ -2820,30 +2843,7 @@ Internet-Draft           SACM Information Model            December 2016
                (e.g. a tagged vlan on a trunk) can be referenced
                with.
 
-7.89.  superAdministrativeDomain
-
-               elementId: TBD
-               name: superAdministrativeDomain
-               dataType: string
-               status: current
-               description: a label for related parent domains an
-                            administrative domain is part of (used
-                            in the subject s.administrative-domain).
-
-7.90.  superInterfaceLabel
-
-               elementId: TBD
-               name: superInterfaceLabel
-               dataType: string
-               status: current
-               description: a unique label a super network interface
-                            (e.g. a physical interface a tunnel
-                            interface terminates on) can be referenced
-                            with.
-
-7.91.  teAssessmentState
-
-
+7.92.  superAdministrativeDomain
 
 
 
@@ -2859,6 +2859,27 @@ Internet-Draft           SACM Information Model            December 2016
 
 
                elementId: TBD
+               name: superAdministrativeDomain
+               dataType: string
+               status: current
+               description: a label for related parent domains an
+                            administrative domain is part of (used
+                            in the subject s.administrative-domain).
+
+7.93.  superInterfaceLabel
+
+               elementId: TBD
+               name: superInterfaceLabel
+               dataType: string
+               status: current
+               description: a unique label a super network interface
+                            (e.g. a physical interface a tunnel
+                            interface terminates on) can be referenced
+                            with.
+
+7.94.  teAssessmentState
+
+               elementId: TBD
                name: teAssessmentState
                dataType: string
                status: current
@@ -2867,7 +2888,7 @@ Internet-Draft           SACM Information Model            December 2016
                             in-discovery, discovered, in-classification,
                             classified, in-assessment, assessed).
 
-7.92.  teLabel
+7.95.  teLabel
 
                elementId: TBD
                name: teLabel
@@ -2877,30 +2898,9 @@ Internet-Draft           SACM Information Model            December 2016
                             of identifying attributes used to reference
                             a specific target endpoint.
 
-7.93.  teId
+7.96.  teId
 
-               elementId: TBD
-               name: teId
-               dataType: string
-               status: current
-               description: an identifying label that is created
-                            randomly, is supposed to be unique, and
-                            used to reference a specific target
-                            endpoint.
 
-7.94.  timestampType
-
-               elementId: TBD
-               name: timestampType
-               dataType: string
-               status: current
-               description: a set of types that express what type of
-                            action or event happened at that point
-                            of time (e.g. discovered, classified,
-                            collected, published). Can be included in
-                            a generic s.timestamp subject.
-
-7.95.  unitsReceived
 
 
 
@@ -2915,6 +2915,29 @@ Internet-Draft           SACM Information Model            December 2016
 
 
                elementId: TBD
+               name: teId
+               dataType: string
+               status: current
+               description: an identifying label that is created
+                            randomly, is supposed to be unique, and
+                            used to reference a specific target
+                            endpoint.
+
+7.97.  timestampType
+
+               elementId: TBD
+               name: timestampType
+               dataType: string
+               status: current
+               description: a set of types that express what type of
+                            action or event happened at that point
+                            of time (e.g. discovered, classified,
+                            collected, published). Can be included in
+                            a generic s.timestamp subject.
+
+7.98.  unitsReceived
+
+               elementId: TBD
                name: unitsReceived
                dataType: string
                status: current
@@ -2922,7 +2945,7 @@ Internet-Draft           SACM Information Model            December 2016
                             (e.g. frames, packets, cells or segments)
                             received on a network interface.
 
-7.96.  unitsSent
+7.99.  unitsSent
 
                elementId: TBD
                name: unitsSent
@@ -2932,32 +2955,9 @@ Internet-Draft           SACM Information Model            December 2016
                             (e.g. frames, packets, cells or segments)
                             sent on a network interface.
 
-7.97.  userDirectory
+7.100.  userDirectory
 
-               elementId: TBD
-               name: userDirectory
-               dataType: string
-               status: current
-               description: a label that identifies a specific type
-               of user-directory (e.g. ldap, active-directory,
-               local-user).
 
-7.98.  sacmUserId
-
-               elementId: TBD
-               name: sacmUserId
-               dataType: string
-               status: current
-               description: a label that references a specific user
-               known in a SACM domain.
-
-7.99.  webSite
-
-               elementId: TBD
-               name: webSite
-               dataType: string
-               status: current
-               description: a URI that references a web-site.
 
 
 
@@ -2970,7 +2970,32 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 53]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.100.  WGS84Longitude
+               elementId: TBD
+               name: userDirectory
+               dataType: string
+               status: current
+               description: a label that identifies a specific type
+               of user-directory (e.g. ldap, active-directory,
+               local-user).
+
+7.101.  sacmUserId
+
+               elementId: TBD
+               name: sacmUserId
+               dataType: string
+               status: current
+               description: a label that references a specific user
+               known in a SACM domain.
+
+7.102.  webSite
+
+               elementId: TBD
+               name: webSite
+               dataType: string
+               status: current
+               description: a URI that references a web-site.
+
+7.103.  WGS84Longitude
 
                elementId: TBD
                name: WGS84Longitude
@@ -2979,7 +3004,7 @@ Internet-Draft           SACM Information Model            December 2016
                description: a label that represents WGS 84 rev 2004
                longitude.
 
-7.101.  WGS84Latitude
+7.104.  WGS84Latitude
 
                elementId: TBD
                name: WGS84Latitude
@@ -2988,33 +3013,8 @@ Internet-Draft           SACM Information Model            December 2016
                description: a label that represents WGS 84 rev 2004
                latitude.
 
-7.102.  WGS84Altitude
+7.105.  WGS84Altitude
 
-               elementId: TBD
-               name: WGS84Altitude
-               dataType: float64
-               status: current
-               description: a label that represents WGS 84 rev 2004
-               altitude.
-
-7.103.  hardwareSerialNumber
-
-   elementId: TBD
-   name: hardwareSerialNumber
-   dataType: string
-   status: current
-   description: A globally unique identifier for a particular
-                piece of hardware assigned by the vendor.
-
-7.104.  interfaceName
-
-   elementId: TBD
-   name: interfaceName
-   dataType: string
-   status: current
-   description: A short name uniquely describing an interface,
-                eg "Eth1/0". See [RFC2863] for the definition
-                of the ifName object.
 
 
 
@@ -3026,7 +3026,33 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 54]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.105.  interfaceIndex
+               elementId: TBD
+               name: WGS84Altitude
+               dataType: float64
+               status: current
+               description: a label that represents WGS 84 rev 2004
+               altitude.
+
+7.106.  hardwareSerialNumber
+
+   elementId: TBD
+   name: hardwareSerialNumber
+   dataType: string
+   status: current
+   description: A globally unique identifier for a particular
+                piece of hardware assigned by the vendor.
+
+7.107.  interfaceName
+
+   elementId: TBD
+   name: interfaceName
+   dataType: string
+   status: current
+   description: A short name uniquely describing an interface,
+                eg "Eth1/0". See [RFC2863] for the definition
+                of the ifName object.
+
+7.108.  interfaceIndex
 
    elementId: TBD
    name: interfaceIndex
@@ -3040,7 +3066,7 @@ Internet-Draft           SACM Information Model            December 2016
                 the device's management system is re-initialized,
                 as specified in [RFC2863].
 
-7.106.  interfaceMacAddress
+7.109.  interfaceMacAddress
 
    elementId: TBD
    name: interfaceMacAddress
@@ -3049,7 +3075,14 @@ Internet-Draft           SACM Information Model            December 2016
    description: The IEEE 802 MAC address associated with a network
                 interface on an endpoint.
 
-7.107.  interfaceType
+
+
+Waltermire, et al.        Expires June 4, 2017                 [Page 55]
+
+Internet-Draft           SACM Information Model            December 2016
+
+
+7.110.  interfaceType
 
    elementId: TBD
    name: interfaceType
@@ -3059,28 +3092,7 @@ Internet-Draft           SACM Information Model            December 2016
                 the value of managed object 'ifType' as defined in
                 [IANA registry ianaiftype-mib].
 
-7.108.  interfaceFlags
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Waltermire, et al.        Expires June 4, 2017                 [Page 55]
-
-Internet-Draft           SACM Information Model            December 2016
-
+7.111.  interfaceFlags
 
 elementId: TBD
 name: interfaceFlags
@@ -3099,7 +3111,7 @@ structure: Up                  ; 0x1   ; Interface is up.
            No ARP              ; 0x80  ; No address resolution protocol.
            Receive all         ; 0x100 ; Receive all packets.
 
-7.109.  networkInterface
+7.112.  networkInterface
 
    elementId: TBD
    name: networkInterface
@@ -3114,22 +3126,10 @@ structure: Up                  ; 0x1   ; Interface is up.
    structure: orderedList(interfaceName, interfaceIndex, macAddress,
                           interfaceType, flags)
 
-7.110.  softwareIdentifier
 
-   elementId: TBD
-   name: softwareIdentifier
-   dataType: string
-   status: current
-   description: A globally unique identifier for a particular
-                software application.
 
-7.111.  softwareTitle
 
-   elementId: TBD
-   name: softwareTitle
-   dataType: string
-   status: current
-   description: The title of the software application.
+
 
 
 
@@ -3138,7 +3138,24 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 56]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.112.  softwareCreator
+7.113.  softwareIdentifier
+
+   elementId: TBD
+   name: softwareIdentifier
+   dataType: string
+   status: current
+   description: A globally unique identifier for a particular
+                software application.
+
+7.114.  softwareTitle
+
+   elementId: TBD
+   name: softwareTitle
+   dataType: string
+   status: current
+   description: The title of the software application.
+
+7.115.  softwareCreator
 
    elementId: TBD
    name: softwareCreator
@@ -3146,7 +3163,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The software developer (e.g., vendor or author).
 
-7.113.  simpleSoftwareVersion
+7.116.  simpleSoftwareVersion
 
    elementId: TBD
    name: simpleSoftwareVersion
@@ -3157,7 +3174,7 @@ Internet-Draft           SACM Information Model            December 2016
                 non-negative integers separated by a single character
                 delimiter format.
 
-7.114.  rpmSoftwareVersion
+7.117.  rpmSoftwareVersion
 
    elementId: TBD
    name: rpmSoftwareVersion
@@ -3165,23 +3182,6 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The version string for a software application that
                 conforms to the EPOCH:VERSION-RELEASE format.
-
-7.115.  ciscoTrainSoftwareVersion
-
-   elementId: TBD
-   name: ciscoTrainSoftwareVersion
-   dataType: string
-   status: current
-   description: The version string for a software application that
-                conforms to the Cisco IOS Train string format.
-
-7.116.  softwareVersion
-
-
-
-
-
-
 
 
 
@@ -3193,6 +3193,17 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 57]
 
 Internet-Draft           SACM Information Model            December 2016
 
+
+7.118.  ciscoTrainSoftwareVersion
+
+   elementId: TBD
+   name: ciscoTrainSoftwareVersion
+   dataType: string
+   status: current
+   description: The version string for a software application that
+                conforms to the Cisco IOS Train string format.
+
+7.119.  softwareVersion
 
    elementId: TBD
    name: softwareVerison
@@ -3207,7 +3218,7 @@ Internet-Draft           SACM Information Model            December 2016
                    ciscoTrainSoftwareVersion)
 
 
-7.117.  softwareLastUpdated
+7.120.  softwareLastUpdated
 
    elementId: TBD
    name: softwareLastUpdated
@@ -3217,7 +3228,7 @@ Internet-Draft           SACM Information Model            December 2016
                 was last updated on the system (e.g., new
                 version instlalled or patch applied)
 
-7.118.  softwareInstance
+7.121.  softwareInstance
 
    elementId: TBD
    name: softwareInstance
@@ -3231,17 +3242,6 @@ Internet-Draft           SACM Information Model            December 2016
                           softwareCreator, softwareVersion,
                                               softwareLastUpdated)
 
-7.119.  globallyUniqueIdentifier
-
-   elementId: TBD
-   name: globallyUniqueIdentifier
-   dataType: unsigned8
-   status: current
-   description: TODO.
-
-
-
-
 
 
 
@@ -3250,7 +3250,15 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 58]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.120.  creationTimestamp
+7.122.  globallyUniqueIdentifier
+
+   elementId: TBD
+   name: globallyUniqueIdentifier
+   dataType: unsigned8
+   status: current
+   description: TODO.
+
+7.123.  creationTimestamp
 
    elementId: TBD
    name: creationTimestamp
@@ -3259,7 +3267,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The date and time when the posture
                 information was created by a SACM Component.
 
-7.121.  collectionTimestamp
+7.124.  collectionTimestamp
 
    elementId: TBD
    name: collectionTimestamp
@@ -3269,7 +3277,7 @@ Internet-Draft           SACM Information Model            December 2016
                 information was collected or observed by a SACM
                 Component.
 
-7.122.  publicationTimestamp
+7.125.  publicationTimestamp
 
    elementId: TBD
    name: publicationTimestamp
@@ -3278,7 +3286,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The date and time when the posture
                 information was published.
 
-7.123.  relayTimestamp
+7.126.  relayTimestamp
 
    elementId: TBD
    name: relayTimestamp
@@ -3287,14 +3295,6 @@ Internet-Draft           SACM Information Model            December 2016
    description: The date and time when the posture
                 information was relayed to another SACM Component.
 
-7.124.  storageTimestamp
-
-   elementId: TBD
-   name: storageTimestamp
-   dataType: dateTimeSeconds
-   status: current
-   description: The date and time when the posture
-                information was stored in a Repository.
 
 
 
@@ -3306,7 +3306,16 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 59]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.125.  type
+7.127.  storageTimestamp
+
+   elementId: TBD
+   name: storageTimestamp
+   dataType: dateTimeSeconds
+   status: current
+   description: The date and time when the posture
+                information was stored in a Repository.
+
+7.128.  type
 
    elementId: TBD
    name: type
@@ -3317,7 +3326,7 @@ Internet-Draft           SACM Information Model            December 2016
                 table lists the set of data models supported by SACM.
    structure: TBD
 
-7.126.  protocolIdentifier
+7.129.  protocolIdentifier
 
    elementId: TBD
    name: protocolIdentifier
@@ -3333,7 +3342,7 @@ Internet-Draft           SACM Information Model            December 2016
                 version 6 (IPv6), this is carried in the Next Header
                 field in the last extension header of the packet.
 
-7.127.  sourceTransportPort
+7.130.  sourceTransportPort
 
    elementId: TBD
    name: sourceTransportPort
@@ -3346,7 +3355,14 @@ Internet-Draft           SACM Information Model            December 2016
                 transport protocols that have 16-bit source port
                 identifiers.
 
-7.128.  sourceIPv4PrefixLength
+
+
+Waltermire, et al.        Expires June 4, 2017                 [Page 60]
+
+Internet-Draft           SACM Information Model            December 2016
+
+
+7.131.  sourceIPv4PrefixLength
 
    elementId: TBD
    name: sourceIPv4PrefixLength
@@ -3355,14 +3371,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The number of contiguous bits that are relevant in
                 the sourceIPv4Prefix Information Element.
 
-
-
-Waltermire, et al.        Expires June 4, 2017                 [Page 60]
-
-Internet-Draft           SACM Information Model            December 2016
-
-
-7.129.  ingressInterface
+7.132.  ingressInterface
 
    elementId: TBD
    name: ingressInterface
@@ -3376,7 +3385,7 @@ Internet-Draft           SACM Information Model            December 2016
                 may be renumbered every time the device's management
                 system is re-initialized, as specified in [RFC2863].
 
-7.130.  destinationTransportPort
+7.133.  destinationTransportPort
 
    elementId: TBD
    name: destinationTransportPort
@@ -3389,7 +3398,7 @@ Internet-Draft           SACM Information Model            December 2016
                 for future transport protocols that have 16-bit
                 destination port identifiers.
 
-7.131.  sourceIPv6PrefixLength
+7.134.  sourceIPv6PrefixLength
 
    elementId: TBD
    name: sourceIPv6PrefixLength
@@ -3397,15 +3406,6 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The number of contiguous bits that are relevant in
                 the sourceIPv6Prefix Information Element.
-
-7.132.  sourceIPv4Prefix
-
-   elementId: TBD
-   name: sourceIPv4Prefix
-   dataType: ipv4Address
-   status: current
-   description: IPv4 source address prefix.
-
 
 
 
@@ -3418,7 +3418,15 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 61]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.133.  destinationIPv4Prefix
+7.135.  sourceIPv4Prefix
+
+   elementId: TBD
+   name: sourceIPv4Prefix
+   dataType: ipv4Address
+   status: current
+   description: IPv4 source address prefix.
+
+7.136.  destinationIPv4Prefix
 
    elementId: TBD
    name: destinationIPv4Prefix
@@ -3426,7 +3434,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: IPv4 destination address prefix.
 
-7.134.  sourceMacAddress
+7.137.  sourceMacAddress
 
    elementId: TBD
    name: sourceMacAddress
@@ -3434,7 +3442,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The IEEE 802 source MAC address field.
 
-7.135.  ipVersion
+7.138.  ipVersion
 
    elementId: TBD
    name: ipVersion
@@ -3442,7 +3450,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The IP version field in the IP packet header.
 
-7.136.  interfaceDescription
+7.139.  interfaceDescription
 
    elementId: TBD
    name: interfaceDescription
@@ -3452,15 +3460,7 @@ Internet-Draft           SACM Information Model            December 2016
                 1/0" or "ISP
    connection".
 
-7.137.  applicationDescription
-
-   elementId: TBD
-   name: applicationDescription
-   dataType: string
-   status: current
-   description: Specifies the description of an application.
-
-7.138.  applicationId
+7.140.  applicationDescription
 
 
 
@@ -3475,12 +3475,20 @@ Internet-Draft           SACM Information Model            December 2016
 
 
    elementId: TBD
+   name: applicationDescription
+   dataType: string
+   status: current
+   description: Specifies the description of an application.
+
+7.141.  applicationId
+
+   elementId: TBD
    name: applicationId
    dataType: octetArray
    status: current
    description: Specifies an Application ID per [RFC6759].
 
-7.139.  applicationName
+7.142.  applicationName
 
    elementId: TBD
    name: applicationName
@@ -3488,7 +3496,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Specifies the name of an application.
 
-7.140.  exporterIPv4Address
+7.143.  exporterIPv4Address
 
    elementId: TBD
    name: exporterIPv4Address
@@ -3499,7 +3507,7 @@ Internet-Draft           SACM Information Model            December 2016
                 Exporter in cases where the identity of the Exporter
                 may have been obscured by the use of a proxy.
 
-7.141.  exporterIPv6Address
+7.144.  exporterIPv6Address
 
    elementId: TBD
    name: exporterIPv6Address
@@ -3511,7 +3519,18 @@ Internet-Draft           SACM Information Model            December 2016
                 Exporter may have been obscured by the use of a
                 proxy.
 
-7.142.  portId
+
+
+
+
+
+
+Waltermire, et al.        Expires June 4, 2017                 [Page 63]
+
+Internet-Draft           SACM Information Model            December 2016
+
+
+7.145.  portId
 
    elementId: TBD
    name: portId
@@ -3522,15 +3541,7 @@ Internet-Draft           SACM Information Model            December 2016
                 Typically, this Information Element is used for
                 limiting the scope of other Information Elements.
 
-
-
-
-Waltermire, et al.        Expires June 4, 2017                 [Page 63]
-
-Internet-Draft           SACM Information Model            December 2016
-
-
-7.143.  templateId
+7.146.  templateId
 
    elementId: TBD
    name: templateId
@@ -3550,7 +3561,7 @@ Internet-Draft           SACM Information Model            December 2016
                 Note that after a re-start of the Exporting Process
                 Template identifiers may be re-assigned.
 
-7.144.  collectorIPv4Address
+7.147.  collectorIPv4Address
 
    elementId: TBD
    name: collectorIPv4Address
@@ -3559,7 +3570,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: An IPv4 address to which the Exporting Process sends
                 Flow information.
 
-7.145.  collectorIPv6Address
+7.148.  collectorIPv6Address
 
    elementId: TBD
    name: collectorIPv6Address
@@ -3568,23 +3579,14 @@ Internet-Draft           SACM Information Model            December 2016
    description: An IPv6 address to which the Exporting Process sends
                 Flow information.
 
-7.146.  informationElementIndex
-
-
-
-
-
-
-
-
-
-
 
 
 Waltermire, et al.        Expires June 4, 2017                 [Page 64]
 
 Internet-Draft           SACM Information Model            December 2016
 
+
+7.149.  informationElementIndex
 
    elementId: TBD
    name: informationElementIndex
@@ -3596,7 +3598,7 @@ Internet-Draft           SACM Information Model            December 2016
                 scope for templates containing multiple identical
                 Information Elements.
 
-7.147.  informationElementId
+7.150.  informationElementId
 
    elementId: TBD
    name: informationElementId
@@ -3605,7 +3607,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: This Information Element contains the ID of another
                 Information Element.
 
-7.148.  informationElementDataType
+7.151.  informationElementDataType
 
    elementId: TBD
    name: informationElementDataType
@@ -3625,9 +3627,7 @@ Internet-Draft           SACM Information Model            December 2016
                 types to the IPFIX Protocol, and as such requires a
                 Standards Action [RFC5226] to modify.
 
-7.149.  informationElementDescription
-
-
+7.152.  informationElementDescription
 
 
 
@@ -3662,7 +3662,7 @@ Internet-Draft           SACM Information Model            December 2016
                 section for notes on string handling for Information
                 Element type records.
 
-7.150.  informationElementName
+7.153.  informationElementName
 
    elementId: TBD
    name: informationElementName
@@ -3674,7 +3674,7 @@ Internet-Draft           SACM Information Model            December 2016
                 section for notes on string handling for Information
                 Element type records.
 
-7.151.  informationElementRangeBegin
+7.154.  informationElementRangeBegin
 
    elementId: TBD
    name: informationElementRangeBegin
@@ -3683,7 +3683,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Contains the inclusive low end of the range of
                 acceptable values for an Information Element.
 
-7.152.  informationElementRangeEnd
+7.155.  informationElementRangeEnd
 
 
 
@@ -3705,7 +3705,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Contains the inclusive high end of the range of
                 acceptable values for an Information Element.
 
-7.153.  informationElementSemantics
+7.156.  informationElementSemantics
 
    elementId: TBD
    name: informationElementSemantics
@@ -3730,7 +3730,7 @@ Internet-Draft           SACM Information Model            December 2016
                 adding semantics to the IPFIX Protocol, and as such
                 requires a Standards Action [RFC5226] to modify.
 
-7.154.  informationElementUnits
+7.157.  informationElementUnits
 
 
 
@@ -3773,7 +3773,7 @@ Internet-Draft           SACM Information Model            December 2016
                 may be added on a First Come First Served [RFC5226]
                 basis.
 
-7.155.  applicationCategoryName
+7.158.  applicationCategoryName
 
    elementId: TBD
    name: applicationCategoryName
@@ -3782,7 +3782,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: An attribute that provides a first level
                 categorization for each Application ID.
 
-7.156.  mibObjectValueInteger
+7.159.  mibObjectValueInteger
 
    elementId: TBD
    name: mibObjectValueInteger
@@ -3810,7 +3810,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 68]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.157.  mibObjectValueOctetString
+7.160.  mibObjectValueOctetString
 
    elementId: TBD
    name: mibObjectValueOctetString
@@ -3826,7 +3826,7 @@ Internet-Draft           SACM Information Model            December 2016
                 value is encoded as per the standard IPFIX Abstract
                 Data Type of octetArray.
 
-7.158.  mibObjectValueOID
+7.161.  mibObjectValueOID
 
    elementId: TBD
    name: mibObjectValueOID
@@ -3846,7 +3846,7 @@ Internet-Draft           SACM Information Model            December 2016
                 Element is encoded as ASN.1/BER [BER] in an
                 octetArray.
 
-7.159.  mibObjectValueBits
+7.162.  mibObjectValueBits
 
 
 
@@ -3884,7 +3884,7 @@ Internet-Draft           SACM Information Model            December 2016
                 significant bits at end of the octetArray MUST be
                 set to zero.
 
-7.160.  mibObjectValueIPAddress
+7.163.  mibObjectValueIPAddress
 
    elementId: TBD
    name: mibObjectValueIPAddress
@@ -3899,7 +3899,7 @@ Internet-Draft           SACM Information Model            December 2016
                 IPaddress. The value is encoded as per the standard
                 IPFIX Abstract Data Type of ipv4Address.
 
-7.161.  mibObjectValueCounter
+7.164.  mibObjectValueCounter
 
 
 
@@ -3937,7 +3937,7 @@ Internet-Draft           SACM Information Model            December 2016
                 as per the standard IPFIX Abstract Data Type
                 of unsigned64.
 
-7.162.  mibObjectValueGauge
+7.165.  mibObjectValueGauge
 
    elementId: TBD
    name: mibObjectValueGauge
@@ -3955,7 +3955,7 @@ Internet-Draft           SACM Information Model            December 2016
                 or decrease, but shall never exceed a maximum
                 value, nor fall below a minimum value.
 
-7.163.  mibObjectValueTimeTicks
+7.166.  mibObjectValueTimeTicks
 
    elementId: TBD
    name: mibObjectValueTimeTicks
@@ -3978,7 +3978,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 71]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.164.  mibObjectValueUnsigned
+7.167.  mibObjectValueUnsigned
 
    elementId: TBD
    name: mibObjectValueUnsigned
@@ -3995,7 +3995,7 @@ Internet-Draft           SACM Information Model            December 2016
                 encoded as per the standard IPFIX Abstract Data Type
                 of unsigned64.
 
-7.165.  mibObjectValueTable
+7.168.  mibObjectValueTable
 
    elementId: TBD
    name: mibObjectValueTable
@@ -4015,7 +4015,7 @@ Internet-Draft           SACM Information Model            December 2016
                 clause as Scope Fields.
    structure:   orderedList(mibObjectValueRow+)
 
-7.166.  mibObjectValueRow
+7.169.  mibObjectValueRow
 
 
 
@@ -4054,7 +4054,7 @@ Internet-Draft           SACM Information Model            December 2016
    structure:   orderedList(mibObjectValue+)
 
 
-7.167.  mibObjectIdentifier
+7.170.  mibObjectIdentifier
 
    elementId: TBD
    name: mibObjectIdentifier
@@ -4067,7 +4067,7 @@ Internet-Draft           SACM Information Model            December 2016
                 the MIB Object Type Definition encoded as
                 ASN.1/BER [BER].
 
-7.168.  mibSubIdentifier
+7.171.  mibSubIdentifier
 
    elementId: TBD
    name: mibSubIdentifier
@@ -4076,7 +4076,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: A non-negative sub-identifier of an Object
                 Identifier (OID).
 
-7.169.  mibIndexIndicator
+7.172.  mibIndexIndicator
 
 
 
@@ -4118,7 +4118,7 @@ Internet-Draft           SACM Information Model            December 2016
                 Information Element may be exported with
                 IPFIX Reduced Size Encoding.
 
-7.170.  mibCaptureTimeSemantics
+7.173.  mibCaptureTimeSemantics
 
 
 
@@ -4183,7 +4183,7 @@ Internet-Draft           SACM Information Model            December 2016
                 average of multiple captures from the MIB over the
                 observed life of the Flow
 
-7.171.  mibContextEngineID
+7.174.  mibContextEngineID
 
    elementId: TBD
    name: mibContextEngineID
@@ -4202,7 +4202,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 75]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.172.  mibContextName
+7.175.  mibContextName
 
    elementId: TBD
    name: mibContextName
@@ -4212,7 +4212,7 @@ Internet-Draft           SACM Information Model            December 2016
                 Name is specified for a MIB field being exported
                 over IPFIX. Reference [RFC3411] section 3.3.
 
-7.173.  mibObjectName
+7.176.  mibObjectName
 
    elementId: TBD
    name: mibObjectName
@@ -4221,7 +4221,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The name (called a descriptor in [RFC2578]
                 of an object type definition.
 
-7.174.  mibObjectDescription
+7.177.  mibObjectDescription
 
    elementId: TBD
    name: mibObjectDescription
@@ -4230,7 +4230,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The value of the DESCRIPTION clause of an MIB object
                 type definition.
 
-7.175.  mibObjectSyntax
+7.178.  mibObjectSyntax
 
    elementId: TBD
    name: mibObjectSyntax
@@ -4240,7 +4240,7 @@ Internet-Draft           SACM Information Model            December 2016
                 definition, which may include a Textual Convention
                 or Subtyping. See [RFC2578].
 
-7.176.  mibModuleName
+7.179.  mibModuleName
 
    elementId: TBD
    name: mibModuleName
@@ -4258,7 +4258,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 76]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.177.  interface
+7.180.  interface
 
    elementId: TBD
    name: interface
@@ -4268,7 +4268,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Represents an interface and its configuration
    options.
 
-7.178.  iflisteners
+7.181.  iflisteners
 
    elementId: TBD
    name: iflisteners
@@ -4279,7 +4279,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Stores the results of checking for applications that
    are bound to an ethernet interface on the system.
 
-7.179.  physicalProtocol
+7.182.  physicalProtocol
 
    elementId: TBD
    name: physicalProtocol
@@ -4350,7 +4350,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The physical layer protocol used by the AF_PACKET
    socket.
 
-7.180.  hwAddress
+7.183.  hwAddress
 
    elementId: TBD
    name: hwAddress
@@ -4370,7 +4370,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 78]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.181.  programName
+7.184.  programName
 
    elementId: TBD
    name: programName
@@ -4379,7 +4379,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The name of the communicating
          program.
 
-7.182.  userId
+7.185.  userId
 
    elementId: TBD
    name: userId
@@ -4387,7 +4387,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The numeric user id.
 
-7.183.  inetlisteningserver
+7.186.  inetlisteningserver
 
    elementId: TBD
    name: inetlisteningserver
@@ -4400,7 +4400,7 @@ Internet-Draft           SACM Information Model            December 2016
    currently active on a system. It holds information pertaining to
    a specific protocol-address-port combination.
 
-7.184.  transportProtocol
+7.187.  transportProtocol
 
    elementId: TBD
    name: transportProtocol
@@ -4409,7 +4409,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The transport-layer
          protocol (tcp or udp).
 
-7.185.  localAddress
+7.188.  localAddress
 
    elementId: TBD
    name: localAddress
@@ -4426,7 +4426,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 79]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.186.  localPort
+7.189.  localPort
 
    elementId: TBD
    name: localPort
@@ -4435,7 +4435,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: This is the TCP or UDP port
          being listened to.
 
-7.187.  localFullAddress
+7.190.  localFullAddress
 
    elementId: TBD
    name: localFullAddress
@@ -4445,7 +4445,7 @@ Internet-Draft           SACM Information Model            December 2016
    listens, including the local address and the local port. Note
    that the IP address can be IPv4 or IPv6.
 
-7.188.  foreignAddress
+7.191.  foreignAddress
 
    elementId: TBD
    name: foreignAddress
@@ -4455,7 +4455,7 @@ Internet-Draft           SACM Information Model            December 2016
    communicating, or with which it will communicate. Note that the
    IP address can be IPv4 or IPv6.
 
-7.189.  foreignFullAddress
+7.192.  foreignFullAddress
 
    elementId: TBD
    name: foreignFullAddress
@@ -4466,7 +4466,7 @@ Internet-Draft           SACM Information Model            December 2016
    the foreign address and foreign port. Note that the IP address
    can be IPv4 or IPv6.
 
-7.190.  selinuxboolean
+7.193.  selinuxboolean
 
 
 
@@ -4491,7 +4491,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Describes the current and pending status of a
    SELinux boolean.
 
-7.191.  selinuxName
+7.194.  selinuxName
 
    elementId: TBD
    name: selinuxName
@@ -4500,7 +4500,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The name of the SELinux
          boolean.
 
-7.192.  currentStatus
+7.195.  currentStatus
 
    elementId: TBD
    name: currentStatus
@@ -4509,7 +4509,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Indicates current state of
          the specified SELinux boolean.
 
-7.193.  pendingStatus
+7.196.  pendingStatus
 
    elementId: TBD
    name: pendingStatus
@@ -4518,7 +4518,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Indicates the pending
          state of the specified SELinux boolean.
 
-7.194.  selinuxsecuritycontext
+7.197.  selinuxsecuritycontext
 
    elementId: TBD
    name: selinuxsecuritycontext
@@ -4538,7 +4538,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 81]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.195.  filepath
+7.198.  filepath
 
    elementId: TBD
    name: filepath
@@ -4547,7 +4547,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the absolute path for a file on the
    machine. A directory cannot be specified as a filepath.
 
-7.196.  path
+7.199.  path
 
    elementId: TBD
    name: path
@@ -4556,7 +4556,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the directory component of
          the absolute path to a file on the machine.
 
-7.197.  filename
+7.200.  filename
 
    elementId: TBD
    name: filename
@@ -4564,7 +4564,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The name of the file.
 
-7.198.  pid
+7.201.  pid
 
    elementId: TBD
    name: pid
@@ -4573,7 +4573,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The process ID of the
          process.
 
-7.199.  role
+7.202.  role
 
    elementId: TBD
    name: role
@@ -4594,7 +4594,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 82]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.200.  domainType
+7.203.  domainType
 
    elementId: TBD
    name: domainType
@@ -4603,7 +4603,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the domain in which the file is accessible
    or the domain in which a process executes.
 
-7.201.  lowSensitivity
+7.204.  lowSensitivity
 
    elementId: TBD
    name: lowSensitivity
@@ -4612,7 +4612,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the current sensitivity of a file or
    process.
 
-7.202.  lowCategory
+7.205.  lowCategory
 
    elementId: TBD
    name: lowCategory
@@ -4621,7 +4621,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the set of
          categories associated with the low sensitivity.
 
-7.203.  highSensitivity
+7.206.  highSensitivity
 
    elementId: TBD
    name: highSensitivity
@@ -4630,7 +4630,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the maximum
          range for a file or the clearance for a process.
 
-7.204.  highCategory
+7.207.  highCategory
 
    elementId: TBD
    name: highCategory
@@ -4650,7 +4650,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 83]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.205.  rawlowSensitivity
+7.208.  rawlowSensitivity
 
    elementId: TBD
    name: rawlowSensitivity
@@ -4659,7 +4659,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the current sensitivity of a file or
    process but in its raw context.
 
-7.206.  rawlowCategory
+7.209.  rawlowCategory
 
    elementId: TBD
    name: rawlowCategory
@@ -4668,7 +4668,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the set of categories associated with the
    low sensitivity but in its raw context.
 
-7.207.  rawhighSensitivity
+7.210.  rawhighSensitivity
 
    elementId: TBD
    name: rawhighSensitivity
@@ -4677,7 +4677,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the maximum range for a file or the
    clearance for a process but in its raw context.
 
-7.208.  rawhighCategory
+7.211.  rawhighCategory
 
    elementId: TBD
    name: rawhighCategory
@@ -4686,7 +4686,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the set of categories associated with the
    high sensitivity but in its raw context.
 
-7.209.  systemdunitdependency
+7.212.  systemdunitdependency
 
    elementId: TBD
    name: systemdunitdependency
@@ -4706,7 +4706,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 84]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.210.  unit
+7.213.  unit
 
    elementId: TBD
    name: unit
@@ -4716,7 +4716,7 @@ Internet-Draft           SACM Information Model            December 2016
    form of "$name.$type". For example "cupsd.service". This name is
    usually also the filename of the unit configuration file.
 
-7.211.  dependency
+7.214.  dependency
 
    elementId: TBD
    name: dependency
@@ -4725,7 +4725,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Refers to the name of a unit that was confirmed to
    be a dependency of the given unit.
 
-7.212.  systemdunitproperty
+7.215.  systemdunitproperty
 
    elementId: TBD
    name: systemdunitproperty
@@ -4735,7 +4735,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Stores the properties and values of a systemd unit.
 
-7.213.  property
+7.216.  property
 
    elementId: TBD
    name: property
@@ -4744,7 +4744,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The property associated with a
          systemd unit.
 
-7.214.  systemdunitValue
+7.217.  systemdunitValue
 
    elementId: TBD
    name: systemdunitValue
@@ -4762,7 +4762,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 85]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.215.  file
+7.218.  file
 
    elementId: TBD
    name: file
@@ -4772,7 +4772,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The metadata associated with a file on the endpoint.
 
-7.216.  fileType
+7.219.  fileType
 
    elementId: TBD
    name: fileType
@@ -4782,7 +4782,7 @@ Internet-Draft           SACM Information Model            December 2016
    directory, named pipe (fifo), symbolic link, socket or block
    special.)
 
-7.217.  groupId
+7.220.  groupId
 
    elementId: TBD
    name: groupId
@@ -4791,7 +4791,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The group owner of the file, by
          group number.
 
-7.218.  aTime
+7.221.  aTime
 
    elementId: TBD
    name: aTime
@@ -4800,7 +4800,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The time that the file was last
          accessed.
 
-7.219.  cTime
+7.222.  cTime
 
    elementId: TBD
    name: cTime
@@ -4818,7 +4818,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 86]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.220.  mTime
+7.223.  mTime
 
    elementId: TBD
    name: mTime
@@ -4827,7 +4827,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The time of the last change to
          the file's contents.
 
-7.221.  size
+7.224.  size
 
    elementId: TBD
    name: size
@@ -4836,7 +4836,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: This is the size of the file in
          bytes.
 
-7.222.  suid
+7.225.  suid
 
    elementId: TBD
    name: suid
@@ -4846,7 +4846,7 @@ Internet-Draft           SACM Information Model            December 2016
    (thus privileges) of the file's owner, rather than the calling
    user.
 
-7.223.  sgid
+7.226.  sgid
 
    elementId: TBD
    name: sgid
@@ -4856,7 +4856,7 @@ Internet-Draft           SACM Information Model            December 2016
    (thus privileges) of the file's group owner, rather than the
    calling user's group.
 
-7.224.  sticky
+7.227.  sticky
 
    elementId: TBD
    name: sticky
@@ -4874,7 +4874,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 87]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.225.  hasExtendedAcl
+7.228.  hasExtendedAcl
 
    elementId: TBD
    name: hasExtendedAcl
@@ -4889,7 +4889,7 @@ Internet-Draft           SACM Information Model            December 2016
    and a value of 'true'. Lastly, if a system doesn't support ACLs,
    the entity will have a status of 'does not exist'.
 
-7.226.  inetd
+7.229.  inetd
 
    elementId: TBD
    name: inetd
@@ -4900,7 +4900,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Holds information associated
          with different Internet services.
 
-7.227.  serverProgram
+7.230.  serverProgram
 
    elementId: TBD
    name: serverProgram
@@ -4910,7 +4910,7 @@ Internet-Draft           SACM Information Model            December 2016
    invoked by inetd to perform the requested service, or the value
    internal if inetd itself provides the service.
 
-7.228.  endpointType
+7.231.  endpointType
 
 
 
@@ -4952,7 +4952,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The endpoint type (aka, socket type) associated with
    the service.
 
-7.229.  execAsUser
+7.232.  execAsUser
 
    elementId: TBD
    name: execAsUser
@@ -4961,7 +4961,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The user id of the user the
          server program should run under.
 
-7.230.  waitStatus
+7.233.  waitStatus
 
 
 
@@ -5009,7 +5009,7 @@ Internet-Draft           SACM Information Model            December 2016
    server to exit, if ever, before it resumes listening for new
    service requests. The legal values are "wait" or "nowait".
 
-7.231.  inetAddr
+7.234.  inetAddr
 
    elementId: TBD
    name: inetAddr
@@ -5018,7 +5018,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The IP address of the specific interface. Note that
    the IP address can be IPv4 or IPv6.
 
-7.232.  netmask
+7.235.  netmask
 
    elementId: TBD
    name: netmask
@@ -5027,7 +5027,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The bitmask used to calculate
          the interface's IP network.
 
-7.233.  passwordInfo
+7.236.  passwordInfo
 
 
 
@@ -5051,7 +5051,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Describes user account information for a
          system.
 
-7.234.  username
+7.237.  username
 
    elementId: TBD
    name: username
@@ -5059,7 +5059,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The name of the user.
 
-7.235.  password
+7.238.  password
 
    elementId: TBD
    name: password
@@ -5068,7 +5068,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The encrypted version of the
          user's password.
 
-7.236.  gcos
+7.239.  gcos
 
    elementId: TBD
    name: gcos
@@ -5076,7 +5076,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.237.  homeDir
+7.240.  homeDir
 
    elementId: TBD
    name: homeDir
@@ -5085,7 +5085,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The user's home
          directory.
 
-7.238.  loginShell
+7.241.  loginShell
 
 
 
@@ -5105,7 +5105,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The user's shell
          program.
 
-7.239.  lastLogin
+7.242.  lastLogin
 
    elementId: TBD
    name: lastLogin
@@ -5114,7 +5114,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The date and time when the
          last login occurred.
 
-7.240.  process
+7.243.  process
 
    elementId: TBD
    name: process
@@ -5124,7 +5124,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Information about a process running on an endpoint.
 
-7.241.  commandLine
+7.244.  commandLine
 
    elementId: TBD
    name: commandLine
@@ -5134,7 +5134,7 @@ Internet-Draft           SACM Information Model            December 2016
          process. This includes any parameters that are part of the
          command line.
 
-7.242.  ppid
+7.245.  ppid
 
    elementId: TBD
    name: ppid
@@ -5154,7 +5154,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 92]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.243.  priority
+7.246.  priority
 
    elementId: TBD
    name: priority
@@ -5163,7 +5163,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The scheduling priority with
          which the process runs.
 
-7.244.  startTime
+7.247.  startTime
 
    elementId: TBD
    name: startTime
@@ -5172,7 +5172,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The time of day the process
          started.
 
-7.245.  routingtable
+7.248.  routingtable
 
    elementId: TBD
    name: routingtable
@@ -5183,7 +5183,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Holds information about an individual routing table
    entry found in a system's primary routing table.
 
-7.246.  destination
+7.249.  destination
 
    elementId: TBD
    name: destination
@@ -5192,7 +5192,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The destination IP address
          prefix of the routing table entry.
 
-7.247.  gateway
+7.250.  gateway
 
    elementId: TBD
    name: gateway
@@ -5210,7 +5210,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 93]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.248.  runlevelInfo
+7.251.  runlevelInfo
 
    elementId: TBD
    name: runlevelInfo
@@ -5221,7 +5221,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Information about the start or kill state of a
    specified service at a given runlevel.
 
-7.249.  runlevel
+7.252.  runlevel
 
    elementId: TBD
    name: runlevel
@@ -5230,7 +5230,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the system runlevel
          associated with a service.
 
-7.250.  start
+7.253.  start
 
    elementId: TBD
    name: start
@@ -5239,7 +5239,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether the service is
          scheduled to start at the runlevel.
 
-7.251.  kill
+7.254.  kill
 
    elementId: TBD
    name: kill
@@ -5248,7 +5248,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether the service is
          scheduled to be killed at the runlevel.
 
-7.252.  shadowItem
+7.255.  shadowItem
 
    elementId: TBD
    name: shadowItem
@@ -5266,7 +5266,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 94]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.253.  chgLst
+7.256.  chgLst
 
    elementId: TBD
    name: chgLst
@@ -5275,7 +5275,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The date of the last password
          change.
 
-7.254.  chgAllow
+7.257.  chgAllow
 
    elementId: TBD
    name: chgAllow
@@ -5285,7 +5285,7 @@ Internet-Draft           SACM Information Model            December 2016
          user may change their password. It can also be thought of
          as the minimum age of a password.
 
-7.255.  chgReq
+7.258.  chgReq
 
    elementId: TBD
    name: chgReq
@@ -5294,7 +5294,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Describes how long a user can
          keep a password before the system forces her to change it.
 
-7.256.  expWarn
+7.259.  expWarn
 
    elementId: TBD
    name: expWarn
@@ -5303,7 +5303,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Describes how long before
          password expiration the system begins warning the user.
 
-7.257.  expInact
+7.260.  expInact
 
    elementId: TBD
    name: expInact
@@ -5322,7 +5322,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 95]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.258.  expDate
+7.261.  expDate
 
    elementId: TBD
    name: expDate
@@ -5331,7 +5331,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies when will the
          account's password expire.
 
-7.259.  encryptMethod
+7.262.  encryptMethod
 
    elementId: TBD
    name: encryptMethod
@@ -5355,7 +5355,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Describes method that is used for hashing
          passwords.
 
-7.260.  symlink
+7.263.  symlink
 
    elementId: TBD
    name: symlink
@@ -5365,7 +5365,7 @@ Internet-Draft           SACM Information Model            December 2016
 
    description: Identifies the result generated for a symlink.
 
-7.261.  symlinkFilepath
+7.264.  symlinkFilepath
 
 
 
@@ -5385,7 +5385,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the filepath to
          the subject symbolic link file.
 
-7.262.  canonicalPath
+7.265.  canonicalPath
 
    elementId: TBD
    name: canonicalPath
@@ -5395,7 +5395,7 @@ Internet-Draft           SACM Information Model            December 2016
          path for the target of the symbolic link file specified by
          the filepath.
 
-7.263.  sysctl
+7.266.  sysctl
 
    elementId: TBD
    name: sysctl
@@ -5408,7 +5408,7 @@ Internet-Draft           SACM Information Model            December 2016
          information retrieved from the local system about a kernel
          parameter and its respective value(s).
 
-7.264.  kernelParameterName
+7.267.  kernelParameterName
 
    elementId: TBD
    name: kernelParameterName
@@ -5417,7 +5417,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The name of a kernel
          parameter that was collected from the local system.
 
-7.265.  kernelParameterValue
+7.268.  kernelParameterValue
 
    elementId: TBD
    name: kernelParameterValue
@@ -5434,7 +5434,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 97]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.266.  uname
+7.269.  uname
 
    elementId: TBD
    name: uname
@@ -5445,7 +5445,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Information about the hardware the machine is running
          on.
 
-7.267.  machineClass
+7.270.  machineClass
 
    elementId: TBD
    name: machineClass
@@ -5454,7 +5454,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the machine
          hardware name.
 
-7.268.  nodeName
+7.271.  nodeName
 
    elementId: TBD
    name: nodeName
@@ -5463,7 +5463,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the host
          name.
 
-7.269.  osName
+7.272.  osName
 
    elementId: TBD
    name: osName
@@ -5472,7 +5472,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the operating system
          name.
 
-7.270.  osRelease
+7.273.  osRelease
 
    elementId: TBD
    name: osRelease
@@ -5490,7 +5490,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 98]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.271.  processorType
+7.274.  processorType
 
    elementId: TBD
    name: processorType
@@ -5499,7 +5499,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the processor
          type.
 
-7.272.  internetService
+7.275.  internetService
 
    elementId: TBD
    name: internetService
@@ -5511,7 +5511,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Holds information associated with Internet services.
 
-7.273.  serviceProtocol
+7.276.  serviceProtocol
 
    elementId: TBD
    name: serviceProtocol
@@ -5520,7 +5520,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the protocol
          that is used by the service.
 
-7.274.  serviceName
+7.277.  serviceName
 
    elementId: TBD
    name: serviceName
@@ -5529,7 +5529,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the name of the
          service.
 
-7.275.  flags
+7.278.  flags
 
    elementId: TBD
    name: flags
@@ -5546,7 +5546,7 @@ Waltermire, et al.        Expires June 4, 2017                 [Page 99]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.276.  noAccess
+7.279.  noAccess
 
    elementId: TBD
    name: noAccess
@@ -5555,7 +5555,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the remote hosts to
          which the service is unavailable.
 
-7.277.  onlyFrom
+7.280.  onlyFrom
 
    elementId: TBD
    name: onlyFrom
@@ -5564,7 +5564,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the remote hosts to
          which the service is available.
 
-7.278.  port
+7.281.  port
 
    elementId: TBD
    name: port
@@ -5573,7 +5573,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The port entity specifies the port
          used by the service.
 
-7.279.  server
+7.282.  server
 
    elementId: TBD
    name: server
@@ -5582,7 +5582,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the executable that is
          used to launch the service.
 
-7.280.  serverArguments
+7.283.  serverArguments
 
    elementId: TBD
    name: serverArguments
@@ -5602,7 +5602,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 100]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.281.  socketType
+7.284.  socketType
 
    elementId: TBD
    name: socketType
@@ -5612,7 +5612,7 @@ Internet-Draft           SACM Information Model            December 2016
          that is used by the service. Possible values include: stream,
          dgram, raw, or seqpacket.
 
-7.282.  registeredServiceType
+7.285.  registeredServiceType
 
    elementId: TBD
    name: registeredServiceType
@@ -5637,7 +5637,7 @@ Internet-Draft           SACM Information Model            December 2016
 
    description: Specifies the type of internet service.
 
-7.283.  wait
+7.286.  wait
 
    elementId: TBD
    name: wait
@@ -5658,7 +5658,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 101]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.284.  disabled
+7.287.  disabled
 
    elementId: TBD
    name: disabled
@@ -5669,7 +5669,7 @@ Internet-Draft           SACM Information Model            December 2016
          service is disabled and will not start. A value of
          'false' indicates that the service is not disabled.
 
-7.285.  windowsView
+7.288.  windowsView
 
    elementId: TBD
    name: windowsView
@@ -5685,7 +5685,7 @@ Internet-Draft           SACM Information Model            December 2016
          the 32-bit view. A value of '64-bit' indicates the Item
          was collected from the 64-bit view.
 
-7.286.  fileauditedpermissions
+7.289.  fileauditedpermissions
 
    elementId: TBD
    name: fileauditedpermissions
@@ -5714,7 +5714,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 102]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.287.  trusteeName
+7.290.  trusteeName
 
    elementId: TBD
    name: trusteeName
@@ -5724,7 +5724,7 @@ Internet-Draft           SACM Information Model            December 2016
          trustee can be a user, group, or program (such as a Windows
          service).
 
-7.288.  auditStandardDelete
+7.291.  auditStandardDelete
 
    elementId: TBD
    name: auditStandardDelete
@@ -5745,7 +5745,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: The right to delete the object.
 
-7.289.  auditStandardReadControl
+7.292.  auditStandardReadControl
 
 
 
@@ -5790,7 +5790,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The right to read the information in the object's
    security descriptor, not including the information in the SACL.
 
-7.290.  auditStandardWriteDac
+7.293.  auditStandardWriteDac
 
    elementId: TBD
    name: auditStandardWriteDac
@@ -5812,7 +5812,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The right to modify the DACL in the object's security
          descriptor.
 
-7.291.  auditStandardWriteOwner
+7.294.  auditStandardWriteOwner
 
 
 
@@ -5846,7 +5846,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The right to change the owner in the object's security
          descriptor.
 
-7.292.  auditStandardSynchronize
+7.295.  auditStandardSynchronize
 
    elementId: TBD
    name: auditStandardSynchronize
@@ -5869,7 +5869,7 @@ Internet-Draft           SACM Information Model            December 2016
    This enables a thread to wait until the object is in the signaled
    state. Some object types do not support this access right.
 
-7.293.  auditAccessSystemSecurity
+7.296.  auditAccessSystemSecurity
 
 
 
@@ -5901,7 +5901,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Indicates access to a system access control list (SACL).
 
-7.294.  auditGenericRead
+7.297.  auditGenericRead
 
    elementId: TBD
    name: auditGenericRead
@@ -5922,7 +5922,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Read access.
 
-7.295.  auditGenericWrite
+7.298.  auditGenericWrite
 
 
 
@@ -5957,7 +5957,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Write access.
 
-7.296.  auditGenericExecute
+7.299.  auditGenericExecute
 
    elementId: TBD
    name: auditGenericExecute
@@ -5978,7 +5978,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Execute access.
 
-7.297.  auditGenericAll
+7.300.  auditGenericAll
 
 
 
@@ -6013,7 +6013,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Read, write, and execute access.
 
-7.298.  auditFileReadData
+7.301.  auditFileReadData
 
    elementId: TBD
    name: auditFileReadData
@@ -6034,7 +6034,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Grants the right to read data from the file.
 
-7.299.  auditFileWriteData
+7.302.  auditFileWriteData
 
 
 
@@ -6069,7 +6069,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Grants the right to write data to the file.
 
-7.300.  auditFileAppendData
+7.303.  auditFileAppendData
 
    elementId: TBD
    name: auditFileAppendData
@@ -6090,7 +6090,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Grants the right to append data to the file.
 
-7.301.  auditFileReadEa
+7.304.  auditFileReadEa
 
 
 
@@ -6125,7 +6125,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Grants the right to read extended attributes.
 
-7.302.  auditFileWriteEa
+7.305.  auditFileWriteEa
 
    elementId: TBD
    name: auditFileWriteEa
@@ -6146,7 +6146,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Grants the right to write extended attributes.
 
-7.303.  auditFileExecute
+7.306.  auditFileExecute
 
 
 
@@ -6181,7 +6181,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Grants the right to execute a file.
 
-7.304.  auditFileDeleteChild
+7.307.  auditFileDeleteChild
 
    elementId: TBD
    name: auditFileDeleteChild
@@ -6203,7 +6203,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Right to delete a directory and all the files it
    contains (its children), even if the files are read-only.
 
-7.305.  auditFileReadAttributes
+7.308.  auditFileReadAttributes
 
 
 
@@ -6237,7 +6237,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Grants the right to read file attributes.
 
-7.306.  auditFileWriteAttributes
+7.309.  auditFileWriteAttributes
 
    elementId: TBD
    name: auditFileWriteAttributes
@@ -6258,7 +6258,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Grants the right to change file attributes.
 
-7.307.  fileeffectiverights
+7.310.  fileeffectiverights
 
 
 
@@ -6292,7 +6292,7 @@ Internet-Draft           SACM Information Model            December 2016
          are determined checking all access-allowed and access-denied
          access control entries (ACEs) in the DACL.
 
-7.308.  standardDelete
+7.311.  standardDelete
 
    elementId: TBD
    name: standardDelete
@@ -6301,7 +6301,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The right to delete the
          object.
 
-7.309.  standardReadControl
+7.312.  standardReadControl
 
    elementId: TBD
    name: standardReadControl
@@ -6311,7 +6311,7 @@ Internet-Draft           SACM Information Model            December 2016
          the information in the object's security descriptor, not
          including the information in the SACL.
 
-7.310.  standardWriteDac
+7.313.  standardWriteDac
 
    elementId: TBD
    name: standardWriteDac
@@ -6330,7 +6330,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 113]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.311.  standardWriteOwner
+7.314.  standardWriteOwner
 
    elementId: TBD
    name: standardWriteOwner
@@ -6339,7 +6339,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The right to change
          the owner in the object's security descriptor.
 
-7.312.  standardSynchronize
+7.315.  standardSynchronize
 
    elementId: TBD
    name: standardSynchronize
@@ -6350,7 +6350,7 @@ Internet-Draft           SACM Information Model            December 2016
          until the object is in the signaled state. Some object
          types do not support this access right.
 
-7.313.  accessSystemSecurity
+7.316.  accessSystemSecurity
 
    elementId: TBD
    name: accessSystemSecurity
@@ -6359,7 +6359,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Indicates access to
          a system access control list (SACL).
 
-7.314.  genericRead
+7.317.  genericRead
 
    elementId: TBD
    name: genericRead
@@ -6367,7 +6367,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Read access.
 
-7.315.  genericWrite
+7.318.  genericWrite
 
    elementId: TBD
    name: genericWrite
@@ -6386,7 +6386,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 114]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.316.  genericExecute
+7.319.  genericExecute
 
    elementId: TBD
    name: genericExecute
@@ -6394,7 +6394,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Execute access.
 
-7.317.  genericAll
+7.320.  genericAll
 
    elementId: TBD
    name: genericAll
@@ -6403,7 +6403,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Read, write, and execute
          access.
 
-7.318.  fileReadData
+7.321.  fileReadData
 
    elementId: TBD
    name: fileReadData
@@ -6412,7 +6412,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Grants the right to read
          data from the file
 
-7.319.  fileWriteData
+7.322.  fileWriteData
 
    elementId: TBD
    name: fileWriteData
@@ -6421,7 +6421,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Grants the right to write
          data to the file.
 
-7.320.  fileAppendData
+7.323.  fileAppendData
 
    elementId: TBD
    name: fileAppendData
@@ -6442,7 +6442,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 115]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.321.  fileReadEa
+7.324.  fileReadEa
 
    elementId: TBD
    name: fileReadEa
@@ -6451,7 +6451,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Grants the right to read
          extended attributes.
 
-7.322.  fileWriteEa
+7.325.  fileWriteEa
 
    elementId: TBD
    name: fileWriteEa
@@ -6460,7 +6460,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Grants the right to write
          extended attributes.
 
-7.323.  fileExecute
+7.326.  fileExecute
 
    elementId: TBD
    name: fileExecute
@@ -6469,7 +6469,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Grants the right to execute
          a file.
 
-7.324.  fileDeleteChild
+7.327.  fileDeleteChild
 
    elementId: TBD
    name: fileDeleteChild
@@ -6479,7 +6479,7 @@ Internet-Draft           SACM Information Model            December 2016
          directory and all the files it contains (its children),
          even if the files are read-only.
 
-7.325.  fileReadAttributes
+7.328.  fileReadAttributes
 
    elementId: TBD
    name: fileReadAttributes
@@ -6498,7 +6498,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 116]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.326.  fileWriteAttributes
+7.329.  fileWriteAttributes
 
    elementId: TBD
    name: fileWriteAttributes
@@ -6507,7 +6507,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Grants the right to
          change file attributes.
 
-7.327.  groupInfo
+7.330.  groupInfo
 
    elementId: TBD
    name: groupInfo
@@ -6517,7 +6517,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the different users and subgroups, that
    directly belong to specific groups.
 
-7.328.  group
+7.331.  group
 
    elementId: TBD
    name: group
@@ -6526,7 +6526,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Represents the name of a particular
          group.
 
-7.329.  subgroup
+7.332.  subgroup
 
    elementId: TBD
    name: subgroup
@@ -6535,7 +6535,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Represents the name of a
          particular subgroup in the specified group.
 
-7.330.  groupSidInfo
+7.333.  groupSidInfo
 
    elementId: TBD
    name: groupSidInfo
@@ -6554,7 +6554,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 117]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.331.  userSidInfo
+7.334.  userSidInfo
 
    elementId: TBD
    name: userSidInfo
@@ -6565,7 +6565,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the different groups (identified by SID)
    that a user belongs to.
 
-7.332.  userSid
+7.335.  userSid
 
    elementId: TBD
    name: userSid
@@ -6574,7 +6574,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Represents the SID of a
          particular user.
 
-7.333.  subgroupSid
+7.336.  subgroupSid
 
    elementId: TBD
    name: subgroupSid
@@ -6583,7 +6583,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Represents the SID of a
          particular subgroup.
 
-7.334.  lockoutpolicy
+7.337.  lockoutpolicy
 
    elementId: TBD
    name: lockoutpolicy
@@ -6595,7 +6595,7 @@ Internet-Draft           SACM Information Model            December 2016
          with lockout information for users and global groups in the
          security database.
 
-7.335.  forceLogoff
+7.338.  forceLogoff
 
 
 
@@ -6619,7 +6619,7 @@ Internet-Draft           SACM Information Model            December 2016
          the time when the user is forced to log off the
          network.
 
-7.336.  lockoutDuration
+7.339.  lockoutDuration
 
    elementId: TBD
    name: lockoutDuration
@@ -6629,7 +6629,7 @@ Internet-Draft           SACM Information Model            December 2016
          how long a locked account remains locked before it is
          automatically unlocked.
 
-7.337.  lockoutObservationWindow
+7.340.  lockoutObservationWindow
 
    elementId: TBD
    name: lockoutObservationWindow
@@ -6639,7 +6639,7 @@ Internet-Draft           SACM Information Model            December 2016
          maximum time, in seconds, that can elapse between any two
          failed logon attempts before lockout occurs.
 
-7.338.  lockoutThreshold
+7.341.  lockoutThreshold
 
    elementId: TBD
    name: lockoutThreshold
@@ -6649,7 +6649,7 @@ Internet-Draft           SACM Information Model            December 2016
          invalid password authentications that can occur before an
          account is marked "locked out."
 
-7.339.  passwordpolicy
+7.342.  passwordpolicy
 
 
 
@@ -6676,7 +6676,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies
          policy information associated with passwords.
 
-7.340.  maxPasswdAge
+7.343.  maxPasswdAge
 
    elementId: TBD
    name: maxPasswdAge
@@ -6690,7 +6690,7 @@ Internet-Draft           SACM Information Model            December 2016
          USER_MODALS_INFO_0 structure returned by a call to
          NetUserModalsGet().
 
-7.341.  minPasswdAge
+7.344.  minPasswdAge
 
    elementId: TBD
    name: minPasswdAge
@@ -6702,7 +6702,7 @@ Internet-Draft           SACM Information Model            December 2016
          zero indicates that no delay is required between password
          updates.
 
-7.342.  minPasswdLen
+7.345.  minPasswdLen
 
    elementId: TBD
    name: minPasswdLen
@@ -6722,7 +6722,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 120]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.343.  passwordHistLen
+7.346.  passwordHistLen
 
    elementId: TBD
    name: passwordHistLen
@@ -6733,7 +6733,7 @@ Internet-Draft           SACM Information Model            December 2016
          of the previous usrmod0_password_hist_len passwords.
          Valid values for this element are zero through DEF_MAX_PWHIST.
 
-7.344.  passwordComplexity
+7.347.  passwordComplexity
 
    elementId: TBD
    name: passwordComplexity
@@ -6743,7 +6743,7 @@ Internet-Draft           SACM Information Model            December 2016
          passwords must meet the complexity requirements put forth
          by the operating system.
 
-7.345.  reversibleEncryption
+7.348.  reversibleEncryption
 
    elementId: TBD
    name: reversibleEncryption
@@ -6752,7 +6752,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Indicates whether
          or not passwords are stored using reversible encryption.
 
-7.346.  portInfo
+7.349.  portInfo
 
    elementId: TBD
    name: portInfo
@@ -6762,7 +6762,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Information about open listening ports.
 
-7.347.  foreignPort
+7.350.  foreignPort
 
    elementId: TBD
    name: foreignPort
@@ -6778,7 +6778,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 121]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.348.  printereffectiverights
+7.351.  printereffectiverights
 
    elementId: TBD
    name: printereffectiverights
@@ -6796,7 +6796,7 @@ Internet-Draft           SACM Information Model            December 2016
    checking all access-allowed and access-denied access control
    entries (ACEs) in the DACL.
 
-7.349.  printerName
+7.352.  printerName
 
    elementId: TBD
    name: printerName
@@ -6805,7 +6805,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the name of the
          printer.
 
-7.350.  printerAccessAdminister
+7.353.  printerAccessAdminister
 
    elementId: TBD
    name: printerAccessAdminister
@@ -6813,7 +6813,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.351.  printerAccessUse
+7.354.  printerAccessUse
 
    elementId: TBD
    name: printerAccessUse
@@ -6821,7 +6821,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.352.  jobAccessAdminister
+7.355.  jobAccessAdminister
 
 
 
@@ -6840,7 +6840,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.353.  jobAccessRead
+7.356.  jobAccessRead
 
    elementId: TBD
    name: jobAccessRead
@@ -6848,7 +6848,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.354.  registry
+7.357.  registry
 
    elementId: TBD
    name: registry
@@ -6860,7 +6860,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies information that can be
          collected about a particular registry key.
 
-7.355.  registryHive
+7.358.  registryHive
 
 
 
@@ -6912,7 +6912,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The
          hive that the registry key belongs to.
 
-7.356.  registryKey
+7.359.  registryKey
 
    elementId: TBD
    name: registryKey
@@ -6923,7 +6923,7 @@ Internet-Draft           SACM Information Model            December 2016
          included, as this data can be found under the hive
          element.
 
-7.357.  registryKeyName
+7.360.  registryKeyName
 
    elementId: TBD
    name: registryKeyName
@@ -6932,7 +6932,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Describes the name of a
          registry key.
 
-7.358.  lastWriteTime
+7.361.  lastWriteTime
 
 
 
@@ -6965,7 +6965,7 @@ Internet-Draft           SACM Information Model            December 2016
          to the specified name. See the RegQueryInfoKey function
          lpftLastWriteTime.
 
-7.359.  registryKeyType
+7.362.  registryKeyType
 
    elementId: TBD
    name: registryKeyType
@@ -7026,7 +7026,7 @@ Internet-Draft           SACM Information Model            December 2016
    description:
          Specifies the type of data stored by the registry key.
 
-7.360.  registryKeyValue
+7.363.  registryKeyValue
 
 
 
@@ -7092,7 +7092,7 @@ Internet-Draft           SACM Information Model            December 2016
          null-terminated Unicode string should be represented by the
          value entity.
 
-7.361.  regkeyauditedpermissions
+7.364.  regkeyauditedpermissions
 
 
 
@@ -7131,7 +7131,7 @@ Internet-Draft           SACM Information Model            December 2016
    specified trustee. The trustee's audited access rights are
    determined checking all access control entries (ACEs) in the SACL.
 
-7.362.  auditKeyQueryValue
+7.365.  auditKeyQueryValue
 
    elementId: TBD
    name: auditKeyQueryValue
@@ -7152,7 +7152,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.363.  auditKeySetValue
+7.366.  auditKeySetValue
 
 
 
@@ -7189,7 +7189,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.364.  auditKeyCreateSubKey
+7.367.  auditKeyCreateSubKey
 
    elementId: TBD
    name: auditKeyCreateSubKey
@@ -7210,7 +7210,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.365.  auditKeyEnumerateSubKeys
+7.368.  auditKeyEnumerateSubKeys
 
 
 
@@ -7245,7 +7245,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.366.  auditKeyNotify
+7.369.  auditKeyNotify
 
    elementId: TBD
    name: auditKeyNotify
@@ -7266,7 +7266,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.367.  auditKeyCreateLink
+7.370.  auditKeyCreateLink
 
 
 
@@ -7301,7 +7301,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.368.  auditKeyWow6464Key
+7.371.  auditKeyWow6464Key
 
    elementId: TBD
    name: auditKeyWow6464Key
@@ -7322,7 +7322,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.369.  auditKeyWow6432Key
+7.372.  auditKeyWow6432Key
 
 
 
@@ -7357,7 +7357,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.370.  auditKeyWow64Res
+7.373.  auditKeyWow64Res
 
    elementId: TBD
    name: auditKeyWow64Res
@@ -7378,7 +7378,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.371.  regkeyeffectiverights
+7.374.  regkeyeffectiverights
 
 
 
@@ -7412,7 +7412,7 @@ Internet-Draft           SACM Information Model            December 2016
    checking all access-allowed and access-denied access control
    entries (ACEs) in the DACL.
 
-7.372.  keyQueryValue
+7.375.  keyQueryValue
 
    elementId: TBD
    name: keyQueryValue
@@ -7421,7 +7421,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether or not
          permission is granted to query the key's value.
 
-7.373.  keySetValue
+7.376.  keySetValue
 
    elementId: TBD
    name: keySetValue
@@ -7430,7 +7430,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether or not
          permission is granted to set the key's value.
 
-7.374.  keyCreateSubKey
+7.377.  keyCreateSubKey
 
    elementId: TBD
    name: keyCreateSubKey
@@ -7450,7 +7450,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 133]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.375.  keyEnumerateSubKeys
+7.378.  keyEnumerateSubKeys
 
    elementId: TBD
    name: keyEnumerateSubKeys
@@ -7460,7 +7460,7 @@ Internet-Draft           SACM Information Model            December 2016
          not permission is granted to list the subkeys associated
          with key.
 
-7.376.  keyNotify
+7.379.  keyNotify
 
    elementId: TBD
    name: keyNotify
@@ -7468,7 +7468,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.377.  keyCreateLink
+7.380.  keyCreateLink
 
    elementId: TBD
    name: keyCreateLink
@@ -7476,7 +7476,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.378.  keyWow6464Key
+7.381.  keyWow6464Key
 
    elementId: TBD
    name: keyWow6464Key
@@ -7484,7 +7484,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.379.  keyWow6432Key
+7.382.  keyWow6432Key
 
    elementId: TBD
    name: keyWow6432Key
@@ -7492,7 +7492,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.380.  keyWow64Res
+7.383.  keyWow64Res
 
 
 
@@ -7512,7 +7512,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description:
 
-7.381.  service
+7.384.  service
 
    elementId: TBD
    name: service
@@ -7524,7 +7524,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Stores information about Windows services that are
    present on the system.
 
-7.382.  displayName
+7.385.  displayName
 
    elementId: TBD
    name: displayName
@@ -7533,7 +7533,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the name of the
          service as specified in administrative tools.
 
-7.383.  description
+7.386.  description
 
    elementId: TBD
    name: description
@@ -7542,7 +7542,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the description of
          the service.
 
-7.384.  serviceType
+7.387.  serviceType
 
 
 
@@ -7589,7 +7589,7 @@ Internet-Draft           SACM Information Model            December 2016
    description:
          Specifies the type of the service.
 
-7.385.  startType
+7.388.  startType
 
 
 
@@ -7644,7 +7644,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Specifies when the service should be started.
 
-7.386.  currentState
+7.389.  currentState
 
 
 
@@ -7710,7 +7710,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the current state of
          the service.
 
-7.387.  controlsAccepted
+7.390.  controlsAccepted
 
  elementId: TBD
  name: controlsAccepted
@@ -7786,7 +7786,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 139]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.388.  startName
+7.391.  startName
 
    elementId: TBD
    name: startName
@@ -7795,7 +7795,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the account under
          which the process should run.
 
-7.389.  serviceFlag
+7.392.  serviceFlag
 
    elementId: TBD
    name: serviceFlag
@@ -7806,7 +7806,7 @@ Internet-Draft           SACM Information Model            December 2016
          or if the service is in a non-system process or is not
          running (false).
 
-7.390.  dependencies
+7.393.  dependencies
 
    elementId: TBD
    name: dependencies
@@ -7815,7 +7815,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the dependencies
          of this service on other services.
 
-7.391.  serviceeffectiverights
+7.394.  serviceeffectiverights
 
    elementId: TBD
    name: serviceeffectiverights
@@ -7842,7 +7842,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 140]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.392.  trusteeSid
+7.395.  trusteeSid
 
    elementId: TBD
    name: trusteeSid
@@ -7852,7 +7852,7 @@ Internet-Draft           SACM Information Model            December 2016
          associated with a user, group, system, or program (such as a
          Windows service).
 
-7.393.  serviceQueryConf
+7.396.  serviceQueryConf
 
    elementId: TBD
    name: serviceQueryConf
@@ -7861,7 +7861,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether or
          not permission is granted to query the service configuration.
 
-7.394.  serviceChangeConf
+7.397.  serviceChangeConf
 
    elementId: TBD
    name: serviceChangeConf
@@ -7870,7 +7870,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether or
          not permission is granted to change service configuration.
 
-7.395.  serviceQueryStat
+7.398.  serviceQueryStat
 
    elementId: TBD
    name: serviceQueryStat
@@ -7880,7 +7880,7 @@ Internet-Draft           SACM Information Model            December 2016
          not permission is granted to query the service control
          manager about the status of the service.
 
-7.396.  serviceEnumDependents
+7.399.  serviceEnumDependents
 
    elementId: TBD
    name: serviceEnumDependents
@@ -7898,7 +7898,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 141]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.397.  serviceStart
+7.400.  serviceStart
 
    elementId: TBD
    name: serviceStart
@@ -7907,7 +7907,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether or not
          permission is granted to start the service.
 
-7.398.  serviceStop
+7.401.  serviceStop
 
    elementId: TBD
    name: serviceStop
@@ -7916,7 +7916,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether or not
          permission is granted to stop the service.
 
-7.399.  servicePause
+7.402.  servicePause
 
    elementId: TBD
    name: servicePause
@@ -7925,7 +7925,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether or not
          permission is granted to pause or continue the service.
 
-7.400.  serviceInterrogate
+7.403.  serviceInterrogate
 
    elementId: TBD
    name: serviceInterrogate
@@ -7934,7 +7934,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies whether or not permission is granted to
                request the service to report its status immediately.
 
-7.401.  serviceUserDefined
+7.404.  serviceUserDefined
 
    elementId: TBD
    name: serviceUserDefined
@@ -7954,7 +7954,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 142]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.402.  sharedresourceauditedpermissions
+7.405.  sharedresourceauditedpermissions
 
    elementId: TBD
    name: sharedresourceauditedpermissions
@@ -7972,7 +7972,7 @@ Internet-Draft           SACM Information Model            December 2016
          determined checking all access control entries (ACEs)
          in the SACL.
 
-7.403.  netname
+7.406.  netname
 
    elementId: TBD
    name: netname
@@ -7981,7 +7981,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Specifies the name associated
          with a particular shared resource.
 
-7.404.  sharedresourceeffectiverights
+7.407.  sharedresourceeffectiverights
 
    elementId: TBD
    name: sharedresourceeffectiverights
@@ -8010,7 +8010,7 @@ Waltermire, et al.        Expires June 4, 2017                [Page 143]
 Internet-Draft           SACM Information Model            December 2016
 
 
-7.405.  user
+7.408.  user
 
    elementId: TBD
    name: user
@@ -8019,7 +8019,7 @@ Internet-Draft           SACM Information Model            December 2016
    status: current
    description: Specifies the groups to which a user belongs.
 
-7.406.  enabled
+7.409.  enabled
 
    elementId: TBD
    name: enabled
@@ -8028,7 +8028,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: Represents whether the
          particular user is enabled or not.
 
-7.407.  lastLogon
+7.410.  lastLogon
 
    elementId: TBD
    name: lastLogon
@@ -8037,7 +8037,7 @@ Internet-Draft           SACM Information Model            December 2016
    description: The date and time when the
          last logon occurred.
 
-7.408.  groupSid
+7.411.  groupSid
 
    elementId: TBD
    name: groupSid
@@ -8570,6 +8570,10 @@ Waltermire, et al.        Expires June 4, 2017                [Page 153]
 Internet-Draft           SACM Information Model            December 2016
 
 
+   Added "networkZoneLocation", "layer2NetworkLocation", and
+   "layer3NetworkLocation" IEs (https://github.com/sacmwg/draft-ietf-
+   sacm-information-model/issues/9).
+
 Authors' Addresses
 
    David Waltermire (editor)
@@ -8610,13 +8614,9 @@ Authors' Addresses
    Email: llorenzin@pulsesecure.net
 
 
-   Michael Cokus
-   The MITRE Corporation
-   903 Enterprise Parkway, Suite 200
-   Hampton, VA  23666
-   USA
 
-   Email: msc@mitre.org
+
+
 
 
 
@@ -8624,6 +8624,15 @@ Authors' Addresses
 Waltermire, et al.        Expires June 4, 2017                [Page 154]
 
 Internet-Draft           SACM Information Model            December 2016
+
+
+   Michael Cokus
+   The MITRE Corporation
+   903 Enterprise Parkway, Suite 200
+   Hampton, VA  23666
+   USA
+
+   Email: msc@mitre.org
 
 
    Daniel Haynes
@@ -8642,15 +8651,6 @@ Internet-Draft           SACM Information Model            December 2016
    Germany
 
    Email: henk.birkholz@sit.fraunhofer.de
-
-
-
-
-
-
-
-
-
 
 
 
