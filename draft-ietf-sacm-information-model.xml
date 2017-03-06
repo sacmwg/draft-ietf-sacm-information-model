@@ -1403,7 +1403,8 @@ name, hex-value, description
             status: current
             description: A set of types that defines how collected
             SACM content was acquired (e.g. network-observation, 
-            remote-acquisition, self-reported).
+            remote-acquisition, self-reported, derived, authority,
+            verified).
         </artwork>
     </figure>
 </section> 
@@ -7320,6 +7321,10 @@ description: Represents the SID of a
                 <t>Added an anyCategory IE that represents any IE in the IM.</t>
                 <t>Fixed several errors reported by the Travis-CI continuous integration service.</t>
                 <t>Performed various other editorial changes and clean-up.</t>
+            </section>
+            <section title="Changes in Revision 08">
+                <t>Added "derived", "authority", and "verified" to the collectionTaskType 
+                    IE (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/18).</t>
             </section>
         </section>
     </back>
