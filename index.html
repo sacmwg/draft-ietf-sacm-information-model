@@ -730,6 +730,7 @@ li, p {
 <link href="#rfc.appendix.A.6" rel="Chapter" title="A.6 Changes in Revision 06"/>
 <link href="#rfc.appendix.A.7" rel="Chapter" title="A.7 Changes in Revision 07"/>
 <link href="#rfc.appendix.A.8" rel="Chapter" title="A.8 Changes in Revision 08"/>
+<link href="#rfc.appendix.A.9" rel="Chapter" title="A.9 Changes in Revision 08"/>
 <link href="#rfc.authors" rel="Chapter"/>
 
 
@@ -738,7 +739,7 @@ li, p {
 
   <meta name="dct.creator" content="Waltermire, D., Ed., Watson, K., Kahn, C., Lorenzin, L., Cokus, M., Haynes, D., and H. Birkholz" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-information-model-08" />
-  <meta name="dct.issued" scheme="ISO8601" content="2016-12-5" />
+  <meta name="dct.issued" scheme="ISO8601" content="2016-12" />
   <meta name="dct.abstract" content="This document defines the Information Elements that are transported between SACM components and their interconnected relationships. The primary purpose of the Secure Automation and Continuous Monitoring (SACM) Information Model is to ensure the interoperability of corresponding SACM data models and addresses the use cases defined by SACM. The Information Elements and corresponding types are maintained as the IANA &quot;SACM Information Elements&quot; registry." />
   <meta name="description" content="This document defines the Information Elements that are transported between SACM components and their interconnected relationships. The primary purpose of the Secure Automation and Continuous Monitoring (SACM) Information Model is to ensure the interoperability of corresponding SACM data models and addresses the use cases defined by SACM. The Information Elements and corresponding types are maintained as the IANA &quot;SACM Information Elements&quot; registry." />
 
@@ -762,7 +763,7 @@ li, p {
   <td class="right">K. Watson</td>
 </tr>
 <tr>
-  <td class="left">Expires: June 8, 2017</td>
+  <td class="left">Expires: June 4, 2017</td>
   <td class="right">DHS</td>
 </tr>
 <tr>
@@ -799,7 +800,7 @@ li, p {
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">December 5, 2016</td>
+  <td class="right">December 2016</td>
 </tr>
 
     	
@@ -819,7 +820,7 @@ li, p {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on June 8, 2017.</p>
+<p>This Internet-Draft will expire on June 4, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -1293,6 +1294,7 @@ li, p {
 <li>A.6.   <a href="#rfc.appendix.A.6">Changes in Revision 06</a></li>
 <li>A.7.   <a href="#rfc.appendix.A.7">Changes in Revision 07</a></li>
 <li>A.8.   <a href="#rfc.appendix.A.8">Changes in Revision 08</a></li>
+<li>A.9.   <a href="#rfc.appendix.A.9">Changes in Revision 08</a></li>
 </ul><li><a href="#rfc.authors">Authors' Addresses</a></li>
 
 
@@ -2159,7 +2161,8 @@ name, hex-value, description
             status: current
             description: A set of types that defines how collected
             SACM content was acquired (e.g. network-observation, 
-            remote-acquisition, self-reported).
+            remote-acquisition, self-reported, derived, authority,
+            verified).
         </pre>
 <h1 id="rfc.section.7.28"><a href="#rfc.section.7.28">7.28.</a> confidence</h1>
 <pre>
@@ -6725,6 +6728,8 @@ description: Represents the SID of a
 <p id="rfc.section.A.8.p.5">Added an anyCategory IE that represents any IE in the IM.</p>
 <p id="rfc.section.A.8.p.6">Fixed several errors reported by the Travis-CI continuous integration service.</p>
 <p id="rfc.section.A.8.p.7">Performed various other editorial changes and clean-up.</p>
+<h1 id="rfc.appendix.A.9"><a href="#rfc.appendix.A.9">A.9.</a> Changes in Revision 08</h1>
+<p id="rfc.section.A.9.p.1">Added "derived", "authority", and "verified" to the collectionTaskType IE (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/18).</p>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Authors' Addresses</a>
 </h1>
