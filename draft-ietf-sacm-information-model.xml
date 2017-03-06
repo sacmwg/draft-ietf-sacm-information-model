@@ -490,8 +490,8 @@
                     SACM Content Element Metadata, SACM Statement Metadata focuses on the providing information 
 					about the SACM Component that provided it rather than the target endpoint that the content 
 					is about. The only content-specific metadata included in the SACM Statement is the 
-					content-type IE. Therefore, multiple SACM Content Elements that share the same SACM Statement 
-					Metadata and are of the same content-type can be included in a single SACM Statement. A SACM 
+					statement-type IE. Therefore, multiple SACM Content Elements that share the same SACM Statement 
+					Metadata and are of the same statement-type can be included in a single SACM Statement. A SACM 
 					Statement functions similar to an envelope or a header and is the subject information element
 					that associates SACM Statement Metadata with security automation information provided in its
 					SACM Content Element(s). Its purpose is to enable the tracking of the origin of data inside a 
@@ -507,7 +507,7 @@
               statement-metadata = (
                 publish-timestamp = 1461934031,
                 data-origin = 24e67957-3d31-4878-8892-da2b35e121c2,
-                content-type = observation
+                statement-type = observation
               ),
               content-element = (
                 content-metadata = (
@@ -526,7 +526,7 @@
               statement-metadata = (
                 publish-timestamp = 1461934031,
                 data-origin = 24e67957-3d31-4878-8892-da2b35e121c2
-                content-type = observation
+                statement-type = observation
               ),
               content-element = (
                 content-metadata = (
@@ -544,7 +544,7 @@
               statement-metadata = (
                 publish-timestamp = 1461934744,
                 data-origin = e42885a1-0270-44e9-bb5c-865cf6bd4800,
-                content-type = observation
+                statement-type = observation
               ),
               content-element = (
                 content-metadata = (
@@ -634,7 +634,7 @@
           statement-metadata = (
             publish-timestamp = 1461934031,
             data-origin = 24e67957-3d31-4878-8892-da2b35e121c2,
-            content-type = event
+            statement-type = event
           ),
           event = (
             event-attributes = (
@@ -2200,7 +2200,7 @@ name, hex-value, description
             description: A set of types that define the type of 
             content that is included in a SACM statement (e.g. 
             Observation, DirectoryContent, Correlation, Assessment, 
-            Guidance).
+            Guidance, Event).
         </artwork>
     </figure>
 </section> 
@@ -7325,6 +7325,8 @@ description: Represents the SID of a
             <section title="Changes in Revision 08">
                 <t>Added "derived", "authority", and "verified" to the collectionTaskType 
                     IE (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/18).</t>
+                <t>Updated IE examples that use content-type to use statement-type 
+                    (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/56).</t>
             </section>
         </section>
     </back>
