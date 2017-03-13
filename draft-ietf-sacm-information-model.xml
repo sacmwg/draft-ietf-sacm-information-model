@@ -1921,72 +1921,6 @@ name, hex-value, description
     </figure>
 </section> 
 
-<section title="osComponent">
-    <figure>
-        <artwork type="IPFIX">
-            elementId: TBD
-            name: osComponent
-            dataType: string
-            status: current
-            description: A label that references a "sub-component" 
-            that is part of the operating system (e.g. a kernel 
-            module, microcode, or ACPI table).
-        </artwork>
-    </figure>
-</section> 
-            
-<section title="osLabel">
-    <figure>
-        <artwork type="IPFIX">
-            elementId: TBD
-            name: osLabel
-            dataType: string
-            status: current
-            description: A label that references a specific version
-            of an operating system, including patches and hotfixes.
-        </artwork>
-    </figure>
-</section> 
-
-<section title="osName">
-    <figure>
-        <artwork type="IPFIX">
-            elementId: TBD
-            name: osName
-            dataType: string
-            status: current
-            description: The name of an operating system.
-        </artwork>
-    </figure>
-</section> 
-
-<section title="osType">
-    <figure>
-        <artwork type="IPFIX">
-            elementId: TBD
-            name: osType
-            dataType: string
-            status: current
-            description: A set of types that identifies the type 
-            of an operating system (e.g. real-time, 
-            security-enhanced, consumer, server).
-        </artwork>
-    </figure>
-</section> 
-            
-<section title="osVersion">
-    <figure>
-        <artwork type="IPFIX">
-            elementId: TBD
-            name: osVersion
-            dataType: string
-            status: current
-            description: A value that represents the version of 
-            an operating-system.
-        </artwork>
-    </figure>
-</section> 
-
 <section title="patchId">
     <figure>
         <artwork type="IPFIX">
@@ -2697,7 +2631,35 @@ description: The date and time when the software instance
       </artwork>
     </figure>
   </section>
-  
+<section title="softwareClass">
+    <figure>
+        <artwork type="IPFIX">
+            elementId: TBD
+            name: softwareClass
+            dataType: enumeration
+            status: current
+            description: The class of the software instance. 
+            structure:  
+            Unknown                ; 0x1 ; The class is not known.
+            Other                  ; 0x2 ; The class is known, but, something 
+                                           other than a value listed in the 
+                                           enumeration.
+            Driver                 ; 0x3 ; The class is a device driver.
+            Configuration Software ; 0x4 ; The class is configuration software.
+            Application Software   ; 0x5 ; The class is application software.
+            Instrumentation        ; 0x6 ; The class is instrumentation.
+            Diagnostic Software    ; 0x8 ; The class is diagnostic software.
+            Operating System       ; 0x9 ; The class is operating system.
+            Middleware             ; 0xA ; The class is middleware.
+            Firmware               ; 0xB ; The class is firmware.
+            BIOS/FCode             ; 0xC ; The class is BIOS or FCode.
+            Support/Service Pack   ; 0xD ; The class is a support or service pack.
+            Software Bundle        ; 0xE ; The class is a software bundle.
+            References: See Classifications of the DMTF CIM_SoftwareIdentity 
+                        schema.
+        </artwork>
+    </figure>
+</section>
 <section title="softwareInstance">
   <figure>
     <artwork type="IPFIX">
@@ -2711,7 +2673,7 @@ description: Information about an instance of software
              softwareInstance information element.
 structure: orderedList(softwareIdentifier, softwareTitle, 
                        softwareCreator, softwareVersion, 
-					   softwareLastUpdated)   
+					   softwareLastUpdated, softwareClass)   
     </artwork>
   </figure>
 </section>   
@@ -7363,13 +7325,16 @@ description: Represents the SID of a
                 <t>Fixed several errors reported by the Travis-CI continuous integration service.</t>
                 <t>Performed various other editorial changes and clean-up.</t>
             </section>
-            <section title="Changes in Revision 08">
+            <section title="Changes in Revision 09">
                 <t>Added "derived", "authority", and "verified" to the collectionTaskType 
                     IE (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/18).</t>
                 <t>Updated IE examples that use content-type to use statement-type 
                     (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/56).</t>
                 <t>Added "networkZoneLocation", "layer2NetworkLocation", and "layer3NetworkLocation" 
                     IEs (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/9).</t>
+                <t>Created a softwareClass attribute IE and added it to the softwareInstance subject
+                    IE. Also, removed the os* attribute IEs 
+                    (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/10).</t>
             </section>
         </section>
     </back>
