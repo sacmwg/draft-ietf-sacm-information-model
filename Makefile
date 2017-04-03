@@ -14,7 +14,7 @@ im.html:
 draft-ietf-sacm-information-model.xml: im.xml
 
 im.xml: im.csv
-	python check/generate.pv --xml --output im.xml im.csv
+	python check/generate.py --xml --output im.xml im.csv
 
 ghpages: im.html
 
