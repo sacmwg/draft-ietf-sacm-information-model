@@ -446,10 +446,10 @@ def main():
                                 print("</table>", file=fout)
                 if (v.dataType == "list" or v.dataType == "orderedList" or v.dataType == "category") and (v.tokenList != None):
                     print("<br>" + v.dataType + "(", file=fout)
-                for token in v.tokenList:
-                    print(token.toString(True), file=fout)
-                    print(")", file=fout)
-                print("</td>", file=fout)
+                    for token in v.tokenList:
+                        print(token.toString(True), file=fout)
+                        print(")", file=fout)
+                    print("</td>", file=fout)
             elif options.xml:
                 print("<section title='" + v.name + "'>", file=fout)
                 print("<figure>", file=fout)
