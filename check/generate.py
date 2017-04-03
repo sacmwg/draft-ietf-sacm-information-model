@@ -529,6 +529,13 @@ def PrintItem(label, value, column1, column2, fout):
         else:
             print (line, file=fout)
         
+def CopyFile(fileName, fileOut):
+    fin = open(fileName,"r");
+    lines = fin.readlines()
+    for line in lines:
+        print(line, file=fileOut)
+    fin.close()
+    
         
         
         
