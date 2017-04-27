@@ -529,7 +529,7 @@ li, p {
 <link href="#rfc.section.7.224" rel="Chapter" title="7.224 hasExtendedAcl"/>
 <link href="#rfc.section.7.225" rel="Chapter" title="7.225 inetd"/>
 <link href="#rfc.section.7.226" rel="Chapter" title="7.226 serverProgram"/>
-<link href="#rfc.section.7.227" rel="Chapter" title="7.227 endpointType"/>
+<link href="#rfc.section.7.227" rel="Chapter" title="7.227 inetdEndpointType"/>
 <link href="#rfc.section.7.228" rel="Chapter" title="7.228 execAsUser"/>
 <link href="#rfc.section.7.229" rel="Chapter" title="7.229 waitStatus"/>
 <link href="#rfc.section.7.230" rel="Chapter" title="7.230 inetAddr"/>
@@ -710,6 +710,17 @@ li, p {
 <link href="#rfc.section.7.405" rel="Chapter" title="7.405 enabled"/>
 <link href="#rfc.section.7.406" rel="Chapter" title="7.406 lastLogon"/>
 <link href="#rfc.section.7.407" rel="Chapter" title="7.407 groupSid"/>
+<link href="#rfc.section.7.408" rel="Chapter" title="7.408 endpointType"/>
+<link href="#rfc.section.7.409" rel="Chapter" title="7.409 endpointPurpose"/>
+<link href="#rfc.section.7.410" rel="Chapter" title="7.410 endpointCriticality"/>
+<link href="#rfc.section.7.411" rel="Chapter" title="7.411 ingestTimestamp"/>
+<link href="#rfc.section.7.412" rel="Chapter" title="7.412 vulnerabilityVersion"/>
+<link href="#rfc.section.7.413" rel="Chapter" title="7.413 vulnerabilityExternalId"/>
+<link href="#rfc.section.7.414" rel="Chapter" title="7.414 vulnerabilitySeverity"/>
+<link href="#rfc.section.7.415" rel="Chapter" title="7.415 assessmentTimestamp"/>
+<link href="#rfc.section.7.416" rel="Chapter" title="7.416 vulnerableSoftware"/>
+<link href="#rfc.section.7.417" rel="Chapter" title="7.417 endpointVulnerabilityStatus"/>
+<link href="#rfc.section.7.418" rel="Chapter" title="7.418 vulnerabilityDescription"/>
 <link href="#rfc.section.8" rel="Chapter" title="8 Acknowledgements"/>
 <link href="#rfc.section.9" rel="Chapter" title="9 IANA Considerations"/>
 <link href="#rfc.section.10" rel="Chapter" title="10 Security Considerations"/>
@@ -730,6 +741,7 @@ li, p {
 <link href="#rfc.appendix.A.7" rel="Chapter" title="A.7 Changes in Revision 07"/>
 <link href="#rfc.appendix.A.8" rel="Chapter" title="A.8 Changes in Revision 08"/>
 <link href="#rfc.appendix.A.9" rel="Chapter" title="A.9 Changes in Revision 09"/>
+<link href="#rfc.appendix.A.10" rel="Chapter" title="A.10 Changes in Revision 10"/>
 <link href="#rfc.authors" rel="Chapter"/>
 
 
@@ -738,7 +750,7 @@ li, p {
 
   <meta name="dct.creator" content="Waltermire, D., Ed., Watson, K., Kahn, C., Lorenzin, L., Cokus, M., Haynes, D., and H. Birkholz" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-sacm-information-model-09" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-3-13" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-3" />
   <meta name="dct.abstract" content="This document defines the Information Elements that are transported between SACM components and their interconnected relationships. The primary purpose of the Secure Automation and Continuous Monitoring (SACM) Information Model is to ensure the interoperability of corresponding SACM data models and addresses the use cases defined by SACM. The Information Elements and corresponding types are maintained as the IANA &quot;SACM Information Elements&quot; registry." />
   <meta name="description" content="This document defines the Information Elements that are transported between SACM components and their interconnected relationships. The primary purpose of the Secure Automation and Continuous Monitoring (SACM) Information Model is to ensure the interoperability of corresponding SACM data models and addresses the use cases defined by SACM. The Information Elements and corresponding types are maintained as the IANA &quot;SACM Information Elements&quot; registry." />
 
@@ -762,7 +774,7 @@ li, p {
   <td class="right">K. Watson</td>
 </tr>
 <tr>
-  <td class="left">Expires: September 14, 2017</td>
+  <td class="left">Expires: September 2, 2017</td>
   <td class="right">DHS</td>
 </tr>
 <tr>
@@ -799,7 +811,7 @@ li, p {
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">March 13, 2017</td>
+  <td class="right">March 2017</td>
 </tr>
 
     	
@@ -819,7 +831,7 @@ li, p {
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on September 14, 2017.</p>
+<p>This Internet-Draft will expire on September 2, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -1092,7 +1104,7 @@ li, p {
 <li>7.224.   <a href="#rfc.section.7.224">hasExtendedAcl</a></li>
 <li>7.225.   <a href="#rfc.section.7.225">inetd</a></li>
 <li>7.226.   <a href="#rfc.section.7.226">serverProgram</a></li>
-<li>7.227.   <a href="#rfc.section.7.227">endpointType</a></li>
+<li>7.227.   <a href="#rfc.section.7.227">inetdEndpointType</a></li>
 <li>7.228.   <a href="#rfc.section.7.228">execAsUser</a></li>
 <li>7.229.   <a href="#rfc.section.7.229">waitStatus</a></li>
 <li>7.230.   <a href="#rfc.section.7.230">inetAddr</a></li>
@@ -1273,6 +1285,17 @@ li, p {
 <li>7.405.   <a href="#rfc.section.7.405">enabled</a></li>
 <li>7.406.   <a href="#rfc.section.7.406">lastLogon</a></li>
 <li>7.407.   <a href="#rfc.section.7.407">groupSid</a></li>
+<li>7.408.   <a href="#rfc.section.7.408">endpointType</a></li>
+<li>7.409.   <a href="#rfc.section.7.409">endpointPurpose</a></li>
+<li>7.410.   <a href="#rfc.section.7.410">endpointCriticality</a></li>
+<li>7.411.   <a href="#rfc.section.7.411">ingestTimestamp</a></li>
+<li>7.412.   <a href="#rfc.section.7.412">vulnerabilityVersion</a></li>
+<li>7.413.   <a href="#rfc.section.7.413">vulnerabilityExternalId</a></li>
+<li>7.414.   <a href="#rfc.section.7.414">vulnerabilitySeverity</a></li>
+<li>7.415.   <a href="#rfc.section.7.415">assessmentTimestamp</a></li>
+<li>7.416.   <a href="#rfc.section.7.416">vulnerableSoftware</a></li>
+<li>7.417.   <a href="#rfc.section.7.417">endpointVulnerabilityStatus</a></li>
+<li>7.418.   <a href="#rfc.section.7.418">vulnerabilityDescription</a></li>
 </ul><li>8.   <a href="#rfc.section.8">Acknowledgements</a></li>
 <li>9.   <a href="#rfc.section.9">IANA Considerations</a></li>
 <li>10.   <a href="#rfc.section.10">Security Considerations</a></li>
@@ -1293,6 +1316,7 @@ li, p {
 <li>A.7.   <a href="#rfc.appendix.A.7">Changes in Revision 07</a></li>
 <li>A.8.   <a href="#rfc.appendix.A.8">Changes in Revision 08</a></li>
 <li>A.9.   <a href="#rfc.appendix.A.9">Changes in Revision 09</a></li>
+<li>A.10.   <a href="#rfc.appendix.A.10">Changes in Revision 10</a></li>
 </ul><li><a href="#rfc.authors">Authors' Addresses</a></li>
 
 
@@ -1626,7 +1650,7 @@ li, p {
                     </pre>
 <p class="figure">Figure 7: Example of a SACM statement containing an event.</p>
 <h1 id="rfc.section.4.6"><a href="#rfc.section.4.6">4.6.</a> <a href="#categories" id="categories">Categories</a></h1>
-<p id="rfc.section.4.6.p.1">Categories are special IEs that enable to refer to multiple types of IE via just one name. Therefore, they are similar to a type-choice. A prominent example of a category is when identifying a target endpoint. In some cases, a target endpoint will be identified by a set of identifying attributes and in other cases a target endpoint will be identified by a target endpoint label which is unique within a SACM domain.  If a subject includes the targetEndpoint information element as one of its components, any of the category members (targetEndpointIdentifier or targetEndpointLabel) are valid to be used in its place.</p>
+<p id="rfc.section.4.6.p.1">Categories are special IEs that refer to multiple types of IEs via just one name. Therefore, they are similar to a type-choice. A prominent example of a category is when identifying a target endpoint. In some cases, a target endpoint will be identified by a set of identifying attributes and in other cases a target endpoint will be identified by a target endpoint label which is unique within a SACM domain.  If a subject includes the targetEndpoint information element as one of its components, any of the category members (targetEndpointIdentifier or targetEndpointLabel) are valid to be used in its place.</p>
 <h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#abstract-data-types" id="abstract-data-types">Abstract Data Types</a></h1>
 <p id="rfc.section.5.p.1">This section describes the set of valid abstract data types that can be used for the specification of the SACM Information Elements in <a href="#information-model-elements">Section 7</a>.  SACM currently supports two classes of datatypes that can be used to define Information Elements.  </p>
 
@@ -1677,7 +1701,7 @@ li, p {
                      ( "(" &lt;non-neg-int&gt; ("," &lt;non-neg-int&gt;)? ")" ) 
                         </pre>
 <p class="figure">Figure 8: Syntax for Defining List Datatypes</p>
-<p id="rfc.section.5.2.1.p.3">As seen above, multiple occurences of an Information Element may be present in a structured datatype.  The cardinality of an Information Element within a structured Information Element definition is defined by the following operators:</p>
+<p id="rfc.section.5.2.1.p.3">As seen above, multiple occurrences of an Information Element may be present in a structured datatype.  The cardinality of an Information Element within a structured Information Element definition is defined by the following operators:</p>
 <div id="rfc.figure.9"/>
 <div id="specifying-cardinality-for-structured-datatypes"/>
 <pre>
@@ -1746,11 +1770,10 @@ name, hex-value, description
 <div id="rfc.figure.13"/>
 <div id="category-datatype-bnf"/>
 <pre>
-	
 	&lt;category-def&gt; -&gt; "category(" &lt;ie-expression&gt; ")"
         &lt;ie-expression&gt; -&gt; &lt;ie-name&gt; ("|" &lt;ie-name&gt;)*
 	&lt;name&gt; -&gt; [0-9a-zA-Z]+ 
-						</pre>
+                       </pre>
 <p class="figure">Figure 13: Syntax for Defining an Category Datatype</p>
 <p id="rfc.section.5.2.3.p.2">Below is an example of a structured Information Element definition for a category.</p>
 <div id="rfc.figure.14"/>
@@ -1933,17 +1956,17 @@ name, hex-value, description
         </pre>
 <h1 id="rfc.section.7.5"><a href="#rfc.section.7.5">7.5.</a> targetEndpoint</h1>
 <pre>
-            elementId: TBD
-            name: targetEndpoint
-            dataType: category
-            status: current
-            description: Information that identifies a target
-			endpoint on the network. This may be a set of
-            attributes that can be used to identify an endpoint
-            on the network or a label that is unique to a SACM
-            domain.			
-			structure: category(targetEndpointIdentifier | 
-			                    targetEndpointLabel)
+        elementId: TBD
+        name: targetEndpoint
+        dataType: category
+        status: current
+        description: Information that identifies a target
+		endpoint on the network. This may be a set of
+        attributes that can be used to identify an endpoint
+        on the network or a label that is unique to a SACM
+        domain.			
+		structure: category(targetEndpointIdentifier | 
+		                    targetEndpointLabel)
         </pre>
 <h1 id="rfc.section.7.6"><a href="#rfc.section.7.6">7.6.</a> targetEndpointIdentifier</h1>
 <pre>
@@ -2072,7 +2095,7 @@ name, hex-value, description
             is not realistic here - value not enumerator?) that 
             identifies the type of (user-space) application 
             (e.g. text-editor, policy-editor, service-client, 
-            service-server, calender, rouge-like RPG).
+            service-server, calendar, rouge-like RPG).
         </pre>
 <h1 id="rfc.section.7.19"><a href="#rfc.section.7.19">7.19.</a> applicationManufacturer</h1>
 <pre>
@@ -2100,7 +2123,7 @@ name, hex-value, description
             name: authenticationType
             dataType: string
             status: current
-            description: A set of types that expresses which type 
+            description: A set of types that express which type 
             of authentication was used to enable a network 
             interaction/connection.
         </pre>
@@ -2110,9 +2133,9 @@ name, hex-value, description
             name: birthdate
             dataType: string
             status: current
-            description: A label for the registered day of birth 
-            of a natural person (e.g. the date of birth of a person
-            as an ISO date string).
+            description: A label for the registered day of 
+            birth of a natural person (e.g. the date of birth 
+            of a person as an ISO date string).
             references: http://rs.tdwg.org/ontology/voc/Person#birthdate
         </pre>
 <h1 id="rfc.section.7.23"><a href="#rfc.section.7.23">7.23.</a> bytesReceived</h1>
@@ -2250,7 +2273,7 @@ name, hex-value, description
             status: current
             description: a set of types that define the categories 
             of an event (e.g. access-level-change, 
-            change-of-priviledge, change-of-authorization, 
+            change-of-privilege, change-of-authorization, 
             environmental-event, or provisioning-event).
         </pre>
 <h1 id="rfc.section.7.37"><a href="#rfc.section.7.37">7.37.</a> eventThreshold</h1>
@@ -2259,7 +2282,7 @@ name, hex-value, description
             name: eventThreshold
             dataType: string
             status: current
-            description: if applicable, a value that can be 
+            description: If applicable, a value that can be 
             included in an event subject to indicate what numeric 
             threshold value was crossed to trigger that event.
         </pre>
@@ -2334,7 +2357,6 @@ name, hex-value, description
             dataType: ipv6Address
             status: current
             description: An IPv6 subnet bitmask in CIDR notation.
-            a network interface.
         </pre>
 <h1 id="rfc.section.7.46"><a href="#rfc.section.7.46">7.46.</a> ipv4AddressSubnetMask</h1>
 <pre>
@@ -2461,7 +2483,7 @@ name, hex-value, description
             name: networkAccessLevelType
             dataType: string
             status: current
-            description: A set of types that expresses categories
+            description: A set of types that express categories
             of network access-levels (e.g. block, quarantine, etc.).
         </pre>
 <h1 id="rfc.section.7.60"><a href="#rfc.section.7.60">7.60.</a> networkId</h1>
@@ -2479,8 +2501,8 @@ name, hex-value, description
             name: networkInterfaceName
             dataType: string
             status: current
-            description: A label that uniquely identifies an interface
-            associated with a distinguishable endpoint.
+            description: A label that uniquely identifies an 
+            interface associated with a distinguishable endpoint.
         </pre>
 <h1 id="rfc.section.7.62"><a href="#rfc.section.7.62">7.62.</a> networkLayer</h1>
 <pre>
@@ -2517,7 +2539,7 @@ name, hex-value, description
             name: patchId
             dataType: string
             status: current
-            description: A label the uniquely identifies a specific 
+            description: A label that uniquely identifies a specific 
                          software patch.
         </pre>
 <h1 id="rfc.section.7.66"><a href="#rfc.section.7.66">7.66.</a> patchName</h1>
@@ -2554,12 +2576,12 @@ name, hex-value, description
         </pre>
 <h1 id="rfc.section.7.70"><a href="#rfc.section.7.70">7.70.</a> phoneNumber</h1>
 <pre>
-            elementId: TBD
-            name: phoneNumber
-            dataType: string
-            status: current
-            description: A label that expresses the U.S. national 
-            phone number (e.g. pattern value="((\d{3}) )?\d{3}-\d{4}").
+             elementId: TBD
+             name: phoneNumber
+             dataType: string
+             status: current
+             description: A label that expresses the U.S. national 
+             phone number (e.g. pattern value="((\d{3}) )?\d{3}-\d{4}").
         </pre>
 <h1 id="rfc.section.7.71"><a href="#rfc.section.7.71">7.71.</a> phoneNumberType</h1>
 <pre>
@@ -2637,8 +2659,8 @@ name, hex-value, description
             content (e.g. a te-label or a user-id). This 
             reference is typically used if matching content 
             attribute can be done efficiantly and can also be 
-            included in addition to a relationship-content-element-guid 
-            reference.
+            included in addition to a 
+            relationship-content-element-guid reference.
         </pre>
 <h1 id="rfc.section.7.79"><a href="#rfc.section.7.79">7.79.</a> relationshipType</h1>
 <pre> 
@@ -2650,8 +2672,8 @@ name, hex-value, description
             of a relationship subject to highlight what kind of 
             relationship exists between the subject the relationship 
             is included in (e.g. associated_with_user, 
-            applies_to_session, seen_on_interface, associated_with_flow, 
-            contains_virtual_device).
+            applies_to_session, seen_on_interface, 
+            associated_with_flow, contains_virtual_device).
         </pre>
 <h1 id="rfc.section.7.80"><a href="#rfc.section.7.80">7.80.</a> roleName</h1>
 <pre> 
@@ -2660,8 +2682,7 @@ name, hex-value, description
             dataType: string
             status: current
             description: A label that references a collection of 
-            privileges assigned to a specific entity (identity? 
-            FIXME).
+            privileges assigned to a specific entity.
         </pre>
 <h1 id="rfc.section.7.81"><a href="#rfc.section.7.81">7.81.</a> sessionStateType</h1>
 <pre> 
@@ -2713,7 +2734,7 @@ name, hex-value, description
             status: current
             description: A label for related child domains an 
             administrative domain can be composed of (used in the 
-            subject administrative-domain)
+            subject administrativeDomain).
         </pre>
 <h1 id="rfc.section.7.86"><a href="#rfc.section.7.86">7.86.</a> subInterfaceLabel</h1>
 <pre> 
@@ -2733,7 +2754,7 @@ name, hex-value, description
             status: current
             description: a label for related parent domains an 
                          administrative domain is part of (used 
-                         in the subject s.administrative-domain).
+                         in the subject administrativeDomain).
         </pre>
 <h1 id="rfc.section.7.88"><a href="#rfc.section.7.88">7.88.</a> superInterfaceLabel</h1>
 <pre> 
@@ -2788,7 +2809,7 @@ name, hex-value, description
                          action or event happened at that point 
                          of time (e.g. discovered, classified, 
                          collected, published). Can be included in 
-                         a generic s.timestamp subject.
+                         a generic timestamp subject.
         </pre>
 <h1 id="rfc.section.7.93"><a href="#rfc.section.7.93">7.93.</a> unitsReceived</h1>
 <pre> 
@@ -2866,22 +2887,23 @@ name, hex-value, description
         </pre>
 <h1 id="rfc.section.7.101"><a href="#rfc.section.7.101">7.101.</a> hardwareSerialNumber</h1>
 <pre>
-elementId: TBD
-name: hardwareSerialNumber
-dataType: string
-status: current
-description: A globally unique identifier for a particular
-             piece of hardware assigned by the vendor.
+            elementId: TBD
+            name: hardwareSerialNumber
+            dataType: string
+            status: current
+            description: A globally unique identifier for a 
+                         particular piece of hardware assigned 
+                         by the vendor.
     </pre>
 <h1 id="rfc.section.7.102"><a href="#rfc.section.7.102">7.102.</a> interfaceName</h1>
 <pre>
-elementId: TBD
-name: interfaceName
-dataType: string
-status: current
-description: A short name uniquely describing an interface,
-             eg "Eth1/0". See [RFC2863] for the definition
-             of the ifName object.
+            elementId: TBD
+            name: interfaceName
+            dataType: string
+            status: current
+            description: A short name uniquely describing an 
+                         interface, e.g. "Eth1/0". See [RFC2863] 
+                         for the definition of the ifName object.
     </pre>
 <h1 id="rfc.section.7.103"><a href="#rfc.section.7.103">7.103.</a> interfaceIndex</h1>
 <pre>
@@ -2925,15 +2947,17 @@ status: current
 description: This information element specifies the flags 
              associated with a network interface. Possible
              values include:
-structure: Up                  ; 0x1   ; Interface is up. 
-           Broadcast           ; 0x2   ; Broadcast address valid.
-           Debug               ; 0x4   ; Turn on debugging.
-           Loopback            ; 0x8   ; Is a loopback net.
-           Point-to-point      ; 0x10  ; Interface is point-to-point link.
-           No trailers         ; 0x20  ; Avoid use of trailers.
-           Resources allocated ; 0x40  ; Resources allocated.
-           No ARP              ; 0x80  ; No address resolution protocol.
-           Receive all         ; 0x100 ; Receive all packets.
+structure: 
+       Up                  ; 0x1   ; Interface is up. 
+       Broadcast           ; 0x2   ; Broadcast address valid.
+       Debug               ; 0x4   ; Turn on debugging.
+       Loopback            ; 0x8   ; Is a loopback net.
+       Point-to-point      ; 0x10  ; Interface is point-to-point 
+                                     link.
+       No trailers         ; 0x20  ; Avoid use of trailers.
+       Resources allocated ; 0x40  ; Resources allocated.
+       No ARP              ; 0x80  ; No address resolution protocol.
+       Receive all         ; 0x100 ; Receive all packets.
     </pre>
 <h1 id="rfc.section.7.107"><a href="#rfc.section.7.107">7.107.</a> networkInterface</h1>
 <pre>
@@ -3037,23 +3061,29 @@ description: The date and time when the software instance
             status: current
             description: The class of the software instance. 
             structure:  
-            Unknown                ; 0x1 ; The class is not known.
-            Other                  ; 0x2 ; The class is known, but, something 
-                                           other than a value listed in the 
-                                           enumeration.
-            Driver                 ; 0x3 ; The class is a device driver.
-            Configuration Software ; 0x4 ; The class is configuration software.
-            Application Software   ; 0x5 ; The class is application software.
-            Instrumentation        ; 0x6 ; The class is instrumentation.
-            Diagnostic Software    ; 0x8 ; The class is diagnostic software.
-            Operating System       ; 0x9 ; The class is operating system.
-            Middleware             ; 0xA ; The class is middleware.
-            Firmware               ; 0xB ; The class is firmware.
-            BIOS/FCode             ; 0xC ; The class is BIOS or FCode.
-            Support/Service Pack   ; 0xD ; The class is a support or service pack.
-            Software Bundle        ; 0xE ; The class is a software bundle.
-            References: See Classifications of the DMTF CIM_SoftwareIdentity 
-                        schema.
+        Unknown                ; 0x1 ; The class is not known.
+        Other                  ; 0x2 ; The class is known, but, 
+                                       something other than a value 
+                                       listed in the enumeration.
+        Driver                 ; 0x3 ; The class is a device driver.
+        Configuration Software ; 0x4 ; The class is configuration 
+                                       software.
+        Application Software   ; 0x5 ; The class is application 
+                                       software.
+        Instrumentation        ; 0x6 ; The class is instrumentation.
+        Diagnostic Software    ; 0x8 ; The class is diagnostic 
+                                       software.
+        Operating System       ; 0x9 ; The class is operating 
+                                       system.
+        Middleware             ; 0xA ; The class is middleware.
+        Firmware               ; 0xB ; The class is firmware.
+        BIOS/FCode             ; 0xC ; The class is BIOS or FCode.
+        Support/Service Pack   ; 0xD ; The class is a support or 
+                                       service pack.
+        Software Bundle        ; 0xE ; The class is a software 
+                                       bundle.
+            References: See Classifications of the DMTF 
+                        CIM_SoftwareIdentity schema.
         </pre>
 <h1 id="rfc.section.7.117"><a href="#rfc.section.7.117">7.117.</a> softwareInstance</h1>
 <pre>
@@ -3064,10 +3094,10 @@ status: current
 description: Information about an instance of software 
              installed on an endpoint. The following 
              high-level digram describes the structure of 
-             softwareInstance information element.
+             the softwareInstance information element.
 structure: orderedList(softwareIdentifier, softwareTitle, 
                        softwareCreator, softwareVersion, 
-					   softwareLastUpdated, softwareClass)   
+                       softwareLastUpdated, softwareClass)   
     </pre>
 <h1 id="rfc.section.7.118"><a href="#rfc.section.7.118">7.118.</a> globallyUniqueIdentifier</h1>
 <pre>
@@ -3236,9 +3266,8 @@ elementId: TBD
 name: interfaceDescription
 dataType: string
 status: current
-description: The description of an interface, eg "FastEthernet 
-             1/0" or "ISP 
-connection".</pre>
+description: The description of an interface, e.g. 
+             "FastEthernet 1/0" or "ISP connection".</pre>
 <h1 id="rfc.section.7.136"><a href="#rfc.section.7.136">7.136.</a> applicationDescription</h1>
 <pre>
 elementId: TBD
@@ -4278,7 +4307,7 @@ elementId: TBD
 name: inetd
 dataType: list
 structure: list (serviceProtocol, serviceName, serverProgram,
-      serverArguments, endpointType, execAsUser, waitStatus)
+      serverArguments, inetdEndpointType, execAsUser, waitStatus)
 status: current
 description: Holds information associated
       with different Internet services.</pre>
@@ -4291,10 +4320,10 @@ status: current
 description: Either the pathname of a server program to be 
 invoked by inetd to perform the requested service, or the value 
 internal if inetd itself provides the service.</pre>
-<h1 id="rfc.section.7.227"><a href="#rfc.section.7.227">7.227.</a> endpointType</h1>
+<h1 id="rfc.section.7.227"><a href="#rfc.section.7.227">7.227.</a> inetdEndpointType</h1>
 <pre>
 elementId: TBD
-name: endpointType
+name: inetdEndpointType
 dataType: enumeration
 structure: 
 stream ; 0x1 ; The stream value is used to describe a stream 
@@ -6279,54 +6308,55 @@ description: Specifies the current state of
 elementId: TBD
 name: controlsAccepted
 dataType: enumeration
-structure: SERVICE_ACCEPT_NETBINDCHANGE ; 0x1 ;
-      The SERVICE_ACCEPT_NETBINDCHANGE type means that the 
-      service is a network component and can accept changes in its
-      binding without being stopped or restarted. The DWORD value 
-      that this corresponds to is 0x00000010.
-      SERVICE_ACCEPT_PARAMCHANGE ; 0x2 ; The SERVICE_ACCEPT_PARAMCHANGE 
-      type means that the service can re-read its
-      startup parameters without being stopped or restarted. The 
-      DWORD value that this corresponds to is 0x00000008.
-      SERVICE_ACCEPT_PAUSE_CONTINUE ; 0x3 ; The 
-      SERVICE_ACCEPT_PAUSE_CONTINUE type means that the service 
-      can be paused or continued. The DWORD value that this 
-      corresponds to is 0x00000002. 
-      SERVICE_ACCEPT_PRESHUTDOWN ; 0x4 ; The 
-      SERVICE_ACCEPT_PRESHUTDOWN type means that the service can 
-      receive pre-shutdown notifications. The DWORD value
-      that this corresponds to is 0x00000100. 
-      SERVICE_ACCEPT_SHUTDOWN ; 0x5 ; The SERVICE_ACCEPT_SHUTDOWN 
-      type means that the service can receive shutdown notifications. 
-      The DWORD value that this corresponds to is 0x00000004.
-      SERVICE_ACCEPT_STOP ; 0x6 ; The SERVICE_ACCEPT_STOP type
-      means that the service can be stopped. The DWORD value
-      that this corresponds to is 0x00000001. 
-      SERVICE_ACCEPT_HARDWAREPROFILECHANGE ; 0x7 ; The
-      SERVICE_ACCEPT_HARDWAREPROFILECHANGE type means that the 
-      service can receive notifications when the system's
-      hardware profile changes. The DWORD value that this 
-      corresponds to is 0x00000020. 
-      SERVICE_ACCEPT_POWEREVENT ; 0x8 ; The SERVICE_ACCEPT_POWEREVENT 
-      type means that the service can receive notifications when the 
-      system's power status has changed. The DWORD value that this 
-      corresponds to is 0x00000040. 
-      SERVICE_ACCEPT_SESSIONCHANGE ; 0x9 ; The 
-      SERVICE_ACCEPT_SESSIONCHANGE type means that the service can 
-      receive notifications when the system's session
-      status has changed. The DWORD value that this corresponds 
-      to is 0x00000080. 
-      SERVICE_ACCEPT_TIMECHANGE ; 0xA ; The SERVICE_ACCEPT_TIMECHANGE 
-      type means that the service can receive notifications when 
-      the system time changes. The DWORD value that this corresponds 
-      to is 0x00000200. 
-      SERVICE_ACCEPT_TRIGGEREVENT ; 0xB ; The 
-      SERVICE_ACCEPT_TRIGGEREVENT type means that the service can 
-      receive notifications when an event that the service
-      has registered for occurs on the system. The DWORD value that 
-      this corresponds to is 0x00000400. 
-      ; 0xC ; The empty string value is permitted here to allow 
-      for empty elements associated with error conditions.
+structure: 
+  SERVICE_ACCEPT_NETBINDCHANGE ; 0x1 ;
+  The SERVICE_ACCEPT_NETBINDCHANGE type means that the 
+  service is a network component and can accept changes in its
+  binding without being stopped or restarted. The DWORD value 
+  that this corresponds to is 0x00000010.
+  SERVICE_ACCEPT_PARAMCHANGE ; 0x2 ; The SERVICE_ACCEPT_PARAMCHANGE 
+  type means that the service can re-read its
+  startup parameters without being stopped or restarted. The 
+  DWORD value that this corresponds to is 0x00000008.
+  SERVICE_ACCEPT_PAUSE_CONTINUE ; 0x3 ; The 
+  SERVICE_ACCEPT_PAUSE_CONTINUE type means that the service 
+  can be paused or continued. The DWORD value that this 
+  corresponds to is 0x00000002. 
+  SERVICE_ACCEPT_PRESHUTDOWN ; 0x4 ; The 
+  SERVICE_ACCEPT_PRESHUTDOWN type means that the service can 
+  receive pre-shutdown notifications. The DWORD value
+  that this corresponds to is 0x00000100. 
+  SERVICE_ACCEPT_SHUTDOWN ; 0x5 ; The SERVICE_ACCEPT_SHUTDOWN 
+  type means that the service can receive shutdown notifications. 
+  The DWORD value that this corresponds to is 0x00000004.
+  SERVICE_ACCEPT_STOP ; 0x6 ; The SERVICE_ACCEPT_STOP type
+  means that the service can be stopped. The DWORD value
+  that this corresponds to is 0x00000001. 
+  SERVICE_ACCEPT_HARDWAREPROFILECHANGE ; 0x7 ; The
+  SERVICE_ACCEPT_HARDWAREPROFILECHANGE type means that the 
+  service can receive notifications when the system's
+  hardware profile changes. The DWORD value that this 
+  corresponds to is 0x00000020. 
+  SERVICE_ACCEPT_POWEREVENT ; 0x8 ; The SERVICE_ACCEPT_POWEREVENT 
+  type means that the service can receive notifications when the 
+  system's power status has changed. The DWORD value that this 
+  corresponds to is 0x00000040. 
+  SERVICE_ACCEPT_SESSIONCHANGE ; 0x9 ; The 
+  SERVICE_ACCEPT_SESSIONCHANGE type means that the service can 
+  receive notifications when the system's session
+  status has changed. The DWORD value that this corresponds 
+  to is 0x00000080. 
+  SERVICE_ACCEPT_TIMECHANGE ; 0xA ; The SERVICE_ACCEPT_TIMECHANGE 
+  type means that the service can receive notifications when 
+  the system time changes. The DWORD value that this corresponds 
+  to is 0x00000200. 
+  SERVICE_ACCEPT_TRIGGEREVENT ; 0xB ; The 
+  SERVICE_ACCEPT_TRIGGEREVENT type means that the service can 
+  receive notifications when an event that the service
+  has registered for occurs on the system. The DWORD value that 
+  this corresponds to is 0x00000400. 
+  ; 0xC ; The empty string value is permitted here to allow 
+  for empty elements associated with error conditions.
 status: current
      
 description: Specifies the control codes that a service will 
@@ -6541,6 +6571,131 @@ description: Represents the SID of a
       error determining the groups that the user belongs to,
       then a single groupSid element should be included with a 
       status of 'error'.</pre>
+<h1 id="rfc.section.7.408"><a href="#rfc.section.7.408">7.408.</a> endpointType</h1>
+<pre>
+                elementId: TBD
+                name: endpointType
+                dataType: enumeration
+                status: current
+                description: The possible types of endpoint in the 
+                             enterprise.
+                structure:
+                workstation; 0x1; Workstation Endpoint
+                printer;     0x2; Printer Endpoint
+                router;      0x3; Router Endpoint
+                tablet;      0x4; Tablet Endpoint
+            </pre>
+<h1 id="rfc.section.7.409"><a href="#rfc.section.7.409">7.409.</a> endpointPurpose</h1>
+<pre>
+                elementId: TBD
+                name: endpointPurpose
+                dataType: string
+                status: current
+                description: A description of how the endpoint is 
+                             used within the enterprise.  
+                             Examples include end user system, 
+                             and public web server.
+            </pre>
+<h1 id="rfc.section.7.410"><a href="#rfc.section.7.410">7.410.</a> endpointCriticality</h1>
+<pre>
+                elementId: TBD
+                name: endpointCriticality
+                dataType: string
+                status: current
+                description: An enterprise-defined rating which 
+                             indicates the criticality of the 
+                             endpoint. The rating should be 
+                             specific enough to assess the impact 
+                             to the overall enterprise if the 
+                             endpoint is attacked or lost.
+            </pre>
+<h1 id="rfc.section.7.411"><a href="#rfc.section.7.411">7.411.</a> ingestTimestamp</h1>
+<pre>
+                elementId: TBD
+                name: ingestTimestamp
+                dataType: dateTimeSeconds
+                status: current
+                description: The point in time that the 
+                             description of a vulnerability was 
+                             received by the enterprise.
+            </pre>
+<h1 id="rfc.section.7.412"><a href="#rfc.section.7.412">7.412.</a> vulnerabilityVersion</h1>
+<pre>
+                elementId: TBD
+                name: vulnerabilityVersion
+                dataType: string
+                status: current
+                description: The version or iteration of the 
+                             vulnerability description information 
+                             (reported by the author, if applicable).
+            </pre>
+<h1 id="rfc.section.7.413"><a href="#rfc.section.7.413">7.413.</a> vulnerabilityExternalId</h1>
+<pre>
+                elementId: TBD
+                name: vulnerabilityExternalId
+                dataType: string
+                status: current
+                description: An external or third-party ID 
+                             assigned to the vulnerability 
+                             description. This could be multiple 
+                             IDs in some cases (e.g., vendor bug 
+                             ID, global ID, discoverer's local ID, 
+                             third-party vulnerability database 
+                             ID, etc.).
+            </pre>
+<h1 id="rfc.section.7.414"><a href="#rfc.section.7.414">7.414.</a> vulnerabilitySeverity</h1>
+<pre>
+                elementId: TBD
+                name: vulnerabilitySeverity
+                dataType: string
+                status: current
+                description: The severity of the vulnerability 
+                             (reported by the author, if applicable).
+            </pre>
+<h1 id="rfc.section.7.415"><a href="#rfc.section.7.415">7.415.</a> assessmentTimestamp</h1>
+<pre>
+                elementId: TBD
+                name: assessmentTimestamp
+                dataType: dateTimeSeconds
+                status: current
+                description: The point in time that the assessment 
+                             was performed against an endpoint.
+            </pre>
+<h1 id="rfc.section.7.416"><a href="#rfc.section.7.416">7.416.</a> vulnerableSoftware</h1>
+<pre>
+                elementId: TBD
+                name: vulnerableSoftware
+                dataType: list
+                status: current
+                description: A listing of software products 
+                             installed on the endpoint which are 
+                             known to have vulnerabilities.
+                structure: list(softwareInstance*)
+            </pre>
+<h1 id="rfc.section.7.417"><a href="#rfc.section.7.417">7.417.</a> endpointVulnerabilityStatus</h1>
+<pre>
+                elementId: TBD
+                name: endpointVulnerabilityStatus
+                dataType: enumeration
+                status: current
+                description: Overall vulnerability status of an
+                             enterprise endpoint.
+                structure: Pass; 0x1; Endpoint passed the 
+                                      vulnerability test(s).
+                           Fail; 0x2; Endpoint failed the 
+                                      vulnerability test(s).
+                
+            </pre>
+<h1 id="rfc.section.7.418"><a href="#rfc.section.7.418">7.418.</a> vulnerabilityDescription</h1>
+<pre>
+                elementId: TBD
+                name: vulnerabilityDescription
+                dataType: string
+                status: current
+                description: A human-readable description of the
+                             vulnerability.
+                
+            </pre>
 <h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#Acknowledgements" id="Acknowledgements">Acknowledgements</a></h1>
 <p id="rfc.section.8.p.1">Many of the specifications in this document have been developed in a public-private partnership with vendors and end-users. The hard work of the SCAP community is appreciated in advancing these efforts to their current level of adoption.</p>
 <p id="rfc.section.8.p.2">Over the course of developing the initial draft, Brant Cheikes, Matt Hansbury, Daniel Haynes, Scott Pope, Charles Schmidt, and Steve Venema have contributed text to many sections of this document.</p>
@@ -6740,6 +6895,9 @@ description: Represents the SID of a
 <p id="rfc.section.A.9.p.2">Updated IE examples that use content-type to use statement-type (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/56).</p>
 <p id="rfc.section.A.9.p.3">Added "networkZoneLocation", "layer2NetworkLocation", and "layer3NetworkLocation" IEs (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/9).</p>
 <p id="rfc.section.A.9.p.4">Created a softwareClass attribute IE and added it to the softwareInstance subject IE. Also, removed the os* attribute IEs (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/10).</p>
+<h1 id="rfc.appendix.A.10"><a href="#rfc.appendix.A.10">A.10.</a> Changes in Revision 10</h1>
+<p id="rfc.section.A.10.p.1">Added several IEs necessary for the SACM Vulnerability Assessment Scenario (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/43).</p>
+<p id="rfc.section.A.10.p.2">Fixed various typos and formatting issues.</p>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Authors' Addresses</a>
 </h1>
