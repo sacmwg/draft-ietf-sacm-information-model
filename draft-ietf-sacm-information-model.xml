@@ -664,8 +664,8 @@
             </section>
             
             <section title="Categories" anchor="categories">
-                <t>Categories are special IEs that enable to refer to multiple 
-                    types of IE via just one name. Therefore, they are similar 
+                <t>Categories are special IEs that refer to multiple 
+                    types of IEs via just one name. Therefore, they are similar 
                     to a type-choice. A prominent example of a category is 
                     when identifying a target endpoint. In some cases, a target 
 					endpoint will be identified by a set of identifying attributes
@@ -736,7 +736,7 @@
                      ( "(" &lt;non-neg-int&gt; ("," &lt;non-neg-int&gt;)? ")" ) 
                         </artwork>                  
                     </figure>
-                    <t>As seen above, multiple occurences of an Information Element may be 
+                    <t>As seen above, multiple occurrences of an Information Element may be 
                         present in a structured datatype.  The cardinality of an Information Element 
                         within a structured Information Element definition is defined by the following 
                         operators:</t>
@@ -809,16 +809,15 @@ name, hex-value, description
                         </artwork>
                     </figure>
                 </section>
-				 <section title="Category Datatype" anchor="category-datatype">
-					<t>SACM defines the following abstract category datatype that is used to
-						represent a type-choice between a set of information elements.</t>
-					<figure title="Syntax for Defining an Category Datatype" anchor="category-datatype-bnf">
-						<artwork>
-	
+                   <section title="Category Datatype" anchor="category-datatype">
+                     <t>SACM defines the following abstract category datatype that is used to
+                        represent a type-choice between a set of information elements.</t>
+                    <figure title="Syntax for Defining an Category Datatype" anchor="category-datatype-bnf">
+                       <artwork>
 	&lt;category-def&gt; -&gt; "category(" &lt;ie-expression&gt; ")"
         &lt;ie-expression&gt; -&gt; &lt;ie-name&gt; ("|" &lt;ie-name&gt;)*
 	&lt;name&gt; -&gt; [0-9a-zA-Z]+ 
-						</artwork>
+                       </artwork>
 					</figure>
 					
 					<t>Below is an example of a structured Information Element definition for a category.</t>
@@ -1109,17 +1108,17 @@ name, hex-value, description
 <section title="targetEndpoint">
     <figure>
       <artwork type="IPFIX">
-            elementId: TBD
-            name: targetEndpoint
-            dataType: category
-            status: current
-            description: Information that identifies a target
-			endpoint on the network. This may be a set of
-            attributes that can be used to identify an endpoint
-            on the network or a label that is unique to a SACM
-            domain.			
-			structure: category(targetEndpointIdentifier | 
-			                    targetEndpointLabel)
+        elementId: TBD
+        name: targetEndpoint
+        dataType: category
+        status: current
+        description: Information that identifies a target
+		endpoint on the network. This may be a set of
+        attributes that can be used to identify an endpoint
+        on the network or a label that is unique to a SACM
+        domain.			
+		structure: category(targetEndpointIdentifier | 
+		                    targetEndpointLabel)
         </artwork>
     </figure>
 </section> 
@@ -1287,7 +1286,7 @@ name, hex-value, description
             is not realistic here - value not enumerator?) that 
             identifies the type of (user-space) application 
             (e.g. text-editor, policy-editor, service-client, 
-            service-server, calender, rouge-like RPG).
+            service-server, calendar, rouge-like RPG).
         </artwork>
     </figure>
 </section> 
@@ -1324,7 +1323,7 @@ name, hex-value, description
             name: authenticationType
             dataType: string
             status: current
-            description: A set of types that expresses which type 
+            description: A set of types that express which type 
             of authentication was used to enable a network 
             interaction/connection.
         </artwork>
@@ -1337,9 +1336,9 @@ name, hex-value, description
             name: birthdate
             dataType: string
             status: current
-            description: A label for the registered day of birth 
-            of a natural person (e.g. the date of birth of a person
-            as an ISO date string).
+            description: A label for the registered day of 
+            birth of a natural person (e.g. the date of birth 
+            of a person as an ISO date string).
             references: http://rs.tdwg.org/ontology/voc/Person#birthdate
         </artwork>
     </figure>
@@ -1409,10 +1408,6 @@ name, hex-value, description
     </figure>
 </section> 
             
-
-
-
-
 <section title="confidence">
     <figure>
         <artwork type="IPFIX">
@@ -1537,7 +1532,7 @@ name, hex-value, description
             status: current
             description: a set of types that define the categories 
             of an event (e.g. access-level-change, 
-            change-of-priviledge, change-of-authorization, 
+            change-of-privilege, change-of-authorization, 
             environmental-event, or provisioning-event).
         </artwork>
     </figure>
@@ -1550,7 +1545,7 @@ name, hex-value, description
             name: eventThreshold
             dataType: string
             status: current
-            description: if applicable, a value that can be 
+            description: If applicable, a value that can be 
             included in an event subject to indicate what numeric 
             threshold value was crossed to trigger that event.
         </artwork>
@@ -1662,7 +1657,6 @@ name, hex-value, description
             dataType: ipv6Address
             status: current
             description: An IPv6 subnet bitmask in CIDR notation.
-            a network interface.
         </artwork>
     </figure>
 </section> 
@@ -1847,7 +1841,7 @@ name, hex-value, description
             name: networkAccessLevelType
             dataType: string
             status: current
-            description: A set of types that expresses categories
+            description: A set of types that express categories
             of network access-levels (e.g. block, quarantine, etc.).
         </artwork>
     </figure>
@@ -1874,8 +1868,8 @@ name, hex-value, description
             name: networkInterfaceName
             dataType: string
             status: current
-            description: A label that uniquely identifies an interface
-            associated with a distinguishable endpoint.
+            description: A label that uniquely identifies an 
+            interface associated with a distinguishable endpoint.
         </artwork>
     </figure>
 </section> 
@@ -1928,7 +1922,7 @@ name, hex-value, description
             name: patchId
             dataType: string
             status: current
-            description: A label the uniquely identifies a specific 
+            description: A label that uniquely identifies a specific 
                          software patch.
         </artwork>
     </figure>
@@ -1986,12 +1980,12 @@ name, hex-value, description
 <section title="phoneNumber">
     <figure>
         <artwork type="IPFIX">
-            elementId: TBD
-            name: phoneNumber
-            dataType: string
-            status: current
-            description: A label that expresses the U.S. national 
-            phone number (e.g. pattern value="((\d{3}) )?\d{3}-\d{4}").
+             elementId: TBD
+             name: phoneNumber
+             dataType: string
+             status: current
+             description: A label that expresses the U.S. national 
+             phone number (e.g. pattern value="((\d{3}) )?\d{3}-\d{4}").
         </artwork>
     </figure>
 </section> 
@@ -2099,8 +2093,8 @@ name, hex-value, description
             content (e.g. a te-label or a user-id). This 
             reference is typically used if matching content 
             attribute can be done efficiantly and can also be 
-            included in addition to a relationship-content-element-guid 
-            reference.
+            included in addition to a 
+            relationship-content-element-guid reference.
         </artwork>
     </figure>
 </section> 
@@ -2116,8 +2110,8 @@ name, hex-value, description
             of a relationship subject to highlight what kind of 
             relationship exists between the subject the relationship 
             is included in (e.g. associated_with_user, 
-            applies_to_session, seen_on_interface, associated_with_flow, 
-            contains_virtual_device).
+            applies_to_session, seen_on_interface, 
+            associated_with_flow, contains_virtual_device).
         </artwork>
     </figure>
 </section> 
@@ -2130,8 +2124,7 @@ name, hex-value, description
             dataType: string
             status: current
             description: A label that references a collection of 
-            privileges assigned to a specific entity (identity? 
-            FIXME).
+            privileges assigned to a specific entity.
         </artwork>
     </figure>
 </section> 
@@ -2203,7 +2196,7 @@ name, hex-value, description
             status: current
             description: A label for related child domains an 
             administrative domain can be composed of (used in the 
-            subject administrative-domain)
+            subject administrativeDomain).
         </artwork>
     </figure>
 </section> 
@@ -2230,7 +2223,7 @@ name, hex-value, description
             status: current
             description: a label for related parent domains an 
                          administrative domain is part of (used 
-                         in the subject s.administrative-domain).
+                         in the subject administrativeDomain).
         </artwork>
     </figure>
 </section> 
@@ -2306,7 +2299,7 @@ name, hex-value, description
                          action or event happened at that point 
                          of time (e.g. discovered, classified, 
                          collected, published). Can be included in 
-                         a generic s.timestamp subject.
+                         a generic timestamp subject.
         </artwork>
     </figure>
 </section> 
@@ -2421,25 +2414,26 @@ name, hex-value, description
 <section title="hardwareSerialNumber">
   <figure>
     <artwork type="IPFIX">
-elementId: TBD
-name: hardwareSerialNumber
-dataType: string
-status: current
-description: A globally unique identifier for a particular
-             piece of hardware assigned by the vendor.
+            elementId: TBD
+            name: hardwareSerialNumber
+            dataType: string
+            status: current
+            description: A globally unique identifier for a 
+                         particular piece of hardware assigned 
+                         by the vendor.
     </artwork>
   </figure>
 </section> 
 <section title="interfaceName">
   <figure>
     <artwork type="IPFIX">
-elementId: TBD
-name: interfaceName
-dataType: string
-status: current
-description: A short name uniquely describing an interface,
-             eg "Eth1/0". See [RFC2863] for the definition
-             of the ifName object.
+            elementId: TBD
+            name: interfaceName
+            dataType: string
+            status: current
+            description: A short name uniquely describing an 
+                         interface, e.g. "Eth1/0". See [RFC2863] 
+                         for the definition of the ifName object.
     </artwork>
   </figure>
 </section>
@@ -2495,15 +2489,17 @@ status: current
 description: This information element specifies the flags 
              associated with a network interface. Possible
              values include:
-structure: Up                  ; 0x1   ; Interface is up. 
-           Broadcast           ; 0x2   ; Broadcast address valid.
-           Debug               ; 0x4   ; Turn on debugging.
-           Loopback            ; 0x8   ; Is a loopback net.
-           Point-to-point      ; 0x10  ; Interface is point-to-point link.
-           No trailers         ; 0x20  ; Avoid use of trailers.
-           Resources allocated ; 0x40  ; Resources allocated.
-           No ARP              ; 0x80  ; No address resolution protocol.
-           Receive all         ; 0x100 ; Receive all packets.
+structure: 
+       Up                  ; 0x1   ; Interface is up. 
+       Broadcast           ; 0x2   ; Broadcast address valid.
+       Debug               ; 0x4   ; Turn on debugging.
+       Loopback            ; 0x8   ; Is a loopback net.
+       Point-to-point      ; 0x10  ; Interface is point-to-point 
+                                     link.
+       No trailers         ; 0x20  ; Avoid use of trailers.
+       Resources allocated ; 0x40  ; Resources allocated.
+       No ARP              ; 0x80  ; No address resolution protocol.
+       Receive all         ; 0x100 ; Receive all packets.
     </artwork>
   </figure>
 
@@ -2640,23 +2636,29 @@ description: The date and time when the software instance
             status: current
             description: The class of the software instance. 
             structure:  
-            Unknown                ; 0x1 ; The class is not known.
-            Other                  ; 0x2 ; The class is known, but, something 
-                                           other than a value listed in the 
-                                           enumeration.
-            Driver                 ; 0x3 ; The class is a device driver.
-            Configuration Software ; 0x4 ; The class is configuration software.
-            Application Software   ; 0x5 ; The class is application software.
-            Instrumentation        ; 0x6 ; The class is instrumentation.
-            Diagnostic Software    ; 0x8 ; The class is diagnostic software.
-            Operating System       ; 0x9 ; The class is operating system.
-            Middleware             ; 0xA ; The class is middleware.
-            Firmware               ; 0xB ; The class is firmware.
-            BIOS/FCode             ; 0xC ; The class is BIOS or FCode.
-            Support/Service Pack   ; 0xD ; The class is a support or service pack.
-            Software Bundle        ; 0xE ; The class is a software bundle.
-            References: See Classifications of the DMTF CIM_SoftwareIdentity 
-                        schema.
+        Unknown                ; 0x1 ; The class is not known.
+        Other                  ; 0x2 ; The class is known, but, 
+                                       something other than a value 
+                                       listed in the enumeration.
+        Driver                 ; 0x3 ; The class is a device driver.
+        Configuration Software ; 0x4 ; The class is configuration 
+                                       software.
+        Application Software   ; 0x5 ; The class is application 
+                                       software.
+        Instrumentation        ; 0x6 ; The class is instrumentation.
+        Diagnostic Software    ; 0x8 ; The class is diagnostic 
+                                       software.
+        Operating System       ; 0x9 ; The class is operating 
+                                       system.
+        Middleware             ; 0xA ; The class is middleware.
+        Firmware               ; 0xB ; The class is firmware.
+        BIOS/FCode             ; 0xC ; The class is BIOS or FCode.
+        Support/Service Pack   ; 0xD ; The class is a support or 
+                                       service pack.
+        Software Bundle        ; 0xE ; The class is a software 
+                                       bundle.
+            References: See Classifications of the DMTF 
+                        CIM_SoftwareIdentity schema.
         </artwork>
     </figure>
 </section>
@@ -2670,10 +2672,10 @@ status: current
 description: Information about an instance of software 
              installed on an endpoint. The following 
              high-level digram describes the structure of 
-             softwareInstance information element.
+             the softwareInstance information element.
 structure: orderedList(softwareIdentifier, softwareTitle, 
                        softwareCreator, softwareVersion, 
-					   softwareLastUpdated, softwareClass)   
+                       softwareLastUpdated, softwareClass)   
     </artwork>
   </figure>
 </section>   
@@ -2896,9 +2898,8 @@ elementId: TBD
 name: interfaceDescription
 dataType: string
 status: current
-description: The description of an interface, eg "FastEthernet 
-             1/0" or "ISP 
-connection".</artwork>
+description: The description of an interface, e.g. 
+             "FastEthernet 1/0" or "ISP connection".</artwork>
       </figure>
    </section>
    <section title="applicationDescription">
@@ -4210,7 +4211,7 @@ elementId: TBD
 name: inetd
 dataType: list
 structure: list (serviceProtocol, serviceName, serverProgram,
-      serverArguments, endpointType, execAsUser, waitStatus)
+      serverArguments, inetdEndpointType, execAsUser, waitStatus)
 status: current
 description: Holds information associated
       with different Internet services.</artwork>
@@ -4228,11 +4229,11 @@ invoked by inetd to perform the requested service, or the value
 internal if inetd itself provides the service.</artwork>
         </figure>
     </section>
-    <section title="endpointType">
+    <section title="inetdEndpointType">
         <figure>
   <artwork type="IPFIX">
 elementId: TBD
-name: endpointType
+name: inetdEndpointType
 dataType: enumeration
 structure: 
 stream ; 0x1 ; The stream value is used to describe a stream 
@@ -6694,54 +6695,55 @@ description: Specifies the current state of
 elementId: TBD
 name: controlsAccepted
 dataType: enumeration
-structure: SERVICE_ACCEPT_NETBINDCHANGE ; 0x1 ;
-      The SERVICE_ACCEPT_NETBINDCHANGE type means that the 
-      service is a network component and can accept changes in its
-      binding without being stopped or restarted. The DWORD value 
-      that this corresponds to is 0x00000010.
-      SERVICE_ACCEPT_PARAMCHANGE ; 0x2 ; The SERVICE_ACCEPT_PARAMCHANGE 
-      type means that the service can re-read its
-      startup parameters without being stopped or restarted. The 
-      DWORD value that this corresponds to is 0x00000008.
-      SERVICE_ACCEPT_PAUSE_CONTINUE ; 0x3 ; The 
-      SERVICE_ACCEPT_PAUSE_CONTINUE type means that the service 
-      can be paused or continued. The DWORD value that this 
-      corresponds to is 0x00000002. 
-      SERVICE_ACCEPT_PRESHUTDOWN ; 0x4 ; The 
-      SERVICE_ACCEPT_PRESHUTDOWN type means that the service can 
-      receive pre-shutdown notifications. The DWORD value
-      that this corresponds to is 0x00000100. 
-      SERVICE_ACCEPT_SHUTDOWN ; 0x5 ; The SERVICE_ACCEPT_SHUTDOWN 
-      type means that the service can receive shutdown notifications. 
-      The DWORD value that this corresponds to is 0x00000004.
-      SERVICE_ACCEPT_STOP ; 0x6 ; The SERVICE_ACCEPT_STOP type
-      means that the service can be stopped. The DWORD value
-      that this corresponds to is 0x00000001. 
-      SERVICE_ACCEPT_HARDWAREPROFILECHANGE ; 0x7 ; The
-      SERVICE_ACCEPT_HARDWAREPROFILECHANGE type means that the 
-      service can receive notifications when the system's
-      hardware profile changes. The DWORD value that this 
-      corresponds to is 0x00000020. 
-      SERVICE_ACCEPT_POWEREVENT ; 0x8 ; The SERVICE_ACCEPT_POWEREVENT 
-      type means that the service can receive notifications when the 
-      system's power status has changed. The DWORD value that this 
-      corresponds to is 0x00000040. 
-      SERVICE_ACCEPT_SESSIONCHANGE ; 0x9 ; The 
-      SERVICE_ACCEPT_SESSIONCHANGE type means that the service can 
-      receive notifications when the system's session
-      status has changed. The DWORD value that this corresponds 
-      to is 0x00000080. 
-      SERVICE_ACCEPT_TIMECHANGE ; 0xA ; The SERVICE_ACCEPT_TIMECHANGE 
-      type means that the service can receive notifications when 
-      the system time changes. The DWORD value that this corresponds 
-      to is 0x00000200. 
-      SERVICE_ACCEPT_TRIGGEREVENT ; 0xB ; The 
-      SERVICE_ACCEPT_TRIGGEREVENT type means that the service can 
-      receive notifications when an event that the service
-      has registered for occurs on the system. The DWORD value that 
-      this corresponds to is 0x00000400. 
-      ; 0xC ; The empty string value is permitted here to allow 
-      for empty elements associated with error conditions.
+structure: 
+  SERVICE_ACCEPT_NETBINDCHANGE ; 0x1 ;
+  The SERVICE_ACCEPT_NETBINDCHANGE type means that the 
+  service is a network component and can accept changes in its
+  binding without being stopped or restarted. The DWORD value 
+  that this corresponds to is 0x00000010.
+  SERVICE_ACCEPT_PARAMCHANGE ; 0x2 ; The SERVICE_ACCEPT_PARAMCHANGE 
+  type means that the service can re-read its
+  startup parameters without being stopped or restarted. The 
+  DWORD value that this corresponds to is 0x00000008.
+  SERVICE_ACCEPT_PAUSE_CONTINUE ; 0x3 ; The 
+  SERVICE_ACCEPT_PAUSE_CONTINUE type means that the service 
+  can be paused or continued. The DWORD value that this 
+  corresponds to is 0x00000002. 
+  SERVICE_ACCEPT_PRESHUTDOWN ; 0x4 ; The 
+  SERVICE_ACCEPT_PRESHUTDOWN type means that the service can 
+  receive pre-shutdown notifications. The DWORD value
+  that this corresponds to is 0x00000100. 
+  SERVICE_ACCEPT_SHUTDOWN ; 0x5 ; The SERVICE_ACCEPT_SHUTDOWN 
+  type means that the service can receive shutdown notifications. 
+  The DWORD value that this corresponds to is 0x00000004.
+  SERVICE_ACCEPT_STOP ; 0x6 ; The SERVICE_ACCEPT_STOP type
+  means that the service can be stopped. The DWORD value
+  that this corresponds to is 0x00000001. 
+  SERVICE_ACCEPT_HARDWAREPROFILECHANGE ; 0x7 ; The
+  SERVICE_ACCEPT_HARDWAREPROFILECHANGE type means that the 
+  service can receive notifications when the system's
+  hardware profile changes. The DWORD value that this 
+  corresponds to is 0x00000020. 
+  SERVICE_ACCEPT_POWEREVENT ; 0x8 ; The SERVICE_ACCEPT_POWEREVENT 
+  type means that the service can receive notifications when the 
+  system's power status has changed. The DWORD value that this 
+  corresponds to is 0x00000040. 
+  SERVICE_ACCEPT_SESSIONCHANGE ; 0x9 ; The 
+  SERVICE_ACCEPT_SESSIONCHANGE type means that the service can 
+  receive notifications when the system's session
+  status has changed. The DWORD value that this corresponds 
+  to is 0x00000080. 
+  SERVICE_ACCEPT_TIMECHANGE ; 0xA ; The SERVICE_ACCEPT_TIMECHANGE 
+  type means that the service can receive notifications when 
+  the system time changes. The DWORD value that this corresponds 
+  to is 0x00000200. 
+  SERVICE_ACCEPT_TRIGGEREVENT ; 0xB ; The 
+  SERVICE_ACCEPT_TRIGGEREVENT type means that the service can 
+  receive notifications when an event that the service
+  has registered for occurs on the system. The DWORD value that 
+  this corresponds to is 0x00000400. 
+  ; 0xC ; The empty string value is permitted here to allow 
+  for empty elements associated with error conditions.
 status: current
      
 description: Specifies the control codes that a service will 
@@ -7019,6 +7021,164 @@ description: Represents the SID of a
       error determining the groups that the user belongs to,
       then a single groupSid element should be included with a 
       status of 'error'.</artwork>
+        </figure>
+    </section>
+    <section title="endpointType">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: endpointType
+                dataType: enumeration
+                status: current
+                description: The possible types of endpoint in the 
+                             enterprise.
+                structure:
+                workstation; 0x1; Workstation Endpoint
+                printer;     0x2; Printer Endpoint
+                router;      0x3; Router Endpoint
+                tablet;      0x4; Tablet Endpoint
+            </artwork>
+        </figure>
+    </section>
+    <section title="endpointPurpose">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: endpointPurpose
+                dataType: string
+                status: current
+                description: A description of how the endpoint is 
+                             used within the enterprise.  
+                             Examples include end user system, 
+                             and public web server.
+            </artwork>
+        </figure>
+    </section>
+    <section title="endpointCriticality">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: endpointCriticality
+                dataType: string
+                status: current
+                description: An enterprise-defined rating which 
+                             indicates the criticality of the 
+                             endpoint. The rating should be 
+                             specific enough to assess the impact 
+                             to the overall enterprise if the 
+                             endpoint is attacked or lost.
+            </artwork>
+        </figure>
+    </section>
+    <section title="ingestTimestamp">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: ingestTimestamp
+                dataType: dateTimeSeconds
+                status: current
+                description: The point in time that the 
+                             description of a vulnerability was 
+                             received by the enterprise.
+            </artwork>
+        </figure>
+    </section>
+    <section title="vulnerabilityVersion">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: vulnerabilityVersion
+                dataType: string
+                status: current
+                description: The version or iteration of the 
+                             vulnerability description information 
+                             (reported by the author, if applicable).
+            </artwork>
+        </figure>
+    </section>
+    <section title="vulnerabilityExternalId">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: vulnerabilityExternalId
+                dataType: string
+                status: current
+                description: An external or third-party ID 
+                             assigned to the vulnerability 
+                             description. This could be multiple 
+                             IDs in some cases (e.g., vendor bug 
+                             ID, global ID, discoverer's local ID, 
+                             third-party vulnerability database 
+                             ID, etc.).
+            </artwork>
+        </figure>
+    </section>
+    <section title="vulnerabilitySeverity">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: vulnerabilitySeverity
+                dataType: string
+                status: current
+                description: The severity of the vulnerability 
+                             (reported by the author, if applicable).
+            </artwork>
+        </figure>
+    </section>
+    <section title="assessmentTimestamp">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: assessmentTimestamp
+                dataType: dateTimeSeconds
+                status: current
+                description: The point in time that the assessment 
+                             was performed against an endpoint.
+            </artwork>
+        </figure>
+    </section>
+    <section title="vulnerableSoftware">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: vulnerableSoftware
+                dataType: list
+                status: current
+                description: A listing of software products 
+                             installed on the endpoint which are 
+                             known to have vulnerabilities.
+                structure: list(softwareInstance*)
+            </artwork>
+        </figure>
+    </section>
+    <section title="endpointVulnerabilityStatus">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: endpointVulnerabilityStatus
+                dataType: enumeration
+                status: current
+                description: Overall vulnerability status of an
+                             enterprise endpoint.
+                structure: Pass; 0x1; Endpoint passed the 
+                                      vulnerability test(s).
+                           Fail; 0x2; Endpoint failed the 
+                                      vulnerability test(s).
+                
+            </artwork>
+        </figure>
+    </section>
+    <section title="vulnerabilityDescription">
+        <figure>
+            <artwork type="IPFIX">
+                elementId: TBD
+                name: vulnerabilityDescription
+                dataType: string
+                status: current
+                description: A human-readable description of the
+                             vulnerability.
+                
+            </artwork>
         </figure>
     </section>
 </section>
@@ -7335,6 +7495,11 @@ description: Represents the SID of a
                 <t>Created a softwareClass attribute IE and added it to the softwareInstance subject
                     IE. Also, removed the os* attribute IEs 
                     (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/10).</t>
+            </section>
+            <section title="Changes in Revision 10">
+                <t>Added several IEs necessary for the SACM Vulnerability Assessment Scenario 
+                    (https://github.com/sacmwg/draft-ietf-sacm-information-model/issues/43).</t>
+                <t>Fixed various typos and formatting issues.</t>
             </section>
         </section>
     </back>
